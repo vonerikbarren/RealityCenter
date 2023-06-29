@@ -1,0 +1,74 @@
+// // Video Torus
+				// const video06 = document.getElementById('video06')
+				// tex_video06 = new THREE.VideoTexture(video05)
+				// const mat_video06 =  new THREE.MeshBasicMaterial( {map: tex_video06, side: THREE.DoubleSide, toneMapped: false} );
+
+				// const videoTorusParams = {
+				// 	radius: 10,
+				// 	tube: 2,
+				// 	radialSegments: 16,
+				// 	tubularSegments: 100,
+				// 	arc: 6.28
+				// }
+
+				// function regenerateVideoTorus() {
+				// 	let radius = videoTorusParams.radius
+				// 	let scaleRadius = radius * 0.1
+				// 	let newGeometry = new THREE.TorusGeometry(
+
+				// 		videoTorusParams.radius,
+				// 		videoTorusParams.tube,
+				// 		videoTorusParams.radialSegments,	
+				// 		videoTorusParams.tubularSegments,
+				// 		videoTorusParams.arc,
+				
+				// 	)
+
+				// 	mesh_videoTorusRealityA01.scale.x = scaleRadius
+				// 	mesh_videoTorusRealityA01.scale.y = scaleRadius
+				// 	mesh_videoTorusRealityA01.scale.z = scaleRadius
+
+				// }
+
+				// const geo_videoTorusRealityA01 = new THREE.TorusGeometry(
+				// 	videoTorusParams.radius,
+				// 	videoTorusParams.tube,
+				// 	videoTorusParams.radialSegments,	
+				// 	videoTorusParams.tubularSegments,
+				// 	videoTorusParams.arc,
+				// )
+
+
+				// mesh_videoTorusRealityA01 = new THREE.Mesh(
+				// 	tex_video06,
+				// 	mat_video06,
+				// )
+
+
+				// mat_video06.transparent = false
+				// mat_video06.alphaMap = mat_video06
+				// mat_video06.wireFrame = false
+
+				// mesh_videoTorusRealityA01.position.set(0, 0, -200)
+				// mesh_videoTorusRealityA01.rotateX( - Math.PI / 2 )
+				// scene.add(mesh_videoTorusRealityA01)
+
+
+				// // Video Group Test
+				// const VideoGroup = new THREE.Group();
+				// VideoGroup.add( new VideoElement( 'SJOz3qjfQXU', 0, 0, 240, 0 ) );
+				// VideoGroup.add( new VideoElement( 'Y2-xZ-1HE-Q', 240, 0, 0, Math.PI / 2 ) );
+				// VideoGroup.add( new VideoElement( 'IrydklNpcFI', 0, 0, - 240, Math.PI ) );
+				// VideoGroup.add( new VideoElement( '9ubytEsCaS0', - 240, 0, 0, - Math.PI / 2 ) );
+				// VideoGroup.position.set(0, 10, 0)
+				// scene.add( VideoGroup );
+				
+
+				// const groupTest01 = new THREE.Group()
+				// groupTest01.position.set(0,0,0)
+				// groupTest01.add( new iFrameElement('https://vonerikbarren.github.io/Portfolio--V3/#', 5000, 5000, 0, 0))
+				// scene.add(groupTest01)
+
+				// const TwoScreenController = new THREE.Group()
+				// TwoScreenController.position.set(-500, 10, -700)
+				// TwoScreenController.rotation.set(0, 0.2, 0)
