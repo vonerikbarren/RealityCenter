@@ -1,0 +1,371 @@
+/* ----------------------------------------------- */
+/* Media queries for screens 1680px and above */
+/* ----------------------------------------------- */
+
+@media only screen and (min-width: 2560px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: 810px 1920px 810px;
+        grid-template-rows: 100px 455px 455px 455px;
+        /* background-color: #a500fe79; */
+        background-color: rgba(255, 255, 255, 0.25);
+        padding: 10px;
+        height: 100%;
+        width: 100%;
+    }
+
+    .grid-item {
+        /* background-color: rgba(0, 255, 187, 0.27);
+            border: 2.5px groove  rgba(0, 255, 187, 0.87); */
+        background-color: rgba(0, 0, 0, 0.27);
+        /* border: 2.5px groove  rgba(195, 0, 255, 0.87); */
+        border: 2.5px groove  rgba(255, 255, 255, 0.87);
+        padding: 20px;
+        font-size: 16px;
+        text-align: center;
+        height: 100%;
+        width: 100%;
+    }
+
+    #clickToEnter {
+        border: 1px solid rgba(255, 255, 255, 0.95);
+        border-radius: 10px;
+        box-shadow: 10px 10px 10px rgba(255, 255, 255, 0.2);
+        text-align: center !important;
+        align-items: center; 
+        padding: 5px;
+        margin-right: 5px;
+    }
+
+    h1:hover {
+        background-color: rgba(255, 255, 255, 0.01);
+        cursor: pointer;
+        color: #fff;
+    }
+
+    h2:hover {
+        background-color: rgba(255, 255, 255, 0.01);
+        cursor: pointer;
+        color: #fff;
+    }
+
+    a {
+        color: rgba(255, 255, 255, 0.87);
+        text-shadow: 2px 2px grey;
+        align-items: center;
+        position: relative;
+        padding: 0px;
+        top: 200px;
+        /* font-size: 20px; */
+        /* vertical-align: middle; */
+    }
+
+    .sidenav {
+        height: 100%;
+        width: 0;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color:  rgba(255, 255, 255, 0.65);
+        border: 3px solid rgba(255, 255, 255, 0.9);
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+    }
+
+    .sidenav:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+        cursor: pointer;
+        color: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+    }
+
+    .sidenav a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: rgba(255, 255, 255, 0.9);
+        display: block;
+        transition: 0.3s;
+    }
+
+    .sidenav a:hover {
+        color: rgba(255, 255, 255, 0.9);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 10px;
+    }
+
+    .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 0px;
+        font-size: 36px;
+        margin-left: 50px;
+    }
+
+    .closebtn:hover {
+        color: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+    }
+
+    #main {
+        transition: margin-left .5s;
+        padding: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        border-radius: 10px;
+    }
+
+    #main:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+        cursor: pointer;
+        color: rgba(141, 142, 141, 0.9);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        border-radius: 10px;
+        box-shadow: 5px 5px 5px rgba(255, 255, 255, 0.5);
+        transition: 0.2s;
+    }
+
+
+    .sidenavRight {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        background-color:  rgba(255, 255, 255, 0.15);
+        border: 3px solid rgba(255, 255, 255, 0.9);
+        overflow-x: hidden;
+        transition: 0.5s;
+        
+    }
+
+    .sidenavRight:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+        cursor: pointer;
+        color: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+    }
+
+    .sidenavRight a {
+        padding: 8px 8px 8px 8px;
+        text-decoration: none;
+        font-size: 25px;
+        color: rgba(144, 144, 144, 0.9);
+        display: block;
+        transition: 0.3s;
+    }
+
+    .sidenavRight a:hover {
+        color: rgba(255, 255, 255, 0.9);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+    }
+
+    .sidenavRight .closebtnRight {
+        
+        position: absolute;
+        top: 0;
+        font-size: 36px;
+        
+    }
+
+    .closebtnRight:hover {
+        color: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        border-radius: 50%;
+    }
+
+    #mainRight {
+        transition: margin-right .5s;
+        padding: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        border-radius: 10px;
+    }
+
+    #mainRight:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+        cursor: pointer;
+        color: rgba(255, 255, 255, 0.9);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        border-radius: 10px;
+        box-shadow: 5px 5px 5px rgba(255, 255, 255, 0.5);
+        transition: 0.2s;
+    }
+
+    @media screen and (max-height: 450px) {
+    .sidenavRight {padding-top: 15px;}
+    .sidenavRight a {font-size: 18px;}
+    }
+    
+
+    #keyOptions {
+        display: grid;
+        grid-template-columns: auto;
+        border: 1px solid rgba(255, 255, 255, 0.95);
+        border-radius: 10px;
+        box-shadow: 10px 10px 10px rgba(255, 255, 255, 0.2);
+        text-align: center !important;
+        padding: 5px;
+        align-items: center; 
+    }
+
+    #keyOptions:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+        cursor: pointer;
+        color: #fff;
+    }
+
+
+    /* startMenuMusicPlayer */
+		#startMenuMusicPlayer {
+			height:400px;
+			width:800px;
+			position: relative;
+			bottom: -10px;
+			border: 1px outset rgb(255, 255, 255);
+			border-radius: 10px;
+			background: transparent;
+			box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.4);
+			animation: float 3s ease-in-out infinite;
+            transition: 1s;
+		}
+
+        #startMenuMusicPlayer:hover {
+            height:425px;
+			width:850px;
+			position: relative;
+			bottom: 10px;
+			border: 1px outset rgb(255, 255, 255);
+			border-radius: 10px;
+			background: transparent;
+			box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.4);
+			animation: float 3s ease-in-out infinite;
+            transition: 1s;
+        }
+
+
+		/* startMenuToDoListApp */
+		#startMenuToDoApp {
+			height:380px;
+			width:740px;
+			position: relative;
+			bottom: -10px;
+			border: 1px outset rgb(255, 255, 255);
+			border-radius: 10px;
+			background: transparent;
+			box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.4);
+			animation: float 3s ease-in-out infinite;
+            transition: 1s;
+		}
+
+
+        #startMenuToDoApp:hover {
+			height:400px;
+			width: 840px;
+			position: relative;
+			bottom: -10px;
+			border: 1px inset rgb(255, 255, 255);
+			border-radius: 10px;
+			background: transparent;
+			box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.4);
+			animation: float 3s ease-in-out infinite;
+            transition: 1s;
+		}
+
+		/* startMenuPictureSlideShow */
+		#startMenuPictureSlideShow {
+			height:380px;
+			width: 650px;
+			position: relative;
+			bottom: -10px;
+			border: 1px outset rgb(255, 255, 255);
+			border-radius: 10px;
+			background: transparent;
+			box-shadow: 0 20px 20px 0 rgba(255, 255, 255, 0.4);
+			animation: float 3s ease-in-out infinite;
+            transition: 1s;
+		}
+
+        #startMenuPictureSlideShow:hover {
+			height:400px;
+			width: 750px;
+			position: relative;
+			bottom: -10px;
+			border: 1px outset rgb(255, 255, 255);
+			border-radius: 10px;
+			background: transparent;
+			box-shadow: 0 20px 20px 0 rgba(255, 255, 255, 0.4);
+			animation: float 3s ease-in-out infinite;
+            transition: 1s;
+		}
+
+		/* startMenuDrinkWater */
+		#startMenuDrinkWater {
+			height:400px;
+			width: 650px;
+			position: relative;
+			bottom: -10px;
+			border: 1px outset rgb(255, 255, 255);
+			border-radius: 10px;
+			background: transparent;
+			box-shadow: 0 20px 20px 0 rgba(255, 255, 255, 0.75);
+			animation: float 3s ease-in-out infinite;
+            transition: 1s;
+		}
+
+
+        #startMenuDrinkWater:hover {
+			height:400px;
+			width: 750px;
+			position: relative;
+			bottom: -10px;
+			border: 1px outset rgb(255, 255, 255);
+			border-radius: 10px;
+			background: transparent;
+			box-shadow: 0 20px 20px 0 rgba(255, 255, 255, 0.75);
+			animation: float 3s ease-in-out infinite;
+            transition: 1s;
+		}
+
+
+		/* startMenuMealDatabase */
+		#startMenuMealDatabase {
+			height:325px;
+			width:500px;
+			position: relative;
+			bottom: -10px;
+			border: 1px outset rgb(255, 255, 255);
+			border-radius: 10px;
+			background: transparent;
+			box-shadow: 0 20px 20px 0 rgba(255, 255, 255, 0.75);
+			animation: float 3s ease-in-out infinite;
+		}
+
+
+		/* startMenuDrinkWater */
+		#startMenuSpeechTextReader {
+			height:280px;
+			width:500px;
+			position: relative;
+			bottom: -50px;
+			border: 1px outset rgb(255, 255, 255);
+			border-radius: 10px;
+			background: transparent;
+			box-shadow: 0 20px 20px 0 rgba(255, 255, 255, 0.75);
+			animation: float 3s ease-in-out infinite;
+		}
+ 
+		/* startMenuRelaxerApp */
+		#startMenuRelaxerApp {
+			height:280px;
+			width:500px;
+			position: relative;
+			bottom: -50px;
+			border: 1px outset rgb(255, 255, 255);
+			border-radius: 10px;
+			background: transparent;
+			box-shadow: 0 20px 20px 0 rgba(255, 255, 255, 0.75);
+			animation: float 3s ease-in-out infinite;
+		}
+}

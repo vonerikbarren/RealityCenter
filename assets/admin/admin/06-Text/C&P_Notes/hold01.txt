@@ -1,0 +1,64 @@
+// OrbitMenu LeftHand
+				const leftHandOrbitMenuHorz01_root = new THREE.Group()
+				leftHandOrbitMenuHorz01_root.position.set(0, 0, 0)
+				leftHandOrbitMenuHorz01_root.scale.set(.5, .5, .5)
+
+
+				const ringSpacesOrbit01_params = {
+					radius: 10,
+					tube: 3,
+					radialSegments: 16,
+					tubularSegments: 10,
+					arc: Math.PI * 2,
+				}
+
+
+				// Geometry
+				const geo_leftHandOrbitMenuHorz01_ringSpaces01 = new THREE.TorusGeometry(
+					ringSpacesOrbit01_params.radius,
+					ringSpacesOrbit01_params.tube,
+					ringSpacesOrbit01_params.radialSegments,
+					ringSpacesOrbit01_params.tubularSegments,
+					ringSpacesOrbit01_params.arc,
+				)
+
+
+				// First Orbit (Horizontal)
+				const leftHandOrbitMenuHorz01_ringSpaces01 = new THREE.Group()
+				leftHandOrbitMenuHorz01_ringSpaces01.position.set(0, 0, 0)
+
+
+				const mat_leftHandOrbitMenuHorz01_ringSpaces01 = new THREE.MeshStandardMaterial({ map: orbitA_colorTex, side: THREE.DoubleSide });
+
+				const mesh_leftHandOrbitMenuHorz01_ringSpaces01 = new THREE.Mesh({
+					geo_leftHandOrbitMenuHorz01_ringSpaces01,
+					mat_leftHandOrbitMenuHorz01_ringSpaces01,
+				})
+
+				// |- # Settings for [ mat_leftHandOrbitMenuHorz01_ringSpaces01 ]
+				// |- ## Settings/mappings
+				mat_leftHandOrbitMenuHorz01_ringSpaces01.transparent = false
+				mat_leftHandOrbitMenuHorz01_ringSpaces01.alphaMap = orbitA_colorTex
+
+				mat_leftHandOrbitMenuHorz01_ringSpaces01.aoMap = orbitA_AmbientOcclusionTex
+				mat_leftHandOrbitMenuHorz01_ringSpaces01.aoMapIntensity = 1
+
+				mat_leftHandOrbitMenuHorz01_ringSpaces01.displacementMap = orbitA_HeightTex
+				mat_leftHandOrbitMenuHorz01_ringSpaces01.displacementScale = 0.05
+
+				mat_leftHandOrbitMenuHorz01_ringSpaces01.metalnessMap = orbitA_MetalTex
+				mat_leftHandOrbitMenuHorz01_ringSpaces01.metalness = 0
+
+				mat_leftHandOrbitMenuHorz01_ringSpaces01.roughnessMap = orbitA_RoughnessTex
+				mat_leftHandOrbitMenuHorz01_ringSpaces01.roughness = 1
+
+				mat_leftHandOrbitMenuHorz01_ringSpaces01.normalMap = orbitA_NormalTex
+				mat_leftHandOrbitMenuHorz01_ringSpaces01.normalScale.set(0.5, 0.5)
+
+
+				mesh_leftHandOrbitMenuHorz01_ringSpaces01.position.set(0, 0, 0)
+				mesh_leftHandOrbitMenuHorz01_ringSpaces01.rotation.set(0, 0, 0)
+				// mesh_leftHandOrbitMenuHorz01_ringSpaces01.scale.set(1, 1, 1)
+
+
+				scene.add(mesh_leftHandOrbitMenuHorz01_ringSpaces01)

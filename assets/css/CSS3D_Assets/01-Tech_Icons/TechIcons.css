@@ -1,0 +1,237 @@
+
+/* ##################################################### */
+/* ----------------------------------------------------- */
+/* -.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.- */
+/* ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~ */
+
+
+
+
+
+/* ##################################################### */
+/* [ Title ] */
+/* ##################################################### */
+
+
+/* ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~ */
+/* [ Title ] */
+/* ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~ */
+
+
+
+
+
+/* ##################################################### */
+/* [ DefaultTechIconId ] */
+/* ##################################################### */
+
+#DefaultTechIconId {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 1px outset rgba(255, 255, 255, 0.9);
+    box-shadow: 5px 5px 5px rgba(255, 255, 255, 0.5);
+    border-radius: 10px; 
+
+}
+
+
+#DefaultTechIconId:hover {
+    position: relative;
+    /* bottom: 20px; */
+    /* margin-top: -2px; */
+    margin-bottom: 50px;
+    width: 125px;
+    height: 125px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 1.5px outset rgba(0, 255, 200, 0.5);
+    border-radius: 10px; 
+    box-shadow: 5px 5px 5px rgba(255, 255, 255, 0.9);
+    transition: .25s;
+
+}
+
+
+/* # Alteration reverse image ###################################### */
+
+#DefaultReverseTechIconId {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 1px outset rgba(255, 255, 255, 0.9);
+    box-shadow: 5px 5px 5px rgba(255, 255, 255, 0.5);
+    border-radius: 10px; 
+    /* transform: rotateY(150deg) !important; */
+
+}
+
+
+#DefaultReverseTechIconId:hover  {
+    position: relative;
+    /* bottom: 20px; */
+    /* margin-top: -2px; */
+    margin-bottom: 50px;
+    width: 125px;
+    height: 125px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 1.5px outset rgba(0, 255, 200, 0.5);
+    border-radius: 10px; 
+    box-shadow: 5px 5px 5px rgba(255, 255, 255, 0.9);
+    /* transform: rotateY(150deg) !important; */
+    z-index: 1 !important;
+    transition: .25s;
+
+}
+
+
+/* ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~ */
+/* [ For the Header Component ] */
+/* ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~ */
+
+#DefaultHeaderInfoId {
+
+    display: none;
+    position: relative;
+    width: 100px;
+    height: 40px;
+    color:rgba(27, 192, 156, 0.9);
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 2px outset rgba(0, 255, 200, 0.5);
+    border-radius: 10px; 
+    box-shadow: 5px 5px 5px rgba(255, 255, 255, 0.5);
+
+}
+
+
+#DefaultTechIconId:hover  #DefaultHeaderInfoId{
+    display: block;
+    /* top: -55px; */
+    left: -15px;
+    width: 150px;
+    height: 25px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 2px outset rgba(0, 255, 200, 0.5);
+    border-radius: 10px; 
+    text-shadow: 2.5px 2.5px 2.5px rgba(17, 223, 231, 0.9);
+    transition: 1s;
+
+}
+
+
+
+
+/* # Alteration reverse image ###################################### */
+
+#DefaultHeaderInfoId {
+
+    display: none;
+    position: relative;
+    width: 100px;
+    height: 40px;
+    color:rgba(27, 192, 156, 0.9);
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 2px outset rgba(0, 255, 200, 0.5);
+    border-radius: 10px; 
+    box-shadow: 5px 5px 5px rgba(255, 255, 255, 0.5);
+
+}
+
+
+#DefaultReverseTechIconId:hover  #DefaultHeaderInfoId{
+    display: block;
+    /* top: -55px; */
+    left: -15px;
+    width: 150px;
+    height: 25px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 2px outset rgba(0, 255, 200, 0.5);
+    border-radius: 10px; 
+    text-shadow: 2.5px 2.5px 2.5px rgba(17, 223, 231, 0.9);
+    transition: 1s;
+
+}
+
+
+
+
+
+
+
+
+
+
+/* ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~ */
+/* [ For the Description Component ] */
+/* ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~ */
+
+
+
+#DefaultTechIconInfoPanelId {
+
+    display: none;
+    position: relative;
+    width: 100px;
+    height: 40px;
+    color:rgba(27, 192, 156, 0.9);
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 2px outset rgba(0, 255, 200, 0.5);
+    border-radius: 10px; 
+    box-shadow: 5px 5px 5px rgba(255, 255, 255, 0.5);
+
+}
+
+
+#DefaultTechIconId:hover  #DefaultTechIconInfoPanelId {
+
+    display: block;
+    top: 0px;
+    left: -50px;
+    width: 250px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 2px outset rgba(0, 255, 200, 0.5);
+    border-radius: 10px; 
+    text-shadow: 2.5px 2.5px 2.5px rgba(17, 223, 231, 0.9);
+    transition: 1s;
+
+}
+
+
+
+
+
+
+
+#DefaultTechIconInfoPanelId {
+
+    display: none;
+    position: relative;
+    width: 100px;
+    height: 40px;
+    color:rgba(27, 192, 156, 0.9);
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 2px outset rgba(0, 255, 200, 0.5);
+    border-radius: 10px; 
+    box-shadow: 5px 5px 5px rgba(255, 255, 255, 0.5);
+
+}
+
+
+#DefaultReverseTechIconId:hover  #DefaultTechIconInfoPanelId {
+
+    display: block;
+    top: 0px;
+    left: -50px;
+    width: 250px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 2px outset rgba(0, 255, 200, 0.5);
+    border-radius: 10px; 
+    text-shadow: 2.5px 2.5px 2.5px rgba(17, 223, 231, 0.9);
+    transition: 1s;
+
+}

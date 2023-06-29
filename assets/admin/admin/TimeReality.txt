@@ -1,0 +1,57 @@
+# Time Reality
+
+## Use CylinderGeometry() and create TimeTunnels. Time Tunnels work by circular motions going side of the tunnel. The Tunnel will have reality exits people can 'get off' to in time to analyze the moment in time. In a heiarchy of change reality, there is an end goal. But Time Tunnels should be programmed to keep going forward in case you want to program time capture programs for the future. Time Tunnels can also work as a ray of travel so if the destination in time is known, it will just go straight to that time. 
+
+
+## Look up how to curve a cylinder.
+
+## Component Tree
+- TimeSphere
+  - Outside
+    - Front Clock
+  - Inside
+    - Time Reality
+      - Center Axis
+      - LoopsOfTime (Circles, Orbits, etc.)
+        - SecondLoop
+        - MinuteLoop
+        - HourLoop
+        - DayLoop
+        - WeekLoop
+        - MonthLoop
+        - YearLoop
+        - DecadeLoop
+        - CenturyLoop
+      - Sun, Moon, and Stars
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

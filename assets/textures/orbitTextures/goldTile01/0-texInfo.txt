@@ -1,0 +1,5 @@
+# Information for GoldTex01
+
+directDownload = https://drive.google.com/drive/folders/1mconBTM5O3slwIhVcKTo0_eaOYn-eVdv
+
+websiteLink = https://3dtextures.me/2021/08/24/tiles-044/

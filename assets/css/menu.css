@@ -1,0 +1,613 @@
+body,
+html {
+  height: 100%;
+  margin: 0;
+}
+
+.workspace {
+  background-image: url(../../../assets/img/GrayWhiteWallpaper02.jpeg);
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 5;
+}
+
+.BorderContainer {
+  justify-content: center;
+  width: 325px;
+  height: 320px;
+  background-color:rgba(70, 235, 247, 0.1);
+  border: 2.5px outset #8d1ca4;
+  border-left-color: rgb(92, 243, 137);
+  border-right-color: rgb(92, 243, 137);
+  border-top-color: rgb(92, 243, 243);
+  border-bottom-color: rgb(92, 243, 243);
+  border-radius: 40px 40px 40px 40px;
+  position: fixed;
+  top: 290px;
+  left: 790px;
+  transform: translatey(0px);
+	animation: float 15s ease-in-out infinite;
+  z-index: 4;
+}
+
+@keyframes float {
+	0% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+	50% {
+		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+		transform: translatey(-20px);
+	}
+	100% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+}
+
+.BaseContainer {
+  justify-content: center;
+  margin-top: 0px;
+  margin-left: 10px;
+  width: 305px;
+  height: 305px;
+  background-color:rgba(70, 235, 247, 0.1);
+  border: 2.5px outset #8d1ca4;
+  border-bottom-color: rgb(92, 243, 137);
+  border-top-color: rgb(92, 243, 137);
+  border-left-color: rgb(92, 243, 243);
+  border-right-color: rgb(92, 243, 243);
+  border-radius: 40px 40px 40px 40px;
+  position: float;
+  top: 300px;
+  left: 0px;
+  transform: translatey(0px);
+	animation: float 15s ease-in-out infinite;
+  z-index: 3;
+ 
+}
+
+.Layer5_Class {
+  margin-top: 0px;
+  margin-left: 10px;
+  transform: translatey(0px);
+	animation: float 15s ease-in-out infinite;
+}
+
+.SpreadsheetContainer {
+  transform: rotate(360deg);
+  justify-content: center;
+  margin-top: 0px;
+  margin-left: 0px;
+  top: 55px;
+  left: 150px;
+  width: 515px;
+  height: 305px;
+  background-color:rgba(70, 235, 247, 0.1);
+  border: 1px outset #8d1ca4;
+  border-bottom-color: rgb(92, 243, 137);
+  border-top-color: rgb(92, 243, 137);
+  border-left-color: rgb(92, 243, 243);
+  border-right-color: rgb(92, 243, 243);
+  border-radius: 40px 40px 40px 40px;
+  position: fixed;
+  z-index: 3;
+}
+
+table {
+  border: 2.5px outset;
+  border-radius: 400px 40px 40px 40px;
+}
+
+table.blueTable {
+  transform: 0.2s;
+  position: fixed;
+  top: 50px;
+  left: 50px;
+  border: 1px outset;
+  border-radius: 5px 5px 5px 5px;
+  border-bottom-color: rgb(92, 243, 137);
+  border-top-color: rgb(92, 243, 137);
+  border-left-color: rgb(92, 243, 243);
+  border-right-color: rgb(92, 243, 243);
+  width: 75%;
+  text-align: left;
+  box-shadow: 6.5px 6.5px rgba(136, 136, 136, 0.3);
+  color: rgb(92, 243, 137);
+  text-shadow: -1px -1px 1px rgb(0, 0, 0);
+}
+
+table.blueTable td, table.blueTable th {
+  border: 1px outset;
+  background-color:rgba(70, 235, 247, 0.1);
+  border-radius: 3.5px 3.5px 3.5px 3.5px;
+  border-color: rgb(255, 255, 255);
+  
+}
+
+
+
+@keyframes example {
+  0% {
+    background-color: rgba(0, 0, 0, 0.3);
+    top: 315px;
+    right: 5px;
+    transform: rotate(360deg);
+  }
+  10% {
+    background-color: rgba(0, 0, 0, 0.3);
+    right: -1000px;
+    bottom: 2000px;
+    /* top: 1000px; */
+    width: 300px;
+    height: 400;
+    padding-bottom: 400px;
+    padding-left: 400px;
+  }
+  20% {
+    background-color: rgba(0, 0, 0, 0.3);
+    left: 0px;
+    top: 0px;
+    right: 200px;
+  }
+  30% {
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 300px;
+    left: 200px;
+    top: 0px;
+  }
+  40% {
+    background-color: rgba(0, 0, 0, 0.3);
+    left: 0px;
+    top: 0px;
+    right: 200px;
+    width: 300px;
+    height: 400;
+    padding-bottom: 400px;
+  }
+  50% {
+    background-color: rgba(0, 0, 0, 0.3);;
+    left: 200px;
+    top: 200px;
+  }
+  60% {
+    background-color: rgba(0, 0, 0, 0.3);;
+    right: 200px;
+    top: 200px;
+    width: 300px;
+    height: 400;
+    padding-bottom: 400px;
+  }
+  70% {
+    background-color: rgba(0, 0, 0, 0.3);;
+    right: 200px;
+    top: 200px;
+  }
+  80% {
+    background-color: rgba(0, 0, 0, 0.3);;
+    right: 200px;
+    top: 200px;
+  }
+  90% {
+    background-color: rgba(0, 0, 0, 0.3);
+    left: 0px;
+    top: 200px;
+  }
+  100% {
+    background-color: rgba(0, 0, 0, 0.3);
+    top: 3015px;
+    right: 5px;
+  }
+}
+
+/*This is  Where the realities begin.*/
+
+.reality01:hover {
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.2);
+  /* transform: rotate(220deg);
+  transform: translate(-150px, -150px); */
+  background-color: rgba(70, 235, 247, 0.15);
+  border-color: rgb(92, 243, 137);
+
+
+  animation-name: exampleNested;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
+  animation-name: float; 
+
+}
+
+@keyframes exampleNested {
+  0% {
+    margin-left: -20px;
+    margin-bottom: -20px;
+    height: 200px;
+    width: 700;
+  }
+  100% {
+    margin-left: -20px;
+    margin-bottom: -20px;
+    height: 400px;
+    width: 10000px;
+  }
+
+}
+
+.reality01 {
+  transition: transform 0.2s;
+  justify-content: center;
+  margin-top: 10px;
+  margin-left: 0px;
+  top: 15px;
+  left: 15px;
+  width: 70px;
+  height: 70px;
+  background-color: rgba(70, 235, 247, 0.1);
+  border: 2.5px outset #8d1ca4;
+  border-color: rgb(92, 243, 137);
+  border-radius: 10px 10px 10px 10px;
+  position: fixed;
+  box-shadow: 6.5px 6.5px rgba(136, 136, 136, 0.3);
+  cursor: pointer;
+  z-index: 0;
+  /* position: relative; */
+  animation-name: example;
+  animation-duration: 3000ms;
+  animation-timing-function: linear;
+  animation-delay: 5s;
+  animation-iteration-count: unset;
+  animation-direction: alternate;
+}
+
+.reality02:hover {
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.2);
+  background-color: rgba(70, 235, 247, 0.1);
+  border-color: rgb(92, 243, 137);
+  animation-name: exampleNested01;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: unset;
+  animation-direction: alternate;
+}
+
+/* @keyframes exampleNested01 {
+  0% {
+    margin-left: -20px;
+    margin-bottom: -20px;
+    height: 200px;
+    width: 700;
+  }
+  100% {
+    margin-left: -20px;
+    margin-bottom: -20px;
+    height: 400px;
+    width: 10000px;
+  }
+
+} */
+
+.reality02 {
+  transition: transform 0.2s;
+  justify-content: center;
+  margin-top: 25px;
+  margin-left: 100px;
+  top: 0px;
+  left: 10px;
+  width: 70px;
+  height: 70px;
+  background-color: rgba(70, 235, 247, 0.1);
+  border: 2.5px outset #8d1ca4;
+  border-color: rgb(92, 243, 137);
+  border-radius: 10px 10px 10px 10px;
+  position: fixed;
+  box-shadow: 6.5px 6.5px rgba(136, 136, 136, 0.3);
+  cursor: pointer;
+}
+
+.reality03:hover {
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.2);
+  background-color: rgba(70, 235, 247, 0.1);
+  border-color: rgb(92, 243, 137);
+}
+
+.reality03 {
+  transition: transform 0.2s;
+  justify-content: center;
+  margin-top: 10px;
+  margin-left: 210px;
+  top: 15px;
+  left: 0px;
+  width: 70px;
+  height: 70px;
+  background-color: rgba(70, 235, 247, 0.1);
+  border: 2.5px outset #8d1ca4;
+  border-color: rgb(92, 243, 137);
+  border-radius: 10px 10px 10px 10px;
+  position: fixed;
+  box-shadow: 6.5px 6.5px rgba(136, 136, 136, 0.3);
+  cursor: pointer;
+}
+
+.reality04:hover {
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.2);
+  background-color: rgba(70, 235, 247, 0.1);
+  border-color: rgb(92, 243, 137);
+}
+
+.reality04 {
+  justify-content: center;
+  margin-top: 0px;
+  margin-left: 800px;
+  width: 70px;
+  height: 70px;
+  background-color: rgba(70, 235, 247, 0.1);
+  border: 2.5px outset #8d1ca4;
+  border-color: rgb(92, 243, 137);
+  border-radius: 10px 10px 10px 10px;
+  position: fixed;
+  top: 415px;
+  left: 15px;
+  box-shadow: 6.5px 6.5px rgba(136, 136, 136, 0.3);
+  cursor: pointer;
+}
+
+.reality05:hover {
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.2);
+  background-color: rgba(70, 235, 247, 0.1);
+  border-color: rgb(92, 243, 137);
+  
+}
+
+.reality05 {
+  justify-content: center;
+  margin-top: 0px;
+  margin-left: 800px;
+  width: 70px;
+  height: 70px;
+  background-color: rgba(70, 235, 247, 0.1);
+  border: 2.5px outset #8d1ca4;
+  border-color: rgb(92, 243, 137);
+  border-radius: 10px 10px 10px 10px;
+  position: fixed;
+  top: 415px;
+  left: 110px;
+  box-shadow: 6.5px 6.5px rgba(136, 136, 136, 0.3);
+  cursor: pointer;
+}
+
+.reality06:hover {
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.2);
+  background-color: rgba(70, 235, 247, 0.1);
+  border-color: rgb(92, 243, 137);
+}
+
+.reality06 {
+  justify-content: center;
+  margin-top: 0px;
+  margin-left: 800px;
+  width: 70px;
+  height: 70px;
+  background-color: rgba(70, 235, 247, 0.1);
+  border: 2.5px outset #8d1ca4;
+  border-color: rgb(92, 243, 137);
+  border-radius: 10px 10px 10px 10px;
+  position: fixed;
+  top: 415px;
+  left: 210px;
+  box-shadow: 6.5px 6.5px rgba(136, 136, 136, 0.3);
+  cursor: pointer;
+}
+
+.reality07:hover {
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.2);
+  background-color: rgba(70, 235, 247, 0.1);
+  border-color: rgb(92, 243, 137);
+}
+
+.reality07 {
+  justify-content: center;
+  margin-top: 0px;
+  margin-left: 800px;
+  width: 70px;
+  height: 70px;
+  background-color: rgba(70, 235, 247, 0.1);
+  border: 2.5px outset #8d1ca4;
+  border-color: rgb(92, 243, 137);
+  border-radius: 10px 10px 10px 10px;
+  position: fixed;
+  top: 515px;
+  left: 15px;
+  box-shadow: 6.5px 6.5px rgba(136, 136, 136, 0.3);
+  cursor: pointer;
+}
+
+.reality08:hover {
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.2);
+  background-color: rgba(70, 235, 247, 0.1);
+  border-color: rgb(92, 243, 137);
+}
+
+.reality08 {
+  justify-content: center;
+  margin-top: 0px;
+  margin-left: 800px;
+  width: 70px;
+  height: 70px;
+  background-color: rgba(70, 235, 247, 0.1);
+  border: 2.5px outset #8d1ca4;
+  border-color: rgb(92, 243, 137);
+  border-radius: 10px 10px 10px 10px;
+  position: fixed;
+  top: 515px;
+  left: 110px;
+  box-shadow: 6.5px 6.5px rgba(136, 136, 136, 0.3);
+  cursor: pointer;
+}
+
+.reality09:hover {
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.2);
+  background-color: rgba(70, 235, 247, 0.1);
+  border-color: rgb(92, 243, 137);
+}
+
+.reality09 {
+  justify-content: center;
+  margin-top: 0px;
+  margin-left: 800px;
+  width: 70px;
+  height: 70px;
+  background-color: rgba(70, 235, 247, 0.1);
+  border: 2.5px outset #8d1ca4;
+  border-color: rgb(92, 243, 137);
+  border-radius: 10px 10px 10px 10px;
+  position: fixed;
+  top: 515px;
+  left: 210px;
+  box-shadow: 6.5px 6.5px rgba(136, 136, 136, 0.3);
+  cursor: pointer;
+}
+
+/* button {
+  align-items: center;
+  background-color: lightblue;
+  color: magenta;
+} */
+
+.keyboard {
+  position: fixed;
+  margin-top: 1000px;
+  bottom: -300px;
+  left: 600px;
+  width: 700px;
+  height: 500px;
+  border: 1px outset; 
+  border-radius: 80px;
+  border-bottom-color: rgb(92, 243, 137);
+  border-top-color: rgb(92, 243, 137);
+  border-left-color: rgb(92, 243, 243);
+  border-right-color: rgb(92, 243, 243);
+}
+
+.keyboard-key1 {
+  position: fixed;
+  align-items: center;
+  margin-top: 10px;
+  bottom: 170px;
+  right: 1250px;
+  width: 25px;
+  border: 1px outset; 
+  border-radius: 80px;
+  border-bottom-color: rgb(92, 243, 137);
+  border-top-color: rgb(92, 243, 137);
+  border-left-color: rgb(92, 243, 243);
+  border-right-color: rgb(92, 243, 243);
+  box-shadow: 3.5px 3.5px rgba(136, 136, 136, 0.15);
+  text-align: center;
+}
+
+.keyboard-key2 {
+  position: fixed;
+  align-items: center;
+  margin-top: 10px;
+  bottom: 170px;
+  right: 1210px;
+  width: 25px;
+  border: 1px outset; 
+  border-radius: 80px;
+  border-bottom-color: rgb(92, 243, 137);
+  border-top-color: rgb(92, 243, 137);
+  border-left-color: rgb(92, 243, 243);
+  border-right-color: rgb(92, 243, 243);
+  box-shadow: 3.5px 3.5px rgba(136, 136, 136, 0.15);
+  text-align: center;
+}
+
+.keyboard-key3 {
+  position: fixed;
+  align-items: center;
+  margin-top: 10px;
+  bottom: 170px;
+  right: 1170px;
+  width: 25px;
+  border: 1px outset; 
+  border-radius: 80px;
+  border-bottom-color: rgb(92, 243, 137);
+  border-top-color: rgb(92, 243, 137);
+  border-left-color: rgb(92, 243, 243);
+  border-right-color: rgb(92, 243, 243);
+  box-shadow: 3.5px 3.5px rgba(136, 136, 136, 0.15);
+  text-align: center;
+}
+
+.keyboard-key4 {
+  position: fixed;
+  align-items: center;
+  margin-top: 10px;
+  bottom: 170px;
+  right: 1130px;
+  width: 25px;
+  border: 1px outset; 
+  border-radius: 80px;
+  border-bottom-color: rgb(92, 243, 137);
+  border-top-color: rgb(92, 243, 137);
+  border-left-color: rgb(92, 243, 243);
+  border-right-color: rgb(92, 243, 243);
+  box-shadow: 3.5px 3.5px rgba(136, 136, 136, 0.15);
+  text-align: center;
+}
+
+.keyboard-key5 {
+  position: fixed;
+  align-items: center;
+  margin-top: 10px;
+  bottom: 170px;
+  right: 1090px;
+  width: 25px;
+  border: 1px outset; 
+  border-radius: 80px;
+  border-bottom-color: rgb(92, 243, 137);
+  border-top-color: rgb(92, 243, 137);
+  border-left-color: rgb(92, 243, 243);
+  border-right-color: rgb(92, 243, 243);
+  box-shadow: 3.5px 3.5px rgba(136, 136, 136, 0.15);
+  text-align: center;
+}
+
+.keyboard-key6 {
+  position: fixed;
+  align-items: center;
+  margin-top: 10px;
+  bottom: 170px;
+  right: 1050px;
+  width: 25px;
+  border: 1px outset; 
+  border-radius: 80px;
+  border-bottom-color: rgb(92, 243, 137);
+  border-top-color: rgb(92, 243, 137);
+  border-left-color: rgb(92, 243, 243);
+  border-right-color: rgb(92, 243, 243);
+  box-shadow: 3.5px 3.5px rgba(136, 136, 136, 0.15);
+  text-align: center;
+}

@@ -1,0 +1,56 @@
+function ImportImage(
+   srcLink,
+   hrefLink,
+   ClassName,
+   attribute,
+   textSize,
+   textAlign,
+   imgWidth, imgHeight,
+   headerWidth, headerHeight,
+   headerColor, message,
+   x, y, z,
+   borderRadius,
+) {
+   const ImgFrame = document.createElement('div')
+   ImgFrame.style.width = imgWidth + 1 +'px';
+   ImgFrame.style.height = imgHeight + 1 +'px';
+   ImgFrame.style.opacity = 0.9;
+   ImgFrame.style.boxSizing = 'border-box'
+   ImgFrame.style.backgroundColor = 'rgb(255, 255, 255, 0.7)'
+   ImgFrame.style.zIndex = '-2000'
+   ImgFrame.style.borderRadius = '100px';
+   
+
+   const ElementImg = document.createElement('img')
+   ElementImg.style.width = imgWidth+'px';
+   ElementImg.style.height = imgHeight+'px';
+   ElementImg.style.opacity = 0.7;
+   ElementImg.style.boxSizing = 'border-box'
+   ElementImg.style.border = '5px solid rgba(255, 255, 255, 0.2)'
+   ElementImg.style.borderRadius = borderRadius+'px';
+   ElementImg.src = srcLink
+   ImgFrame.appendChild(ElementImg);
+
+   // const ElementImgHeader = document.createElement('type')
+   // ElementImgHeader.style.width = headerWidth+'px';
+   // ElementImgHeader.style.height = headerHeight+'px';
+   // ElementImgHeader.style.opacity = 0.7;
+   // ElementImgHeader.style.boxSizing = 'border-box'
+   // ElementImgHeader.style.border = '5px solid rgba(0, 255, 179, 0.95)'
+   // ElementImgHeader.style.borderRadius = '100px';
+   // ElementImgHeader.style.fontSize = textSize + 'px';
+   // ElementImgHeader.style.padding = '100px'
+   // ElementImgHeader.style.background = 'lightgrey'
+   // ElementImgHeader.style.lineHeight = 'normal'
+   // ElementImgHeader.style.textAlign = textAlign
+   // ElementImgHeader.innerHTML = message;
+   // ElementImgHeader.style.color = headerColor
+   // ElementImgHeader.setAttribute(attribute, '')
+   // ImgFrame.appendChild(ElementImgHeader)
+
+   const ImgObject = new CSS3DObject(ImgFrame)
+   ImgObject.position.set(x, y, z)
+
+
+   return ImgObject
+}

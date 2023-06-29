@@ -1,0 +1,2 @@
+Its important to learn and practice all mesh types but specifically 
+- Basic, Toon, Standard, and Physical. 

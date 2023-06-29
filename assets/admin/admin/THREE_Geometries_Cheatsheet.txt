@@ -1,0 +1,368 @@
+/
+* |- # header
+* |
+/
+
+# Directions
+Geometries: 
+  1. identify geo_name_id, mat_name_id, and mesh_name_id
+    - every geometry has to have a geometry, a material, and a mesh (combo of both)
+    - Get familiar with all geometries. 
+  2. copy code, and be mindful there are repeats so use multiple grab cmd + d = duplicates
+
+
+# Geometry Object Type
+- Single Object = Only 1 Geomtry
+- Group Object = 2+ Geometries
+
+
+
+# Geometries List
+  01. Box 
+  02. Circle,
+  03. Cone,
+  04. Cylnder,
+  05. Dodecahedron,
+  06. Edges,
+  07. Extrude,
+  08. Icosahedron,
+  09. Lathe,
+  10. Octahedron,
+  11. Plane,
+  12. Polyhedron,
+  13. Ring,
+  14. Shape,
+  15. Sphere,
+  16. Tetrahedron, 
+  17. Torus,
+  18. TrousKnot,
+  19. Tube,
+  20. Wireframe,
+
+# PlaneGeometry with img
+
+const geo_name_id = new THREE.PlaneGeometry( 400, 400);
+const mat_name_id = new THREE.MeshBasicMaterial({map: clockPNG, side: THREE.DoubleSide});
+mesh_name_id = new THREE.Mesh(geo_name_id, mat_name_id);
+mat_name_id.transparent = true;
+mesh_name_id.position.set(0, 55, 0);
+scene.add(mesh_name_id);
+
+
+# CylinderGeometry with Img
+
+const geo_name_id = new THREE.CylinderGeometry(5, 5, 32 32);
+const mat_name_id = new THREE.MeshBasicMaterial({map: clockPNG, side: THREE.DoubleSide});
+mesh_name_id = new THREE.Mesh(geo_name_id, mat_name_id);
+mat_name_id.transparent = true;
+mesh_name_id.position.set(0, 55, 0);
+scene.add(mesh_name_id);
+
+
+# ConeGeometry w/o image 
+## ConeGeometry(radius, height, radialSegments, heightSegments, openEnded, thetaStart, thetaLength)
+const geo_name_id = new THREE.ConeGeometry(50, 50, 30)
+const mat_name_id = new THREE.MeshBasicMaterial({ map: testImg02, side: THREE.DoubleSide });
+mesh_name_id = new THREE.Mesh(geo_name_id, mat_name_id)
+mat_name_id.transparent = false;
+mat_name_id.alphaMap = testImg02
+mat_name_id.wireframe = false;
+mesh_name_id.position.set(0, 2000, 0)
+scene.add(mesh_name_id)
+
+
+# SphereGeometry with img
+const geo_name_id = new THREE.SphereGeometry( 5000, 32, 32)
+const mat_name_id = new THREE.MeshBasicMaterial({ map: testImg02, side: THREE.DoubleSide });
+mesh_name_id = new THREE.Mesh(geo_name_id, mat_name_id)
+mat_name_id.transparent = false;
+mat_name_id.alphaMap = testImg02
+mat_name_id.wireframe = false;
+mesh_name_id.position.set(0, 2000, 0)
+scene.add(mesh_name_id)
+
+# BoxGeomtry with img
+
+const geo_name_id = new THREE.BoxGeometry(500, 500, 500, 32, 32, 32)
+const mat_name_id = new THREE.MeshBasicMaterial({ map: testImg01, side: THREE.DoubleSide });
+mesh_name_id = new THREE.Mesh(geo_name_id, mat_name_id)
+mat_name_id.transparent = true;
+mat_name_id.alphaMap = testImg01
+mat_name_id.wireframe = false;
+mesh_name_id.position.set(0, 2000, 0)
+scene.add(mesh_name_id)
+
+# CylynderGeometry with img
+
+
+
+
+
+[-------------------------------------------]
+# Dodecahedron - Group Declaration
+
+const DodecahedronParams = {
+  radius: 10,
+  detail: 0,
+}
+
+function regenerateDodecahedron() {
+  let radius = DodecahedronParams.radius
+  let scaleRadius = radius * 0.1
+  let new Geometry = new THREE.DodecahedronGeometry(
+
+    // new Params to be updated
+    DodecahedronParams.radius
+    DodecahedronParams.detail
+
+  )
+
+  mesh_dodecahedron.scale.x = scaleRadius
+  mesh_dodecahedron.scale.y = scaleRadius
+  mesh_dodecahedron.scale.z = scaleRadius
+
+
+}
+
+// THREE.Group Component
+
+// # Group Declaration and Initalization
+const GroupName = new THREE.Group()
+GroupName.position.set(0, 0, 0)
+GroupName.scale.set(1, 1, 1)
+
+
+// # Dodecahedron Init
+
+const geo_dodecahedron = new THREE.DodecahedronGeometry(
+  DodecahedronParams.radius, 
+  DodecahedronParams.detail,
+)
+
+const mat_dodecahedron = new THREE.MeshBasicMaterial(
+  {
+    map: image01,
+    side: THREE.DoubleSide
+  }
+)
+
+mesh_dodecahedron = new THREE.Mesh(
+  geo_dodecahedron, 
+  mat_dodecahedron,
+)
+
+mat_dodecahedron.transparent = false;
+mat_dodecahedron.alphaMap = testImg10
+mat_dodecahedron.wireframe = false;
+mesh_dodecahedron.position.set(0, 0, 100)
+
+GroupName.add(mesh_dodecahedron)
+
+
+[-------------------------------------------]
+
+
+
+// Single Mesh Component
+
+const geo_dodecahedron = new THREE.DodecahedronGeometry(
+  DodecahedronParams.radius, 
+  DodecahedronParams.detail,
+)
+
+const mat_dodecahedron = new THREE.MeshBasicMaterial(
+  {
+    map: image01,
+    side: THREE.DoubleSide
+  }
+)
+
+mesh_dodecahedron = new THREE.Mesh(
+  geo_dodecahedron, 
+  mat_dodecahedron,
+)
+
+mat_dodecahedron.transparent = false;
+mat_dodecahedron.alphaMap = testImg10
+mat_dodecahedron.wireframe = false;
+mesh_dodecahedron.position.set(0, 0, 100)
+
+scene.add(mesh_dodecahedron)
+
+
+
+// -----------------------
+				// # TorusGeometry
+				// -----------------------
+
+				// Standard Donut
+				// const TorusGeometryParams = {
+				// 	radius: 10,
+				// 	tube: 2,
+				// 	radialSegments: 16,
+				// 	tubularSegments: 100,
+				// 	arc: 6.28
+				// }
+
+        // Helmet, Possibly use this for Avatar
+				const TorusGeometryParams = {
+					radius: 1,
+					tube: 10,
+					radialSegments: 30,
+					tubularSegments: 101,
+					arc: 5.75
+				}
+
+				function regenerateTorus() {
+					let radius = TorusGeometryParams.radius
+					let scaleRadius = radius * 0.1
+					let newGeometry = new THREE.TorusGeometry(
+
+						TorusGeometryParams.radius,
+						TorusGeometryParams.tube,
+						TorusGeometryParams.radialSegments,	
+						TorusGeometryParams.tubularSegments,
+						TorusGeometryParams.arc,
+				
+					)
+					mesh_TorusRealityA01.scale.x = scaleRadius
+					mesh_TorusRealityA01.scale.y = scaleRadius
+					mesh_TorusRealityA01.scale.z = scaleRadius
+				}
+
+
+				const geo_TorusRealityA01 = new THREE.TorusGeometry(
+					TorusGeometryParams.radius,
+					TorusGeometryParams.tube,
+					TorusGeometryParams.radialSegments,	
+					TorusGeometryParams.tubularSegments,
+					TorusGeometryParams.arc,
+				)
+
+				const mat_TorusRealityA01 = new THREE.MeshBasicMaterial(
+					{
+						map: Grid19Black,
+						side: THREE.DoubleSide,
+					}
+				)
+
+				mesh_TorusRealityA01 = new THREE.Mesh(
+					geo_TorusRealityA01,
+					mat_TorusRealityA01,
+				)
+
+				mat_TorusRealityA01.transparent = false
+				mat_TorusRealityA01.alphaMap = Grid19Black
+				mat_TorusRealityA01.wireFrame = false
+
+				mesh_TorusRealityA01.position.set(0, 20200, 0)
+				exampleRealitiesMatrix.add(mesh_TorusRealityA01)
+
+
+
+
+
+				// -----------------------
+				// # TorusKnotGeometry
+				// -----------------------
+
+        // add here as needed. 
+
+				// Standard Donut
+				// const TorusKnotGeometryParams = {
+				// 	radius: 10,
+				// 	tube: 3,
+				// 	tubularSegments: 100,
+				// 	radialSegments: 16,
+				// 	p: 2,
+				// 	q: 3,
+				// }
+
+				// Flower A1 Torus Knot
+				// const TorusKnotGeometryParams = {
+				// 	radius: 10,
+				// 	tube: 1.7,
+				// 	tubularSegments: 300,
+				// 	radialSegments: 20,
+				// 	p: 8,
+				// 	q: 13,
+				// }
+
+				// Flower A2 Torus Knot
+				// const TorusKnotGeometryParams = {
+				// 	radius: 13,
+				// 	tube: 1.1,
+				// 	tubularSegments: 99,
+				// 	radialSegments: 7,
+				// 	p: 13,
+				// 	q: 5,
+				// }
+
+				// Gear A1 Torus Knot
+				// const TorusKnotGeometryParams = {
+				// 	radius: 6.213,
+				// 	tube: 2.2,
+				// 	tubularSegments: 300,
+				// 	radialSegments: 4,
+				// 	p: 1,
+				// 	q: 20,
+				// }
+
+				// Rose-Polygon
+				// const TorusKnotGeometryParams = {
+				// 	radius: 2.717,
+				// 	tube: 10,
+				// 	tubularSegments: 77,
+				// 	radialSegments: 3,
+				// 	p: 12,
+				// 	q: 1,
+				// }
+
+				
+
+				function regenerateTorusKnot() {
+					let radius = TorusKnotGeometryParams.radius
+					let scaleRadius = radius * 0.1
+					let newGeometry = new THREE.TorusKnotGeometry(
+
+						TorusKnotGeometryParams.radius,
+						TorusKnotGeometryParams.tube,
+						TorusKnotGeometryParams.tubularSegments,
+						TorusKnotGeometryParams.radialSegments,	
+						TorusKnotGeometryParams.p,
+						TorusKnotGeometryParams.q,
+				
+					)
+					mesh_TorusKnotRealityA01.scale.x = scaleRadius
+					mesh_TorusKnotRealityA01.scale.y = scaleRadius
+					mesh_TorusKnotRealityA01.scale.z = scaleRadius
+				}
+
+
+				const geo_TorusKnotRealityA01 = new THREE.TorusKnotGeometry(
+					TorusKnotGeometryParams.radius,
+					TorusKnotGeometryParams.tube,
+					TorusKnotGeometryParams.tubularSegments,
+					TorusKnotGeometryParams.radialSegments,	
+					TorusKnotGeometryParams.p,
+					TorusKnotGeometryParams.q,
+				)
+
+				const mat_TorusKnotRealityA01 = new THREE.MeshBasicMaterial(
+					{
+						map: testImg06,
+						side: THREE.DoubleSide,
+					}
+				)
+
+				mesh_TorusKnotRealityA01 = new THREE.Mesh(
+					geo_TorusKnotRealityA01,
+					mat_TorusKnotRealityA01,
+				)
+
+				mat_TorusKnotRealityA01.transparent = false
+				mat_TorusKnotRealityA01.alphaMap = testImg06
+				mat_TorusKnotRealityA01.wireFrame = false
+
+				mesh_TorusKnotRealityA01.position.set(0, 0, 0)
+				exampleRealitiesMatrix.add(mesh_TorusKnotRealityA01)

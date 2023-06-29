@@ -1,0 +1,401 @@
+/* ############################################################# */
+/* ############################################################# */
+/* ############################################################# */
+/* ############################################################# */
+/* TechTile - ContainerReality */
+/* Copywrite */
+/* ############################################################# */
+/* ############################################################# */
+/* ############################################################# */
+/* ############################################################# */
+
+
+
+
+
+
+
+
+/* ############################################################# */
+/* ############################################################# */
+/* Object: TechTileContainerΔ */
+/* CSS Focus: Base Appearance */
+/* ############################################################# */
+/* ############################################################# */
+#TheBaseTile {
+    color: rgb(0, 255, 229);
+    overflow:visible;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    border: 1px outset rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.5);
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    /* z-index: -4; */
+    transform: rotate(20deg);
+ }
+ 
+ 
+ #TheBaseTileImg {
+    position: relative;
+    width: 25px;
+    height: 25px;
+    margin-left: 0px;
+    margin-top: 0px;
+    z-index: 5;
+    /* box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5); */
+ }
+ 
+ 
+ 
+ 
+ #TheBaseTileIconContainerId {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 1px;
+    padding: 1px;
+ }
+ 
+ #TheBaseTileIconContainerId > div {
+    background-color: rgba(255, 255, 255, 0.8);
+   text-align: center;
+   padding: 20px 0;
+   font-size: 30px;
+ }
+ 
+ 
+ 
+ 
+ #TheBaseTileIconContainerIconId {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    padding-top: 1px;
+    margin-left: -36px;
+    margin-top: -63.5px;
+    margin-bottom: 10px;
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px inset rgba(255, 255, 255, 0.9);
+    border-radius: 16px;
+    box-shadow: 1px 1px 1px 1px rgba(255, 255, 255, 0.5);
+    z-index: -5;
+    
+ }
+ 
+ 
+ 
+ /* ############################################################# */
+ /* When user hovers */
+ /* Container opens */
+ /* ############################################################# */
+ #TheBaseTileIconContainerIconId:hover {
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    padding-top: 1px;
+    margin-left: -236px;
+    margin-top: -75.5px;
+    margin-bottom: 10px;
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px inset rgba(255, 255, 255, 0.9);
+    border-radius: 16px;
+    box-shadow: 1px 1px 1px 1px rgba(255, 255, 255, 0.5);
+    transition: 1s;
+    z-index: 5;
+ }
+ 
+ /* ############################################################# */
+ /* |- # Previous Δ */
+ /* ############################################################# */
+ #ThePreviousΔContainerId {
+    position: fixed;
+    width: 25px;
+    height: 25px;
+    margin-left: -45.5px;
+    margin-top: -125.5px;
+    margin-bottom: 100.5px;
+    background:rgba(255, 255, 255, 0.5);
+    border: 1px inset rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    
+ }
+ 
+ #ThePreviousΔContainerId:hover {
+    position: relative;
+    width: 225px;
+    height: 125px;
+    margin-left: -233.5px;
+    margin-top: -225.5px;
+    /* margin-bottom: 75.5px; */
+    background:rgba(255, 255, 255, 0.5);
+    border: 1px outset rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    transition: 1s;
+    
+ }
+ 
+ #ThePreviousΔContainerId:hover #ThePreviousΔContainerIconId {
+    position: relative;
+    width: 25px;
+    height: 25px;
+    background:rgba(255, 255, 255, 0.5);
+    border: 1px outset rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    /* z-index: -1; */
+ }
+ 
+ #ThePreviousΔContainerIconId {
+    position: relative;
+    width: 25px;
+    height: 25px;
+    background:rgba(255, 255, 255, 0.5);
+    border: 1px outset rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    /* z-index: -1; */
+ }
+ 
+ 
+ #TheBaseTileIconContainerIconId:hover #ThePreviousΔContainerId:hover {
+    position: relative;
+    width: 325px;
+    height: 225px;
+    margin-left: -333.5px;
+    margin-top: -320.5px;
+    margin-bottom: 110.5px;
+    background:rgba(255, 255, 255, 0.5);
+    border: 1px outset rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    transition: 1s;
+ }
+ 
+ 
+ 
+ /* ############################################################# */
+ /* |- # Next Δ */
+ /* ############################################################# */
+ #TheNextΔContainerId {
+    position: fixed;
+    width: 25px;
+    height: 25px;
+    margin-left: 45.5px;
+    margin-top: -32.5px;
+    margin-right: -25px;
+    margin-bottom: -15.5px;
+    background:rgba(255, 255, 255, 0.5);
+    border: 1px inset rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    
+ }
+ 
+ 
+ #TheNextΔContainerIconId {
+    position: relative;
+    width: 25px;
+    height: 25px;
+    background:rgba(255, 255, 255, 0.9);
+    border: 1px outset rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    /* z-index: -1; */
+ }
+ 
+ #TheNextΔContainerId:hover {
+    position: relative;
+    width: 325px;
+    height: 225px;
+    margin-left: 40.5px;
+    margin-top: -50.5px;
+    margin-right: -25px;
+    margin-bottom: -15.5px;
+    background:rgba(255, 255, 255, 0.5);
+    border: 1px inset rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    transition: 1s;
+    
+ }
+ 
+ 
+ 
+ /* ############################################################# */
+ /* |- # Purpose Δ */
+ /* ############################################################# */
+ #ThePurposeΔContainerId {
+    position: fixed;
+    width: 25px;
+    height: 25px;
+    margin-left: 50.5px;
+    margin-top: -125.5px;
+    margin-right: -25px;
+    margin-bottom: -20.5px;
+    background:rgba(255, 255, 255, 0.5);
+    border: 1px inset rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    /* transition: 1s; */
+    
+ }
+ 
+ #ThePurposeΔContainerIconId {
+    position: relative;
+    width: 25px;
+    height: 25px;
+    background:rgba(255, 255, 255, 0.9);
+    border: 1px outset rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    /* z-index: -1; */
+    /* transition: 1s; */
+ }
+ 
+ 
+ #ThePurposeΔContainerId:hover {
+    position: sticky;
+    width: 100px;
+    height: 100px;
+    margin-top: -200px;
+    background:rgba(255, 255, 255, 0.5);
+    border: 1px outset rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    transition: 1s;
+    
+ }
+ 
+ 
+ #ThePurposeΔContainerId:hover #TheComplexityΔContainerId:hover {
+    position: fixed;
+    width: 25px;
+    height: 15px;
+    margin-left: -146.5px;
+    /* margin-top: -33px; */
+    margin-right: -25px;
+    margin-bottom: 205.5px;
+    /* background:rgba(0, 251, 255, 0.5); */
+    background:rgba(255, 102, 0, 0.5);
+    border: 1px inset rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    
+ }
+ 
+ 
+ 
+ 
+ 
+ /* ############################################################# */
+ /* |- # Complexity Δ */
+ /* ############################################################# */
+ #TheComplexityΔContainerId {
+    position: fixed;
+    width: 25px;
+    height: 25px;
+    margin-left: -46.5px;
+    margin-top: -33px;
+    margin-right: -25px;
+    margin-bottom: -15.5px;
+    background:rgba(0, 251, 255, 0.5);
+    border: 1px inset rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    
+ }
+ 
+ #TheComplexityΔContainerId:hover {
+    position: sticky;
+    width: 205px;
+    height: 205px;
+    margin-left: -150.5px;
+    margin-top: 0px;
+    margin-right: -25px;
+    margin-bottom: 0x;
+    background:rgba(0, 251, 255, 0.5);
+    border: 1px inset rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    transition: 1s;
+ }
+ 
+ #TheComplexityΔContainerIconId {
+    position: relative;
+    width: 25px;
+    height: 25px;
+    background:rgba(255, 255, 255, 0.5);
+    border: 1px inset rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+ }
+ 
+ 
+ 
+ /* ############################################################# */
+ /* |- # Notification Δ */
+ /* ############################################################# */
+ 
+ #TheNotificationΔContainerId {
+    position: fixed;
+    width: 25px;
+    height: 25px;
+    margin-left: -45.5px;
+    margin-top: -125.5px;
+    margin-bottom: 100.5px;
+    background:rgba(255, 255, 255, 0.5);
+    border: 1px inset rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+ }
+ 
+ #TheNotificationΔContainerIconId {
+    position: relative;
+    width: 25px;
+    height: 25px;
+    right: -45.5px;
+    top: -0.5px;
+    /* margin-bottom: 100.5px; */
+    background:rgba(255, 255, 255, 0.5);
+    border: 1px inset rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+ }
+ 
+ 
+ 
+ /* ############################################################# */
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ #TechBase01:hover #TechTileFx:hover #ImgA05 {
+ 
+    /* position: relative; */
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin-left: 3px;
+    margin-top: 310px;
+    margin-bottom: -300px;
+    /* border: 1px outset rgba(229, 28, 28, 0.9); */
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 3px 3px 3px rgba(255, 255, 255, 0.9);
+    transform: rotateZ(-0.75turn);
+    transition: 1s;
+    
+ }
+ 

@@ -1,0 +1,74 @@
+/* ############################################################# */
+/* ------------------------------------------------------------- */
+/* ############################################################# */
+/* |- # Left Hand UI - Defualt */
+/* ############################################################# */
+/* ------------------------------------------------------------- */
+/* ############################################################# */
+
+
+/* */
+/* ------------------------------------------------------------- */
+#LeftArmRootId {
+    position: default;
+    width: 500px;
+    height: 470px;
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px dotted rgba(0, 217, 255, 0.5);
+    transform: scale(0.05, 0.05) !important;
+}
+
+
+#LeftArmSkeletonAId {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    bottom: -10px;
+    transform: scale(1, 1)
+}
+
+
+#LeftArmSkeletonAImgId {
+    position: relative;
+    width: 60px;
+    height: 60px;
+}
+
+
+
+
+#LeftArmSkeletonBId {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    top: -60px;
+    right: -40px;
+    transform: scale(0.5, 0.5)
+}
+
+
+#LeftArmSkeletonBImgId {
+    position: relative;
+    width: 45px;
+    height: 45px;
+    
+}
+
+
+
+
+#LeftArmSkeletonCId {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    top: -60px;
+    right: -40px;
+    transform: scale(0.5, 0.5)
+}
+
+
+#LeftArmSkeletonCImgId {
+    position: relative;
+    width: 45px;
+    height: 45px;
+}

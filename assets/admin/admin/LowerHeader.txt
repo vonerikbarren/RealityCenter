@@ -1,0 +1,47 @@
+Next Steps:
+-> Group Objects together
+-> upload a svg img
+-> animate groups for rotating  circularly and squarly  (if that makes any sense.)
+-> Think about other reality shapes alsoo.
+
+UseFul Shortcuts:
+
+Highlight then forward `[` = creates brackets around the text.
+
+
+ΔH_01 = {
+ Goal: User Mode, and Demonstration Mode
+
+ Demonstration Mode = {
+   Assets: {
+     Free: {},
+     ForPurchase: {
+       SpiralOfTimeImage01: {
+         Link: "https://www.bigstockphoto.com/image-266945176/stock-photo-the-composition-of-the-space-of-time%2C-the-flight-in-space-in-a-spiral-of-roman-clocks-3d-illustratio",
+
+         Note: ["Budget the image prior to making purchase"],
+       }
+     },
+   }
+
+   resources: {
+     link01: {
+       HeaderData: {
+         TimeFound: @00:31
+         Date: <LocationInTime>{ 2/05/22 @ "HomeOffice" }<LocationInTime>
+       }
+       Header: "A website to download 3d models for free",
+       Link: 'https://sketchfab.com/3d-models/quantum-cube-02971982b92347d4b6ddbe1c0d6487c5',
+       note: ["Some pretty nice stuff there. "]
+     }
+   }
+
+   WhenUserPressesPlay = () => {
+     Realities will show from inner most to outer most.
+
+     PresentationProgram = () => {
+       // delayedTimer = camera location periodically throughout the song.
+     }
+   }
+ }
+}
