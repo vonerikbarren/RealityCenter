@@ -1,0 +1,277 @@
+@font-face {
+  font-family: "Flaticon";
+  src: url("./Flaticon.eot");
+  src: url("./Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("./Flaticon.woff2") format("woff2"),
+       url("./Flaticon.woff") format("woff"),
+       url("./Flaticon.ttf") format("truetype"),
+       url("./Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+.fimanager:before {
+    display: inline-block;
+  font-family: "Flaticon";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+.flaticon-001-cart:before { content: "\f100"; }
+.flaticon-002-tag:before { content: "\f101"; }
+.flaticon-003-boxes:before { content: "\f102"; }
+.flaticon-004-bra:before { content: "\f103"; }
+.flaticon-005-briefcase:before { content: "\f104"; }
+.flaticon-006-button:before { content: "\f105"; }
+.flaticon-007-buy:before { content: "\f106"; }
+.flaticon-008-buy:before { content: "\f107"; }
+.flaticon-009-buy:before { content: "\f108"; }
+.flaticon-010-buy:before { content: "\f109"; }
+.flaticon-011-card:before { content: "\f10a"; }
+.flaticon-012-cart:before { content: "\f10b"; }
+.flaticon-013-card:before { content: "\f10c"; }
+.flaticon-014-card:before { content: "\f10d"; }
+.flaticon-015-card:before { content: "\f10e"; }
+.flaticon-016-card:before { content: "\f10f"; }
+.flaticon-017-cart:before { content: "\f110"; }
+.flaticon-018-cart:before { content: "\f111"; }
+.flaticon-019-cart:before { content: "\f112"; }
+.flaticon-020-cart:before { content: "\f113"; }
+.flaticon-021-cart:before { content: "\f114"; }
+.flaticon-022-cart:before { content: "\f115"; }
+.flaticon-023-cart:before { content: "\f116"; }
+.flaticon-024-cart:before { content: "\f117"; }
+.flaticon-025-cart:before { content: "\f118"; }
+.flaticon-026-cart:before { content: "\f119"; }
+.flaticon-027-cart:before { content: "\f11a"; }
+.flaticon-028-cart:before { content: "\f11b"; }
+.flaticon-029-cart:before { content: "\f11c"; }
+.flaticon-030-cart:before { content: "\f11d"; }
+.flaticon-031-chat:before { content: "\f11e"; }
+.flaticon-032-chat:before { content: "\f11f"; }
+.flaticon-033-chat:before { content: "\f120"; }
+.flaticon-034-chat:before { content: "\f121"; }
+.flaticon-035-clothes:before { content: "\f122"; }
+.flaticon-036-clothes:before { content: "\f123"; }
+.flaticon-037-clothes:before { content: "\f124"; }
+.flaticon-038-clothes:before { content: "\f125"; }
+.flaticon-039-clothes:before { content: "\f126"; }
+.flaticon-040-clothes:before { content: "\f127"; }
+.flaticon-041-clothes:before { content: "\f128"; }
+.flaticon-042-clothes:before { content: "\f129"; }
+.flaticon-043-payment:before { content: "\f12a"; }
+.flaticon-044-currency:before { content: "\f12b"; }
+.flaticon-045-currency:before { content: "\f12c"; }
+.flaticon-046-voucher:before { content: "\f12d"; }
+.flaticon-047-box:before { content: "\f12e"; }
+.flaticon-048-delivery:before { content: "\f12f"; }
+.flaticon-049-delivery:before { content: "\f130"; }
+.flaticon-050-delivery:before { content: "\f131"; }
+.flaticon-051-dollar:before { content: "\f132"; }
+.flaticon-052-download:before { content: "\f133"; }
+.flaticon-053-dress:before { content: "\f134"; }
+.flaticon-054-dress:before { content: "\f135"; }
+.flaticon-055-ecommerce:before { content: "\f136"; }
+.flaticon-056-shopping-bags:before { content: "\f137"; }
+.flaticon-057-delivery:before { content: "\f138"; }
+.flaticon-058-checklist:before { content: "\f139"; }
+.flaticon-059-tax:before { content: "\f13a"; }
+.flaticon-060-free:before { content: "\f13b"; }
+.flaticon-061-cart:before { content: "\f13c"; }
+.flaticon-062-shopping-bag:before { content: "\f13d"; }
+.flaticon-063-cart:before { content: "\f13e"; }
+.flaticon-064-blouse:before { content: "\f13f"; }
+.flaticon-065-bill:before { content: "\f140"; }
+.flaticon-066-card:before { content: "\f141"; }
+.flaticon-067-coin:before { content: "\f142"; }
+.flaticon-068-jewelry:before { content: "\f143"; }
+.flaticon-069-basket:before { content: "\f144"; }
+.flaticon-070-hanger:before { content: "\f145"; }
+.flaticon-071-hanger:before { content: "\f146"; }
+.flaticon-072-coins:before { content: "\f147"; }
+.flaticon-073-info:before { content: "\f148"; }
+.flaticon-074-investigate:before { content: "\f149"; }
+.flaticon-075-invoice:before { content: "\f14a"; }
+.flaticon-076-invoice:before { content: "\f14b"; }
+.flaticon-077-ipad:before { content: "\f14c"; }
+.flaticon-078-tablet:before { content: "\f14d"; }
+.flaticon-079-laptop:before { content: "\f14e"; }
+.flaticon-080-cart:before { content: "\f14f"; }
+.flaticon-081-shopping-bag:before { content: "\f150"; }
+.flaticon-082-mobile:before { content: "\f151"; }
+.flaticon-083-shopping:before { content: "\f152"; }
+.flaticon-084-network:before { content: "\f153"; }
+.flaticon-085-new:before { content: "\f154"; }
+.flaticon-086-paper-bag:before { content: "\f155"; }
+.flaticon-087-payment:before { content: "\f156"; }
+.flaticon-088-basket:before { content: "\f157"; }
+.flaticon-089-qr:before { content: "\f158"; }
+.flaticon-090-question:before { content: "\f159"; }
+.flaticon-091-payment:before { content: "\f15a"; }
+.flaticon-092-cart:before { content: "\f15b"; }
+.flaticon-093-love:before { content: "\f15c"; }
+.flaticon-094-sales:before { content: "\f15d"; }
+.flaticon-095-web:before { content: "\f15e"; }
+.flaticon-096-sales:before { content: "\f15f"; }
+.flaticon-097-sales:before { content: "\f160"; }
+.flaticon-098-sales:before { content: "\f161"; }
+.flaticon-099-voucher:before { content: "\f162"; }
+.flaticon-100-bag:before { content: "\f163"; }
+.flaticon-101-security:before { content: "\f164"; }
+.flaticon-102-payment:before { content: "\f165"; }
+.flaticon-103-bar-code:before { content: "\f166"; }
+.flaticon-104-shirt:before { content: "\f167"; }
+.flaticon-105-shirt:before { content: "\f168"; }
+.flaticon-106-shirt:before { content: "\f169"; }
+.flaticon-107-shirt:before { content: "\f16a"; }
+.flaticon-108-basket:before { content: "\f16b"; }
+.flaticon-109-shop:before { content: "\f16c"; }
+.flaticon-110-list:before { content: "\f16d"; }
+.flaticon-111-checklist:before { content: "\f16e"; }
+.flaticon-112-shop:before { content: "\f16f"; }
+.flaticon-113-pants:before { content: "\f170"; }
+.flaticon-114-bag:before { content: "\f171"; }
+.flaticon-115-tags:before { content: "\f172"; }
+.flaticon-116-tag:before { content: "\f173"; }
+.flaticon-117-thumbs-up:before { content: "\f174"; }
+.flaticon-118-tie:before { content: "\f175"; }
+.flaticon-119-towels:before { content: "\f176"; }
+.flaticon-120-tshirt:before { content: "\f177"; }
+.flaticon-121-wallet:before { content: "\f178"; }
+
+$font-Flaticon-001-cart: "\f100";
+$font-Flaticon-002-tag: "\f101";
+$font-Flaticon-003-boxes: "\f102";
+$font-Flaticon-004-bra: "\f103";
+$font-Flaticon-005-briefcase: "\f104";
+$font-Flaticon-006-button: "\f105";
+$font-Flaticon-007-buy: "\f106";
+$font-Flaticon-008-buy: "\f107";
+$font-Flaticon-009-buy: "\f108";
+$font-Flaticon-010-buy: "\f109";
+$font-Flaticon-011-card: "\f10a";
+$font-Flaticon-012-cart: "\f10b";
+$font-Flaticon-013-card: "\f10c";
+$font-Flaticon-014-card: "\f10d";
+$font-Flaticon-015-card: "\f10e";
+$font-Flaticon-016-card: "\f10f";
+$font-Flaticon-017-cart: "\f110";
+$font-Flaticon-018-cart: "\f111";
+$font-Flaticon-019-cart: "\f112";
+$font-Flaticon-020-cart: "\f113";
+$font-Flaticon-021-cart: "\f114";
+$font-Flaticon-022-cart: "\f115";
+$font-Flaticon-023-cart: "\f116";
+$font-Flaticon-024-cart: "\f117";
+$font-Flaticon-025-cart: "\f118";
+$font-Flaticon-026-cart: "\f119";
+$font-Flaticon-027-cart: "\f11a";
+$font-Flaticon-028-cart: "\f11b";
+$font-Flaticon-029-cart: "\f11c";
+$font-Flaticon-030-cart: "\f11d";
+$font-Flaticon-031-chat: "\f11e";
+$font-Flaticon-032-chat: "\f11f";
+$font-Flaticon-033-chat: "\f120";
+$font-Flaticon-034-chat: "\f121";
+$font-Flaticon-035-clothes: "\f122";
+$font-Flaticon-036-clothes: "\f123";
+$font-Flaticon-037-clothes: "\f124";
+$font-Flaticon-038-clothes: "\f125";
+$font-Flaticon-039-clothes: "\f126";
+$font-Flaticon-040-clothes: "\f127";
+$font-Flaticon-041-clothes: "\f128";
+$font-Flaticon-042-clothes: "\f129";
+$font-Flaticon-043-payment: "\f12a";
+$font-Flaticon-044-currency: "\f12b";
+$font-Flaticon-045-currency: "\f12c";
+$font-Flaticon-046-voucher: "\f12d";
+$font-Flaticon-047-box: "\f12e";
+$font-Flaticon-048-delivery: "\f12f";
+$font-Flaticon-049-delivery: "\f130";
+$font-Flaticon-050-delivery: "\f131";
+$font-Flaticon-051-dollar: "\f132";
+$font-Flaticon-052-download: "\f133";
+$font-Flaticon-053-dress: "\f134";
+$font-Flaticon-054-dress: "\f135";
+$font-Flaticon-055-ecommerce: "\f136";
+$font-Flaticon-056-shopping-bags: "\f137";
+$font-Flaticon-057-delivery: "\f138";
+$font-Flaticon-058-checklist: "\f139";
+$font-Flaticon-059-tax: "\f13a";
+$font-Flaticon-060-free: "\f13b";
+$font-Flaticon-061-cart: "\f13c";
+$font-Flaticon-062-shopping-bag: "\f13d";
+$font-Flaticon-063-cart: "\f13e";
+$font-Flaticon-064-blouse: "\f13f";
+$font-Flaticon-065-bill: "\f140";
+$font-Flaticon-066-card: "\f141";
+$font-Flaticon-067-coin: "\f142";
+$font-Flaticon-068-jewelry: "\f143";
+$font-Flaticon-069-basket: "\f144";
+$font-Flaticon-070-hanger: "\f145";
+$font-Flaticon-071-hanger: "\f146";
+$font-Flaticon-072-coins: "\f147";
+$font-Flaticon-073-info: "\f148";
+$font-Flaticon-074-investigate: "\f149";
+$font-Flaticon-075-invoice: "\f14a";
+$font-Flaticon-076-invoice: "\f14b";
+$font-Flaticon-077-ipad: "\f14c";
+$font-Flaticon-078-tablet: "\f14d";
+$font-Flaticon-079-laptop: "\f14e";
+$font-Flaticon-080-cart: "\f14f";
+$font-Flaticon-081-shopping-bag: "\f150";
+$font-Flaticon-082-mobile: "\f151";
+$font-Flaticon-083-shopping: "\f152";
+$font-Flaticon-084-network: "\f153";
+$font-Flaticon-085-new: "\f154";
+$font-Flaticon-086-paper-bag: "\f155";
+$font-Flaticon-087-payment: "\f156";
+$font-Flaticon-088-basket: "\f157";
+$font-Flaticon-089-qr: "\f158";
+$font-Flaticon-090-question: "\f159";
+$font-Flaticon-091-payment: "\f15a";
+$font-Flaticon-092-cart: "\f15b";
+$font-Flaticon-093-love: "\f15c";
+$font-Flaticon-094-sales: "\f15d";
+$font-Flaticon-095-web: "\f15e";
+$font-Flaticon-096-sales: "\f15f";
+$font-Flaticon-097-sales: "\f160";
+$font-Flaticon-098-sales: "\f161";
+$font-Flaticon-099-voucher: "\f162";
+$font-Flaticon-100-bag: "\f163";
+$font-Flaticon-101-security: "\f164";
+$font-Flaticon-102-payment: "\f165";
+$font-Flaticon-103-bar-code: "\f166";
+$font-Flaticon-104-shirt: "\f167";
+$font-Flaticon-105-shirt: "\f168";
+$font-Flaticon-106-shirt: "\f169";
+$font-Flaticon-107-shirt: "\f16a";
+$font-Flaticon-108-basket: "\f16b";
+$font-Flaticon-109-shop: "\f16c";
+$font-Flaticon-110-list: "\f16d";
+$font-Flaticon-111-checklist: "\f16e";
+$font-Flaticon-112-shop: "\f16f";
+$font-Flaticon-113-pants: "\f170";
+$font-Flaticon-114-bag: "\f171";
+$font-Flaticon-115-tags: "\f172";
+$font-Flaticon-116-tag: "\f173";
+$font-Flaticon-117-thumbs-up: "\f174";
+$font-Flaticon-118-tie: "\f175";
+$font-Flaticon-119-towels: "\f176";
+$font-Flaticon-120-tshirt: "\f177";
+$font-Flaticon-121-wallet: "\f178";

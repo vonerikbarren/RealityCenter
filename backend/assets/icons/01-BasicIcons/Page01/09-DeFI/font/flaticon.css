@@ -1,0 +1,65 @@
+@font-face {
+  font-family: "Flaticon";
+  src: url("./Flaticon.eot");
+  src: url("./Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("./Flaticon.woff2") format("woff2"),
+       url("./Flaticon.woff") format("woff"),
+       url("./Flaticon.ttf") format("truetype"),
+       url("./Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+.fimanager:before {
+      display: inline-block;
+  font-family: "Flaticon";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+    display: block;
+}
+
+.flaticon-001-balance:before { content: "\f100"; }
+.flaticon-002-blockchain:before { content: "\f101"; }
+.flaticon-003-book:before { content: "\f102"; }
+.flaticon-004-certificate:before { content: "\f103"; }
+.flaticon-005-compound:before { content: "\f104"; }
+.flaticon-006-network:before { content: "\f105"; }
+.flaticon-007-bank:before { content: "\f106"; }
+.flaticon-008-world:before { content: "\f107"; }
+.flaticon-009-payment:before { content: "\f108"; }
+.flaticon-010-wallet:before { content: "\f109"; }
+.flaticon-011-exchange:before { content: "\f10a"; }
+.flaticon-012-farmer:before { content: "\f10b"; }
+.flaticon-013-down:before { content: "\f10c"; }
+.flaticon-014-up:before { content: "\f10d"; }
+.flaticon-015-gas:before { content: "\f10e"; }
+.flaticon-016-ico:before { content: "\f10f"; }
+.flaticon-017-launch:before { content: "\f110"; }
+.flaticon-018-liquidation:before { content: "\f111"; }
+.flaticon-019-up:before { content: "\f112"; }
+.flaticon-020-metadata:before { content: "\f113"; }
+.flaticon-021-secure:before { content: "\f114"; }
+.flaticon-022-sharing:before { content: "\f115"; }
+.flaticon-023-down:before { content: "\f116"; }
+.flaticon-024-smart-contracts:before { content: "\f117"; }
+.flaticon-025-track:before { content: "\f118"; }
+.flaticon-026-transparency:before { content: "\f119"; }
+.flaticon-027-centralized:before { content: "\f11a"; }
+.flaticon-028-user:before { content: "\f11b"; }
+.flaticon-029-user:before { content: "\f11c"; }
+.flaticon-030-verified:before { content: "\f11d"; }

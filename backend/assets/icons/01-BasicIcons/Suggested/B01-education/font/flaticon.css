@@ -1,0 +1,164 @@
+	/*
+  	Flaticon icon font: Flaticon
+  	Creation date: 15/01/2018 08:34
+  	*/
+
+@font-face {
+  font-family: "Flaticon";
+  src: url("./Flaticon.eot");
+  src: url("./Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("./Flaticon.woff") format("woff"),
+       url("./Flaticon.ttf") format("truetype"),
+       url("./Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+  font-family: Flaticon;
+        font-size: 20px;
+font-style: normal;
+margin-left: 20px;
+}
+
+.flaticon-001-pencil-case:before { content: "\f100"; }
+.flaticon-002-pen-2:before { content: "\f101"; }
+.flaticon-003-open-book-8:before { content: "\f102"; }
+.flaticon-004-open-book-7:before { content: "\f103"; }
+.flaticon-005-magic-wand-1:before { content: "\f104"; }
+.flaticon-006-magic-wand:before { content: "\f105"; }
+.flaticon-007-backpack-1:before { content: "\f106"; }
+.flaticon-008-backpack:before { content: "\f107"; }
+.flaticon-009-set-square:before { content: "\f108"; }
+.flaticon-010-blackboard-2:before { content: "\f109"; }
+.flaticon-011-teacher-8:before { content: "\f10a"; }
+.flaticon-012-teacher-7:before { content: "\f10b"; }
+.flaticon-013-open-book-6:before { content: "\f10c"; }
+.flaticon-014-bookmark-5:before { content: "\f10d"; }
+.flaticon-015-bookmark-4:before { content: "\f10e"; }
+.flaticon-016-bookmark-3:before { content: "\f10f"; }
+.flaticon-017-bookmark-2:before { content: "\f110"; }
+.flaticon-018-bookmark-1:before { content: "\f111"; }
+.flaticon-019-bookmark:before { content: "\f112"; }
+.flaticon-020-student-3:before { content: "\f113"; }
+.flaticon-021-blackboard-1:before { content: "\f114"; }
+.flaticon-022-students:before { content: "\f115"; }
+.flaticon-023-student-2:before { content: "\f116"; }
+.flaticon-024-student-1:before { content: "\f117"; }
+.flaticon-025-telescope:before { content: "\f118"; }
+.flaticon-026-abc:before { content: "\f119"; }
+.flaticon-027-sharpener:before { content: "\f11a"; }
+.flaticon-028-science:before { content: "\f11b"; }
+.flaticon-029-school-bus-1:before { content: "\f11c"; }
+.flaticon-030-school:before { content: "\f11d"; }
+.flaticon-031-ruler-2:before { content: "\f11e"; }
+.flaticon-032-ruler-1:before { content: "\f11f"; }
+.flaticon-033-protractor-1:before { content: "\f120"; }
+.flaticon-034-protractor:before { content: "\f121"; }
+.flaticon-035-bell-1:before { content: "\f122"; }
+.flaticon-036-student:before { content: "\f123"; }
+.flaticon-037-puzzle:before { content: "\f124"; }
+.flaticon-038-teacher-6:before { content: "\f125"; }
+.flaticon-039-medal-1:before { content: "\f126"; }
+.flaticon-040-poster:before { content: "\f127"; }
+.flaticon-041-pencil-1:before { content: "\f128"; }
+.flaticon-042-pen-1:before { content: "\f129"; }
+.flaticon-043-pencil:before { content: "\f12a"; }
+.flaticon-044-pencils-1:before { content: "\f12b"; }
+.flaticon-045-school-material:before { content: "\f12c"; }
+.flaticon-046-pen:before { content: "\f12d"; }
+.flaticon-047-ribbon:before { content: "\f12e"; }
+.flaticon-048-owl:before { content: "\f12f"; }
+.flaticon-049-open-book-5:before { content: "\f130"; }
+.flaticon-050-open-book-4:before { content: "\f131"; }
+.flaticon-051-open-book-3:before { content: "\f132"; }
+.flaticon-052-desk-lamp:before { content: "\f133"; }
+.flaticon-053-teacher-5:before { content: "\f134"; }
+.flaticon-054-notebook-2:before { content: "\f135"; }
+.flaticon-055-notebook-1:before { content: "\f136"; }
+.flaticon-056-notebook:before { content: "\f137"; }
+.flaticon-057-teacher-4:before { content: "\f138"; }
+.flaticon-058-microscope:before { content: "\f139"; }
+.flaticon-059-medicine-book:before { content: "\f13a"; }
+.flaticon-060-medal:before { content: "\f13b"; }
+.flaticon-061-maths-3:before { content: "\f13c"; }
+.flaticon-062-abacus-1:before { content: "\f13d"; }
+.flaticon-063-maths-2:before { content: "\f13e"; }
+.flaticon-064-maths-1:before { content: "\f13f"; }
+.flaticon-065-blackboard:before { content: "\f140"; }
+.flaticon-066-highlighter:before { content: "\f141"; }
+.flaticon-067-book-4:before { content: "\f142"; }
+.flaticon-068-teacher-3:before { content: "\f143"; }
+.flaticon-069-light-bulb:before { content: "\f144"; }
+.flaticon-070-bookshelf:before { content: "\f145"; }
+.flaticon-071-teacher-2:before { content: "\f146"; }
+.flaticon-072-reading:before { content: "\f147"; }
+.flaticon-073-books-5:before { content: "\f148"; }
+.flaticon-074-teacher-1:before { content: "\f149"; }
+.flaticon-075-abacus:before { content: "\f14a"; }
+.flaticon-076-quran:before { content: "\f14b"; }
+.flaticon-077-mortarboard-10:before { content: "\f14c"; }
+.flaticon-078-mortarboard-9:before { content: "\f14d"; }
+.flaticon-079-mortarboard-8:before { content: "\f14e"; }
+.flaticon-080-mortarboard-7:before { content: "\f14f"; }
+.flaticon-081-mortarboard-6:before { content: "\f150"; }
+.flaticon-082-mortarboard-5:before { content: "\f151"; }
+.flaticon-083-mortarboard-4:before { content: "\f152"; }
+.flaticon-084-mortarboard-3:before { content: "\f153"; }
+.flaticon-085-mortarboard-2:before { content: "\f154"; }
+.flaticon-086-mortarboard-1:before { content: "\f155"; }
+.flaticon-087-open-book-2:before { content: "\f156"; }
+.flaticon-088-diploma-2:before { content: "\f157"; }
+.flaticon-089-mortarboard:before { content: "\f158"; }
+.flaticon-090-exam:before { content: "\f159"; }
+.flaticon-091-eyeglasses-1:before { content: "\f15a"; }
+.flaticon-092-eyeglasses:before { content: "\f15b"; }
+.flaticon-093-eraser-1:before { content: "\f15c"; }
+.flaticon-094-eraser:before { content: "\f15d"; }
+.flaticon-095-maths:before { content: "\f15e"; }
+.flaticon-096-economy:before { content: "\f15f"; }
+.flaticon-097-presentation:before { content: "\f160"; }
+.flaticon-098-earth-globe-1:before { content: "\f161"; }
+.flaticon-099-earth-globe:before { content: "\f162"; }
+.flaticon-100-teacher:before { content: "\f163"; }
+.flaticon-101-archives:before { content: "\f164"; }
+.flaticon-102-diploma-1:before { content: "\f165"; }
+.flaticon-103-diploma:before { content: "\f166"; }
+.flaticon-104-pencils:before { content: "\f167"; }
+.flaticon-105-ruler:before { content: "\f168"; }
+.flaticon-106-compass:before { content: "\f169"; }
+.flaticon-107-book-3:before { content: "\f16a"; }
+.flaticon-108-bible:before { content: "\f16b"; }
+.flaticon-109-chemistry:before { content: "\f16c"; }
+.flaticon-110-chat:before { content: "\f16d"; }
+.flaticon-111-calendar:before { content: "\f16e"; }
+.flaticon-112-calculator-1:before { content: "\f16f"; }
+.flaticon-113-calculator:before { content: "\f170"; }
+.flaticon-114-briefcase:before { content: "\f171"; }
+.flaticon-115-school-bus:before { content: "\f172"; }
+.flaticon-116-paint-brush:before { content: "\f173"; }
+.flaticon-117-brain-2:before { content: "\f174"; }
+.flaticon-118-brain-1:before { content: "\f175"; }
+.flaticon-119-brain:before { content: "\f176"; }
+.flaticon-120-books-4:before { content: "\f177"; }
+.flaticon-121-books-3:before { content: "\f178"; }
+.flaticon-122-books-2:before { content: "\f179"; }
+.flaticon-123-books-1:before { content: "\f17a"; }
+.flaticon-124-books:before { content: "\f17b"; }
+.flaticon-125-open-book-1:before { content: "\f17c"; }
+.flaticon-126-book-2:before { content: "\f17d"; }
+.flaticon-127-book-1:before { content: "\f17e"; }
+.flaticon-128-book:before { content: "\f17f"; }
+.flaticon-129-bell:before { content: "\f180"; }
+.flaticon-130-balance:before { content: "\f181"; }
+.flaticon-131-back-to-school:before { content: "\f182"; }
+.flaticon-132-open-book:before { content: "\f183"; }
+.flaticon-133-anatomy:before { content: "\f184"; }

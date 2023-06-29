@@ -1,0 +1,122 @@
+{
+ "editor.fontSize": 16,
+ "editor.tabSize": 1,
+ "editor.wordWrap": "on",
+ "editor.fontFamily": "Fira Code iScript",
+ "editor.fontLigatures": true,
+ "liveServer.settings.donotShowInfoMsg": false,
+ "liveServer.settings.donotVerifyTags": true,
+ "javascript.validate.enable": false,
+ "breadcrumbs.enabled": true,
+ "editor.formatOnSave": true,
+ "synthwave84.brightness": 1,
+ "synthwave84.disableGlow": true,
+ // "workbench.colorCustomizations": {
+ //     "titleBar.activeBackground": "#150018",
+ //     "titleBar.activeForeground": "#e9acf2",
+ //     "editorLineNumber.foreground": "#e9acf2",
+ //     "editorLineNumber.activeForeground": "#763b79",
+ //     "editorCursor.background": "#e9acf2",
+ //     "editorCursor.foreground": "#763b79",
+ //     "editor.selectionForeground": "#763b79",
+ //     "editor.selectionBackground": "#d9b2df",
+ //     "editor.inactiveSelectionBackground": "#763b79",
+ //     "editor.selectionHighlightBackground": "#763b79",
+ //     "activityBar.background": "#150018",
+ //     "activityBar.foreground": "#e9acf2",
+ //     "menubar.selectionBackground": "#150018",
+ //     "menubar.selectionForeground": "#e9acf2",
+ //     "panel.background": "#19011d",
+ //     "list.inactiveSelectionBackground": "#430343",
+ //     "sideBar.background": "#19011d",
+ //     "sideBar.foreground": "#e9acf2",
+ //     "editor.background": "#150018",
+ //     "editor.foreground": "#e9acf2",
+ //     "sideBarSectionHeader.background": "#430343",
+ //     "sideBarSectionHeader.foreground": "#e9acf2",
+ //     "badge.background": "#430343",
+ //     "statusBar.background": "#19011d",
+ //     "statusBar.foreground": "#e9acf2",
+ //     "activityBar.border": "#430343",
+ //     "tab.inactiveBackground": "#19011d",
+ //     "tab.inactiveForeground": "#e9acf2",
+ //     "tab.activeBackground": "#430343",
+ //     "tab.activeForeground": "#e9acf2",
+ //     "editorGroup.emptyBackground": "#150018",
+ //     "editorGroupHeader.noTabsBackground": "#150018",
+ //     "editorGroupHeader.tabsBackground": "#2e0034",
+ // },
+ "editor.tokenColorCustomizations": {
+     "comments": "#eb50de",
+     "textMateRules": [
+         {
+             "scope": "comment",
+             "settings": {
+                 "fontStyle": "italic underline",
+                 "foreground": "#eb50de",
+             }
+         },
+         {
+             "scope": "comment.block",
+             "settings": {
+                 "fontStyle": "italic underline",
+                 "foreground": "#eb50de",
+             }
+         },
+         {
+             "scope": "string.quoted.double",
+             "settings": {
+                 "fontStyle": "",
+                 "foreground": "#00ff33"
+             }
+         }
+     ]
+ },
+ "liveSassCompile.settings.formats": [
+     // This is Default.
+     {
+         "format": "expanded",
+         "extensionName": ".css",
+         "savePath": null,
+     },
+     // You can add more
+     {
+         "format": "compressed",
+         "extensionName": ".min.css",
+         "savePath": "/dist/css",
+     },
+     // More Complex
+     {
+         "format": "compressed",
+         "extensionName": ".css",
+         "savePath": "~/../css/"
+     }
+ ],
+ "workbench.iconTheme": "material-icon-theme",
+ "workbench.colorTheme": "One Dark Pro Vivid (Italic)",
+ "workbench.settings.editor": "json",
+ "editor.suggestSelection": "first",
+ "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+ "workbench.editorAssociations": {
+     "*.ipynb": "jupyter.notebook.ipynb"
+ },
+ "jupyter.alwaysTrustNotebooks": true,
+ "python.languageServer": "None",
+ "editor.accessibilitySupport": "off",
+ "mssql.connections": [
+     {
+         "server": "{{put-server-name-here}}",
+         "database": "{{put-database-name-here}}",
+         "user": "{{put-username-here}}",
+         "password": ""
+     }
+ ],
+ "terminal.integrated.tabs.enabled": false,
+ "tabnine.experimentalAutoImports": true,
+ "workbench.statusBar.visible": false,
+ "javascript.updateImportsOnFileMove.enabled": "always",
+ "notebook.lineNumbers": "on",
+ "bracket-pair-colorizer-2.depreciation-notice": false,
+ "editor.unicodeHighlight.ambiguousCharacters": false,
+ "window.zoomLevel": -1,
+}

@@ -1,0 +1,95 @@
+@font-face {
+  font-family: "Flaticon";
+  src: url("./Flaticon.eot");
+  src: url("./Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("./Flaticon.woff2") format("woff2"),
+       url("./Flaticon.woff") format("woff"),
+       url("./Flaticon.ttf") format("truetype"),
+       url("./Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+.fimanager:before {
+    display: inline-block;
+  font-family: "Flaticon";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+.flaticon-001-cat:before { content: "\f100"; }
+.flaticon-002-cat:before { content: "\f101"; }
+.flaticon-003-cat:before { content: "\f102"; }
+.flaticon-004-cat:before { content: "\f103"; }
+.flaticon-005-cat:before { content: "\f104"; }
+.flaticon-006-cat:before { content: "\f105"; }
+.flaticon-007-cat:before { content: "\f106"; }
+.flaticon-008-cat:before { content: "\f107"; }
+.flaticon-009-cat:before { content: "\f108"; }
+.flaticon-010-cat:before { content: "\f109"; }
+.flaticon-011-cat:before { content: "\f10a"; }
+.flaticon-012-cat:before { content: "\f10b"; }
+.flaticon-013-cat:before { content: "\f10c"; }
+.flaticon-014-cat:before { content: "\f10d"; }
+.flaticon-015-cat:before { content: "\f10e"; }
+.flaticon-016-cat:before { content: "\f10f"; }
+.flaticon-017-cat:before { content: "\f110"; }
+.flaticon-018-cat:before { content: "\f111"; }
+.flaticon-019-cat:before { content: "\f112"; }
+.flaticon-020-cat:before { content: "\f113"; }
+.flaticon-021-cat:before { content: "\f114"; }
+.flaticon-022-cat:before { content: "\f115"; }
+.flaticon-023-cat:before { content: "\f116"; }
+.flaticon-024-cat:before { content: "\f117"; }
+.flaticon-025-cat:before { content: "\f118"; }
+.flaticon-026-cat:before { content: "\f119"; }
+.flaticon-027-cat:before { content: "\f11a"; }
+.flaticon-028-cat:before { content: "\f11b"; }
+.flaticon-029-cat:before { content: "\f11c"; }
+.flaticon-030-cat:before { content: "\f11d"; }
+
+$font-Flaticon-001-cat: "\f100";
+$font-Flaticon-002-cat: "\f101";
+$font-Flaticon-003-cat: "\f102";
+$font-Flaticon-004-cat: "\f103";
+$font-Flaticon-005-cat: "\f104";
+$font-Flaticon-006-cat: "\f105";
+$font-Flaticon-007-cat: "\f106";
+$font-Flaticon-008-cat: "\f107";
+$font-Flaticon-009-cat: "\f108";
+$font-Flaticon-010-cat: "\f109";
+$font-Flaticon-011-cat: "\f10a";
+$font-Flaticon-012-cat: "\f10b";
+$font-Flaticon-013-cat: "\f10c";
+$font-Flaticon-014-cat: "\f10d";
+$font-Flaticon-015-cat: "\f10e";
+$font-Flaticon-016-cat: "\f10f";
+$font-Flaticon-017-cat: "\f110";
+$font-Flaticon-018-cat: "\f111";
+$font-Flaticon-019-cat: "\f112";
+$font-Flaticon-020-cat: "\f113";
+$font-Flaticon-021-cat: "\f114";
+$font-Flaticon-022-cat: "\f115";
+$font-Flaticon-023-cat: "\f116";
+$font-Flaticon-024-cat: "\f117";
+$font-Flaticon-025-cat: "\f118";
+$font-Flaticon-026-cat: "\f119";
+$font-Flaticon-027-cat: "\f11a";
+$font-Flaticon-028-cat: "\f11b";
+$font-Flaticon-029-cat: "\f11c";
+$font-Flaticon-030-cat: "\f11d";

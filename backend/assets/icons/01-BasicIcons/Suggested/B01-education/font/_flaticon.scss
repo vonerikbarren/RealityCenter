@@ -1,0 +1,305 @@
+    /*
+    Flaticon icon font: Flaticon
+    Creation date: 15/01/2018 08:34
+    */
+
+    @font-face {
+  font-family: "Flaticon";
+  src: url("./Flaticon.eot");
+  src: url("./Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("./Flaticon.woff") format("woff"),
+       url("./Flaticon.ttf") format("truetype"),
+       url("./Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+    .fi:before{
+        display: inline-block;
+  font-family: "Flaticon";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+    }
+
+    .flaticon-001-pencil-case:before { content: "\f100"; }
+.flaticon-002-pen-2:before { content: "\f101"; }
+.flaticon-003-open-book-8:before { content: "\f102"; }
+.flaticon-004-open-book-7:before { content: "\f103"; }
+.flaticon-005-magic-wand-1:before { content: "\f104"; }
+.flaticon-006-magic-wand:before { content: "\f105"; }
+.flaticon-007-backpack-1:before { content: "\f106"; }
+.flaticon-008-backpack:before { content: "\f107"; }
+.flaticon-009-set-square:before { content: "\f108"; }
+.flaticon-010-blackboard-2:before { content: "\f109"; }
+.flaticon-011-teacher-8:before { content: "\f10a"; }
+.flaticon-012-teacher-7:before { content: "\f10b"; }
+.flaticon-013-open-book-6:before { content: "\f10c"; }
+.flaticon-014-bookmark-5:before { content: "\f10d"; }
+.flaticon-015-bookmark-4:before { content: "\f10e"; }
+.flaticon-016-bookmark-3:before { content: "\f10f"; }
+.flaticon-017-bookmark-2:before { content: "\f110"; }
+.flaticon-018-bookmark-1:before { content: "\f111"; }
+.flaticon-019-bookmark:before { content: "\f112"; }
+.flaticon-020-student-3:before { content: "\f113"; }
+.flaticon-021-blackboard-1:before { content: "\f114"; }
+.flaticon-022-students:before { content: "\f115"; }
+.flaticon-023-student-2:before { content: "\f116"; }
+.flaticon-024-student-1:before { content: "\f117"; }
+.flaticon-025-telescope:before { content: "\f118"; }
+.flaticon-026-abc:before { content: "\f119"; }
+.flaticon-027-sharpener:before { content: "\f11a"; }
+.flaticon-028-science:before { content: "\f11b"; }
+.flaticon-029-school-bus-1:before { content: "\f11c"; }
+.flaticon-030-school:before { content: "\f11d"; }
+.flaticon-031-ruler-2:before { content: "\f11e"; }
+.flaticon-032-ruler-1:before { content: "\f11f"; }
+.flaticon-033-protractor-1:before { content: "\f120"; }
+.flaticon-034-protractor:before { content: "\f121"; }
+.flaticon-035-bell-1:before { content: "\f122"; }
+.flaticon-036-student:before { content: "\f123"; }
+.flaticon-037-puzzle:before { content: "\f124"; }
+.flaticon-038-teacher-6:before { content: "\f125"; }
+.flaticon-039-medal-1:before { content: "\f126"; }
+.flaticon-040-poster:before { content: "\f127"; }
+.flaticon-041-pencil-1:before { content: "\f128"; }
+.flaticon-042-pen-1:before { content: "\f129"; }
+.flaticon-043-pencil:before { content: "\f12a"; }
+.flaticon-044-pencils-1:before { content: "\f12b"; }
+.flaticon-045-school-material:before { content: "\f12c"; }
+.flaticon-046-pen:before { content: "\f12d"; }
+.flaticon-047-ribbon:before { content: "\f12e"; }
+.flaticon-048-owl:before { content: "\f12f"; }
+.flaticon-049-open-book-5:before { content: "\f130"; }
+.flaticon-050-open-book-4:before { content: "\f131"; }
+.flaticon-051-open-book-3:before { content: "\f132"; }
+.flaticon-052-desk-lamp:before { content: "\f133"; }
+.flaticon-053-teacher-5:before { content: "\f134"; }
+.flaticon-054-notebook-2:before { content: "\f135"; }
+.flaticon-055-notebook-1:before { content: "\f136"; }
+.flaticon-056-notebook:before { content: "\f137"; }
+.flaticon-057-teacher-4:before { content: "\f138"; }
+.flaticon-058-microscope:before { content: "\f139"; }
+.flaticon-059-medicine-book:before { content: "\f13a"; }
+.flaticon-060-medal:before { content: "\f13b"; }
+.flaticon-061-maths-3:before { content: "\f13c"; }
+.flaticon-062-abacus-1:before { content: "\f13d"; }
+.flaticon-063-maths-2:before { content: "\f13e"; }
+.flaticon-064-maths-1:before { content: "\f13f"; }
+.flaticon-065-blackboard:before { content: "\f140"; }
+.flaticon-066-highlighter:before { content: "\f141"; }
+.flaticon-067-book-4:before { content: "\f142"; }
+.flaticon-068-teacher-3:before { content: "\f143"; }
+.flaticon-069-light-bulb:before { content: "\f144"; }
+.flaticon-070-bookshelf:before { content: "\f145"; }
+.flaticon-071-teacher-2:before { content: "\f146"; }
+.flaticon-072-reading:before { content: "\f147"; }
+.flaticon-073-books-5:before { content: "\f148"; }
+.flaticon-074-teacher-1:before { content: "\f149"; }
+.flaticon-075-abacus:before { content: "\f14a"; }
+.flaticon-076-quran:before { content: "\f14b"; }
+.flaticon-077-mortarboard-10:before { content: "\f14c"; }
+.flaticon-078-mortarboard-9:before { content: "\f14d"; }
+.flaticon-079-mortarboard-8:before { content: "\f14e"; }
+.flaticon-080-mortarboard-7:before { content: "\f14f"; }
+.flaticon-081-mortarboard-6:before { content: "\f150"; }
+.flaticon-082-mortarboard-5:before { content: "\f151"; }
+.flaticon-083-mortarboard-4:before { content: "\f152"; }
+.flaticon-084-mortarboard-3:before { content: "\f153"; }
+.flaticon-085-mortarboard-2:before { content: "\f154"; }
+.flaticon-086-mortarboard-1:before { content: "\f155"; }
+.flaticon-087-open-book-2:before { content: "\f156"; }
+.flaticon-088-diploma-2:before { content: "\f157"; }
+.flaticon-089-mortarboard:before { content: "\f158"; }
+.flaticon-090-exam:before { content: "\f159"; }
+.flaticon-091-eyeglasses-1:before { content: "\f15a"; }
+.flaticon-092-eyeglasses:before { content: "\f15b"; }
+.flaticon-093-eraser-1:before { content: "\f15c"; }
+.flaticon-094-eraser:before { content: "\f15d"; }
+.flaticon-095-maths:before { content: "\f15e"; }
+.flaticon-096-economy:before { content: "\f15f"; }
+.flaticon-097-presentation:before { content: "\f160"; }
+.flaticon-098-earth-globe-1:before { content: "\f161"; }
+.flaticon-099-earth-globe:before { content: "\f162"; }
+.flaticon-100-teacher:before { content: "\f163"; }
+.flaticon-101-archives:before { content: "\f164"; }
+.flaticon-102-diploma-1:before { content: "\f165"; }
+.flaticon-103-diploma:before { content: "\f166"; }
+.flaticon-104-pencils:before { content: "\f167"; }
+.flaticon-105-ruler:before { content: "\f168"; }
+.flaticon-106-compass:before { content: "\f169"; }
+.flaticon-107-book-3:before { content: "\f16a"; }
+.flaticon-108-bible:before { content: "\f16b"; }
+.flaticon-109-chemistry:before { content: "\f16c"; }
+.flaticon-110-chat:before { content: "\f16d"; }
+.flaticon-111-calendar:before { content: "\f16e"; }
+.flaticon-112-calculator-1:before { content: "\f16f"; }
+.flaticon-113-calculator:before { content: "\f170"; }
+.flaticon-114-briefcase:before { content: "\f171"; }
+.flaticon-115-school-bus:before { content: "\f172"; }
+.flaticon-116-paint-brush:before { content: "\f173"; }
+.flaticon-117-brain-2:before { content: "\f174"; }
+.flaticon-118-brain-1:before { content: "\f175"; }
+.flaticon-119-brain:before { content: "\f176"; }
+.flaticon-120-books-4:before { content: "\f177"; }
+.flaticon-121-books-3:before { content: "\f178"; }
+.flaticon-122-books-2:before { content: "\f179"; }
+.flaticon-123-books-1:before { content: "\f17a"; }
+.flaticon-124-books:before { content: "\f17b"; }
+.flaticon-125-open-book-1:before { content: "\f17c"; }
+.flaticon-126-book-2:before { content: "\f17d"; }
+.flaticon-127-book-1:before { content: "\f17e"; }
+.flaticon-128-book:before { content: "\f17f"; }
+.flaticon-129-bell:before { content: "\f180"; }
+.flaticon-130-balance:before { content: "\f181"; }
+.flaticon-131-back-to-school:before { content: "\f182"; }
+.flaticon-132-open-book:before { content: "\f183"; }
+.flaticon-133-anatomy:before { content: "\f184"; }
+    
+    $font-Flaticon-001-pencil-case: "\f100";
+    $font-Flaticon-002-pen-2: "\f101";
+    $font-Flaticon-003-open-book-8: "\f102";
+    $font-Flaticon-004-open-book-7: "\f103";
+    $font-Flaticon-005-magic-wand-1: "\f104";
+    $font-Flaticon-006-magic-wand: "\f105";
+    $font-Flaticon-007-backpack-1: "\f106";
+    $font-Flaticon-008-backpack: "\f107";
+    $font-Flaticon-009-set-square: "\f108";
+    $font-Flaticon-010-blackboard-2: "\f109";
+    $font-Flaticon-011-teacher-8: "\f10a";
+    $font-Flaticon-012-teacher-7: "\f10b";
+    $font-Flaticon-013-open-book-6: "\f10c";
+    $font-Flaticon-014-bookmark-5: "\f10d";
+    $font-Flaticon-015-bookmark-4: "\f10e";
+    $font-Flaticon-016-bookmark-3: "\f10f";
+    $font-Flaticon-017-bookmark-2: "\f110";
+    $font-Flaticon-018-bookmark-1: "\f111";
+    $font-Flaticon-019-bookmark: "\f112";
+    $font-Flaticon-020-student-3: "\f113";
+    $font-Flaticon-021-blackboard-1: "\f114";
+    $font-Flaticon-022-students: "\f115";
+    $font-Flaticon-023-student-2: "\f116";
+    $font-Flaticon-024-student-1: "\f117";
+    $font-Flaticon-025-telescope: "\f118";
+    $font-Flaticon-026-abc: "\f119";
+    $font-Flaticon-027-sharpener: "\f11a";
+    $font-Flaticon-028-science: "\f11b";
+    $font-Flaticon-029-school-bus-1: "\f11c";
+    $font-Flaticon-030-school: "\f11d";
+    $font-Flaticon-031-ruler-2: "\f11e";
+    $font-Flaticon-032-ruler-1: "\f11f";
+    $font-Flaticon-033-protractor-1: "\f120";
+    $font-Flaticon-034-protractor: "\f121";
+    $font-Flaticon-035-bell-1: "\f122";
+    $font-Flaticon-036-student: "\f123";
+    $font-Flaticon-037-puzzle: "\f124";
+    $font-Flaticon-038-teacher-6: "\f125";
+    $font-Flaticon-039-medal-1: "\f126";
+    $font-Flaticon-040-poster: "\f127";
+    $font-Flaticon-041-pencil-1: "\f128";
+    $font-Flaticon-042-pen-1: "\f129";
+    $font-Flaticon-043-pencil: "\f12a";
+    $font-Flaticon-044-pencils-1: "\f12b";
+    $font-Flaticon-045-school-material: "\f12c";
+    $font-Flaticon-046-pen: "\f12d";
+    $font-Flaticon-047-ribbon: "\f12e";
+    $font-Flaticon-048-owl: "\f12f";
+    $font-Flaticon-049-open-book-5: "\f130";
+    $font-Flaticon-050-open-book-4: "\f131";
+    $font-Flaticon-051-open-book-3: "\f132";
+    $font-Flaticon-052-desk-lamp: "\f133";
+    $font-Flaticon-053-teacher-5: "\f134";
+    $font-Flaticon-054-notebook-2: "\f135";
+    $font-Flaticon-055-notebook-1: "\f136";
+    $font-Flaticon-056-notebook: "\f137";
+    $font-Flaticon-057-teacher-4: "\f138";
+    $font-Flaticon-058-microscope: "\f139";
+    $font-Flaticon-059-medicine-book: "\f13a";
+    $font-Flaticon-060-medal: "\f13b";
+    $font-Flaticon-061-maths-3: "\f13c";
+    $font-Flaticon-062-abacus-1: "\f13d";
+    $font-Flaticon-063-maths-2: "\f13e";
+    $font-Flaticon-064-maths-1: "\f13f";
+    $font-Flaticon-065-blackboard: "\f140";
+    $font-Flaticon-066-highlighter: "\f141";
+    $font-Flaticon-067-book-4: "\f142";
+    $font-Flaticon-068-teacher-3: "\f143";
+    $font-Flaticon-069-light-bulb: "\f144";
+    $font-Flaticon-070-bookshelf: "\f145";
+    $font-Flaticon-071-teacher-2: "\f146";
+    $font-Flaticon-072-reading: "\f147";
+    $font-Flaticon-073-books-5: "\f148";
+    $font-Flaticon-074-teacher-1: "\f149";
+    $font-Flaticon-075-abacus: "\f14a";
+    $font-Flaticon-076-quran: "\f14b";
+    $font-Flaticon-077-mortarboard-10: "\f14c";
+    $font-Flaticon-078-mortarboard-9: "\f14d";
+    $font-Flaticon-079-mortarboard-8: "\f14e";
+    $font-Flaticon-080-mortarboard-7: "\f14f";
+    $font-Flaticon-081-mortarboard-6: "\f150";
+    $font-Flaticon-082-mortarboard-5: "\f151";
+    $font-Flaticon-083-mortarboard-4: "\f152";
+    $font-Flaticon-084-mortarboard-3: "\f153";
+    $font-Flaticon-085-mortarboard-2: "\f154";
+    $font-Flaticon-086-mortarboard-1: "\f155";
+    $font-Flaticon-087-open-book-2: "\f156";
+    $font-Flaticon-088-diploma-2: "\f157";
+    $font-Flaticon-089-mortarboard: "\f158";
+    $font-Flaticon-090-exam: "\f159";
+    $font-Flaticon-091-eyeglasses-1: "\f15a";
+    $font-Flaticon-092-eyeglasses: "\f15b";
+    $font-Flaticon-093-eraser-1: "\f15c";
+    $font-Flaticon-094-eraser: "\f15d";
+    $font-Flaticon-095-maths: "\f15e";
+    $font-Flaticon-096-economy: "\f15f";
+    $font-Flaticon-097-presentation: "\f160";
+    $font-Flaticon-098-earth-globe-1: "\f161";
+    $font-Flaticon-099-earth-globe: "\f162";
+    $font-Flaticon-100-teacher: "\f163";
+    $font-Flaticon-101-archives: "\f164";
+    $font-Flaticon-102-diploma-1: "\f165";
+    $font-Flaticon-103-diploma: "\f166";
+    $font-Flaticon-104-pencils: "\f167";
+    $font-Flaticon-105-ruler: "\f168";
+    $font-Flaticon-106-compass: "\f169";
+    $font-Flaticon-107-book-3: "\f16a";
+    $font-Flaticon-108-bible: "\f16b";
+    $font-Flaticon-109-chemistry: "\f16c";
+    $font-Flaticon-110-chat: "\f16d";
+    $font-Flaticon-111-calendar: "\f16e";
+    $font-Flaticon-112-calculator-1: "\f16f";
+    $font-Flaticon-113-calculator: "\f170";
+    $font-Flaticon-114-briefcase: "\f171";
+    $font-Flaticon-115-school-bus: "\f172";
+    $font-Flaticon-116-paint-brush: "\f173";
+    $font-Flaticon-117-brain-2: "\f174";
+    $font-Flaticon-118-brain-1: "\f175";
+    $font-Flaticon-119-brain: "\f176";
+    $font-Flaticon-120-books-4: "\f177";
+    $font-Flaticon-121-books-3: "\f178";
+    $font-Flaticon-122-books-2: "\f179";
+    $font-Flaticon-123-books-1: "\f17a";
+    $font-Flaticon-124-books: "\f17b";
+    $font-Flaticon-125-open-book-1: "\f17c";
+    $font-Flaticon-126-book-2: "\f17d";
+    $font-Flaticon-127-book-1: "\f17e";
+    $font-Flaticon-128-book: "\f17f";
+    $font-Flaticon-129-bell: "\f180";
+    $font-Flaticon-130-balance: "\f181";
+    $font-Flaticon-131-back-to-school: "\f182";
+    $font-Flaticon-132-open-book: "\f183";
+    $font-Flaticon-133-anatomy: "\f184";

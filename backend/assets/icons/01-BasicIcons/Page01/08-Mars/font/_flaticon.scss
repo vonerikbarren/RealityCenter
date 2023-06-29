@@ -1,0 +1,95 @@
+@font-face {
+  font-family: "Flaticon";
+  src: url("./Flaticon.eot");
+  src: url("./Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("./Flaticon.woff2") format("woff2"),
+       url("./Flaticon.woff") format("woff"),
+       url("./Flaticon.ttf") format("truetype"),
+       url("./Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+.fimanager:before {
+    display: inline-block;
+  font-family: "Flaticon";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+.flaticon-001-astronaut:before { content: "\f100"; }
+.flaticon-002-base:before { content: "\f101"; }
+.flaticon-003-book:before { content: "\f102"; }
+.flaticon-004-explore:before { content: "\f103"; }
+.flaticon-005-space-car:before { content: "\f104"; }
+.flaticon-006-city:before { content: "\f105"; }
+.flaticon-007-conquer:before { content: "\f106"; }
+.flaticon-008-delivery:before { content: "\f107"; }
+.flaticon-009-earth:before { content: "\f108"; }
+.flaticon-010-mobile:before { content: "\f109"; }
+.flaticon-011-industry:before { content: "\f10a"; }
+.flaticon-012-learning:before { content: "\f10b"; }
+.flaticon-013-mars:before { content: "\f10c"; }
+.flaticon-014-travel:before { content: "\f10d"; }
+.flaticon-015-mars:before { content: "\f10e"; }
+.flaticon-016-meteor:before { content: "\f10f"; }
+.flaticon-017-newspaper:before { content: "\f110"; }
+.flaticon-018-location:before { content: "\f111"; }
+.flaticon-019-forest:before { content: "\f112"; }
+.flaticon-020-robot-arm:before { content: "\f113"; }
+.flaticon-021-rocket:before { content: "\f114"; }
+.flaticon-022-satellite:before { content: "\f115"; }
+.flaticon-023-space-station:before { content: "\f116"; }
+.flaticon-024-study:before { content: "\f117"; }
+.flaticon-025-sun:before { content: "\f118"; }
+.flaticon-026-surface:before { content: "\f119"; }
+.flaticon-027-target:before { content: "\f11a"; }
+.flaticon-028-temperature:before { content: "\f11b"; }
+.flaticon-029-travel:before { content: "\f11c"; }
+.flaticon-030-tv:before { content: "\f11d"; }
+
+$font-Flaticon-001-astronaut: "\f100";
+$font-Flaticon-002-base: "\f101";
+$font-Flaticon-003-book: "\f102";
+$font-Flaticon-004-explore: "\f103";
+$font-Flaticon-005-space-car: "\f104";
+$font-Flaticon-006-city: "\f105";
+$font-Flaticon-007-conquer: "\f106";
+$font-Flaticon-008-delivery: "\f107";
+$font-Flaticon-009-earth: "\f108";
+$font-Flaticon-010-mobile: "\f109";
+$font-Flaticon-011-industry: "\f10a";
+$font-Flaticon-012-learning: "\f10b";
+$font-Flaticon-013-mars: "\f10c";
+$font-Flaticon-014-travel: "\f10d";
+$font-Flaticon-015-mars: "\f10e";
+$font-Flaticon-016-meteor: "\f10f";
+$font-Flaticon-017-newspaper: "\f110";
+$font-Flaticon-018-location: "\f111";
+$font-Flaticon-019-forest: "\f112";
+$font-Flaticon-020-robot-arm: "\f113";
+$font-Flaticon-021-rocket: "\f114";
+$font-Flaticon-022-satellite: "\f115";
+$font-Flaticon-023-space-station: "\f116";
+$font-Flaticon-024-study: "\f117";
+$font-Flaticon-025-sun: "\f118";
+$font-Flaticon-026-surface: "\f119";
+$font-Flaticon-027-target: "\f11a";
+$font-Flaticon-028-temperature: "\f11b";
+$font-Flaticon-029-travel: "\f11c";
+$font-Flaticon-030-tv: "\f11d";

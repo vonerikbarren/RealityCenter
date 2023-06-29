@@ -1,0 +1,95 @@
+@font-face {
+  font-family: "Flaticon";
+  src: url("./Flaticon.eot");
+  src: url("./Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("./Flaticon.woff2") format("woff2"),
+       url("./Flaticon.woff") format("woff"),
+       url("./Flaticon.ttf") format("truetype"),
+       url("./Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+.fimanager:before {
+    display: inline-block;
+  font-family: "Flaticon";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+.flaticon-001-balloons:before { content: "\f100"; }
+.flaticon-002-book:before { content: "\f101"; }
+.flaticon-003-candle:before { content: "\f102"; }
+.flaticon-004-candles:before { content: "\f103"; }
+.flaticon-005-candles:before { content: "\f104"; }
+.flaticon-006-decor:before { content: "\f105"; }
+.flaticon-007-diwali:before { content: "\f106"; }
+.flaticon-008-calendar:before { content: "\f107"; }
+.flaticon-009-elephant:before { content: "\f108"; }
+.flaticon-010-fireworks:before { content: "\f109"; }
+.flaticon-011-fireworks:before { content: "\f10a"; }
+.flaticon-012-firecracker:before { content: "\f10b"; }
+.flaticon-013-petard:before { content: "\f10c"; }
+.flaticon-014-flag:before { content: "\f10d"; }
+.flaticon-015-lamp:before { content: "\f10e"; }
+.flaticon-016-flower:before { content: "\f10f"; }
+.flaticon-017-gift:before { content: "\f110"; }
+.flaticon-018-hand:before { content: "\f111"; }
+.flaticon-019-holding:before { content: "\f112"; }
+.flaticon-020-kite:before { content: "\f113"; }
+.flaticon-021-lamps:before { content: "\f114"; }
+.flaticon-022-lamp:before { content: "\f115"; }
+.flaticon-023-lamp:before { content: "\f116"; }
+.flaticon-024-man:before { content: "\f117"; }
+.flaticon-025-diwali:before { content: "\f118"; }
+.flaticon-026-candles:before { content: "\f119"; }
+.flaticon-027-candle:before { content: "\f11a"; }
+.flaticon-028-woman:before { content: "\f11b"; }
+.flaticon-029-worship:before { content: "\f11c"; }
+.flaticon-030-worship:before { content: "\f11d"; }
+
+$font-Flaticon-001-balloons: "\f100";
+$font-Flaticon-002-book: "\f101";
+$font-Flaticon-003-candle: "\f102";
+$font-Flaticon-004-candles: "\f103";
+$font-Flaticon-005-candles: "\f104";
+$font-Flaticon-006-decor: "\f105";
+$font-Flaticon-007-diwali: "\f106";
+$font-Flaticon-008-calendar: "\f107";
+$font-Flaticon-009-elephant: "\f108";
+$font-Flaticon-010-fireworks: "\f109";
+$font-Flaticon-011-fireworks: "\f10a";
+$font-Flaticon-012-firecracker: "\f10b";
+$font-Flaticon-013-petard: "\f10c";
+$font-Flaticon-014-flag: "\f10d";
+$font-Flaticon-015-lamp: "\f10e";
+$font-Flaticon-016-flower: "\f10f";
+$font-Flaticon-017-gift: "\f110";
+$font-Flaticon-018-hand: "\f111";
+$font-Flaticon-019-holding: "\f112";
+$font-Flaticon-020-kite: "\f113";
+$font-Flaticon-021-lamps: "\f114";
+$font-Flaticon-022-lamp: "\f115";
+$font-Flaticon-023-lamp: "\f116";
+$font-Flaticon-024-man: "\f117";
+$font-Flaticon-025-diwali: "\f118";
+$font-Flaticon-026-candles: "\f119";
+$font-Flaticon-027-candle: "\f11a";
+$font-Flaticon-028-woman: "\f11b";
+$font-Flaticon-029-worship: "\f11c";
+$font-Flaticon-030-worship: "\f11d";

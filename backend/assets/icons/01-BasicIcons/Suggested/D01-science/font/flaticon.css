@@ -1,0 +1,190 @@
+	/*
+  	Flaticon icon font: Flaticon
+  	Creation date: 19/02/2018 11:25
+  	*/
+
+@font-face {
+  font-family: "Flaticon";
+  src: url("./Flaticon.eot");
+  src: url("./Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("./Flaticon.woff") format("woff"),
+       url("./Flaticon.ttf") format("truetype"),
+       url("./Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+  font-family: Flaticon;
+        font-size: 20px;
+font-style: normal;
+margin-left: 20px;
+}
+
+.flaticon-001-worm:before { content: "\f100"; }
+.flaticon-002-weight:before { content: "\f101"; }
+.flaticon-003-virus-1:before { content: "\f102"; }
+.flaticon-004-virus:before { content: "\f103"; }
+.flaticon-005-moon-3:before { content: "\f104"; }
+.flaticon-006-uranus:before { content: "\f105"; }
+.flaticon-007-ufo-1:before { content: "\f106"; }
+.flaticon-008-ufo:before { content: "\f107"; }
+.flaticon-009-time:before { content: "\f108"; }
+.flaticon-010-sun-1:before { content: "\f109"; }
+.flaticon-011-sun:before { content: "\f10a"; }
+.flaticon-012-eclipse:before { content: "\f10b"; }
+.flaticon-013-student:before { content: "\f10c"; }
+.flaticon-014-stars:before { content: "\f10d"; }
+.flaticon-015-asteroid:before { content: "\f10e"; }
+.flaticon-016-space-gun:before { content: "\f10f"; }
+.flaticon-017-joystick:before { content: "\f110"; }
+.flaticon-018-solar-system:before { content: "\f111"; }
+.flaticon-019-skull:before { content: "\f112"; }
+.flaticon-020-signal:before { content: "\f113"; }
+.flaticon-021-syringe-1:before { content: "\f114"; }
+.flaticon-022-syringe:before { content: "\f115"; }
+.flaticon-023-science-11:before { content: "\f116"; }
+.flaticon-024-science-10:before { content: "\f117"; }
+.flaticon-025-science-9:before { content: "\f118"; }
+.flaticon-026-science-8:before { content: "\f119"; }
+.flaticon-027-scientist:before { content: "\f11a"; }
+.flaticon-028-planet-7:before { content: "\f11b"; }
+.flaticon-029-science-7:before { content: "\f11c"; }
+.flaticon-030-satellite-1:before { content: "\f11d"; }
+.flaticon-031-satellite:before { content: "\f11e"; }
+.flaticon-032-rotation:before { content: "\f11f"; }
+.flaticon-033-rocket-7:before { content: "\f120"; }
+.flaticon-034-rocket-6:before { content: "\f121"; }
+.flaticon-035-rocket-5:before { content: "\f122"; }
+.flaticon-036-rocket-4:before { content: "\f123"; }
+.flaticon-037-rocket-3:before { content: "\f124"; }
+.flaticon-038-rocket-2:before { content: "\f125"; }
+.flaticon-039-rocket-1:before { content: "\f126"; }
+.flaticon-040-rocket:before { content: "\f127"; }
+.flaticon-041-robot:before { content: "\f128"; }
+.flaticon-042-science-6:before { content: "\f129"; }
+.flaticon-043-radar:before { content: "\f12a"; }
+.flaticon-044-magnets-3:before { content: "\f12b"; }
+.flaticon-045-magnets-2:before { content: "\f12c"; }
+.flaticon-046-test-tube-3:before { content: "\f12d"; }
+.flaticon-047-test-tube-2:before { content: "\f12e"; }
+.flaticon-048-test-tube-1:before { content: "\f12f"; }
+.flaticon-049-potion:before { content: "\f130"; }
+.flaticon-050-plug:before { content: "\f131"; }
+.flaticon-051-planet-6:before { content: "\f132"; }
+.flaticon-052-planets-1:before { content: "\f133"; }
+.flaticon-053-planet-5:before { content: "\f134"; }
+.flaticon-054-planet-4:before { content: "\f135"; }
+.flaticon-055-planets:before { content: "\f136"; }
+.flaticon-056-planet-3:before { content: "\f137"; }
+.flaticon-057-planet-2:before { content: "\f138"; }
+.flaticon-058-planet-1:before { content: "\f139"; }
+.flaticon-059-pharmacy:before { content: "\f13a"; }
+.flaticon-060-poles-2:before { content: "\f13b"; }
+.flaticon-061-poles-1:before { content: "\f13c"; }
+.flaticon-062-poles:before { content: "\f13d"; }
+.flaticon-063-telescope:before { content: "\f13e"; }
+.flaticon-064-neuron:before { content: "\f13f"; }
+.flaticon-065-science-5:before { content: "\f140"; }
+.flaticon-066-physics-1:before { content: "\f141"; }
+.flaticon-067-mouse-1:before { content: "\f142"; }
+.flaticon-068-mouse:before { content: "\f143"; }
+.flaticon-069-moon-2:before { content: "\f144"; }
+.flaticon-070-moon-1:before { content: "\f145"; }
+.flaticon-071-microscope:before { content: "\f146"; }
+.flaticon-072-meteor-2:before { content: "\f147"; }
+.flaticon-073-meteor-1:before { content: "\f148"; }
+.flaticon-074-meteor:before { content: "\f149"; }
+.flaticon-075-planet:before { content: "\f14a"; }
+.flaticon-076-medication-1:before { content: "\f14b"; }
+.flaticon-077-medication:before { content: "\f14c"; }
+.flaticon-078-medicine:before { content: "\f14d"; }
+.flaticon-079-mechanical:before { content: "\f14e"; }
+.flaticon-080-physics:before { content: "\f14f"; }
+.flaticon-081-measure:before { content: "\f150"; }
+.flaticon-082-matter:before { content: "\f151"; }
+.flaticon-083-mars:before { content: "\f152"; }
+.flaticon-084-frankenstein:before { content: "\f153"; }
+.flaticon-085-bacteria-1:before { content: "\f154"; }
+.flaticon-086-science-4:before { content: "\f155"; }
+.flaticon-087-leaf:before { content: "\f156"; }
+.flaticon-088-lab:before { content: "\f157"; }
+.flaticon-089-jupiter:before { content: "\f158"; }
+.flaticon-090-experiment-6:before { content: "\f159"; }
+.flaticon-091-experiment-5:before { content: "\f15a"; }
+.flaticon-092-h2o:before { content: "\f15b"; }
+.flaticon-093-glasses:before { content: "\f15c"; }
+.flaticon-094-magnets-1:before { content: "\f15d"; }
+.flaticon-095-magnets:before { content: "\f15e"; }
+.flaticon-096-experiment-4:before { content: "\f15f"; }
+.flaticon-097-moon:before { content: "\f160"; }
+.flaticon-098-triangle-1:before { content: "\f161"; }
+.flaticon-099-hexagram:before { content: "\f162"; }
+.flaticon-100-cylinder:before { content: "\f163"; }
+.flaticon-101-triangle:before { content: "\f164"; }
+.flaticon-102-cone:before { content: "\f165"; }
+.flaticon-103-science-3:before { content: "\f166"; }
+.flaticon-104-briefcase:before { content: "\f167"; }
+.flaticon-105-experiment-3:before { content: "\f168"; }
+.flaticon-106-experiment-2:before { content: "\f169"; }
+.flaticon-107-experiment-1:before { content: "\f16a"; }
+.flaticon-108-electricity:before { content: "\f16b"; }
+.flaticon-109-earth-5:before { content: "\f16c"; }
+.flaticon-110-earth-4:before { content: "\f16d"; }
+.flaticon-111-earth-3:before { content: "\f16e"; }
+.flaticon-112-earth-2:before { content: "\f16f"; }
+.flaticon-113-earth-1:before { content: "\f170"; }
+.flaticon-114-earth:before { content: "\f171"; }
+.flaticon-115-dropper:before { content: "\f172"; }
+.flaticon-116-drone:before { content: "\f173"; }
+.flaticon-117-science-2:before { content: "\f174"; }
+.flaticon-118-dna-1:before { content: "\f175"; }
+.flaticon-119-dna:before { content: "\f176"; }
+.flaticon-120-danger-2:before { content: "\f177"; }
+.flaticon-121-danger-1:before { content: "\f178"; }
+.flaticon-122-danger:before { content: "\f179"; }
+.flaticon-123-cube:before { content: "\f17a"; }
+.flaticon-124-cosmonaut:before { content: "\f17b"; }
+.flaticon-125-constellation:before { content: "\f17c"; }
+.flaticon-126-connection:before { content: "\f17d"; }
+.flaticon-127-science-1:before { content: "\f17e"; }
+.flaticon-128-science:before { content: "\f17f"; }
+.flaticon-129-comet:before { content: "\f180"; }
+.flaticon-130-chemistry-1:before { content: "\f181"; }
+.flaticon-131-chemistry:before { content: "\f182"; }
+.flaticon-132-chemical-1:before { content: "\f183"; }
+.flaticon-133-chemical:before { content: "\f184"; }
+.flaticon-134-cells:before { content: "\f185"; }
+.flaticon-135-bulb-1:before { content: "\f186"; }
+.flaticon-136-bulb:before { content: "\f187"; }
+.flaticon-137-brain-5:before { content: "\f188"; }
+.flaticon-138-brain-4:before { content: "\f189"; }
+.flaticon-139-brain-3:before { content: "\f18a"; }
+.flaticon-140-brain-2:before { content: "\f18b"; }
+.flaticon-141-brain-1:before { content: "\f18c"; }
+.flaticon-142-brain:before { content: "\f18d"; }
+.flaticon-143-bounding-box:before { content: "\f18e"; }
+.flaticon-144-battery:before { content: "\f18f"; }
+.flaticon-145-bacteria:before { content: "\f190"; }
+.flaticon-146-ipad:before { content: "\f191"; }
+.flaticon-147-atom-2:before { content: "\f192"; }
+.flaticon-148-monitor:before { content: "\f193"; }
+.flaticon-149-folder:before { content: "\f194"; }
+.flaticon-150-experiment:before { content: "\f195"; }
+.flaticon-151-atom-1:before { content: "\f196"; }
+.flaticon-152-atom:before { content: "\f197"; }
+.flaticon-153-astronaut-1:before { content: "\f198"; }
+.flaticon-154-astronaut:before { content: "\f199"; }
+.flaticon-155-antenna:before { content: "\f19a"; }
+.flaticon-156-android:before { content: "\f19b"; }
+.flaticon-157-alien-1:before { content: "\f19c"; }
+.flaticon-158-alien:before { content: "\f19d"; }
+.flaticon-159-test-tube:before { content: "\f19e"; }

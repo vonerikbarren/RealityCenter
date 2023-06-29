@@ -1,0 +1,65 @@
+@font-face {
+  font-family: "Flaticon";
+  src: url("./Flaticon.eot");
+  src: url("./Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("./Flaticon.woff2") format("woff2"),
+       url("./Flaticon.woff") format("woff"),
+       url("./Flaticon.ttf") format("truetype"),
+       url("./Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+.fimanager:before {
+      display: inline-block;
+  font-family: "Flaticon";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+    display: block;
+}
+
+.flaticon-001-fence:before { content: "\f100"; }
+.flaticon-002-fence:before { content: "\f101"; }
+.flaticon-003-fence:before { content: "\f102"; }
+.flaticon-004-fence:before { content: "\f103"; }
+.flaticon-005-gate:before { content: "\f104"; }
+.flaticon-006-fence:before { content: "\f105"; }
+.flaticon-007-fence:before { content: "\f106"; }
+.flaticon-008-fence:before { content: "\f107"; }
+.flaticon-009-fence:before { content: "\f108"; }
+.flaticon-010-fence:before { content: "\f109"; }
+.flaticon-011-fence:before { content: "\f10a"; }
+.flaticon-012-fence:before { content: "\f10b"; }
+.flaticon-013-fence:before { content: "\f10c"; }
+.flaticon-014-fence:before { content: "\f10d"; }
+.flaticon-015-fence:before { content: "\f10e"; }
+.flaticon-016-fence:before { content: "\f10f"; }
+.flaticon-017-fence:before { content: "\f110"; }
+.flaticon-018-fence:before { content: "\f111"; }
+.flaticon-019-fence:before { content: "\f112"; }
+.flaticon-020-fence:before { content: "\f113"; }
+.flaticon-021-fence:before { content: "\f114"; }
+.flaticon-022-fence:before { content: "\f115"; }
+.flaticon-023-fence:before { content: "\f116"; }
+.flaticon-024-fence:before { content: "\f117"; }
+.flaticon-025-fence:before { content: "\f118"; }
+.flaticon-026-fence:before { content: "\f119"; }
+.flaticon-027-fence:before { content: "\f11a"; }
+.flaticon-028-fence:before { content: "\f11b"; }
+.flaticon-029-fence:before { content: "\f11c"; }
+.flaticon-030-fence:before { content: "\f11d"; }

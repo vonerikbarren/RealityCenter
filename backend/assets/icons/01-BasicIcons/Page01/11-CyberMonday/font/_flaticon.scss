@@ -1,0 +1,95 @@
+@font-face {
+  font-family: "Flaticon";
+  src: url("./Flaticon.eot");
+  src: url("./Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("./Flaticon.woff2") format("woff2"),
+       url("./Flaticon.woff") format("woff"),
+       url("./Flaticon.ttf") format("truetype"),
+       url("./Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+.fimanager:before {
+    display: inline-block;
+  font-family: "Flaticon";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+.flaticon-001-bonus:before { content: "\f100"; }
+.flaticon-002-barcode:before { content: "\f101"; }
+.flaticon-003-calculate:before { content: "\f102"; }
+.flaticon-004-calendar:before { content: "\f103"; }
+.flaticon-005-loyalty-card:before { content: "\f104"; }
+.flaticon-006-add-to-cart:before { content: "\f105"; }
+.flaticon-007-remove-from-cart:before { content: "\f106"; }
+.flaticon-008-cashback:before { content: "\f107"; }
+.flaticon-009-coupon:before { content: "\f108"; }
+.flaticon-010-cyber-monday:before { content: "\f109"; }
+.flaticon-011-deal:before { content: "\f10a"; }
+.flaticon-012-box:before { content: "\f10b"; }
+.flaticon-013-storehouse:before { content: "\f10c"; }
+.flaticon-014-discount:before { content: "\f10d"; }
+.flaticon-015-ecommerce:before { content: "\f10e"; }
+.flaticon-016-economy:before { content: "\f10f"; }
+.flaticon-017-free-shipping:before { content: "\f110"; }
+.flaticon-018-gift-box:before { content: "\f111"; }
+.flaticon-019-hot-deal:before { content: "\f112"; }
+.flaticon-020-meteor:before { content: "\f113"; }
+.flaticon-021-loudspeaker:before { content: "\f114"; }
+.flaticon-022-card-payment:before { content: "\f115"; }
+.flaticon-023-pc:before { content: "\f116"; }
+.flaticon-024-processor:before { content: "\f117"; }
+.flaticon-025-online-shop:before { content: "\f118"; }
+.flaticon-026-sold-out:before { content: "\f119"; }
+.flaticon-027-tech-support:before { content: "\f11a"; }
+.flaticon-028-tag:before { content: "\f11b"; }
+.flaticon-029-timelapse:before { content: "\f11c"; }
+.flaticon-030-wishlist:before { content: "\f11d"; }
+
+$font-Flaticon-001-bonus: "\f100";
+$font-Flaticon-002-barcode: "\f101";
+$font-Flaticon-003-calculate: "\f102";
+$font-Flaticon-004-calendar: "\f103";
+$font-Flaticon-005-loyalty-card: "\f104";
+$font-Flaticon-006-add-to-cart: "\f105";
+$font-Flaticon-007-remove-from-cart: "\f106";
+$font-Flaticon-008-cashback: "\f107";
+$font-Flaticon-009-coupon: "\f108";
+$font-Flaticon-010-cyber-monday: "\f109";
+$font-Flaticon-011-deal: "\f10a";
+$font-Flaticon-012-box: "\f10b";
+$font-Flaticon-013-storehouse: "\f10c";
+$font-Flaticon-014-discount: "\f10d";
+$font-Flaticon-015-ecommerce: "\f10e";
+$font-Flaticon-016-economy: "\f10f";
+$font-Flaticon-017-free-shipping: "\f110";
+$font-Flaticon-018-gift-box: "\f111";
+$font-Flaticon-019-hot-deal: "\f112";
+$font-Flaticon-020-meteor: "\f113";
+$font-Flaticon-021-loudspeaker: "\f114";
+$font-Flaticon-022-card-payment: "\f115";
+$font-Flaticon-023-pc: "\f116";
+$font-Flaticon-024-processor: "\f117";
+$font-Flaticon-025-online-shop: "\f118";
+$font-Flaticon-026-sold-out: "\f119";
+$font-Flaticon-027-tech-support: "\f11a";
+$font-Flaticon-028-tag: "\f11b";
+$font-Flaticon-029-timelapse: "\f11c";
+$font-Flaticon-030-wishlist: "\f11d";
