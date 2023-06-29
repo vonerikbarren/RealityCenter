@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Quantico";
+  src: url("./assets/fonts/Quantico-Regular.ttf") format(woff2);
+
+  src: url("./assets/fonts/Quantico-Bold.ttf") format(woff2);
+
+  src: url("./assets/fonts/Quantico-Italic.ttf") format(woff2);
+
+  src: url("./assets/fonts/Quantico-BoldItalic.ttf") format(woff2);
+
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px outset rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  color: #444;
+  font-family: Georgia, sans-serif;
+	font-family: "Quantico", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+h2 {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 2rem;
+  text-align: center;
+  position: relative;
+  bottom: 50px;
+  /* padding-bottom: 100px; */
+  /* opacity: 0.4; */
+}
+
+p {
+  color: rgb(179, 131, 226);
+  font-size: 1rem;
+  text-align: center;
+  opacity: 0.4;
+}
+
+form {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px outset rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+  position: relative;
+  bottom: 60px;
+  width: 400px;
+  height: 50px;
+  font-family: Georgia, sans-serif;
+	font-family: "Quantico", sans-serif;
+}
+
+.input {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px outset rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  color: rgba(255, 255, 255, 0.2);
+  font-size: 2rem;
+  padding: 1rem 2rem;
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: default;
+  bottom: 90px;
+  font-family: Georgia, sans-serif;
+	font-family: "Quantico", sans-serif;
+}
+
+.input::placeholder {
+  
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.input:focus {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  box-shadow: 20px 20px 0 rgba(255, 255, 255, 0.2);
+  outline-color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.todos {
+  /* background: rgba(0, 255, 208, 0.2);
+  border: 1px outset rgba(0, 255, 208, 0.2); */
+  border-radius: 15px;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.todos li {
+  border: 1px outset rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  border-top: 1px solid #e5e5e5;
+  cursor: pointer;
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.todos li.completed {
+  color: #b6b6b6;
+  text-decoration: line-through;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+small {
+  color: rgba(255, 255, 255, 0.9);
+  margin-top: 3rem;
+  text-align: center;
+}
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+}

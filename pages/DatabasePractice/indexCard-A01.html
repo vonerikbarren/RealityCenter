@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Database Test with Table</title>
+
+   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+
+   <style>label{display: inline-block; width:80px}</style>
+
+   <style>
+      #labelContainer {
+
+         color:rgba(37, 74, 74, 0.75);
+         align-items: center;
+         padding-top: 10px;
+         padding-left: 10px;
+         padding-bottom: 10px;
+         background: rgba(0, 255, 208, 0.2);
+         border: 3px solid rgba(0, 255, 208, 0.75);
+         border-radius: 10px;
+         width: 70%;
+         box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.2);
+         font-family: Arial, Helvetica, sans-serif;
+      
+      }
+
+      button {
+			color: rgba(37, 74, 74, 0.75);
+			background: transparent;
+			outline: 1px solid rgba(0, 255, 208, 0.75);
+			border: 0px;
+			border-radius: 20px;
+			padding: 5px 10px;
+			cursor: pointer;
+			animation: float 5s ease-in-out infinite;
+		}
+
+      button:hover {
+         
+         background:rgba(37, 74, 74, 0.75);
+         color: rgba(0, 255, 208, 0.75)
+
+      }
+   
+
+      table {
+
+         color:rgba(37, 74, 74, 0.75) !important;
+         padding: 10px 10px 10px 10px;
+         background: rgba(0, 255, 208, 0.2);
+         box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.2);
+         border: 3px inline rgba(0, 255, 208, 0.75);
+         border-radius: 10px;
+         font-family: Arial, Helvetica, sans-serif;
+         border-collapse: collapse;
+         width: 100%;
+
+      }
+
+      td, th {
+         color:rgba(255, 255, 255, 0.75) !important;
+         border: 1px solid #dddddd;
+         text-align: center;
+         padding: 8px;
+      }
+
+
+
+      tr:nth-child(even) {
+         color:rgba(37, 74, 74, 0.75);
+         background-color: rgba(0, 255, 208, 0.2);
+      }
+   </style>
+</head>
+
+<!-- Body Section -->
+<body>
+
+   <div>
+
+      <div id="labelContainer">
+         
+         <!-- Labels and Containers for Inputs -->
+
+
+         <label>Title of Deck</label> 
+         <input id="DeckTitle" type="text"> <br><br>
+
+         <label>Front Side</label> 
+         <input id="FrontSide" type="text"> <br><br>
+
+         <label>Back Side</label> 
+         <input id="BackSide" class="SecB" type="text"> <br><br>
+
+         <label>Card Code</label> 
+         <input id="CardCode" type="text"> <br> <br>
+
+         <label>Date and Time</label> 
+         <input id="DateTime" type="datetime-local">
+   
+      </div>
+         
+
+      <hr>
+      <hr>
+
+      <table>
+
+         <div>
+            
+         </div>
+
+         <!-- Header -->
+         <tr>
+            <th id="TableButtons">Buttons</th>
+            <th id="TableTitle">Title</th>
+            <th id="TableFrontSide">Front Side</th>
+            <th id="TableBackSide">Back Side</th>
+            <th id="TableCardCode">Card Code</th>
+            <th id="DateTime">Date and Time</th>
+         </tr>
+
+         <!-- Table: Row A -->
+         <tr>
+            <td id="Cell_A0">
+               <button id="Insbtn">INSERT</button>
+               <button id="Selbtn">SELECT</button>
+               <button id="Updbtn">UPDATE</button>
+               <button id="Delbtn">DELETE</button>
+            </td>
+            <td id="Cell_A1"></td>
+            <td id="Cell_A2"></td>
+            <td id="Cell_A3"></td>
+            <td id="Cell_A4"></td>
+            <td id="Cell_A5"></td>
+         </tr>
+
+         <!-- Table: Row B -->
+         <tr>
+            <td id="Cell_B0">
+               <button id="Insbtn1">INSERT</button>
+               <button id="Selbtn1">SELECT</button>
+               <button id="Updbtn1">UPDATE</button>
+               <button id="Delbtn1">DELETE</button>
+            </td>
+            <td id="Cell_B1"></td>
+            <td id="Cell_B2"></td>
+            <td id="Cell_B3"></td>
+            <td id="Cell_B4"></td>
+            <td id="Cell_B5"></td>
+         </tr>
+
+         <!-- Table: Row C -->
+         <tr>
+            <td id="Cell_C0">
+               <button id="Insbtn2">INSERT</button>
+               <button id="Selbtn2">SELECT</button>
+               <button id="Updbtn2">UPDATE</button>
+               <button id="Delbtn2">DELETE</button>
+            </td>
+            <td id="Cell_C1"></td>
+            <td id="Cell_C2"></td>
+            <td id="Cell_C3"></td>
+            <td id="Cell_C4"></td>
+            <td id="Cell_C5"></td>
+         </tr>
+
+         <!-- Table: Row D -->
+         <tr>
+            <td id="Cell_D0">
+               <button id="Insbtn1">INSERT</button>
+               <button id="Selbtn1">SELECT</button>
+               <button id="Updbtn1">UPDATE</button>
+               <button id="Delbtn1">DELETE</button>
+            </td>
+            <td id="Cell_D1"></td>
+            <td id="Cell_D2"></td>
+            <td id="Cell_D3"></td>
+            <td id="Cell_D4"></td>
+            <td id="Cell_D5"></td>
+         </tr>
+
+      </table>
+
+   <br>
+
+   <!-- Buttons for action -->
+   <hr>
+
+
+   <hr>
+
+   </div>
+
+  
+
+
+
+   <script type="module">
+
+      // ------------------ Configurations -------------------- // 
+
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-app.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+    
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+         apiKey: "AIzaSyAXGCA1w5cHCPOp90Syuvxlqnd9mMr3Ap8",
+         authDomain: "formtest02-e3383.firebaseapp.com",
+         databaseURL: "https://formtest02-e3383-default-rtdb.firebaseio.com",
+         projectId: "formtest02-e3383",
+         storageBucket: "formtest02-e3383.appspot.com",
+         messagingSenderId: "222453041647",
+         appId: "1:222453041647:web:e5d3a584698c96b9574e1a"
+      };
+      
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+
+      import {getDatabase, ref, get, set, child, update, remove}
+      from "https://www.gstatic.com/firebasejs/9.8.1/firebase-database.js"
+
+      const db = getDatabase()
+
+
+      // ------------------ References -------------------- // 
+
+      // Input Refs
+      var deckTitle = document.getElementById("DeckTitle")
+      var frontSide = document.getElementById("FrontSide")
+      var backSide = document.getElementById("BackSide")
+      var cardCode = document.getElementById("CardCode")
+      var dateTime = document.getElementById("DateTime")
+
+      // Button Refs
+      var insBtn = document.getElementById("Insbtn")
+      var selBtn = document.getElementById("Selbtn")
+      var updBtn = document.getElementById("Updbtn")
+      var delBtn = document.getElementById("Delbtn")
+
+      var insBtn1 = document.getElementById("Insbtn1")
+      var selBtn1 = document.getElementById("Selbtn1")
+      var updBtn1 = document.getElementById("Updbtn1")
+      var delBtn1 = document.getElementById("Delbtn1")
+
+      var insBtn2 = document.getElementById("Insbtn2")
+      var selBtn2 = document.getElementById("Selbtn2")
+      var updBtn2 = document.getElementById("Updbtn2")
+      var delBtn2 = document.getElementById("Delbtn2")
+
+      var insBtn3 = document.getElementById("Insbtn3")
+      var selBtn3 = document.getElementById("Selbtn3")
+      var updBtn3 = document.getElementById("Updbtn3")
+      var delBtn3 = document.getElementById("Delbtn3")
+
+      // Cell Refs
+      var cell_A1 = document.getElementById("Cell_A1")
+      var cell_A2 = document.getElementById("Cell_A2")
+      var cell_A3 = document.getElementById("Cell_A3")
+      var cell_A4 = document.getElementById("Cell_A4")
+      var cell_A5 = document.getElementById("Cell_A5")
+
+      var cell_B1 = document.getElementById("Cell_B1")
+      var cell_B2 = document.getElementById("Cell_B2")
+      var cell_B3 = document.getElementById("Cell_B3")
+      var cell_B4 = document.getElementById("Cell_B4")
+      var cell_B5 = document.getElementById("Cell_B5")
+
+      var cell_C1 = document.getElementById("Cell_C1")
+      var cell_C2 = document.getElementById("Cell_C2")
+      var cell_C3 = document.getElementById("Cell_C3")
+      var cell_C4 = document.getElementById("Cell_C4")
+      var cell_C5 = document.getElementById("Cell_C5")
+
+      var cell_D1 = document.getElementById("Cell_D1")
+      var cell_D2 = document.getElementById("Cell_D2")
+      var cell_D3 = document.getElementById("Cell_D3")
+      var cell_D4 = document.getElementById("Cell_D4")
+      var cell_D5 = document.getElementById("Cell_D5")
+
+
+      // unknown refs
+      var cell_A1_content = document.getElementById("CellA1_Content")
+
+
+      console.log(insBtn.value)
+
+
+      // ------------------ Insert Data -------------------- // 
+
+      // |- # All Insert Functions
+
+      // ------------------ Insert Data -------------------- // 
+
+      function InsertData(){
+         set(ref(db, "TheTestDeck/" + cardCode.value), {
+            TitleOfDeck: deckTitle.value,
+            FrontSide: frontSide.value,
+            BackSide: backSide.value,
+            CardCode: cardCode.value,
+            DateAndTime: dateTime.value,
+         })
+         .then(() => {
+            alert("data stored succesffuly")
+         })
+         .catch((error) => {
+            alert("unsuccessful, error" + error)
+            console.log(Error)
+         })
+      }
+
+
+      // ------------------ Select Data -------------------- // 
+
+      // All Select Data Functions
+
+      // ------------------ Select Data -------------------- // 
+
+      function SelectData() {
+         const dbref = ref(db)
+
+         get(child(dbref, "TheTestDeck/" + cardCode.value)).then((snapshot) => {
+            if(snapshot.exists()) {
+               cell_A1.innerText = snapshot.val().TitleOfDeck
+               cell_A2.innerText = snapshot.val().FrontSide
+               cell_A3.innerText = snapshot.val().BackSide
+               cell_A4.innerText = snapshot.val().CardCode
+               cell_A5.innerText = snapshot.val().DateAndTime
+               
+            }
+
+            else {
+               alert("No data found");
+            }
+         })
+         .catch((error) => {
+            alert("unsuccessful, error" + error)
+         });
+      }
+
+      function SelectData1() {
+         const dbref1 = ref(db)
+
+         get(child(dbref1, "TheTestDeck/" + cardCode.value)).then((snapshot) => {
+            if(snapshot.exists()) {
+
+               // Second Row Push
+               cell_B1.innerText = snapshot.val().TitleOfDeck
+               cell_B2.innerText = snapshot.val().FrontSide
+               cell_B3.innerText = snapshot.val().BackSide
+               cell_B4.innerText = snapshot.val().CardCode
+               cell_B5.innerText = snapshot.val().DateAndTime
+
+               
+
+            }
+
+            else {
+               alert("No data found");
+            }
+         })
+         .catch((error) => {
+            alert("unsuccessful, error" + error)
+         });
+      }
+
+      function SelectData2() {
+         const dbref = ref(db)
+
+         get(child(dbref, "TheTestDeck/" + cardCode.value)).then((snapshot) => {
+            if(snapshot.exists()) {
+               
+               // Third Row Push
+               cell_C1.innerText = snapshot.val().TitleOfDeck
+               cell_C2.innerText = snapshot.val().FrontSide
+               cell_C3.innerText = snapshot.val().BackSide
+               cell_C4.innerText = snapshot.val().CardCode
+               cell_C5.innerText = snapshot.val().DateAndTime
+
+            }
+
+            else {
+               alert("No data found");
+            }
+         })
+         .catch((error) => {
+            alert("unsuccessful, error" + error)
+         });
+      }
+
+
+      // ------------------ Update Data -------------------- // 
+
+      // |- # All Update Functions
+
+      // ------------------ Update Data -------------------- // 
+
+      function UpdateData() {
+         update(ref(db, "TheTestDeck/" + cardCode.value), {
+            TitleOfDeck: deckTitle.value,
+            FrontSide: frontSide.value,
+            BackSide: backSide.value,
+            DateAndTime: dateTime.value,
+         })
+         .then(() => {
+            alert("data updated succesffuly")
+         })
+         .catch((error) => {
+            alert("unsuccessful, error" + error)
+            console.log(Error)
+         })
+      }
+
+
+      
+
+      // ------------------ Delete Data -------------------- // 
+
+      // |- # All Delete Functions
+
+      // ------------------ Delete Data -------------------- // 
+
+      function DeleteData() {
+         remove(ref(db, "TheTestDeck/" + cardCode.value))
+         .then(() => {
+            alert("data deleted succesffuly")
+         })
+         .catch((error) => {
+            alert("unsuccessful, error" + error)
+            console.log(Error)
+         })
+      }
+
+
+
+      // ------------------ Assign Events to Btns -------------------- // 
+
+      insBtn.addEventListener('click', InsertData)
+      selBtn.addEventListener('click', SelectData)
+      selBtn1.addEventListener('click', SelectData1)
+      selBtn2.addEventListener('click', SelectData2)
+      updBtn.addEventListener('click', UpdateData)
+      delBtn.addEventListener('click', DeleteData)
+
+    </script>
+
+   
+</body>
+</html>

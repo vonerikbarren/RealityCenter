@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Analog Clock</title>
+  
+   <style>
+      body {
+         background-color: rgba(255, 255, 255, 0.1);
+         padding: 0;
+         margin: 0;
+      }
+
+      .clock {
+         width: 60vh;
+         height: 60vh;
+         border-radius: 50%;
+         margin: 20vh auto;
+         display: flex;
+         position: relative;
+         /* background-color: rgba(255, 255, 255, 0.1); */
+      }
+
+      .clock-face {
+         width: 55vh;
+         height: 55vh;
+         border-radius: 50%;
+         position: absolute;
+         top: 2.5vh;
+         left: 2.5vh;
+         /* background: url('https://github.com/umarcbs/AnalogCLock/blob/master/clock-face2.png?raw=true'); */
+         /* background: url('../../../assets/img/clocks/InfiniteClock01.png'); */
+         background: url('../../../assets/img/clocks/Clock03_A1.png');
+         background-size: 100% 100%;
+      }
+
+      .hand {
+         width: 35%;
+         height: 6px;
+         /* background-color: rgba(0, 255, 217, 0.9); */
+         background-color: rgba(255, 255, 255, 0.3);
+         border: 1px inset rgba(0, 0, 0, 0.91);
+         /* border-radius: 100px; */
+         position: absolute;
+         top: 49.5%;
+         left: 17.5%;
+         transform-origin: 95%;
+         transform: rotate(90deg);
+         transition: all 0.05s;
+         transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+      }
+
+      .second-hand {
+         height: 2px;
+         background-color:rgba(0, 0, 0, 0.5);
+         box-shadow: 1px 1px 1px rgba(19, 222, 171, 0.87)
+      }
+
+      .hour-hand {
+         width: 20%;
+         left: 31.8%;
+         top: 50%;
+      }
+   </style>
+
+</head>
+
+<body>
+  <div class="clock">
+    <div class="clock-face">
+      <div class="hand hour-hand"></div>
+      <div class="hand min-hand"></div>
+      <div class="hand second-hand"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+      const secondHand = document.querySelector('.second-hand');
+      const minHand = document.querySelector('.min-hand');
+      const hourHand = document.querySelector('.hour-hand');
+
+      function setDate() {
+         const now = new Date();
+
+         const second = now.getSeconds();
+         const secondsDegree = ((360/60) * second) + 90;
+         secondHand.style.transition = secondsDegree === 90 ? 'all 0s' : 'all 0.05s';
+         secondHand.style['transition-timing-function'] = 'cubic-bezier(0.1, 2.7, 0.58, 1)';
+         secondHand.style.transform = `rotate(${secondsDegree}deg)`;
+
+         const min = now.getMinutes()
+         const minsDegree = ((360/60) * min) + 90;
+         minHand.style.transform = `rotate(${minsDegree}deg)`;
+         minHand.style.transition = minsDegree === 90 ? 'all 0s' : 'all 0.05s';
+         minHand.style['transition-timing-function'] = 'cubic-bezier(0.1, 2.7, 0.58, 1)';
+         minHand.style.transform = `rotate(${minsDegree}deg)`;
+
+         const hour = now.getHours();
+         // to give a realistic hour hand (minsDegree/12 - 8) was added to normal hoursDegree.
+         // this serves to ofset the hour hand gradually as the minute hand moves
+         // the -8 counters the +90 offset of the original minsDegree
+         const hoursDegree = ((360/12) * hour) + 90 + (minsDegree/12 - 8);
+         hourHand.style.transform = `rotate(${hoursDegree}deg)`;
+         hourHand.style.transition = hoursDegree === 90 ? 'all 0s' : 'all 0.05s';
+         hourHand.style['transition-timing-function'] = 'cubic-bezier(0.1, 2.7, 0.58, 1)';
+         hourHand.style.transform = `rotate(${hoursDegree}deg)`;
+      }
+
+      setInterval(setDate, 1000);
+  </script>
+</body>
+
+</html>
