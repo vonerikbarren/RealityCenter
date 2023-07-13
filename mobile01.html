@@ -217,7 +217,7 @@
 				const aspect = window.innerWidth / window.innerHeight;
 
 				// A1_03_Camera Setup
-				cameraPersp = new THREE.PerspectiveCamera( 50, aspect, 0.01, 3000 );
+				cameraPersp = new THREE.PerspectiveCamera( 50, aspect, 0.01, 300 );
 				cameraOrtho = new THREE.OrthographicCamera( - 600 * aspect, 600 * aspect, 600, - 600, 0.01, 30000 );
 				currentCamera = cameraPersp;
 

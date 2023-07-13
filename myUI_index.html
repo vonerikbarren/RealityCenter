@@ -1714,15 +1714,15 @@
 							<video id="video07" class="myVideo07" playsinline controls webkit-playsinline  autoplay loop width="320" height="240" src="./assets/video/Sunrise01.mp4" border: 5px 5px black;"></video>
 
 
-							<!-- VideoDomain02: Trees -->
-							<video id="openingVideo" class="countDown" playsinline controls webkit-playsinline  autoplay loop width="320" height="240" src="./assets/video/Animations/Animation_DataRoom01.mp4" border: 5px 5px black;"></video>
+							<!-- VideoDomain02: Search_html_video01 -->
+							<video id="openingVideo" class="countDown" playsinline controls webkit-playsinline  autoplay loop width="320" height="240" src="./assets/video/PlexusAnimations/Animation_ParticlesWhite01.mp4" border: 5px 5px black;"></video>
 
 
 
 							<!-- Sounds  -->
-							<audio id="mfx_audio00_test" class="audioTest"  src="./assets/audio/ui_Sounds/tests/click.wav"></audio>
+							<audio id="mfx_audio00_test" class="audioTest"  src="./assets/audio/ui_Sounds/SFX_Menus/defaultClick01.wav"></audio>
 
-							<audio id="sfx_click_gen" class="audioTest" volume="0.5" src="./assets/audio/ui_Sounds/SFX_Menu/sfx-click-gen.wav"></audio>
+							<audio id="sfx_click_gen" class="audioTest" volume="0.5" src="./assets/audio/ui_Sounds/SFX_Menus/defaultClick01.wav"></audio>
 
 							<audio id="sfx_click_gen" class="audioTest"  src="./assets/audio/ui_Sounds/SFX_Menu/sfx-click-gen01.wav"></audio>
 
@@ -1738,9 +1738,9 @@
 
 							<audio id="sfx_panel_hide" class="audioTest"  src="./assets/audio/ui_Sounds/SFX_Menu/sfx-panel-hide.wav"></audio>
 
-							<audio id="sfx_hand_show" class="audioTest"  src="./assets/audio/ui_Sounds/SFX_Menu/sfx-hand-show.wav"></audio>
+							<audio id="sfx_hand_show" class="audioTest"  src="./assets/audio/ui_Sounds/SFX_Menus/openMenu001.wav"></audio>
 
-							<audio id="sfx_hand_hide" class="audioTest"  src="./assets/audio/ui_Sounds/SFX_Menu/sfx-hand-hide.wav"></audio>
+							<audio id="sfx_hand_hide" class="audioTest"  src="./assets/audio/ui_Sounds/SFX_Menus/closeMenu001.wav"></audio>
 
 							<audio id="sfx_hand_show1" class="audioTest"  src="./assets/audio/ui_Sounds/SFX_Items/RH_A.wav"></audio>
 							<audio id="sfx_hand_hide1" class="audioTest"  src="./assets/audio/ui_Sounds/SFX_Items/RH_B.wav"></audio>
@@ -2606,7 +2606,7 @@
 				camera = new THREE.PerspectiveCamera( 80, window.innerWidth / window.innerHeight, 1, 1000000000 );
 				// camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 10000 );
 
-				camera.position.set(0, 0, 0); // For Application
+				camera.position.set(0, 0, 5); // For Application
 
 				
                 // ----------------------------------------------------------------------------------------------------
@@ -2825,6 +2825,7 @@
 				const PrimaryGrid01 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/Grid19.jpg')
 				const PrimaryGrid02 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/Grid19.jpg')
 				const defaultGrid01 = textureLoader.load('./assets/img/05-Env/Panels/defaultPanel01.png')
+                const myNavbarSkin = textureLoader.load('./assets/img/05-Env/Panels/defaultPanel01.png')
 
 
                 // ----------------------------------------------------------------------------------------------------
@@ -5823,7 +5824,7 @@
 				)
 
 				const mat_objT_PlaneA1 = new THREE.MeshBasicMaterial({ map: SceneWallpaper_01, side: THREE.DoubleSide });
-				mesh_objT_PlaneA1 = new THREE.Mesh(geo_objT_PlaneA1, mat_objT_PlaneA1);
+				mesh_objT_PlaneA1 = new THREE.Mesh(geo_objT_CircleA1, mat_objT_PlaneA1);
 				mat_objT_PlaneA1.transparent = false;
 				mat_objT_PlaneA1.alphaMap = SceneWallpaper_01;
 				mesh_objT_PlaneA1.position.set(0, 0, 0);
@@ -6252,7 +6253,7 @@
 				scene.add(videoAndΔComboTest01)
 
 				floorDesign01_Grid = new THREE.Group()
-				floorDesign01_Grid.position.set(0, -1, 0)
+				floorDesign01_Grid.position.set(0, -0.2, 0)
 				floorDesign01_Grid.rotation.set(0, 0, 0)
 				floorDesign01_Grid.scale.set(1, 1, 1)
 				videoAndΔComboTest01.add(floorDesign01_Grid)
@@ -6498,7 +6499,7 @@
 
 
 
-
+                // Search.video01
 				// Opening Video Object
 				CenterBrain_VideoSphere_Opening = new THREE.Group()
 				CenterBrain_VideoSphere_Opening.position.set(0, 1.15, 144)
