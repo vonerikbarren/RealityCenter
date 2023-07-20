@@ -2546,8 +2546,17 @@
             // #################################################################
             //  TechTile
 			// #################################################################
+			// Notes
+			// \- m = min = minus
+			// \- n = neu = neutral
+			// \- p = pos = positive
 
             let TessTile_root
+			let TessTile_base_m_root
+			let TessTile_base_n_root
+			let TessTile_base_p_root
+
+			let TessTile_base_m_container
             
             let TessTile_base_m00, TessTile_base_m01, TessTile_base_m02
             let TessTile_base_n00, TessTile_base_n01, TessTile_base_n03
@@ -6829,31 +6838,84 @@
 				// ## TechTile-Item01 = [BaseContainer] + or -
 
                 TessTile_root = new THREE.Group()
-                TessTile_root.position.set(0, 0, 0)
+                TessTile_root.position.set(0, 1, 1)
                 TessTile_root.rotation.set(0, 0, 0)
-                TessTile_root.scale.set(1, 1, 1)
+                TessTile_root.scale.set(3, 3, 3)
                 scene.add(TessTile_root)
 
-                TessTile_base_n00 = new THREE.Group()
-                TessTile_base_n00.position.set(0, 0, 0)
-                TessTile_base_n00.rotation.set(0, 0, 0)
-                TessTile_base_n00.scale.set(0.01, 0.01, 0.01)
-				TessTile_root.add(TessTile_base_n00)
+                TessTile_base_n_root = new THREE.Group()
+                TessTile_base_n_root.position.set(0, 0, 0)
+                TessTile_base_n_root.rotation.set(0, 0, 0)
+                TessTile_base_n_root.scale.set(0.001, 0.001, 0.001)
+				TessTile_root.add(TessTile_base_n_root)
+
+				TessTile_base_n_root.add(
+
+					new hoverObject(
+						'img',
+						0, 0, 0,
+						0, 0, 0,
+						0.1, 0.1, 0.1,
+						"Testing234", "TestingClass234",
+						"./assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png", "",
+						"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+					)
+					
+				)
+
+
+
 
 				let TestFunction = () => {
 					console.log("working!")
+
+					gsap.to(camera.position, {
+						duration: 5,
+						delay: 0,
+						x: 5,
+						// y: 0,
+					})
+
+					gsap.to(camera.position, {
+						duration: 5,
+						delay: 5,
+						x: -5,
+						// y: 0,
+					})
+
+					gsap.to(camera.position, {
+						duration: 5,
+						delay: 10,
+						z: -5,
+						x: 0,
+						// y: 0,
+					})
+
+					gsap.to(camera.position, {
+						duration: 5,
+						delay: 15,
+						z: 5,
+						x: 0, 
+						// y: 0,
+					})
 				}
+
+				TessTile_base_m_container = new THREE.Group()
+				TessTile_base_m_container.position.set(0, 0, 1.025)
+				TessTile_base_m_container.rotation.set(0, 0, 0)
+				TessTile_base_m_container.scale.set(1, 1, 1)
+				TessTile_base_n_root.add(TessTile_base_m_container)
 				
-				TessTile_base_n00.add(
+				TessTile_base_m_container.add(
 					new TechIcon(
 						0, 0, 0,
 						0, 0, 0,
-						0.55, 0.55, 0.55,
+						0.1, 0.1, 0.1,
 						'DefaultTechIconId', 'DefaultTechIconClassName',
 						'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
 						'DefaultImgId', 'DefaultImgClassName',
 						'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
-						"./assets/icons/00-Official/UI/Isometric/tools/target1.svg", "",
+						"./assets/icons/00-Official/Files02/file_pdf.svg", "",
 						TestFunction, 
 						"ShowΔ",
 						"Toggle from here or main menu top left"
@@ -7124,7 +7186,6 @@
 				// 		"Testing234", "TestingClass234",
 				// 		"./assets/img/10-ObjectUI/02-TechTiles/Version04/TechTileBase01.svg", "",
 				// 		"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Love each other...correctly.",
-						
 				// 	)
 				// )
 
@@ -7436,17 +7497,17 @@
 				folderLoadTestingContainer05.add(ATT_RampUp_RSC__Root.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
 				folderLoadTestingContainer05.add(ATT_RampUp_RSC__Root.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
-				const folderLoadTestingContainer06 = gui.addFolder('<<< LoadPoint06 : EmulatorTest01 >>>')
+				const folderLoadTestingContainer06 = gui.addFolder('<<< LoadPoint06 : TessTile_root >>>')
 
-				folderLoadTestingContainer06.add(EmulatorTest01.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
-				folderLoadTestingContainer06.add(EmulatorTest01.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
-				folderLoadTestingContainer06.add(EmulatorTest01.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
-				folderLoadTestingContainer06.add(EmulatorTest01.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
-				folderLoadTestingContainer06.add(EmulatorTest01.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
-				folderLoadTestingContainer06.add(EmulatorTest01.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
-				folderLoadTestingContainer06.add(EmulatorTest01.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
-				folderLoadTestingContainer06.add(EmulatorTest01.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
-				folderLoadTestingContainer06.add(EmulatorTest01.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
+				folderLoadTestingContainer06.add(TessTile_root.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
+				folderLoadTestingContainer06.add(TessTile_root.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
+				folderLoadTestingContainer06.add(TessTile_root.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
+				folderLoadTestingContainer06.add(TessTile_root.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
+				folderLoadTestingContainer06.add(TessTile_root.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
+				folderLoadTestingContainer06.add(TessTile_root.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
+				folderLoadTestingContainer06.add(TessTile_root.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
+				folderLoadTestingContainer06.add(TessTile_root.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
+				folderLoadTestingContainer06.add(TessTile_root.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
 				const folderLoadTestingContainer07 = gui.addFolder('<<< LoadPoint07 : EmulatorTest02 >>>')
 
@@ -7484,17 +7545,17 @@
 				folderLoadTestingContainer09.add(gbaEmulatorHUD_root.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
 				folderLoadTestingContainer09.add(gbaEmulatorHUD_root.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
-				const folderLoadTestingContainer10 = gui.addFolder('<<< LoadPoint10 >>>')
+				const folderLoadTestingContainer10 = gui.addFolder('<<< LoadPoint10: TessTile_root >>>')
 
-				folderLoadTestingContainer10.add(floorDesign01_Grid.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
-				folderLoadTestingContainer10.add(floorDesign01_Grid.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
-				folderLoadTestingContainer10.add(floorDesign01_Grid.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
-				folderLoadTestingContainer10.add(floorDesign01_Grid.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
-				folderLoadTestingContainer10.add(floorDesign01_Grid.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
-				folderLoadTestingContainer10.add(floorDesign01_Grid.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
-				folderLoadTestingContainer10.add(floorDesign01_Grid.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
-				folderLoadTestingContainer10.add(floorDesign01_Grid.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
-				folderLoadTestingContainer10.add(floorDesign01_Grid.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
+				folderLoadTestingContainer10.add(TessTile_root.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
+				folderLoadTestingContainer10.add(TessTile_root.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
+				folderLoadTestingContainer10.add(TessTile_root.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
+				folderLoadTestingContainer10.add(TessTile_root.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
+				folderLoadTestingContainer10.add(TessTile_root.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
+				folderLoadTestingContainer10.add(TessTile_root.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
+				folderLoadTestingContainer10.add(TessTile_root.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
+				folderLoadTestingContainer10.add(TessTile_root.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
+				folderLoadTestingContainer10.add(TessTile_root.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
 			const folderPortfolioControls = gui.addFolder('Portfolio Controls')
 				// folderPortfolioControls.add(r_TechTileGroupTest.position, 'x').min(-5000).max(5000).step(1).name('[ ⇄ Scroll ]');
@@ -7961,6 +8022,8 @@
 			//.22222222222222222222..........TTTT...Tiii..cccccccc.ckkk..kkkkkAAA.....AAAAAnnn..nnnn.niii.immm..mmmm.mmmm.maaaaaaaaa.ttttt.eeeeeeee..
 			//..............................................cccc............................................................aaa.......tttt...eeee....
 			//.......................................................................................................................................
+
+			
 
 			function moveItem() {
 				gsap.to(mesh.position, {
