@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>ΔTemplate</title>
+		<title>TechTile + Tesseract </title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 		<!-- Copyright: <a href='https://es.123rf.com/profile_apopium'>apopium</a> -->
@@ -2543,13 +2543,35 @@
 			// #################################################################
 
 			
+            // #################################################################
+            //  TechTile
+			// #################################################################
 
+            let TessTile_root
+            
+            let TessTile_base_m00, TessTile_base_m01, TessTile_base_m02
+            let TessTile_base_n00, TessTile_base_n01, TessTile_base_n03
+            let TessTile_base_p00, TessTile_base_p01, TessTile_base_p02
+            let TessTile_n01, TessTile_n02, TessTile_n03
+            let TessTile_m01, TessTile_m02, TessTile_m03
+            let TessTile_p01, TessTile_p02, TessTile_p03
+            let TessTileExt_p0
 
+            
 
             // #################################################################
-            //  
+            //  Tesseract
 			// #################################################################
 			
+            let Tesseract_root
+            let Tesseract_rootCore
+            let Tesseract_rootBoundary
+            let Tesseract_rootRoomLeft
+            let Tesseract_rootRoomRight
+            let Tesseract_rootRoomFront
+            let Tesseract_rootRoomBack
+            let Tesseract_rootRoomAbove
+            let Tesseract_rootRoomBelow
 
 
 			// function VideoElement( id, x , y, z, ry) {
@@ -6777,54 +6799,77 @@
 				)
 
                 
+			//.................................................................
+			//..TTTTTTTTT..........................ttii........................
+			//.TTTTTTTTTTT....................stt..ttii........................
+			//.TTTTTTTTTTT....................stt..ttii........................
+			//.TTTTTTTTTTT....................stt..ttii........................
+			//.....TTTT...eeeeeee...essssss.sssttttttii.iinnnnnnn...ngggggggg..
+			//.....TTTT...eeeeeeee.eessssssssssttttttii.iinnnnnnnn..ngggggggg..
+			//.....TTTT..Teeeeeeee.eessssssssssttttttii.iinnnnnnnn.nngggggggg..
+			//.....TTTT..Teee..eeeeeesssssss..stt..ttii.iinnn.nnnn.nngg..gggg..
+			//.....TTTT..Teeeeeeeeeeesssssss..stt..ttii.iinn..nnnn.nngg..gggg..
+			//.....TTTT..Teeeeeeeee.esssssss..stt..ttii.iinn..nnnn.nngg..gggg..
+			//.....TTTT..Teee......eessssssss.stt..ttii.iinn..nnnn.nngg..gggg..
+			//.....TTTT..Teeeeeeeeeeesss.ssss.sttt.ttii.iinn..nnnn.nngggggggg..
+			//.....TTTT..Teeeeeeee.eesssssss..sttttttii.iinn..nnnn.nngggggggg..
+			//.....TTTT...eeeeeeee..esssssss..sttttttii.iinn..nnnn..ngggggggg..
+			//..............eeee.....sssss.....tttt................nnggg.gggg..
+			//.....................................................nngggggggg..
+			//.....................................................nngggggggg..
+			//......................................................nggggggg...
+			//.................................................................
 
 
 				// #################################################################
 				// #################################################################
 				// -----------------------------------------------------------------
-				// # UI Development (Start)
+				// # TechTile Development (Start)
 
-				// ## UI-Item01 = [Scroller of Δ] + or - 
+				// ## TechTile-Item01 = [BaseContainer] + or -
 
-				// ## UI-Item02 = [userPositioner] (t+x+y+z)
+                TessTile_root = new THREE.Group()
+                TessTile_root.position.set(0, 0, 0)
+                TessTile_root.rotation.set(0, 0, 0)
+                TessTile_root.scale.set(1, 1, 1)
+                scene.add(TessTile_root)
 
-				// ## UI-Item03 = [userRotator] 
+                TessTile_base_n00 = new THREE.Group()
+                TessTile_base_n00.position.set(0, 0, 0)
+                TessTile_base_n00.rotation.set(0, 0, 0)
+                TessTile_base_n00.scale.set(0.01, 0.01, 0.01)
+				TessTile_root.add(TessTile_base_n00)
 
-				// ## UI-Item04 = [userScaler]
+				let TestFunction = () => {
+					console.log("working!")
+				}
 				
-				// ## UI-ItemA = [StartMenu] = TimeOut or Esc = ({ status: 'not ready'})
+				TessTile_base_n00.add(
+					new TechIcon(
+						0, 0, 0,
+						0, 0, 0,
+						0.55, 0.55, 0.55,
+						'DefaultTechIconId', 'DefaultTechIconClassName',
+						'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+						'DefaultImgId', 'DefaultImgClassName',
+						'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+						"./assets/icons/00-Official/UI/Isometric/tools/target1.svg", "",
+						TestFunction, 
+						"ShowΔ",
+						"Toggle from here or main menu top left"
+					)
+				)
 
-				// ## UI-ItemB = [VisorMenu] = KeyV = ({ status: 'not ready'})
 
-				// ## UI-ItemC = [TransmissionMenu] = KeyC = ({ status: 'not ready'})
 
-				// ## UI-ItemD = [MomentTraveler] = KeyM = ({ status: 'not ready'})
 
-				// ## UI-ItemE = [Z-Sphere] = KeyZ = ({ status: 'not ready'})
 
-				// ## UI-ItemF = [Backpack] = KeyB = ({ status: 'not ready'})
 
-				// ## UI-ItemG = [Finder] = KeyF = ({ status: 'not ready'})
 				
-				// ## UI-ItemG = [Inspector] = KeyI = ({ status: 'not ready'})
-				
-				// ## UI-ItemH = [Illuminator] = Ctrl + KeyI = ({ status: 'not ready'})
-
-				// ## UI-ItemI = [Explainer] = KeyE = ({ status: 'not ready'})
-
-				// ## UI-ItemJ = [Hookshot/Homer] = KeyH = ({ status: 'not ready'})
-
-				// ## UI-ItemK = [Receiver] = KeyR = ({ status: 'not ready'})
-
-				// ## UI-ItemL = [Locator] = KeyL = ({ status: 'not ready'})
-
-				// ## UI-ItemM = [MomentAnalyzer] = KeyM = ({ status: 'not ready'})
-
-				// ## UI-ItemN = [MyMind] = KeyN = ({ status: 'not ready'})
 
 
 
-				// # UI Development (End)
+				// # TechTile Development (End)
 				// -----------------------------------------------------------------
 				// #################################################################
 				// #################################################################
