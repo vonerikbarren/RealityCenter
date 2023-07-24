@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>TechTile + Tesseract </title>
+		<title>ΔTemplate</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 		<!-- Copyright: <a href='https://es.123rf.com/profile_apopium'>apopium</a> -->
@@ -2543,46 +2543,13 @@
 			// #################################################################
 
 			
-            // #################################################################
-            //  TechTile
-			// #################################################################
-			// Notes
-			// \- m = min = minus
-			// \- n = neu = neutral
-			// \- p = pos = positive
 
-            let TessTile_root
-			let TessTile_base_m_root
-			let TessTile_base_n_root
-			let TessTile_base_p_root
 
-			let TessTile_base_m_container
-            
-            let TessTile_base_m00, TessTile_base_m01, TessTile_base_m02
-            let TessTile_base_n00, TessTile_base_n01, TessTile_base_n03
-            let TessTile_base_p00, TessTile_base_p01, TessTile_base_p02
-            let TessTile_n01, TessTile_n02, TessTile_n03
-            let TessTile_m01, TessTile_m02, TessTile_m03
-            let TessTile_p01, TessTile_p02, TessTile_p03
-            let TessTileExt_p0
-
-			let TessButtonPDF, TessButtonLogo
-			let TessButtonScrollUp, TessButtonScrollDown
-            let TessObject01, TessObject02, TessObject03
 
             // #################################################################
-            //  Tesseract
+            //  
 			// #################################################################
 			
-            let Tesseract_root
-            let Tesseract_rootCore
-            let Tesseract_rootBoundary
-            let Tesseract_rootRoomLeft
-            let Tesseract_rootRoomRight
-            let Tesseract_rootRoomFront
-            let Tesseract_rootRoomBack
-            let Tesseract_rootRoomAbove
-            let Tesseract_rootRoomBelow
 
 
 			// function VideoElement( id, x , y, z, ry) {
@@ -6810,261 +6777,74 @@
 				)
 
                 
-			//.................................................................
-			//..TTTTTTTTT..........................ttii........................
-			//.TTTTTTTTTTT....................stt..ttii........................
-			//.TTTTTTTTTTT....................stt..ttii........................
-			//.TTTTTTTTTTT....................stt..ttii........................
-			//.....TTTT...eeeeeee...essssss.sssttttttii.iinnnnnnn...ngggggggg..
-			//.....TTTT...eeeeeeee.eessssssssssttttttii.iinnnnnnnn..ngggggggg..
-			//.....TTTT..Teeeeeeee.eessssssssssttttttii.iinnnnnnnn.nngggggggg..
-			//.....TTTT..Teee..eeeeeesssssss..stt..ttii.iinnn.nnnn.nngg..gggg..
-			//.....TTTT..Teeeeeeeeeeesssssss..stt..ttii.iinn..nnnn.nngg..gggg..
-			//.....TTTT..Teeeeeeeee.esssssss..stt..ttii.iinn..nnnn.nngg..gggg..
-			//.....TTTT..Teee......eessssssss.stt..ttii.iinn..nnnn.nngg..gggg..
-			//.....TTTT..Teeeeeeeeeeesss.ssss.sttt.ttii.iinn..nnnn.nngggggggg..
-			//.....TTTT..Teeeeeeee.eesssssss..sttttttii.iinn..nnnn.nngggggggg..
-			//.....TTTT...eeeeeeee..esssssss..sttttttii.iinn..nnnn..ngggggggg..
-			//..............eeee.....sssss.....tttt................nnggg.gggg..
-			//.....................................................nngggggggg..
-			//.....................................................nngggggggg..
-			//......................................................nggggggg...
-			//.................................................................
 
+				//.................................................................
+				//..TTTTTTTTT..........................ttii........................
+				//.TTTTTTTTTTT....................stt..ttii........................
+				//.TTTTTTTTTTT....................stt..ttii........................
+				//.TTTTTTTTTTT....................stt..ttii........................
+				//.....TTTT...eeeeeee...essssss.sssttttttii.iinnnnnnn...ngggggggg..
+				//.....TTTT...eeeeeeee.eessssssssssttttttii.iinnnnnnnn..ngggggggg..
+				//.....TTTT..Teeeeeeee.eessssssssssttttttii.iinnnnnnnn.nngggggggg..
+				//.....TTTT..Teee..eeeeeesssssss..stt..ttii.iinnn.nnnn.nngg..gggg..
+				//.....TTTT..Teeeeeeeeeeesssssss..stt..ttii.iinn..nnnn.nngg..gggg..
+				//.....TTTT..Teeeeeeeee.esssssss..stt..ttii.iinn..nnnn.nngg..gggg..
+				//.....TTTT..Teee......eessssssss.stt..ttii.iinn..nnnn.nngg..gggg..
+				//.....TTTT..Teeeeeeeeeeesss.ssss.sttt.ttii.iinn..nnnn.nngggggggg..
+				//.....TTTT..Teeeeeeee.eesssssss..sttttttii.iinn..nnnn.nngggggggg..
+				//.....TTTT...eeeeeeee..esssssss..sttttttii.iinn..nnnn..ngggggggg..
+				//..............eeee.....sssss.....tttt................nnggg.gggg..
+				//.....................................................nngggggggg..
+				//.....................................................nngggggggg..
+				//......................................................nggggggg...
+				//.................................................................
 
 				// #################################################################
 				// #################################################################
 				// -----------------------------------------------------------------
-				// # TechTile Development (Start)
+				// # UI Development (Start)
 
-				// ## TechTile-Item01 = [BaseContainer] + or -
+				// ## UI-Item01 = [Scroller of Δ] + or - 
 
-                TessTile_root = new THREE.Group()
-                TessTile_root.position.set(0, 1, 1)
-                TessTile_root.rotation.set(0, 0, 0)
-                TessTile_root.scale.set(10, 10, 10)
-                scene.add(TessTile_root)
+				// ## UI-Item02 = [userPositioner] (t+x+y+z)
 
-                TessTile_base_n_root = new THREE.Group()
-                TessTile_base_n_root.position.set(0, 0, -0.01)
-                TessTile_base_n_root.rotation.set(0, 0, 0)
-                TessTile_base_n_root.scale.set(0.001, 0.001, 0.001)
-				TessTile_root.add(TessTile_base_n_root)
+				// ## UI-Item03 = [userRotator] 
 
-				TessTile_base_n_root.add(
-
-					new hoverObject(
-						'img',
-						0, 0, 0,
-						0, 0, 0,
-						0.1, 0.1, 0.1,
-						"Testing234", "TestingClass234",
-						"./assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png", "",
-						"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
-					)
-					
-				)
-
-
-				TessTile_base_n00 = new THREE.Group()
-                TessTile_base_n00.position.set(0, 0, -0.03)
-                TessTile_base_n00.rotation.set(0, 0, 0)
-                TessTile_base_n00.scale.set(0.0005, 0.0005, 0.0005)
-				TessTile_root.add(TessTile_base_n00)
-
-				TessTile_base_n00.add(
-
-					new hoverObject(
-						'img',
-						0, 0, 0,
-						0, 0, 0,
-						0.1, 0.1, 0.1,
-						"Testing234", "TestingClass234",
-						"./assets/img/10-ObjectUI/02-TechTiles/Version07/B00_TechTileContainer.png", "",
-						"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
-					)
-					
-				)
-
-
-				// let ΔLevel02_of_TessTile = (objA, objB, Δ) => {
-				// 	if (objA > objB) {
-				// 		gsap.to(TessTile_base_n00.scale, {
-				// 		duration: 5,
-				// 		delay: 0,
-				// 		x: 0.0005,
-				// 		y: 0.0005,
-				// 		z: 0.0005,
-				// 		})
-				// 	} else {
-				// 		gsap.to(TessTile_base_n00.scale, {
-				// 		duration: 5,
-				// 		delay: 0,
-				// 		x: 0.00005,
-				// 		y: 0.00005,
-				// 		z: 0.00005,
-				// 	})	
-				// }
-
-
-
-
-				let TestFunction = () => {
-					console.log("working!")
-
-					gsap.to(camera.position, {
-						duration: 5,
-						delay: 0,
-						x: 5,
-						// y: 0,
-					})
-
-					gsap.to(camera.position, {
-						duration: 5,
-						delay: 5,
-						x: -5,
-						// y: 0,
-					})
-
-					gsap.to(camera.position, {
-						duration: 5,
-						delay: 10,
-						z: -5,
-						x: 0,
-						// y: 0,
-					})
-
-					gsap.to(camera.position, {
-						duration: 1,
-						delay: 0,
-						z: 5,
-						x: 0, 
-						// y: 0,
-					})
-				}
-
-				// *~*~*~*~*~*~*~*~*
-				// SummonPDFTest
-				// *~*~*~*~*~*~*~*~*
-				const fx_A01_summonPDFTest = () => {
-					gsap.to(TessObject01.scale, {
-						duration: 1,
-						delay: 0,
-						z: 0.0005,
-						y: 0.0005,
-						x: 0.0005, 
-					
-					})
-
-					gsap.to(TessObject01.position, {
-						duration: 1,
-						delay: 0,
-						z: 0.001,
-						y: 0.001,
-						x: 0.1, 
-					
-					})
-				}
-
-				const fx_A02_toggleSummonPDFTest = () => {
-					if (TessObject01.scale.z !== 0.0005) {
-							gsap.to(TessObject01.scale, {
-							duration: 1,
-							delay: 0,
-							z: 0.00005,
-							y: 0.00005,
-							x: 0.00005, 
-						
-						})
-
-						gsap.to(TessObject01.position, {
-							duration: 1,
-							delay: 0,
-							z: 0.001,
-							y: 0.001,
-							x: 0.1, 
-						
-						})
-					} else if (TessObject01.scale.x === 0.00005) {
-						gsap.to(TessObject01.scale, {
-							duration: 1,
-							delay: 0,
-							z: 0.005,
-							y: 0.005,
-							x: 0.005, 
-						
-						})
-
-						gsap.to(TessObject01.position, {
-							duration: 1,
-							delay: 0,
-							z: -0.03,
-							y: 0.001,
-							x: 0.1, 
-						
-						}) 
-					}
-				}
-
-				TessTile_base_m_container = new THREE.Group()
-				TessTile_base_m_container.position.set(0, 0, 1.025)
-				TessTile_base_m_container.rotation.set(0, 0, 0)
-				TessTile_base_m_container.scale.set(1, 1, 1)
-				TessTile_base_n_root.add(TessTile_base_m_container)
+				// ## UI-Item04 = [userScaler]
 				
-				TessTile_base_m_container.add(
-					new TechIcon(
-						0, 0, 0,
-						0, 0, 0,
-						0.1, 0.1, 0.1,
-						'DefaultTechIconId', 'DefaultTechIconClassName',
-						'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
-						'DefaultImgId', 'DefaultImgClassName',
-						'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
-						"./assets/icons/00-Official/Files02/file_pdf.svg", "",
-						fx_A02_toggleSummonPDFTest, 
-						"ShowΔ",
-						"Toggle from here or main menu top left"
-					)
-				)
+				// ## UI-ItemA = [StartMenu] = TimeOut or Esc = ({ status: 'not ready'})
 
+				// ## UI-ItemB = [VisorMenu] = KeyV = ({ status: 'not ready'})
 
+				// ## UI-ItemC = [TransmissionMenu] = KeyC = ({ status: 'not ready'})
+
+				// ## UI-ItemD = [MomentTraveler] = KeyM = ({ status: 'not ready'})
+
+				// ## UI-ItemE = [Z-Sphere] = KeyZ = ({ status: 'not ready'})
+
+				// ## UI-ItemF = [Backpack] = KeyB = ({ status: 'not ready'})
+
+				// ## UI-ItemG = [Finder] = KeyF = ({ status: 'not ready'})
 				
-
-
-
-				// ## TechTile-Item02 = [ObjectsToBeControlled] + or -
-
-
-				TessObject01 = new THREE.Group()
-				TessObject01.position.set(0.095, 0.5, -0.3)
-				TessObject01.rotation.set(0, -0.25, 0)
-				TessObject01.scale.set(0.005, 0.005, 0.005)
-				TessTile_root.add(TessObject01)
-
-
-				TessObject01.add(
-
-					new makePDF_Viewer(
-						0, 0, 0,
-						0, 0, 0,
-						0.1, 0.1, 0.1,
-						"hoverClockA1",
-						"./assets/docs/02-PDFs/MyPersonalLibrary/00-Admin/JobAtATT_DM_Checklist_Feedback01/ATT_DM_Checklist_Feedback01.pdf",
-						"1080", "1080"
-					)
-
-				)
-
-
-			
-
-
+				// ## UI-ItemG = [Inspector] = KeyI = ({ status: 'not ready'})
 				
+				// ## UI-ItemH = [Illuminator] = Ctrl + KeyI = ({ status: 'not ready'})
+
+				// ## UI-ItemI = [Explainer] = KeyE = ({ status: 'not ready'})
+
+				// ## UI-ItemJ = [Hookshot/Homer] = KeyH = ({ status: 'not ready'})
+
+				// ## UI-ItemK = [Receiver] = KeyR = ({ status: 'not ready'})
+
+				// ## UI-ItemL = [Locator] = KeyL = ({ status: 'not ready'})
+
+				// ## UI-ItemM = [MomentAnalyzer] = KeyM = ({ status: 'not ready'})
+
+				// ## UI-ItemN = [MyMind] = KeyN = ({ status: 'not ready'})
 
 
 
-				// # TechTile Development (End)
+				// # UI Development (End)
 				// -----------------------------------------------------------------
 				// #################################################################
 				// #################################################################
@@ -7319,6 +7099,7 @@
 				// 		"Testing234", "TestingClass234",
 				// 		"./assets/img/10-ObjectUI/02-TechTiles/Version04/TechTileBase01.svg", "",
 				// 		"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Love each other...correctly.",
+						
 				// 	)
 				// )
 
@@ -7582,17 +7363,17 @@
 				folderLoadTestingContainer01.add(floorDesign01_Grid.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
 				folderLoadTestingContainer01.add(floorDesign01_Grid.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
-				const folderLoadTestingContainer02 = gui.addFolder('<<< LoadPoint02 :: TessObject01 >>>')
+				const folderLoadTestingContainer02 = gui.addFolder('<<< LoadPoint02 :: ATT_Acronyms__Root >>>')
 
-				folderLoadTestingContainer02.add(TessObject01.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
-				folderLoadTestingContainer02.add(TessObject01.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
-				folderLoadTestingContainer02.add(TessObject01.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
-				folderLoadTestingContainer02.add(TessObject01.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
-				folderLoadTestingContainer02.add(TessObject01.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
-				folderLoadTestingContainer02.add(TessObject01.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
-				folderLoadTestingContainer02.add(TessObject01.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
-				folderLoadTestingContainer02.add(TessObject01.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
-				folderLoadTestingContainer02.add(TessObject01.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
+				folderLoadTestingContainer02.add(ATT_Acronyms__Root.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
+				folderLoadTestingContainer02.add(ATT_Acronyms__Root.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
+				folderLoadTestingContainer02.add(ATT_Acronyms__Root.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
+				folderLoadTestingContainer02.add(ATT_Acronyms__Root.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
+				folderLoadTestingContainer02.add(ATT_Acronyms__Root.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
+				folderLoadTestingContainer02.add(ATT_Acronyms__Root.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
+				folderLoadTestingContainer02.add(ATT_Acronyms__Root.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
+				folderLoadTestingContainer02.add(ATT_Acronyms__Root.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
+				folderLoadTestingContainer02.add(ATT_Acronyms__Root.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
 				const folderLoadTestingContainer03 = gui.addFolder('<<< LoadPoint03 :: ATT_CustomerEducationTool__Root >>>')
 
@@ -7618,29 +7399,29 @@
 				folderLoadTestingContainer04.add(ATT_PrimerBooklet__Root.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
 				folderLoadTestingContainer04.add(ATT_PrimerBooklet__Root.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
-				const folderLoadTestingContainer05 = gui.addFolder('<<< LoadPoint05 :: TessObject01 >>>')
+				const folderLoadTestingContainer05 = gui.addFolder('<<< LoadPoint05 :: ATT_RampUp_RSC__Root >>>')
 
-				folderLoadTestingContainer05.add(TessObject01.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
-				folderLoadTestingContainer05.add(TessObject01.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
-				folderLoadTestingContainer05.add(TessObject01.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
-				folderLoadTestingContainer05.add(TessObject01.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
-				folderLoadTestingContainer05.add(TessObject01.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
-				folderLoadTestingContainer05.add(TessObject01.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
-				folderLoadTestingContainer05.add(TessObject01.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
-				folderLoadTestingContainer05.add(TessObject01.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
-				folderLoadTestingContainer05.add(TessObject01.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
+				folderLoadTestingContainer05.add(ATT_RampUp_RSC__Root.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
+				folderLoadTestingContainer05.add(ATT_RampUp_RSC__Root.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
+				folderLoadTestingContainer05.add(ATT_RampUp_RSC__Root.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
+				folderLoadTestingContainer05.add(ATT_RampUp_RSC__Root.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
+				folderLoadTestingContainer05.add(ATT_RampUp_RSC__Root.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
+				folderLoadTestingContainer05.add(ATT_RampUp_RSC__Root.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
+				folderLoadTestingContainer05.add(ATT_RampUp_RSC__Root.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
+				folderLoadTestingContainer05.add(ATT_RampUp_RSC__Root.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
+				folderLoadTestingContainer05.add(ATT_RampUp_RSC__Root.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
-				const folderLoadTestingContainer06 = gui.addFolder('<<< LoadPoint06 : TessTile_root >>>')
+				const folderLoadTestingContainer06 = gui.addFolder('<<< LoadPoint06 : EmulatorTest01 >>>')
 
-				folderLoadTestingContainer06.add(TessTile_root.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
-				folderLoadTestingContainer06.add(TessTile_root.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
-				folderLoadTestingContainer06.add(TessTile_root.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
-				folderLoadTestingContainer06.add(TessTile_root.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
-				folderLoadTestingContainer06.add(TessTile_root.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
-				folderLoadTestingContainer06.add(TessTile_root.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
-				folderLoadTestingContainer06.add(TessTile_root.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
-				folderLoadTestingContainer06.add(TessTile_root.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
-				folderLoadTestingContainer06.add(TessTile_root.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
+				folderLoadTestingContainer06.add(EmulatorTest01.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
+				folderLoadTestingContainer06.add(EmulatorTest01.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
+				folderLoadTestingContainer06.add(EmulatorTest01.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
+				folderLoadTestingContainer06.add(EmulatorTest01.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
+				folderLoadTestingContainer06.add(EmulatorTest01.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
+				folderLoadTestingContainer06.add(EmulatorTest01.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
+				folderLoadTestingContainer06.add(EmulatorTest01.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
+				folderLoadTestingContainer06.add(EmulatorTest01.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
+				folderLoadTestingContainer06.add(EmulatorTest01.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
 				const folderLoadTestingContainer07 = gui.addFolder('<<< LoadPoint07 : EmulatorTest02 >>>')
 
@@ -7678,17 +7459,17 @@
 				folderLoadTestingContainer09.add(gbaEmulatorHUD_root.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
 				folderLoadTestingContainer09.add(gbaEmulatorHUD_root.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
-				const folderLoadTestingContainer10 = gui.addFolder('<<< LoadPoint10: TessTile_root >>>')
+				const folderLoadTestingContainer10 = gui.addFolder('<<< LoadPoint10 >>>')
 
-				folderLoadTestingContainer10.add(TessTile_root.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
-				folderLoadTestingContainer10.add(TessTile_root.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
-				folderLoadTestingContainer10.add(TessTile_root.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
-				folderLoadTestingContainer10.add(TessTile_root.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
-				folderLoadTestingContainer10.add(TessTile_root.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
-				folderLoadTestingContainer10.add(TessTile_root.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
-				folderLoadTestingContainer10.add(TessTile_root.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
-				folderLoadTestingContainer10.add(TessTile_root.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
-				folderLoadTestingContainer10.add(TessTile_root.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
+				folderLoadTestingContainer10.add(floorDesign01_Grid.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
+				folderLoadTestingContainer10.add(floorDesign01_Grid.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
+				folderLoadTestingContainer10.add(floorDesign01_Grid.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
+				folderLoadTestingContainer10.add(floorDesign01_Grid.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
+				folderLoadTestingContainer10.add(floorDesign01_Grid.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
+				folderLoadTestingContainer10.add(floorDesign01_Grid.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
+				folderLoadTestingContainer10.add(floorDesign01_Grid.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
+				folderLoadTestingContainer10.add(floorDesign01_Grid.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
+				folderLoadTestingContainer10.add(floorDesign01_Grid.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
 			const folderPortfolioControls = gui.addFolder('Portfolio Controls')
 				// folderPortfolioControls.add(r_TechTileGroupTest.position, 'x').min(-5000).max(5000).step(1).name('[ ⇄ Scroll ]');
@@ -8155,8 +7936,6 @@
 			//.22222222222222222222..........TTTT...Tiii..cccccccc.ckkk..kkkkkAAA.....AAAAAnnn..nnnn.niii.immm..mmmm.mmmm.maaaaaaaaa.ttttt.eeeeeeee..
 			//..............................................cccc............................................................aaa.......tttt...eeee....
 			//.......................................................................................................................................
-
-			
 
 			function moveItem() {
 				gsap.to(mesh.position, {
