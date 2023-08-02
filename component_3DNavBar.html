@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>ΔTemplate</title>
+		<title>Δcomponent_2dNavbar</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 		<!-- Copyright: <a href='https://es.123rf.com/profile_apopium'>apopium</a> -->
@@ -2539,12 +2539,45 @@
 			let EmulatorTest03
 
             // #################################################################
-            //  components_wordSphere
+            //  component_2DNavbar
 			// #################################################################
 
-			let wordSphere, mesh_wordSphere
-			let wordSphere01, mesh_wordSphere01
-			let wordSphere02, mesh_wordSphere02
+            let Navbar2D_root, mesh_Navbar2D_root
+
+			let Navbar2D, mesh_Navbar2D
+
+
+            let Navbar2D_option01, mesh_Navbar2D_option01
+            let Navbar2D_option02, mesh_Navbar2D_option02
+            let Navbar2D_option03, mesh_Navbar2D_option03
+            let Navbar2D_option04, mesh_Navbar2D_option04
+            let Navbar2D_option05, mesh_Navbar2D_option05
+            let Navbar2D_option06, mesh_Navbar2D_option06
+            let Navbar2D_option07, mesh_Navbar2D_option07
+            let Navbar2D_option08, mesh_Navbar2D_option08
+            let Navbar2D_option09, mesh_Navbar2D_option09
+            let Navbar2D_option10, mesh_Navbar2D_option10
+            let Navbar2D_option11, mesh_Navbar2D_option11
+            let Navbar2D_option12, mesh_Navbar2D_option12
+
+
+            let navbarTechIcon01
+            let navbarTechIcon02
+            let navbarTechIcon03
+            let navbarTechIcon04
+            let navbarTechIcon05
+            let navbarTechIcon06
+            let navbarTechIcon07
+            let navbarTechIcon08
+            let navbarTechIcon09
+            let navbarTechIcon10
+            let navbarTechIcon11
+
+
+
+
+
+
 
 
 
@@ -3012,10 +3045,10 @@
 
 
 
-				const wordSphereTest = textureLoader.load('./assets/img/05-Env/wordSpheres/WordSphereTest04.png')
-				const wordSphereTest01 = textureLoader.load('./assets/img/05-Env/wordSpheres/WordSphereTest05.png')
-				const wordSphereTest02 = textureLoader.load('./assets/img/05-Env/wordSpheres/WordSphereTest06.png')
+				const newPrimaryNavbarImg = textureLoader.load('./assets/img/03-HudUI/PrimaryHeader/PrimaryHeader.png')
 
+                const newTechTileHolder07 = textureLoader.load('./assets/img/10-ObjectUI/02-TechTiles/DigiTechTile07/01-Base/DigiTechTile07.png')
+				
 
 
 
@@ -5836,7 +5869,7 @@
 				)
 
 				const mat_objT_PlaneA1 = new THREE.MeshBasicMaterial({ map: SceneWallpaper_01, side: THREE.DoubleSide });
-				mesh_objT_PlaneA1 = new THREE.Mesh(geo_objT_CircleA1, mat_objT_PlaneA1);
+				mesh_objT_PlaneA1 = new THREE.Mesh(geo_objT_PlaneA1, mat_objT_PlaneA1);
 				mat_objT_PlaneA1.transparent = false;
 				mat_objT_PlaneA1.alphaMap = SceneWallpaper_01;
 				mesh_objT_PlaneA1.position.set(0, 0, 0);
@@ -6809,122 +6842,646 @@
 				// #################################################################
 				// #################################################################
 				// -----------------------------------------------------------------
-				// # component_wordSphere (Start)
+				// # component_2dNavbar (Start)
 
 				// ## [buildcomponentsHere]
 
-                wordSphere = new THREE.Group()
-                wordSphere.position.set(0, 0, 0)
-                wordSphere.rotation.set(0, 0, 0)
-                wordSphere.scale.set(1, 1, 1)
-                scene.add(wordSphere)
+                Navbar2D_root = new THREE.Group()
+                Navbar2D_root.position.set(0, 0, 0)
+                Navbar2D_root.rotation.set(0, 0, 0)
+                Navbar2D_root.scale.set(1, 1, 1)
+                scene.add(Navbar2D_root)
+                camera.attach(Navbar2D_root)
 
-                const mat_wordSphere = new THREE.MeshBasicMaterial({ map: wordSphereTest, side: THREE.DoubleSide });
-				mesh_wordSphere = new THREE.Mesh(geo_objT_SphereA0, mat_wordSphere);
-				mat_wordSphere.transparent = true;
-				mat_wordSphere.alphaMap = wordSphereTest;
-				mesh_wordSphere.position.set(0, 0, 0);
-				// mesh_wordSphere.position.set(-15000, 0, 0);
-				mesh_wordSphere.scale.set(1, 1, 1);
-				mesh_wordSphere.rotation.set(0, 0, 0)
-				// mesh_wordSphere.rotateX( - Math.PI / 2 );
 
-				// wordSphere.lookAt(camera)
+                Navbar2D = new THREE.Group()
+                Navbar2D.position.set(0, 2, -2)
+                Navbar2D.rotation.set(0, 0, 0)
+                Navbar2D.scale.set(0.1, 0.1, 0.1)
+                Navbar2D_root.add(Navbar2D)
+
+
+                const mat_Navbar2D = new THREE.MeshBasicMaterial({ map: newPrimaryNavbarImg, side: THREE.DoubleSide });
+				mesh_Navbar2D = new THREE.Mesh(geo_objT_BoxA0, mat_Navbar2D);
+				mat_Navbar2D.transparent = true;
+                mat_Navbar2D.wireframe = false;
+				mat_Navbar2D.alphaMap = newPrimaryNavbarImg;
+				mesh_Navbar2D.position.set(0, 0, 0);
+				// mesh_Navbar2D.position.set(-15000, 0, 0);
+				mesh_Navbar2D.scale.set(1, 1, 1);
+				mesh_Navbar2D.rotation.set(0, 0, 0);
+				// mesh_Navbar2D.rotateX( - Math.PI / 2 );
+
+				// Navbar2D.lookAt(camera)
 				
-				wordSphere.add(mesh_wordSphere)
+				Navbar2D.add(mesh_Navbar2D)
 
 
-				// Vertical WordSphere (kinda bad looking)
-				wordSphere01 = new THREE.Group()
-                wordSphere01.position.set(0, 0, 0)
-                wordSphere01.rotation.set(0, 0, 0)
-                wordSphere01.scale.set(0.9, 0.9, 0.9)
-                scene.add(wordSphere01)
+                // Navbar2D_option01
+                Navbar2D_option01 = new THREE.Group()
+                Navbar2D_option01.position.set(-3, 3.56, 0)
+                Navbar2D_option01.rotation.set(0, 0, 0)
+                Navbar2D_option01.scale.set(0.04, 0.04, 0.04)
+                Navbar2D_root.add(Navbar2D_option01)
 
-                const mat_wordSphere01 = new THREE.MeshBasicMaterial({ map: wordSphereTest01, side: THREE.DoubleSide });
-				mesh_wordSphere01 = new THREE.Mesh(geo_objT_SphereA0, mat_wordSphere01);
-				mat_wordSphere01.transparent = true;
-				mat_wordSphere01.alphaMap = wordSphereTest01;
-				mesh_wordSphere01.position.set(0, 0, 0);
-				// mesh_wordSphere01.position.set(-15000, 0, 0);
-				mesh_wordSphere01.scale.set(1, 1, 1);
-				mesh_wordSphere01.rotation.set(0, 0, 0)
-				// mesh_wordSphere01.rotateX( - Math.PI / 2 );
+                const mat_Navbar2D_option01 = new THREE.MeshBasicMaterial({ map: newTechTileHolder07, side: THREE.DoubleSide });
+				mesh_Navbar2D_option01 = new THREE.Mesh(geo_objT_PlaneA1, mat_Navbar2D_option01);
+				mat_Navbar2D_option01.transparent = true;
+				mat_Navbar2D_option01.alphaMap = newTechTileHolder07;
+				mesh_Navbar2D_option01.position.set(0, 0, 0);
+				// mesh_Navbar2D_option01.position.set(-15000, 0, 0);
+				mesh_Navbar2D_option01.scale.set(1, 1, 1);
+				mesh_Navbar2D_option01.rotation.set(0, 0, 0);
+				// mesh_Navbar2D_option01.rotateX( - Math.PI / 2 );
 
-				// wordSphere01.lookAt(camera)
+				// Navbar2D_option01.lookAt(camera)
 				
-				wordSphere01.add(mesh_wordSphere01)
+				Navbar2D_option01.add(mesh_Navbar2D_option01)
 
 
-				// Vertical WordSphere (horizontal with sphere rotation before animation)
-				wordSphere02 = new THREE.Group()
-                wordSphere02.position.set(0, 0, 0)
-                wordSphere02.rotation.set(0, 0, -1.575)
-                wordSphere02.scale.set(0.8, 0.8, 0.8)
-                scene.add(wordSphere02)
+                navbarTechIcon01 = new THREE.Group()
+                navbarTechIcon01.position.set(0, 0, 0)
+                navbarTechIcon01.rotation.set(0, 0, 0)	
+                navbarTechIcon01.scale.set(0.25, 0.25, 0.25)
+                Navbar2D_option01.add(navbarTechIcon01)
 
-                const mat_wordSphere02 = new THREE.MeshBasicMaterial({ map: wordSphereTest02, side: THREE.DoubleSide });
-				mesh_wordSphere02 = new THREE.Mesh(geo_objT_SphereA0, mat_wordSphere02);
-				mat_wordSphere02.transparent = true;
-				mat_wordSphere02.alphaMap = wordSphereTest02;
-				mesh_wordSphere02.position.set(0, 0, 0);
-				// mesh_wordSphere02.position.set(-15000, 0, 0);
-				mesh_wordSphere02.scale.set(1, 1, 1);
-				mesh_wordSphere02.rotation.set(0, 0, 0)
-				// mesh_wordSphere02.rotateX( - Math.PI / 2 );
+                let logFunction01 = () => {
+                    console.log("working!")
+                }
 
-				// wordSphere02.lookAt(camera)
+
+                navbarTechIcon01.add(
+                    
+                    new TechIcon(
+                        0, 0, 0,
+                        0, 0, 0,
+                        0.55, 0.55, 0.55,
+                        'DefaultTechIconId', 'DefaultTechIconClassName',
+                        'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+                        'DefaultImgId', 'DefaultImgClassName',
+                        'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+                        "./assets/icons/00-Official/UI/Isometric/tools/target1.svg", "",
+                        logFunction01, 
+                        "Test-Δ",
+                        "Test me to see if I work!"
+                    ) 
+
+                )
+
+                
+
+                // Navbar2D_option02
+                Navbar2D_option02 = new THREE.Group()
+                Navbar2D_option02.position.set(-2.4, 3.56, 0)
+                Navbar2D_option02.rotation.set(0, 0, 0)
+                Navbar2D_option02.scale.set(0.04, 0.04, 0.04)
+                Navbar2D_root.add(Navbar2D_option02)
+
+                const mat_Navbar2D_option02 = new THREE.MeshBasicMaterial({ map: newTechTileHolder07, side: THREE.DoubleSide });
+				mesh_Navbar2D_option02 = new THREE.Mesh(geo_objT_PlaneA1, mat_Navbar2D_option02);
+				mat_Navbar2D_option02.transparent = true;
+				mat_Navbar2D_option02.alphaMap = newTechTileHolder07;
+				mesh_Navbar2D_option02.position.set(0, 0, 0);
+				// mesh_Navbar2D_option02.position.set(-15000, 0, 0);
+				mesh_Navbar2D_option02.scale.set(1, 1, 1);
+				mesh_Navbar2D_option02.rotation.set(0, 0, 0);
+				// mesh_Navbar2D_option02.rotateX( - Math.PI / 2 );
+
+				// Navbar2D_option02.lookAt(camera)
 				
-				wordSphere02.add(mesh_wordSphere02)
+				Navbar2D_option02.add(mesh_Navbar2D_option02)
 
+
+                navbarTechIcon02 = new THREE.Group()
+                navbarTechIcon02.position.set(0, 0, 0)
+                navbarTechIcon02.rotation.set(0, 0, 0)	
+                navbarTechIcon02.scale.set(0.25, 0.25, 0.25)
+                Navbar2D_option02.add(navbarTechIcon02)
+
+                let logFunction02 = () => {
+                    console.log("working!")
+                }
+
+
+                navbarTechIcon02.add(
+                    
+                    new TechIcon(
+                        0, 0, 0,
+                        0, 0, 0,
+                        0.55, 0.55, 0.55,
+                        'DefaultTechIconId', 'DefaultTechIconClassName',
+                        'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+                        'DefaultImgId', 'DefaultImgClassName',
+                        'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+                        "./assets/icons/00-Official/UI/Isometric/tools/target1.svg", "",
+                        logFunction02, 
+                        "Test-Δ",
+                        "Test me to see if I work!"
+                    ) 
+
+                )
+
+
+                // Navbar2D_option03
+                Navbar2D_option03 = new THREE.Group()
+                Navbar2D_option03.position.set(-1.8, 3.56, 0)
+                Navbar2D_option03.rotation.set(0, 0, 0)
+                Navbar2D_option03.scale.set(0.04, 0.04, 0.04)
+                Navbar2D_root.add(Navbar2D_option03)
+
+                const mat_Navbar2D_option03 = new THREE.MeshBasicMaterial({ map: newTechTileHolder07, side: THREE.DoubleSide });
+				mesh_Navbar2D_option03 = new THREE.Mesh(geo_objT_PlaneA1, mat_Navbar2D_option03);
+				mat_Navbar2D_option03.transparent = true;
+				mat_Navbar2D_option03.alphaMap = newTechTileHolder07;
+				mesh_Navbar2D_option03.position.set(0, 0, 0);
+				// mesh_Navbar2D_option03.position.set(-15000, 0, 0);
+				mesh_Navbar2D_option03.scale.set(1, 1, 1);
+				mesh_Navbar2D_option03.rotation.set(0, 0, 0);
+				// mesh_Navbar2D_option03.rotateX( - Math.PI / 2 );
+
+				// Navbar2D_option03.lookAt(camera)
 				
+				Navbar2D_option03.add(mesh_Navbar2D_option03)
 
 
-				let testFunctionBasic = (
-					px, py, pz,
-					rx, ry, rz,
-					sx, sy, sz,
-					groupName,
-					shape,
-					material, mesh,
-					primaryMap, alphaMap,
-					transparentStatus, wireframeStatus
-				) => {
-					groupName.position.set(px, py, pz)
-					groupName.rotation.set(rx, ry, rz)
-					groupName.scale.set(sx, sy, sz)
-					scene.add(groupName)
+                navbarTechIcon03 = new THREE.Group()
+                navbarTechIcon03.position.set(0, 0, 0)
+                navbarTechIcon03.rotation.set(0, 0, 0)	
+                navbarTechIcon03.scale.set(0.25, 0.25, 0.25)
+                Navbar2D_option03.add(navbarTechIcon03)
 
-					material = new THREE.MeshBasicMaterial({
-						map: primaryMap,
-						side: THREE.DoubleSide,
-					})
-
-					mesh = new THREE.Mesh(shape, material)
-
-					material.transparent = transparentStatus
-					material.wireframe = wireframeStatus
-
-					groupName.add(mesh)
-				}
+                let logFunction03 = () => {
+                    console.log("working!")
+                }
 
 
-				let eggplant, mat_eggplant, mesh_eggplant
+                navbarTechIcon03.add(
+                    
+                    new TechIcon(
+                        0, 0, 0,
+                        0, 0, 0,
+                        0.55, 0.55, 0.55,
+                        'DefaultTechIconId', 'DefaultTechIconClassName',
+                        'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+                        'DefaultImgId', 'DefaultImgClassName',
+                        'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+                        "./assets/icons/00-Official/UI/Isometric/tools/target1.svg", "",
+                        logFunction03, 
+                        "Test-Δ",
+                        "Test me to see if I work!"
+                    ) 
 
-				// testFunctionBasic(
-				// 	0, 0, 0,
-				// 	0, 0, 0,
-				// 	1, 1, 1,
-				// 	eggplant,
-				// 	geo_objT_SphereA0,
-				// 	mat_eggplant, mesh_eggplant,
-				// 	wordSphereTest02, wordSphereTest02,
-				// 	false, false
-				// )
+                )
 
 
 
 
+                // Navbar2D_option04
+                Navbar2D_option04 = new THREE.Group()
+                Navbar2D_option04.position.set(-1.2, 3.56, 0)
+                Navbar2D_option04.rotation.set(0, 0, 0)
+                Navbar2D_option04.scale.set(0.04, 0.04, 0.04)
+                Navbar2D_root.add(Navbar2D_option04)
+
+                const mat_Navbar2D_option04 = new THREE.MeshBasicMaterial({ map: newTechTileHolder07, side: THREE.DoubleSide });
+				mesh_Navbar2D_option04 = new THREE.Mesh(geo_objT_PlaneA1, mat_Navbar2D_option04);
+				mat_Navbar2D_option04.transparent = true;
+				mat_Navbar2D_option04.alphaMap = newTechTileHolder07;
+				mesh_Navbar2D_option04.position.set(0, 0, 0);
+				// mesh_Navbar2D_option04.position.set(-15000, 0, 0);
+				mesh_Navbar2D_option04.scale.set(1, 1, 1);
+				mesh_Navbar2D_option04.rotation.set(0, 0, 0);
+				// mesh_Navbar2D_option04.rotateX( - Math.PI / 2 );
+
+				// Navbar2D_option04.lookAt(camera)
+				
+				Navbar2D_option04.add(mesh_Navbar2D_option04)
+
+                navbarTechIcon04 = new THREE.Group()
+                navbarTechIcon04.position.set(0, 0, 0)
+                navbarTechIcon04.rotation.set(0, 0, 0)	
+                navbarTechIcon04.scale.set(0.25, 0.25, 0.25)
+                Navbar2D_option04.add(navbarTechIcon04)
+
+                let logFunction04 = () => {
+                    console.log("working!")
+                }
+
+
+                navbarTechIcon04.add(
+                    
+                    new TechIcon(
+                        0, 0, 0,
+                        0, 0, 0,
+                        0.55, 0.55, 0.55,
+                        'DefaultTechIconId', 'DefaultTechIconClassName',
+                        'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+                        'DefaultImgId', 'DefaultImgClassName',
+                        'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+                        "./assets/icons/00-Official/UI/Isometric/tools/target1.svg", "",
+                        logFunction04, 
+                        "Test-Δ",
+                        "Test me to see if I work!"
+                    ) 
+
+                )
+
+
+
+
+                // Navbar2D_option05
+                Navbar2D_option05 = new THREE.Group()
+                Navbar2D_option05.position.set(-0.6, 3.56, 0)
+                Navbar2D_option05.rotation.set(0, 0, 0)
+                Navbar2D_option05.scale.set(0.04, 0.04, 0.04)
+                Navbar2D_root.add(Navbar2D_option05)
+
+                const mat_Navbar2D_option05 = new THREE.MeshBasicMaterial({ map: newTechTileHolder07, side: THREE.DoubleSide });
+				mesh_Navbar2D_option05 = new THREE.Mesh(geo_objT_PlaneA1, mat_Navbar2D_option05);
+				mat_Navbar2D_option05.transparent = true;
+				mat_Navbar2D_option05.alphaMap = newTechTileHolder07;
+				mesh_Navbar2D_option05.position.set(0, 0, 0);
+				// mesh_Navbar2D_option05.position.set(-15000, 0, 0);
+				mesh_Navbar2D_option05.scale.set(1, 1, 1);
+				mesh_Navbar2D_option05.rotation.set(0, 0, 0);
+				// mesh_Navbar2D_option05.rotateX( - Math.PI / 2 );
+
+				// Navbar2D_option05.lookAt(camera)
+				
+				Navbar2D_option05.add(mesh_Navbar2D_option05)
+
+
+                navbarTechIcon05 = new THREE.Group()
+                navbarTechIcon05.position.set(0, 0, 0)
+                navbarTechIcon05.rotation.set(0, 0, 0)	
+                navbarTechIcon05.scale.set(0.25, 0.25, 0.25)
+                Navbar2D_option05.add(navbarTechIcon05)
+
+                let logFunction05 = () => {
+                    console.log("working!")
+                }
+
+
+                navbarTechIcon05.add(
+                    
+                    new TechIcon(
+                        0, 0, 0,
+                        0, 0, 0,
+                        0.55, 0.55, 0.55,
+                        'DefaultTechIconId', 'DefaultTechIconClassName',
+                        'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+                        'DefaultImgId', 'DefaultImgClassName',
+                        'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+                        "./assets/icons/00-Official/UI/Isometric/tools/target1.svg", "",
+                        logFunction05, 
+                        "Test-Δ",
+                        "Test me to see if I work!"
+                    ) 
+
+                )
+
+
+
+                // Navbar2D_option06
+                Navbar2D_option06 = new THREE.Group()
+                Navbar2D_option06.position.set(0, 3.56, 0)
+                Navbar2D_option06.rotation.set(0, 0, 0)
+                Navbar2D_option06.scale.set(0.04, 0.04, 0.04)
+                Navbar2D_root.add(Navbar2D_option06)
+
+                const mat_Navbar2D_option06 = new THREE.MeshBasicMaterial({ map: newTechTileHolder07, side: THREE.DoubleSide });
+				mesh_Navbar2D_option06 = new THREE.Mesh(geo_objT_PlaneA1, mat_Navbar2D_option06);
+				mat_Navbar2D_option06.transparent = true;
+				mat_Navbar2D_option06.alphaMap = newTechTileHolder07;
+				mesh_Navbar2D_option06.position.set(0, 0, 0);
+				// mesh_Navbar2D_option06.position.set(-15000, 0, 0);
+				mesh_Navbar2D_option06.scale.set(1, 1, 1);
+				mesh_Navbar2D_option06.rotation.set(0, 0, 0);
+				// mesh_Navbar2D_option06.rotateX( - Math.PI / 2 );
+
+				// Navbar2D_option06.lookAt(camera)
+				
+				Navbar2D_option06.add(mesh_Navbar2D_option06)
+
+
+                navbarTechIcon06 = new THREE.Group()
+                navbarTechIcon06.position.set(0, 0, 0)
+                navbarTechIcon06.rotation.set(0, 0, 0)	
+                navbarTechIcon06.scale.set(0.25, 0.25, 0.25)
+                Navbar2D_option06.add(navbarTechIcon06)
+
+                let logFunction06 = () => {
+                    console.log("working!")
+                }
+
+
+                navbarTechIcon06.add(
+                    
+                    new TechIcon(
+                        0, 0, 0,
+                        0, 0, 0,
+                        0.55, 0.55, 0.55,
+                        'DefaultTechIconId', 'DefaultTechIconClassName',
+                        'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+                        'DefaultImgId', 'DefaultImgClassName',
+                        'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+                        "./assets/icons/00-Official/UI/Isometric/tools/target1.svg", "",
+                        logFunction06, 
+                        "Test-Δ",
+                        "Test me to see if I work!"
+                    ) 
+
+                )
+
+
+
+                // Navbar2D_option07
+                Navbar2D_option07 = new THREE.Group()
+                Navbar2D_option07.position.set(0.6, 3.56, 0)
+                Navbar2D_option07.rotation.set(0, 0, 0)
+                Navbar2D_option07.scale.set(0.04, 0.04, 0.04)
+                Navbar2D_root.add(Navbar2D_option07)
+
+                const mat_Navbar2D_option07 = new THREE.MeshBasicMaterial({ map: newTechTileHolder07, side: THREE.DoubleSide });
+				mesh_Navbar2D_option07 = new THREE.Mesh(geo_objT_PlaneA1, mat_Navbar2D_option07);
+				mat_Navbar2D_option07.transparent = true;
+				mat_Navbar2D_option07.alphaMap = newTechTileHolder07;
+				mesh_Navbar2D_option07.position.set(0, 0, 0);
+				// mesh_Navbar2D_option07.position.set(-15000, 0, 0);
+				mesh_Navbar2D_option07.scale.set(1, 1, 1);
+				mesh_Navbar2D_option07.rotation.set(0, 0, 0);
+				// mesh_Navbar2D_option07.rotateX( - Math.PI / 2 );
+
+				// Navbar2D_option07.lookAt(camera)
+				
+				Navbar2D_option07.add(mesh_Navbar2D_option07)
+
+
+                navbarTechIcon07 = new THREE.Group()
+                navbarTechIcon07.position.set(0, 0, 0)
+                navbarTechIcon07.rotation.set(0, 0, 0)	
+                navbarTechIcon07.scale.set(0.25, 0.25, 0.25)
+                Navbar2D_option07.add(navbarTechIcon07)
+
+                let logFunction07 = () => {
+                    console.log("working!")
+                }
+
+
+                navbarTechIcon07.add(
+                    
+                    new TechIcon(
+                        0, 0, 0,
+                        0, 0, 0,
+                        0.55, 0.55, 0.55,
+                        'DefaultTechIconId', 'DefaultTechIconClassName',
+                        'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+                        'DefaultImgId', 'DefaultImgClassName',
+                        'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+                        "./assets/icons/00-Official/UI/Isometric/tools/target1.svg", "",
+                        logFunction07, 
+                        "Test-Δ",
+                        "Test me to see if I work!"
+                    ) 
+
+                )
+
+
+
+                // Navbar2D_option08
+                Navbar2D_option08 = new THREE.Group()
+                Navbar2D_option08.position.set(1.2, 3.56, 0)
+                Navbar2D_option08.rotation.set(0, 0, 0)
+                Navbar2D_option08.scale.set(0.04, 0.04, 0.04)
+                Navbar2D_root.add(Navbar2D_option08)
+
+                const mat_Navbar2D_option08 = new THREE.MeshBasicMaterial({ map: newTechTileHolder07, side: THREE.DoubleSide });
+				mesh_Navbar2D_option08 = new THREE.Mesh(geo_objT_PlaneA1, mat_Navbar2D_option08);
+				mat_Navbar2D_option08.transparent = true;
+				mat_Navbar2D_option08.alphaMap = newTechTileHolder07;
+				mesh_Navbar2D_option08.position.set(0, 0, 0);
+				// mesh_Navbar2D_option08.position.set(-15000, 0, 0);
+				mesh_Navbar2D_option08.scale.set(1, 1, 1);
+				mesh_Navbar2D_option08.rotation.set(0, 0, 0);
+				// mesh_Navbar2D_option08.rotateX( - Math.PI / 2 );
+
+				// Navbar2D_option08.lookAt(camera)
+				
+				Navbar2D_option08.add(mesh_Navbar2D_option08)
+
+
+                navbarTechIcon08 = new THREE.Group()
+                navbarTechIcon08.position.set(0, 0, 0)
+                navbarTechIcon08.rotation.set(0, 0, 0)	
+                navbarTechIcon08.scale.set(0.25, 0.25, 0.25)
+                Navbar2D_option08.add(navbarTechIcon08)
+
+                let logFunction08 = () => {
+                    console.log("working!")
+                }
+
+
+                navbarTechIcon08.add(
+                    
+                    new TechIcon(
+                        0, 0, 0,
+                        0, 0, 0,
+                        0.55, 0.55, 0.55,
+                        'DefaultTechIconId', 'DefaultTechIconClassName',
+                        'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+                        'DefaultImgId', 'DefaultImgClassName',
+                        'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+                        "./assets/icons/00-Official/UI/Isometric/tools/target1.svg", "",
+                        logFunction08, 
+                        "Test-Δ",
+                        "Test me to see if I work!"
+                    ) 
+
+                )
+
+
+
+                // Navbar2D_option09
+                Navbar2D_option09 = new THREE.Group()
+                Navbar2D_option09.position.set(1.8, 3.56, 0)
+                Navbar2D_option09.rotation.set(0, 0, 0)
+                Navbar2D_option09.scale.set(0.04, 0.04, 0.04)
+                Navbar2D_root.add(Navbar2D_option09)
+
+                const mat_Navbar2D_option09 = new THREE.MeshBasicMaterial({ map: newTechTileHolder07, side: THREE.DoubleSide });
+				mesh_Navbar2D_option09 = new THREE.Mesh(geo_objT_PlaneA1, mat_Navbar2D_option09);
+				mat_Navbar2D_option09.transparent = true;
+				mat_Navbar2D_option09.alphaMap = newTechTileHolder07;
+				mesh_Navbar2D_option09.position.set(0, 0, 0);
+				// mesh_Navbar2D_option09.position.set(-15000, 0, 0);
+				mesh_Navbar2D_option09.scale.set(1, 1, 1);
+				mesh_Navbar2D_option09.rotation.set(0, 0, 0);
+				// mesh_Navbar2D_option09.rotateX( - Math.PI / 2 );
+
+				// Navbar2D_option09.lookAt(camera)
+				
+				Navbar2D_option09.add(mesh_Navbar2D_option09)
+
+
+
+                navbarTechIcon09 = new THREE.Group()
+                navbarTechIcon09.position.set(0, 0, 0)
+                navbarTechIcon09.rotation.set(0, 0, 0)	
+                navbarTechIcon09.scale.set(0.25, 0.25, 0.25)
+                Navbar2D_option09.add(navbarTechIcon09)
+
+                let logFunction09 = () => {
+                    console.log("working!")
+                }
+
+
+                navbarTechIcon09.add(
+                    
+                    new TechIcon(
+                        0, 0, 0,
+                        0, 0, 0,
+                        0.55, 0.55, 0.55,
+                        'DefaultTechIconId', 'DefaultTechIconClassName',
+                        'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+                        'DefaultImgId', 'DefaultImgClassName',
+                        'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+                        "./assets/icons/00-Official/UI/Isometric/tools/target1.svg", "",
+                        logFunction09, 
+                        "Test-Δ",
+                        "Test me to see if I work!"
+                    ) 
+
+                )
+
+
+
+                // Navbar2D_option10
+                Navbar2D_option10 = new THREE.Group()
+                Navbar2D_option10.position.set(2.4, 3.56, 0)
+                Navbar2D_option10.rotation.set(0, 0, 0)
+                Navbar2D_option10.scale.set(0.04, 0.04, 0.04)
+                Navbar2D_root.add(Navbar2D_option10)
+
+                const mat_Navbar2D_option10 = new THREE.MeshBasicMaterial({ map: newTechTileHolder07, side: THREE.DoubleSide });
+				mesh_Navbar2D_option10 = new THREE.Mesh(geo_objT_PlaneA1, mat_Navbar2D_option10);
+				mat_Navbar2D_option10.transparent = true;
+				mat_Navbar2D_option10.alphaMap = newTechTileHolder07;
+				mesh_Navbar2D_option10.position.set(0, 0, 0);
+				// mesh_Navbar2D_option10.position.set(-15000, 0, 0);
+				mesh_Navbar2D_option10.scale.set(1, 1, 1);
+				mesh_Navbar2D_option10.rotation.set(0, 0, 0);
+				// mesh_Navbar2D_option10.rotateX( - Math.PI / 2 );
+
+				// Navbar2D_option10.lookAt(camera)
+				
+				Navbar2D_option10.add(mesh_Navbar2D_option10)
+
+
+                navbarTechIcon10 = new THREE.Group()
+                navbarTechIcon10.position.set(0, 0, 0)
+                navbarTechIcon10.rotation.set(0, 0, 0)	
+                navbarTechIcon10.scale.set(0.25, 0.25, 0.25)
+                Navbar2D_option10.add(navbarTechIcon10)
+
+                let logFunction10 = () => {
+                    console.log("working!")
+                }
+
+
+                navbarTechIcon10.add(
+                    
+                    new TechIcon(
+                        0, 0, 0,
+                        0, 0, 0,
+                        0.55, 0.55, 0.55,
+                        'DefaultTechIconId', 'DefaultTechIconClassName',
+                        'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+                        'DefaultImgId', 'DefaultImgClassName',
+                        'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+                        "./assets/icons/00-Official/UI/Isometric/tools/target1.svg", "",
+                        logFunction10, 
+                        "Test-Δ",
+                        "Test me to see if I work!"
+                    ) 
+
+                )
+
+
+
+
+                // Navbar2D_option11
+                Navbar2D_option11 = new THREE.Group()
+                Navbar2D_option11.position.set(3.0, 3.56, 0)
+                Navbar2D_option11.rotation.set(0, 0, 0)
+                Navbar2D_option11.scale.set(0.04, 0.04, 0.04)
+                Navbar2D_root.add(Navbar2D_option11)
+
+                const mat_Navbar2D_option11 = new THREE.MeshBasicMaterial({ map: newTechTileHolder07, side: THREE.DoubleSide });
+				mesh_Navbar2D_option11 = new THREE.Mesh(geo_objT_PlaneA1, mat_Navbar2D_option11);
+				mat_Navbar2D_option11.transparent = true;
+				mat_Navbar2D_option11.alphaMap = newTechTileHolder07;
+				mesh_Navbar2D_option11.position.set(0, 0, 0);
+				// mesh_Navbar2D_option11.position.set(-15000, 0, 0);
+				mesh_Navbar2D_option11.scale.set(1, 1, 1);
+				mesh_Navbar2D_option11.rotation.set(0, 0, 0);
+				// mesh_Navbar2D_option11.rotateX( - Math.PI / 2 );
+
+				// Navbar2D_option11.lookAt(camera)
+				
+				Navbar2D_option11.add(mesh_Navbar2D_option11)
+
+
+                navbarTechIcon11 = new THREE.Group()
+                navbarTechIcon11.position.set(0, 0, 0)
+                navbarTechIcon11.rotation.set(0, 0, 0)	
+                navbarTechIcon11.scale.set(0.25, 0.25, 0.25)
+                Navbar2D_option11.add(navbarTechIcon11)
+
+                let logFunction11 = () => {
+                    console.log("working!")
+                }
+
+
+                navbarTechIcon11.add(
+                    
+                    new TechIcon(
+                        0, 0, 0,
+                        0, 0, 0,
+                        0.55, 0.55, 0.55,
+                        'DefaultTechIconId', 'DefaultTechIconClassName',
+                        'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+                        'DefaultImgId', 'DefaultImgClassName',
+                        'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+                        "./assets/icons/00-Official/UI/Isometric/tools/target1.svg", "",
+                        logFunction11, 
+                        "Test-Δ",
+                        "Test me to see if I work!"
+                    ) 
+
+                )
+
+
+
+                // // Navbar2D_option12
+                // Navbar2D_option12 = new THREE.Group()
+                // Navbar2D_option12.position.set(3.6, 3.56, 0)
+                // Navbar2D_option12.rotation.set(0, 0, 0)
+                // Navbar2D_option12.scale.set(0.04, 0.04, 0.04)
+                // Navbar2D_root.add(Navbar2D_option12)
+
+                // const mat_Navbar2D_option12 = new THREE.MeshBasicMaterial({ map: PrimaryGrid01, side: THREE.DoubleSide });
+				// mesh_Navbar2D_option12 = new THREE.Mesh(geo_objT_PlaneA1, mat_Navbar2D_option12);
+				// mat_Navbar2D_option12.transparent = true;
+				// mat_Navbar2D_option12.alphaMap = PrimaryGrid01;
+				// mesh_Navbar2D_option12.position.set(0, 0, 0);
+				// // mesh_Navbar2D_option12.position.set(-15000, 0, 0);
+				// mesh_Navbar2D_option12.scale.set(1, 1, 1);
+				// mesh_Navbar2D_option12.rotation.set(0, 0, 0);
+				// // mesh_Navbar2D_option12.rotateX( - Math.PI / 2 );
+
+				// // Navbar2D_option12.lookAt(camera)
+				
+				// Navbar2D_option12.add(mesh_Navbar2D_option12)
 
 
 
@@ -6932,7 +7489,8 @@
 
 
 
-				// # component_wordSphere (End)
+
+				// # component_2dNavbar (End)
 				// -----------------------------------------------------------------
 				// #################################################################
 				// #################################################################
@@ -7451,29 +8009,29 @@
 				folderLoadTestingContainer01.add(floorDesign01_Grid.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
 				folderLoadTestingContainer01.add(floorDesign01_Grid.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
-				const folderLoadTestingContainer02 = gui.addFolder('<<< LoadPoint02 :: ATT_Acronyms__Root >>>')
+				const folderLoadTestingContainer02 = gui.addFolder('<<< LoadPoint02 :: Navbar2D >>>')
 
-				folderLoadTestingContainer02.add(ATT_Acronyms__Root.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
-				folderLoadTestingContainer02.add(ATT_Acronyms__Root.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
-				folderLoadTestingContainer02.add(ATT_Acronyms__Root.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
-				folderLoadTestingContainer02.add(ATT_Acronyms__Root.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
-				folderLoadTestingContainer02.add(ATT_Acronyms__Root.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
-				folderLoadTestingContainer02.add(ATT_Acronyms__Root.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
-				folderLoadTestingContainer02.add(ATT_Acronyms__Root.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
-				folderLoadTestingContainer02.add(ATT_Acronyms__Root.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
-				folderLoadTestingContainer02.add(ATT_Acronyms__Root.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
+				folderLoadTestingContainer02.add(Navbar2D.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
+				folderLoadTestingContainer02.add(Navbar2D.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
+				folderLoadTestingContainer02.add(Navbar2D.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
+				folderLoadTestingContainer02.add(Navbar2D.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
+				folderLoadTestingContainer02.add(Navbar2D.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
+				folderLoadTestingContainer02.add(Navbar2D.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
+				folderLoadTestingContainer02.add(Navbar2D.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
+				folderLoadTestingContainer02.add(Navbar2D.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
+				folderLoadTestingContainer02.add(Navbar2D.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
-				const folderLoadTestingContainer03 = gui.addFolder('<<< LoadPoint03 :: ATT_CustomerEducationTool__Root >>>')
+				const folderLoadTestingContainer03 = gui.addFolder('<<< LoadPoint03 :: navbarTechIcon01 >>>')
 
-				folderLoadTestingContainer03.add(ATT_CustomerEducationTool__Root.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
-				folderLoadTestingContainer03.add(ATT_CustomerEducationTool__Root.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
-				folderLoadTestingContainer03.add(ATT_CustomerEducationTool__Root.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
-				folderLoadTestingContainer03.add(ATT_CustomerEducationTool__Root.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
-				folderLoadTestingContainer03.add(ATT_CustomerEducationTool__Root.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
-				folderLoadTestingContainer03.add(ATT_CustomerEducationTool__Root.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
-				folderLoadTestingContainer03.add(ATT_CustomerEducationTool__Root.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
-				folderLoadTestingContainer03.add(ATT_CustomerEducationTool__Root.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
-				folderLoadTestingContainer03.add(ATT_CustomerEducationTool__Root.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
+				folderLoadTestingContainer03.add(navbarTechIcon01.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
+				folderLoadTestingContainer03.add(navbarTechIcon01.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
+				folderLoadTestingContainer03.add(navbarTechIcon01.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
+				folderLoadTestingContainer03.add(navbarTechIcon01.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
+				folderLoadTestingContainer03.add(navbarTechIcon01.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
+				folderLoadTestingContainer03.add(navbarTechIcon01.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
+				folderLoadTestingContainer03.add(navbarTechIcon01.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
+				folderLoadTestingContainer03.add(navbarTechIcon01.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
+				folderLoadTestingContainer03.add(navbarTechIcon01.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
 				const folderLoadTestingContainer04 = gui.addFolder('<<< LoadPoint04 :: ATT_PrimerBooklet__Root >>>')
 
@@ -8127,9 +8685,7 @@
 				// Primary Animations 
 				// ###########################
 				
-				wordSphere.rotation.y = time * 0.001
-				wordSphere01.rotation.z = time * 0.0005
-				wordSphere02.rotation.x = time * 0.0005
+			
 				
 
 				
