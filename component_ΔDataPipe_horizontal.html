@@ -2017,8 +2017,8 @@
 				play_RealityOfTheNet_mfx.volume = 0.55
 			}
 
-			play_LightSteam_sfx()
-			play_RealityOfTheNet_mfx()
+			// play_LightSteam_sfx()
+			// play_RealityOfTheNet_mfx()
 
 
 			
@@ -2539,10 +2539,24 @@
 			let EmulatorTest03
 
             // #################################################################
-            //  Carousel_V1
+            //  components_wordSphere
 			// #################################################################
 
-			
+			let DataPipe_root, mesh_DataPipe_root
+            let DataPipe_vertical_root, mesh_DataPipe_vertical_root
+            let DataPipe_horizontal_root, mesh_DataPipe_
+
+            let DataPipe_vertical_A0, mesh_DataPipe_vertical_A0
+            let DataPipe_vertical_A1
+
+			let pipeGearA01, mesh_pipeGearA01
+			let pipeGearA02, mesh_pipeGearA02
+			let pipeGearA03, mesh_pipeGearA03
+
+
+            let DataPipe_horizontal_A0, mesh_DataPipe_horizontal_A0
+            let DataPipe_horizontal_A1, mesh_DataPipe_horizontal_A1
+			let DataPipe_horizontal_A2, mesh_DataPipe_horizontal_A2
 
 
 
@@ -3008,6 +3022,11 @@
 				const resumeImportPage01 = textureLoader.load('./assets/img/07-StaticImg/resumeP1.png')
 				const resumeImportPage02 = textureLoader.load('./assets/img/07-StaticImg/resumeP2.png')
 
+
+
+				const whitePanel_default = textureLoader.load('./assets/img/05-Env/wordSpheres/WordSphereTest04.png')
+                const whitePanel01 = textureLoader.load('./assets/img/10-ObjectUI/BlankPanelsRectangle/')
+				
 
 
 
@@ -5090,7 +5109,7 @@
 						gsap.to(camera.position, {
 							duration: .5,
 							delay: 0,	
-							y: "+= 50",
+							y: "+= 5",
 						
 						})
 
@@ -5104,7 +5123,7 @@
 						gsap.to(camera.position, {
 							duration: .5,
 							delay: 0,
-							y: "+= 500",
+							y: "+= 25",
 
 						})
 					}
@@ -5132,7 +5151,7 @@
 						gsap.to(camera.position, {
 							duration: .2,
 							delay: 0,	
-							y: "-= 50",
+							y: "-= 5",
 						
 						})
 					}
@@ -5146,7 +5165,7 @@
 						gsap.to(camera.position, {
 							duration: .2,
 							delay: 0,
-							y: "-= 500",
+							y: "-= 25",
 
 						})
 					}
@@ -6802,49 +6821,62 @@
 				// #################################################################
 				// #################################################################
 				// -----------------------------------------------------------------
-				// # UI Development (Start)
+				// # component_wordSphere (Start)
 
-				// ## UI-Item01 = [Scroller of Δ] + or - 
+				// ## [buildcomponentsHere]
 
-				// ## UI-Item02 = [userPositioner] (t+x+y+z)
-
-				// ## UI-Item03 = [userRotator] 
-
-				// ## UI-Item04 = [userScaler]
+               
 				
-				// ## UI-ItemA = [StartMenu] = TimeOut or Esc = ({ status: 'not ready'})
+                // ### DataPipe_root
 
-				// ## UI-ItemB = [VisorMenu] = KeyV = ({ status: 'not ready'})
+                DataPipe_root = new THREE.Group()
+                DataPipe_root.position.set(0, 0, 0)
+                DataPipe_root.rotation.set(0, 0, 0)
+                DataPipe_root.scale.set(1, 1, 1)
+                scene.add(DataPipe_root)
 
-				// ## UI-ItemC = [TransmissionMenu] = KeyC = ({ status: 'not ready'})
 
-				// ## UI-ItemD = [MomentTraveler] = KeyM = ({ status: 'not ready'})
+                DataPipe_horizontal_root = new THREE.Group()
+                DataPipe_horizontal_root.position.set(0, 0, 0)
+                DataPipe_horizontal_root.rotation.set(1.575, 0, 0)
+                DataPipe_horizontal_root.scale.set(1, 1, 1)
+                DataPipe_root.add(DataPipe_horizontal_root)
 
-				// ## UI-ItemE = [Z-Sphere] = KeyZ = ({ status: 'not ready'})
 
-				// ## UI-ItemF = [Backpack] = KeyB = ({ status: 'not ready'})
+                DataPipe_horizontal_A0 = new THREE.Group()
+                DataPipe_horizontal_A0.position.set(0, -40, 0)
+                DataPipe_horizontal_A0.rotation.set(0, 0.4, 0)
+                DataPipe_horizontal_A0.scale.set(2, 6, 2)
+                DataPipe_horizontal_root.add(DataPipe_horizontal_A0)
+                
 
-				// ## UI-ItemG = [Finder] = KeyF = ({ status: 'not ready'})
+                const mat_DataPipe_horizontal_A0 = new THREE.MeshBasicMaterial({ map: defaultGrid01, side: THREE.DoubleSide });
+				mesh_DataPipe_horizontal_A0 = new THREE.Mesh(geo_objT_CylinderClosedA0, mat_DataPipe_horizontal_A0);
+				mat_DataPipe_horizontal_A0.transparent = true;
+				mat_DataPipe_horizontal_A0.alphaMap = defaultGrid01;
+				mesh_DataPipe_horizontal_A0.position.set(0, 0, 0);
+				// mesh_DataPipe_horizontal_A0.position.set(-15000, 0, 0);
+				mesh_DataPipe_horizontal_A0.scale.set(1, 1, 1);
+				mesh_DataPipe_horizontal_A0.rotation.set(0, 0, 0)
+				// mesh_DataPipe_horizontal_A0.rotateX( - Math.PI / 2 );
+
+				// DataPipe_horizontal_A0.lookAt(camera)
 				
-				// ## UI-ItemG = [Inspector] = KeyI = ({ status: 'not ready'})
+				DataPipe_horizontal_A0.add(mesh_DataPipe_horizontal_A0)
+
 				
-				// ## UI-ItemH = [Illuminator] = Ctrl + KeyI = ({ status: 'not ready'})
-
-				// ## UI-ItemI = [Explainer] = KeyE = ({ status: 'not ready'})
-
-				// ## UI-ItemJ = [Hookshot/Homer] = KeyH = ({ status: 'not ready'})
-
-				// ## UI-ItemK = [Receiver] = KeyR = ({ status: 'not ready'})
-
-				// ## UI-ItemL = [Locator] = KeyL = ({ status: 'not ready'})
-
-				// ## UI-ItemM = [MomentAnalyzer] = KeyM = ({ status: 'not ready'})
-
-				// ## UI-ItemN = [MyMind] = KeyN = ({ status: 'not ready'})
 
 
 
-				// # UI Development (End)
+
+
+
+
+
+
+
+
+				// # component_wordSphere (End)
 				// -----------------------------------------------------------------
 				// #################################################################
 				// #################################################################
@@ -6876,7 +6908,7 @@
 				// #################################################################
 
 
-				//.........................................................................................................
+//.........................................................................................................
 				//...5555555555.........-VVVV......VVVVVViiiii..........dddd...............ΔΔΔΔΔ............ΟΟΟΟΟΟΟΟ.......
 				//...5555555555.........-VVVVV.....VVVVV.iiiii..........dddd...............ΔΔΔΔΔΔ.........ΟΟΟΟΟΟΟΟΟΟΟ......
 				//..55555555555..........VVVVV.....VVVVV.iiiii..........dddd...............ΔΔΔΔΔΔ........ΟΟΟΟΟΟΟΟΟΟΟΟΟΟ....
@@ -7330,7 +7362,7 @@
 				const folderBreak02 = gui.addFolder("------------------------------------------------------------------------------------------")
 				const folderBreak03 = gui.addFolder("------------------------------------------------------------------------------------------")
 
-				const folderTester01 = gui.addFolder('Cmpnt: floorDesign01_Grid.')
+				const folderTester01 = gui.addFolder('Cmpnt: gbaEmulatorHUD_root.')
                 // item 01: r_PrimaryMainLogo
                 // item 02: r_FrontBrain_Panel
                 // item 03: r_ShowArtΔ_Button
@@ -7339,17 +7371,17 @@
                 // item 06: r_Portfolio_FinancialComponents
                 // item 07: UI_RH_Brain
 
-				folderTester01.add(floorDesign01_Grid.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
-				folderTester01.add(floorDesign01_Grid.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
-				folderTester01.add(floorDesign01_Grid.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
+				folderTester01.add(gbaEmulatorHUD_root.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
+				folderTester01.add(gbaEmulatorHUD_root.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
+				folderTester01.add(gbaEmulatorHUD_root.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
 
-				folderTester01.add(floorDesign01_Grid.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
-				folderTester01.add(floorDesign01_Grid.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
-				folderTester01.add(floorDesign01_Grid.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
+				folderTester01.add(gbaEmulatorHUD_root.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
+				folderTester01.add(gbaEmulatorHUD_root.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
+				folderTester01.add(gbaEmulatorHUD_root.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
 
-				folderTester01.add(floorDesign01_Grid.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
-				folderTester01.add(floorDesign01_Grid.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
-				folderTester01.add(floorDesign01_Grid.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
+				folderTester01.add(gbaEmulatorHUD_root.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
+				folderTester01.add(gbaEmulatorHUD_root.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
+				folderTester01.add(gbaEmulatorHUD_root.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
 				const folderLoadTestingContainer01 = gui.addFolder('<<< LoadPoint01 :: floorDesign01_Grid >>>')
 
@@ -7363,17 +7395,17 @@
 				folderLoadTestingContainer01.add(floorDesign01_Grid.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
 				folderLoadTestingContainer01.add(floorDesign01_Grid.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
-				const folderLoadTestingContainer02 = gui.addFolder('<<< LoadPoint02 :: ATT_Acronyms__Root >>>')
+				const folderLoadTestingContainer02 = gui.addFolder('<<< LoadPoint02 :: DataPipe_horizontal_A0 >>>')
 
-				folderLoadTestingContainer02.add(ATT_Acronyms__Root.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
-				folderLoadTestingContainer02.add(ATT_Acronyms__Root.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
-				folderLoadTestingContainer02.add(ATT_Acronyms__Root.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
-				folderLoadTestingContainer02.add(ATT_Acronyms__Root.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
-				folderLoadTestingContainer02.add(ATT_Acronyms__Root.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
-				folderLoadTestingContainer02.add(ATT_Acronyms__Root.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
-				folderLoadTestingContainer02.add(ATT_Acronyms__Root.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
-				folderLoadTestingContainer02.add(ATT_Acronyms__Root.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
-				folderLoadTestingContainer02.add(ATT_Acronyms__Root.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
+				folderLoadTestingContainer02.add(DataPipe_horizontal_A0.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
+				folderLoadTestingContainer02.add(DataPipe_horizontal_A0.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
+				folderLoadTestingContainer02.add(DataPipe_horizontal_A0.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
+				folderLoadTestingContainer02.add(DataPipe_horizontal_A0.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
+				folderLoadTestingContainer02.add(DataPipe_horizontal_A0.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
+				folderLoadTestingContainer02.add(DataPipe_horizontal_A0.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
+				folderLoadTestingContainer02.add(DataPipe_horizontal_A0.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
+				folderLoadTestingContainer02.add(DataPipe_horizontal_A0.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
+				folderLoadTestingContainer02.add(DataPipe_horizontal_A0.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
 				const folderLoadTestingContainer03 = gui.addFolder('<<< LoadPoint03 :: ATT_CustomerEducationTool__Root >>>')
 
@@ -8038,6 +8070,9 @@
 				// ###########################
 				// Primary Animations 
 				// ###########################
+				
+				
+				
 
 				
 				
