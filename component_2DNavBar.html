@@ -2542,9 +2542,13 @@
             //  component_2DNavbar
 			// #################################################################
 
+			let Hud2D_default
+
             let Navbar2D_root, mesh_Navbar2D_root
 
 			let Navbar2D, mesh_Navbar2D
+			let NavbarLeft2D, mesh_NavbarLeft2D
+			let NavbarRight2D, mesh_NavbarRight2D
 
 
             let Navbar2D_option01, mesh_Navbar2D_option01
@@ -2572,6 +2576,18 @@
             let navbarTechIcon09
             let navbarTechIcon10
             let navbarTechIcon11
+
+
+			let navbarLeft, mesh_navbarLeft
+			let navbarRight, mesh_navbarRight
+
+			let navbarLeft_option01, mesh_navbarLeft_option01
+			let navbarLeft_option02, mesh_navbarLeft_option02
+			let navbarLeft_option03, mesh_navbarLeft_option03
+
+			let navbarRight_option01, mesh_navbarRight_option01
+			let navbarRight_option02, mesh_navbarRight_option02
+			let navbarRight_option03, mesh_navbarRight_option03
 
 
 
@@ -3044,10 +3060,18 @@
 				const resumeImportPage02 = textureLoader.load('./assets/img/07-StaticImg/resumeP2.png')
 
 
-
+				// Hud2D_imgs
 				const newPrimaryNavbarImg = textureLoader.load('./assets/img/03-HudUI/PrimaryHeader/PrimaryHeader.png')
 
                 const newTechTileHolder07 = textureLoader.load('./assets/img/10-ObjectUI/02-TechTiles/DigiTechTile07/01-Base/DigiTechTile07.png')
+
+
+				const navbarLeftImg = textureLoader.load('./assets/img/03-HudUI/PrimaryHeader/TopHeaderLeft.png')
+				const navbarRightImg = textureLoader.load('./assets/img/03-HudUI/PrimaryHeader/TopHeaderRight.png')
+
+
+
+
 				
 
 
@@ -6854,6 +6878,79 @@
                 camera.attach(Navbar2D_root)
 
 
+				// navbarRight
+				// ----------------------------------------------------------------------
+				navbarRight = new THREE.Group()
+                navbarRight.position.set(8, 5, -2)
+                navbarRight.rotation.set(0, 0, 0)
+                navbarRight.scale.set(0.5, 0.1, 0.5)
+                Navbar2D_root.add(navbarRight)
+
+
+                const mat_navbarRight = new THREE.MeshBasicMaterial({ map: navbarRightImg, side: THREE.DoubleSide });
+				mesh_navbarRight = new THREE.Mesh(geo_objT_PlaneA1, mat_navbarRight);
+				mat_navbarRight.transparent = true;
+                mat_navbarRight.wireframe = false;
+				mat_navbarRight.alphaMap = navbarRightImg;
+				mesh_navbarRight.position.set(0, 0, 0);
+				// mesh_navbarRight.position.set(-15000, 0, 0);
+				mesh_navbarRight.scale.set(1, 1, 1);
+				mesh_navbarRight.rotation.set(0, 0, 0);
+				// mesh_navbarRight.rotateX( - Math.PI / 2 );
+
+				// navbarRight.lookAt(camera)
+				
+				navbarRight.add(mesh_navbarRight)
+
+
+				// navbarLeft
+				// ----------------------------------------------------------------------
+				navbarLeft = new THREE.Group()
+                navbarLeft.position.set(-8, 5, -2)
+                navbarLeft.rotation.set(0, 0, 0)
+                navbarLeft.scale.set(0.5, 0.1, 0.5)
+                Navbar2D_root.add(navbarLeft)
+
+
+                const mat_navbarLeft = new THREE.MeshBasicMaterial({ map: navbarLeftImg, side: THREE.DoubleSide });
+				mesh_navbarLeft = new THREE.Mesh(geo_objT_PlaneA1, mat_navbarLeft);
+				mat_navbarLeft.transparent = true;
+                mat_navbarLeft.wireframe = false;
+				mat_navbarLeft.alphaMap = navbarLeftImg;
+				mesh_navbarLeft.position.set(0, 0, 0);
+				// mesh_navbarLeft.position.set(-15000, 0, 0);
+				mesh_navbarLeft.scale.set(1, 1, 1);
+				mesh_navbarLeft.rotation.set(0, 0, 0);
+				// mesh_navbarLeft.rotateX( - Math.PI / 2 );
+
+				// navbarLeft.lookAt(camera)
+				
+				navbarLeft.add(mesh_navbarLeft)
+
+
+				// navbarLeft_option01
+                navbarLeft_option01 = new THREE.Group()
+                navbarLeft_option01.position.set(0, 3.56, 0)
+                navbarLeft_option01.rotation.set(0, 0, 0)
+                navbarLeft_option01.scale.set(0.04, 0.04, 0.04)
+                Navbar2D_root.add(navbarLeft_option01)
+
+                const mat_navbarLeft_option01 = new THREE.MeshBasicMaterial({ map: newTechTileHolder07, side: THREE.DoubleSide });
+				mesh_navbarLeft_option01 = new THREE.Mesh(geo_objT_PlaneA1, mat_navbarLeft_option01);
+				mat_navbarLeft_option01.transparent = true;
+				mat_navbarLeft_option01.alphaMap = newTechTileHolder07;
+				mesh_navbarLeft_option01.position.set(0, 0, 0);
+				// mesh_navbarLeft_option01.position.set(-15000, 0, 0);
+				mesh_navbarLeft_option01.scale.set(1, 1, 1);
+				mesh_navbarLeft_option01.rotation.set(0, 0, 0);
+				// mesh_navbarLeft_option01.rotateX( - Math.PI / 2 );
+
+				// navbarLeft_option01.lookAt(camera)
+				
+				navbarLeft_option01.add(mesh_navbarLeft_option01)
+
+				// Navbar2D
+				// ----------------------------------------------------------------------
                 Navbar2D = new THREE.Group()
                 Navbar2D.position.set(0, 5, -2)
                 Navbar2D.rotation.set(0, 0, 0)
@@ -6878,6 +6975,7 @@
 
 
                 // Navbar2D_option01
+				// ----------------------------------------------------------------------
                 Navbar2D_option01 = new THREE.Group()
                 Navbar2D_option01.position.set(-3, 3.56, 0)
                 Navbar2D_option01.rotation.set(0, 0, 0)
@@ -6931,6 +7029,7 @@
                 
 
                 // Navbar2D_option02
+				// ----------------------------------------------------------------------
                 Navbar2D_option02 = new THREE.Group()
                 Navbar2D_option02.position.set(-2.4, 3.56, 0)
                 Navbar2D_option02.rotation.set(0, 0, 0)
@@ -6983,6 +7082,7 @@
 
 
                 // Navbar2D_option03
+				// ----------------------------------------------------------------------
                 Navbar2D_option03 = new THREE.Group()
                 Navbar2D_option03.position.set(-1.8, 3.56, 0)
                 Navbar2D_option03.rotation.set(0, 0, 0)
@@ -7037,6 +7137,7 @@
 
 
                 // Navbar2D_option04
+				// ----------------------------------------------------------------------
                 Navbar2D_option04 = new THREE.Group()
                 Navbar2D_option04.position.set(-1.2, 3.56, 0)
                 Navbar2D_option04.rotation.set(0, 0, 0)
@@ -7090,6 +7191,7 @@
 
 
                 // Navbar2D_option05
+				// ----------------------------------------------------------------------
                 Navbar2D_option05 = new THREE.Group()
                 Navbar2D_option05.position.set(-0.6, 3.56, 0)
                 Navbar2D_option05.rotation.set(0, 0, 0)
@@ -7143,6 +7245,7 @@
 
 
                 // Navbar2D_option06
+				// ----------------------------------------------------------------------
                 Navbar2D_option06 = new THREE.Group()
                 Navbar2D_option06.position.set(0, 3.56, 0)
                 Navbar2D_option06.rotation.set(0, 0, 0)
@@ -7196,6 +7299,7 @@
 
 
                 // Navbar2D_option07
+				// ----------------------------------------------------------------------
                 Navbar2D_option07 = new THREE.Group()
                 Navbar2D_option07.position.set(0.6, 3.56, 0)
                 Navbar2D_option07.rotation.set(0, 0, 0)
@@ -8009,29 +8113,29 @@
 				folderLoadTestingContainer01.add(floorDesign01_Grid.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
 				folderLoadTestingContainer01.add(floorDesign01_Grid.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
-				const folderLoadTestingContainer02 = gui.addFolder('<<< LoadPoint02 :: Navbar2D >>>')
+				const folderLoadTestingContainer02 = gui.addFolder('<<< LoadPoint02 :: navbarLeft_option01 >>>')
 
-				folderLoadTestingContainer02.add(Navbar2D.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
-				folderLoadTestingContainer02.add(Navbar2D.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
-				folderLoadTestingContainer02.add(Navbar2D.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
-				folderLoadTestingContainer02.add(Navbar2D.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
-				folderLoadTestingContainer02.add(Navbar2D.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
-				folderLoadTestingContainer02.add(Navbar2D.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
-				folderLoadTestingContainer02.add(Navbar2D.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
-				folderLoadTestingContainer02.add(Navbar2D.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
-				folderLoadTestingContainer02.add(Navbar2D.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
+				folderLoadTestingContainer02.add(navbarLeft_option01.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
+				folderLoadTestingContainer02.add(navbarLeft_option01.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
+				folderLoadTestingContainer02.add(navbarLeft_option01.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
+				folderLoadTestingContainer02.add(navbarLeft_option01.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
+				folderLoadTestingContainer02.add(navbarLeft_option01.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
+				folderLoadTestingContainer02.add(navbarLeft_option01.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
+				folderLoadTestingContainer02.add(navbarLeft_option01.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
+				folderLoadTestingContainer02.add(navbarLeft_option01.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
+				folderLoadTestingContainer02.add(navbarLeft_option01.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
-				const folderLoadTestingContainer03 = gui.addFolder('<<< LoadPoint03 :: navbarTechIcon01 >>>')
+				const folderLoadTestingContainer03 = gui.addFolder('<<< LoadPoint03 :: navbarRight >>>')
 
-				folderLoadTestingContainer03.add(navbarTechIcon01.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
-				folderLoadTestingContainer03.add(navbarTechIcon01.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
-				folderLoadTestingContainer03.add(navbarTechIcon01.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
-				folderLoadTestingContainer03.add(navbarTechIcon01.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
-				folderLoadTestingContainer03.add(navbarTechIcon01.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
-				folderLoadTestingContainer03.add(navbarTechIcon01.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
-				folderLoadTestingContainer03.add(navbarTechIcon01.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
-				folderLoadTestingContainer03.add(navbarTechIcon01.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
-				folderLoadTestingContainer03.add(navbarTechIcon01.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
+				folderLoadTestingContainer03.add(navbarRight.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
+				folderLoadTestingContainer03.add(navbarRight.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
+				folderLoadTestingContainer03.add(navbarRight.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
+				folderLoadTestingContainer03.add(navbarRight.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
+				folderLoadTestingContainer03.add(navbarRight.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
+				folderLoadTestingContainer03.add(navbarRight.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
+				folderLoadTestingContainer03.add(navbarRight.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
+				folderLoadTestingContainer03.add(navbarRight.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
+				folderLoadTestingContainer03.add(navbarRight.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
 				const folderLoadTestingContainer04 = gui.addFolder('<<< LoadPoint04 :: ATT_PrimerBooklet__Root >>>')
 
