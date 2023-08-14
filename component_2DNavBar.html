@@ -2584,13 +2584,63 @@
 			let navbarLeft_option01, mesh_navbarLeft_option01
 			let navbarLeft_option02, mesh_navbarLeft_option02
 			let navbarLeft_option03, mesh_navbarLeft_option03
+			let navbarLeft_option04, mesh_navbarLeft_option04
+			let navbarLeft_option05, mesh_navbarLeft_option05
 
 			let navbarRight_option01, mesh_navbarRight_option01
 			let navbarRight_option02, mesh_navbarRight_option02
 			let navbarRight_option03, mesh_navbarRight_option03
+			let navbarRight_option04, mesh_navbarRight_option04
+			let navbarRight_option05, mesh_navbarRight_option05
 
 
 
+			// Questions Panel
+			let questionFYI_Panel, mesh_questionFYI_Panel
+
+
+
+			// #################################################################
+            //  LeftBrainDefault_root
+			// #################################################################
+			let LeftBrainDefault_root
+			let LeftBrainDefault_core, mesh_LeftBrainDefault_core
+			let LeftBrainDefault_nexus00, mesh_LeftBrainDefault_nexus00
+			let LeftBrainDefault_nexus00_sphere, mesh_LeftBrainDefault_nexus00_sphere
+
+			let LeftBrain_ActivationButton
+			let LeftBrain_ActivationButtonCircle01, mesh_LeftBrain_ActivationButtonCircle01
+			let LeftBrain_ActivationButtonCircle02, mesh_LeftBrain_ActivationButtonCircle02
+			let LeftBrain_ActivationButtonCircle03, mesh_LeftBrain_ActivationButtonCircle03
+
+			let LeftBrain_defaultSphere, mesh_LeftBrain_defaultSphere
+			let LeftBrain_default_OrbitMenu00, mesh_LeftBrain_default_OrbitMenu00
+			let LeftBrain_default_OrbitMenu01, mesh_LeftBrain_default_OrbitMenu01
+			let LeftBrain_default_OrbitMenu02, mesh_LeftBrain_default_OrbitMenu02
+			let LeftBrain_default_OrbitMenu03, mesh_LeftBrain_default_OrbitMenu03
+
+			
+
+
+			// #################################################################
+            //  RightBrainDefault_root
+			// #################################################################
+			let RightBrainDefault_root
+			let RightBrainDefault_core, mesh_RightBrainDefault_core
+			let RightBrainDefault_nexus00, mesh_RightBrainDefault_nexus00
+			let RightBrainDefault_nexus00_sphere, mesh_RightBrainDefault_nexus00_sphere
+			let RightBrainDefaultSphere, mesh_RightBrainDefaultSphere
+
+			let RightBrain_ActivateButton
+			let RightBrain_ActivationButtonCircle01, mesh_RightBrain_ActivationButtonCircle01
+			let RightBrain_ActivationButtonCircle02, mesh_RightBrain_ActivationButtonCircle02
+			let RightBrain_ActivationButtonCircle03, mesh_RightBrain_ActivationButtonCircle03
+
+			let RightBrain_defaultSphere, mesh_RightBrain_defaultSphere
+			let RightBrain_default_OrbitMenu00, mesh_RightBrain_default_OrbitMenu00
+			let RightBrain_default_OrbitMenu01, mesh_RightBrain_default_OrbitMenu01
+			let RightBrain_default_OrbitMenu02, mesh_RightBrain_default_OrbitMenu02
+			let RightBrain_default_OrbitMenu03, mesh_RightBrain_default_OrbitMenu03
 
 
 
@@ -3069,6 +3119,19 @@
 				const navbarLeftImg = textureLoader.load('./assets/img/03-HudUI/PrimaryHeader/TopHeaderLeft.png')
 				const navbarRightImg = textureLoader.load('./assets/img/03-HudUI/PrimaryHeader/TopHeaderRight.png')
 
+				const defaultGrid02 = textureLoader.load('./assets/img/10-ObjectUI/MeasuringGrids/A02_LightGrid.png')
+				
+				const defaultGrid02a = textureLoader.load('./assets/img/10-ObjectUI/MeasuringGrids/A02a_LightGrid.png')
+
+
+
+				// HudLeftBrain_Items
+				const leftBrainImg_Default00 = textureLoader.load('./assets/img/03-HudUI/BrainHolders/LeftBrain/LeftBrainHolder_Default00.png')
+
+
+
+				// HudRightBrain_Items
+				const rightBrainImg_Default00 = textureLoader.load('./assets/img/03-HudUI/BrainHolders/RightBrain/RightBrainHolder_Default00.png')
 
 
 
@@ -5443,18 +5506,18 @@
 
 
 					gsap.from(camera.position, {
-								duration: .5,
-								delay: 0,
-								y: 0, 
-								z: 4500,
-							})
+						duration: .5,
+						delay: 0,
+						y: 0, 
+						z: 4500,
+					})
 					
 					gsap.to(camera.position, { 
-								duration: 13,
-								delay: 0,
-								y: 0, 
-								z: 150,
-						    })
+						duration: 13,
+						delay: 0,
+						y: 0, 
+						z: 150,
+					})
 				}
 
 				// setTimeout(
@@ -6877,6 +6940,145 @@
                 scene.add(Navbar2D_root)
                 camera.attach(Navbar2D_root)
 
+				// navbarLeft
+				// ----------------------------------------------------------------------
+				navbarLeft = new THREE.Group()
+                navbarLeft.position.set(-8, 5, -2)
+                navbarLeft.rotation.set(0, 0, 0)
+                navbarLeft.scale.set(0.5, 0.1, 0.5)
+                Navbar2D_root.add(navbarLeft)
+
+
+                const mat_navbarLeft = new THREE.MeshBasicMaterial({ map: navbarLeftImg, side: THREE.DoubleSide });
+				mesh_navbarLeft = new THREE.Mesh(geo_objT_PlaneA1, mat_navbarLeft);
+				mat_navbarLeft.transparent = true;
+                mat_navbarLeft.wireframe = false;
+				mat_navbarLeft.alphaMap = navbarLeftImg;
+				mesh_navbarLeft.position.set(0, 0, 0);
+				// mesh_navbarLeft.position.set(-15000, 0, 0);
+				mesh_navbarLeft.scale.set(1, 1, 1);
+				mesh_navbarLeft.rotation.set(0, 0, 0);
+				// mesh_navbarLeft.rotateX( - Math.PI / 2 );
+
+				// navbarLeft.lookAt(camera)
+				
+				navbarLeft.add(mesh_navbarLeft)
+
+
+				// Navbar2D_root | navbarLeft | navbarLeft_option01
+				// ----------------------------------------------------------------------
+                navbarLeft_option01 = new THREE.Group()
+                navbarLeft_option01.position.set(-4.5, 3.56, 0)
+                navbarLeft_option01.rotation.set(0, 0, 0)
+                navbarLeft_option01.scale.set(0.04, 0.04, 0.04)
+                Navbar2D_root.add(navbarLeft_option01)
+
+                const mat_navbarLeft_option01 = new THREE.MeshBasicMaterial({ map: newTechTileHolder07, side: THREE.DoubleSide });
+				mesh_navbarLeft_option01 = new THREE.Mesh(geo_objT_PlaneA1, mat_navbarLeft_option01);
+				mat_navbarLeft_option01.transparent = true;
+				mat_navbarLeft_option01.alphaMap = newTechTileHolder07;
+				mesh_navbarLeft_option01.position.set(0, 0, 0);
+				// mesh_navbarLeft_option01.position.set(-15000, 0, 0);
+				mesh_navbarLeft_option01.scale.set(1, 1, 1);
+				mesh_navbarLeft_option01.rotation.set(0, 0, 0);
+				// mesh_navbarLeft_option01.rotateX( - Math.PI / 2 );
+
+				// navbarLeft_option01.lookAt(camera)
+				
+				navbarLeft_option01.add(mesh_navbarLeft_option01)
+
+
+				// Navbar2D_root | navbarLeft | navbarLeft_option02
+				// ----------------------------------------------------------------------
+                navbarLeft_option02 = new THREE.Group()
+                navbarLeft_option02.position.set(-5.1, 3.56, 0)
+                navbarLeft_option02.rotation.set(0, 0, 0)
+                navbarLeft_option02.scale.set(0.04, 0.04, 0.04)
+                Navbar2D_root.add(navbarLeft_option02)
+
+                const mat_navbarLeft_option02 = new THREE.MeshBasicMaterial({ map: newTechTileHolder07, side: THREE.DoubleSide });
+				mesh_navbarLeft_option02 = new THREE.Mesh(geo_objT_PlaneA1, mat_navbarLeft_option02);
+				mat_navbarLeft_option02.transparent = true;
+				mat_navbarLeft_option02.alphaMap = newTechTileHolder07;
+				mesh_navbarLeft_option02.position.set(0, 0, 0);
+				// mesh_navbarLeft_option02.position.set(-15000, 0, 0);
+				mesh_navbarLeft_option02.scale.set(1, 1, 1);
+				mesh_navbarLeft_option02.rotation.set(0, 0, 0);
+				// mesh_navbarLeft_option02.rotateX( - Math.PI / 2 );
+
+				// navbarLeft_option02.lookAt(camera)
+				
+				navbarLeft_option02.add(mesh_navbarLeft_option02)
+
+
+				// Navbar2D_root | navbarLeft | navbarLeft_option03
+				// ----------------------------------------------------------------------
+                navbarLeft_option03 = new THREE.Group()
+                navbarLeft_option03.position.set(-5.7, 3.56, 0)
+                navbarLeft_option03.rotation.set(0, 0, 0)
+                navbarLeft_option03.scale.set(0.04, 0.04, 0.04)
+                Navbar2D_root.add(navbarLeft_option03)
+
+                const mat_navbarLeft_option03 = new THREE.MeshBasicMaterial({ map: newTechTileHolder07, side: THREE.DoubleSide });
+				mesh_navbarLeft_option03 = new THREE.Mesh(geo_objT_PlaneA1, mat_navbarLeft_option03);
+				mat_navbarLeft_option03.transparent = true;
+				mat_navbarLeft_option03.alphaMap = newTechTileHolder07;
+				mesh_navbarLeft_option03.position.set(0, 0, 0);
+				// mesh_navbarLeft_option03.position.set(-15000, 0, 0);
+				mesh_navbarLeft_option03.scale.set(1, 1, 1);
+				mesh_navbarLeft_option03.rotation.set(0, 0, 0);
+				// mesh_navbarLeft_option03.rotateX( - Math.PI / 2 );
+
+				// navbarLeft_option03.lookAt(camera)
+				
+				navbarLeft_option03.add(mesh_navbarLeft_option03)
+
+
+				// Navbar2D_root | navbarLeft | navbarLeft_option04
+				// ----------------------------------------------------------------------
+                navbarLeft_option04 = new THREE.Group()
+                navbarLeft_option04.position.set(-6.3, 3.56, 0)
+                navbarLeft_option04.rotation.set(0, 0, 0)
+                navbarLeft_option04.scale.set(0.04, 0.04, 0.04)
+                Navbar2D_root.add(navbarLeft_option04)
+
+                const mat_navbarLeft_option04 = new THREE.MeshBasicMaterial({ map: newTechTileHolder07, side: THREE.DoubleSide });
+				mesh_navbarLeft_option04 = new THREE.Mesh(geo_objT_PlaneA1, mat_navbarLeft_option04);
+				mat_navbarLeft_option04.transparent = true;
+				mat_navbarLeft_option04.alphaMap = newTechTileHolder07;
+				mesh_navbarLeft_option04.position.set(0, 0, 0);
+				// mesh_navbarLeft_option04.position.set(-15000, 0, 0);
+				mesh_navbarLeft_option04.scale.set(1, 1, 1);
+				mesh_navbarLeft_option04.rotation.set(0, 0, 0);
+				// mesh_navbarLeft_option04.rotateX( - Math.PI / 2 );
+
+				// navbarLeft_option04.lookAt(camera)
+				
+				navbarLeft_option04.add(mesh_navbarLeft_option04)
+
+
+				// Navbar2D_root | navbarLeft | navbarLeft_option05
+				// ----------------------------------------------------------------------
+                navbarLeft_option05 = new THREE.Group()
+                navbarLeft_option05.position.set(-6.9, 3.56, 0)
+                navbarLeft_option05.rotation.set(0, 0, 0)
+                navbarLeft_option05.scale.set(0.04, 0.04, 0.04)
+                Navbar2D_root.add(navbarLeft_option05)
+
+                const mat_navbarLeft_option05 = new THREE.MeshBasicMaterial({ map: newTechTileHolder07, side: THREE.DoubleSide });
+				mesh_navbarLeft_option05 = new THREE.Mesh(geo_objT_PlaneA1, mat_navbarLeft_option05);
+				mat_navbarLeft_option05.transparent = true;
+				mat_navbarLeft_option05.alphaMap = newTechTileHolder07;
+				mesh_navbarLeft_option05.position.set(0, 0, 0);
+				// mesh_navbarLeft_option05.position.set(-15000, 0, 0);
+				mesh_navbarLeft_option05.scale.set(1, 1, 1);
+				mesh_navbarLeft_option05.rotation.set(0, 0, 0);
+				// mesh_navbarLeft_option05.rotateX( - Math.PI / 2 );
+
+				// navbarLeft_option05.lookAt(camera)
+				
+				navbarLeft_option05.add(mesh_navbarLeft_option05)
+
 
 				// navbarRight
 				// ----------------------------------------------------------------------
@@ -6903,51 +7105,123 @@
 				navbarRight.add(mesh_navbarRight)
 
 
-				// navbarLeft
+
+				// Navbar2D_root | navbarLeft | navbarRight_option01
 				// ----------------------------------------------------------------------
-				navbarLeft = new THREE.Group()
-                navbarLeft.position.set(-8, 5, -2)
-                navbarLeft.rotation.set(0, 0, 0)
-                navbarLeft.scale.set(0.5, 0.1, 0.5)
-                Navbar2D_root.add(navbarLeft)
+                navbarRight_option01 = new THREE.Group()
+                navbarRight_option01.position.set(4.5, 3.56, 0)
+                navbarRight_option01.rotation.set(0, 0, 0)
+                navbarRight_option01.scale.set(0.04, 0.04, 0.04)
+                Navbar2D_root.add(navbarRight_option01)
 
+                const mat_navbarRight_option01 = new THREE.MeshBasicMaterial({ map: newTechTileHolder07, side: THREE.DoubleSide });
+				mesh_navbarRight_option01 = new THREE.Mesh(geo_objT_PlaneA1, mat_navbarRight_option01);
+				mat_navbarRight_option01.transparent = true;
+				mat_navbarRight_option01.alphaMap = newTechTileHolder07;
+				mesh_navbarRight_option01.position.set(0, 0, 0);
+				// mesh_navbarRight_option01.position.set(-15000, 0, 0);
+				mesh_navbarRight_option01.scale.set(1, 1, 1);
+				mesh_navbarRight_option01.rotation.set(0, 0, 0);
+				// mesh_navbarRight_option01.rotateX( - Math.PI / 2 );
 
-                const mat_navbarLeft = new THREE.MeshBasicMaterial({ map: navbarLeftImg, side: THREE.DoubleSide });
-				mesh_navbarLeft = new THREE.Mesh(geo_objT_PlaneA1, mat_navbarLeft);
-				mat_navbarLeft.transparent = true;
-                mat_navbarLeft.wireframe = false;
-				mat_navbarLeft.alphaMap = navbarLeftImg;
-				mesh_navbarLeft.position.set(0, 0, 0);
-				// mesh_navbarLeft.position.set(-15000, 0, 0);
-				mesh_navbarLeft.scale.set(1, 1, 1);
-				mesh_navbarLeft.rotation.set(0, 0, 0);
-				// mesh_navbarLeft.rotateX( - Math.PI / 2 );
-
-				// navbarLeft.lookAt(camera)
+				// navbarRight_option01.lookAt(camera)
 				
-				navbarLeft.add(mesh_navbarLeft)
+				navbarRight_option01.add(mesh_navbarRight_option01)
 
 
-				// navbarLeft_option01
-                navbarLeft_option01 = new THREE.Group()
-                navbarLeft_option01.position.set(0, 3.56, 0)
-                navbarLeft_option01.rotation.set(0, 0, 0)
-                navbarLeft_option01.scale.set(0.04, 0.04, 0.04)
-                Navbar2D_root.add(navbarLeft_option01)
+				// Navbar2D_root | navbarLeft | navbarRight_option02
+				// ----------------------------------------------------------------------
+                navbarRight_option02 = new THREE.Group()
+                navbarRight_option02.position.set(5.1, 3.56, 0)
+                navbarRight_option02.rotation.set(0, 0, 0)
+                navbarRight_option02.scale.set(0.04, 0.04, 0.04)
+                Navbar2D_root.add(navbarRight_option02)
 
-                const mat_navbarLeft_option01 = new THREE.MeshBasicMaterial({ map: newTechTileHolder07, side: THREE.DoubleSide });
-				mesh_navbarLeft_option01 = new THREE.Mesh(geo_objT_PlaneA1, mat_navbarLeft_option01);
-				mat_navbarLeft_option01.transparent = true;
-				mat_navbarLeft_option01.alphaMap = newTechTileHolder07;
-				mesh_navbarLeft_option01.position.set(0, 0, 0);
-				// mesh_navbarLeft_option01.position.set(-15000, 0, 0);
-				mesh_navbarLeft_option01.scale.set(1, 1, 1);
-				mesh_navbarLeft_option01.rotation.set(0, 0, 0);
-				// mesh_navbarLeft_option01.rotateX( - Math.PI / 2 );
+                const mat_navbarRight_option02 = new THREE.MeshBasicMaterial({ map: newTechTileHolder07, side: THREE.DoubleSide });
+				mesh_navbarRight_option02 = new THREE.Mesh(geo_objT_PlaneA1, mat_navbarRight_option02);
+				mat_navbarRight_option02.transparent = true;
+				mat_navbarRight_option02.alphaMap = newTechTileHolder07;
+				mesh_navbarRight_option02.position.set(0, 0, 0);
+				// mesh_navbarRight_option02.position.set(-15000, 0, 0);
+				mesh_navbarRight_option02.scale.set(1, 1, 1);
+				mesh_navbarRight_option02.rotation.set(0, 0, 0);
+				// mesh_navbarRight_option02.rotateX( - Math.PI / 2 );
 
-				// navbarLeft_option01.lookAt(camera)
+				// navbarRight_option02.lookAt(camera)
 				
-				navbarLeft_option01.add(mesh_navbarLeft_option01)
+				navbarRight_option02.add(mesh_navbarRight_option02)
+
+
+				// Navbar2D_root | navbarLeft | navbarRight_option03
+				// ----------------------------------------------------------------------
+                navbarRight_option03 = new THREE.Group()
+                navbarRight_option03.position.set(5.7, 3.56, 0)
+                navbarRight_option03.rotation.set(0, 0, 0)
+                navbarRight_option03.scale.set(0.04, 0.04, 0.04)
+                Navbar2D_root.add(navbarRight_option03)
+
+                const mat_navbarRight_option03 = new THREE.MeshBasicMaterial({ map: newTechTileHolder07, side: THREE.DoubleSide });
+				mesh_navbarRight_option03 = new THREE.Mesh(geo_objT_PlaneA1, mat_navbarRight_option03);
+				mat_navbarRight_option03.transparent = true;
+				mat_navbarRight_option03.alphaMap = newTechTileHolder07;
+				mesh_navbarRight_option03.position.set(0, 0, 0);
+				// mesh_navbarRight_option03.position.set(-15000, 0, 0);
+				mesh_navbarRight_option03.scale.set(1, 1, 1);
+				mesh_navbarRight_option03.rotation.set(0, 0, 0);
+				// mesh_navbarRight_option03.rotateX( - Math.PI / 2 );
+
+				// navbarRight_option03.lookAt(camera)
+				
+				navbarRight_option03.add(mesh_navbarRight_option03)
+
+
+				// Navbar2D_root | navbarLeft | navbarRight_option04
+				// ----------------------------------------------------------------------
+                navbarRight_option04 = new THREE.Group()
+                navbarRight_option04.position.set(6.3, 3.56, 0)
+                navbarRight_option04.rotation.set(0, 0, 0)
+                navbarRight_option04.scale.set(0.04, 0.04, 0.04)
+                Navbar2D_root.add(navbarRight_option04)
+
+                const mat_navbarRight_option04 = new THREE.MeshBasicMaterial({ map: newTechTileHolder07, side: THREE.DoubleSide });
+				mesh_navbarRight_option04 = new THREE.Mesh(geo_objT_PlaneA1, mat_navbarRight_option04);
+				mat_navbarRight_option04.transparent = true;
+				mat_navbarRight_option04.alphaMap = newTechTileHolder07;
+				mesh_navbarRight_option04.position.set(0, 0, 0);
+				// mesh_navbarRight_option04.position.set(-15000, 0, 0);
+				mesh_navbarRight_option04.scale.set(1, 1, 1);
+				mesh_navbarRight_option04.rotation.set(0, 0, 0);
+				// mesh_navbarRight_option04.rotateX( - Math.PI / 2 );
+
+				// navbarRight_option04.lookAt(camera)
+				
+				navbarRight_option04.add(mesh_navbarRight_option04)
+
+
+				// Navbar2D_root | navbarLeft | navbarRight_option05
+				// ----------------------------------------------------------------------
+                navbarRight_option05 = new THREE.Group()
+                navbarRight_option05.position.set(6.9, 3.56, 0)
+                navbarRight_option05.rotation.set(0, 0, 0)
+                navbarRight_option05.scale.set(0.04, 0.04, 0.04)
+                Navbar2D_root.add(navbarRight_option05)
+
+                const mat_navbarRight_option05 = new THREE.MeshBasicMaterial({ map: newTechTileHolder07, side: THREE.DoubleSide });
+				mesh_navbarRight_option05 = new THREE.Mesh(geo_objT_PlaneA1, mat_navbarRight_option05);
+				mat_navbarRight_option05.transparent = true;
+				mat_navbarRight_option05.alphaMap = newTechTileHolder07;
+				mesh_navbarRight_option05.position.set(0, 0, 0);
+				// mesh_navbarRight_option05.position.set(-15000, 0, 0);
+				mesh_navbarRight_option05.scale.set(1, 1, 1);
+				mesh_navbarRight_option05.rotation.set(0, 0, 0);
+				// mesh_navbarRight_option05.rotateX( - Math.PI / 2 );
+
+				// navbarRight_option05.lookAt(camera)
+				
+				navbarRight_option05.add(mesh_navbarRight_option05)
+
+
+				
 
 				// Navbar2D
 				// ----------------------------------------------------------------------
@@ -7590,6 +7864,181 @@
 
 
 
+				// -----------------------------------------------------------------
+				// LeftBrainDefault_root
+				// -----------------------------------------------------------------
+
+				// LeftBrainDefault_root
+                LeftBrainDefault_root = new THREE.Group()
+                LeftBrainDefault_root.position.set(-5, -3.25, 0)
+                LeftBrainDefault_root.rotation.set(0, 0, 0)
+                LeftBrainDefault_root.scale.set(1, 1, 1)
+                Navbar2D_root.add(LeftBrainDefault_root)
+
+
+				// LeftBrainDefault_core
+                LeftBrainDefault_core = new THREE.Group()
+                LeftBrainDefault_core.position.set(0, 0, -1)
+                LeftBrainDefault_core.rotation.set(0, 0, 0)
+                LeftBrainDefault_core.scale.set(0.25, 0.25, 0.25)
+                LeftBrainDefault_root.add(LeftBrainDefault_core)
+
+
+                const mat_LeftBrainDefault_core = new THREE.MeshBasicMaterial({ map: leftBrainImg_Default00, side: THREE.DoubleSide });
+				mesh_LeftBrainDefault_core = new THREE.Mesh(geo_objT_PlaneA1, mat_LeftBrainDefault_core);
+				mat_LeftBrainDefault_core.transparent = true;
+				mat_LeftBrainDefault_core.alphaMap = leftBrainImg_Default00;
+				mesh_LeftBrainDefault_core.position.set(0, 0, 0);
+				// mesh_LeftBrainDefault_core.position.set(-15000, 0, 0);
+				mesh_LeftBrainDefault_core.scale.set(1, 1, 1);
+				mesh_LeftBrainDefault_core.rotation.set(0, 0, 0);
+				// mesh_LeftBrainDefault_core.rotateX( - Math.PI / 2 );
+
+				// LeftBrainDefault_core.lookAt(camera)
+				
+				LeftBrainDefault_core.add(mesh_LeftBrainDefault_core)
+
+
+				LeftBrain_ActivationButton = new THREE.Group()
+                LeftBrain_ActivationButton.position.set(4.1, -2.54, 0)
+                LeftBrain_ActivationButton.rotation.set(0, 0, 0)	
+                LeftBrain_ActivationButton.scale.set(0.01, 0.01, 0.01)
+                Navbar2D_root.add(LeftBrain_ActivationButton)
+
+                let logFunctionTest01 = () => {
+                    console.log("working!")
+                }
+
+
+                LeftBrain_ActivationButton.add(
+                    
+                    new TechIcon(
+                        0, 0, 0,
+                        0, 0, 0,
+                        0.55, 0.55, 0.55,
+                        'DefaultTechIconId', 'DefaultTechIconClassName',
+                        'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+                        'DefaultImgId', 'DefaultImgClassName',
+                        'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+                        "./assets/icons/00-Official/UI/Isometric/tools/target1.svg", "",
+                        logFunctionTest01, 
+                        "Test-Δ",
+                        "Test me to see if I work!"
+                    ) 
+
+                )
+
+
+				// LeftBrain_ActivationButton
+				
+
+				// LeftBrain_defaultSphere
+                LeftBrain_defaultSphere = new THREE.Group()
+                LeftBrain_defaultSphere.position.set(-5, -1.55, -2)
+                LeftBrain_defaultSphere.rotation.set(0, 0, 0)
+                LeftBrain_defaultSphere.scale.set(0.075, 0.075, 0.075)
+                Navbar2D_root.add(LeftBrain_defaultSphere)
+
+
+                const mat_LeftBrain_defaultSphere = new THREE.MeshBasicMaterial({ map: defaultGrid02a, side: THREE.DoubleSide });
+				mesh_LeftBrain_defaultSphere = new THREE.Mesh(geo_objT_SphereA0, mat_LeftBrain_defaultSphere);
+				mat_LeftBrain_defaultSphere.transparent = true;
+				mat_LeftBrain_defaultSphere.alphaMap = defaultGrid02a;
+				mesh_LeftBrain_defaultSphere.position.set(0, 0, 0);
+				// mesh_LeftBrain_defaultSphere.position.set(-15000, 0, 0);
+				mesh_LeftBrain_defaultSphere.scale.set(1, 1, 1);
+				mesh_LeftBrain_defaultSphere.rotation.set(0, 0, 0);
+				// mesh_LeftBrain_defaultSphere.rotateX( - Math.PI / 2 );
+
+				// LeftBrain_defaultSphere.lookAt(camera)
+				
+				LeftBrain_defaultSphere.add(mesh_LeftBrain_defaultSphere)
+
+				// -----------------------------------------------------------------
+				// RightBrainDefault_root
+				// -----------------------------------------------------------------
+
+				// RightBrainDefault_root
+                RightBrainDefault_root = new THREE.Group()
+                RightBrainDefault_root.position.set(5, -3.25, 0)
+                RightBrainDefault_root.rotation.set(0, 0, 0)
+                RightBrainDefault_root.scale.set(1, 1, 1)
+                Navbar2D_root.add(RightBrainDefault_root)
+
+
+				// RightBrainDefault_core
+                RightBrainDefault_core = new THREE.Group()
+                RightBrainDefault_core.position.set(0, 0, -1)
+                RightBrainDefault_core.rotation.set(0, 0, 0)
+                RightBrainDefault_core.scale.set(0.25, 0.25, 0.25)
+                RightBrainDefault_root.add(RightBrainDefault_core)
+
+
+                const mat_RightBrainDefault_core = new THREE.MeshBasicMaterial({ map: rightBrainImg_Default00, side: THREE.DoubleSide });
+				mesh_RightBrainDefault_core = new THREE.Mesh(geo_objT_PlaneA1, mat_RightBrainDefault_core);
+				mat_RightBrainDefault_core.transparent = true;
+				mat_RightBrainDefault_core.alphaMap = rightBrainImg_Default00;
+				mesh_RightBrainDefault_core.position.set(0, 0, 0);
+				// mesh_RightBrainDefault_core.position.set(-15000, 0, 0);
+				mesh_RightBrainDefault_core.scale.set(1, 1, 1);
+				mesh_RightBrainDefault_core.rotation.set(0, 0, 0);
+				// mesh_RightBrainDefault_core.rotateX( - Math.PI / 2 );
+
+				// RightBrainDefault_core.lookAt(camera)
+				
+				RightBrainDefault_core.add(mesh_RightBrainDefault_core)
+
+
+				RightBrain_ActivateButton = new THREE.Group()
+                RightBrain_ActivateButton.position.set(-4.1, -2.54, 0)
+                RightBrain_ActivateButton.rotation.set(0, 0, 0)	
+                RightBrain_ActivateButton.scale.set(0.01, 0.01, 0.01)
+                Navbar2D_root.add(RightBrain_ActivateButton)
+
+                let logFunctionTest02 = () => {
+                    console.log("working!")
+                }
+
+
+                RightBrain_ActivateButton.add(
+                    
+                    new TechIcon(
+                        0, 0, 0,
+                        0, 0, 0,
+                        0.55, 0.55, 0.55,
+                        'DefaultTechIconId', 'DefaultTechIconClassName',
+                        'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+                        'DefaultImgId', 'DefaultImgClassName',
+                        'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+                        "./assets/icons/00-Official/UI/Isometric/tools/target1.svg", "",
+                        logFunctionTest02, 
+                        "Test-Δ",
+                        "Test me to see if I work!"
+                    ) 
+
+                )
+
+
+				// RightBrain_defaultSphere
+                RightBrain_defaultSphere = new THREE.Group()
+                RightBrain_defaultSphere.position.set(5, -1.55, -2)
+                RightBrain_defaultSphere.rotation.set(0, 0, 0)
+                RightBrain_defaultSphere.scale.set(0.075, 0.075, 0.075)
+                Navbar2D_root.add(RightBrain_defaultSphere)
+
+
+                const mat_RightBrain_defaultSphere = new THREE.MeshBasicMaterial({ map: defaultGrid02a, side: THREE.DoubleSide });
+				mesh_RightBrain_defaultSphere = new THREE.Mesh(geo_objT_SphereA0, mat_RightBrain_defaultSphere);
+				mat_RightBrain_defaultSphere.transparent = true;
+				mat_RightBrain_defaultSphere.alphaMap = defaultGrid02a;
+				mesh_RightBrain_defaultSphere.position.set(0, 0, 0);
+				// mesh_RightBrain_defaultSphere.position.set(-15000, 0, 0);
+				mesh_RightBrain_defaultSphere.scale.set(1, 1, 1);
+				mesh_RightBrain_defaultSphere.rotation.set(0, 0, 0);
+				// mesh_RightBrain_defaultSphere.rotateX( - Math.PI / 2 );
+
+				// RightBrain_defaultSphere.lookAt(camera)
+				RightBrain_defaultSphere.add(mesh_RightBrain_defaultSphere)
 
 
 
@@ -8113,17 +8562,17 @@
 				folderLoadTestingContainer01.add(floorDesign01_Grid.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
 				folderLoadTestingContainer01.add(floorDesign01_Grid.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
-				const folderLoadTestingContainer02 = gui.addFolder('<<< LoadPoint02 :: navbarLeft_option01 >>>')
+				const folderLoadTestingContainer02 = gui.addFolder('<<< LoadPoint02 :: LeftBrain_defaultSphere >>>')
 
-				folderLoadTestingContainer02.add(navbarLeft_option01.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
-				folderLoadTestingContainer02.add(navbarLeft_option01.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
-				folderLoadTestingContainer02.add(navbarLeft_option01.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
-				folderLoadTestingContainer02.add(navbarLeft_option01.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
-				folderLoadTestingContainer02.add(navbarLeft_option01.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
-				folderLoadTestingContainer02.add(navbarLeft_option01.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
-				folderLoadTestingContainer02.add(navbarLeft_option01.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
-				folderLoadTestingContainer02.add(navbarLeft_option01.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
-				folderLoadTestingContainer02.add(navbarLeft_option01.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
+				folderLoadTestingContainer02.add(LeftBrain_defaultSphere.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
+				folderLoadTestingContainer02.add(LeftBrain_defaultSphere.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
+				folderLoadTestingContainer02.add(LeftBrain_defaultSphere.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
+				folderLoadTestingContainer02.add(LeftBrain_defaultSphere.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
+				folderLoadTestingContainer02.add(LeftBrain_defaultSphere.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
+				folderLoadTestingContainer02.add(LeftBrain_defaultSphere.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
+				folderLoadTestingContainer02.add(LeftBrain_defaultSphere.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
+				folderLoadTestingContainer02.add(LeftBrain_defaultSphere.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
+				folderLoadTestingContainer02.add(LeftBrain_defaultSphere.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
 				const folderLoadTestingContainer03 = gui.addFolder('<<< LoadPoint03 :: navbarRight >>>')
 
@@ -8785,10 +9234,11 @@
 
 				}
 
+				// ########################################################
+				// Primary Animations____________
 				// ###########################
-				// Primary Animations 
-				// ###########################
-				
+				LeftBrain_defaultSphere.rotation.y = time * 0.001
+				RightBrain_defaultSphere.rotation.y = time * 0.001
 			
 				
 
