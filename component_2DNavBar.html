@@ -5808,7 +5808,7 @@
 						tube: 3,
 						radialSegements: 16,
 						tubularSegments: 100,
-						arc: 6.28
+						arc: 6.28,
 					},
 
 					// ObjectTestingGroup/Cylinder-Full
@@ -7861,6 +7861,49 @@
 				
 				// Navbar2D_option12.add(mesh_Navbar2D_option12)
 
+				// -----------------------------------------------------------------
+				// Brains Settings
+				// -----------------------------------------------------------------
+				let torusGeometryDimensions = {
+					radius: 10,
+					tube: 3,
+					radialSegements: 16,
+					tubularSegments: 100,
+					arc: 6.28,
+				}
+
+
+				const geo_objT_TorusA1 = new THREE.TorusGeometry(
+
+					torusGeometryDimensions.radius,
+					torusGeometryDimensions.tube,
+					torusGeometryDimensions.radialSegments,
+					torusGeometryDimensions.tubularSegments,
+					torusGeometryDimensions.arc,
+
+				)
+
+
+				let ringGeometryDimensions01 = {
+					innerRadius: 5,
+					outerRadius: 10,
+					thetaSegments: 30,
+					phiSegments: 10,
+					thetaStart: 0,
+					thetaLength: 6.283185307179586
+				}
+
+
+				const geo_objT_RingA1 = new THREE.RingGeometry(
+
+					ringGeometryDimensions01.innerRadius,
+					ringGeometryDimensions01.outerRadius,
+					ringGeometryDimensions01.thetaSegments,
+					ringGeometryDimensions01.phiSegments,
+					ringGeometryDimensions01.thetaStart,
+					ringGeometryDimensions01.thetaLength,
+					
+				)
 
 
 
@@ -7878,10 +7921,22 @@
 
 				// LeftBrainDefault_core
                 LeftBrainDefault_core = new THREE.Group()
-                LeftBrainDefault_core.position.set(0, 0, -1)
+                LeftBrainDefault_core.position.set(0, -0.5, -1)
                 LeftBrainDefault_core.rotation.set(0, 0, 0)
-                LeftBrainDefault_core.scale.set(0.25, 0.25, 0.25)
+                LeftBrainDefault_core.scale.set(0.15, 0.15, 0.15)
                 LeftBrainDefault_root.add(LeftBrainDefault_core)
+
+				LeftBrainDefault_core.add(
+					new hoverObject(
+						'img',
+						0, 0, 0,
+						0, 0, 0,
+						0.1, 0.1, 0.1,
+						"Testing234", "TestingClass234",
+						"./assets/img/03-HudUI/BrainHolders/LeftBrain/LeftBrainHolder_Default04.svg", "",
+						"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+					)
+				)
 
 
                 const mat_LeftBrainDefault_core = new THREE.MeshBasicMaterial({ map: leftBrainImg_Default00, side: THREE.DoubleSide });
@@ -7929,7 +7984,29 @@
                 )
 
 
-				// LeftBrain_ActivationButton
+				// Orbits
+				// ---------------------------------------------------------------------------------------
+				LeftBrain_default_OrbitMenu00 = new THREE.Group()
+                LeftBrain_default_OrbitMenu00.position.set(4.1, -2.54, 0)
+                LeftBrain_default_OrbitMenu00.rotation.set(0, 0, 0)	
+                LeftBrain_default_OrbitMenu00.scale.set(0.01, 0.01, 0.01)
+                Navbar2D_root.add(LeftBrain_default_OrbitMenu00)
+
+
+				const mat_LeftBrain_default_OrbitMenu00 = new THREE.MeshBasicMaterial({ map: defaultGrid02a, side: THREE.DoubleSide });
+				mesh_LeftBrain_default_OrbitMenu00 = new THREE.Mesh(geo_objT_SphereA0, mat_LeftBrain_default_OrbitMenu00);
+				mat_LeftBrain_default_OrbitMenu00.transparent = true;
+				mat_LeftBrain_default_OrbitMenu00.alphaMap = defaultGrid02a;
+				mesh_LeftBrain_default_OrbitMenu00.position.set(0, 0, 0);
+				// mesh_LeftBrain_default_OrbitMenu00.position.set(-15000, 0, 0);
+				mesh_LeftBrain_default_OrbitMenu00.scale.set(1, 1, 1);
+				mesh_LeftBrain_default_OrbitMenu00.rotation.set(0, 0, 0);
+				// mesh_LeftBrain_default_OrbitMenu00.rotateX( - Math.PI / 2 );
+
+				// LeftBrain_default_OrbitMenu00.lookAt(camera)
+				
+				LeftBrain_default_OrbitMenu00.add(mesh_LeftBrain_default_OrbitMenu00)
+
 				
 
 				// LeftBrain_defaultSphere
@@ -8562,17 +8639,17 @@
 				folderLoadTestingContainer01.add(floorDesign01_Grid.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
 				folderLoadTestingContainer01.add(floorDesign01_Grid.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
-				const folderLoadTestingContainer02 = gui.addFolder('<<< LoadPoint02 :: LeftBrain_defaultSphere >>>')
+				const folderLoadTestingContainer02 = gui.addFolder('<<< LoadPoint02 :: LeftBrainDefault_core >>>')
 
-				folderLoadTestingContainer02.add(LeftBrain_defaultSphere.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
-				folderLoadTestingContainer02.add(LeftBrain_defaultSphere.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
-				folderLoadTestingContainer02.add(LeftBrain_defaultSphere.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
-				folderLoadTestingContainer02.add(LeftBrain_defaultSphere.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
-				folderLoadTestingContainer02.add(LeftBrain_defaultSphere.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
-				folderLoadTestingContainer02.add(LeftBrain_defaultSphere.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
-				folderLoadTestingContainer02.add(LeftBrain_defaultSphere.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
-				folderLoadTestingContainer02.add(LeftBrain_defaultSphere.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
-				folderLoadTestingContainer02.add(LeftBrain_defaultSphere.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
+				folderLoadTestingContainer02.add(LeftBrainDefault_core.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
+				folderLoadTestingContainer02.add(LeftBrainDefault_core.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
+				folderLoadTestingContainer02.add(LeftBrainDefault_core.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
+				folderLoadTestingContainer02.add(LeftBrainDefault_core.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
+				folderLoadTestingContainer02.add(LeftBrainDefault_core.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
+				folderLoadTestingContainer02.add(LeftBrainDefault_core.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
+				folderLoadTestingContainer02.add(LeftBrainDefault_core.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
+				folderLoadTestingContainer02.add(LeftBrainDefault_core.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
+				folderLoadTestingContainer02.add(LeftBrainDefault_core.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
 				const folderLoadTestingContainer03 = gui.addFolder('<<< LoadPoint03 :: navbarRight >>>')
 
