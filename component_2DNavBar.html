@@ -7938,20 +7938,52 @@
 					)
 				)
 
+				LeftBrainDefault_core.add(
+					new hoverObject(
+						'img',
+						0, -0.5, 0.01,
+						0, 0, 0,
+						0.05, 0.05, 0.05,
+						"Testing234", "TestingClass234",
+						"./assets/img/03-HudUI/BrainHolders/LeftBrain/LeftBrainHolder_Default04.svg", "",
+						"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+					)
+				)
 
-                const mat_LeftBrainDefault_core = new THREE.MeshBasicMaterial({ map: leftBrainImg_Default00, side: THREE.DoubleSide });
-				mesh_LeftBrainDefault_core = new THREE.Mesh(geo_objT_PlaneA1, mat_LeftBrainDefault_core);
-				mat_LeftBrainDefault_core.transparent = true;
-				mat_LeftBrainDefault_core.alphaMap = leftBrainImg_Default00;
-				mesh_LeftBrainDefault_core.position.set(0, 0, 0);
-				// mesh_LeftBrainDefault_core.position.set(-15000, 0, 0);
-				mesh_LeftBrainDefault_core.scale.set(1, 1, 1);
-				mesh_LeftBrainDefault_core.rotation.set(0, 0, 0);
-				// mesh_LeftBrainDefault_core.rotateX( - Math.PI / 2 );
+				// LeftBrain_default_OrbitMenu01
+                LeftBrain_default_OrbitMenu01 = new THREE.Group()
+                LeftBrain_default_OrbitMenu01.position.set(1, 0, 0)
+                LeftBrain_default_OrbitMenu01.rotation.set(0.614, 0, 0)
+                LeftBrain_default_OrbitMenu01.scale.set(0.2, 0.2, 0.2)
+                LeftBrainDefault_root.add(LeftBrain_default_OrbitMenu01)
 
-				// LeftBrainDefault_core.lookAt(camera)
+
+				LeftBrain_default_OrbitMenu01.add(
+					new hoverObject(
+						'img',
+						0, -0.5, 0.01,
+						0, 0, 0,
+						0.05, 0.05, 0.05,
+						"Testing234", "TestingClass234",
+						"./assets/img/03-HudUI/BrainHolders/LeftBrain/LB_OptionsMenu/LB_OptionsMenu01.svg", "",
+						"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+					)
+				)
+
+
+                // const mat_LeftBrainDefault_core = new THREE.MeshBasicMaterial({ map: leftBrainImg_Default00, side: THREE.DoubleSide });
+				// mesh_LeftBrainDefault_core = new THREE.Mesh(geo_objT_PlaneA1, mat_LeftBrainDefault_core);
+				// mat_LeftBrainDefault_core.transparent = true;
+				// mat_LeftBrainDefault_core.alphaMap = leftBrainImg_Default00;
+				// mesh_LeftBrainDefault_core.position.set(0, 0, 0);
+				// // mesh_LeftBrainDefault_core.position.set(-15000, 0, 0);
+				// mesh_LeftBrainDefault_core.scale.set(1, 1, 1);
+				// mesh_LeftBrainDefault_core.rotation.set(0, 0, 0);
+				// // mesh_LeftBrainDefault_core.rotateX( - Math.PI / 2 );
+
+				// // LeftBrainDefault_core.lookAt(camera)
 				
-				LeftBrainDefault_core.add(mesh_LeftBrainDefault_core)
+				// LeftBrainDefault_core.add(mesh_LeftBrainDefault_core)
 
 
 				LeftBrain_ActivationButton = new THREE.Group()
@@ -8639,17 +8671,17 @@
 				folderLoadTestingContainer01.add(floorDesign01_Grid.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
 				folderLoadTestingContainer01.add(floorDesign01_Grid.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
-				const folderLoadTestingContainer02 = gui.addFolder('<<< LoadPoint02 :: LeftBrainDefault_core >>>')
+				const folderLoadTestingContainer02 = gui.addFolder('<<< LoadPoint02 :: LeftBrain_default_OrbitMenu01 >>>')
 
-				folderLoadTestingContainer02.add(LeftBrainDefault_core.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
-				folderLoadTestingContainer02.add(LeftBrainDefault_core.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
-				folderLoadTestingContainer02.add(LeftBrainDefault_core.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
-				folderLoadTestingContainer02.add(LeftBrainDefault_core.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
-				folderLoadTestingContainer02.add(LeftBrainDefault_core.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
-				folderLoadTestingContainer02.add(LeftBrainDefault_core.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
-				folderLoadTestingContainer02.add(LeftBrainDefault_core.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
-				folderLoadTestingContainer02.add(LeftBrainDefault_core.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
-				folderLoadTestingContainer02.add(LeftBrainDefault_core.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
+				folderLoadTestingContainer02.add(LeftBrain_default_OrbitMenu01.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
+				folderLoadTestingContainer02.add(LeftBrain_default_OrbitMenu01.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
+				folderLoadTestingContainer02.add(LeftBrain_default_OrbitMenu01.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
+				folderLoadTestingContainer02.add(LeftBrain_default_OrbitMenu01.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
+				folderLoadTestingContainer02.add(LeftBrain_default_OrbitMenu01.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
+				folderLoadTestingContainer02.add(LeftBrain_default_OrbitMenu01.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
+				folderLoadTestingContainer02.add(LeftBrain_default_OrbitMenu01.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
+				folderLoadTestingContainer02.add(LeftBrain_default_OrbitMenu01.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
+				folderLoadTestingContainer02.add(LeftBrain_default_OrbitMenu01.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
 				const folderLoadTestingContainer03 = gui.addFolder('<<< LoadPoint03 :: navbarRight >>>')
 
