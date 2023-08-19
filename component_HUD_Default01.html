@@ -2715,8 +2715,10 @@
 
 			let LeftPanelWindow01
 			let LeftpanelWindow01_ToggleViewButton
+
 			let LeftPanelWindow01_resizeButton
 			let LeftPanelWindow01_PerspectiveLockButton
+			let LeftPanelWindow01_TurnWindowSlightlyButton
 
 
 			let LeftPanelWindow02
@@ -8626,7 +8628,7 @@
 			
 
 			LeftPrimaryWindow_root = new THREE.Group()
-			LeftPrimaryWindow_root.position.set(-1, 0.2, 3.5)
+			LeftPrimaryWindow_root.position.set(-10, 0.2, 3.5)
 			LeftPrimaryWindow_root.rotation.set(0, 0, 0)
 			LeftPrimaryWindow_root.scale.set(1, 1, 1)
 			Navbar2D_root.add(LeftPrimaryWindow_root)
@@ -8941,7 +8943,8 @@
 			}
 
 
-
+			// LeftPanelWindow01_resizeButton
+			// ---------------------------------------------------------------------------
 			LeftPanelWindow01_resizeButton = new THREE.Group()
 			LeftPanelWindow01_resizeButton.position.set(0.6, 0.55, 0)
 			LeftPanelWindow01_resizeButton.rotation.set(0, 0, 0)	
@@ -9010,6 +9013,8 @@
 			}
 
 
+			// LeftPanelWindow01_PerspectiveLockButton
+			// ---------------------------------------------------------------------------
 			LeftPanelWindow01_PerspectiveLockButton = new THREE.Group()
 			LeftPanelWindow01_PerspectiveLockButton.position.set(0.75, 0.55, 0)
 			LeftPanelWindow01_PerspectiveLockButton.rotation.set(0, 0, 0)	
@@ -9033,6 +9038,69 @@
 					'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
 					"./assets/icons/00-Official/UI/Isometric/tools/target1.svg", "",
 					SpaceToWindowToggle, 
+					"Test-Δ",
+					"Test me to see if I work!"
+				) 
+
+			)
+
+
+			let turnLeftWindowSlightlyToggle = () => {
+				if (LeftPrimaryWindow_root.rotation.y === 0) {
+					play_sfx_click_gen()
+
+					gsap.to(LeftPrimaryWindow_root.rotation, {
+
+						duration: .25,
+						delay: 0,
+						y: 0.2
+
+					})
+				} else if (LeftPrimaryWindow_root.rotation.y === 0.2) {
+					gsap.to(LeftPrimaryWindow_root.rotation, {
+
+						duration: .25,
+						delay: 0,
+						y: 0
+
+					})
+				} else {
+					gsap.to(LeftPrimaryWindow_root.rotation, {
+
+						duration: .25,
+						delay: 0,
+						y: 0
+
+					})
+				}
+			}
+
+
+			// LeftPanelWindow01_TurnWindowSlightlyButton
+			// ---------------------------------------------------------------------------
+			LeftPanelWindow01_TurnWindowSlightlyButton = new THREE.Group()
+			LeftPanelWindow01_TurnWindowSlightlyButton.position.set(0.9, 0.55, 0)
+			LeftPanelWindow01_TurnWindowSlightlyButton.rotation.set(0, 0, 0)	
+			LeftPanelWindow01_TurnWindowSlightlyButton.scale.set(0.003, 0.003, 0.003)
+			LeftPrimaryWindow_root.add(LeftPanelWindow01_TurnWindowSlightlyButton)
+
+			let logFunction_wL03 = () => {
+				console.log("working!")
+			}
+
+
+			LeftPanelWindow01_TurnWindowSlightlyButton.add(
+				
+				new TechIcon(
+					0, 0, 0,
+					0, 0, 0,
+					0.55, 0.55, 0.55,
+					'DefaultTechIconId', 'DefaultTechIconClassName',
+					'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+					'DefaultImgId', 'DefaultImgClassName',
+					'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+					"./assets/icons/00-Official/UI/Isometric/tools/target1.svg", "",
+					turnLeftWindowSlightlyToggle, 
 					"Test-Δ",
 					"Test me to see if I work!"
 				) 
