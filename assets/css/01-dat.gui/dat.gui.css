@@ -12,7 +12,7 @@
     position: absolute;
     top: 90%;
     /* right: 18%; */
-    right: 70%; 
+    left: 70%; 
     height: 100px;
     width: 500px;
     background-color: rgba(255, 255, 255, 0.4);
@@ -33,7 +33,7 @@
     height: 1170px;
     width: 700px;
     top: 1%;
-    right: 50%;
+    left: 50%;
     background:rgba(255, 255, 255, 0.3);
     color: rgba(0, 255, 208, 0.75);
     border: 4px outset rgba(255, 255, 255, 0.9);
