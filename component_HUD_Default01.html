@@ -2721,6 +2721,20 @@
 			let LeftPanelWindow01_TurnWindowSlightlyButton
 
 
+			let LeftPanelWindow01_App01
+			let LeftPanelWindow01_App02
+			let LeftPanelWindow01_App03
+			let LeftPanelWindow01_App04
+			let LeftPanelWindow01_App05
+			let LeftPanelWindow01_App06
+			let LeftPanelWindow01_App07
+			let LeftPanelWindow01_App08
+			let LeftPanelWindow01_App09
+			let LeftPanelWindow01_App10
+			let LeftPanelWindow01_App11
+			let LeftPanelWindow01_App12
+
+
 			let LeftPanelWindow02
 
 
@@ -4914,6 +4928,12 @@
 					
 
 				});
+
+				document.addEventListener("keydown", function(event) {
+					if (event.ctrlKey && event.key === "esc") {
+						smallClickWindow()
+					}
+				})
 
 
             // ----------------------------------------------------------------------------------------------------
@@ -8810,6 +8830,7 @@
 
 			document.addEventListener("keydown", function(event) {
 				if (event.key === "[") {
+					play_sfx_click_gen()
 					if (LeftPrimaryWindow_root.position.x === -1) {
 						gsap.to(LeftPrimaryWindow_root.position, {
 
@@ -8840,7 +8861,7 @@
 
 
 			LeftpanelWindow01_ToggleViewButton = new THREE.Group()
-			LeftpanelWindow01_ToggleViewButton.position.set(-1, 0.55, 0)
+			LeftpanelWindow01_ToggleViewButton.position.set(-0.88, 0.55, 0)
 			LeftpanelWindow01_ToggleViewButton.rotation.set(0, 0, 0)	
 			LeftpanelWindow01_ToggleViewButton.scale.set(0.003, 0.003, 0.003)
 			LeftPrimaryWindow_root.add(LeftpanelWindow01_ToggleViewButton)
@@ -8896,6 +8917,75 @@
 			)
 
 
+			// ---------------------------------------------------------------------------
+			// LeftPanelWindow01_TurnWindowSlightlyButton
+			// ---------------------------------------------------------------------------
+			let turnLeftWindowSlightlyToggle = () => {
+				if (LeftPrimaryWindow_root.rotation.y === 0) {
+					play_sfx_click_gen()
+
+					gsap.to(LeftPrimaryWindow_root.rotation, {
+
+						duration: .25,
+						delay: 0,
+						y: 0.2
+
+					})
+				} else if (LeftPrimaryWindow_root.rotation.y === 0.2) {
+					gsap.to(LeftPrimaryWindow_root.rotation, {
+
+						duration: .25,
+						delay: 0,
+						y: 0
+
+					})
+				} else {
+					gsap.to(LeftPrimaryWindow_root.rotation, {
+
+						duration: .25,
+						delay: 0,
+						y: 0
+
+					})
+				}
+			}
+
+
+			// LeftPanelWindow01_TurnWindowSlightlyButton
+			// ---------------------------------------------------------------------------
+			LeftPanelWindow01_TurnWindowSlightlyButton = new THREE.Group()
+			LeftPanelWindow01_TurnWindowSlightlyButton.position.set(-0.74, 0.55, 0)
+			LeftPanelWindow01_TurnWindowSlightlyButton.rotation.set(0, 0, 0)	
+			LeftPanelWindow01_TurnWindowSlightlyButton.scale.set(0.003, 0.003, 0.003)
+			LeftPrimaryWindow_root.add(LeftPanelWindow01_TurnWindowSlightlyButton)
+
+			let logFunction_wL03 = () => {
+				console.log("working!")
+			}
+
+
+			LeftPanelWindow01_TurnWindowSlightlyButton.add(
+				
+				new TechIcon(
+					0, 0, 0,
+					0, 0, 0,
+					0.55, 0.55, 0.55,
+					'DefaultTechIconId', 'DefaultTechIconClassName',
+					'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+					'DefaultImgId', 'DefaultImgClassName',
+					'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+					"./assets/icons/00-Official/UI/Isometric/tools/target1.svg", "",
+					turnLeftWindowSlightlyToggle, 
+					"Angle Window",
+					"Turn Window for angled perspective"
+				) 
+
+			)
+
+
+			// ---------------------------------------------------------------------------
+			// LeftPanelWindow01_resizeButton / resizeWindowFunction()
+			// ---------------------------------------------------------------------------
 			let resizeWindowFunction = () => {
 				if (LeftPanelWindow01.position.z === 0) {
 
@@ -8946,7 +9036,7 @@
 			// LeftPanelWindow01_resizeButton
 			// ---------------------------------------------------------------------------
 			LeftPanelWindow01_resizeButton = new THREE.Group()
-			LeftPanelWindow01_resizeButton.position.set(0.6, 0.55, 0)
+			LeftPanelWindow01_resizeButton.position.set(-0.6, 0.55, 0)
 			LeftPanelWindow01_resizeButton.rotation.set(0, 0, 0)	
 			LeftPanelWindow01_resizeButton.scale.set(0.003, 0.003, 0.003)
 			LeftPrimaryWindow_root.add(LeftPanelWindow01_resizeButton)
@@ -8968,65 +9058,75 @@
 					'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
 					"./assets/icons/00-Official/UI/Isometric/tools/target1.svg", "",
 					resizeWindowFunction, 
-					"Test-Δ",
-					"Test me to see if I work!"
+					"Resize Window",
+					"Click to Resize Left Window"
 				) 
 
 			)
 
 
-			let SpaceToWindowToggle = () => {
-				if (LeftPanelWindow01.position.z === 0) {
-
-					play_sfx_click_gen()
-
-					scene.add(LeftPanelWindow01)
-
-					gsap.to(LeftPanelWindow01.position, {
-
-						duration: .55,
-						delay: 0,
-						x: 0,
-						y: 1.5,
-						z: 0,
-
-					})
-
-				} else if (scene.LeftPanelWindow01 === true) {
-
-					play_sfx_click_gen()
-
-					gsap.to(LeftPanelWindow01.position, {
-
-						duration: .25,
-						delay: 0,
-						x: -0.725,
-						y: 0.325,
-						z: 0,
-
-					})
-
-					LeftPrimaryWindow_root.add(LeftPanelWindow01)
-
-
-				}
-			}
-
-
-			// LeftPanelWindow01_PerspectiveLockButton
 			// ---------------------------------------------------------------------------
-			LeftPanelWindow01_PerspectiveLockButton = new THREE.Group()
-			LeftPanelWindow01_PerspectiveLockButton.position.set(0.75, 0.55, 0)
-			LeftPanelWindow01_PerspectiveLockButton.rotation.set(0, 0, 0)	
-			LeftPanelWindow01_PerspectiveLockButton.scale.set(0.003, 0.003, 0.003)
-			LeftPrimaryWindow_root.add(LeftPanelWindow01_PerspectiveLockButton)
+			// LeftPanelWindow01_PerspectiveLockButton / SpaceToWindowToggle()
+			// ---------------------------------------------------------------------------
+			// let SpaceToWindowToggle = () => {
+			// 	if (LeftPanelWindow01.position.z === 0) {
 
-			let logFunction_wL02 = () => {
+			// 		play_sfx_click_gen()
+
+			// 		scene.add(LeftPanelWindow01)
+
+			// 		gsap.to(LeftPanelWindow01.position, {
+
+			// 			duration: .55,
+			// 			delay: 0,
+			// 			x: 0,
+			// 			y: 1.5,
+			// 			z: 0,
+
+			// 		})
+
+			// 	} else if (scene.LeftPanelWindow01 === true) {
+
+			// 		play_sfx_click_gen()
+
+			// 		gsap.to(LeftPanelWindow01.position, {
+
+			// 			duration: .25,
+			// 			delay: 0,
+			// 			x: -0.725,
+			// 			y: 0.325,
+			// 			z: 0,
+
+			// 		})
+
+			// 		LeftPrimaryWindow_root.add(LeftPanelWindow01)
+
+
+			// 	}
+			// }
+
+
+			
+
+
+			// ---------------------------------------------------------------------------
+			// \- # Left Window Apps
+			// ---------------------------------------------------------------------------
+
+			// LeftPanelWindow01_App01
+			// ---------------------------------------------------------------------------
+			LeftPanelWindow01_App01 = new THREE.Group()
+			LeftPanelWindow01_App01.position.set(-0.85, -0.7, 0.01)
+			LeftPanelWindow01_App01.rotation.set(0, 0, 0)	
+			LeftPanelWindow01_App01.scale.set(0.003, 0.003, 0.003)
+			LeftPrimaryWindow_root.add(LeftPanelWindow01_App01)
+
+			let logFunction_wLA01 = () => {
 				console.log("working!")
 			}
 
 
-			LeftPanelWindow01_PerspectiveLockButton.add(
+			LeftPanelWindow01_App01.add(
 				
 				new TechIcon(
 					0, 0, 0,
@@ -9037,59 +9137,29 @@
 					'DefaultImgId', 'DefaultImgClassName',
 					'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
 					"./assets/icons/00-Official/UI/Isometric/tools/target1.svg", "",
-					SpaceToWindowToggle, 
-					"Test-Δ",
+					logFunction_wLA01, 
+					"App 01",
 					"Test me to see if I work!"
 				) 
 
 			)
 
 
-			let turnLeftWindowSlightlyToggle = () => {
-				if (LeftPrimaryWindow_root.rotation.y === 0) {
-					play_sfx_click_gen()
 
-					gsap.to(LeftPrimaryWindow_root.rotation, {
-
-						duration: .25,
-						delay: 0,
-						y: 0.2
-
-					})
-				} else if (LeftPrimaryWindow_root.rotation.y === 0.2) {
-					gsap.to(LeftPrimaryWindow_root.rotation, {
-
-						duration: .25,
-						delay: 0,
-						y: 0
-
-					})
-				} else {
-					gsap.to(LeftPrimaryWindow_root.rotation, {
-
-						duration: .25,
-						delay: 0,
-						y: 0
-
-					})
-				}
-			}
-
-
-			// LeftPanelWindow01_TurnWindowSlightlyButton
+			// LeftPanelWindow01_App02
 			// ---------------------------------------------------------------------------
-			LeftPanelWindow01_TurnWindowSlightlyButton = new THREE.Group()
-			LeftPanelWindow01_TurnWindowSlightlyButton.position.set(0.9, 0.55, 0)
-			LeftPanelWindow01_TurnWindowSlightlyButton.rotation.set(0, 0, 0)	
-			LeftPanelWindow01_TurnWindowSlightlyButton.scale.set(0.003, 0.003, 0.003)
-			LeftPrimaryWindow_root.add(LeftPanelWindow01_TurnWindowSlightlyButton)
+			LeftPanelWindow01_App02 = new THREE.Group()
+			LeftPanelWindow01_App02.position.set(-0.7, -0.7, 0.01)
+			LeftPanelWindow01_App02.rotation.set(0, 0, 0)	
+			LeftPanelWindow01_App02.scale.set(0.003, 0.003, 0.003)
+			LeftPrimaryWindow_root.add(LeftPanelWindow01_App02)
 
-			let logFunction_wL03 = () => {
+			let logFunction_wLA02 = () => {
 				console.log("working!")
 			}
 
 
-			LeftPanelWindow01_TurnWindowSlightlyButton.add(
+			LeftPanelWindow01_App02.add(
 				
 				new TechIcon(
 					0, 0, 0,
@@ -9100,12 +9170,335 @@
 					'DefaultImgId', 'DefaultImgClassName',
 					'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
 					"./assets/icons/00-Official/UI/Isometric/tools/target1.svg", "",
-					turnLeftWindowSlightlyToggle, 
-					"Test-Δ",
+					logFunction_wLA02, 
+					"App 02",
 					"Test me to see if I work!"
 				) 
 
 			)
+
+
+			// LeftPanelWindow01_App03
+			// ---------------------------------------------------------------------------
+			LeftPanelWindow01_App03 = new THREE.Group()
+			LeftPanelWindow01_App03.position.set(-0.55, -0.7, 0.01)
+			LeftPanelWindow01_App03.rotation.set(0, 0, 0)	
+			LeftPanelWindow01_App03.scale.set(0.003, 0.003, 0.003)
+			LeftPrimaryWindow_root.add(LeftPanelWindow01_App03)
+
+			let logFunction_wLA03 = () => {
+				console.log("working!")
+			}
+
+
+			LeftPanelWindow01_App03.add(
+				
+				new TechIcon(
+					0, 0, 0,
+					0, 0, 0,
+					0.55, 0.55, 0.55,
+					'DefaultTechIconId', 'DefaultTechIconClassName',
+					'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+					'DefaultImgId', 'DefaultImgClassName',
+					'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+					"./assets/icons/00-Official/UI/Isometric/tools/target1.svg", "",
+					logFunction_wLA03, 
+					"App 03",
+					"Test me to see if I work!"
+				) 
+
+			)
+
+			// LeftPanelWindow01_App04
+			// ---------------------------------------------------------------------------
+			LeftPanelWindow01_App04 = new THREE.Group()
+			LeftPanelWindow01_App04.position.set(-0.4, -0.7, 0.01)
+			LeftPanelWindow01_App04.rotation.set(0, 0, 0)	
+			LeftPanelWindow01_App04.scale.set(0.003, 0.003, 0.003)
+			LeftPrimaryWindow_root.add(LeftPanelWindow01_App04)
+
+			let logFunction_wLA04 = () => {
+				console.log("working!")
+			}
+
+
+			LeftPanelWindow01_App04.add(
+				
+				new TechIcon(
+					0, 0, 0,
+					0, 0, 0,
+					0.55, 0.55, 0.55,
+					'DefaultTechIconId', 'DefaultTechIconClassName',
+					'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+					'DefaultImgId', 'DefaultImgClassName',
+					'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+					"./assets/icons/00-Official/UI/Isometric/tools/target1.svg", "",
+					logFunction_wLA04, 
+					"App 04",
+					"Test me to see if I work!"
+				) 
+
+			)
+
+
+
+			// LeftPanelWindow01_App05
+			// ---------------------------------------------------------------------------
+			LeftPanelWindow01_App05 = new THREE.Group()
+			LeftPanelWindow01_App05.position.set(-0.25, -0.7, 0.01)
+			LeftPanelWindow01_App05.rotation.set(0, 0, 0)	
+			LeftPanelWindow01_App05.scale.set(0.003, 0.003, 0.003)
+			LeftPrimaryWindow_root.add(LeftPanelWindow01_App05)
+
+			let logFunction_wLA05 = () => {
+				console.log("working!")
+			}
+
+
+			LeftPanelWindow01_App05.add(
+				
+				new TechIcon(
+					0, 0, 0,
+					0, 0, 0,
+					0.55, 0.55, 0.55,
+					'DefaultTechIconId', 'DefaultTechIconClassName',
+					'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+					'DefaultImgId', 'DefaultImgClassName',
+					'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+					"./assets/icons/00-Official/UI/Isometric/tools/target1.svg", "",
+					logFunction_wLA05, 
+					"App 05",
+					"Test me to see if I work!"
+				) 
+
+			)
+
+
+			// LeftPanelWindow01_App06
+			// ---------------------------------------------------------------------------
+			LeftPanelWindow01_App06 = new THREE.Group()
+			LeftPanelWindow01_App06.position.set(-0.1, -0.7, 0.01)
+			LeftPanelWindow01_App06.rotation.set(0, 0, 0)	
+			LeftPanelWindow01_App06.scale.set(0.003, 0.003, 0.003)
+			LeftPrimaryWindow_root.add(LeftPanelWindow01_App06)
+
+			let logFunction_wLA06 = () => {
+				console.log("working!")
+			}
+
+
+			LeftPanelWindow01_App06.add(
+				
+				new TechIcon(
+					0, 0, 0,
+					0, 0, 0,
+					0.55, 0.55, 0.55,
+					'DefaultTechIconId', 'DefaultTechIconClassName',
+					'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+					'DefaultImgId', 'DefaultImgClassName',
+					'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+					"./assets/icons/00-Official/UI/Isometric/tools/target1.svg", "",
+					logFunction_wLA06, 
+					"App 06",
+					"Test me to see if I work!"
+				) 
+
+			)
+
+
+			// LeftPanelWindow01_App07
+			// ---------------------------------------------------------------------------
+			LeftPanelWindow01_App07 = new THREE.Group()
+			LeftPanelWindow01_App07.position.set(0.05, -0.7, 0.01)
+			LeftPanelWindow01_App07.rotation.set(0, 0, 0)	
+			LeftPanelWindow01_App07.scale.set(0.003, 0.003, 0.003)
+			LeftPrimaryWindow_root.add(LeftPanelWindow01_App07)
+
+			let logFunction_wLA07 = () => {
+				console.log("working!")
+			}
+
+
+			LeftPanelWindow01_App07.add(
+				
+				new TechIcon(
+					0, 0, 0,
+					0, 0, 0,
+					0.55, 0.55, 0.55,
+					'DefaultTechIconId', 'DefaultTechIconClassName',
+					'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+					'DefaultImgId', 'DefaultImgClassName',
+					'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+					"./assets/icons/00-Official/UI/Isometric/tools/target1.svg", "",
+					logFunction_wLA07, 
+					"App 07",
+					"Test me to see if I work!"
+				) 
+
+			)
+
+
+			// LeftPanelWindow01_App08
+			// ---------------------------------------------------------------------------
+			LeftPanelWindow01_App08 = new THREE.Group()
+			LeftPanelWindow01_App08.position.set(0.2, -0.7, 0.01)
+			LeftPanelWindow01_App08.rotation.set(0, 0, 0)	
+			LeftPanelWindow01_App08.scale.set(0.003, 0.003, 0.003)
+			LeftPrimaryWindow_root.add(LeftPanelWindow01_App08)
+
+			let logFunction_wLA08 = () => {
+				console.log("working!")
+			}
+
+
+			LeftPanelWindow01_App08.add(
+				
+				new TechIcon(
+					0, 0, 0,
+					0, 0, 0,
+					0.55, 0.55, 0.55,
+					'DefaultTechIconId', 'DefaultTechIconClassName',
+					'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+					'DefaultImgId', 'DefaultImgClassName',
+					'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+					"./assets/icons/00-Official/UI/Isometric/tools/target1.svg", "",
+					logFunction_wLA08, 
+					"App 08",
+					"Test me to see if I work!"
+				) 
+
+			)
+
+
+			// LeftPanelWindow01_App09
+			// ---------------------------------------------------------------------------
+			LeftPanelWindow01_App09 = new THREE.Group()
+			LeftPanelWindow01_App09.position.set(0.35, -0.7, 0.01)
+			LeftPanelWindow01_App09.rotation.set(0, 0, 0)	
+			LeftPanelWindow01_App09.scale.set(0.003, 0.003, 0.003)
+			LeftPrimaryWindow_root.add(LeftPanelWindow01_App09)
+
+			let logFunction_wLA09 = () => {
+				console.log("working!")
+			}
+
+
+			LeftPanelWindow01_App09.add(
+				
+				new TechIcon(
+					0, 0, 0,
+					0, 0, 0,
+					0.55, 0.55, 0.55,
+					'DefaultTechIconId', 'DefaultTechIconClassName',
+					'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+					'DefaultImgId', 'DefaultImgClassName',
+					'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+					"./assets/icons/00-Official/UI/Isometric/tools/target1.svg", "",
+					logFunction_wLA09, 
+					"App 09",
+					"Test me to see if I work!"
+				) 
+
+			)
+
+
+			// LeftPanelWindow01_App10
+			// ---------------------------------------------------------------------------
+			LeftPanelWindow01_App10 = new THREE.Group()
+			LeftPanelWindow01_App10.position.set(0.5, -0.7, 0.01)
+			LeftPanelWindow01_App10.rotation.set(0, 0, 0)	
+			LeftPanelWindow01_App10.scale.set(0.003, 0.003, 0.003)
+			LeftPrimaryWindow_root.add(LeftPanelWindow01_App10)
+
+			let logFunction_wLA10 = () => {
+				console.log("working!")
+			}
+
+
+			LeftPanelWindow01_App10.add(
+				
+				new TechIcon(
+					0, 0, 0,
+					0, 0, 0,
+					0.55, 0.55, 0.55,
+					'DefaultTechIconId', 'DefaultTechIconClassName',
+					'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+					'DefaultImgId', 'DefaultImgClassName',
+					'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+					"./assets/icons/00-Official/UI/Isometric/tools/target1.svg", "",
+					logFunction_wLA10, 
+					"App 10",
+					"Test me to see if I work!"
+				) 
+
+			)
+
+
+			// LeftPanelWindow01_App11
+			// ---------------------------------------------------------------------------
+			LeftPanelWindow01_App11 = new THREE.Group()
+			LeftPanelWindow01_App11.position.set(0.65, -0.7, 0.01)
+			LeftPanelWindow01_App11.rotation.set(0, 0, 0)	
+			LeftPanelWindow01_App11.scale.set(0.003, 0.003, 0.003)
+			LeftPrimaryWindow_root.add(LeftPanelWindow01_App11)
+
+			let logFunction_wLA11 = () => {
+				console.log("working!")
+			}
+
+
+			LeftPanelWindow01_App11.add(
+				
+				new TechIcon(
+					0, 0, 0,
+					0, 0, 0,
+					0.55, 0.55, 0.55,
+					'DefaultTechIconId', 'DefaultTechIconClassName',
+					'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+					'DefaultImgId', 'DefaultImgClassName',
+					'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+					"./assets/icons/00-Official/UI/Isometric/tools/target1.svg", "",
+					logFunction_wLA11, 
+					"App 11",
+					"Test me to see if I work!"
+				) 
+
+			)
+
+
+			// LeftPanelWindow01_App12
+			// ---------------------------------------------------------------------------
+			LeftPanelWindow01_App12 = new THREE.Group()
+			LeftPanelWindow01_App12.position.set(0.8, -0.7, 0.01)
+			LeftPanelWindow01_App12.rotation.set(0, 0, 0)	
+			LeftPanelWindow01_App12.scale.set(0.003, 0.003, 0.003)
+			LeftPrimaryWindow_root.add(LeftPanelWindow01_App12)
+
+			let logFunction_wLA12 = () => {
+				console.log("working!")
+			}
+
+
+			LeftPanelWindow01_App12.add(
+				
+				new TechIcon(
+					0, 0, 0,
+					0, 0, 0,
+					0.55, 0.55, 0.55,
+					'DefaultTechIconId', 'DefaultTechIconClassName',
+					'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+					'DefaultImgId', 'DefaultImgClassName',
+					'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+					"./assets/icons/00-Official/UI/Isometric/tools/target1.svg", "",
+					logFunction_wLA12, 
+					"App 12",
+					"Test me to see if I work!"
+				) 
+
+			)
+
+
+			
 
 
 
@@ -9835,65 +10228,65 @@
 				folderLoadTestingContainer01.add(floorDesign01_Grid.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
 				folderLoadTestingContainer01.add(floorDesign01_Grid.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
-				const folderLoadTestingContainer02 = gui.addFolder('<<< LoadPoint02 :: LeftPrimaryWindow_root >>>')
+				const folderLoadTestingContainer02 = gui.addFolder('<<< LoadPoint02 :: LeftPanelWindow01_App06 >>>')
 
-				folderLoadTestingContainer02.add(LeftPrimaryWindow_root.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
-				folderLoadTestingContainer02.add(LeftPrimaryWindow_root.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
-				folderLoadTestingContainer02.add(LeftPrimaryWindow_root.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
-				folderLoadTestingContainer02.add(LeftPrimaryWindow_root.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
-				folderLoadTestingContainer02.add(LeftPrimaryWindow_root.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
-				folderLoadTestingContainer02.add(LeftPrimaryWindow_root.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
-				folderLoadTestingContainer02.add(LeftPrimaryWindow_root.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
-				folderLoadTestingContainer02.add(LeftPrimaryWindow_root.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
-				folderLoadTestingContainer02.add(LeftPrimaryWindow_root.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
+				folderLoadTestingContainer02.add(LeftPanelWindow01_App06.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
+				folderLoadTestingContainer02.add(LeftPanelWindow01_App06.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
+				folderLoadTestingContainer02.add(LeftPanelWindow01_App06.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
+				folderLoadTestingContainer02.add(LeftPanelWindow01_App06.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
+				folderLoadTestingContainer02.add(LeftPanelWindow01_App06.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
+				folderLoadTestingContainer02.add(LeftPanelWindow01_App06.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
+				folderLoadTestingContainer02.add(LeftPanelWindow01_App06.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
+				folderLoadTestingContainer02.add(LeftPanelWindow01_App06.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
+				folderLoadTestingContainer02.add(LeftPanelWindow01_App06.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
-				const folderLoadTestingContainer03 = gui.addFolder('<<< LoadPoint03 :: LeftPrimaryWindowTopCenterOptions >>>')
+				const folderLoadTestingContainer03 = gui.addFolder('<<< LoadPoint03 :: LeftPanelWindow01_App07 >>>')
 
-				folderLoadTestingContainer03.add(LeftPrimaryWindowTopCenterOptions.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
-				folderLoadTestingContainer03.add(LeftPrimaryWindowTopCenterOptions.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
-				folderLoadTestingContainer03.add(LeftPrimaryWindowTopCenterOptions.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
-				folderLoadTestingContainer03.add(LeftPrimaryWindowTopCenterOptions.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
-				folderLoadTestingContainer03.add(LeftPrimaryWindowTopCenterOptions.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
-				folderLoadTestingContainer03.add(LeftPrimaryWindowTopCenterOptions.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
-				folderLoadTestingContainer03.add(LeftPrimaryWindowTopCenterOptions.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
-				folderLoadTestingContainer03.add(LeftPrimaryWindowTopCenterOptions.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
-				folderLoadTestingContainer03.add(LeftPrimaryWindowTopCenterOptions.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
+				folderLoadTestingContainer03.add(LeftPanelWindow01_App07.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
+				folderLoadTestingContainer03.add(LeftPanelWindow01_App07.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
+				folderLoadTestingContainer03.add(LeftPanelWindow01_App07.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
+				folderLoadTestingContainer03.add(LeftPanelWindow01_App07.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
+				folderLoadTestingContainer03.add(LeftPanelWindow01_App07.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
+				folderLoadTestingContainer03.add(LeftPanelWindow01_App07.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
+				folderLoadTestingContainer03.add(LeftPanelWindow01_App07.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
+				folderLoadTestingContainer03.add(LeftPanelWindow01_App07.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
+				folderLoadTestingContainer03.add(LeftPanelWindow01_App07.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
-				const folderLoadTestingContainer04 = gui.addFolder('<<< LoadPoint04 :: LeftPrimaryPanelSubMenu >>>')
+				const folderLoadTestingContainer04 = gui.addFolder('<<< LoadPoint04 :: LeftPanelWindow01_App08 >>>')
 
-				folderLoadTestingContainer04.add(LeftPrimaryPanelSubMenu.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
-				folderLoadTestingContainer04.add(LeftPrimaryPanelSubMenu.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
-				folderLoadTestingContainer04.add(LeftPrimaryPanelSubMenu.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
-				folderLoadTestingContainer04.add(LeftPrimaryPanelSubMenu.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
-				folderLoadTestingContainer04.add(LeftPrimaryPanelSubMenu.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
-				folderLoadTestingContainer04.add(LeftPrimaryPanelSubMenu.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
-				folderLoadTestingContainer04.add(LeftPrimaryPanelSubMenu.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
-				folderLoadTestingContainer04.add(LeftPrimaryPanelSubMenu.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
-				folderLoadTestingContainer04.add(LeftPrimaryPanelSubMenu.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
+				folderLoadTestingContainer04.add(LeftPanelWindow01_App08.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
+				folderLoadTestingContainer04.add(LeftPanelWindow01_App08.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
+				folderLoadTestingContainer04.add(LeftPanelWindow01_App08.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
+				folderLoadTestingContainer04.add(LeftPanelWindow01_App08.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
+				folderLoadTestingContainer04.add(LeftPanelWindow01_App08.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
+				folderLoadTestingContainer04.add(LeftPanelWindow01_App08.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
+				folderLoadTestingContainer04.add(LeftPanelWindow01_App08.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
+				folderLoadTestingContainer04.add(LeftPanelWindow01_App08.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
+				folderLoadTestingContainer04.add(LeftPanelWindow01_App08.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
-				const folderLoadTestingContainer05 = gui.addFolder('<<< LoadPoint05 :: ATT_RampUp_RSC__Root >>>')
+				const folderLoadTestingContainer05 = gui.addFolder('<<< LoadPoint05 :: LeftPanelWindow01_App09 >>>')
 
-				folderLoadTestingContainer05.add(ATT_RampUp_RSC__Root.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
-				folderLoadTestingContainer05.add(ATT_RampUp_RSC__Root.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
-				folderLoadTestingContainer05.add(ATT_RampUp_RSC__Root.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
-				folderLoadTestingContainer05.add(ATT_RampUp_RSC__Root.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
-				folderLoadTestingContainer05.add(ATT_RampUp_RSC__Root.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
-				folderLoadTestingContainer05.add(ATT_RampUp_RSC__Root.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
-				folderLoadTestingContainer05.add(ATT_RampUp_RSC__Root.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
-				folderLoadTestingContainer05.add(ATT_RampUp_RSC__Root.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
-				folderLoadTestingContainer05.add(ATT_RampUp_RSC__Root.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
+				folderLoadTestingContainer05.add(LeftPanelWindow01_App09.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
+				folderLoadTestingContainer05.add(LeftPanelWindow01_App09.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
+				folderLoadTestingContainer05.add(LeftPanelWindow01_App09.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
+				folderLoadTestingContainer05.add(LeftPanelWindow01_App09.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
+				folderLoadTestingContainer05.add(LeftPanelWindow01_App09.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
+				folderLoadTestingContainer05.add(LeftPanelWindow01_App09.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
+				folderLoadTestingContainer05.add(LeftPanelWindow01_App09.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
+				folderLoadTestingContainer05.add(LeftPanelWindow01_App09.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
+				folderLoadTestingContainer05.add(LeftPanelWindow01_App09.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
-				const folderLoadTestingContainer06 = gui.addFolder('<<< LoadPoint06 : EmulatorTest01 >>>')
+				const folderLoadTestingContainer06 = gui.addFolder('<<< LoadPoint06 : LeftPanelWindow01_App10 >>>')
 
-				folderLoadTestingContainer06.add(EmulatorTest01.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
-				folderLoadTestingContainer06.add(EmulatorTest01.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
-				folderLoadTestingContainer06.add(EmulatorTest01.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
-				folderLoadTestingContainer06.add(EmulatorTest01.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
-				folderLoadTestingContainer06.add(EmulatorTest01.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
-				folderLoadTestingContainer06.add(EmulatorTest01.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
-				folderLoadTestingContainer06.add(EmulatorTest01.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
-				folderLoadTestingContainer06.add(EmulatorTest01.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
-				folderLoadTestingContainer06.add(EmulatorTest01.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
+				folderLoadTestingContainer06.add(LeftPanelWindow01_App10.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
+				folderLoadTestingContainer06.add(LeftPanelWindow01_App10.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
+				folderLoadTestingContainer06.add(LeftPanelWindow01_App10.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
+				folderLoadTestingContainer06.add(LeftPanelWindow01_App10.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
+				folderLoadTestingContainer06.add(LeftPanelWindow01_App10.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
+				folderLoadTestingContainer06.add(LeftPanelWindow01_App10.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
+				folderLoadTestingContainer06.add(LeftPanelWindow01_App10.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
+				folderLoadTestingContainer06.add(LeftPanelWindow01_App10.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
+				folderLoadTestingContainer06.add(LeftPanelWindow01_App10.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
 				const folderLoadTestingContainer07 = gui.addFolder('<<< LoadPoint07 : EmulatorTest02 >>>')
 
