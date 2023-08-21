@@ -2727,10 +2727,11 @@
 
 			let LeftPanelWindow01
 			let LeftpanelWindow01_ToggleViewButton
-
-			let LeftPanelWindow01_resizeButton
-			let LeftPanelWindow01_PerspectiveLockButton
 			let LeftPanelWindow01_TurnWindowSlightlyButton
+			let LeftPanelWindow01_resizeButton
+			
+			let LeftPanelWindow01_PerspectiveLockButton
+			
 
 
 			let LeftPanelWindow01_App01
@@ -2788,6 +2789,10 @@
 			
 			let RightPanelWindow01
 			let RightPanelWindow02
+
+			let RightpanelWindow01_ToggleViewButton
+			let RightPanelWindow01_TurnWindowSlightlyButton
+			let RightPanelWindow01_resizeButton
 
 
 
@@ -7140,6 +7145,40 @@
                 camera.attach(Navbar2D_root)
 
 
+				// navbarRightTechIcon01 = new THREE.Group()
+                // navbarRightTechIcon01.position.set(0, 0, 0)
+                // navbarRightTechIcon01.rotation.set(0, 0, 0)	
+                // navbarRightTechIcon01.scale.set(0.25, 0.25, 0.25)
+                // navbarRight_option01.add(navbarRightTechIcon01)
+
+                // let logFunctionR01 = () => {
+                //     console.log("working!")
+                // }
+
+
+                // navbarRightTechIcon01.add(
+                    
+                //     new TechIcon(
+                //         0, 0, 0,
+                //         0, 0, 0,
+                //         0.55, 0.55, 0.55,
+                //         'DefaultTechIconId', 'DefaultTechIconClassName',
+                //         'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+                //         'DefaultImgId', 'DefaultImgClassName',
+                //         'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+                //         "./assets/icons/00-Official/UI/Isometric/tools/target1.svg", "",
+                //         logFunctionR01, 
+                //         "Test-Δ",
+                //         "Test me to see if I work!"
+                //     ) 
+
+                // )
+
+
+				
+
+
+
 
 
 
@@ -8428,6 +8467,40 @@
 
 
 
+				document.addEventListener("keydown", function(event) {
+					
+
+					if (event.key === "=") {
+
+						if (Navbar2D_root.position.y === 0) {
+							play_sfx_click_gen()
+							gsap.to(Navbar2D_root.position, {
+								duration: 1,
+								delay: 0,
+								y: 3
+							})
+						} else if (Navbar2D_root.position.y === 3) {
+							play_sfx_click_gen()
+							gsap.to(Navbar2D_root.position, {
+								duration: 1,
+								delay: 0,
+								y: 0
+							})
+						} else {
+							play_sfx_click_gen()
+							gsap.to(Navbar2D_root.position, {
+								duration: 1,
+								delay: 0,
+								y: 0
+							})
+						}
+					}
+
+				})
+
+
+
+
 				//...............................................
 				//..BBBBB........................aii.............
 				//.BBBBBBBBBB....................aii.............
@@ -9288,7 +9361,7 @@
 					'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
 					"./assets/icons/00-Official/UI/Isometric/tools/target1.svg", "",
 					LeftPrimaryWindowFrames_SummonToggle, 
-					"Toggle Left Main Window",
+					"Toggle Left Window",
 					"Test me to see if I work!"
 				) 
 
@@ -9385,7 +9458,7 @@
 					"Turn Window for angled perspective"
 				) 
 
-			)
+			) 
 
 
 			// ---------------------------------------------------------------------------
@@ -10104,6 +10177,37 @@
 					"./assets/docs/02-PDFs/MyPersonalLibrary/00-Philosophy/0-random/OnePiece_Chapter_1079.pdf",
 					"1920", "1200"
 				)
+
+			)
+
+
+
+			RightpanelWindow01_ToggleViewButton = new THREE.Group()
+			RightpanelWindow01_ToggleViewButton.position.set(-0.88, 0.55, 0)
+			RightpanelWindow01_ToggleViewButton.rotation.set(0, 0, 0)	
+			RightpanelWindow01_ToggleViewButton.scale.set(0.003, 0.003, 0.003)
+			RightPrimaryWindow_root.add(RightpanelWindow01_ToggleViewButton)
+
+			let logFunction_wR00 = () => {
+				console.log("working!")
+			}
+
+
+			RightpanelWindow01_ToggleViewButton.add(
+				
+				new TechIcon(
+					0, 0, 0,
+					0, 0, 0,
+					0.55, 0.55, 0.55,
+					'DefaultTechIconId', 'DefaultTechIconClassName',
+					'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+					'DefaultImgId', 'DefaultImgClassName',
+					'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+					"./assets/icons/00-Official/UI/Isometric/tools/target1.svg", "",
+					LeftPrimaryWindowFrames_SummonToggle, 
+					"Toggle Left Window",
+					"Test me to see if I work!"
+				) 
 
 			)
 
