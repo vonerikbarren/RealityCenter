@@ -2587,11 +2587,23 @@
 			let navbarLeft_option04, mesh_navbarLeft_option04
 			let navbarLeft_option05, mesh_navbarLeft_option05
 
+			let navbarLeftTechIcon01
+			let navbarLeftTechIcon02
+			let navbarLeftTechIcon03
+			let navbarLeftTechIcon04
+			let navbarLeftTechIcon05
+
 			let navbarRight_option01, mesh_navbarRight_option01
 			let navbarRight_option02, mesh_navbarRight_option02
 			let navbarRight_option03, mesh_navbarRight_option03
 			let navbarRight_option04, mesh_navbarRight_option04
 			let navbarRight_option05, mesh_navbarRight_option05
+
+			let navbarRightTechIcon01
+			let navbarRightTechIcon02
+			let navbarRightTechIcon03
+			let navbarRightTechIcon04
+			let navbarRightTechIcon05
 
 
 
@@ -7088,6 +7100,34 @@
 				// #################################################################
 				// #################################################################
 				// -----------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+				//...............................................................
+				//..NN......N....................................................
+				//.NNNN....NNN.....................vvbb..........................
+				//.NNNNN...NNN.....................vvbb..........................
+				//.NNNNN...NNN.....................vvbb..........................
+				//.NNNNNN..NNN...aaaaaaa.aavv..vvvvvvbbbbbbb....aaaaaaa..arrrrr..
+				//.NNNNNNN.NNN..aaaaaaaa.aavv..vvvvvvbbbbbbbb..baaaaaaa..arrrrr..
+				//.NNNNNNN.NNN.Naaaaaaaaaaavv..vvvvvvbbbbbbbbbbbaaaaaaaa.arrrrr..
+				//.NNN.NNNNNNN.Naaa.aaaaa.avvvvvvv.vvbbb.bbbbbbbaa.aaaaa.arrr....
+				//.NNN.NNNNNNN..aaaaaaaaa.avvvvvvv.vvbb...bbbb.baaaaaaaa.arr.....
+				//.NNN..NNNNNN.Naaaaaaaaa.avvvvvvv.vvbb...bbbbbbaaaaaaaa.arr.....
+				//.NNN..NNNNNN.Naaaa.aaaa..vvvvvv..vvbbb..bbbbbbaaa.aaaa.arr.....
+				//.NNN...NNNNN.Naaa.aaaaa..vvvvvv..vvbbbbbbbbbbbaa.aaaaa.arr.....
+				//.NNN...NNNNN.Naaaaaaaaa..vvvvvv..vvbbbbbbbb.bbaaaaaaaa.arr.....
+				//.NNN....NNNN.Naaaaaaaaa...vvvv...vvbbbbbbbb.bbaaaaaaaa.arr.....
+				//...............aaa....................bbb.....aaa..............
+				//...............................................................
 				// # component_2dNavbar (Start)
 
 				// ## [buildcomponentsHere]
@@ -7099,6 +7139,28 @@
                 scene.add(Navbar2D_root)
                 camera.attach(Navbar2D_root)
 
+
+
+
+
+
+				//................................................................................
+				//..NN......N..........................................................LL.........
+				//.NNNN....NNN.....................vvbb...............................-LLL........
+				//.NNNNN...NNN.....................vvbb...............................-LLL........
+				//.NNNNN...NNN.....................vvbb...............................-LLL........
+				//.NNNNNN..NNN...aaaaaaa.aavv..vvvvvvbbbbbbb....aaaaaaa..arrrrr.......-LLL........
+				//.NNNNNNN.NNN..aaaaaaaa.aavv..vvvvvvbbbbbbbb..baaaaaaa..arrrrr.......-LLL........
+				//.NNNNNNN.NNN.Naaaaaaaaaaavv..vvvvvvbbbbbbbbbbbaaaaaaaa.arrrrr.......-LLL........
+				//.NNN.NNNNNNN.Naaa.aaaaa.avvvvvvv.vvbbb.bbbbbbbaa.aaaaa.arrr..rr----.-LLL........
+				//.NNN.NNNNNNN..aaaaaaaaa.avvvvvvv.vvbb...bbbb.baaaaaaaa.arr...rr----.-LLL........
+				//.NNN..NNNNNN.Naaaaaaaaa.avvvvvvv.vvbb...bbbbbbaaaaaaaa.arr...rr----.-LLL........
+				//.NNN..NNNNNN.Naaaa.aaaa..vvvvvv..vvbbb..bbbbbbaaa.aaaa.arr...rr----.-LLL........
+				//.NNN...NNNNN.Naaa.aaaaa..vvvvvv..vvbbbbbbbbbbbaa.aaaaa.arr..........-LLLLLLLLL..
+				//.NNN...NNNNN.Naaaaaaaaa..vvvvvv..vvbbbbbbbb.bbaaaaaaaa.arr..........-LLLLLLLLL..
+				//.NNN....NNNN.Naaaaaaaaa...vvvv...vvbbbbbbbb.bbaaaaaaaa.arr..........-LLLLLLLLL..
+				//...............aaa....................bbb.....aaa...............................
+				//................................................................................
 				// navbarLeft
 				// ----------------------------------------------------------------------
 				navbarLeft = new THREE.Group()
@@ -7146,6 +7208,35 @@
 				
 				navbarLeft_option01.add(mesh_navbarLeft_option01)
 
+				navbarLeftTechIcon01 = new THREE.Group()
+                navbarLeftTechIcon01.position.set(0, 0, 0)
+                navbarLeftTechIcon01.rotation.set(0, 0, 0)	
+                navbarLeftTechIcon01.scale.set(0.25, 0.25, 0.25)
+                navbarLeft_option01.add(navbarLeftTechIcon01)
+
+                let logFunctionL01 = () => {
+                    console.log("working!")
+                }
+
+
+                navbarLeftTechIcon01.add(
+                    
+                    new TechIcon(
+                        0, 0, 0,
+                        0, 0, 0,
+                        0.55, 0.55, 0.55,
+                        'DefaultTechIconId', 'DefaultTechIconClassName',
+                        'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+                        'DefaultImgId', 'DefaultImgClassName',
+                        'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+                        "./assets/icons/00-Official/UI/Isometric/tools/target1.svg", "",
+                        logFunctionL01, 
+                        "Test-Δ",
+                        "Test me to see if I work!"
+                    ) 
+
+                )
+
 
 				// Navbar2D_root | navbarLeft | navbarLeft_option02
 				// ----------------------------------------------------------------------
@@ -7168,6 +7259,36 @@
 				// navbarLeft_option02.lookAt(camera)
 				
 				navbarLeft_option02.add(mesh_navbarLeft_option02)
+
+
+				navbarLeftTechIcon02 = new THREE.Group()
+                navbarLeftTechIcon02.position.set(0, 0, 0)
+                navbarLeftTechIcon02.rotation.set(0, 0, 0)	
+                navbarLeftTechIcon02.scale.set(0.25, 0.25, 0.25)
+                navbarLeft_option02.add(navbarLeftTechIcon02)
+
+                let logFunctionL02 = () => {
+                    console.log("working!")
+                }
+
+
+                navbarLeftTechIcon02.add(
+                    
+                    new TechIcon(
+                        0, 0, 0,
+                        0, 0, 0,
+                        0.55, 0.55, 0.55,
+                        'DefaultTechIconId', 'DefaultTechIconClassName',
+                        'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+                        'DefaultImgId', 'DefaultImgClassName',
+                        'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+                        "./assets/icons/00-Official/UI/Isometric/tools/target1.svg", "",
+                        logFunctionL02, 
+                        "Test-Δ",
+                        "Test me to see if I work!"
+                    ) 
+
+                )
 
 
 				// Navbar2D_root | navbarLeft | navbarLeft_option03
@@ -7193,6 +7314,37 @@
 				navbarLeft_option03.add(mesh_navbarLeft_option03)
 
 
+
+				navbarLeftTechIcon03 = new THREE.Group()
+                navbarLeftTechIcon03.position.set(0, 0, 0)
+                navbarLeftTechIcon03.rotation.set(0, 0, 0)	
+                navbarLeftTechIcon03.scale.set(0.25, 0.25, 0.25)
+                navbarLeft_option03.add(navbarLeftTechIcon03)
+
+                let logFunctionL03 = () => {
+                    console.log("working!")
+                }
+
+
+                navbarLeftTechIcon03.add(
+                    
+                    new TechIcon(
+                        0, 0, 0,
+                        0, 0, 0,
+                        0.55, 0.55, 0.55,
+                        'DefaultTechIconId', 'DefaultTechIconClassName',
+                        'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+                        'DefaultImgId', 'DefaultImgClassName',
+                        'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+                        "./assets/icons/00-Official/UI/Isometric/tools/target1.svg", "",
+                        logFunctionL03, 
+                        "Test-Δ",
+                        "Test me to see if I work!"
+                    ) 
+
+                )
+
+
 				// Navbar2D_root | navbarLeft | navbarLeft_option04
 				// ----------------------------------------------------------------------
                 navbarLeft_option04 = new THREE.Group()
@@ -7214,6 +7366,37 @@
 				// navbarLeft_option04.lookAt(camera)
 				
 				navbarLeft_option04.add(mesh_navbarLeft_option04)
+
+
+
+				navbarLeftTechIcon04 = new THREE.Group()
+                navbarLeftTechIcon04.position.set(0, 0, 0)
+                navbarLeftTechIcon04.rotation.set(0, 0, 0)	
+                navbarLeftTechIcon04.scale.set(0.25, 0.25, 0.25)
+                navbarLeft_option04.add(navbarLeftTechIcon04)
+
+                let logFunctionL04 = () => {
+                    console.log("working!")
+                }
+
+
+                navbarLeftTechIcon04.add(
+                    
+                    new TechIcon(
+                        0, 0, 0,
+                        0, 0, 0,
+                        0.55, 0.55, 0.55,
+                        'DefaultTechIconId', 'DefaultTechIconClassName',
+                        'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+                        'DefaultImgId', 'DefaultImgClassName',
+                        'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+                        "./assets/icons/00-Official/UI/Isometric/tools/target1.svg", "",
+                        logFunctionL04, 
+                        "Test-Δ",
+                        "Test me to see if I work!"
+                    ) 
+
+                )
 
 
 				// Navbar2D_root | navbarLeft | navbarLeft_option05
@@ -7239,6 +7422,56 @@
 				navbarLeft_option05.add(mesh_navbarLeft_option05)
 
 
+				navbarLeftTechIcon05 = new THREE.Group()
+                navbarLeftTechIcon05.position.set(0, 0, 0)
+                navbarLeftTechIcon05.rotation.set(0, 0, 0)	
+                navbarLeftTechIcon05.scale.set(0.25, 0.25, 0.25)
+                navbarLeft_option05.add(navbarLeftTechIcon05)
+
+                let logFunctionL05 = () => {
+                    console.log("working!")
+                }
+
+
+                navbarLeftTechIcon05.add(
+                    
+                    new TechIcon(
+                        0, 0, 0,
+                        0, 0, 0,
+                        0.55, 0.55, 0.55,
+                        'DefaultTechIconId', 'DefaultTechIconClassName',
+                        'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+                        'DefaultImgId', 'DefaultImgClassName',
+                        'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+                        "./assets/icons/00-Official/UI/Isometric/tools/target1.svg", "",
+                        logFunctionL05, 
+                        "Test-Δ",
+                        "Test me to see if I work!"
+                    ) 
+
+                )
+
+
+
+
+
+				//..................................................................................
+				//..NN......N..........................................................RRRRR........
+				//.NNNN....NNN.....................vvbb...............................-RRRRRRRRR....
+				//.NNNNN...NNN.....................vvbb...............................-RRRRRRRRRR...
+				//.NNNNN...NNN.....................vvbb...............................-RRRRRRRRRR...
+				//.NNNNNN..NNN...aaaaaaa.aavv..vvvvvvbbbbbbb....aaaaaaa..arrrrr.......-RRR...RRRRR..
+				//.NNNNNNN.NNN..aaaaaaaa.aavv..vvvvvvbbbbbbbb..baaaaaaa..arrrrr.......-RRR...RRRRR..
+				//.NNNNNNN.NNN.Naaaaaaaaaaavv..vvvvvvbbbbbbbbbbbaaaaaaaa.arrrrr.......-RRRRRRRRRR...
+				//.NNN.NNNNNNN.Naaa.aaaaa.avvvvvvv.vvbbb.bbbbbbbaa.aaaaa.arrr..rr----.-RRRRRRRRRR...
+				//.NNN.NNNNNNN..aaaaaaaaa.avvvvvvv.vvbb...bbbb.baaaaaaaa.arr...rr----.-RRRRRRRRRR...
+				//.NNN..NNNNNN.Naaaaaaaaa.avvvvvvv.vvbb...bbbbbbaaaaaaaa.arr...rr----.-RRR..RRRRR...
+				//.NNN..NNNNNN.Naaaa.aaaa..vvvvvv..vvbbb..bbbbbbaaa.aaaa.arr...rr----.-RRR...RRRR...
+				//.NNN...NNNNN.Naaa.aaaaa..vvvvvv..vvbbbbbbbbbbbaa.aaaaa.arr..........-RRR...RRRR...
+				//.NNN...NNNNN.Naaaaaaaaa..vvvvvv..vvbbbbbbbb.bbaaaaaaaa.arr..........-RRR...RRRR...
+				//.NNN....NNNN.Naaaaaaaaa...vvvv...vvbbbbbbbb.bbaaaaaaaa.arr..........-RRR...RRRRR..
+				//...............aaa....................bbb.....aaa.................................
+				//..................................................................................
 				// navbarRight
 				// ----------------------------------------------------------------------
 				navbarRight = new THREE.Group()
@@ -7288,6 +7521,36 @@
 				navbarRight_option01.add(mesh_navbarRight_option01)
 
 
+				navbarRightTechIcon01 = new THREE.Group()
+                navbarRightTechIcon01.position.set(0, 0, 0)
+                navbarRightTechIcon01.rotation.set(0, 0, 0)	
+                navbarRightTechIcon01.scale.set(0.25, 0.25, 0.25)
+                navbarRight_option01.add(navbarRightTechIcon01)
+
+                let logFunctionR01 = () => {
+                    console.log("working!")
+                }
+
+
+                navbarRightTechIcon01.add(
+                    
+                    new TechIcon(
+                        0, 0, 0,
+                        0, 0, 0,
+                        0.55, 0.55, 0.55,
+                        'DefaultTechIconId', 'DefaultTechIconClassName',
+                        'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+                        'DefaultImgId', 'DefaultImgClassName',
+                        'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+                        "./assets/icons/00-Official/UI/Isometric/tools/target1.svg", "",
+                        logFunctionR01, 
+                        "Test-Δ",
+                        "Test me to see if I work!"
+                    ) 
+
+                )
+
+
 				// Navbar2D_root | navbarLeft | navbarRight_option02
 				// ----------------------------------------------------------------------
                 navbarRight_option02 = new THREE.Group()
@@ -7309,6 +7572,36 @@
 				// navbarRight_option02.lookAt(camera)
 				
 				navbarRight_option02.add(mesh_navbarRight_option02)
+
+
+				navbarRightTechIcon02 = new THREE.Group()
+                navbarRightTechIcon02.position.set(0, 0, 0)
+                navbarRightTechIcon02.rotation.set(0, 0, 0)	
+                navbarRightTechIcon02.scale.set(0.25, 0.25, 0.25)
+                navbarRight_option02.add(navbarRightTechIcon02)
+
+                let logFunctionR02 = () => {
+                    console.log("working!")
+                }
+
+
+                navbarRightTechIcon02.add(
+                    
+                    new TechIcon(
+                        0, 0, 0,
+                        0, 0, 0,
+                        0.55, 0.55, 0.55,
+                        'DefaultTechIconId', 'DefaultTechIconClassName',
+                        'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+                        'DefaultImgId', 'DefaultImgClassName',
+                        'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+                        "./assets/icons/00-Official/UI/Isometric/tools/target1.svg", "",
+                        logFunctionR02, 
+                        "Test-Δ",
+                        "Test me to see if I work!"
+                    ) 
+
+                )
 
 
 				// Navbar2D_root | navbarLeft | navbarRight_option03
@@ -7334,6 +7627,36 @@
 				navbarRight_option03.add(mesh_navbarRight_option03)
 
 
+				navbarRightTechIcon03 = new THREE.Group()
+                navbarRightTechIcon03.position.set(0, 0, 0)
+                navbarRightTechIcon03.rotation.set(0, 0, 0)	
+                navbarRightTechIcon03.scale.set(0.25, 0.25, 0.25)
+                navbarRight_option03.add(navbarRightTechIcon03)
+
+                let logFunctionR03 = () => {
+                    console.log("working!")
+                }
+
+
+                navbarRightTechIcon03.add(
+                    
+                    new TechIcon(
+                        0, 0, 0,
+                        0, 0, 0,
+                        0.55, 0.55, 0.55,
+                        'DefaultTechIconId', 'DefaultTechIconClassName',
+                        'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+                        'DefaultImgId', 'DefaultImgClassName',
+                        'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+                        "./assets/icons/00-Official/UI/Isometric/tools/target1.svg", "",
+                        logFunctionR03, 
+                        "Test-Δ",
+                        "Test me to see if I work!"
+                    ) 
+
+                )
+
+
 				// Navbar2D_root | navbarLeft | navbarRight_option04
 				// ----------------------------------------------------------------------
                 navbarRight_option04 = new THREE.Group()
@@ -7355,6 +7678,36 @@
 				// navbarRight_option04.lookAt(camera)
 				
 				navbarRight_option04.add(mesh_navbarRight_option04)
+
+
+				navbarRightTechIcon04 = new THREE.Group()
+                navbarRightTechIcon04.position.set(0, 0, 0)
+                navbarRightTechIcon04.rotation.set(0, 0, 0)	
+                navbarRightTechIcon04.scale.set(0.25, 0.25, 0.25)
+                navbarRight_option04.add(navbarRightTechIcon04)
+
+                let logFunctionR04 = () => {
+                    console.log("working!")
+                }
+
+
+                navbarRightTechIcon04.add(
+                    
+                    new TechIcon(
+                        0, 0, 0,
+                        0, 0, 0,
+                        0.55, 0.55, 0.55,
+                        'DefaultTechIconId', 'DefaultTechIconClassName',
+                        'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+                        'DefaultImgId', 'DefaultImgClassName',
+                        'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+                        "./assets/icons/00-Official/UI/Isometric/tools/target1.svg", "",
+                        logFunctionR04, 
+                        "Test-Δ",
+                        "Test me to see if I work!"
+                    ) 
+
+                )
 
 
 				// Navbar2D_root | navbarLeft | navbarRight_option05
@@ -7380,8 +7733,60 @@
 				navbarRight_option05.add(mesh_navbarRight_option05)
 
 
+
+				navbarRightTechIcon05 = new THREE.Group()
+                navbarRightTechIcon05.position.set(0, 0, 0)
+                navbarRightTechIcon05.rotation.set(0, 0, 0)	
+                navbarRightTechIcon05.scale.set(0.25, 0.25, 0.25)
+                navbarRight_option05.add(navbarRightTechIcon05)
+
+                let logFunctionR05 = () => {
+                    console.log("working!")
+                }
+
+
+                navbarRightTechIcon05.add(
+                    
+                    new TechIcon(
+                        0, 0, 0,
+                        0, 0, 0,
+                        0.55, 0.55, 0.55,
+                        'DefaultTechIconId', 'DefaultTechIconClassName',
+                        'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+                        'DefaultImgId', 'DefaultImgClassName',
+                        'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+                        "./assets/icons/00-Official/UI/Isometric/tools/target1.svg", "",
+                        logFunctionR05, 
+                        "Test-Δ",
+                        "Test me to see if I work!"
+                    ) 
+
+                )
+
+
 				
 
+
+
+
+
+				//..................................................................................
+				//..NN......N.............................................................CCC.......
+				//.NNNN....NNN.....................vvbb.................................CCCCCCCC....
+				//.NNNNN...NNN.....................vvbb................................CCCCCCCCCC...
+				//.NNNNN...NNN.....................vvbb...............................-CCCCCCCCCC...
+				//.NNNNNN..NNN...aaaaaaa.aavv..vvvvvvbbbbbbb....aaaaaaa..arrrrr.......-CCC...CCCCC..
+				//.NNNNNNN.NNN..aaaaaaaa.aavv..vvvvvvbbbbbbbb..baaaaaaa..arrrrr......--CCC....CCCC..
+				//.NNNNNNN.NNN.Naaaaaaaaaaavv..vvvvvvbbbbbbbbbbbaaaaaaaa.arrrrr......--CC...........
+				//.NNN.NNNNNNN.Naaa.aaaaa.avvvvvvv.vvbbb.bbbbbbbaa.aaaaa.arrr..rr------CC...........
+				//.NNN.NNNNNNN..aaaaaaaaa.avvvvvvv.vvbb...bbbb.baaaaaaaa.arr...rr------CC...........
+				//.NNN..NNNNNN.Naaaaaaaaa.avvvvvvv.vvbb...bbbbbbaaaaaaaa.arr...rr------CCC....CCCC..
+				//.NNN..NNNNNN.Naaaa.aaaa..vvvvvv..vvbbb..bbbbbbaaa.aaaa.arr...rr----.-CCC...CCCCC..
+				//.NNN...NNNNN.Naaa.aaaaa..vvvvvv..vvbbbbbbbbbbbaa.aaaaa.arr..........-CCCCCCCCCC...
+				//.NNN...NNNNN.Naaaaaaaaa..vvvvvv..vvbbbbbbbb.bbaaaaaaaa.arr...........CCCCCCCCCC...
+				//.NNN....NNNN.Naaaaaaaaa...vvvv...vvbbbbbbbb.bbaaaaaaaa.arr............CCCCCCCC....
+				//...............aaa....................bbb.....aaa......................CCCCC......
+				//..................................................................................
 				// Navbar2D
 				// ----------------------------------------------------------------------
                 Navbar2D = new THREE.Group()
