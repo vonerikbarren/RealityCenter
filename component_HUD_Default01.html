@@ -11,6 +11,7 @@
 		<link type="text/css" rel="stylesheet" href="./assets/css/UI_Assets/01-LeftHandUI/LeftHandUI.css">
 		<link type="text/css" rel="stylesheet" href="./assets/css/CSS3D_Assets/01-Tech_Icons/TechIcons.css">
 		<link type="text/css" rel="stylesheet" href="./assets/css/01-dat.gui/dat.gui.css">
+		<link type="text/css" rel="stylesheet" href="./assets/css/04-basicElements/basicDiv.css">
 		
 		<link type="text/css" rel="stylesheet" href="./assets/css/02-MediaQueries/screens_2560_above.css">
 		<link type="text/css" rel="stylesheet" href="./assets/css/02-MediaQueries/screens_1920_above.css">
@@ -1715,7 +1716,7 @@
 
 
 							<!-- VideoDomain02: Search_html_video01 -->
-							<video id="openingVideo" class="countDown" playsinline controls webkit-playsinline  autoplay loop width="320" height="240" src="./assets/video/PlexusAnimations/Animation_ParticlesWhite01.mp4" border: 5px 5px black;"></video>
+							<video id="openingVideo" class="countDown" playsinline controls webkit-playsinline  autoplay loop width="320" height="240" src="./assets/video/TunnelAnimations/TechTunnelA06.mp4" border: 5px 5px black;"></video>
 
 
 
@@ -3506,6 +3507,7 @@
 					pdfComponent.setAttribute("src", fileRef)
 					pdfComponent.setAttribute("width", fileWidth)
 					pdfComponent.setAttribute("height", fileHeight)
+					pdfComponent.setAttribute("sandbox", "allow-same-origin")
 					pdfComponent.style.display = "default"
 					pdfComponent.style.border = "3px solid rgba(0, 255, 208, 0.75)"
 					pdfDiv.appendChild(pdfComponent)			
@@ -4082,6 +4084,8 @@
 
 					return TileData
 				}
+
+
 
 
 
@@ -4855,6 +4859,46 @@
 					object.position.y = locy
 					object.position.z = locz
 				})
+			}
+
+
+			//..................................................................................
+			//..EEEEEEEEE...l...................................................................
+			//.EEEEEEEEEEE.Ell.................................................nttt.............
+			//.EEEEEEEEEEE.Ell.................................................nttt.............
+			//.EEEEEEEEEEE.Ell.................................................nttt.............
+			//.EEEE........Ell...eeeeee...emmmmmmmmmmmm....eeeeee...ennnnnnnn.nntttt.tsssssss...
+			//.EEEEEEEEEE..Ell..leeeeeee..emmmmmmmmmmmmm..meeeeeee..ennnnnnnn.nntttt.tsssssss...
+			//.EEEEEEEEEE..Ell.lleeeeeeee.emmmmmmmmmmmmm.mmeeeeeeee.ennnnnnnn.nnttttttssssssss..
+			//.EEEEEEEEEE..Ell.llee..eeee.emmm.mmmm..mmm.mmee..eeee.ennn.nnnn..nttt.ttssssssss..
+			//.EEEEEEEEEE..Ell.lleeeeeeee.emm..mmmm..mmm.mmeeeeeeee.enn...nnn..nttt..tsssssss...
+			//.EEEE........Ell.lleeeeeeee.emm..mmmm..mmm.mmeeeeeeee.enn...nnn..nttt..tsssssss...
+			//.EEEE........Ell.llee.......emm..mmmm..mmm.mmee.......enn...nnn..nttt.ttssssssss..
+			//.EEEEEEEEEEE.Ell.lleeeeeeee.emm..mmmm..mmm.mmeeeeeeee.enn...nnn..nttt.ttsss.ssss..
+			//.EEEEEEEEEEE.Ell.lleeeeeee..emm..mmmm..mmm.mmeeeeeee..enn...nnn..nttttttssssssss..
+			//.EEEEEEEEEEE.Ell..leeeeeee..emm..mmmm..mmm..meeeeeee..enn...nnn..ntttt.tsssssss...
+			//....................eeee......................eeee.................ttt..ssssss....
+			//..................................................................................
+
+			function basicDiv(
+				px, py, pz,
+				rx, ry, rz,
+				sx, sy, sz,
+				theId, theClassName,
+				divColor, divBorderColor
+				
+			) {
+				const baseDiv = document.createElement('div')
+				baseDiv.id = theId
+				baseDiv.className = theClassName
+				baseDiv.border = "3px solid rgba(0, 255, 208, 0.75)"
+				
+				const basicDivData = new CSS3DObject(baseDiv)
+				basicDivData.position.set(px, py, pz)
+				basicDivData.rotation.set(rx, ry, rz)
+				basicDivData.scale.set(sx, sy, sz)
+
+				return basicDivData
 			}
 
 
@@ -10006,7 +10050,7 @@
 			//.........................................................................................
 
 			RightPrimaryWindow_root = new THREE.Group()
-			RightPrimaryWindow_root.position.set(1, 0.2, 3.5)
+			RightPrimaryWindow_root.position.set(10, 0.2, 3.5)
 			RightPrimaryWindow_root.rotation.set(0, 0, 0)
 			RightPrimaryWindow_root.scale.set(1, 1, 1)
 			Navbar2D_root.add(RightPrimaryWindow_root)
@@ -10136,7 +10180,7 @@
 			// RightPrimaryPanelSubMenu
 			// ---------------------------------------------------------------------------
 			RightPrimaryPanelSubMenu = new THREE.Group()
-			RightPrimaryPanelSubMenu.position.set(0, -0.55, 0)
+			RightPrimaryPanelSubMenu.position.set(0, -0.7, 0)
 			RightPrimaryPanelSubMenu.rotation.set(0, 0, 0)
 			RightPrimaryPanelSubMenu.scale.set(0.202, 0.02, 0.202)
 			RightPrimaryWindow_root.add(RightPrimaryPanelSubMenu)
@@ -10163,22 +10207,85 @@
 			RightPanelWindow01 = new THREE.Group()
 			RightPanelWindow01.position.set(-0.725, 0.325, 0)
 			RightPanelWindow01.rotation.set(0, 0, 0)
-			RightPanelWindow01.scale.set(0.00895, 0.0075, 0.00825)
+			RightPanelWindow01.scale.set(0.00895, 0.00895, 0.00825)
 			RightPrimaryWindow_root.add(RightPanelWindow01)
 
 
 			RightPanelWindow01.add(
 
 				new makePDF_Viewer(
-					0, 0, 0,
+					0, 0, 0.1,
 					0, 0, 0,
 					0.1, 0.1, 0.1,
 					"hoverClockA1",
-					"./assets/docs/02-PDFs/MyPersonalLibrary/00-Philosophy/0-random/OnePiece_Chapter_1079.pdf",
+					"https://docs.google.com/spreadsheets/d/1Wbvxc0_2UIZs79aPBVMYO3XTSueMot07YaZ-DlnXNiA/edit#gid=0",
 					"1920", "1200"
 				)
 
 			)
+
+
+
+
+			const RightPrimaryWindowFrames_SummonToggle = () => {
+				if (RightPrimaryWindow_root.position.x === -1) {
+					gsap.to(RightPrimaryWindow_root.position, {
+
+						duration: .25,
+						delay: 0,
+						x: 10,
+
+					}) 
+				} else if (RightPrimaryWindow_root.position.x === -10) {
+					gsap.to(RightPrimaryWindow_root.position, {
+
+						duration: .25,
+						delay: 0,
+						x: -1,
+
+					}) 
+				} else {
+					gsap.to(RightPrimaryWindow_root.position, {
+
+						duration: .25,
+						delay: 0,
+						x: -1,
+
+					}) 
+				}
+			}
+
+
+			document.addEventListener("keydown", function(event) {
+				if (event.key === "]") {
+					play_sfx_click_gen()
+					if (RightPrimaryWindow_root.position.x === 1) {
+						gsap.to(RightPrimaryWindow_root.position, {
+
+							duration: .25,
+							delay: 0,
+							x: 10,
+
+						}) 
+					} else if (RightPrimaryWindow_root.position.x === 10) {
+						gsap.to(RightPrimaryWindow_root.position, {
+
+							duration: .25,
+							delay: 0,
+							x: 1,
+
+						}) 
+					} else {
+						gsap.to(RightPrimaryWindow_root.position, {
+
+							duration: .25,
+							delay: 0,
+							x: 1,
+
+						}) 
+					}
+				} 
+			})
 
 
 
@@ -10204,12 +10311,187 @@
 					'DefaultImgId', 'DefaultImgClassName',
 					'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
 					"./assets/icons/00-Official/UI/Isometric/tools/target1.svg", "",
-					LeftPrimaryWindowFrames_SummonToggle, 
+					RightPrimaryWindowFrames_SummonToggle, 
 					"Toggle Left Window",
 					"Test me to see if I work!"
 				) 
 
 			)
+
+
+			// ---------------------------------------------------------------------------
+			// LeftPanelWindow01_TurnWindowSlightlyButton
+			// ---------------------------------------------------------------------------
+			let turnRightWindowSlightlyToggle = () => {
+				if (RightPrimaryWindow_root.rotation.y === 0) {
+					play_sfx_click_gen()
+
+					gsap.to(RightPrimaryWindow_root.rotation, {
+
+						duration: .25,
+						delay: 0,
+						y: -0.2
+
+					})
+				} else if (RightPrimaryWindow_root.rotation.y === 0.2) {
+					gsap.to(RightPrimaryWindow_root.rotation, {
+
+						duration: .25,
+						delay: 0,
+						y: 0
+
+					})
+				} else {
+					gsap.to(RightPrimaryWindow_root.rotation, {
+
+						duration: .25,
+						delay: 0,
+						y: 0
+
+					})
+				}
+			}
+
+
+			// RightPanelWindow01_TurnWindowSlightlyButton
+			// ---------------------------------------------------------------------------
+			RightPanelWindow01_TurnWindowSlightlyButton = new THREE.Group()
+			RightPanelWindow01_TurnWindowSlightlyButton.position.set(-0.74, 0.55, 0)
+			RightPanelWindow01_TurnWindowSlightlyButton.rotation.set(0, 0, 0)	
+			RightPanelWindow01_TurnWindowSlightlyButton.scale.set(0.003, 0.003, 0.003)
+			RightPrimaryWindow_root.add(RightPanelWindow01_TurnWindowSlightlyButton)
+
+			let logFunction_wR03 = () => {
+				console.log("working!")
+			}
+
+
+			RightPanelWindow01_TurnWindowSlightlyButton.add(
+				
+				new TechIcon(
+					0, 0, 0,
+					0, 0, 0,
+					0.55, 0.55, 0.55,
+					'DefaultTechIconId', 'DefaultTechIconClassName',
+					'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+					'DefaultImgId', 'DefaultImgClassName',
+					'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+					"./assets/icons/00-Official/UI/Isometric/tools/target1.svg", "",
+					turnRightWindowSlightlyToggle, 
+					"Angle Window",
+					"Turn Window for angled perspective"
+				) 
+
+			) 
+
+
+
+
+			// ---------------------------------------------------------------------------
+			// LeftPanelWindow01_resizeButton / resizeWindowFunction()
+			// ---------------------------------------------------------------------------
+			let resizeRightWindowFunction = () => {
+				if (RightPanelWindow01.position.z === 0) {
+
+					play_sfx_click_gen()
+
+					gsap.to(RightPanelWindow01.position, {
+
+						duration: .25,
+						delay: 0,
+						x: -1.25,
+						y: 0.125,
+						z: 0.56,
+
+					})
+
+				} else if (RightPanelWindow01.position.z === 0.56) {
+
+					play_sfx_click_gen()
+
+					gsap.to(RightPanelWindow01.position, {
+
+						duration: .25,
+						delay: 0,
+						x: -0.725,
+						y: 0.325,
+						z: 0,
+
+					})
+
+				} else {
+
+					play_sfx_click_gen()
+
+					gsap.to(RightPanelWindow01.position, {
+
+						duration: .25,
+						delay: 0,
+						x: -0.725,
+						y: 0.325,
+						z: 0,
+
+					})
+
+				}
+			}
+
+
+			// RightPanelWindow01_resizeButton
+			// ---------------------------------------------------------------------------
+			RightPanelWindow01_resizeButton = new THREE.Group()
+			RightPanelWindow01_resizeButton.position.set(-0.6, 0.55, 0)
+			RightPanelWindow01_resizeButton.rotation.set(0, 0, 0)	
+			RightPanelWindow01_resizeButton.scale.set(0.003, 0.003, 0.003)
+			RightPrimaryWindow_root.add(RightPanelWindow01_resizeButton)
+
+			let logFunction_wR01 = () => {
+				console.log("working!")
+			}
+
+
+			RightPanelWindow01_resizeButton.add(
+				
+				new TechIcon(
+					0, 0, 0,
+					0, 0, 0,
+					0.55, 0.55, 0.55,
+					'DefaultTechIconId', 'DefaultTechIconClassName',
+					'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+					'DefaultImgId', 'DefaultImgClassName',
+					'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+					"./assets/icons/00-Official/UI/Isometric/tools/target1.svg", "",
+					resizeRightWindowFunction, 
+					"Resize Window",
+					"Click to Resize Left Window"
+				) 
+
+			)
+
+
+			const angleBothWindows = () => {
+				if (RightPrimaryWindow_root.rotation.y === 0 && LeftPrimaryWindow_root.y === 0) {
+					turnWindowSlightlyToggle()
+					turnRightWindowSlightlyToggle()
+				} else {
+					turnWindowSlightlyToggle()
+					turnRightWindowSlightlyToggle()
+				}
+			}
+
+
+			document.addEventListener("keydown", function(event) {
+				if (event.key === "/") {
+					play_sfx_click_gen()
+					if (RightPrimaryWindow_root.rotation.y === 0 && LeftPrimaryWindow_root.y === 0) {
+						turnWindowSlightlyToggle()
+						turnRightWindowSlightlyToggle()
+					} else {
+						turnWindowSlightlyToggle()
+						turnRightWindowSlightlyToggle()
+					}
+				} 
+			})
 
 
 
