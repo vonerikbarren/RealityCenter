@@ -2798,7 +2798,15 @@
 
 
 
+			// -----------------------------------------------------------------
+			// Function Variable Zone
+			// -----------------------------------------------------------------
 
+			let testFunction01
+			let testFunction02
+			let testFunction03
+			let testFunction04
+			let testFunction05
 
 
 
@@ -3971,6 +3979,10 @@
 				// \- [OOASA6PE01_A7_14__CS3dObj_makePDF_TechTile] \- 
                 // ----------------------------------------------------------------------------------------------------
 
+				let myTestFunction01 = () => {
+					console.log("function replaced")
+				}
+
 
 				function TechTile(
 					HeaderId, TechTileId,
@@ -4021,43 +4033,43 @@
 					const FunctionImg01 = document.createElement('img')
 					FunctionImg01.id = FxImg01
 					FunctionImg01.src = src01
-					FunctionImg01.addEventListener('click', uxMfx01_PortfolioElevatorUp)
+					FunctionImg01.addEventListener('click', myTestFunction01)
 					FunctionTile.appendChild(FunctionImg01)
 
 					const FunctionImg02 = document.createElement('img')
 					FunctionImg02.id = FxImg02
 					FunctionImg02.src = src02
-					FunctionImg02.addEventListener('click', uxMfx02_PortfolioElevatorDown)
+					FunctionImg02.addEventListener('click', myTestFunction01)
 					FunctionTile.appendChild(FunctionImg02)
 
 					const FunctionImg03 = document.createElement('img')
 					FunctionImg03.id = FxImg03
 					FunctionImg03.src = src03
-					FunctionImg03.addEventListener('click', uxMfx02_PortfolioElevatorDown)
+					FunctionImg03.addEventListener('click', myTestFunction01)
 					FunctionTile.appendChild(FunctionImg03)
 
 					const FunctionImg04 = document.createElement('img')
 					FunctionImg04.id = FxImg04
 					FunctionImg04.src = src04
-					FunctionImg04.addEventListener('click', uxMfx02_PortfolioElevatorDown)
+					FunctionImg04.addEventListener('click', myTestFunction01)
 					FunctionTile.appendChild(FunctionImg04)
 
 					const FunctionImg05 = document.createElement('img')
 					FunctionImg05.id = FxImg05
 					FunctionImg05.src = src05
-					FunctionImg04.addEventListener('click', uxMfx02_PortfolioElevatorDown)
+					FunctionImg04.addEventListener('click', myTestFunction01)
 					FunctionTile.appendChild(FunctionImg05)
 
 					const FunctionImg06 = document.createElement('img')
 					FunctionImg06.id = FxImg06
 					FunctionImg06.src = src06
-					FunctionImg04.addEventListener('click', uxMfx02_PortfolioElevatorDown)
+					FunctionImg04.addEventListener('click', myTestFunction01)
 					FunctionTile.appendChild(FunctionImg06)
 
 					const FunctionImg07 = document.createElement('img')
 					FunctionImg07.id = FxImg07
 					FunctionImg07.src = src07
-					FunctionImg04.addEventListener('click', uxMfx02_PortfolioElevatorDown)
+					FunctionImg04.addEventListener('click', myTestFunction01)
 					FunctionTile.appendChild(FunctionImg07)
 
 					
@@ -4535,43 +4547,43 @@
 					const FunctionImg01 = document.createElement('img')
 					FunctionImg01.id = FxImg01
 					FunctionImg01.src = src01
-					FunctionImg01.addEventListener('click', uxMfx01_PortfolioElevatorUp)
+					FunctionImg01.addEventListener('click', myTestFunction01)
 					FunctionTile.appendChild(FunctionImg01)
 
 					const FunctionImg02 = document.createElement('img')
 					FunctionImg02.id = FxImg02
 					FunctionImg02.src = src02
-					FunctionImg02.addEventListener('click', uxMfx02_PortfolioElevatorDown)
+					FunctionImg02.addEventListener('click', myTestFunction01)
 					FunctionTile.appendChild(FunctionImg02)
 
 					const FunctionImg03 = document.createElement('img')
 					FunctionImg03.id = FxImg03
 					FunctionImg03.src = src03
-					FunctionImg03.addEventListener('click', uxMfx02_PortfolioElevatorDown)
+					FunctionImg03.addEventListener('click', myTestFunction01)
 					FunctionTile.appendChild(FunctionImg03)
 
 					const FunctionImg04 = document.createElement('img')
 					FunctionImg04.id = FxImg04
 					FunctionImg04.src = src04
-					FunctionImg04.addEventListener('click', uxFx_MentalHookShot_ElevatorLevel1_a)
+					FunctionImg04.addEventListener('click', myTestFunction01)
 					FunctionTile.appendChild(FunctionImg04)
 
 					const FunctionImg05 = document.createElement('img')
 					FunctionImg05.id = FxImg05
 					FunctionImg05.src = src05
-					FunctionImg04.addEventListener('click', uxMfx02_PortfolioElevatorDown)
+					FunctionImg04.addEventListener('click', myTestFunction01)
 					FunctionTile.appendChild(FunctionImg05)
 
 					const FunctionImg06 = document.createElement('img')
 					FunctionImg06.id = FxImg06
 					FunctionImg06.src = src06
-					FunctionImg04.addEventListener('click', uxMfx02_PortfolioElevatorDown)
+					FunctionImg04.addEventListener('click', myTestFunction01)
 					FunctionTile.appendChild(FunctionImg06)
 
 					const FunctionImg07 = document.createElement('img')
 					FunctionImg07.id = FxImg07
 					FunctionImg07.src = src07
-					FunctionImg04.addEventListener('click', uxMfx02_PortfolioElevatorDown)
+					FunctionImg04.addEventListener('click', myTestFunction01)
 					FunctionTile.appendChild(FunctionImg07)
 
 					
@@ -4892,6 +4904,7 @@
 				baseDiv.id = theId
 				baseDiv.className = theClassName
 				baseDiv.border = "3px solid rgba(0, 255, 208, 0.75)"
+				baseDiv.backgroundColor = divColor
 				
 				const basicDivData = new CSS3DObject(baseDiv)
 				basicDivData.position.set(px, py, pz)
@@ -10218,7 +10231,7 @@
 					0, 0, 0,
 					0.1, 0.1, 0.1,
 					"hoverClockA1",
-					"https://docs.google.com/spreadsheets/d/1Wbvxc0_2UIZs79aPBVMYO3XTSueMot07YaZ-DlnXNiA/edit#gid=0",
+					"",
 					"1920", "1200"
 				)
 
@@ -10497,8 +10510,45 @@
 
 
 
+			// -----------------------------------------------------------------
+			// function test zone
+			// -----------------------------------------------------------------
 
 
+			testFunction01 = new THREE.Group()
+			testFunction01.position.set(0, 25, -1)
+			testFunction01.rotation.set(0, 0, 0)
+			testFunction01.scale.set(0.025, 0.025, 0.025)
+			scene.add(testFunction01)
+
+			testFunction01.add(
+				new TechTile_Portfolio_DuVin(
+					"TechTileHeader", "TechTileΔName",
+					"TechBase01", 'CenterTileRoot', 
+					'CenterTile01', 'centerTileClass01',
+					"Time Checker: \n Use app to tell time",'🍷',
+					"https://vonerikbarren.github.io/La-Grande-Maison-du-Vin/", '',
+					0, 0, 0,
+					0, 0, 0,
+					0.015, 0.015, 0.015,
+					"TechTileFx", "",
+					"ImgA01", "./assets/icons/Arrows/AnimatedArrows/up-arrow.gif", 
+					"ImgA02", "./assets/icons/Arrows/AnimatedArrows/down-arrow.gif", 
+					"ImgA03", "./assets/icons/Arrows/AnimatedArrows/right-arrow.gif", 
+					"ImgA04", "./assets/icons/Arrows/AnimatedArrows/focus.gif", 
+					"ImgA05", "", 
+					"ImgA06", "", 
+					"ImgA07", "", 
+				)
+
+				// new basicDiv(
+				// 	0, 0, 0,
+				// 	0, 0, 0,
+				// 	1, 1, 1,
+				// 	'basicDivID01', 'basicDivClass01',
+				// 	'red', 'green',
+				// )
+			)
 
 				// # component_2dNavbar (End)
 				// -----------------------------------------------------------------
