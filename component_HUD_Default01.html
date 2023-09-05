@@ -3149,8 +3149,8 @@
 			let RightBrainSettings_r
 			let RightBrainSettings_option01_root, mat_RightBrainSettings_option01_root, mesh_RightBrainSettings_option01_root
 			let RightBrainSettings_option01_FrontFace, RightBrainSettings_option01_FrontFace_href
-			let RightBrainSettings_option01_LeftFace
-			let RightBrainSettings_option01_RightFace
+			let RightBrainSettings_option01_LeftFace, RightBrainSettings_option01_LeftFace_href
+			let RightBrainSettings_option01_RightFace, RightBrainSettings_option01_RightFace_href
 			let RightBrainSettings_option01_BackFace, RightBrainSettings_option01_BackFace_href
 			let RightBrainSettings_option01_BottomFace
 			let RightBrainSettings_option01_TopFace
@@ -3235,6 +3235,66 @@
 			let RightBrainSettings_option10_BottomFace
 			let RightBrainSettings_option10_TopFace
 
+
+			//.......................................................................................
+			//..UU.....UU...............................BBBBB........................................
+			//.UUUU...UUUU.............................rBBBBBBBBB....................ddd.............
+			//.UUUU...UUUU.............................rBBBBBBBBBB...................ddd.............
+			//.UUUU...UUUU.............................rBBBBBBBBBB...................ddd.............
+			//.UUUU...UUUU..ssssssss...eeeeee...errrrr.rBBB...BBBB...ooooooo....dddddddd.ddyy..yyyy..
+			//.UUUU...UUUU..ssssssss..seeeeeee..errrrr.rBBB..BBBBB..Boooooooo..odddddddd.ddyy..yyyy..
+			//.UUUU...UUUU.Ussssssssssseeeeeeee.errrrr.rBBBBBBBBBB.BBooooooooooodddddddd.ddyy..yyyy..
+			//.UUUU...UUUU.Usssssssssssee..eeee.errr...rBBBBBBBBBB.BBoo...oooooodd..dddd..dyyyyyyy...
+			//.UUUU...UUUU..ssssssss.sseeeeeeee.err....rBBBBBBBBBB.BBoo...oooooodd...ddd..dyyyyyyy...
+			//.UUUU...UUUU..ssssssss.sseeeeeeee.err....rBBB....BBBBBBoo...oooooodd...ddd..dyyyyyyy...
+			//.UUUU...UUUU.Usssssssssssee.......err....rBBB...BBBBBBBoo...oooooodd..dddd...yyyyyy....
+			//.UUUUUUUUUUU.Ussss.sssssseeeeeeee.err....rBBBBBBBBBB.BBooooooooooodddddddd...yyyyyy....
+			//.UUUUUUUUUUU.Ussssssssssseeeeeee..err....rBBBBBBBBBB..Boooooooo..odddddddd...yyyyyy....
+			//..UUUUUUUUU...ssssssss..seeeeeee..err....rBBBBBBBBB....ooooooo...odddddddd....yyyy.....
+			//....UUUUU......ssssss.....eeee..........................ooooo......ddd........yyyy.....
+			//............................................................................dyyyyy.....
+			//............................................................................dyyyy......
+			//............................................................................dyyyy......
+
+
+			/**************************************
+			*
+			*  # User Body                      
+			*                                   
+			*  \- Building from an class object.
+			*
+			**************************************/
+
+			let userBody_root
+			let userBody_videoComponent
+			let userBody_videoComponent_geometry
+			let userBody_videoComponent_mat
+			let userBody_videoComponent_mesh
+
+			let userBody_ΔContainer_root
+			let userBody_ΔContainer_PrimaryLayer
+			let userBody_ΔContainer_SecondaryLayer
+			let userBody_ΔContainer_PrimaryΔ
+			let userBody_ΔContainer_TimeΔ
+			let userBody_ΔContainer_PreviousΔ
+			let userBody_ΔContainer_NextΔ
+			let userBody_ΔContainer_complexityΔ
+			let userBody_ΔContainer_destinationΔ
+
+			let userBody_ΔContainerStatus_root
+			let userBody_ΔContainerStatus_PreviousΔ
+			let userBody_ΔContainerStatus_PrimaryΔ
+			let userBody_ΔContainerStatus_SecondaryΔ
+			let userBody_ΔContainerStatus_TimeΔ
+			let userBody_ΔContainerStatus_ComplexityΔ
+			let userBody_ΔContainerStatus_DestinationΔ  
+
+			let userBody_Δ
+			let userBody_TimeΔ
+			let userBody_prevΔ
+			let userBody_nextΔ
+			let userBody_complexityΔ
+			let userBody_destinationΔ
 
 
 
@@ -3997,6 +4057,43 @@
                 // ----------------------------------------------------------------------------------------------------
 
 
+				/*
+					px, py, pz,
+					rx, ry, rz,
+					sx, sy, sz,
+
+					previousVarToAttach,
+					rootVar,
+
+					Geometry, materialName, meshName,
+
+					frontFace, 
+					frontFace_href, 
+					frontFaceTitle, frontFaceDescription,
+
+					backFace,
+					backFace_href, 
+					backFaceTitle, backFaceDescription,
+
+					leftFace,
+					leftFace_href,
+					leftFaceTitle, leftFaceDescription,
+
+					rightFace,
+					rightFace_href,
+					rightFaceTitle, rightFaceDescription
+
+					bottomFace, topFace,
+					primaryMap, alphaMap,
+					transparenetStatus, wireframeStatus,
+				*/
+				class ΔA {
+					constructor() {
+
+					}
+				}
+
+
 				function Δ (
 					px, py, pz,
 					rx, ry, rz,
@@ -4010,7 +4107,12 @@
 					backFace,
 					backFace_href, 
 					backFaceTitle, backFaceDescription,
-					leftFace, rightFace,
+					leftFace, 
+					leftFace_href, 
+					leftFaceTitle, leftFaceDescription,
+					rightFace,
+					rightFace_href,
+					rightFaceTitle, rightFaceDescription,
 					bottomFace, topFace,
 					primaryMap, alphaMap,
 					transparenetStatus, wireframeStatus,
@@ -4031,7 +4133,7 @@
 					// mesh
 					meshName = new THREE.Mesh(Geometry, materialName);
 					meshName.position.set(0, 0, 0);
-					meshName.scale.set(1, 1, 1);
+					meshName.scale.set(.5, .5, .5);
 					meshName.rotation.set(0, 0, 0);
 
 					// meshName.rotateX( - Math.PI / 2 );
@@ -4082,6 +4184,53 @@
 							logFunction_wRA04, 
 							backFaceTitle,
 							backFaceDescription,
+						) 
+					)
+
+					// left Face
+					leftFace = new THREE.Group()
+					leftFace.position.set(-10, 0, 0)
+					leftFace.rotation.set(0, -1.575, 0)
+					leftFace.scale.set(0.5, 0.5, 0.5)
+					rootVar.add(leftFace)
+
+					leftFace.add(
+						new TechIcon(
+							0, 0, 0,
+							0, 0, 0,
+							0.55, 0.55, 0.55,
+							'DefaultTechIconId', 'DefaultTechIconClassName',
+							'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+							'DefaultImgId', 'DefaultImgClassName',
+							'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+							leftFace_href, "",
+							logFunction_wRA04, 
+							leftFaceTitle,
+							leftFaceDescription,
+						) 
+					)
+
+
+					// right Face
+					rightFace = new THREE.Group()
+					rightFace.position.set(10, 0, 0)
+					rightFace.rotation.set(0, 1.575, 0)
+					rightFace.scale.set(0.5, 0.5, 0.5)
+					rootVar.add(rightFace)
+
+					rightFace.add(
+						new TechIcon(
+							0, 0, 0,
+							0, 0, 0,
+							0.55, 0.55, 0.55,
+							'DefaultTechIconId', 'DefaultTechIconClassName',
+							'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+							'DefaultImgId', 'DefaultImgClassName',
+							'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+							rightFace_href, "",
+							logFunction_wRA04, 
+							rightFaceTitle,
+							rightFaceDescription,
 						) 
 					)
 
@@ -7315,7 +7464,7 @@
 				scene.add(videoAndΔComboTest01)
 
 				floorDesign01_Grid = new THREE.Group()
-				floorDesign01_Grid.position.set(0, -0.2, 0)
+				floorDesign01_Grid.position.set(0, 0, 0)
 				floorDesign01_Grid.rotation.set(0, 0, 0)
 				floorDesign01_Grid.scale.set(1, 1, 1)
 				videoAndΔComboTest01.add(floorDesign01_Grid)
@@ -7581,7 +7730,7 @@
 						toneMapped: false,
 					}
 				)
-
+		
 				mesh_CenterBrain_VideoSphere_Opening = new THREE.Mesh(
 					geo_objT_SphereA0, 
 					videoOpening_Mat
@@ -7598,6 +7747,10 @@
 				openingButtonIconGroup.rotation.set(0, 0, 0)
 				openingButtonIconGroup.scale.set(1, 1, 1)
 				scene.add(openingButtonIconGroup)
+
+
+
+
 
 
 
@@ -7706,6 +7859,7 @@
 
 				EmulatorTest03.add(
 
+					// Strongly Teacher ... 
 					new makePDF_Viewer(
 						0, 0, 0,
 						0, 0, 0,
@@ -11754,9 +11908,9 @@
 
 
 			RightBrainSettings_r = new THREE.Group()
-			RightBrainSettings_r.position.set(0, 1, 0)
+			RightBrainSettings_r.position.set(0, 1, 1)
 			RightBrainSettings_r.rotation.set(0, 0, 0)
-			RightBrainSettings_r.scale.set(0.1, 0.1, 0.1)
+			RightBrainSettings_r.scale.set(0.01, 0.01, 0.01)
 			scene.add(RightBrainSettings_r)
 
 			RightBrainSettings_option01_FrontFace = new THREE.Group()
@@ -11771,6 +11925,19 @@
 			RightBrainSettings_option01_BackFace_href.scale.set(0.1, 0.1, 0.1)
 			RightBrainSettings_r.add(RightBrainSettings_option01_BackFace_href)
 
+
+			RightBrainSettings_option01_LeftFace_href = new THREE.Group()
+			RightBrainSettings_option01_LeftFace_href.position.set(0, 0, 0)
+			RightBrainSettings_option01_LeftFace_href.rotation.set(0, 0, 0)
+			RightBrainSettings_option01_LeftFace_href.scale.set(0.1, 0.1, 0.1)
+			RightBrainSettings_r.add(RightBrainSettings_option01_LeftFace_href)
+
+			RightBrainSettings_option01_RightFace_href = new THREE.Group()
+			RightBrainSettings_option01_RightFace_href.position.set(0, 0, 0)
+			RightBrainSettings_option01_RightFace_href.rotation.set(0, 0, 0)
+			RightBrainSettings_option01_RightFace_href.scale.set(0.1, 0.1, 0.1)
+			RightBrainSettings_r.add(RightBrainSettings_option01_RightFace_href)
+
 			RightBrainSettings_r.add(
 				new Δ (
 					0, 0, 0,
@@ -11778,17 +11945,23 @@
 					1, 1, 1,
 					RightBrainSettings_r,
 					RightBrainSettings_option01_root,
-					geo_objT_BoxA0, mat_RightBrainSettings_option01_root, mesh_RightBrainSettings_option01_root,
+					geo_objT_DiamondA0, mat_RightBrainSettings_option01_root, mesh_RightBrainSettings_option01_root,
 					RightBrainSettings_option01_FrontFace, 
 					"./assets/icons/00-Official/UI/Isometric/tools/target1.svg",
 					"FrontFaceTitle", 'FrontFaceDescription is valid',
 					RightBrainSettings_option01_BackFace_href,
 					"./assets/icons/00-Official/UI/Isometric/tools/html.svg",
 					"BackFaceTitle",'BackFaceDescription is valid',
+					RightBrainSettings_option01_LeftFace_href,
+					"./assets/icons/00-Official/UI/Isometric/tools/html.svg",
+					"LeftFaceTitle",'LeftFaceDescription is valid',
+					RightBrainSettings_option01_RightFace_href,
+					"./assets/icons/00-Official/UI/Isometric/tools/html.svg",
+					"RightFaceTitle",'RightFaceDescription is valid',
 					"", "",
 					"", "",
 					newTechTileHolder07, newTechTileHolder07,
-					true, false,
+					false, false,
 
 				)
 			)

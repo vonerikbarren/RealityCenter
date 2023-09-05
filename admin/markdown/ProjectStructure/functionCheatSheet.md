@@ -1,6 +1,14 @@
 # Function Cheatsheet
 
 
+# Current Log Entry Thought Processes (so we dont get lost)
+\- Enter
+    \- Side Panels with Digital/Technical Realities 
+    \- Finish the Buttons [X]
+        \- RH Side bar [x]
+        \- Changing Icons to appropriate areas... [?]
+
+
 # QuickShortcuts
 \- randomATT_Items = Search(HomeScreenSaver)
 
