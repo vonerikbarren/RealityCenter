@@ -2613,6 +2613,55 @@
 
 
 
+			//..........................................................
+			//..HH......H....UU.....UU....DDDDD.........................
+			//.HHHH...HHHH..UUUU...UUUU..DDDDDDDDD.....000000......111..
+			//.HHHH...HHHH..UUUU...UUUU..DDDDDDDDDDD..00000000....1111..
+			//.HHHH...HHHH..UUUU...UUUU..DDDDDDDDDDD..00000000..011111..
+			//.HHHH...HHHH..UUUU...UUUU..DDDD...DDDDDD000..0000.011111..
+			//.HHHHHHHHHHH..UUUU...UUUU..DDDD....DDDDD000..0000.011111..
+			//.HHHHHHHHHHH..UUUU...UUUU..DDDD....DDDDD000..0000....111..
+			//.HHHHHHHHHHH..UUUU...UUUU..DDDD....DDDDD000..0000....111..
+			//.HHHHHHHHHHH..UUUU...UUUU..DDDD....DDDDD000..0000....111..
+			//.HHHH...HHHH..UUUU...UUUU..DDDD...DDDDDD000..0000....111..
+			//.HHHH...HHHH..UUUU...UUUU..DDDD...DDDD.D000..0000....111..
+			//.HHHH...HHHH..UUUUUUUUUUU..DDDDDDDDDDD.D000000000....111..
+			//.HHHH...HHHH..UUUUUUUUUUU..DDDDDDDDDD...00000000.....111..
+			//.HHHH...HHHH...UUUUUUUUU...DDDDDDDDD....0000000......111..
+			//.................UUUUU....................0000............
+			//..........................................................
+
+
+			let Hud_default_root, mesh_Hud_default_root
+			let Hud01_nameOfHud, mesh_Hud01_nameOfHud
+
+
+
+
+			//.........................................................
+			//..TTTTTTTTT.iiii.........................................
+			//.TTTTTTTTTTTiiii...............................ΔΔΔΔ......
+			//.TTTTTTTTTTTiiii...............................ΔΔΔΔΔ.....
+			//.TTTTTTTTTTTiiii..............................ΔΔΔΔΔΔ.....
+			//.....TTTT...iiii.mmmmmmmmmmmmmm...eeeeeee.....ΔΔΔΔΔΔΔ....
+			//.....TTTT...iiii.mmmmmmmmmmmmmmm..eeeeeeee....ΔΔΔΔΔΔΔ....
+			//.....TTTT...iiii.mmmmmmmmmmmmmmm.meeeeeeee...ΔΔΔΔΔΔΔΔ....
+			//.....TTTT...iiii.mmmm..mmmm.mmmm.meee..eeee..ΔΔΔΔ.ΔΔΔΔ...
+			//.....TTTT...iiii.mmmm..mmmm.mmmm.meeeeeeeee.ΔΔΔΔ..ΔΔΔΔ...
+			//.....TTTT...iiii.mmmm..mmmm.mmmm.meeeeeeeee.ΔΔΔΔ...ΔΔΔΔ..
+			//.....TTTT...iiii.mmmm..mmmm.mmmm.meee.......ΔΔΔ....ΔΔΔΔ..
+			//.....TTTT...iiii.mmmm..mmmm.mmmm.meeeeeeeeeeΔΔΔΔΔΔΔΔΔΔΔ..
+			//.....TTTT...iiii.mmmm..mmmm.mmmm.meeeeeeee.eΔΔΔΔΔΔΔΔΔΔΔ..
+			//.....TTTT...iiii.mmmm..mmmm.mmmm..eeeeeeeeeeΔΔΔΔΔΔΔΔΔΔΔ..
+			//....................................eeee.................
+			//.........................................................
+
+
+			let TimeΔ_Default_root
+			let TimeΔ_Default_Skeleton, mesh_TimeΔ_Default_Skeleton
+			let TimeΔ_Default_ΔItem01, mesh_TimeΔ_Default_ΔItem01
+
+
 			// #################################################################
             //  LeftBrainDefault_root
 			// #################################################################
@@ -5951,7 +6000,7 @@
 								duration: .5,
 								delay: 0,
 								y: 0, 
-								z: 5000,
+								z: 15000,
 							})
 							break
 
@@ -6438,6 +6487,40 @@
 
 				// Movement Key Commands - END
 				// #########################################################
+
+
+
+				document.addEventListener("keydown", function(event) {
+					if (event.key === "f") {
+						// camera.position.y -= 10000
+
+
+						if (Hud_default_root.position.z === 20) {
+							gsap.to(Hud_default_root.position, {
+								duration: .2,
+								delay: 0,
+								z: -15,
+
+							})
+						} else if (Hud_default_root.position.z === -15) {
+							gsap.to(Hud_default_root.position, {
+								duration: .2,
+								delay: 0,
+								z: 20,
+
+							})
+						} else {
+							gsap.to(Hud_default_root.position, {
+								duration: .2,
+								delay: 0,
+								z: 20,
+
+							})
+						}
+
+						
+					}
+				})
 
 
 
@@ -7717,7 +7800,7 @@
 				CenterBrain_VideoSphere_Opening = new THREE.Group()
 				CenterBrain_VideoSphere_Opening.position.set(0, 1.15, 144)
 				CenterBrain_VideoSphere_Opening.rotation.set(0, 0, 0)
-				CenterBrain_VideoSphere_Opening.scale.set(1, 1, 1)
+				CenterBrain_VideoSphere_Opening.scale.set(10, 10, 10)
 				scene.add(CenterBrain_VideoSphere_Opening)
 				// camera.attach(CenterBrain_VideoSphere_Opening)
 
@@ -12050,11 +12133,107 @@
 				// )
 			)
 
-				// # component_2dNavbar (End)
-				// -----------------------------------------------------------------
-				// #################################################################
-				// #################################################################
-                
+
+
+
+			//..........................................................
+			//..HH......H....UU.....UU....DDDDD.........................
+			//.HHHH...HHHH..UUUU...UUUU..DDDDDDDDD.....000000......111..
+			//.HHHH...HHHH..UUUU...UUUU..DDDDDDDDDDD..00000000....1111..
+			//.HHHH...HHHH..UUUU...UUUU..DDDDDDDDDDD..00000000..011111..
+			//.HHHH...HHHH..UUUU...UUUU..DDDD...DDDDDD000..0000.011111..
+			//.HHHHHHHHHHH..UUUU...UUUU..DDDD....DDDDD000..0000.011111..
+			//.HHHHHHHHHHH..UUUU...UUUU..DDDD....DDDDD000..0000....111..
+			//.HHHHHHHHHHH..UUUU...UUUU..DDDD....DDDDD000..0000....111..
+			//.HHHHHHHHHHH..UUUU...UUUU..DDDD....DDDDD000..0000....111..
+			//.HHHH...HHHH..UUUU...UUUU..DDDD...DDDDDD000..0000....111..
+			//.HHHH...HHHH..UUUU...UUUU..DDDD...DDDD.D000..0000....111..
+			//.HHHH...HHHH..UUUUUUUUUUU..DDDDDDDDDDD.D000000000....111..
+			//.HHHH...HHHH..UUUUUUUUUUU..DDDDDDDDDD...00000000.....111..
+			//.HHHH...HHHH...UUUUUUUUU...DDDDDDDDD....0000000......111..
+			//.................UUUUU....................0000............
+			//..........................................................
+
+			// BasicHud03b = imgMap
+
+			Hud_default_root = new THREE.Group()
+			Hud_default_root.position.set(0, 0, 20)
+			Hud_default_root.rotation.set(0, 0, 0)
+			Hud_default_root.scale.set(0.11, 0.11, 0.11)
+			scene.add(Hud_default_root)
+			camera.attach(Hud_default_root)
+
+
+			Hud_default_root.add(
+				new hoverObject(
+					'img',
+					0, 0, 0,
+					0, 0, 0,
+					0.1, 0.1, 0.1,
+					"Testing234", "TestingClass234",
+					"./assets/img/03-HudUI/BeginningHuds/BeginnerHud03b.png", "",
+					"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+				)
+			)
+
+
+			// const mat_Hud_default_root = new THREE.MeshBasicMaterial({ map: BasicHud03b, side: THREE.DoubleSide });
+			// mesh_Hud_default_root = new THREE.Mesh(geo_objT_PlaneA1, mat_Hud_default_root);
+			// mat_Hud_default_root.transparent = true;
+			// mat_Hud_default_root.alphaMap = BasicHud03b;
+			// mesh_Hud_default_root.position.set(0, 0, 0);
+			// // mesh_Hud_default_root.position.set(-15000, 0, 0);
+			// mesh_Hud_default_root.scale.set(1, 1, 1);
+			// mesh_Hud_default_root.rotation.set(0, 0, 0);
+			// // mesh_Hud_default_root.rotateX( - Math.PI / 2 );
+
+			// // Hud_default_root.lookAt(camera)
+			
+			// Hud_default_root.add(mesh_Hud_default_root)
+
+
+
+			TimeΔ_Default_root = new THREE.Group()
+			TimeΔ_Default_root.position.set(0, 0, -10)
+			TimeΔ_Default_root.rotation.set(0, 0, 0)
+			TimeΔ_Default_root.scale.set(1, 1, 1)
+			scene.add(TimeΔ_Default_root)
+
+			TimeΔ_Default_Skeleton = new THREE.Group()
+			TimeΔ_Default_Skeleton.position.set(0, 0, 0)
+			TimeΔ_Default_Skeleton.rotation.set(1.575, 0, 0)
+			TimeΔ_Default_Skeleton.scale.set(10, 50, 10)
+			TimeΔ_Default_root.add(TimeΔ_Default_Skeleton)
+
+
+			const mat_TimeΔ_Default_Skeleton = new THREE.MeshBasicMaterial({ map: BasicHud03b, side: THREE.DoubleSide });
+			mesh_TimeΔ_Default_Skeleton = new THREE.Mesh(geo_objT_CylinderClosedA0, mat_TimeΔ_Default_Skeleton);
+			mat_TimeΔ_Default_Skeleton.transparent = true;
+			mat_TimeΔ_Default_Skeleton.alphaMap = BasicHud03b;
+			mesh_TimeΔ_Default_Skeleton.position.set(0, 0, 0);
+			// mesh_TimeΔ_Default_Skeleton.position.set(-15000, 0, 0);
+			mesh_TimeΔ_Default_Skeleton.scale.set(1, 1, 1);
+			mesh_TimeΔ_Default_Skeleton.rotation.set(0, 0, 0);
+			// mesh_TimeΔ_Default_Skeleton.rotateX( - Math.PI / 2 );
+
+			// TimeΔ_Default_Skeleton.lookAt(camera)
+			
+			TimeΔ_Default_Skeleton.add(mesh_TimeΔ_Default_Skeleton)
+
+
+
+
+
+
+
+
+
+
+		// # component_2dNavbar (End)
+		// -----------------------------------------------------------------
+		// #################################################################
+		// #################################################################
+		
 
 
 
@@ -12569,17 +12748,17 @@
 				folderLoadTestingContainer01.add(floorDesign01_Grid.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
 				folderLoadTestingContainer01.add(floorDesign01_Grid.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
-				const folderLoadTestingContainer02 = gui.addFolder('<<< LoadPoint02 :: RightBrainSettings_option01_FrontFace >>>')
+				const folderLoadTestingContainer02 = gui.addFolder('<<< LoadPoint02 :: TimeΔ_Default_Skeleton >>>')
 
-				folderLoadTestingContainer02.add(RightBrainSettings_option01_FrontFace.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
-				folderLoadTestingContainer02.add(RightBrainSettings_option01_FrontFace.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
-				folderLoadTestingContainer02.add(RightBrainSettings_option01_FrontFace.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
-				folderLoadTestingContainer02.add(RightBrainSettings_option01_FrontFace.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
-				folderLoadTestingContainer02.add(RightBrainSettings_option01_FrontFace.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
-				folderLoadTestingContainer02.add(RightBrainSettings_option01_FrontFace.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
-				folderLoadTestingContainer02.add(RightBrainSettings_option01_FrontFace.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
-				folderLoadTestingContainer02.add(RightBrainSettings_option01_FrontFace.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
-				folderLoadTestingContainer02.add(RightBrainSettings_option01_FrontFace.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
+				folderLoadTestingContainer02.add(TimeΔ_Default_Skeleton.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
+				folderLoadTestingContainer02.add(TimeΔ_Default_Skeleton.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
+				folderLoadTestingContainer02.add(TimeΔ_Default_Skeleton.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
+				folderLoadTestingContainer02.add(TimeΔ_Default_Skeleton.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
+				folderLoadTestingContainer02.add(TimeΔ_Default_Skeleton.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
+				folderLoadTestingContainer02.add(TimeΔ_Default_Skeleton.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
+				folderLoadTestingContainer02.add(TimeΔ_Default_Skeleton.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
+				folderLoadTestingContainer02.add(TimeΔ_Default_Skeleton.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
+				folderLoadTestingContainer02.add(TimeΔ_Default_Skeleton.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
 				const folderLoadTestingContainer03 = gui.addFolder('<<< LoadPoint03 :: RightBrainSettings_root >>>')
 
