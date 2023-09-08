@@ -2658,8 +2658,67 @@
 
 
 			let TimeΔ_Default_root
-			let TimeΔ_Default_Skeleton, mesh_TimeΔ_Default_Skeleton
+			let TimeΔ_Default_ExternalSkeletonA00, mesh_TimeΔ_Default_ExternalSkeletonA00
+			let TimeΔ_Default_ExternalSkeletonA01, mesh_TimeΔ_Default_ExternalSkeletonA01
+			let TimeΔ_Default_ExternalSkeletonA02, mesh_TimeΔ_Default_ExternalSkeletonA02
+			let TimeΔ_Default_ExternalSkeletonA03, mesh_TimeΔ_Default_ExternalSkeletonA03
+
+			let TimeΔ_Default_InternalSkeleton_A00, mesh_TimeΔ_Default_InternalSkeleton_A00
+			let TimeΔ_Default_InternalSkeleton_A01, mesh_TimeΔ_Default_InternalSkeleton_A01
+			let TimeΔ_Default_InternalSkeleton_A02, mesh_TimeΔ_Default_InternalSkeleton_A02
+			let TimeΔ_Default_InternalSkeleton_A03, mesh_TimeΔ_Default_InternalSkeleton_A03
+
+
 			let TimeΔ_Default_ΔItem01, mesh_TimeΔ_Default_ΔItem01
+			let TimeΔ_Default_ΔItem02, mesh_TimeΔ_Default_ΔItem02
+
+
+
+
+			//..........................................................................
+			//..TTTTTTTTT...............................hhTTTTTTTT.TTi...il.............
+			//.TTTTTTTTTTT...................cchh......hhhTTTTTTTTTTTii.iill............
+			//.TTTTTTTTTTT...................cchh......hhhTTTTTTTTTTTii.iill............
+			//.TTTTTTTTTTT...................cchh......hhhTTTTTTTTTTTii.iill............
+			//.....TTTT...eeeeeee....cccccc..cchhhhhhh.....TTTT....TTii.iill..leeeee....
+			//.....TTTT...eeeeeeee..eccccccc.cchhhhhhhh....TTTT....TTii.iill.lleeeeeee..
+			//.....TTTT..Teeeeeeee.eecccccccccchhhhhhhh....TTTT....TTii.iillllleeeeeee..
+			//.....TTTT..Teee..eeeeeecc..cccccchh..hhhh....TTTT....TTii.iillllle..eeee..
+			//.....TTTT..Teeeeeeeeeeecc......cchh..hhhh....TTTT....TTii.iillllleeeeeee..
+			//.....TTTT..Teeeeeeeeeeecc......cchh..hhhh....TTTT....TTii.iillllleeeeeee..
+			//.....TTTT..Teee......eecc..cccccchh..hhhh....TTTT....TTii.iillllle........
+			//.....TTTT..Teeeeeeeeeeecccccccccchh..hhhh....TTTT....TTii.iillllleeeeeee..
+			//.....TTTT..Teeeeeeee.eeccccccc.cchh..hhhh....TTTT....TTii.iill.lleeeeeee..
+			//.....TTTT...eeeeeeee..eccccccc.cchh..hhhh....TTTT....TTii.iill.lleeeeee...
+			//..............eeee......cccc.....................................eeee.....
+			//..........................................................................
+
+			let TechTile_default_root
+			let TechTile_default_base
+			let TechTile_default_base_option01
+			let TechTile_default_base_option02
+			let TechTile_default_base_option03
+			let TechTile_default_base_option04
+
+
+			//...............................................................................................
+			//......GGGGG..............................CCC...................................................
+			//....GGGGGGGGG..........................CCCCCCCC...hhh.....................................111..
+			//...GGGGGGGGGG.........................CCCCCCCCCC..hhh....................................1111..
+			//..GGGGGGGGGGGG.......................CCCCCCCCCCC..hhh..................................111111..
+			//..GGGG....GGGG...eeeeee...nnnnnnnnn..CCCC...CCCCC.hhhhhhhh....eeeeee...mmmmmmmmmmmmm...111111..
+			//.GGGGG....GGGG..eeeeeeee..nnnnnnnnn.nCCCC....CCCC.hhhhhhhhh..eeeeeeee..mmmmmmmmmmmmmm..111111..
+			//.GGGG...GGGGGG.Geeeeeeeee.nnnnnnnnn.nCCC..........hhhhhhhhh.heeeeeeeee.mmmmmmmmmmmmmm.....111..
+			//.GGGG...GGGGGG.Geee..eeee.nnnn.nnnn.nCCC..........hhhh.hhhh.heee..eeee.mmmm.mmmm..mmm.....111..
+			//.GGGG...GGGGGG.Geeeeeeeee.nnn...nnn.nCCC..........hhh...hhh.heeeeeeeee.mmm..mmmm..mmm.....111..
+			//.GGGGG..GGGGGG.Geeeeeeeee.nnn...nnn.nCCCC....CCCC.hhh...hhh.heeeeeeeee.mmm..mmmm..mmm.....111..
+			//..GGGG....GGGG.Geee.......nnn...nnn..CCCC...CCCCC.hhh...hhh.heee.......mmm..mmmm..mmm.....111..
+			//..GGGGGGGGGGGG.Geeeeeeeee.nnn...nnn..CCCCCCCCCCC..hhh...hhh.heeeeeeeee.mmm..mmmm..mmm.....111..
+			//...GGGGGGGGGGG.Geeeeeeee..nnn...nnn...CCCCCCCCCC..hhh...hhh.heeeeeeee..mmm..mmmm..mmm.....111..
+			//....GGGGGGGGGG..eeeeeeee..nnn...nnn....CCCCCCCC...hhh...hhh..eeeeeeee..mmm..mmmm..mmm.....111..
+			//.....GGGG.........eeee..................CCCCC..................eeee............................
+			//...............................................................................................
+
 
 
 			// #################################################################
@@ -12199,32 +12258,166 @@
 			TimeΔ_Default_root.scale.set(1, 1, 1)
 			scene.add(TimeΔ_Default_root)
 
-			TimeΔ_Default_Skeleton = new THREE.Group()
-			TimeΔ_Default_Skeleton.position.set(0, 0, 0)
-			TimeΔ_Default_Skeleton.rotation.set(1.575, 0, 0)
-			TimeΔ_Default_Skeleton.scale.set(10, 50, 10)
-			TimeΔ_Default_root.add(TimeΔ_Default_Skeleton)
+			TimeΔ_Default_ExternalSkeletonA00 = new THREE.Group()
+			TimeΔ_Default_ExternalSkeletonA00.position.set(0, 0, 0)
+			TimeΔ_Default_ExternalSkeletonA00.rotation.set(1.575, 0, 0)
+			TimeΔ_Default_ExternalSkeletonA00.scale.set(50, 150, 50)
+			TimeΔ_Default_root.add(TimeΔ_Default_ExternalSkeletonA00)
 
 
-			const mat_TimeΔ_Default_Skeleton = new THREE.MeshBasicMaterial({ map: BasicHud03b, side: THREE.DoubleSide });
-			mesh_TimeΔ_Default_Skeleton = new THREE.Mesh(geo_objT_CylinderClosedA0, mat_TimeΔ_Default_Skeleton);
-			mat_TimeΔ_Default_Skeleton.transparent = true;
-			mat_TimeΔ_Default_Skeleton.alphaMap = BasicHud03b;
-			mesh_TimeΔ_Default_Skeleton.position.set(0, 0, 0);
-			// mesh_TimeΔ_Default_Skeleton.position.set(-15000, 0, 0);
-			mesh_TimeΔ_Default_Skeleton.scale.set(1, 1, 1);
-			mesh_TimeΔ_Default_Skeleton.rotation.set(0, 0, 0);
-			// mesh_TimeΔ_Default_Skeleton.rotateX( - Math.PI / 2 );
+			const mat_TimeΔ_Default_ExternalSkeletonA00 = new THREE.MeshBasicMaterial({ map: BasicHud03b, side: THREE.DoubleSide });
+			mesh_TimeΔ_Default_ExternalSkeletonA00 = new THREE.Mesh(geo_objT_CylinderClosedA0, mat_TimeΔ_Default_ExternalSkeletonA00);
+			mat_TimeΔ_Default_ExternalSkeletonA00.transparent = true;
+			mat_TimeΔ_Default_ExternalSkeletonA00.alphaMap = BasicHud03b;
+			mesh_TimeΔ_Default_ExternalSkeletonA00.position.set(0, 0, 0);
+			// mesh_TimeΔ_Default_ExternalSkeletonA00.position.set(-15000, 0, 0);
+			mesh_TimeΔ_Default_ExternalSkeletonA00.scale.set(1, 1, 1);
+			mesh_TimeΔ_Default_ExternalSkeletonA00.rotation.set(0, 0, 0);
+			// mesh_TimeΔ_Default_ExternalSkeletonA00.rotateX( - Math.PI / 2 );
 
-			// TimeΔ_Default_Skeleton.lookAt(camera)
+			// TimeΔ_Default_ExternalSkeletonA00.lookAt(camera)
 			
-			TimeΔ_Default_Skeleton.add(mesh_TimeΔ_Default_Skeleton)
+			TimeΔ_Default_ExternalSkeletonA00.add(mesh_TimeΔ_Default_ExternalSkeletonA00)
+
+
+			TimeΔ_Default_ExternalSkeletonA01 = new THREE.Group()
+			TimeΔ_Default_ExternalSkeletonA01.position.set(0, 0, 0)
+			TimeΔ_Default_ExternalSkeletonA01.rotation.set(1.575, 0, 0)
+			TimeΔ_Default_ExternalSkeletonA01.scale.set(10, 150, 10)
+			TimeΔ_Default_root.add(TimeΔ_Default_ExternalSkeletonA01)
+
+
+			const mat_TimeΔ_Default_ExternalSkeletonA01 = new THREE.MeshBasicMaterial({ map: BasicHud03b, side: THREE.DoubleSide });
+			mesh_TimeΔ_Default_ExternalSkeletonA01 = new THREE.Mesh(geo_objT_CylinderClosedA0, mat_TimeΔ_Default_ExternalSkeletonA01);
+			mat_TimeΔ_Default_ExternalSkeletonA01.transparent = true;
+			mat_TimeΔ_Default_ExternalSkeletonA01.alphaMap = BasicHud03b;
+			mesh_TimeΔ_Default_ExternalSkeletonA01.position.set(0, 0, 0);
+			// mesh_TimeΔ_Default_ExternalSkeletonA01.position.set(-15000, 0, 0);
+			mesh_TimeΔ_Default_ExternalSkeletonA01.scale.set(1, 1, 1);
+			mesh_TimeΔ_Default_ExternalSkeletonA01.rotation.set(0, 0, 0);
+			// mesh_TimeΔ_Default_ExternalSkeletonA01.rotateX( - Math.PI / 2 );
+
+			// TimeΔ_Default_ExternalSkeletonA01.lookAt(camera)
+			
+			TimeΔ_Default_ExternalSkeletonA01.add(mesh_TimeΔ_Default_ExternalSkeletonA01)
+
+
+
+			TimeΔ_Default_ExternalSkeletonA02 = new THREE.Group()
+			TimeΔ_Default_ExternalSkeletonA02.position.set(0, 0, 0)
+			TimeΔ_Default_ExternalSkeletonA02.rotation.set(1.575, 0, 0)
+			TimeΔ_Default_ExternalSkeletonA02.scale.set(10, 150, 10)
+			TimeΔ_Default_root.add(TimeΔ_Default_ExternalSkeletonA02)
+
+
+			const mat_TimeΔ_Default_ExternalSkeletonA02 = new THREE.MeshBasicMaterial({ map: BasicHud03b, side: THREE.DoubleSide });
+			mesh_TimeΔ_Default_ExternalSkeletonA02 = new THREE.Mesh(geo_objT_CylinderClosedA0, mat_TimeΔ_Default_ExternalSkeletonA02);
+			mat_TimeΔ_Default_ExternalSkeletonA02.transparent = true;
+			mat_TimeΔ_Default_ExternalSkeletonA02.alphaMap = BasicHud03b;
+			mesh_TimeΔ_Default_ExternalSkeletonA02.position.set(0, 0, 0);
+			// mesh_TimeΔ_Default_ExternalSkeletonA02.position.set(-15000, 0, 0);
+			mesh_TimeΔ_Default_ExternalSkeletonA02.scale.set(1, 1, 1);
+			mesh_TimeΔ_Default_ExternalSkeletonA02.rotation.set(0, 0, 0);
+			// mesh_TimeΔ_Default_ExternalSkeletonA02.rotateX( - Math.PI / 2 );
+
+			// TimeΔ_Default_ExternalSkeletonA02.lookAt(camera)
+			
+			TimeΔ_Default_ExternalSkeletonA02.add(mesh_TimeΔ_Default_ExternalSkeletonA02)
+
+
+
+
+			TimeΔ_Default_ExternalSkeletonA03 = new THREE.Group()
+			TimeΔ_Default_ExternalSkeletonA03.position.set(0, 0, 0)
+			TimeΔ_Default_ExternalSkeletonA03.rotation.set(1.575, 0, 0)
+			TimeΔ_Default_ExternalSkeletonA03.scale.set(10, 150, 10)
+			TimeΔ_Default_root.add(TimeΔ_Default_ExternalSkeletonA03)
+
+
+			const mat_TimeΔ_Default_ExternalSkeletonA03 = new THREE.MeshBasicMaterial({ map: BasicHud03b, side: THREE.DoubleSide });
+			mesh_TimeΔ_Default_ExternalSkeletonA03 = new THREE.Mesh(geo_objT_CylinderClosedA0, mat_TimeΔ_Default_ExternalSkeletonA03);
+			mat_TimeΔ_Default_ExternalSkeletonA03.transparent = true;
+			mat_TimeΔ_Default_ExternalSkeletonA03.alphaMap = BasicHud03b;
+			mesh_TimeΔ_Default_ExternalSkeletonA03.position.set(0, 0, 0);
+			// mesh_TimeΔ_Default_ExternalSkeletonA03.position.set(-15000, 0, 0);
+			mesh_TimeΔ_Default_ExternalSkeletonA03.scale.set(1, 1, 1);
+			mesh_TimeΔ_Default_ExternalSkeletonA03.rotation.set(0, 0, 0);
+			// mesh_TimeΔ_Default_ExternalSkeletonA03.rotateX( - Math.PI / 2 );
+
+			// TimeΔ_Default_ExternalSkeletonA03.lookAt(camera)
+			
+			TimeΔ_Default_ExternalSkeletonA03.add(mesh_TimeΔ_Default_ExternalSkeletonA03)
 
 
 
 
 
+			//..........................................................................
+			//..TTTTTTTTT...............................hhTTTTTTTT.TTi...il.............
+			//.TTTTTTTTTTT...................cchh......hhhTTTTTTTTTTTii.iill............
+			//.TTTTTTTTTTT...................cchh......hhhTTTTTTTTTTTii.iill............
+			//.TTTTTTTTTTT...................cchh......hhhTTTTTTTTTTTii.iill............
+			//.....TTTT...eeeeeee....cccccc..cchhhhhhh.....TTTT....TTii.iill..leeeee....
+			//.....TTTT...eeeeeeee..eccccccc.cchhhhhhhh....TTTT....TTii.iill.lleeeeeee..
+			//.....TTTT..Teeeeeeee.eecccccccccchhhhhhhh....TTTT....TTii.iillllleeeeeee..
+			//.....TTTT..Teee..eeeeeecc..cccccchh..hhhh....TTTT....TTii.iillllle..eeee..
+			//.....TTTT..Teeeeeeeeeeecc......cchh..hhhh....TTTT....TTii.iillllleeeeeee..
+			//.....TTTT..Teeeeeeeeeeecc......cchh..hhhh....TTTT....TTii.iillllleeeeeee..
+			//.....TTTT..Teee......eecc..cccccchh..hhhh....TTTT....TTii.iillllle........
+			//.....TTTT..Teeeeeeeeeeecccccccccchh..hhhh....TTTT....TTii.iillllleeeeeee..
+			//.....TTTT..Teeeeeeee.eeccccccc.cchh..hhhh....TTTT....TTii.iill.lleeeeeee..
+			//.....TTTT...eeeeeeee..eccccccc.cchh..hhhh....TTTT....TTii.iill.lleeeeee...
+			//..............eeee......cccc.....................................eeee.....
+			//..........................................................................
 
+
+			class TechTileΔ {
+				constructor(
+					px, py, pz
+				) {
+					this.coordinates = {
+						positionx: px,
+						positiony: py,
+						positionz: pz
+					}
+				}
+			}
+
+
+			TechTile_default_root = new THREE.Group()
+			TechTile_default_root.position.set(0, 10, 20)
+			TechTile_default_root.rotation.set(0, 0, 0)
+			TechTile_default_root.scale.set(0.05, 0.05, 0.05)
+			scene.add(TechTile_default_root)
+
+
+			TechTile_default_base = new THREE.Group()
+			TechTile_default_base.position.set(0, 0, 0)
+			TechTile_default_base.rotation.set(0, 0, 0)
+			TechTile_default_base.scale.set(0.1, 0.1, 0.1)
+			TechTile_default_root.add(TechTile_default_base)
+
+
+			let logFunction_TechTileTest = () => {
+				console.log("working!")
+			}
+
+
+			TechTile_default_base.add(
+				new hoverObject(
+					'img',
+					0, 0, 0,
+					0, 0, 0,
+					0.1, 0.1, 0.1,
+					"Testing234", "TestingClass234",
+					"./assets/img/10-ObjectUI/02-TechTiles/version07/A00_TechTileContainer.svg", 
+					logFunction_TechTileTest,
+					"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+				)
+			)
+
+
+			
 
 
 
@@ -12738,9 +12931,9 @@
 
 				const folderLoadTestingContainer01 = gui.addFolder('<<< LoadPoint01 :: floorDesign01_Grid >>>')
 
-				folderLoadTestingContainer01.add(floorDesign01_Grid.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
-				folderLoadTestingContainer01.add(floorDesign01_Grid.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
-				folderLoadTestingContainer01.add(floorDesign01_Grid.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
+				folderLoadTestingContainer01.add(floorDesign01_Grid.position, 'x').min(-1500).max(1500).step(1).name('[ ⇄ Scroll ]');
+				folderLoadTestingContainer01.add(floorDesign01_Grid.position, 'y').min(-1500).max(1500).step(1).name('[ ⇅ Scroll ]');
+				folderLoadTestingContainer01.add(floorDesign01_Grid.position, 'z').min(-1500).max(1500).step(1).name('[ ⇄⇅ Scroll ]');
 				folderLoadTestingContainer01.add(floorDesign01_Grid.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
 				folderLoadTestingContainer01.add(floorDesign01_Grid.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
 				folderLoadTestingContainer01.add(floorDesign01_Grid.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
@@ -12748,53 +12941,53 @@
 				folderLoadTestingContainer01.add(floorDesign01_Grid.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
 				folderLoadTestingContainer01.add(floorDesign01_Grid.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
-				const folderLoadTestingContainer02 = gui.addFolder('<<< LoadPoint02 :: TimeΔ_Default_Skeleton >>>')
+				const folderLoadTestingContainer02 = gui.addFolder('<<< LoadPoint02 :: TimeΔ_Default_ExternalSkeletonA00 >>>')
 
-				folderLoadTestingContainer02.add(TimeΔ_Default_Skeleton.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
-				folderLoadTestingContainer02.add(TimeΔ_Default_Skeleton.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
-				folderLoadTestingContainer02.add(TimeΔ_Default_Skeleton.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
-				folderLoadTestingContainer02.add(TimeΔ_Default_Skeleton.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
-				folderLoadTestingContainer02.add(TimeΔ_Default_Skeleton.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
-				folderLoadTestingContainer02.add(TimeΔ_Default_Skeleton.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
-				folderLoadTestingContainer02.add(TimeΔ_Default_Skeleton.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
-				folderLoadTestingContainer02.add(TimeΔ_Default_Skeleton.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
-				folderLoadTestingContainer02.add(TimeΔ_Default_Skeleton.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
+				folderLoadTestingContainer02.add(TimeΔ_Default_ExternalSkeletonA00.position, 'x').min(-1500).max(1500).step(1).name('[ ⇄ Scroll ]');
+				folderLoadTestingContainer02.add(TimeΔ_Default_ExternalSkeletonA00.position, 'y').min(-1500).max(1500).step(1).name('[ ⇅ Scroll ]');
+				folderLoadTestingContainer02.add(TimeΔ_Default_ExternalSkeletonA00.position, 'z').min(-1500).max(1500).step(1).name('[ ⇄⇅ Scroll ]');
+				folderLoadTestingContainer02.add(TimeΔ_Default_ExternalSkeletonA00.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
+				folderLoadTestingContainer02.add(TimeΔ_Default_ExternalSkeletonA00.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
+				folderLoadTestingContainer02.add(TimeΔ_Default_ExternalSkeletonA00.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
+				folderLoadTestingContainer02.add(TimeΔ_Default_ExternalSkeletonA00.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
+				folderLoadTestingContainer02.add(TimeΔ_Default_ExternalSkeletonA00.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
+				folderLoadTestingContainer02.add(TimeΔ_Default_ExternalSkeletonA00.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
-				const folderLoadTestingContainer03 = gui.addFolder('<<< LoadPoint03 :: RightBrainSettings_root >>>')
+				const folderLoadTestingContainer03 = gui.addFolder('<<< LoadPoint03 :: TimeΔ_Default_ExternalSkeletonA01 >>>')
 
-				folderLoadTestingContainer03.add(RightBrainSettings_root.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
-				folderLoadTestingContainer03.add(RightBrainSettings_root.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
-				folderLoadTestingContainer03.add(RightBrainSettings_root.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
-				folderLoadTestingContainer03.add(RightBrainSettings_root.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
-				folderLoadTestingContainer03.add(RightBrainSettings_root.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
-				folderLoadTestingContainer03.add(RightBrainSettings_root.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
-				folderLoadTestingContainer03.add(RightBrainSettings_root.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
-				folderLoadTestingContainer03.add(RightBrainSettings_root.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
-				folderLoadTestingContainer03.add(RightBrainSettings_root.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
+				folderLoadTestingContainer03.add(TimeΔ_Default_ExternalSkeletonA01.position, 'x').min(-1500).max(1500).step(1).name('[ ⇄ Scroll ]');
+				folderLoadTestingContainer03.add(TimeΔ_Default_ExternalSkeletonA01.position, 'y').min(-1500).max(1500).step(1).name('[ ⇅ Scroll ]');
+				folderLoadTestingContainer03.add(TimeΔ_Default_ExternalSkeletonA01.position, 'z').min(-1500).max(1500).step(1).name('[ ⇄⇅ Scroll ]');
+				folderLoadTestingContainer03.add(TimeΔ_Default_ExternalSkeletonA01.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
+				folderLoadTestingContainer03.add(TimeΔ_Default_ExternalSkeletonA01.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
+				folderLoadTestingContainer03.add(TimeΔ_Default_ExternalSkeletonA01.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
+				folderLoadTestingContainer03.add(TimeΔ_Default_ExternalSkeletonA01.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
+				folderLoadTestingContainer03.add(TimeΔ_Default_ExternalSkeletonA01.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
+				folderLoadTestingContainer03.add(TimeΔ_Default_ExternalSkeletonA01.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
-				const folderLoadTestingContainer04 = gui.addFolder('<<< LoadPoint04 :: LeftPanelWindow01_App08 >>>')
+				const folderLoadTestingContainer04 = gui.addFolder('<<< LoadPoint04 :: TechTile_default_base >>>')
 
-				folderLoadTestingContainer04.add(LeftPanelWindow01_App08.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
-				folderLoadTestingContainer04.add(LeftPanelWindow01_App08.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
-				folderLoadTestingContainer04.add(LeftPanelWindow01_App08.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
-				folderLoadTestingContainer04.add(LeftPanelWindow01_App08.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
-				folderLoadTestingContainer04.add(LeftPanelWindow01_App08.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
-				folderLoadTestingContainer04.add(LeftPanelWindow01_App08.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
-				folderLoadTestingContainer04.add(LeftPanelWindow01_App08.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
-				folderLoadTestingContainer04.add(LeftPanelWindow01_App08.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
-				folderLoadTestingContainer04.add(LeftPanelWindow01_App08.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
+				folderLoadTestingContainer04.add(TechTile_default_base.position, 'x').min(-1500).max(1500).step(1).name('[ ⇄ Scroll ]');
+				folderLoadTestingContainer04.add(TechTile_default_base.position, 'y').min(-1500).max(1500).step(1).name('[ ⇅ Scroll ]');
+				folderLoadTestingContainer04.add(TechTile_default_base.position, 'z').min(-1500).max(1500).step(1).name('[ ⇄⇅ Scroll ]');
+				folderLoadTestingContainer04.add(TechTile_default_base.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
+				folderLoadTestingContainer04.add(TechTile_default_base.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
+				folderLoadTestingContainer04.add(TechTile_default_base.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
+				folderLoadTestingContainer04.add(TechTile_default_base.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
+				folderLoadTestingContainer04.add(TechTile_default_base.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
+				folderLoadTestingContainer04.add(TechTile_default_base.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
-				const folderLoadTestingContainer05 = gui.addFolder('<<< LoadPoint05 :: LeftPanelWindow01_App09 >>>')
+				const folderLoadTestingContainer05 = gui.addFolder('<<< LoadPoint05 :: TimeΔ_Default_ExternalSkeletonA03 >>>')
 
-				folderLoadTestingContainer05.add(LeftPanelWindow01_App09.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
-				folderLoadTestingContainer05.add(LeftPanelWindow01_App09.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
-				folderLoadTestingContainer05.add(LeftPanelWindow01_App09.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
-				folderLoadTestingContainer05.add(LeftPanelWindow01_App09.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
-				folderLoadTestingContainer05.add(LeftPanelWindow01_App09.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
-				folderLoadTestingContainer05.add(LeftPanelWindow01_App09.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
-				folderLoadTestingContainer05.add(LeftPanelWindow01_App09.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
-				folderLoadTestingContainer05.add(LeftPanelWindow01_App09.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
-				folderLoadTestingContainer05.add(LeftPanelWindow01_App09.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
+				folderLoadTestingContainer05.add(TimeΔ_Default_ExternalSkeletonA03.position, 'x').min(-1500).max(1500).step(1).name('[ ⇄ Scroll ]');
+				folderLoadTestingContainer05.add(TimeΔ_Default_ExternalSkeletonA03.position, 'y').min(-1500).max(1500).step(1).name('[ ⇅ Scroll ]');
+				folderLoadTestingContainer05.add(TimeΔ_Default_ExternalSkeletonA03.position, 'z').min(-1500).max(1500).step(1).name('[ ⇄⇅ Scroll ]');
+				folderLoadTestingContainer05.add(TimeΔ_Default_ExternalSkeletonA03.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
+				folderLoadTestingContainer05.add(TimeΔ_Default_ExternalSkeletonA03.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
+				folderLoadTestingContainer05.add(TimeΔ_Default_ExternalSkeletonA03.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
+				folderLoadTestingContainer05.add(TimeΔ_Default_ExternalSkeletonA03.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
+				folderLoadTestingContainer05.add(TimeΔ_Default_ExternalSkeletonA03.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
+				folderLoadTestingContainer05.add(TimeΔ_Default_ExternalSkeletonA03.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
 				const folderLoadTestingContainer06 = gui.addFolder('<<< LoadPoint06 : LeftPanelWindow01_App10 >>>')
 
@@ -13423,7 +13616,9 @@
 				// ########################################################
 				// Primary Animations____________
 				// ###########################
-				DrawRange01.rotation.y = time * 0.001
+				
+				particles.rotation.y = time * 0.001 
+				DrawRange01.rotation.y = time * 0.001 
 				LeftBrain_defaultSphere.rotation.y = time * 0.001
 				RightBrain_defaultSphere.rotation.y = time * 0.001
 				LeftBrain_default_OrbitMenu01.rotation.z = time * 0.001
