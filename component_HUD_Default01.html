@@ -1690,7 +1690,7 @@
 							<video id="ExpressionMainVideo00" class="ExpressionVideoMainClass01" playsinline autoplay loop muted controls webkit-playsinline width="320" height="240" src="./assets/video/RealityHold02.mp4" style="border: 5px 5px black;"></video>
 
 
-							<video id="video" class="myVideo01" playsinline controls webkit-playsinline width="320" height="240" src="./assets/video/RealityOpening_5.mp4" style="border: 5px 5px black;"></video> 
+							<video id="video" class="myVideo01" playsinline controls autoplay webkit-playsinline width="320" height="240" src="./assets/video/SphereAnimations/Equations2.mp4" style="border: 5px 5px black;"></video> 
 			
 							<!-- VideoDomain01: Equations -->
 							<video id="video02" class="myVideo02" playsinline controls webkit-playsinline  autoplay loop width="320" height="240" src="./assets/video/whiteHexBg03.mp4" border: 5px 5px black;"></video>
@@ -1704,7 +1704,7 @@
 			
 			
 							<!-- VideoDomain03: PurpleTechTunnel -->
-							<video id="video05" class="myVideo05" playsinline controls webkit-playsinline autoplay loop width="320" height="240" src="./assets/video/PurpleTechTunnel.mp4" border: 5px 5px black;"></video>
+							<video id="video05" class="myVideo05" playsinline controls webkit-playsinline autoplay loop width="320" height="240" src="./assets/video/ActionAnimations/Animation_EnergyLines_FutureFunk.mp4" border: 5px 5px black;"></video>
 
 
 							<!-- VideoDomain02: WhiteHexes -->
@@ -1712,7 +1712,7 @@
 
 
 							<!-- VideoDomain02: Trees -->
-							<video id="video07" class="myVideo07" playsinline controls webkit-playsinline  autoplay loop width="320" height="240" src="./assets/video/Sunrise01.mp4" border: 5px 5px black;"></video>
+							<video id="video07" class="myVideo07" playsinline controls webkit-playsinline  autoplay loop width="320" height="240" src="./assets/video/TunnelAnimations/TechTunnelC01.mp4" border: 5px 5px black;"></video>
 
 
 							<!-- VideoDomain02: Search_html_video01 -->
@@ -2694,6 +2694,9 @@
 			let TimeΔ_Default_InternalSkeleton_A03, mesh_TimeΔ_Default_InternalSkeleton_A03
 
 
+			let primaryTimeViewer
+
+
 			let TimeΔ_Default_ΔItem01, mesh_TimeΔ_Default_ΔItem01
 			let TimeΔ_Default_ΔItem02, mesh_TimeΔ_Default_ΔItem02
 
@@ -2720,6 +2723,7 @@
 
 			let TechTile_default_root
 			let TechTile_default_base
+			let TechTile_default_base_option00
 			let TechTile_default_base_option01
 			let TechTile_default_base_option02
 			let TechTile_default_base_option03
@@ -7890,13 +7894,13 @@
 				CenterBrain_VideoSphere_Opening = new THREE.Group()
 				CenterBrain_VideoSphere_Opening.position.set(0, 1.15, 144)
 				CenterBrain_VideoSphere_Opening.rotation.set(0, 0, 0)
-				CenterBrain_VideoSphere_Opening.scale.set(10, 10, 10)
+				CenterBrain_VideoSphere_Opening.scale.set(30, 30, 30)
 				scene.add(CenterBrain_VideoSphere_Opening)
 				// camera.attach(CenterBrain_VideoSphere_Opening)
 
-				const videoOpening = document.getElementById('openingVideo')
-				const videoOpening_Tex = new THREE.VideoTexture(videoOpening)
-				const videoOpening_Mat = new THREE.MeshBasicMaterial(
+				let videoOpening = document.getElementById('openingVideo')
+				let videoOpening_Tex = new THREE.VideoTexture(videoOpening)
+				let videoOpening_Mat = new THREE.MeshBasicMaterial(
 					{
 						map: videoOpening_Tex,
 						side: THREE.DoubleSide,
@@ -12542,28 +12546,28 @@
 			// #+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#
 
 
-			// TimeΔ_Default_root/ TimeΔ_Default_ExternalSkeletonA02
-			TimeΔ_Default_ExternalSkeletonA02 = new THREE.Group()
-			TimeΔ_Default_ExternalSkeletonA02.position.set(0, 0, 0)
-			TimeΔ_Default_ExternalSkeletonA02.rotation.set(1.575, 0, 0)
-			TimeΔ_Default_ExternalSkeletonA02.scale.set(50, 150, 50)
-			TimeΔ_Default_root.add(TimeΔ_Default_ExternalSkeletonA02)
+			// // TimeΔ_Default_root/ TimeΔ_Default_ExternalSkeletonA02
+			// TimeΔ_Default_ExternalSkeletonA02 = new THREE.Group()
+			// TimeΔ_Default_ExternalSkeletonA02.position.set(0, 0, 0)
+			// TimeΔ_Default_ExternalSkeletonA02.rotation.set(1.575, 0, 0)
+			// TimeΔ_Default_ExternalSkeletonA02.scale.set(50, 150, 50)
+			// TimeΔ_Default_root.add(TimeΔ_Default_ExternalSkeletonA02)
 
 
-			// TimeΔ_Default_root/ TimeΔ_Default_ExternalSkeletonA02 / mesh_TimeΔ_Default_ExternalSkeletonA02
-			const mat_TimeΔ_Default_ExternalSkeletonA02 = new THREE.MeshBasicMaterial({ map: BasicHud03b, side: THREE.DoubleSide });
-			mesh_TimeΔ_Default_ExternalSkeletonA02 = new THREE.Mesh(geo_objT_CylinderClosedA0, mat_TimeΔ_Default_ExternalSkeletonA02);
-			mat_TimeΔ_Default_ExternalSkeletonA02.transparent = true;
-			mat_TimeΔ_Default_ExternalSkeletonA02.alphaMap = BasicHud03b;
-			mesh_TimeΔ_Default_ExternalSkeletonA02.position.set(0, 0, 0);
-			// mesh_TimeΔ_Default_ExternalSkeletonA02.position.set(-15000, 0, 0);
-			mesh_TimeΔ_Default_ExternalSkeletonA02.scale.set(1, 1, 1);
-			mesh_TimeΔ_Default_ExternalSkeletonA02.rotation.set(0, 0, 0);
-			// mesh_TimeΔ_Default_ExternalSkeletonA02.rotateX( - Math.PI / 2 );
+			// // TimeΔ_Default_root/ TimeΔ_Default_ExternalSkeletonA02 / mesh_TimeΔ_Default_ExternalSkeletonA02
+			// const mat_TimeΔ_Default_ExternalSkeletonA02 = new THREE.MeshBasicMaterial({ map: BasicHud03b, side: THREE.DoubleSide });
+			// mesh_TimeΔ_Default_ExternalSkeletonA02 = new THREE.Mesh(geo_objT_CylinderClosedA0, mat_TimeΔ_Default_ExternalSkeletonA02);
+			// mat_TimeΔ_Default_ExternalSkeletonA02.transparent = true;
+			// mat_TimeΔ_Default_ExternalSkeletonA02.alphaMap = BasicHud03b;
+			// mesh_TimeΔ_Default_ExternalSkeletonA02.position.set(0, 0, 0);
+			// // mesh_TimeΔ_Default_ExternalSkeletonA02.position.set(-15000, 0, 0);
+			// mesh_TimeΔ_Default_ExternalSkeletonA02.scale.set(1, 1, 1);
+			// mesh_TimeΔ_Default_ExternalSkeletonA02.rotation.set(0, 0, 0);
+			// // mesh_TimeΔ_Default_ExternalSkeletonA02.rotateX( - Math.PI / 2 );
 
-			// TimeΔ_Default_ExternalSkeletonA02.lookAt(camera)
+			// // TimeΔ_Default_ExternalSkeletonA02.lookAt(camera)
 			
-			TimeΔ_Default_ExternalSkeletonA02.add(mesh_TimeΔ_Default_ExternalSkeletonA02)
+			// TimeΔ_Default_ExternalSkeletonA02.add(mesh_TimeΔ_Default_ExternalSkeletonA02)
 
 
 
@@ -12668,28 +12672,28 @@
 			// #+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#
 
 
-			// TimeΔ_Default_root/ TimeΔ_Default_ExternalSkeletonA03
-			TimeΔ_Default_ExternalSkeletonA03 = new THREE.Group()
-			TimeΔ_Default_ExternalSkeletonA03.position.set(0, 0, 0)
-			TimeΔ_Default_ExternalSkeletonA03.rotation.set(1.575, 0, 0)
-			TimeΔ_Default_ExternalSkeletonA03.scale.set(25, 150, 25)
-			TimeΔ_Default_root.add(TimeΔ_Default_ExternalSkeletonA03)
+			// // TimeΔ_Default_root/ TimeΔ_Default_ExternalSkeletonA03
+			// TimeΔ_Default_ExternalSkeletonA03 = new THREE.Group()
+			// TimeΔ_Default_ExternalSkeletonA03.position.set(0, 0, 0)
+			// TimeΔ_Default_ExternalSkeletonA03.rotation.set(1.575, 0, 0)
+			// TimeΔ_Default_ExternalSkeletonA03.scale.set(25, 150, 25)
+			// TimeΔ_Default_root.add(TimeΔ_Default_ExternalSkeletonA03)
 
 
-			// TimeΔ_Default_root/ TimeΔ_Default_ExternalSkeletonA03 / mesh_TimeΔ_Default_ExternalSkeletonA03
-			const mat_TimeΔ_Default_ExternalSkeletonA03 = new THREE.MeshBasicMaterial({ map: BasicHud03b, side: THREE.DoubleSide });
-			mesh_TimeΔ_Default_ExternalSkeletonA03 = new THREE.Mesh(geo_objT_CylinderClosedA0, mat_TimeΔ_Default_ExternalSkeletonA03);
-			mat_TimeΔ_Default_ExternalSkeletonA03.transparent = true;
-			mat_TimeΔ_Default_ExternalSkeletonA03.alphaMap = BasicHud03b;
-			mesh_TimeΔ_Default_ExternalSkeletonA03.position.set(0, 0, 0);
-			// mesh_TimeΔ_Default_ExternalSkeletonA03.position.set(-15000, 0, 0);
-			mesh_TimeΔ_Default_ExternalSkeletonA03.scale.set(1, 1, 1);
-			mesh_TimeΔ_Default_ExternalSkeletonA03.rotation.set(0, 0, 0);
-			// mesh_TimeΔ_Default_ExternalSkeletonA03.rotateX( - Math.PI / 2 );
+			// // TimeΔ_Default_root/ TimeΔ_Default_ExternalSkeletonA03 / mesh_TimeΔ_Default_ExternalSkeletonA03
+			// const mat_TimeΔ_Default_ExternalSkeletonA03 = new THREE.MeshBasicMaterial({ map: BasicHud03b, side: THREE.DoubleSide });
+			// mesh_TimeΔ_Default_ExternalSkeletonA03 = new THREE.Mesh(geo_objT_CylinderClosedA0, mat_TimeΔ_Default_ExternalSkeletonA03);
+			// mat_TimeΔ_Default_ExternalSkeletonA03.transparent = true;
+			// mat_TimeΔ_Default_ExternalSkeletonA03.alphaMap = BasicHud03b;
+			// mesh_TimeΔ_Default_ExternalSkeletonA03.position.set(0, 0, 0);
+			// // mesh_TimeΔ_Default_ExternalSkeletonA03.position.set(-15000, 0, 0);
+			// mesh_TimeΔ_Default_ExternalSkeletonA03.scale.set(1, 1, 1);
+			// mesh_TimeΔ_Default_ExternalSkeletonA03.rotation.set(0, 0, 0);
+			// // mesh_TimeΔ_Default_ExternalSkeletonA03.rotateX( - Math.PI / 2 );
 
-			// TimeΔ_Default_ExternalSkeletonA03.lookAt(camera)
+			// // TimeΔ_Default_ExternalSkeletonA03.lookAt(camera)
 			
-			TimeΔ_Default_ExternalSkeletonA03.add(mesh_TimeΔ_Default_ExternalSkeletonA03)
+			// TimeΔ_Default_ExternalSkeletonA03.add(mesh_TimeΔ_Default_ExternalSkeletonA03)
 
 
 
@@ -12810,16 +12814,19 @@
 
 			// TimeΔ_Default_root/ TimeΔ_Default_ExternalSkeletonA04
 			TimeΔ_Default_ExternalSkeletonA04 = new THREE.Group()
-			TimeΔ_Default_ExternalSkeletonA04.position.set(0, 0, 1500)
-			TimeΔ_Default_ExternalSkeletonA04.rotation.set(1.575, 0, 0)
-			TimeΔ_Default_ExternalSkeletonA04.scale.set(10, 150, 10)
-			TimeΔ_Default_root.add(TimeΔ_Default_ExternalSkeletonA04)
+			TimeΔ_Default_ExternalSkeletonA04.position.set(0, 0, 0)
+			TimeΔ_Default_ExternalSkeletonA04.rotation.set(0, 0, 0)
+			TimeΔ_Default_ExternalSkeletonA04.scale.set(5, 5, 5)
+			scene.add(TimeΔ_Default_ExternalSkeletonA04)
+			// camera.attach(TimeΔ_Default_ExternalSkeletonA04)
 
 
 			// TimeΔ_Default_root/ TimeΔ_Default_ExternalSkeletonA04 / mesh_TimeΔ_Default_ExternalSkeletonA04
 			const mat_TimeΔ_Default_ExternalSkeletonA04 = new THREE.MeshBasicMaterial({ map: BasicHud03b, side: THREE.DoubleSide });
-			mesh_TimeΔ_Default_ExternalSkeletonA04 = new THREE.Mesh(geo_objT_CylinderClosedA0, mat_TimeΔ_Default_ExternalSkeletonA04);
+			mesh_TimeΔ_Default_ExternalSkeletonA04 = new THREE.Mesh(geo_objT_SphereA0, mat_TimeΔ_Default_ExternalSkeletonA04);
 			mat_TimeΔ_Default_ExternalSkeletonA04.transparent = true;
+			mat_TimeΔ_Default_ExternalSkeletonA04.color = new THREE.Color("#00ffb3")
+			mat_TimeΔ_Default_ExternalSkeletonA04.blending = THREE.AdditiveBlending
 			mat_TimeΔ_Default_ExternalSkeletonA04.alphaMap = BasicHud03b;
 			mesh_TimeΔ_Default_ExternalSkeletonA04.position.set(0, 0, 0);
 			// mesh_TimeΔ_Default_ExternalSkeletonA04.position.set(-15000, 0, 0);
@@ -12833,8 +12840,213 @@
 
 
 
+
+
+			// // TimeΔ_Default_root/ TimeΔ_Default_ExternalSkeletonA04 / mesh_TimeΔ_Default_ExternalSkeletonA04 / primaryTimeViewer
+			primaryTimeViewer = new THREE.Group()
+			primaryTimeViewer.position.set(13, 3.3, -3.5)
+			primaryTimeViewer.rotation.set(0, -1.575, 0)
+			primaryTimeViewer.scale.set(0.075, 0.075, 0.075)
+			TimeΔ_Default_ExternalSkeletonA04.add(primaryTimeViewer)
+
+
+			primaryTimeViewer.add(
+
+				new makePDF_ViewerCircle(
+					0, 0, 0,
+					0, 0, 0,
+					0.1, 0.1, 0.1,
+					"hoverClockA1",
+					"./pages/Applications/01-TimeClock/TimeClock.html",
+					"1200px", "1200px"
+				)
+			)
+
+
+
 			// #+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#
 			// #+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#
+
+
+			let timeΔ_Animation = () => {
+				gsap.to(TimeΔ_Default_root.position, {
+						repeat: -1,
+						duration: 50,
+						delay: 0,
+						z: 1025,
+				})
+			}
+
+
+			document.addEventListener("keydown", function(event) {
+				if (event.key === "t") {
+					
+
+					gsap.to(camera.position, {
+						duration: .5,
+						delay: 0,
+						z: `-=50`,
+
+					})
+
+
+					gsap.to(TimeΔ_Default_ExternalSkeletonA04.position, {
+						duration: .5,
+						delay: 0,
+						z: `-=50`,
+
+					})
+
+
+					gsap.to(TimeΔ_Default_ExternalSkeletonA04.rotation, {
+						duration: .5,
+						delay: 0,
+						y: `-=0.1`,
+
+					})
+				}
+			})
+
+
+
+			document.addEventListener("keydown", function(event) {
+				if (event.ctrlKey && event.key === "t") {
+					
+
+					gsap.to(camera.position, {
+						duration: .5,
+						delay: 0,
+						z: `+=50`,
+
+					})
+
+
+					gsap.to(TimeΔ_Default_ExternalSkeletonA04.position, {
+						duration: .5,
+						delay: 0,
+						z: `+=50`,
+
+					})
+
+					gsap.to(TimeΔ_Default_ExternalSkeletonA04.rotation, {
+						duration: .5,
+						delay: 0,
+						y: `+=0.1`,
+
+					})
+				}
+			})
+
+
+
+			document.addEventListener("keydown", function(event) {
+				if (event.key === "y") {
+
+					CenterBrain_VideoSphere_Opening = new THREE.Group()
+					CenterBrain_VideoSphere_Opening.position.set(0, 1.15, 144)
+					CenterBrain_VideoSphere_Opening.rotation.set(0, 0, 0)
+					CenterBrain_VideoSphere_Opening.scale.set(30, 30, 30)
+					scene.add(CenterBrain_VideoSphere_Opening)
+
+					let videoOpening01 = document.getElementById('video07')
+					let videoOpening_Tex = new THREE.VideoTexture(videoOpening01)
+					let videoOpening_Mat = new THREE.MeshBasicMaterial(
+						{
+							map: videoOpening_Tex,
+							side: THREE.DoubleSide,
+							toneMapped: false,
+						}
+					)
+			
+					mesh_CenterBrain_VideoSphere_Opening = new THREE.Mesh(
+						geo_objT_SphereA0, 
+						videoOpening_Mat
+					)
+
+					mesh_CenterBrain_VideoSphere_Opening.position.set(0, 0, 0)
+					mesh_CenterBrain_VideoSphere_Opening.rotation.set(0, 1.565, 0)
+					mesh_CenterBrain_VideoSphere_Opening.scale.set(100, 100, 100)
+					CenterBrain_VideoSphere_Opening.add(mesh_CenterBrain_VideoSphere_Opening)
+
+
+					openingButtonIconGroup = new THREE.Group()
+					openingButtonIconGroup.position.set(0, 0, -20000)
+					openingButtonIconGroup.rotation.set(0, 0, 0)
+					openingButtonIconGroup.scale.set(1, 1, 1)
+					scene.add(openingButtonIconGroup)
+
+
+					gsap.to(TimeΔ_Default_root.position, {
+						duration: 150,
+						delay: 0,
+						z: `+=5000`,
+
+					})
+					
+
+					// gsap.to(camera.position, {
+					// 	duration: 50,
+					// 	delay: 0,
+					// 	z: `-=15000`,
+
+					// })
+
+
+					// gsap.to(TimeΔ_Default_ExternalSkeletonA04.position, {
+					// 	duration: 50,
+					// 	delay: 0,
+					// 	z: `-=15000`,
+
+					// })
+
+					gsap.to(TimeΔ_Default_ExternalSkeletonA04.rotation, {
+						duration: 50,
+						delay: 0,
+						y: `-=3.14`,
+
+					})
+				}
+			})
+
+
+
+			document.addEventListener("keydown", function(event) {
+				if (event.ctrlKey && event.key === "y") {
+
+					videoOpening = document.getElementById('video07')
+
+
+					gsap.to(TimeΔ_Default_root.position, {
+						duration: 150,
+						delay: 0,
+						z: `-=5000`,
+
+					})
+					
+
+					// gsap.to(camera.position, {
+					// 	duration: 50,
+					// 	delay: 0,
+					// 	z: `+=15000`,
+
+					// })
+
+
+					// gsap.to(TimeΔ_Default_ExternalSkeletonA04.position, {
+					// 	duration: 50,
+					// 	delay: 0,
+					// 	z: `+=15000`,
+
+					// })
+
+					gsap.to(TimeΔ_Default_ExternalSkeletonA04.rotation, {
+						duration: 50,
+						delay: 0,
+						y: `+=3.14`,
+
+					})
+				}
+			})
 
 
 
@@ -12876,32 +13088,208 @@
 			TechTile_default_root.position.set(0, 10, -5)
 			TechTile_default_root.rotation.set(0, 0, 0)
 			TechTile_default_root.scale.set(0.05, 0.05, 0.05)
+			// TechTile_default_root.scale.set(1, 1, 1)
 			scene.add(TechTile_default_root)
 
 
+			// TechTile_default_base
+			// --------------------------------------------------------
 			TechTile_default_base = new THREE.Group()
 			TechTile_default_base.position.set(0, 0, 0)
 			TechTile_default_base.rotation.set(0, 0, 0)
 			TechTile_default_base.scale.set(0.1, 0.1, 0.1)
 			TechTile_default_root.add(TechTile_default_base)
 
-
-			let logFunction_TechTileTest = () => {
-				console.log("working!")
+			let randomFunction_01 = () => {
+				gsap.to(TechTile_default_base.scale, {
+					duration: 1,
+					delay: 0,
+					y: 1,
+					x: 1,
+					z: 1,
+				})
 			}
-
 
 			TechTile_default_base.add(
 				new hoverObject(
 					'img',
 					0, 0, 0,
 					0, 0, 0,
-					0.1, 0.1, 0.1,
+					0.125, 0.125, 0.125,
 					"Testing234", "TestingClass234",
 					"./assets/img/10-ObjectUI/02-TechTiles/version07/A00_TechTileContainer.svg", 
-					logFunction_TechTileTest,
+					randomFunction_01,
 					"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
 				)
+			)
+			
+
+			// TechTile_default_base_option00
+			// --------------------------------------------------------
+			TechTile_default_base_option00 = new THREE.Group()
+			TechTile_default_base_option00.position.set(0, 0, 0)
+			TechTile_default_base_option00.rotation.set(0, 0, 0)
+			TechTile_default_base_option00.scale.set(0.1, 0.1, 0.1)
+			TechTile_default_root.add(TechTile_default_base_option00)
+
+			
+
+
+			let fxA0_techTile_makeBaseLarger = () => {
+				gsap.to(TechTile_default_base.scale, {
+					duration: 1,
+					delay: 0,
+					y: 0.5,
+					x: 0.5,
+					z: 0.5,
+				})
+
+				gsap.to(TechTile_default_base_option00.scale, {
+					duration: 1,
+					delay: 0,
+					y: 0.1,
+					x: 0.1,
+					z: 0.1,
+				})
+
+				gsap.to(TechTile_default_base_option01.scale, {
+					duration: 1,
+					delay: 0,
+					y: 0.1,
+					x: 0.1,
+					z: 0.1,
+				})
+
+				gsap.to(TechTile_default_base_option02.scale, {
+					duration: 1,
+					delay: 0,
+					y: 0.1,
+					x: 0.1,
+					z: 0.1,
+				})
+			}
+
+
+			TechTile_default_base_option00.add(
+    
+				new TechIcon(
+					0, 0, 0.1,
+					0, 0, 0,
+					0.55, 0.55, 0.55,
+					'DefaultTechIconId', 'DefaultTechIconClassName',
+					'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+					'DefaultImgId', 'DefaultImgClassName',
+					'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+					"./assets/icons/00-Official/UI/Isometric/tools/target1.svg", "",
+					fxA0_techTile_makeBaseLarger, 
+					"ShowΔ",
+					"Toggle from here or main menu top left"
+				) 
+
+			)
+
+
+
+			TechTile_default_base_option01 = new THREE.Group()
+			TechTile_default_base_option01.position.set(-5, 5, 0)
+			TechTile_default_base_option01.rotation.set(0, 0, 0)
+			TechTile_default_base_option01.scale.set(0.001, 0.001, 0.001)
+			TechTile_default_root.add(TechTile_default_base_option01)
+
+			
+
+
+			let fxA0_techTile_makeBaseSmaller = () => {
+				gsap.to(TechTile_default_base.scale, {
+					duration: 1,
+					delay: 0,
+					y: 0.1,
+					x: 0.1,
+					z: 0.1,
+				})
+
+				gsap.to(TechTile_default_base_option01.scale, {
+					duration: 1,
+					delay: 0,
+					y: 0.001,
+					x: 0.001,
+					z: 0.001,
+				})
+
+				gsap.to(TechTile_default_base_option02.scale, {
+					duration: 1,
+					delay: 0,
+					y: 0.001,
+					x: 0.001,
+					z: 0.001,
+				})
+			}
+
+
+			TechTile_default_base_option01.add(
+    
+				new TechIcon(
+					0, 0, 0.1,
+					0, 0, 0,
+					0.55, 0.55, 0.55,
+					'DefaultTechIconId', 'DefaultTechIconClassName',
+					'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+					'DefaultImgId', 'DefaultImgClassName',
+					'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+					"./assets/icons/00-Official/UI/Isometric/tools/target1.svg", "",
+					fxA0_techTile_makeBaseSmaller, 
+					"ShowΔ",
+					"Toggle from here or main menu top left"
+				) 
+
+			)
+
+
+
+			TechTile_default_base_option02 = new THREE.Group()
+			TechTile_default_base_option02.position.set(5, 5, 0)
+			TechTile_default_base_option02.rotation.set(0, 0, 0)
+			TechTile_default_base_option02.scale.set(0.001, 0.001, 0.001)
+			TechTile_default_root.add(TechTile_default_base_option02)
+
+			
+
+
+			let fxA0_techTile_makeBaseSmaller2 = () => {
+				gsap.to(TechTile_default_base.scale, {
+					duration: 1,
+					delay: 0,
+					y: 0.1,
+					x: 0.1,
+					z: 0.1,
+				})
+
+				gsap.to(TechTile_default_base_option02.scale, {
+					duration: 1,
+					delay: 0,
+					y: 0.001,
+					x: 0.001,
+					z: 0.001,
+				})
+			}
+
+
+			TechTile_default_base_option02.add(
+    
+				new TechIcon(
+					0, 0, 0.1,
+					0, 0, 0,
+					0.55, 0.55, 0.55,
+					'DefaultTechIconId', 'DefaultTechIconClassName',
+					'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+					'DefaultImgId', 'DefaultImgClassName',
+					'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+					"./assets/icons/00-Official/UI/Isometric/tools/target1.svg", "",
+					fxA0_techTile_makeBaseSmaller2, 
+					"ShowΔ",
+					"Toggle from here or main menu top left"
+				) 
+
 			)
 
 
@@ -13441,41 +13829,41 @@
 				folderLoadTestingContainer02.add(TimeΔ_Default_root.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
 				folderLoadTestingContainer02.add(TimeΔ_Default_root.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
-				const folderLoadTestingContainer03 = gui.addFolder('<<< LoadPoint03 :: TimeΔ_Default_ExternalSkeletonB00 >>>')
+				const folderLoadTestingContainer03 = gui.addFolder('<<< LoadPoint03 :: mesh_TimeΔ_Default_ExternalSkeletonA04 >>>')
 
-				folderLoadTestingContainer03.add(TimeΔ_Default_ExternalSkeletonB00.position, 'x').min(-1500).max(1500).step(1).name('[ ⇄ Scroll ]');
-				folderLoadTestingContainer03.add(TimeΔ_Default_ExternalSkeletonB00.position, 'y').min(-1500).max(1500).step(1).name('[ ⇅ Scroll ]');
-				folderLoadTestingContainer03.add(TimeΔ_Default_ExternalSkeletonB00.position, 'z').min(-1500).max(1500).step(1).name('[ ⇄⇅ Scroll ]');
-				folderLoadTestingContainer03.add(TimeΔ_Default_ExternalSkeletonB00.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
-				folderLoadTestingContainer03.add(TimeΔ_Default_ExternalSkeletonB00.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
-				folderLoadTestingContainer03.add(TimeΔ_Default_ExternalSkeletonB00.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
-				folderLoadTestingContainer03.add(TimeΔ_Default_ExternalSkeletonB00.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
-				folderLoadTestingContainer03.add(TimeΔ_Default_ExternalSkeletonB00.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
-				folderLoadTestingContainer03.add(TimeΔ_Default_ExternalSkeletonB00.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
+				folderLoadTestingContainer03.add(mesh_TimeΔ_Default_ExternalSkeletonA04.position, 'x').min(-1500).max(1500).step(1).name('[ ⇄ Scroll ]');
+				folderLoadTestingContainer03.add(mesh_TimeΔ_Default_ExternalSkeletonA04.position, 'y').min(-1500).max(1500).step(1).name('[ ⇅ Scroll ]');
+				folderLoadTestingContainer03.add(mesh_TimeΔ_Default_ExternalSkeletonA04.position, 'z').min(-1500).max(1500).step(1).name('[ ⇄⇅ Scroll ]');
+				folderLoadTestingContainer03.add(mesh_TimeΔ_Default_ExternalSkeletonA04.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
+				folderLoadTestingContainer03.add(mesh_TimeΔ_Default_ExternalSkeletonA04.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
+				folderLoadTestingContainer03.add(mesh_TimeΔ_Default_ExternalSkeletonA04.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
+				folderLoadTestingContainer03.add(mesh_TimeΔ_Default_ExternalSkeletonA04.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
+				folderLoadTestingContainer03.add(mesh_TimeΔ_Default_ExternalSkeletonA04.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
+				folderLoadTestingContainer03.add(mesh_TimeΔ_Default_ExternalSkeletonA04.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
-				const folderLoadTestingContainer04 = gui.addFolder('<<< LoadPoint04 :: TechTile_default_base >>>')
+				const folderLoadTestingContainer04 = gui.addFolder('<<< LoadPoint04 :: TechTile_default_base_option01 >>>')
 
-				folderLoadTestingContainer04.add(TechTile_default_base.position, 'x').min(-1500).max(1500).step(1).name('[ ⇄ Scroll ]');
-				folderLoadTestingContainer04.add(TechTile_default_base.position, 'y').min(-1500).max(1500).step(1).name('[ ⇅ Scroll ]');
-				folderLoadTestingContainer04.add(TechTile_default_base.position, 'z').min(-1500).max(1500).step(1).name('[ ⇄⇅ Scroll ]');
-				folderLoadTestingContainer04.add(TechTile_default_base.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
-				folderLoadTestingContainer04.add(TechTile_default_base.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
-				folderLoadTestingContainer04.add(TechTile_default_base.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
-				folderLoadTestingContainer04.add(TechTile_default_base.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
-				folderLoadTestingContainer04.add(TechTile_default_base.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
-				folderLoadTestingContainer04.add(TechTile_default_base.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
+				folderLoadTestingContainer04.add(TechTile_default_base_option01.position, 'x').min(-1500).max(1500).step(1).name('[ ⇄ Scroll ]');
+				folderLoadTestingContainer04.add(TechTile_default_base_option01.position, 'y').min(-1500).max(1500).step(1).name('[ ⇅ Scroll ]');
+				folderLoadTestingContainer04.add(TechTile_default_base_option01.position, 'z').min(-1500).max(1500).step(1).name('[ ⇄⇅ Scroll ]');
+				folderLoadTestingContainer04.add(TechTile_default_base_option01.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
+				folderLoadTestingContainer04.add(TechTile_default_base_option01.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
+				folderLoadTestingContainer04.add(TechTile_default_base_option01.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
+				folderLoadTestingContainer04.add(TechTile_default_base_option01.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
+				folderLoadTestingContainer04.add(TechTile_default_base_option01.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
+				folderLoadTestingContainer04.add(TechTile_default_base_option01.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
-				const folderLoadTestingContainer05 = gui.addFolder('<<< LoadPoint05 :: TimeΔ_Default_ExternalSkeletonA03 >>>')
+				const folderLoadTestingContainer05 = gui.addFolder('<<< LoadPoint05 :: primaryTimeViewer >>>')
 
-				folderLoadTestingContainer05.add(TimeΔ_Default_ExternalSkeletonA03.position, 'x').min(-1500).max(1500).step(1).name('[ ⇄ Scroll ]');
-				folderLoadTestingContainer05.add(TimeΔ_Default_ExternalSkeletonA03.position, 'y').min(-1500).max(1500).step(1).name('[ ⇅ Scroll ]');
-				folderLoadTestingContainer05.add(TimeΔ_Default_ExternalSkeletonA03.position, 'z').min(-1500).max(1500).step(1).name('[ ⇄⇅ Scroll ]');
-				folderLoadTestingContainer05.add(TimeΔ_Default_ExternalSkeletonA03.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
-				folderLoadTestingContainer05.add(TimeΔ_Default_ExternalSkeletonA03.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
-				folderLoadTestingContainer05.add(TimeΔ_Default_ExternalSkeletonA03.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
-				folderLoadTestingContainer05.add(TimeΔ_Default_ExternalSkeletonA03.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
-				folderLoadTestingContainer05.add(TimeΔ_Default_ExternalSkeletonA03.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
-				folderLoadTestingContainer05.add(TimeΔ_Default_ExternalSkeletonA03.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
+				folderLoadTestingContainer05.add(primaryTimeViewer.position, 'x').min(-1500).max(1500).step(1).name('[ ⇄ Scroll ]');
+				folderLoadTestingContainer05.add(primaryTimeViewer.position, 'y').min(-1500).max(1500).step(1).name('[ ⇅ Scroll ]');
+				folderLoadTestingContainer05.add(primaryTimeViewer.position, 'z').min(-1500).max(1500).step(1).name('[ ⇄⇅ Scroll ]');
+				folderLoadTestingContainer05.add(primaryTimeViewer.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
+				folderLoadTestingContainer05.add(primaryTimeViewer.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
+				folderLoadTestingContainer05.add(primaryTimeViewer.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
+				folderLoadTestingContainer05.add(primaryTimeViewer.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
+				folderLoadTestingContainer05.add(primaryTimeViewer.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
+				folderLoadTestingContainer05.add(primaryTimeViewer.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
 				const folderLoadTestingContainer06 = gui.addFolder('<<< LoadPoint06 : LeftPanelWindow01_App10 >>>')
 
@@ -14135,11 +14523,11 @@
 
 
 				// TimeΔ_Animations
-				TimeΔ_Default_ExternalSkeletonA00.rotation.y = time * 0.001
-				TimeΔ_Default_ExternalSkeletonB00.rotation.y = time * -0.001
-				TimeΔ_Default_ExternalSkeletonC00.rotation.y = time * 0.001
-				TimeΔ_Default_ExternalSkeletonD00.rotation.y = time * -0.001
-				TimeΔ_Default_ExternalSkeletonE00.rotation.y = time * 0.001
+				TimeΔ_Default_ExternalSkeletonA00.rotation.y = time * 0.005
+				TimeΔ_Default_ExternalSkeletonB00.rotation.y = time * -0.005
+				TimeΔ_Default_ExternalSkeletonC00.rotation.y = time * 0.005
+				TimeΔ_Default_ExternalSkeletonD00.rotation.y = time * -0.005
+				TimeΔ_Default_ExternalSkeletonE00.rotation.y = time * 0.005
 
 
 
@@ -14166,7 +14554,7 @@
 				}
 				
 
-				playTimeReality()
+				// playTimeReality()
 
 
 
