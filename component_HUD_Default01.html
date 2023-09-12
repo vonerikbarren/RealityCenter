@@ -2724,21 +2724,35 @@
 			let TechTile_default_root
 			let TechTile_default_base
 			let TechTile_default_base02
+			let TechTile_default_base03
 			let TechTile_default_OrderedSystem, mesh_TechTile_default_OrderedSystem
 			let TechTile_default_SpacialSystem, mesh_TechTile_default_SpacialSystem
 			let TechTile_default_PerspectiveSystem, mesh_TechTile_default_PerspectiveSystem
 
 			let TechTile_default_AdminOption00_base
+
 			let TechTile_default_AdminOption01_PreviousΔ
 			let TechTile_default_AdminOption02_EssenceΔ
 			let TechTile_default_AdminOption03_ComplexityΔ
 			let TechTile_default_AdminOption04_NextΔ
+
+			let TechTile_default_AdminOption05_NotificationsΔ
+			let TechTile_default_AdminOption06_DataΔ
+			let TechTile_default_AdminOption07_SystemΔ
+			let TechTile_default_AdminOption08_TimeΔ
+
+			let TechTile_default_AdminOptions_ComplexityΔ_Icon01_HiearchyΔ
 
 			let TechTile_default_base_option00
 			let TechTile_default_base_option01
 			let TechTile_default_base_option02
 			let TechTile_default_base_option03
 			let TechTile_default_base_option04
+
+			let TechTile_default_base_option05
+			let TechTile_default_base_option06
+			let TechTile_default_base_option07
+			let TechTile_default_base_option08
 
 
 			//...............................................................................................
@@ -2758,6 +2772,22 @@
 			//....GGGGGGGGGG..eeeeeeee..nnn...nnn....CCCCCCCC...hhh...hhh..eeeeeeee..mmm..mmmm..mmm.....111..
 			//.....GGGG.........eeee..................CCCCC..................eeee............................
 			//...............................................................................................
+
+			// #################################################################
+            //  General Chemistry Δ
+			// #################################################################
+
+			let MWCC_GeneralChem01_root
+			let MWCC_GeneralChem01_rootTree
+
+			let MWCC_GeneralChem01_Chapter01_StudyGuide
+			let MWCC_GeneralChem01_Chapter01_TextbookNotes
+			let MWCC_GeneralChem01_Chapter01_IntroNotes
+			let MWCC_GeneralChem01_Chapter01_LectureData01_Sect_1_3
+			let MWCC_GeneralChem01_Chapter01_LectureData01_Sect_1_4_and_1_5
+			let MWCC_GeneralChem01_Chapter01_LectureData01_Sect_1_6
+			let MWCC_GeneralChem01_Chapter01_LectureData01_Sect_ScientificNotation
+			let MWCC_GeneralChem01_Chapter01_LectureData01_Lecture01_Homework01
 
 
 
@@ -6517,9 +6547,15 @@
 				document.addEventListener("keydown", function(event) {
 					if (event.key === "8") {
 						gsap.to(camera.position, {
-							duration: .2,
+							duration: 1,
 							delay: 0,
 							y: 10,
+
+						})
+
+						gsap.to(camera.position, {
+							duration: 1,
+							delay: 0,
 							z: -3
 
 						})
@@ -10496,7 +10532,7 @@
 					0, 0, 0,
 					0.1, 0.1, 0.1,
 					"hoverClockA1",
-					"https://www.wikipedia.org/",
+					"https://www.programiz.com/html/online-compiler/",
 					"1920", "1200"
 				)
 
@@ -11266,7 +11302,7 @@
 
 
 			
-			// RightPanelWindow01
+			// RightPanelWindow01 
 			// ---------------------------------------------------------------------------
 			RightPanelWindow01 = new THREE.Group()
 			RightPanelWindow01.position.set(-0.725, 0.325, 0)
@@ -11282,8 +11318,8 @@
 					0, 0, 0,
 					0.1, 0.1, 0.1,
 					"hoverClockA1",
-					"https://en.wikipedia.org/wiki/Art",
-					"1920", "1200"
+					"https://www.wikipedia.org/",
+					"720", "1200"
 				)
 
 			)
@@ -13149,6 +13185,383 @@
 			)
 
 
+			// TechTile_default_AdminOption00_base
+			// --------------------------------------------------------
+			// ------------------------------------------------------------------------------------
+			TechTile_default_AdminOption00_base = new THREE.Group()
+			TechTile_default_AdminOption00_base.position.set(0, 0, 0)
+			TechTile_default_AdminOption00_base.rotation.set(0, 0, 0)
+			TechTile_default_AdminOption00_base.scale.set(0.1, 0.1, 0.1)
+			TechTile_default_root.add(TechTile_default_AdminOption00_base)
+
+
+			// TechTile_default_AdminOption01_PreviousΔ
+			// ~*~~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~
+			TechTile_default_AdminOption01_PreviousΔ = new THREE.Group()
+			TechTile_default_AdminOption01_PreviousΔ.position.set(-175, 175, 0)
+			TechTile_default_AdminOption01_PreviousΔ.rotation.set(0, 0, 0)
+			TechTile_default_AdminOption01_PreviousΔ.scale.set(0.001, 0.001, 0.001)
+			TechTile_default_AdminOption00_base.add(TechTile_default_AdminOption01_PreviousΔ)
+
+
+			
+			TechTile_default_AdminOption01_PreviousΔ.add(
+				new hoverObject(
+					'img',
+					0, 0, -0.25,
+					0, 0, 0,
+					0.135, 0.135, 0.135,
+					"Testing234", "TestingClass234",
+					"./assets/img/10-ObjectUI/02-TechTiles/version07/D00_TechTileContainer.png", 
+					randomFunction_01,
+					"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+				)
+			)
+
+
+			let makePreviousΔ_Options_Larger = () => {
+				gsap.to(TechTile_default_AdminOption01_PreviousΔ.scale, {
+					duration: 1,
+					delay: 0,
+					y: 1.5,
+					x: 1.5,
+					z: 1.5,
+				})
+			}
+
+			let makePreviousΔ_Options_Smaller = () => {
+				gsap.to(TechTile_default_AdminOption01_PreviousΔ.scale, {
+					duration: 1,
+					delay: 0,
+					y: 0.001,
+					x: 0.001,
+					z: 0.001,
+				})
+			}
+
+
+			// TechTile_default_AdminOption02_EssenceΔ
+			// ~*~~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~
+			TechTile_default_AdminOption02_EssenceΔ = new THREE.Group()
+			TechTile_default_AdminOption02_EssenceΔ.position.set(175, 175, 0)
+			TechTile_default_AdminOption02_EssenceΔ.rotation.set(0, 0, 0)
+			TechTile_default_AdminOption02_EssenceΔ.scale.set(0.001, 0.001, 0.001)
+			TechTile_default_AdminOption00_base.add(TechTile_default_AdminOption02_EssenceΔ)
+
+
+			
+			TechTile_default_AdminOption02_EssenceΔ.add(
+				new hoverObject(
+					'img',
+					0, 0, -0.25,
+					0, 0, 0,
+					0.135, 0.135, 0.135,
+					"Testing234", "TestingClass234",
+					"./assets/img/10-ObjectUI/02-TechTiles/version07/D00_TechTileContainer.png", 
+					randomFunction_01,
+					"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+				)
+			)
+
+
+			let makeEssenceΔ_Larger = () => {
+				gsap.to(TechTile_default_AdminOption02_EssenceΔ.scale, {
+					duration: 1,
+					delay: 0,
+					y: 1.5,
+					x: 1.5,
+					z: 1.5,
+				})
+			}
+
+			let makeEssenceΔ_Smaller = () => {
+				gsap.to(TechTile_default_AdminOption02_EssenceΔ.scale, {
+					duration: 1,
+					delay: 0,
+					y: 0.001,
+					x: 0.001,
+					z: 0.001,
+				})
+			}
+
+
+			// TechTile_default_AdminOption03_ComplexityΔ
+			// ~*~~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~
+			TechTile_default_AdminOption03_ComplexityΔ = new THREE.Group()
+			TechTile_default_AdminOption03_ComplexityΔ.position.set(-175, -175, 0)
+			TechTile_default_AdminOption03_ComplexityΔ.rotation.set(0, 0, 0)
+			TechTile_default_AdminOption03_ComplexityΔ.scale.set(0.001, 0.001, 0.001)
+			TechTile_default_AdminOption00_base.add(TechTile_default_AdminOption03_ComplexityΔ)
+
+
+			
+			TechTile_default_AdminOption03_ComplexityΔ.add(
+				new hoverObject(
+					'img',
+					0, 0, -0.25,
+					0, 0, 0,
+					0.135, 0.135, 0.135,
+					"Testing234", "TestingClass234",
+					"./assets/img/10-ObjectUI/02-TechTiles/version07/D00_TechTileContainer.png", 
+					randomFunction_01,
+					"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+				)
+			)
+
+
+			let makeComplexityΔ_Larger = () => {
+				gsap.to(TechTile_default_AdminOption03_ComplexityΔ.scale, {
+					duration: 1,
+					delay: 0,
+					y: 1.5,
+					x: 1.5,
+					z: 1.5,
+				})
+			}
+
+			let makeComplexityΔ_Smaller = () => {
+				gsap.to(TechTile_default_AdminOption03_ComplexityΔ.scale, {
+					duration: 1,
+					delay: 0,
+					y: 0.001,
+					x: 0.001,
+					z: 0.001,
+				})
+			}
+
+
+			// TechTile_default_AdminOption04_NextΔ
+			// ~*~~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~
+			TechTile_default_AdminOption04_NextΔ = new THREE.Group()
+			TechTile_default_AdminOption04_NextΔ.position.set(175, -175, 0)
+			TechTile_default_AdminOption04_NextΔ.rotation.set(0, 0, 0)
+			TechTile_default_AdminOption04_NextΔ.scale.set(0.001, 0.001, 0.001)
+			TechTile_default_AdminOption00_base.add(TechTile_default_AdminOption04_NextΔ)
+
+
+			
+			TechTile_default_AdminOption04_NextΔ.add(
+				new hoverObject(
+					'img',
+					0, 0, -0.25,
+					0, 0, 0,
+					0.135, 0.135, 0.135,
+					"Testing234", "TestingClass234",
+					"./assets/img/10-ObjectUI/02-TechTiles/version07/D00_TechTileContainer.png", 
+					randomFunction_01,
+					"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+				)
+			)
+
+
+			let makeNextΔ_Larger = () => {
+				gsap.to(TechTile_default_AdminOption04_NextΔ.scale, {
+					duration: 1,
+					delay: 0,
+					y: 1.5,
+					x: 1.5,
+					z: 1.5,
+				})
+			}
+
+			let makeNextΔ_Smaller = () => {
+				gsap.to(TechTile_default_AdminOption04_NextΔ.scale, {
+					duration: 1,
+					delay: 0,
+					y: 0.001,
+					x: 0.001,
+					z: 0.001,
+				})
+			}
+
+
+
+			// TechTile_default_AdminOption05_NotificationsΔ
+			// ~*~~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~
+			TechTile_default_AdminOption05_NotificationsΔ = new THREE.Group()
+			TechTile_default_AdminOption05_NotificationsΔ.position.set(0, 175, 0)
+			TechTile_default_AdminOption05_NotificationsΔ.rotation.set(0, 0, 0)
+			TechTile_default_AdminOption05_NotificationsΔ.scale.set(0.001, 0.001, 0.001)
+			TechTile_default_AdminOption00_base.add(TechTile_default_AdminOption05_NotificationsΔ)
+
+
+			
+			TechTile_default_AdminOption05_NotificationsΔ.add(
+				new hoverObject(
+					'img',
+					0, 0, -0.25,
+					0, 0, 0,
+					0.135, 0.135, 0.135,
+					"Testing234", "TestingClass234",
+					"./assets/img/10-ObjectUI/02-TechTiles/version07/D00_TechTileContainer.png", 
+					randomFunction_01,
+					"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+				)
+			)
+
+
+			let makeNotificationΔH_Larger = () => {
+				gsap.to(TechTile_default_AdminOption05_NotificationsΔ.scale, {
+					duration: 1,
+					delay: 0,
+					y: 1.5,
+					x: 1.5,
+					z: 1.5,
+				})
+			}
+
+			let makeNotificationΔH_Smaller = () => {
+				gsap.to(TechTile_default_AdminOption05_NotificationsΔ.scale, {
+					duration: 1,
+					delay: 0,
+					y: 0.001,
+					x: 0.001,
+					z: 0.001,
+				})
+			}
+
+
+
+			// TechTile_default_AdminOption06_DataΔ
+			// ~*~~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~
+			TechTile_default_AdminOption06_DataΔ = new THREE.Group()
+			TechTile_default_AdminOption06_DataΔ.position.set(175, 0, 0)
+			TechTile_default_AdminOption06_DataΔ.rotation.set(0, 0, 0)
+			TechTile_default_AdminOption06_DataΔ.scale.set(0.001, 0.001, 0.001)
+			TechTile_default_AdminOption00_base.add(TechTile_default_AdminOption06_DataΔ)
+
+
+			
+			TechTile_default_AdminOption06_DataΔ.add(
+				new hoverObject(
+					'img',
+					0, 0, -0.25,
+					0, 0, 0,
+					0.135, 0.135, 0.135,
+					"Testing234", "TestingClass234",
+					"./assets/img/10-ObjectUI/02-TechTiles/version07/D00_TechTileContainer.png", 
+					randomFunction_01,
+					"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+				)
+			)
+
+
+			let makeDataΔД_Larger = () => {
+				gsap.to(TechTile_default_AdminOption06_DataΔ.scale, {
+					duration: 1,
+					delay: 0,
+					y: 1.5,
+					x: 1.5,
+					z: 1.5,
+				})
+			}
+
+			let makeDataΔД_Smaller = () => {
+				gsap.to(TechTile_default_AdminOption06_DataΔ.scale, {
+					duration: 1,
+					delay: 0,
+					y: 0.001,
+					x: 0.001,
+					z: 0.001,
+				})
+			}
+
+
+
+
+			// TechTile_default_AdminOption07_SystemΔ
+			// ~*~~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~
+			TechTile_default_AdminOption07_SystemΔ = new THREE.Group()
+			TechTile_default_AdminOption07_SystemΔ.position.set(0, -175, 0)
+			TechTile_default_AdminOption07_SystemΔ.rotation.set(0, 0, 0)
+			TechTile_default_AdminOption07_SystemΔ.scale.set(0.001, 0.001, 0.001)
+			TechTile_default_AdminOption00_base.add(TechTile_default_AdminOption07_SystemΔ)
+
+
+			
+			TechTile_default_AdminOption07_SystemΔ.add(
+				new hoverObject(
+					'img',
+					0, 0, -0.25,
+					0, 0, 0,
+					0.135, 0.135, 0.135,
+					"Testing234", "TestingClass234",
+					"./assets/img/10-ObjectUI/02-TechTiles/version07/D00_TechTileContainer.png", 
+					randomFunction_01,
+					"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+				)
+			)
+
+
+			let makeSystemΔΔ_Larger = () => {
+				gsap.to(TechTile_default_AdminOption07_SystemΔ.scale, {
+					duration: 1,
+					delay: 0,
+					y: 1.5,
+					x: 1.5,
+					z: 1.5,
+				})
+			}
+
+			let makeSystemΔΔ_Smaller = () => {
+				gsap.to(TechTile_default_AdminOption07_SystemΔ.scale, {
+					duration: 1,
+					delay: 0,
+					y: 0.001,
+					x: 0.001,
+					z: 0.001,
+				})
+			}
+
+
+
+			// TechTile_default_AdminOption08_TimeΔ
+			// ~*~~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~
+			TechTile_default_AdminOption08_TimeΔ = new THREE.Group()
+			TechTile_default_AdminOption08_TimeΔ.position.set(-175, 0, 0)
+			TechTile_default_AdminOption08_TimeΔ.rotation.set(0, 0, 0)
+			TechTile_default_AdminOption08_TimeΔ.scale.set(0.001, 0.001, 0.001)
+			TechTile_default_AdminOption00_base.add(TechTile_default_AdminOption08_TimeΔ)
+
+
+			
+			TechTile_default_AdminOption08_TimeΔ.add(
+				new hoverObject(
+					'img',
+					0, 0, -0.25,
+					0, 0, 0,
+					0.135, 0.135, 0.135,
+					"Testing234", "TestingClass234",
+					"./assets/img/10-ObjectUI/02-TechTiles/version07/D00_TechTileContainer.png", 
+					randomFunction_01,
+					"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+				)
+			)
+
+
+			let makeΤimeΔ_Larger = () => {
+				gsap.to(TechTile_default_AdminOption08_TimeΔ.scale, {
+					duration: 1,
+					delay: 0,
+					y: 1.5,
+					x: 1.5,
+					z: 1.5,
+				})
+			}
+
+			let makeΤimeΔ_Smaller = () => {
+				gsap.to(TechTile_default_AdminOption08_TimeΔ.scale, {
+					duration: 1,
+					delay: 0,
+					y: 0.001,
+					x: 0.001,
+					z: 0.001,
+				})
+			}
+
+
+
+
 			TechTile_default_base02 = new THREE.Group()
 			TechTile_default_base02.position.set(0, 0, 0)
 			TechTile_default_base02.rotation.set(0, 0, 0)
@@ -13197,12 +13610,37 @@
 			TechTile_default_OrderedSystem.add(mesh_TechTile_default_OrderedSystem)
 
 
+
+			// TechTile_default_base03
+
+
+			TechTile_default_base03 = new THREE.Group()
+			TechTile_default_base03.position.set(0, 0, 0)
+			TechTile_default_base03.rotation.set(0, 0, 0)
+			TechTile_default_base03.scale.set(0.2, 0.2, 0.2)
+			TechTile_default_root.add(TechTile_default_base03)
+
+			TechTile_default_base03.add(
+				new hoverObject(
+					'img',
+					0, 0, -0.25,
+					0, 0, 0,
+					0.135, 0.135, 0.135,
+					"Testing234", "TestingClass234",
+					"./assets/img/10-ObjectUI/02-TechTiles/DigiTechTile07/01-Base/DigiTechTile07.png", 
+					randomFunction_01,
+					"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+				)
+			)
+
+
+
 			
 
 			// TechTile_default_base_option00
 			// --------------------------------------------------------
 			TechTile_default_base_option00 = new THREE.Group()
-			TechTile_default_base_option00.position.set(0, 0, 0.5)
+			TechTile_default_base_option00.position.set(0, 0, 0.75)
 			TechTile_default_base_option00.rotation.set(0, 0, 0)
 			TechTile_default_base_option00.scale.set(0.1, 0.1, 0.1)
 			TechTile_default_root.add(TechTile_default_base_option00)
@@ -13210,73 +13648,124 @@
 			
 
 
-			let fxA0_techTile_makeBaseLarger = () => {
-				gsap.to(TechTile_default_base.scale, {
-					duration: 1,
-					delay: 0,
-					y: 0.5,
-					x: 0.5,
-					z: 0.5,
-				})
+			let fxA0_techTile_BaseSizeToggle = () => {
 
-				gsap.to(TechTile_default_base02.scale, {
-					duration: 1,
-					delay: 0,
-					y: 0.75,
-					x: 0.75,
-					z: 0.75,
-				})
+				if (TechTile_default_base.scale.y === 0.1) {
+					gsap.to(TechTile_default_base.scale, {
+						duration: 1,
+						delay: 0,
+						y: 0.5,
+						x: 0.5,
+						z: 0.5,
+					})
 
 
-				gsap.to(TechTile_default_OrderedSystem.scale, {
-					duration: 1,
-					delay: 0,
-					y: 50,
-					x: 50,
-					z: 50,
-				})
 
-				gsap.to(TechTile_default_base_option00.scale, {
-					duration: 1,
-					delay: 0,
-					y: 0.1,
-					x: 0.1,
-					z: 0.1,
-				})
-
-				gsap.to(TechTile_default_base_option01.scale, {
-					duration: 1,
-					delay: 0,
-					y: 0.1,
-					x: 0.1,
-					z: 0.1,
-				})
-
-				gsap.to(TechTile_default_base_option02.scale, {
-					duration: 1,
-					delay: 0,
-					y: 0.1,
-					x: 0.1,
-					z: 0.1,
-				})
+					gsap.to(TechTile_default_base02.scale, {
+						duration: 1,
+						delay: 0,
+						y: 0.75,
+						x: 0.75,
+						z: 0.75,
+					})
 
 
-				gsap.to(TechTile_default_base_option03.scale, {
-					duration: 1,
-					delay: 0,
-					y: 0.1,
-					x: 0.1,
-					z: 0.1,
-				})
+					gsap.to(TechTile_default_base03.scale, {
+						duration: 2,
+						delay: 0,
+						y: 2.5,
+						x: 2.5,
+						z: 2.5,
+					})
 
 
-				gsap.to(TechTile_default_base_option04.scale, {
-					duration: 1,
-					delay: 0,
-					y: 0.1,
-					x: 0.1,
-					z: 0.1,
-				})
+					// gsap.to(TechTile_default_OrderedSystem.scale, {
+					// 	duration: 1,
+					// 	delay: 0,
+					// 	y: 75,
+					// 	x: 75,
+					// 	z: 75,
+					// })
+
+					gsap.to(TechTile_default_base_option00.scale, {
+						duration: 1,
+						delay: 0,
+						y: 0.1,
+						x: 0.1,
+						z: 0.1,
+					})
+
+					gsap.to(TechTile_default_base_option01.scale, {
+						duration: 1,
+						delay: 0,
+						y: 0.1,
+						x: 0.1,
+						z: 0.1,
+					})
+
+					gsap.to(TechTile_default_base_option02.scale, {
+						duration: 1,
+						delay: 0,
+						y: 0.1,
+						x: 0.1,
+						z: 0.1,
+					})
+
+
+					gsap.to(TechTile_default_base_option03.scale, {
+						duration: 1,
+						delay: 0,
+						y: 0.1,
+						x: 0.1,
+						z: 0.1,
+					})
+
+
+					gsap.to(TechTile_default_base_option04.scale, {
+						duration: 1,
+						delay: 0,
+						y: 0.1,
+						x: 0.1,
+						z: 0.1,
+					})
+
+
+					gsap.to(TechTile_default_base_option05.scale, {
+						duration: 1,
+						delay: 0,
+						y: 0.1,
+						x: 0.1,
+						z: 0.1,
+					})
+
+					gsap.to(TechTile_default_base_option06.scale, {
+						duration: 1,
+						delay: 0,
+						y: 0.1,
+						x: 0.1,
+						z: 0.1,
+					})
+
+					gsap.to(TechTile_default_base_option07.scale, {
+						duration: 1,
+						delay: 0,
+						y: 0.1,
+						x: 0.1,
+						z: 0.1,
+					})
+
+					gsap.to(TechTile_default_base_option08.scale, {
+						duration: 1,
+						delay: 0,
+						y: 0.1,
+						x: 0.1,
+						z: 0.1,
+					})
+
+				} else if (TechTile_default_base.scale.y === 0.5) {
+					fxA0_techTile_makeBaseSmaller()
+				}
+				
 			}
 
 
@@ -13291,7 +13780,7 @@
 					'DefaultImgId', 'DefaultImgClassName',
 					'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
 					"./assets/icons/00-Official/UI/Isometric/tools/target1.svg", "",
-					fxA0_techTile_makeBaseLarger, 
+					fxA0_techTile_BaseSizeToggle, 
 					"ShowΔ",
 					"Toggle from here or main menu top left"
 				) 
@@ -13310,7 +13799,25 @@
 
 
 			let fxA0_techTile_makeBaseSmaller = () => {
+
+				makeComplexityΔ_Smaller()
+				makeNextΔ_Smaller()
+				makeEssenceΔ_Smaller()
+				makePreviousΔ_Options_Smaller()
+				makeNotificationΔH_Smaller()
+				makeDataΔД_Smaller()
+				makeSystemΔΔ_Smaller()
+				makeΤimeΔ_Smaller()
+
 				gsap.to(TechTile_default_base.scale, {
+					duration: 1,
+					delay: 0,
+					y: 0.1,
+					x: 0.1,
+					z: 0.1,
+				})
+
+				gsap.to(TechTile_default_AdminOption00_base.scale, {
 					duration: 1,
 					delay: 0,
 					y: 0.1,
@@ -13320,6 +13827,14 @@
 
 
 				gsap.to(TechTile_default_base02.scale, {
+					duration: 1,
+					delay: 0,
+					y: 0.2,
+					x: 0.2,
+					z: 0.2,
+				})
+
+				gsap.to(TechTile_default_base03.scale, {
 					duration: 1,
 					delay: 0,
 					y: 0.2,
@@ -13367,6 +13882,42 @@
 					x: 0.001,
 					z: 0.001,
 				})
+
+				gsap.to(TechTile_default_base_option05.scale, {
+					duration: 1,
+					delay: 0,
+					y: 0.001,
+					x: 0.001,
+					z: 0.001,
+				})
+
+				gsap.to(TechTile_default_base_option06.scale, {
+					duration: 1,
+					delay: 0,
+					y: 0.001,
+					x: 0.001,
+					z: 0.001,
+				})
+
+				gsap.to(TechTile_default_base_option07.scale, {
+					duration: 1,
+					delay: 0,
+					y: 0.001,
+					x: 0.001,
+					z: 0.001,
+				})
+
+				gsap.to(TechTile_default_base_option08.scale, {
+					duration: 1,
+					delay: 0,
+					y: 0.001,
+					x: 0.001,
+					z: 0.001,
+				})
+			}
+
+			let fxA01_testFunction01_check = () => {
+				console.log("test successful")
 			}
 
 
@@ -13380,10 +13931,10 @@
 					'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
 					'DefaultImgId', 'DefaultImgClassName',
 					'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
-					"./assets/icons/00-Official/UI/Isometric/tools/target1.svg", "",
-					fxA0_techTile_makeBaseSmaller, 
-					"ShowΔ",
-					"Toggle from here or main menu top left"
+					"./assets/icons/00-Official/UI/Isometric/tools/TechTile_PreviousΔ.svg", "",
+					makePreviousΔ_Options_Larger, 
+					"Show Previous Δ",
+					"Gives you options for the previous Δ"
 				) 
 
 			)
@@ -13430,8 +13981,8 @@
 					'DefaultImgId', 'DefaultImgClassName',
 					'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
 					"./assets/icons/00-Official/UI/Isometric/tools/target1.svg", "",
-					fxA0_techTile_makeBaseSmaller2, 
-					"ShowΔ",
+					makeEssenceΔ_Larger, 
+					"Show Essence Δ Options",
 					"Toggle from here or main menu top left"
 				) 
 
@@ -13479,9 +14030,9 @@
 					'DefaultImgId', 'DefaultImgClassName',
 					'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
 					"./assets/icons/00-Official/UI/Isometric/tools/target1.svg", "",
-					fxA0_techTile_makeBaseSmaller3, 
-					"ShowΔ",
-					"Toggle from here or main menu top left"
+					makeComplexityΔ_Larger, 
+					"Show Complexity ΔΞ Options",
+					"Shows Complexity Options"
 				) 
 
 			)
@@ -13528,13 +14079,296 @@
 					'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
 					'DefaultImgId', 'DefaultImgClassName',
 					'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
-					"./assets/icons/00-Official/UI/Isometric/tools/target1.svg", "",
-					fxA0_techTile_makeBaseSmaller4, 
-					"ShowΔ",
-					"Toggle from here or main menu top left"
+					"./assets/icons/00-Official/UI/Isometric/tools/TechTile_NextΔ.svg", "",
+					makeNextΔ_Larger, 
+					"Show NextΔ Options",
+					"See whats after this Δ"
 				) 
 
 			)
+
+
+
+			// TechTile_default_base_option05
+			// // --------------------------------------------------------
+			TechTile_default_base_option05 = new THREE.Group()
+			TechTile_default_base_option05.position.set(0, 5, 0.5)
+			TechTile_default_base_option05.rotation.set(0, 0, 0)
+			TechTile_default_base_option05.scale.set(0.001, 0.001, 0.001)
+			TechTile_default_root.add(TechTile_default_base_option05)
+
+			
+
+
+			let fxA0_techTile_makeBaseSmaller5 = () => {
+				gsap.to(TechTile_default_base.scale, {
+					duration: 1,
+					delay: 0,
+					y: 0.1,
+					x: 0.1,
+					z: 0.1,
+				})
+
+				gsap.to(TechTile_default_base_option05.scale, {
+					duration: 1,
+					delay: 0,
+					y: 0.001,
+					x: 0.001,
+					z: 0.001,
+				})
+			}
+
+
+			TechTile_default_base_option05.add(
+    
+				new TechIcon(
+					0, 0, 0.1,
+					0, 0, 0,
+					0.55, 0.55, 0.55,
+					'DefaultTechIconId', 'DefaultTechIconClassName',
+					'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+					'DefaultImgId', 'DefaultImgClassName',
+					'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+					"./assets/icons/00-Official/UI/Isometric/tools/target1.svg", "",
+					makeNotificationΔH_Larger, 
+					"Show NotificationΔ Options",
+					"See whats after this Δ"
+				) 
+
+			)
+
+
+
+
+			// TechTile_default_base_option06
+			// // --------------------------------------------------------
+			TechTile_default_base_option06 = new THREE.Group()
+			TechTile_default_base_option06.position.set(5, 0, 0.5)
+			TechTile_default_base_option06.rotation.set(0, 0, 0)
+			TechTile_default_base_option06.scale.set(0.001, 0.001, 0.001)
+			TechTile_default_root.add(TechTile_default_base_option06)
+
+			
+
+
+			let fxA0_techTile_makeBaseSmaller6 = () => {
+				gsap.to(TechTile_default_base.scale, {
+					duration: 1,
+					delay: 0,
+					y: 0.1,
+					x: 0.1,
+					z: 0.1,
+				})
+
+				gsap.to(TechTile_default_base_option06.scale, {
+					duration: 1,
+					delay: 0,
+					y: 0.001,
+					x: 0.001,
+					z: 0.001,
+				})
+			}
+
+
+			TechTile_default_base_option06.add(
+    
+				new TechIcon(
+					0, 0, 0.1,
+					0, 0, 0,
+					0.55, 0.55, 0.55,
+					'DefaultTechIconId', 'DefaultTechIconClassName',
+					'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+					'DefaultImgId', 'DefaultImgClassName',
+					'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+					"./assets/icons/00-Official/UI/Isometric/tools/target1.svg", "",
+					makeDataΔД_Larger, 
+					"Show NotificationΔ Options",
+					"See whats after this Δ"
+				) 
+
+			)
+
+
+
+
+			// TechTile_default_base_option07
+			// // --------------------------------------------------------
+			TechTile_default_base_option07 = new THREE.Group()
+			TechTile_default_base_option07.position.set(0, -5, 0.5)
+			TechTile_default_base_option07.rotation.set(0, 0, 0)
+			TechTile_default_base_option07.scale.set(0.001, 0.001, 0.001)
+			TechTile_default_root.add(TechTile_default_base_option07)
+
+			
+
+
+			let fxA0_techTile_makeBaseSmaller7 = () => {
+				gsap.to(TechTile_default_base.scale, {
+					duration: 1,
+					delay: 0,
+					y: 0.1,
+					x: 0.1,
+					z: 0.1,
+				})
+
+				gsap.to(TechTile_default_base_option07.scale, {
+					duration: 1,
+					delay: 0,
+					y: 0.001,
+					x: 0.001,
+					z: 0.001,
+				})
+			}
+
+
+			TechTile_default_base_option07.add(
+    
+				new TechIcon(
+					0, 0, 0.1,
+					0, 0, 0,
+					0.55, 0.55, 0.55,
+					'DefaultTechIconId', 'DefaultTechIconClassName',
+					'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+					'DefaultImgId', 'DefaultImgClassName',
+					'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+					"./assets/icons/00-Official/UI/Isometric/tools/target1.svg", "",
+					makeSystemΔΔ_Larger, 
+					"Show SystemΔ Options",
+					"See whats after this Δ"
+				) 
+
+			)
+
+
+
+
+			// TechTile_default_base_option08
+			// // --------------------------------------------------------
+			TechTile_default_base_option08 = new THREE.Group()
+			TechTile_default_base_option08.position.set(-5, 0, 0.5)
+			TechTile_default_base_option08.rotation.set(0, 0, 0)
+			TechTile_default_base_option08.scale.set(0.001, 0.001, 0.001)
+			TechTile_default_root.add(TechTile_default_base_option08)
+
+			
+
+
+			let fxA0_techTile_makeBaseSmaller8 = () => {
+				gsap.to(TechTile_default_base.scale, {
+					duration: 1,
+					delay: 0,
+					y: 0.1,
+					x: 0.1,
+					z: 0.1,
+				})
+
+				gsap.to(TechTile_default_base_option08.scale, {
+					duration: 1,
+					delay: 0,
+					y: 0.001,
+					x: 0.001,
+					z: 0.001,
+				})
+			}
+
+
+			TechTile_default_base_option08.add(
+    
+				new TechIcon(
+					0, 0, 0.1,
+					0, 0, 0,
+					0.55, 0.55, 0.55,
+					'DefaultTechIconId', 'DefaultTechIconClassName',
+					'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+					'DefaultImgId', 'DefaultImgClassName',
+					'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+					"./assets/icons/00-Official/UI/Isometric/tools/target1.svg", "",
+					makeΤimeΔ_Larger, 
+					"Show Τime Options",
+					"See whats after this Δ"
+				) 
+
+			)
+
+
+
+			//...............................................................................................
+			//......GGGGG..............................CCC...................................................
+			//....GGGGGGGGG..........................CCCCCCCC...hhh.....................................111..
+			//...GGGGGGGGGG.........................CCCCCCCCCC..hhh....................................1111..
+			//..GGGGGGGGGGGG.......................CCCCCCCCCCC..hhh..................................111111..
+			//..GGGG....GGGG...eeeeee...nnnnnnnnn..CCCC...CCCCC.hhhhhhhh....eeeeee...mmmmmmmmmmmmm...111111..
+			//.GGGGG....GGGG..eeeeeeee..nnnnnnnnn.nCCCC....CCCC.hhhhhhhhh..eeeeeeee..mmmmmmmmmmmmmm..111111..
+			//.GGGG...GGGGGG.Geeeeeeeee.nnnnnnnnn.nCCC..........hhhhhhhhh.heeeeeeeee.mmmmmmmmmmmmmm.....111..
+			//.GGGG...GGGGGG.Geee..eeee.nnnn.nnnn.nCCC..........hhhh.hhhh.heee..eeee.mmmm.mmmm..mmm.....111..
+			//.GGGG...GGGGGG.Geeeeeeeee.nnn...nnn.nCCC..........hhh...hhh.heeeeeeeee.mmm..mmmm..mmm.....111..
+			//.GGGGG..GGGGGG.Geeeeeeeee.nnn...nnn.nCCCC....CCCC.hhh...hhh.heeeeeeeee.mmm..mmmm..mmm.....111..
+			//..GGGG....GGGG.Geee.......nnn...nnn..CCCC...CCCCC.hhh...hhh.heee.......mmm..mmmm..mmm.....111..
+			//..GGGGGGGGGGGG.Geeeeeeeee.nnn...nnn..CCCCCCCCCCC..hhh...hhh.heeeeeeeee.mmm..mmmm..mmm.....111..
+			//...GGGGGGGGGGG.Geeeeeeee..nnn...nnn...CCCCCCCCCC..hhh...hhh.heeeeeeee..mmm..mmmm..mmm.....111..
+			//....GGGGGGGGGG..eeeeeeee..nnn...nnn....CCCCCCCC...hhh...hhh..eeeeeeee..mmm..mmmm..mmm.....111..
+			//.....GGGG.........eeee..................CCCCC..................eeee............................
+			//...............................................................................................
+
+
+
+
+			MWCC_GeneralChem01_root = new THREE.Group()
+			MWCC_GeneralChem01_root.position.set(0, 25, 0)
+			MWCC_GeneralChem01_root.rotation.set(0, 0, 0)
+			MWCC_GeneralChem01_root.scale.set(0.1, 0.1, 0.1)
+			scene.add(MWCC_GeneralChem01_root)
+
+
+			MWCC_GeneralChem01_rootTree = new THREE.Group()
+			MWCC_GeneralChem01_rootTree.position.set(0, 25, 0)
+			MWCC_GeneralChem01_rootTree.rotation.set(0, 0, 0)
+			MWCC_GeneralChem01_rootTree.scale.set(0.5, 0.5, 0.5)
+			MWCC_GeneralChem01_root.add(MWCC_GeneralChem01_rootTree)
+
+
+			MWCC_GeneralChem01_rootTree.add(
+
+				new makePDF_Viewer(
+					0, 0, 0,
+					0, 0, 0,
+					0.1, 0.1, 0.1,
+					"hoverClockA1",
+					"./assets/docs/02-PDFs/MyPersonalLibrary/00-MWCC/02-LectureClasses/01-GeneralChemistry/01-LectureData/Lecture01_090723/A01_StudyGuideData_Chapter01.pdf",
+					"1200", "1920"
+				)
+
+			)
+
+
+
+			MWCC_GeneralChem01_Chapter01_TextbookNotes = new THREE.Group()
+			MWCC_GeneralChem01_Chapter01_TextbookNotes.position.set(-75, 25, 0)
+			MWCC_GeneralChem01_Chapter01_TextbookNotes.rotation.set(0, 0, 0)
+			MWCC_GeneralChem01_Chapter01_TextbookNotes.scale.set(0.5, 0.5, 0.5)
+			MWCC_GeneralChem01_root.add(MWCC_GeneralChem01_Chapter01_TextbookNotes)
+
+
+			MWCC_GeneralChem01_Chapter01_TextbookNotes.add(
+
+				new makePDF_Viewer(
+					0, 0, 0,
+					0, 0, 0,
+					0.1, 0.1, 0.1,
+					"hoverClockA1",
+					"./assets/docs/02-PDFs/MyPersonalLibrary/00-MWCC/02-LectureClasses/01-GeneralChemistry/01-LectureData/Lecture01_090723/A01_TextBookChapterData01__Matter_Measurement_and_Problem_Solving.pdf",
+					"1200", "1920"
+				)
+
+			)
+
+
+
+
+
+
+
+
 
 
 
@@ -14075,29 +14909,29 @@
 				folderLoadTestingContainer02.add(TimeΔ_Default_root.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
 				folderLoadTestingContainer02.add(TimeΔ_Default_root.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
-				const folderLoadTestingContainer03 = gui.addFolder('<<< LoadPoint03 :: mesh_TimeΔ_Default_ExternalSkeletonA04 >>>')
+				const folderLoadTestingContainer03 = gui.addFolder('<<< LoadPoint03 :: MWCC_GeneralChem01_Chapter01_TextbookNotes >>>')
 
-				folderLoadTestingContainer03.add(mesh_TimeΔ_Default_ExternalSkeletonA04.position, 'x').min(-1500).max(1500).step(1).name('[ ⇄ Scroll ]');
-				folderLoadTestingContainer03.add(mesh_TimeΔ_Default_ExternalSkeletonA04.position, 'y').min(-1500).max(1500).step(1).name('[ ⇅ Scroll ]');
-				folderLoadTestingContainer03.add(mesh_TimeΔ_Default_ExternalSkeletonA04.position, 'z').min(-1500).max(1500).step(1).name('[ ⇄⇅ Scroll ]');
-				folderLoadTestingContainer03.add(mesh_TimeΔ_Default_ExternalSkeletonA04.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
-				folderLoadTestingContainer03.add(mesh_TimeΔ_Default_ExternalSkeletonA04.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
-				folderLoadTestingContainer03.add(mesh_TimeΔ_Default_ExternalSkeletonA04.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
-				folderLoadTestingContainer03.add(mesh_TimeΔ_Default_ExternalSkeletonA04.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
-				folderLoadTestingContainer03.add(mesh_TimeΔ_Default_ExternalSkeletonA04.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
-				folderLoadTestingContainer03.add(mesh_TimeΔ_Default_ExternalSkeletonA04.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
+				folderLoadTestingContainer03.add(MWCC_GeneralChem01_Chapter01_TextbookNotes.position, 'x').min(-1500).max(1500).step(1).name('[ ⇄ Scroll ]');
+				folderLoadTestingContainer03.add(MWCC_GeneralChem01_Chapter01_TextbookNotes.position, 'y').min(-1500).max(1500).step(1).name('[ ⇅ Scroll ]');
+				folderLoadTestingContainer03.add(MWCC_GeneralChem01_Chapter01_TextbookNotes.position, 'z').min(-1500).max(1500).step(1).name('[ ⇄⇅ Scroll ]');
+				folderLoadTestingContainer03.add(MWCC_GeneralChem01_Chapter01_TextbookNotes.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
+				folderLoadTestingContainer03.add(MWCC_GeneralChem01_Chapter01_TextbookNotes.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
+				folderLoadTestingContainer03.add(MWCC_GeneralChem01_Chapter01_TextbookNotes.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
+				folderLoadTestingContainer03.add(MWCC_GeneralChem01_Chapter01_TextbookNotes.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
+				folderLoadTestingContainer03.add(MWCC_GeneralChem01_Chapter01_TextbookNotes.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
+				folderLoadTestingContainer03.add(MWCC_GeneralChem01_Chapter01_TextbookNotes.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
-				const folderLoadTestingContainer04 = gui.addFolder('<<< LoadPoint04 :: TechTile_default_OrderedSystem >>>')
+				const folderLoadTestingContainer04 = gui.addFolder('<<< LoadPoint04 :: TechTile_default_AdminOption03_ComplexityΔ >>>')
 
-				folderLoadTestingContainer04.add(TechTile_default_OrderedSystem.position, 'x').min(-1500).max(1500).step(1).name('[ ⇄ Scroll ]');
-				folderLoadTestingContainer04.add(TechTile_default_OrderedSystem.position, 'y').min(-1500).max(1500).step(1).name('[ ⇅ Scroll ]');
-				folderLoadTestingContainer04.add(TechTile_default_OrderedSystem.position, 'z').min(-1500).max(1500).step(1).name('[ ⇄⇅ Scroll ]');
-				folderLoadTestingContainer04.add(TechTile_default_OrderedSystem.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
-				folderLoadTestingContainer04.add(TechTile_default_OrderedSystem.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
-				folderLoadTestingContainer04.add(TechTile_default_OrderedSystem.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
-				folderLoadTestingContainer04.add(TechTile_default_OrderedSystem.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
-				folderLoadTestingContainer04.add(TechTile_default_OrderedSystem.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
-				folderLoadTestingContainer04.add(TechTile_default_OrderedSystem.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
+				folderLoadTestingContainer04.add(TechTile_default_AdminOption03_ComplexityΔ.position, 'x').min(-1500).max(1500).step(1).name('[ ⇄ Scroll ]');
+				folderLoadTestingContainer04.add(TechTile_default_AdminOption03_ComplexityΔ.position, 'y').min(-1500).max(1500).step(1).name('[ ⇅ Scroll ]');
+				folderLoadTestingContainer04.add(TechTile_default_AdminOption03_ComplexityΔ.position, 'z').min(-1500).max(1500).step(1).name('[ ⇄⇅ Scroll ]');
+				folderLoadTestingContainer04.add(TechTile_default_AdminOption03_ComplexityΔ.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
+				folderLoadTestingContainer04.add(TechTile_default_AdminOption03_ComplexityΔ.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
+				folderLoadTestingContainer04.add(TechTile_default_AdminOption03_ComplexityΔ.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
+				folderLoadTestingContainer04.add(TechTile_default_AdminOption03_ComplexityΔ.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
+				folderLoadTestingContainer04.add(TechTile_default_AdminOption03_ComplexityΔ.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
+				folderLoadTestingContainer04.add(TechTile_default_AdminOption03_ComplexityΔ.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
 				const folderLoadTestingContainer05 = gui.addFolder('<<< LoadPoint05 :: primaryTimeViewer >>>')
 
