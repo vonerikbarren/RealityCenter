@@ -2778,6 +2778,7 @@
 			// #################################################################
 
 			let MWCC_GeneralChem01_root
+			let MWCC_GeneralChem01_TechCube, mesh_MWCC_GeneralChem01_TechCube
 			let MWCC_GeneralChem01_rootTree
 
 			let MWCC_GeneralChem01_Chapter01_StudyGuide
@@ -2788,6 +2789,9 @@
 			let MWCC_GeneralChem01_Chapter01_LectureData01_Sect_1_6
 			let MWCC_GeneralChem01_Chapter01_LectureData01_Sect_ScientificNotation
 			let MWCC_GeneralChem01_Chapter01_LectureData01_Lecture01_Homework01
+
+			let MWCC_GeneralChem01_Chapter01_LectureData02_HomeworkAnswers
+			let MWCC_GeneralChem01_codeNotes01
 
 
 
@@ -6531,7 +6535,7 @@
 				// GodControls Lvl01
 				document.addEventListener("keydown", function(event) {
 					if (event.key === "6") {
-						speedStrengthsParams.x = 1000
+						speedStrengthsParams.x = 2000
 					} 
 				})
 
@@ -12360,6 +12364,40 @@
 			scene.add(TimeΔ_Default_root)
 
 
+				document.addEventListener("keydown", function(event) {
+					if (event.key === "g") {
+
+						if (TimeΔ_Default_root.scale.z === 1) {
+
+							//TimeΔ_Default_root make smaller
+							gsap.to(TimeΔ_Default_root.scale, {
+								duration: 1,
+								delay: 0,
+								z: 0.00001,
+								y: 0.00001,
+								x: 0.00001,
+
+							})
+						} else if (TimeΔ_Default_root.scale.z === 0.00001) {
+
+							//TimeΔ_Default_root make smaller
+							gsap.to(TimeΔ_Default_root.scale, {
+								duration: 1,
+								delay: 0,
+								z: 1,
+								y: 1,
+								x: 1,
+
+							})
+						}
+
+						
+
+						
+					}
+				})
+
+
 			// #+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#
 			// #+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#
 
@@ -14320,32 +14358,63 @@
 			scene.add(MWCC_GeneralChem01_root)
 
 
-			MWCC_GeneralChem01_rootTree = new THREE.Group()
-			MWCC_GeneralChem01_rootTree.position.set(0, 25, 0)
-			MWCC_GeneralChem01_rootTree.rotation.set(0, 0, 0)
-			MWCC_GeneralChem01_rootTree.scale.set(0.5, 0.5, 0.5)
-			MWCC_GeneralChem01_root.add(MWCC_GeneralChem01_rootTree)
+			// Structure?
+			// MWCC_GeneralChem01_rootTree = new THREE.Group()
+			// MWCC_GeneralChem01_rootTree.position.set(0, 25, 0)
+			// MWCC_GeneralChem01_rootTree.rotation.set(0, 0, 0)
+			// MWCC_GeneralChem01_rootTree.scale.set(0.5, 0.5, 0.5)
+			// MWCC_GeneralChem01_root.add(MWCC_GeneralChem01_rootTree)
 
 
-			MWCC_GeneralChem01_rootTree.add(
+			// MWCC_GeneralChem01_rootTree.add(
 
-				new makePDF_Viewer(
-					0, 0, 0,
-					0, 0, 0,
-					0.1, 0.1, 0.1,
-					"hoverClockA1",
-					"./assets/docs/02-PDFs/MyPersonalLibrary/00-MWCC/02-LectureClasses/01-GeneralChemistry/01-LectureData/Lecture01_090723/A01_StudyGuideData_Chapter01.pdf",
-					"1200", "1920"
-				)
+			// 	new makePDF_Viewer(
+			// 		0, 0, 0,
+			// 		0, 0, 0,
+			// 		0.1, 0.1, 0.1,
+			// 		"hoverClockA1",
+			// 		"./assets/docs/02-PDFs/MyPersonalLibrary/00-MWCC/02-LectureClasses/01-GeneralChemistry/01-LectureData/Lecture01_090723/A01_StudyGuideData_Chapter01.pdf#page=1&zoom=145",
+			// 		"1200", "1920"
+			// 	)
 
-			)
+			// )
+
+
+			// MWCC_GeneralChem01_TechCube
+			MWCC_GeneralChem01_TechCube = new THREE.Group()
+			MWCC_GeneralChem01_TechCube.position.set(0, 0, 0)
+			MWCC_GeneralChem01_TechCube.rotation.set(0, 0, 0)
+			MWCC_GeneralChem01_TechCube.scale.set(3.5, 3.5, 3.5)
+			MWCC_GeneralChem01_root.add(MWCC_GeneralChem01_TechCube)
+
+
+			const mat_MWCC_GeneralChem01_TechCube = new THREE.MeshBasicMaterial({ map: SceneWallpaper_01, side: THREE.DoubleSide });
+			mesh_MWCC_GeneralChem01_TechCube = new THREE.Mesh(geo_objT_BoxA0, mat_MWCC_GeneralChem01_TechCube);
+			mat_MWCC_GeneralChem01_TechCube.transparent = false;
+			mat_MWCC_GeneralChem01_TechCube.alphaMap = SceneWallpaper_01;
+			// mat_TimeΔ_Default_ExternalSkeletonA04.color = new THREE.Color("#00ffb3")
+			// mat_TimeΔ_Default_ExternalSkeletonA04.blending = THREE.AdditiveBlending
+
+			mesh_MWCC_GeneralChem01_TechCube.position.set(0, 0, 0);
+			mesh_MWCC_GeneralChem01_TechCube.scale.set(1, 1, 1);
+			mesh_MWCC_GeneralChem01_TechCube.rotation.set(0, 0, 0)
+
+			// mesh_MWCC_GeneralChem01_TechCube.rotateX( - Math.PI / 2 );
+			// MWCC_GeneralChem01_TechCube.lookAt(camera)
+
+			MWCC_GeneralChem01_TechCube.add(mesh_MWCC_GeneralChem01_TechCube)
 
 
 
+
+
+
+			// TextBook Homework
+			// FaceOfCube: Front
 			MWCC_GeneralChem01_Chapter01_TextbookNotes = new THREE.Group()
-			MWCC_GeneralChem01_Chapter01_TextbookNotes.position.set(-75, 25, 0)
+			MWCC_GeneralChem01_Chapter01_TextbookNotes.position.set(-3, 3, -15)
 			MWCC_GeneralChem01_Chapter01_TextbookNotes.rotation.set(0, 0, 0)
-			MWCC_GeneralChem01_Chapter01_TextbookNotes.scale.set(0.5, 0.5, 0.5)
+			MWCC_GeneralChem01_Chapter01_TextbookNotes.scale.set(0.1, 0.1, 0.1)
 			MWCC_GeneralChem01_root.add(MWCC_GeneralChem01_Chapter01_TextbookNotes)
 
 
@@ -14356,8 +14425,83 @@
 					0, 0, 0,
 					0.1, 0.1, 0.1,
 					"hoverClockA1",
-					"./assets/docs/02-PDFs/MyPersonalLibrary/00-MWCC/02-LectureClasses/01-GeneralChemistry/01-LectureData/Lecture01_090723/A01_TextBookChapterData01__Matter_Measurement_and_Problem_Solving.pdf",
-					"1200", "1920"
+					"./assets/docs/02-PDFs/MyPersonalLibrary/00-MWCC/02-LectureClasses/01-GeneralChemistry/01-LectureData/Lecture01_090723/A01_TextBookChapterData01__Matter_Measurement_and_Problem_Solving.pdf#page=1&zoom=115",
+					"1000", "1000"
+				)
+
+			)
+
+
+
+			// Chemistry Homework
+			// MWCC_GeneralChem01_Chapter01_LectureData01_Lecture01_Homework01
+			// FaceOfCube: Left
+			MWCC_GeneralChem01_Chapter01_LectureData01_Lecture01_Homework01 = new THREE.Group()
+			MWCC_GeneralChem01_Chapter01_LectureData01_Lecture01_Homework01.position.set(-15, 3, 3)
+			MWCC_GeneralChem01_Chapter01_LectureData01_Lecture01_Homework01.rotation.set(0, 1.575, 0)
+			MWCC_GeneralChem01_Chapter01_LectureData01_Lecture01_Homework01.scale.set(0.1, 0.1, 0.1)
+			MWCC_GeneralChem01_root.add(MWCC_GeneralChem01_Chapter01_LectureData01_Lecture01_Homework01)
+
+
+			MWCC_GeneralChem01_Chapter01_LectureData01_Lecture01_Homework01.add(
+
+				new makePDF_Viewer(
+					0, 0, 0,
+					0, 0, 0,
+					0.1, 0.1, 0.1,
+					"hoverClockA1",
+					"./assets/docs/02-PDFs/MyPersonalLibrary/00-MWCC/02-LectureClasses/01-GeneralChemistry/01-LectureData/Lecture01_090723/D01_Lecture01_Homework01.pdf#page=1&zoom=115",
+					"1000", "1000"
+				)
+
+			)
+
+
+
+			// Chemistry Homework Answers
+			// MWCC_GeneralChem01_Chapter01_LectureData02_HomeworkAnswers
+			// FaceOfCube: Right
+			MWCC_GeneralChem01_Chapter01_LectureData02_HomeworkAnswers = new THREE.Group()
+			MWCC_GeneralChem01_Chapter01_LectureData02_HomeworkAnswers.position.set(3, 3, 15)
+			MWCC_GeneralChem01_Chapter01_LectureData02_HomeworkAnswers.rotation.set(0, 3.14, 0)
+			MWCC_GeneralChem01_Chapter01_LectureData02_HomeworkAnswers.scale.set(0.1, 0.1, 0.1)
+			MWCC_GeneralChem01_root.add(MWCC_GeneralChem01_Chapter01_LectureData02_HomeworkAnswers)
+
+
+			MWCC_GeneralChem01_Chapter01_LectureData02_HomeworkAnswers.add(
+
+				new makePDF_Viewer(
+					0, 0, 0,
+					0, 0, 0,
+					0.1, 0.1, 0.1,
+					"hoverClockA1",
+					"https://docs.google.com/document/d/13a7FsqANRe5I-KM55hkd-0-wRG33NhNJXNaDw2XCpWI/edit?usp=sharing#page=1&zoom=115",
+					"1000", "1000"
+				)
+
+			)
+
+
+
+			// Chemistry Homework Answers
+			// MWCC_GeneralChem01_codeNotes01
+			// FaceOfCube: Back
+			MWCC_GeneralChem01_codeNotes01 = new THREE.Group()
+			MWCC_GeneralChem01_codeNotes01.position.set(15, 3, 3)
+			MWCC_GeneralChem01_codeNotes01.rotation.set(0, -1.575, 0)
+			MWCC_GeneralChem01_codeNotes01.scale.set(0.1, 0.1, 0.1)
+			MWCC_GeneralChem01_root.add(MWCC_GeneralChem01_codeNotes01)
+
+
+			MWCC_GeneralChem01_codeNotes01.add(
+
+				new makePDF_Viewer(
+					0, 0, 0,
+					0, 0, 0,
+					0.1, 0.1, 0.1,
+					"hoverClockA1",
+					"https://www.programiz.com/html/online-compiler/#page=1&zoom=115",
+					"1000", "1000"
 				)
 
 			)
@@ -14909,17 +15053,17 @@
 				folderLoadTestingContainer02.add(TimeΔ_Default_root.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
 				folderLoadTestingContainer02.add(TimeΔ_Default_root.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
-				const folderLoadTestingContainer03 = gui.addFolder('<<< LoadPoint03 :: MWCC_GeneralChem01_Chapter01_TextbookNotes >>>')
+				const folderLoadTestingContainer03 = gui.addFolder('<<< LoadPoint03 :: TimeΔ_Default_root >>>')
 
-				folderLoadTestingContainer03.add(MWCC_GeneralChem01_Chapter01_TextbookNotes.position, 'x').min(-1500).max(1500).step(1).name('[ ⇄ Scroll ]');
-				folderLoadTestingContainer03.add(MWCC_GeneralChem01_Chapter01_TextbookNotes.position, 'y').min(-1500).max(1500).step(1).name('[ ⇅ Scroll ]');
-				folderLoadTestingContainer03.add(MWCC_GeneralChem01_Chapter01_TextbookNotes.position, 'z').min(-1500).max(1500).step(1).name('[ ⇄⇅ Scroll ]');
-				folderLoadTestingContainer03.add(MWCC_GeneralChem01_Chapter01_TextbookNotes.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
-				folderLoadTestingContainer03.add(MWCC_GeneralChem01_Chapter01_TextbookNotes.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
-				folderLoadTestingContainer03.add(MWCC_GeneralChem01_Chapter01_TextbookNotes.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
-				folderLoadTestingContainer03.add(MWCC_GeneralChem01_Chapter01_TextbookNotes.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
-				folderLoadTestingContainer03.add(MWCC_GeneralChem01_Chapter01_TextbookNotes.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
-				folderLoadTestingContainer03.add(MWCC_GeneralChem01_Chapter01_TextbookNotes.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
+				folderLoadTestingContainer03.add(TimeΔ_Default_root.position, 'x').min(-1500).max(1500).step(1).name('[ ⇄ Scroll ]');
+				folderLoadTestingContainer03.add(TimeΔ_Default_root.position, 'y').min(-1500).max(1500).step(1).name('[ ⇅ Scroll ]');
+				folderLoadTestingContainer03.add(TimeΔ_Default_root.position, 'z').min(-1500).max(1500).step(1).name('[ ⇄⇅ Scroll ]');
+				folderLoadTestingContainer03.add(TimeΔ_Default_root.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
+				folderLoadTestingContainer03.add(TimeΔ_Default_root.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
+				folderLoadTestingContainer03.add(TimeΔ_Default_root.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
+				folderLoadTestingContainer03.add(TimeΔ_Default_root.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
+				folderLoadTestingContainer03.add(TimeΔ_Default_root.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
+				folderLoadTestingContainer03.add(TimeΔ_Default_root.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
 				const folderLoadTestingContainer04 = gui.addFolder('<<< LoadPoint04 :: TechTile_default_AdminOption03_ComplexityΔ >>>')
 
@@ -14957,53 +15101,53 @@
 				folderLoadTestingContainer06.add(LeftPanelWindow01_App10.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
 				folderLoadTestingContainer06.add(LeftPanelWindow01_App10.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
-				const folderLoadTestingContainer07 = gui.addFolder('<<< LoadPoint07 : EmulatorTest02 >>>')
+				const folderLoadTestingContainer07 = gui.addFolder('<<< LoadPoint07 : MWCC_GeneralChem01_Chapter01_TextbookNotes >>>')
 
-				folderLoadTestingContainer07.add(EmulatorTest02.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
-				folderLoadTestingContainer07.add(EmulatorTest02.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
-				folderLoadTestingContainer07.add(EmulatorTest02.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
-				folderLoadTestingContainer07.add(EmulatorTest02.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
-				folderLoadTestingContainer07.add(EmulatorTest02.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
-				folderLoadTestingContainer07.add(EmulatorTest02.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
-				folderLoadTestingContainer07.add(EmulatorTest02.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
-				folderLoadTestingContainer07.add(EmulatorTest02.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
-				folderLoadTestingContainer07.add(EmulatorTest02.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
+				folderLoadTestingContainer07.add(MWCC_GeneralChem01_Chapter01_TextbookNotes.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
+				folderLoadTestingContainer07.add(MWCC_GeneralChem01_Chapter01_TextbookNotes.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
+				folderLoadTestingContainer07.add(MWCC_GeneralChem01_Chapter01_TextbookNotes.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
+				folderLoadTestingContainer07.add(MWCC_GeneralChem01_Chapter01_TextbookNotes.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
+				folderLoadTestingContainer07.add(MWCC_GeneralChem01_Chapter01_TextbookNotes.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
+				folderLoadTestingContainer07.add(MWCC_GeneralChem01_Chapter01_TextbookNotes.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
+				folderLoadTestingContainer07.add(MWCC_GeneralChem01_Chapter01_TextbookNotes.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
+				folderLoadTestingContainer07.add(MWCC_GeneralChem01_Chapter01_TextbookNotes.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
+				folderLoadTestingContainer07.add(MWCC_GeneralChem01_Chapter01_TextbookNotes.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
-				const folderLoadTestingContainer08 = gui.addFolder('<<< LoadPoint08 : EmulatorTest03 >>>')
+				const folderLoadTestingContainer08 = gui.addFolder('<<< LoadPoint08 : MWCC_GeneralChem01_Chapter01_LectureData01_Lecture01_Homework01 >>>')
 
-				folderLoadTestingContainer08.add(EmulatorTest03.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
-				folderLoadTestingContainer08.add(EmulatorTest03.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
-				folderLoadTestingContainer08.add(EmulatorTest03.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
-				folderLoadTestingContainer08.add(EmulatorTest03.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
-				folderLoadTestingContainer08.add(EmulatorTest03.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
-				folderLoadTestingContainer08.add(EmulatorTest03.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
-				folderLoadTestingContainer08.add(EmulatorTest03.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
-				folderLoadTestingContainer08.add(EmulatorTest03.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
-				folderLoadTestingContainer08.add(EmulatorTest03.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
+				folderLoadTestingContainer08.add(MWCC_GeneralChem01_Chapter01_LectureData01_Lecture01_Homework01.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
+				folderLoadTestingContainer08.add(MWCC_GeneralChem01_Chapter01_LectureData01_Lecture01_Homework01.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
+				folderLoadTestingContainer08.add(MWCC_GeneralChem01_Chapter01_LectureData01_Lecture01_Homework01.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
+				folderLoadTestingContainer08.add(MWCC_GeneralChem01_Chapter01_LectureData01_Lecture01_Homework01.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
+				folderLoadTestingContainer08.add(MWCC_GeneralChem01_Chapter01_LectureData01_Lecture01_Homework01.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
+				folderLoadTestingContainer08.add(MWCC_GeneralChem01_Chapter01_LectureData01_Lecture01_Homework01.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
+				folderLoadTestingContainer08.add(MWCC_GeneralChem01_Chapter01_LectureData01_Lecture01_Homework01.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
+				folderLoadTestingContainer08.add(MWCC_GeneralChem01_Chapter01_LectureData01_Lecture01_Homework01.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
+				folderLoadTestingContainer08.add(MWCC_GeneralChem01_Chapter01_LectureData01_Lecture01_Homework01.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
-				const folderLoadTestingContainer09 = gui.addFolder('<<< LoadPoint09 : EmulatorHUB_root >>>')
+				const folderLoadTestingContainer09 = gui.addFolder('<<< LoadPoint09 : MWCC_GeneralChem01_Chapter01_LectureData02_HomeworkAnswers >>>')
 
-				folderLoadTestingContainer09.add(gbaEmulatorHUD_root.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
-				folderLoadTestingContainer09.add(gbaEmulatorHUD_root.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
-				folderLoadTestingContainer09.add(gbaEmulatorHUD_root.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
-				folderLoadTestingContainer09.add(gbaEmulatorHUD_root.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
-				folderLoadTestingContainer09.add(gbaEmulatorHUD_root.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
-				folderLoadTestingContainer09.add(gbaEmulatorHUD_root.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
-				folderLoadTestingContainer09.add(gbaEmulatorHUD_root.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
-				folderLoadTestingContainer09.add(gbaEmulatorHUD_root.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
-				folderLoadTestingContainer09.add(gbaEmulatorHUD_root.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
+				folderLoadTestingContainer09.add(MWCC_GeneralChem01_Chapter01_LectureData02_HomeworkAnswers.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
+				folderLoadTestingContainer09.add(MWCC_GeneralChem01_Chapter01_LectureData02_HomeworkAnswers.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
+				folderLoadTestingContainer09.add(MWCC_GeneralChem01_Chapter01_LectureData02_HomeworkAnswers.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
+				folderLoadTestingContainer09.add(MWCC_GeneralChem01_Chapter01_LectureData02_HomeworkAnswers.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
+				folderLoadTestingContainer09.add(MWCC_GeneralChem01_Chapter01_LectureData02_HomeworkAnswers.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
+				folderLoadTestingContainer09.add(MWCC_GeneralChem01_Chapter01_LectureData02_HomeworkAnswers.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
+				folderLoadTestingContainer09.add(MWCC_GeneralChem01_Chapter01_LectureData02_HomeworkAnswers.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
+				folderLoadTestingContainer09.add(MWCC_GeneralChem01_Chapter01_LectureData02_HomeworkAnswers.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
+				folderLoadTestingContainer09.add(MWCC_GeneralChem01_Chapter01_LectureData02_HomeworkAnswers.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
-				const folderLoadTestingContainer10 = gui.addFolder('<<< LoadPoint10 >>>')
+				const folderLoadTestingContainer10 = gui.addFolder('<<< LoadPoint10: MWCC_GeneralChem01_codeNotes01 >>>')
 
-				folderLoadTestingContainer10.add(floorDesign01_Grid.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
-				folderLoadTestingContainer10.add(floorDesign01_Grid.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
-				folderLoadTestingContainer10.add(floorDesign01_Grid.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
-				folderLoadTestingContainer10.add(floorDesign01_Grid.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
-				folderLoadTestingContainer10.add(floorDesign01_Grid.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
-				folderLoadTestingContainer10.add(floorDesign01_Grid.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
-				folderLoadTestingContainer10.add(floorDesign01_Grid.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
-				folderLoadTestingContainer10.add(floorDesign01_Grid.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
-				folderLoadTestingContainer10.add(floorDesign01_Grid.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
+				folderLoadTestingContainer10.add(MWCC_GeneralChem01_codeNotes01.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
+				folderLoadTestingContainer10.add(MWCC_GeneralChem01_codeNotes01.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
+				folderLoadTestingContainer10.add(MWCC_GeneralChem01_codeNotes01.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
+				folderLoadTestingContainer10.add(MWCC_GeneralChem01_codeNotes01.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
+				folderLoadTestingContainer10.add(MWCC_GeneralChem01_codeNotes01.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
+				folderLoadTestingContainer10.add(MWCC_GeneralChem01_codeNotes01.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
+				folderLoadTestingContainer10.add(MWCC_GeneralChem01_codeNotes01.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
+				folderLoadTestingContainer10.add(MWCC_GeneralChem01_codeNotes01.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
+				folderLoadTestingContainer10.add(MWCC_GeneralChem01_codeNotes01.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
 			const folderPortfolioControls = gui.addFolder('Portfolio Controls')
 				// folderPortfolioControls.add(r_TechTileGroupTest.position, 'x').min(-5000).max(5000).step(1).name('[ ⇄ Scroll ]');
