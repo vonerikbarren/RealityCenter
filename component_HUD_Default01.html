@@ -1712,11 +1712,15 @@
 
 
 							<!-- VideoDomain02: Trees -->
-							<video id="video07" class="myVideo07" playsinline controls webkit-playsinline  autoplay loop width="320" height="240" src="./assets/video/TunnelAnimations/TechTunnelC01.mp4" border: 5px 5px black;"></video>
+							<video id="video07" class="myVideo07" playsinline controls webkit-playsinline  autoplay loop width="320" height="240" src="./assets/video/TunnelAnimations/TechTunnelA06.mp4" border: 5px 5px black;"></video>
 
 
 							<!-- VideoDomain02: Search_html_video01 -->
 							<video id="openingVideo" class="countDown" playsinline controls webkit-playsinline  autoplay loop width="320" height="240" src="./assets/video/TunnelAnimations/TechTunnelA10.mp4" border: 5px 5px black;"></video>
+
+
+							<!-- VideoDomain02: Search_html_video01 -->
+							<video id="userDefVideo01" class="countDown" playsinline controls webkit-playsinline  autoplay loop width="320" height="240" src="./assets/video/PersonalAnimations/userActionBackwards_SpiralUp_SpiralDown_stars01.mp4" border: 5px 5px black;"></video>
 
 
 
@@ -2793,6 +2797,32 @@
 			let MWCC_GeneralChem01_Chapter01_LectureData02_HomeworkAnswers
 			let MWCC_GeneralChem01_codeNotes01
 
+
+
+			//......................................................................
+			//.........................................DDDDD...................fff..
+			//........................................DDDDDDDDD..............fffff..
+			//........................................DDDDDDDDDDD............fffff..
+			//........................................DDDDDDDDDDD............fffff..
+			//.uuuu...uuu..ssssssss...eeeeee...rrrrrr.DDDD...DDDDD..eeeeee..efffff..
+			//.uuuu...uuu..ssssssss..eeeeeeee..rrrrrr.DDDD....DDDD.eeeeeeee.efffff..
+			//.uuuu...uuu.ssssssssssseeeeeeeee.rrrrrr.DDDD....DDDDDeeeeeeeeeefffff..
+			//.uuuu...uuu.ssssssssssseee..eeee.rrrr...DDDD....DDDDDeee..eeee.ffff...
+			//.uuuu...uuu..ssssssss.seeeeeeeee.rrr....DDDD....DDDDDeeeeeeeee.ffff...
+			//.uuuu...uuu..ssssssss.seeeeeeeee.rrr....DDDD...DDDDDDeeeeeeeee.ffff...
+			//..uuu..uuuu.ssssssssssseee.......rrr....DDDD...DDDD.Deee.......ffff...
+			//..uuuuuuuuu.sssss.ssssseeeeeeeee.rrr....DDDDDDDDDDD.Deeeeeeeee.ffff...
+			//..uuuuuuuuu.ssssssssssseeeeeeee..rrr....DDDDDDDDDD..Deeeeeeee..ffff...
+			//..uuuuuuuuu..ssssssss..eeeeeeee..rrr....DDDDDDDDD....eeeeeeee..ffff...
+			//....uuu.......ssssss.....eeee..........................eeee...........
+			//......................................................................
+
+			let userDef_root
+			let userDef_base01
+			let userDef_base02
+			let userDef_base03
+
+			let userDef_video_default01, mesh_userDef_video_default01
 
 
 			// #################################################################
@@ -6649,37 +6679,37 @@
 
 
 
-				document.addEventListener("keydown", function(event) {
-					if (event.key === "f") {
-						// camera.position.y -= 10000
+				// document.addEventListener("keydown", function(event) {
+				// 	if (event.key === "f") {
+				// 		// camera.position.y -= 10000
 
 
-						if (Hud_default_root.position.z === 20) {
-							gsap.to(Hud_default_root.position, {
-								duration: .2,
-								delay: 0,
-								z: -15,
+				// 		if (Hud_default_root.position.z === 20) {
+				// 			gsap.to(Hud_default_root.position, {
+				// 				duration: .2,
+				// 				delay: 0,
+				// 				z: -15,
 
-							})
-						} else if (Hud_default_root.position.z === -15) {
-							gsap.to(Hud_default_root.position, {
-								duration: .2,
-								delay: 0,
-								z: 20,
+				// 			})
+				// 		} else if (Hud_default_root.position.z === -15) {
+				// 			gsap.to(Hud_default_root.position, {
+				// 				duration: .2,
+				// 				delay: 0,
+				// 				z: 20,
 
-							})
-						} else {
-							gsap.to(Hud_default_root.position, {
-								duration: .2,
-								delay: 0,
-								z: 20,
+				// 			})
+				// 		} else {
+				// 			gsap.to(Hud_default_root.position, {
+				// 				duration: .2,
+				// 				delay: 0,
+				// 				z: 20,
 
-							})
-						}
+				// 			})
+				// 		}
 
 						
-					}
-				})
+				// 	}
+				// })
 
 
 
@@ -13076,9 +13106,9 @@
 
 
 					gsap.to(TimeΔ_Default_root.position, {
-						duration: 150,
+						duration: 25,
 						delay: 0,
-						z: `+=5000`,
+						z: `+=15000`,
 
 					})
 					
@@ -13116,9 +13146,9 @@
 
 
 					gsap.to(TimeΔ_Default_root.position, {
-						duration: 150,
+						duration: 25,
 						delay: 0,
-						z: `-=5000`,
+						z: `-=15000`,
 
 					})
 					
@@ -14510,6 +14540,74 @@
 
 
 
+			//......................................................................
+			//.........................................DDDDD...................fff..
+			//........................................DDDDDDDDD..............fffff..
+			//........................................DDDDDDDDDDD............fffff..
+			//........................................DDDDDDDDDDD............fffff..
+			//.uuuu...uuu..ssssssss...eeeeee...rrrrrr.DDDD...DDDDD..eeeeee..efffff..
+			//.uuuu...uuu..ssssssss..eeeeeeee..rrrrrr.DDDD....DDDD.eeeeeeee.efffff..
+			//.uuuu...uuu.ssssssssssseeeeeeeee.rrrrrr.DDDD....DDDDDeeeeeeeeeefffff..
+			//.uuuu...uuu.ssssssssssseee..eeee.rrrr...DDDD....DDDDDeee..eeee.ffff...
+			//.uuuu...uuu..ssssssss.seeeeeeeee.rrr....DDDD....DDDDDeeeeeeeee.ffff...
+			//.uuuu...uuu..ssssssss.seeeeeeeee.rrr....DDDD...DDDDDDeeeeeeeee.ffff...
+			//..uuu..uuuu.ssssssssssseee.......rrr....DDDD...DDDD.Deee.......ffff...
+			//..uuuuuuuuu.sssss.ssssseeeeeeeee.rrr....DDDDDDDDDDD.Deeeeeeeee.ffff...
+			//..uuuuuuuuu.ssssssssssseeeeeeee..rrr....DDDDDDDDDD..Deeeeeeee..ffff...
+			//..uuuuuuuuu..ssssssss..eeeeeeee..rrr....DDDDDDDDD....eeeeeeee..ffff...
+			//....uuu.......ssssss.....eeee..........................eeee...........
+			//......................................................................
+
+
+			userDef_root = new THREE.Group()
+			userDef_root.position.set(0, 50, 0)
+			userDef_root.rotation.set(0, 0, 0)
+			userDef_root.scale.set(1, 1, 1)
+			scene.add(userDef_root)
+
+			userDef_base01 = new THREE.Group()
+			userDef_base01.position.set(0, 0, 0)
+			userDef_base01.rotation.set(0, 0, 0)
+			userDef_base01.scale.set(1, 1, 1)
+			userDef_root.add(userDef_base01)
+
+
+			userDef_video_default01 = new THREE.Group()
+			userDef_video_default01.position.set(0, 0, 0)
+			userDef_video_default01.rotation.set(0, 0, 0)
+			userDef_video_default01.scale.set(1, 1, 1)
+			userDef_root.add(userDef_video_default01)
+
+
+			let userDef_video = document.getElementById('userDefVideo01')
+			let userDef_videoTex = new THREE.VideoTexture(userDef_video)
+			let userDef_videoMat = new THREE.MeshBasicMaterial(
+				{
+					map: userDef_videoTex,
+					side: THREE.DoubleSide,
+					toneMapped: false,
+				}
+			)
+
+
+			mesh_CenterBrain_VideoSphere_Opening = new THREE.Mesh(
+				geo_objT_CircleA1, 
+				userDef_videoMat
+			)
+
+			mesh_CenterBrain_VideoSphere_Opening.position.set(0, 0, 0)
+			mesh_CenterBrain_VideoSphere_Opening.rotation.set(0, 0, 0)
+			mesh_CenterBrain_VideoSphere_Opening.scale.set(0.25, 0.25, 0.25)
+			userDef_video_default01.add(mesh_CenterBrain_VideoSphere_Opening)
+
+
+
+
+
+			
+
+
+
 
 
 
@@ -14941,7 +15039,7 @@
 				gui.closed = false;
 
 				const timeWindow = {
-					time: 7500
+					time: 3000
 				}
 
 				speedStrengthsParams = {
@@ -14957,6 +15055,20 @@
 					forwards: 200,
 					backwards: 200, 
 				}
+
+
+				document.addEventListener("keydown", function(event) {
+					if (event.key === "9") {
+						timeWindow.time = 7500
+					} else if (event.ctrlKey && event.key === "9") {
+						timeWindow.time = 30000
+					}
+
+
+
+				})
+
+				
 
 				// gui.close()
 
@@ -14986,7 +15098,7 @@
 				// })
 
 			const folderUserSystemControls = gui.addFolder('⚙️ My Experience System Controls')
-				folderUserSystemControls.add(timeWindow, 'time').min(3000).max(30000).step(1000).name('|- A1. [ ~*~ [ Discovery Moment Controls ] ~*~ ] ')
+				folderUserSystemControls.add(timeWindow, 'time').min(3000).max(50000).step(1000).name('|- A1. [ ~*~ [ Discovery Moment Controls ] ~*~ ] ')
 				folderUserSystemControls.add(speedStrengthsParams, 'x').min(1).max(500000).step(100).name('|- A2. [ ~*~ [ User Height Scale ] ~*~ ] ')
 				// folderUserSystemControls.add(video_whiteBackground01_dimensions, 'radius', 0.01, 2009975).onChange(regenerate_video_whiteBackground01).name('Expand Equations Domain')
 
@@ -15053,17 +15165,17 @@
 				folderLoadTestingContainer02.add(TimeΔ_Default_root.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
 				folderLoadTestingContainer02.add(TimeΔ_Default_root.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
-				const folderLoadTestingContainer03 = gui.addFolder('<<< LoadPoint03 :: TimeΔ_Default_root >>>')
+				const folderLoadTestingContainer03 = gui.addFolder('<<< LoadPoint03 :: mesh_CenterBrain_VideoSphere_Opening >>>')
 
-				folderLoadTestingContainer03.add(TimeΔ_Default_root.position, 'x').min(-1500).max(1500).step(1).name('[ ⇄ Scroll ]');
-				folderLoadTestingContainer03.add(TimeΔ_Default_root.position, 'y').min(-1500).max(1500).step(1).name('[ ⇅ Scroll ]');
-				folderLoadTestingContainer03.add(TimeΔ_Default_root.position, 'z').min(-1500).max(1500).step(1).name('[ ⇄⇅ Scroll ]');
-				folderLoadTestingContainer03.add(TimeΔ_Default_root.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
-				folderLoadTestingContainer03.add(TimeΔ_Default_root.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
-				folderLoadTestingContainer03.add(TimeΔ_Default_root.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
-				folderLoadTestingContainer03.add(TimeΔ_Default_root.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
-				folderLoadTestingContainer03.add(TimeΔ_Default_root.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
-				folderLoadTestingContainer03.add(TimeΔ_Default_root.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
+				folderLoadTestingContainer03.add(mesh_CenterBrain_VideoSphere_Opening.position, 'x').min(-1500).max(1500).step(1).name('[ ⇄ Scroll ]');
+				folderLoadTestingContainer03.add(mesh_CenterBrain_VideoSphere_Opening.position, 'y').min(-1500).max(1500).step(1).name('[ ⇅ Scroll ]');
+				folderLoadTestingContainer03.add(mesh_CenterBrain_VideoSphere_Opening.position, 'z').min(-1500).max(1500).step(1).name('[ ⇄⇅ Scroll ]');
+				folderLoadTestingContainer03.add(mesh_CenterBrain_VideoSphere_Opening.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
+				folderLoadTestingContainer03.add(mesh_CenterBrain_VideoSphere_Opening.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
+				folderLoadTestingContainer03.add(mesh_CenterBrain_VideoSphere_Opening.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
+				folderLoadTestingContainer03.add(mesh_CenterBrain_VideoSphere_Opening.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
+				folderLoadTestingContainer03.add(mesh_CenterBrain_VideoSphere_Opening.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
+				folderLoadTestingContainer03.add(mesh_CenterBrain_VideoSphere_Opening.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
 				const folderLoadTestingContainer04 = gui.addFolder('<<< LoadPoint04 :: TechTile_default_AdminOption03_ComplexityΔ >>>')
 
