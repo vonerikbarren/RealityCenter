@@ -1720,7 +1720,7 @@
 
 
 							<!-- VideoDomain02: Search_html_video01 -->
-							<video id="userDefVideo01" class="countDown" playsinline controls webkit-playsinline  autoplay loop width="320" height="240" src="./assets/video/PersonalAnimations/userActionBackwards_SpiralUp_SpiralDown_stars01.mp4" border: 5px 5px black;"></video>
+							<video id="userBodyVideo01" class="countDown" playsinline controls webkit-playsinline  autoplay loop width="320" height="240" src="./assets/video/PersonalAnimations/userActionBackwards_SpiralUp_SpiralDown_stars01.mp4" border: 5px 5px black;"></video>
 
 
 
@@ -2799,30 +2799,7 @@
 
 
 
-			//......................................................................
-			//.........................................DDDDD...................fff..
-			//........................................DDDDDDDDD..............fffff..
-			//........................................DDDDDDDDDDD............fffff..
-			//........................................DDDDDDDDDDD............fffff..
-			//.uuuu...uuu..ssssssss...eeeeee...rrrrrr.DDDD...DDDDD..eeeeee..efffff..
-			//.uuuu...uuu..ssssssss..eeeeeeee..rrrrrr.DDDD....DDDD.eeeeeeee.efffff..
-			//.uuuu...uuu.ssssssssssseeeeeeeee.rrrrrr.DDDD....DDDDDeeeeeeeeeefffff..
-			//.uuuu...uuu.ssssssssssseee..eeee.rrrr...DDDD....DDDDDeee..eeee.ffff...
-			//.uuuu...uuu..ssssssss.seeeeeeeee.rrr....DDDD....DDDDDeeeeeeeee.ffff...
-			//.uuuu...uuu..ssssssss.seeeeeeeee.rrr....DDDD...DDDDDDeeeeeeeee.ffff...
-			//..uuu..uuuu.ssssssssssseee.......rrr....DDDD...DDDD.Deee.......ffff...
-			//..uuuuuuuuu.sssss.ssssseeeeeeeee.rrr....DDDDDDDDDDD.Deeeeeeeee.ffff...
-			//..uuuuuuuuu.ssssssssssseeeeeeee..rrr....DDDDDDDDDD..Deeeeeeee..ffff...
-			//..uuuuuuuuu..ssssssss..eeeeeeee..rrr....DDDDDDDDD....eeeeeeee..ffff...
-			//....uuu.......ssssss.....eeee..........................eeee...........
-			//......................................................................
-
-			let userDef_root
-			let userDef_base01
-			let userDef_base02
-			let userDef_base03
-
-			let userDef_video_default01, mesh_userDef_video_default01
+			
 
 
 			// #################################################################
@@ -3479,9 +3456,23 @@
 
 			let userBody_root
 			let userBody_videoComponent
+			let userBody_videoComponent_base01, mesh_userBody_videoComponent_base01
 			let userBody_videoComponent_geometry
 			let userBody_videoComponent_mat
 			let userBody_videoComponent_mesh
+
+			let userBody_designbase_root
+			let userBody_designBase_gear01
+			let userBody_designBase_gear02
+			let userBody_designBase_gear03
+			let userBody_designBase_spinningLight01
+
+			let userBody_designBase_orbit_root
+			let userBody_designBase_orbit_Orbit01_
+			let userBody_designBase_orbit_Orbit02_
+			let userBody_designBase_orbit_Orbit03_
+
+			
 
 			let userBody_ΔContainer_root
 			let userBody_ΔContainer_PrimaryLayer
@@ -3507,6 +3498,32 @@
 			let userBody_nextΔ
 			let userBody_complexityΔ
 			let userBody_destinationΔ
+
+
+			//......................................................................
+			//.........................................DDDDD...................fff..
+			//........................................DDDDDDDDD..............fffff..
+			//........................................DDDDDDDDDDD............fffff..
+			//........................................DDDDDDDDDDD............fffff..
+			//.uuuu...uuu..ssssssss...eeeeee...rrrrrr.DDDD...DDDDD..eeeeee..efffff..
+			//.uuuu...uuu..ssssssss..eeeeeeee..rrrrrr.DDDD....DDDD.eeeeeeee.efffff..
+			//.uuuu...uuu.ssssssssssseeeeeeeee.rrrrrr.DDDD....DDDDDeeeeeeeeeefffff..
+			//.uuuu...uuu.ssssssssssseee..eeee.rrrr...DDDD....DDDDDeee..eeee.ffff...
+			//.uuuu...uuu..ssssssss.seeeeeeeee.rrr....DDDD....DDDDDeeeeeeeee.ffff...
+			//.uuuu...uuu..ssssssss.seeeeeeeee.rrr....DDDD...DDDDDDeeeeeeeee.ffff...
+			//..uuu..uuuu.ssssssssssseee.......rrr....DDDD...DDDD.Deee.......ffff...
+			//..uuuuuuuuu.sssss.ssssseeeeeeeee.rrr....DDDDDDDDDDD.Deeeeeeeee.ffff...
+			//..uuuuuuuuu.ssssssssssseeeeeeee..rrr....DDDDDDDDDD..Deeeeeeee..ffff...
+			//..uuuuuuuuu..ssssssss..eeeeeeee..rrr....DDDDDDDDD....eeeeeeee..ffff...
+			//....uuu.......ssssss.....eeee..........................eeee...........
+			//......................................................................
+
+			let userDef_root
+			let userDef_base01
+			let userDef_base02
+			let userDef_base03
+
+			let userDef_video_default01, mesh_userDef_video_default01
 
 
 
@@ -7082,7 +7099,7 @@
 						radius: 10,
 						segments: 32,
 						thetaStart: 0,
-						thetaLength: 6.28
+						thetaLength: 6.283185307179586
 					},
 
 
@@ -14559,46 +14576,52 @@
 			//......................................................................
 
 
-			userDef_root = new THREE.Group()
-			userDef_root.position.set(0, 50, 0)
-			userDef_root.rotation.set(0, 0, 0)
-			userDef_root.scale.set(1, 1, 1)
-			scene.add(userDef_root)
+			// userBody_root
+			userBody_root = new THREE.Group()
+			userBody_root.position.set(0, 50, 0)
+			userBody_root.rotation.set(0, 0, 0)
+			userBody_root.scale.set(1, 1, 1)
+			scene.add(userBody_root)
 
-			userDef_base01 = new THREE.Group()
-			userDef_base01.position.set(0, 0, 0)
-			userDef_base01.rotation.set(0, 0, 0)
-			userDef_base01.scale.set(1, 1, 1)
-			userDef_root.add(userDef_base01)
-
-
-			userDef_video_default01 = new THREE.Group()
-			userDef_video_default01.position.set(0, 0, 0)
-			userDef_video_default01.rotation.set(0, 0, 0)
-			userDef_video_default01.scale.set(1, 1, 1)
-			userDef_root.add(userDef_video_default01)
+			// userBody_videoComponent
+			userBody_videoComponent = new THREE.Group()
+			userBody_videoComponent.position.set(0, 0, 0)
+			userBody_videoComponent.rotation.set(0, 0, 0)
+			userBody_videoComponent.scale.set(1, 1, 1)
+			userBody_root.add(userBody_videoComponent)
 
 
-			let userDef_video = document.getElementById('userDefVideo01')
-			let userDef_videoTex = new THREE.VideoTexture(userDef_video)
-			let userDef_videoMat = new THREE.MeshBasicMaterial(
+			// userBody_videoComponent_base01
+			userBody_videoComponent_base01 = new THREE.Group()
+			userBody_videoComponent_base01.position.set(0, 0, 0)
+			userBody_videoComponent_base01.rotation.set(0, 0, 0)
+			userBody_videoComponent_base01.scale.set(1, 1, 1)
+			userBody_root.add(userBody_videoComponent_base01)
+
+
+			let userBody_video = document.getElementById('userBodyVideo01')
+			let userBody_videoTex = new THREE.VideoTexture(userBody_video)
+			let userBody_videoMat = new THREE.MeshBasicMaterial(
 				{
-					map: userDef_videoTex,
+					map: userBody_videoTex,
 					side: THREE.DoubleSide,
 					toneMapped: false,
 				}
 			)
 
 
-			mesh_CenterBrain_VideoSphere_Opening = new THREE.Mesh(
+			mesh_userBody_videoComponent_base01 = new THREE.Mesh(
 				geo_objT_CircleA1, 
-				userDef_videoMat
+				userBody_videoMat
 			)
 
-			mesh_CenterBrain_VideoSphere_Opening.position.set(0, 0, 0)
-			mesh_CenterBrain_VideoSphere_Opening.rotation.set(0, 0, 0)
-			mesh_CenterBrain_VideoSphere_Opening.scale.set(0.25, 0.25, 0.25)
-			userDef_video_default01.add(mesh_CenterBrain_VideoSphere_Opening)
+			mesh_userBody_videoComponent_base01.position.set(0, 0, 0)
+			mesh_userBody_videoComponent_base01.rotation.set(0, 0, 0)
+			mesh_userBody_videoComponent_base01.scale.set(0.35, 0.25, 0.25)
+			userBody_videoComponent_base01.add(mesh_userBody_videoComponent_base01)
+
+
+
 
 
 
@@ -15165,17 +15188,17 @@
 				folderLoadTestingContainer02.add(TimeΔ_Default_root.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
 				folderLoadTestingContainer02.add(TimeΔ_Default_root.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
-				const folderLoadTestingContainer03 = gui.addFolder('<<< LoadPoint03 :: mesh_CenterBrain_VideoSphere_Opening >>>')
+				const folderLoadTestingContainer03 = gui.addFolder('<<< LoadPoint03 :: mesh_userBody_videoComponent_base01 >>>')
 
-				folderLoadTestingContainer03.add(mesh_CenterBrain_VideoSphere_Opening.position, 'x').min(-1500).max(1500).step(1).name('[ ⇄ Scroll ]');
-				folderLoadTestingContainer03.add(mesh_CenterBrain_VideoSphere_Opening.position, 'y').min(-1500).max(1500).step(1).name('[ ⇅ Scroll ]');
-				folderLoadTestingContainer03.add(mesh_CenterBrain_VideoSphere_Opening.position, 'z').min(-1500).max(1500).step(1).name('[ ⇄⇅ Scroll ]');
-				folderLoadTestingContainer03.add(mesh_CenterBrain_VideoSphere_Opening.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
-				folderLoadTestingContainer03.add(mesh_CenterBrain_VideoSphere_Opening.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
-				folderLoadTestingContainer03.add(mesh_CenterBrain_VideoSphere_Opening.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
-				folderLoadTestingContainer03.add(mesh_CenterBrain_VideoSphere_Opening.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
-				folderLoadTestingContainer03.add(mesh_CenterBrain_VideoSphere_Opening.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
-				folderLoadTestingContainer03.add(mesh_CenterBrain_VideoSphere_Opening.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
+				folderLoadTestingContainer03.add(mesh_userBody_videoComponent_base01.position, 'x').min(-1500).max(1500).step(1).name('[ ⇄ Scroll ]');
+				folderLoadTestingContainer03.add(mesh_userBody_videoComponent_base01.position, 'y').min(-1500).max(1500).step(1).name('[ ⇅ Scroll ]');
+				folderLoadTestingContainer03.add(mesh_userBody_videoComponent_base01.position, 'z').min(-1500).max(1500).step(1).name('[ ⇄⇅ Scroll ]');
+				folderLoadTestingContainer03.add(mesh_userBody_videoComponent_base01.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
+				folderLoadTestingContainer03.add(mesh_userBody_videoComponent_base01.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
+				folderLoadTestingContainer03.add(mesh_userBody_videoComponent_base01.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
+				folderLoadTestingContainer03.add(mesh_userBody_videoComponent_base01.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
+				folderLoadTestingContainer03.add(mesh_userBody_videoComponent_base01.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
+				folderLoadTestingContainer03.add(mesh_userBody_videoComponent_base01.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
 				const folderLoadTestingContainer04 = gui.addFolder('<<< LoadPoint04 :: TechTile_default_AdminOption03_ComplexityΔ >>>')
 
