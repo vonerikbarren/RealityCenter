@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>ΔTemplate</title>
+		<title>MySons◈</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 		<!-- Copyright: <a href='https://es.123rf.com/profile_apopium'>apopium</a> -->
@@ -6421,12 +6421,12 @@
 				floorDesign01_Grid = new THREE.Group()
 				floorDesign01_Grid.position.set(0, -0.2, 0)
 				floorDesign01_Grid.rotation.set(0, 0, 0)
-				floorDesign01_Grid.scale.set(1, 1, 1)
+				floorDesign01_Grid.scale.set(2.5, 2.5, 2.5)
 				videoAndΔComboTest01.add(floorDesign01_Grid)
 
 
 				const mat_floorDesign01_Grid = new THREE.MeshBasicMaterial({ map: defaultGrid01, side: THREE.DoubleSide });
-				mesh_floorDesign01_Grid = new THREE.Mesh(geo_objT_PlaneA1, mat_floorDesign01_Grid);
+				mesh_floorDesign01_Grid = new THREE.Mesh(geo_objT_BoxA0, mat_floorDesign01_Grid);
 				mat_floorDesign01_Grid.transparent = true;
 				mat_floorDesign01_Grid.alphaMap = defaultGrid01;
 				mesh_floorDesign01_Grid.position.set(0, 0, 0);
@@ -6968,7 +6968,7 @@
 
 				//# userΔ_root
 				userΔ_root = new THREE.Group()
-				userΔ_root.position.set(0, 10, 1)
+				userΔ_root.position.set(0, 0, 1)
 				userΔ_root.rotation.set(0, 0, 0)
 				userΔ_root.scale.set(1, 1, 1)
 				scene.add(userΔ_root)
@@ -7486,12 +7486,12 @@
 				const mat_userΔ_ΔToHold03 = new THREE.MeshBasicMaterial({ map: DataCubeRoom01, side: THREE.DoubleSide });
 				mesh_userΔ_ΔToHold03 = new THREE.Mesh(geo_objT_BoxA0, mat_userΔ_ΔToHold03);
 				// \- [Material Settings]
-				mat_userΔ_ΔToHold03.transparent = false;
+				mat_userΔ_ΔToHold03.transparent = true;
 				mat_userΔ_ΔToHold03.alphaMap = SceneWallpaper_02;
 				// mat_TimeΔ_Default_ExternalSkeletonA04.color = new THREE.Color("#00ffb3")
 				// mat_TimeΔ_Default_ExternalSkeletonA04.blending = THREE.AdditiveBlending
 				// \- [Mesh Settings]
-				mesh_userΔ_ΔToHold03.position.set(-2.8, 3.5, 2);
+				mesh_userΔ_ΔToHold03.position.set(-2.3, 3.5, 2);
 				mesh_userΔ_ΔToHold03.scale.set(0.14, 0.14, 0.14);
 				mesh_userΔ_ΔToHold03.rotation.set(0, 0, 0)
 				// mesh_userΔ_ΔToHold03.rotateX( - Math.PI / 2 );
@@ -7610,15 +7610,15 @@
 				})
 
 
-				gsap.to(mesh_userΔ_ΔToHold03.scale, {
-					duration: 80,
-					repeat: -1,
-					delay: 5,
-					x: 10,
-					y: 10,
-					z: 10,
+				// gsap.to(mesh_userΔ_ΔToHold03.scale, {
+				// 	duration: 80,
+				// 	repeat: -1,
+				// 	delay: 5,
+				// 	x: 25,
+				// 	y: 25,
+				// 	z: 25,
 					
-				})
+				// })
 
 
 				gsap.to(mesh_userΔ_ΔToHold05.rotation, {
@@ -8331,17 +8331,17 @@
 				folderLoadTestingContainer08.add(userΔ_imgContainer02.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
 				folderLoadTestingContainer08.add(userΔ_imgContainer02.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
-				const folderLoadTestingContainer09 = gui.addFolder('<<< LoadPoint09 : EmulatorHUB_root >>>')
+				const folderLoadTestingContainer09 = gui.addFolder('<<< LoadPoint09 : mesh_userΔ_ΔToHold03 >>>')
 
-				folderLoadTestingContainer09.add(gbaEmulatorHUD_root.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
-				folderLoadTestingContainer09.add(gbaEmulatorHUD_root.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
-				folderLoadTestingContainer09.add(gbaEmulatorHUD_root.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
-				folderLoadTestingContainer09.add(gbaEmulatorHUD_root.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
-				folderLoadTestingContainer09.add(gbaEmulatorHUD_root.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
-				folderLoadTestingContainer09.add(gbaEmulatorHUD_root.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
-				folderLoadTestingContainer09.add(gbaEmulatorHUD_root.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
-				folderLoadTestingContainer09.add(gbaEmulatorHUD_root.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
-				folderLoadTestingContainer09.add(gbaEmulatorHUD_root.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
+				folderLoadTestingContainer09.add(mesh_userΔ_ΔToHold03.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
+				folderLoadTestingContainer09.add(mesh_userΔ_ΔToHold03.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
+				folderLoadTestingContainer09.add(mesh_userΔ_ΔToHold03.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
+				folderLoadTestingContainer09.add(mesh_userΔ_ΔToHold03.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
+				folderLoadTestingContainer09.add(mesh_userΔ_ΔToHold03.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
+				folderLoadTestingContainer09.add(mesh_userΔ_ΔToHold03.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
+				folderLoadTestingContainer09.add(mesh_userΔ_ΔToHold03.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
+				folderLoadTestingContainer09.add(mesh_userΔ_ΔToHold03.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
+				folderLoadTestingContainer09.add(mesh_userΔ_ΔToHold03.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
 				const folderLoadTestingContainer10 = gui.addFolder('<<< LoadPoint10 >>>')
 
@@ -8924,7 +8924,7 @@
 				// ###########################
 
 				// Time LeftPrimaryWindow_root Experience = Math.cos(time * speed) * distance + height
-				userΔ_root.position.y = Math.abs(Math.cos(time * 0.001) * 0.1) + 10
+				// userΔ_root.position.y = Math.abs(Math.cos(time * 0.001) * 0.1) + 0
 
 				mesh_userΔ_imgContainer02.rotation.z = time * -0.0001
 
@@ -8937,7 +8937,8 @@
 				mesh_userΔ_gearSeventh.rotation.z = time * 0.001
 
 				mesh_userΔ_ΔToHold04.rotation.y = time * -0.001
-				userΔ_holdΔ_logoComponent_tree.rotation.y = time * 0.0005
+				mesh_userΔ_ΔToHold03.rotation.y = time * -0.001
+				userΔ_holdΔ_logoComponent_tree.rotation.y = time * 0.005
 
 				// MySonAnimations
 				MySon_root.rotation.y = time * 0.0005
