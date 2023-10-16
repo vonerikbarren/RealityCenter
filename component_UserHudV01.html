@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>ΔTemplate</title>
+		<title>index_main</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 		<!-- Copyright: <a href='https://es.123rf.com/profile_apopium'>apopium</a> -->
@@ -2549,6 +2549,81 @@
             // #################################################################
             //  
 			// #################################################################
+
+
+
+            //.................................................................
+				//..TTTTTTTTT..........................ttii........................
+				//.TTTTTTTTTTT....................stt..ttii........................
+				//.TTTTTTTTTTT....................stt..ttii........................
+				//.TTTTTTTTTTT....................stt..ttii........................
+				//.....TTTT...eeeeeee...essssss.sssttttttii.iinnnnnnn...ngggggggg..
+				//.....TTTT...eeeeeeee.eessssssssssttttttii.iinnnnnnnn..ngggggggg..
+				//.....TTTT..Teeeeeeee.eessssssssssttttttii.iinnnnnnnn.nngggggggg..
+				//.....TTTT..Teee..eeeeeesssssss..stt..ttii.iinnn.nnnn.nngg..gggg..
+				//.....TTTT..Teeeeeeeeeeesssssss..stt..ttii.iinn..nnnn.nngg..gggg..
+				//.....TTTT..Teeeeeeeee.esssssss..stt..ttii.iinn..nnnn.nngg..gggg..
+				//.....TTTT..Teee......eessssssss.stt..ttii.iinn..nnnn.nngg..gggg..
+				//.....TTTT..Teeeeeeeeeeesss.ssss.sttt.ttii.iinn..nnnn.nngggggggg..
+				//.....TTTT..Teeeeeeee.eesssssss..sttttttii.iinn..nnnn.nngggggggg..
+				//.....TTTT...eeeeeeee..esssssss..sttttttii.iinn..nnnn..ngggggggg..
+				//..............eeee.....sssss.....tttt................nnggg.gggg..
+				//.....................................................nngggggggg..
+				//.....................................................nngggggggg..
+				//......................................................nggggggg...
+				//.................................................................
+
+				// #################################################################
+				// #################################################################
+				// -----------------------------------------------------------------
+				// # component_userHud - "UserHud_WebDefault" (Start)
+
+				// ## [buildcomponentsHere]
+
+
+                let perspectiveΔ_root
+                let perspectiveΔ_baseA, mesh_perspectiveΔ_baseA
+                let mesh_perspectiveΔ
+
+
+                let UserHud_default_root
+                
+                let ΔA_Menubar_root
+                let ΔA_Menubar_baseA
+
+                let ΔB_Navbar_root
+                let ΔB_Navbar_baseA
+                let ΔB_Navbar_baseB
+
+                let ΔB1_LeftDrawer_root
+                let ΔB2_RightDrawer_root
+
+                let ΔC_MainViews_root
+                let ΔC_MainViews_baseA
+
+                let ΔD_SubViews_root
+                let ΔD_SubViews_baseA
+
+                let ΔE_LH_root
+                let ΔE_LH_baseA
+
+                let ΔF_RH_root
+                let ΔF_RH_baseA
+
+                let ΔG_Dock_root
+                let ΔG_Dock_
+
+
+
+                
+
+
+
+
+				// # component_userHud - "UserHud_WebDefault" (End)
+				// -----------------------------------------------------------------
+				// #################################################################
+				// #################################################################
 			
 
 
@@ -3007,6 +3082,13 @@
 				const aboutMeDefault = textureLoader.load('./assets/img/07-StaticImg/portfolioHolder01.png')
 				const resumeImportPage01 = textureLoader.load('./assets/img/07-StaticImg/resumeP1.png')
 				const resumeImportPage02 = textureLoader.load('./assets/img/07-StaticImg/resumeP2.png')
+
+
+                // ----------------------------------------------------------------------------------------------------
+				// \- [UserHud_Default_assets]
+                // ----------------------------------------------------------------------------------------------------
+
+                
 
 
 
@@ -4680,12 +4762,12 @@
 
 						// size of sphere here...
 						object.position.setFromSphericalCoords(3000, phi, theta);
-						object.translateY(4500)
+						object.translateY(0)
 						//  object.position.set(0, 1200, 0)
 
 						vector.copy(object.position).multiplyScalar(2);
 
-						object.lookAt(0, 5000, 0);
+						object.lookAt(0, 100, 0);
 						
 
 						targets.sphere.push(object);
@@ -6548,7 +6630,7 @@
 						0, 0, 0,
 						1, 1, 1,
 						"hoverClockA1",
-						"https://matrix.logic-wire.de/",
+						"https://vonerikbarren.github.io/Portfolio--V3/#",
 						"1920px", "1200"
 					)
 
@@ -6608,92 +6690,92 @@
                 
 
 
-                ATT_Acronyms__Root = new THREE.Group()
-				// ATT_Acronyms__Root.position.set(-87, 45, 274) // ||original 
-                ATT_Acronyms__Root.position.set(0, 1.05, 0)
-				ATT_Acronyms__Root.scale.set(0.001, 0.001, 0.001)
-				scene.add(ATT_Acronyms__Root)
+                // ATT_Acronyms__Root = new THREE.Group()
+				// // ATT_Acronyms__Root.position.set(-87, 45, 274) // ||original 
+                // ATT_Acronyms__Root.position.set(0, 1.05, 0)
+				// ATT_Acronyms__Root.scale.set(0.001, 0.001, 0.001)
+				// scene.add(ATT_Acronyms__Root)
 				
 
-				ATT_Acronyms__Root.add(
+				// ATT_Acronyms__Root.add(
 
-					new makePDF_Viewer(
-						0, 0, 0,
-						0, 0, 0,
-						0.1, 0.1, 0.1,
-						"hoverClockA1",
-						"./assets/docs/02-PDFs/MyPersonalLibrary/03-ATT/ATT_Acronyms.pdf",
-						"1200", "1920"
-					)
+				// 	new makePDF_Viewer(
+				// 		0, 0, 0,
+				// 		0, 0, 0,
+				// 		0.1, 0.1, 0.1,
+				// 		"hoverClockA1",
+				// 		"./assets/docs/02-PDFs/MyPersonalLibrary/03-ATT/ATT_Acronyms.pdf",
+				// 		"1200", "1920"
+				// 	)
 
-				)
+				// )
 
 
-                ATT_CustomerEducationTool__Root = new THREE.Group()
-				// ATT_CustomerEducationTool__Root.position.set(-87, 45, 274) // ||original 
-                ATT_CustomerEducationTool__Root.position.set(0.13, 1.05, 0)
-                ATT_CustomerEducationTool__Root.rotation.set(0, 0, 0)
-				ATT_CustomerEducationTool__Root.scale.set(0.001, 0.001, 0.001)
-				scene.add(ATT_CustomerEducationTool__Root)
+                // ATT_CustomerEducationTool__Root = new THREE.Group()
+				// // ATT_CustomerEducationTool__Root.position.set(-87, 45, 274) // ||original 
+                // ATT_CustomerEducationTool__Root.position.set(0.13, 1.05, 0)
+                // ATT_CustomerEducationTool__Root.rotation.set(0, 0, 0)
+				// ATT_CustomerEducationTool__Root.scale.set(0.001, 0.001, 0.001)
+				// scene.add(ATT_CustomerEducationTool__Root)
 				
 
-				ATT_CustomerEducationTool__Root.add(
+				// ATT_CustomerEducationTool__Root.add(
 
-					new makePDF_Viewer(
-						0, 0, 0,
-						0, 0, 0,
-						0.1, 0.1, 0.1,
-						"hoverClockA1",
-						"./assets/docs/02-PDFs/MyPersonalLibrary/03-ATT/ATT_CustomerEducationTool.pdf",
-						"1200", "1920"
-					)
+				// 	new makePDF_Viewer(
+				// 		0, 0, 0,
+				// 		0, 0, 0,
+				// 		0.1, 0.1, 0.1,
+				// 		"hoverClockA1",
+				// 		"./assets/docs/02-PDFs/MyPersonalLibrary/03-ATT/ATT_CustomerEducationTool.pdf",
+				// 		"1200", "1920"
+				// 	)
 
-				)
+				// )
 
 
-				ATT_PrimerBooklet__Root = new THREE.Group()
-				// ATT_PrimerBooklet__Root.position.set(-87, 45, 274) // ||original 
-                ATT_PrimerBooklet__Root.position.set(-0.13, 1.05, 0)
-                ATT_PrimerBooklet__Root.rotation.set(0, 0, 0)
-				ATT_PrimerBooklet__Root.scale.set(0.001, 0.001, 0.001)
-				scene.add(ATT_PrimerBooklet__Root)
+				// ATT_PrimerBooklet__Root = new THREE.Group()
+				// // ATT_PrimerBooklet__Root.position.set(-87, 45, 274) // ||original 
+                // ATT_PrimerBooklet__Root.position.set(-0.13, 1.05, 0)
+                // ATT_PrimerBooklet__Root.rotation.set(0, 0, 0)
+				// ATT_PrimerBooklet__Root.scale.set(0.001, 0.001, 0.001)
+				// scene.add(ATT_PrimerBooklet__Root)
 				
 
-				ATT_PrimerBooklet__Root.add(
+				// ATT_PrimerBooklet__Root.add(
 
-					new makePDF_Viewer(
-						0, 0, 0,
-						0, 0, 0,
-						0.1, 0.1, 0.1,
-						"hoverClockA1",
-						"./assets/docs/02-PDFs/MyPersonalLibrary/03-ATT/ATT_CustomerEducationTool.pdf",
-						"1200", "1920"
-					)
+				// 	new makePDF_Viewer(
+				// 		0, 0, 0,
+				// 		0, 0, 0,
+				// 		0.1, 0.1, 0.1,
+				// 		"hoverClockA1",
+				// 		"./assets/docs/02-PDFs/MyPersonalLibrary/03-ATT/ATT_CustomerEducationTool.pdf",
+				// 		"1200", "1920"
+				// 	)
 
-				)
+				// )
 
 
 
-				ATT_RampUp_RSC__Root = new THREE.Group()
-				// ATT_RampUp_RSC__Root.position.set(-87, 45, 274) // ||original 
-                ATT_RampUp_RSC__Root.position.set(-1.5, 1.05, 1.5)
-                ATT_RampUp_RSC__Root.rotation.set(0, 1.575, 0)
-				ATT_RampUp_RSC__Root.scale.set(0.001, 0.001, 0.001)
-				scene.add(ATT_RampUp_RSC__Root)
+				// ATT_RampUp_RSC__Root = new THREE.Group()
+				// // ATT_RampUp_RSC__Root.position.set(-87, 45, 274) // ||original 
+                // ATT_RampUp_RSC__Root.position.set(-1.5, 1.05, 1.5)
+                // ATT_RampUp_RSC__Root.rotation.set(0, 1.575, 0)
+				// ATT_RampUp_RSC__Root.scale.set(0.001, 0.001, 0.001)
+				// scene.add(ATT_RampUp_RSC__Root)
 				
 
-				ATT_RampUp_RSC__Root.add(
+				// ATT_RampUp_RSC__Root.add(
 
-					new makePDF_Viewer(
-						0, 0, 0,
-						0, 0, 0,
-						0.1, 0.1, 0.1,
-						"hoverClockA1",
-						"./assets/docs/02-PDFs/MyPersonalLibrary/03-ATT/ATT_CustomerEducationTool.pdf",
-						"1200", "1920"
-					)
+				// 	new makePDF_Viewer(
+				// 		0, 0, 0,
+				// 		0, 0, 0,
+				// 		0.1, 0.1, 0.1,
+				// 		"hoverClockA1",
+				// 		"./assets/docs/02-PDFs/MyPersonalLibrary/03-ATT/ATT_CustomerEducationTool.pdf",
+				// 		"1200", "1920"
+				// 	)
 
-				)
+				// )
 
 
                 
@@ -7002,12 +7084,123 @@
 				//......................................................nggggggg...
 				//.................................................................
 
+                // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
 				// #################################################################
 				// #################################################################
 				// -----------------------------------------------------------------
-				// # component_Gallery (Start)
+				// # component_userHud - "" (Start)
 
 				// ## [buildcomponentsHere]
+
+
+
+                // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
+                // \- # PerspectiveΔ_root
+                // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
+                perspectiveΔ_root = new THREE.Group()
+				perspectiveΔ_root.position.set(0, 1, 0)
+				perspectiveΔ_root.rotation.set(0, 0, 0)
+				perspectiveΔ_root.scale.set(1, 1, 1)
+				scene.add(perspectiveΔ_root)
+
+
+                perspectiveΔ_baseA = new THREE.Group()
+				perspectiveΔ_baseA.position.set(0, 1, 0)
+				perspectiveΔ_baseA.rotation.set(0, 0, 0)
+				perspectiveΔ_baseA.scale.set(1, 1, 1)
+				scene.add(perspectiveΔ_baseA)
+
+
+				const mat_perspectiveΔ_baseA = new THREE.MeshBasicMaterial({ map: SceneWallpaper_01, side: THREE.DoubleSide });
+				mesh_perspectiveΔ_baseA = new THREE.Mesh(geo_objT_SphereA0, mat_perspectiveΔ_baseA);
+                //
+				mat_perspectiveΔ_baseA.transparent = true;
+                mat_perspectiveΔ_baseA.wireframe = false;
+				mat_perspectiveΔ_baseA.alphaMap = SceneWallpaper_01;
+                //
+				mesh_perspectiveΔ_baseA.position.set(0, 0, 0);
+				mesh_perspectiveΔ_baseA.scale.set(0.05, 0.05, 0.05);
+				mesh_perspectiveΔ_baseA.rotation.set(0, 0, 0)
+                // 
+				// mesh_perspectiveΔ_baseA.rotateX( Math.PI / 2 );
+				
+				perspectiveΔ_baseA.add(mesh_perspectiveΔ_baseA)
+
+
+                // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
+                // \- # UserHud_default_root
+                // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
+
+                UserHud_default_root = new THREE.Group()
+				UserHud_default_root.position.set(0, 1, 0)
+				UserHud_default_root.rotation.set(0, 0, 0)
+				UserHud_default_root.scale.set(1, 1, 1)
+				scene.add(UserHud_default_root)
+
+
+                // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
+                // \- # ΔA_Menubar_root
+                // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
+
+                ΔA_Menubar_root = new THREE.Group()
+				ΔA_Menubar_root.position.set(0, 3, 0)
+				ΔA_Menubar_root.rotation.set(0, 0, 0)
+				ΔA_Menubar_root.scale.set(0.033, 0.035, 0.035)
+				UserHud_default_root.add(ΔA_Menubar_root)
+                camera.attach(ΔA_Menubar_root)
+
+
+                ΔB_Navbar_baseA = new THREE.Group()
+				ΔB_Navbar_baseA.position.set(0, 1, 0)
+				ΔB_Navbar_baseA.rotation.set(0, 0, 0)
+				ΔB_Navbar_baseA.scale.set(1, 1, 1)
+				ΔA_Menubar_root.add(ΔB_Navbar_baseA)
+
+
+                ΔB_Navbar_baseA.add(
+                    new hoverObject(
+                        'img',
+                        0, 0, 0,
+                        0, 0, 0,
+                        0.1, 0.1, 0.1,
+                        "Testing234", "TestingClass234",
+                        "./assets/img/03-HudUI/PrimaryHud01_DrLight/A01_MenuBar/WhiteTheme/01a_MenuBar_Default.svg", "",
+                        "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+                    )
+                )
+
+
+
+                // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
+                // \- # ΔB_Navbar_root
+                // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
+
+                ΔB_Navbar_root = new THREE.Group()
+				ΔB_Navbar_root.position.set(0, 3, 0)
+				ΔB_Navbar_root.rotation.set(0, 0, 0)
+				ΔB_Navbar_root.scale.set(0.034, 0.035, 0.035)
+				UserHud_default_root.add(ΔB_Navbar_root)
+                camera.attach(ΔB_Navbar_root)
+
+
+                ΔB_Navbar_baseA = new THREE.Group()
+				ΔB_Navbar_baseA.position.set(0, 1, 0)
+				ΔB_Navbar_baseA.rotation.set(0, 0, 0)
+				ΔB_Navbar_baseA.scale.set(1, 1, 1)
+				ΔB_Navbar_root.add(ΔB_Navbar_baseA)
+
+
+                ΔB_Navbar_baseA.add(
+                    new hoverObject(
+                        'img',
+                        0, 0, 0,
+                        0, 0, 0,
+                        0.1, 0.1, 0.1,
+                        "Testing234", "TestingClass234",
+                        "./assets/img/03-HudUI/PrimaryHud01_DrLight/A03_Navbar/WhiteTheme/compUI_Navbar_white_default.svg", "",
+                        "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+                    )
+                )
 
 
 				
@@ -7015,7 +7208,11 @@
 
 
 
-				// # component_Gallery (End)
+
+
+
+
+				// # component_userHud - "" (End)
 				// -----------------------------------------------------------------
 				// #################################################################
 				// #################################################################
@@ -7522,65 +7719,65 @@
 				folderTester01.add(floorDesign01_Grid.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
 				folderTester01.add(floorDesign01_Grid.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
-				const folderLoadTestingContainer01 = gui.addFolder('<<< LoadPoint01 :: floorDesign01_Grid >>>')
+				const folderLoadTestingContainer01 = gui.addFolder('<<< LoadPoint01 :: ΔB_Navbar_root >>>')
 
-				folderLoadTestingContainer01.add(floorDesign01_Grid.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
-				folderLoadTestingContainer01.add(floorDesign01_Grid.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
-				folderLoadTestingContainer01.add(floorDesign01_Grid.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
-				folderLoadTestingContainer01.add(floorDesign01_Grid.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
-				folderLoadTestingContainer01.add(floorDesign01_Grid.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
-				folderLoadTestingContainer01.add(floorDesign01_Grid.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
-				folderLoadTestingContainer01.add(floorDesign01_Grid.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
-				folderLoadTestingContainer01.add(floorDesign01_Grid.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
-				folderLoadTestingContainer01.add(floorDesign01_Grid.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
+				folderLoadTestingContainer01.add(ΔB_Navbar_root.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
+				folderLoadTestingContainer01.add(ΔB_Navbar_root.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
+				folderLoadTestingContainer01.add(ΔB_Navbar_root.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
+				folderLoadTestingContainer01.add(ΔB_Navbar_root.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
+				folderLoadTestingContainer01.add(ΔB_Navbar_root.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
+				folderLoadTestingContainer01.add(ΔB_Navbar_root.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
+				folderLoadTestingContainer01.add(ΔB_Navbar_root.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
+				folderLoadTestingContainer01.add(ΔB_Navbar_root.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
+				folderLoadTestingContainer01.add(ΔB_Navbar_root.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
-				const folderLoadTestingContainer02 = gui.addFolder('<<< LoadPoint02 :: ATT_Acronyms__Root >>>')
+				const folderLoadTestingContainer02 = gui.addFolder('<<< LoadPoint02 :: ΔB_Navbar_baseA >>>')
 
-				folderLoadTestingContainer02.add(ATT_Acronyms__Root.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
-				folderLoadTestingContainer02.add(ATT_Acronyms__Root.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
-				folderLoadTestingContainer02.add(ATT_Acronyms__Root.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
-				folderLoadTestingContainer02.add(ATT_Acronyms__Root.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
-				folderLoadTestingContainer02.add(ATT_Acronyms__Root.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
-				folderLoadTestingContainer02.add(ATT_Acronyms__Root.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
-				folderLoadTestingContainer02.add(ATT_Acronyms__Root.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
-				folderLoadTestingContainer02.add(ATT_Acronyms__Root.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
-				folderLoadTestingContainer02.add(ATT_Acronyms__Root.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
+				folderLoadTestingContainer02.add(ΔB_Navbar_baseA.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
+				folderLoadTestingContainer02.add(ΔB_Navbar_baseA.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
+				folderLoadTestingContainer02.add(ΔB_Navbar_baseA.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
+				folderLoadTestingContainer02.add(ΔB_Navbar_baseA.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
+				folderLoadTestingContainer02.add(ΔB_Navbar_baseA.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
+				folderLoadTestingContainer02.add(ΔB_Navbar_baseA.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
+				folderLoadTestingContainer02.add(ΔB_Navbar_baseA.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
+				folderLoadTestingContainer02.add(ΔB_Navbar_baseA.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
+				folderLoadTestingContainer02.add(ΔB_Navbar_baseA.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
-				const folderLoadTestingContainer03 = gui.addFolder('<<< LoadPoint03 :: ATT_CustomerEducationTool__Root >>>')
+				const folderLoadTestingContainer03 = gui.addFolder('<<< LoadPoint03 :: floorDesign01_Grid >>>')
 
-				folderLoadTestingContainer03.add(ATT_CustomerEducationTool__Root.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
-				folderLoadTestingContainer03.add(ATT_CustomerEducationTool__Root.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
-				folderLoadTestingContainer03.add(ATT_CustomerEducationTool__Root.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
-				folderLoadTestingContainer03.add(ATT_CustomerEducationTool__Root.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
-				folderLoadTestingContainer03.add(ATT_CustomerEducationTool__Root.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
-				folderLoadTestingContainer03.add(ATT_CustomerEducationTool__Root.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
-				folderLoadTestingContainer03.add(ATT_CustomerEducationTool__Root.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
-				folderLoadTestingContainer03.add(ATT_CustomerEducationTool__Root.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
-				folderLoadTestingContainer03.add(ATT_CustomerEducationTool__Root.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
+				folderLoadTestingContainer03.add(floorDesign01_Grid.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
+				folderLoadTestingContainer03.add(floorDesign01_Grid.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
+				folderLoadTestingContainer03.add(floorDesign01_Grid.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
+				folderLoadTestingContainer03.add(floorDesign01_Grid.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
+				folderLoadTestingContainer03.add(floorDesign01_Grid.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
+				folderLoadTestingContainer03.add(floorDesign01_Grid.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
+				folderLoadTestingContainer03.add(floorDesign01_Grid.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
+				folderLoadTestingContainer03.add(floorDesign01_Grid.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
+				folderLoadTestingContainer03.add(floorDesign01_Grid.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
-				const folderLoadTestingContainer04 = gui.addFolder('<<< LoadPoint04 :: ATT_PrimerBooklet__Root >>>')
+				const folderLoadTestingContainer04 = gui.addFolder('<<< LoadPoint04 :: floorDesign01_Grid >>>')
 
-				folderLoadTestingContainer04.add(ATT_PrimerBooklet__Root.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
-				folderLoadTestingContainer04.add(ATT_PrimerBooklet__Root.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
-				folderLoadTestingContainer04.add(ATT_PrimerBooklet__Root.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
-				folderLoadTestingContainer04.add(ATT_PrimerBooklet__Root.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
-				folderLoadTestingContainer04.add(ATT_PrimerBooklet__Root.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
-				folderLoadTestingContainer04.add(ATT_PrimerBooklet__Root.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
-				folderLoadTestingContainer04.add(ATT_PrimerBooklet__Root.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
-				folderLoadTestingContainer04.add(ATT_PrimerBooklet__Root.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
-				folderLoadTestingContainer04.add(ATT_PrimerBooklet__Root.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
+				folderLoadTestingContainer04.add(floorDesign01_Grid.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
+				folderLoadTestingContainer04.add(floorDesign01_Grid.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
+				folderLoadTestingContainer04.add(floorDesign01_Grid.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
+				folderLoadTestingContainer04.add(floorDesign01_Grid.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
+				folderLoadTestingContainer04.add(floorDesign01_Grid.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
+				folderLoadTestingContainer04.add(floorDesign01_Grid.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
+				folderLoadTestingContainer04.add(floorDesign01_Grid.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
+				folderLoadTestingContainer04.add(floorDesign01_Grid.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
+				folderLoadTestingContainer04.add(floorDesign01_Grid.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
-				const folderLoadTestingContainer05 = gui.addFolder('<<< LoadPoint05 :: ATT_RampUp_RSC__Root >>>')
+				const folderLoadTestingContainer05 = gui.addFolder('<<< LoadPoint05 :: floorDesign01_Grid >>>')
 
-				folderLoadTestingContainer05.add(ATT_RampUp_RSC__Root.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
-				folderLoadTestingContainer05.add(ATT_RampUp_RSC__Root.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
-				folderLoadTestingContainer05.add(ATT_RampUp_RSC__Root.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
-				folderLoadTestingContainer05.add(ATT_RampUp_RSC__Root.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
-				folderLoadTestingContainer05.add(ATT_RampUp_RSC__Root.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
-				folderLoadTestingContainer05.add(ATT_RampUp_RSC__Root.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
-				folderLoadTestingContainer05.add(ATT_RampUp_RSC__Root.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
-				folderLoadTestingContainer05.add(ATT_RampUp_RSC__Root.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
-				folderLoadTestingContainer05.add(ATT_RampUp_RSC__Root.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
+				folderLoadTestingContainer05.add(floorDesign01_Grid.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
+				folderLoadTestingContainer05.add(floorDesign01_Grid.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
+				folderLoadTestingContainer05.add(floorDesign01_Grid.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
+				folderLoadTestingContainer05.add(floorDesign01_Grid.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
+				folderLoadTestingContainer05.add(floorDesign01_Grid.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
+				folderLoadTestingContainer05.add(floorDesign01_Grid.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
+				folderLoadTestingContainer05.add(floorDesign01_Grid.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
+				folderLoadTestingContainer05.add(floorDesign01_Grid.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
+				folderLoadTestingContainer05.add(floorDesign01_Grid.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
 				const folderLoadTestingContainer06 = gui.addFolder('<<< LoadPoint06 : EmulatorTest01 >>>')
 
