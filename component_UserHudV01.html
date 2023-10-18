@@ -1715,7 +1715,7 @@
 
 
 							<!-- VideoDomain02: Search_html_video01 -->
-							<video id="openingVideo" class="countDown" playsinline controls webkit-playsinline  autoplay loop width="320" height="240" src="./assets/video/PlexusAnimations/Animation_ParticlesWhite01.mp4" border: 5px 5px black;"></video>
+							<video id="openingVideo" class="countDown" playsinline controls webkit-playsinline  autoplay loop width="320" height="240" src="./assets/video/PlexusAnimations/Animation_ParticlesDancing_NeonBluePink.mp4" border: 5px 5px black;"></video>
 
 
 
@@ -2585,28 +2585,61 @@
                 let perspectiveΔ_baseA, mesh_perspectiveΔ_baseA
                 let mesh_perspectiveΔ
 
+                let realityDrawerMenu_root
+
+                let admin_root
+                let admin_baseA, mesh_admin_baseA
+
 
                 let UserHud_default_root
                 
                 let ΔA_Menubar_root
                 let ΔA_Menubar_baseA
 
+                let ΔA_Menubar_lineA
+                let ΔA_Menubar_lineA_BaseA
+                let ΔA_Menubar_lineB
+                let ΔA_Menubar_lineB_BaseA
+
+                let ΔA_Menubar_lineVerticalA
+                let ΔA_Menubar_lineVerticalA_BaseA
+                let ΔA_Menubar_lineVerticalB
+                let ΔA_Menubar_lineVerticalB_BaseA
+
+
+
                 let ΔB_Navbar_root
                 let ΔB_Navbar_baseA
                 let ΔB_Navbar_baseB
 
                 let ΔB1_LeftDrawer_root
+                let ΔB1_LeftDrawer_BaseA
+                let ΔB1_LeftDrawer_DrawerContainer25percent_root
+                let ΔB1_LeftDrawer_DrawerContainer25percent_BaseA
+
                 let ΔB2_RightDrawer_root
+                let ΔB2_RightDrawer_BaseA
+                let ΔB1_RightDrawer_DrawerContainer25percent_root
+                let ΔB1_RightDrawer_DrawerContainer25percent_BaseA
 
                 let ΔC_MainViews_root
                 let ΔC_MainViews_baseA
 
+                let ΔC_MainView_GridA_root
+                let ΔC_MainView_GridA_baseA
+                let ΔC_MainView_GridB_root
+                let ΔC_MainView_GridB_baseA
+
                 let ΔD_SubViews_root
                 let ΔD_SubViews_baseA
 
+                let ΔE_LH_Menu_root
+                let ΔE_LH_Menu_BaseA
                 let ΔE_LH_root
                 let ΔE_LH_baseA
 
+                let ΔF_RH_Menu_root
+                let ΔF_RH_Menu_BaseA
                 let ΔF_RH_root
                 let ΔF_RH_baseA
 
@@ -5438,6 +5471,34 @@
 				})
 
 
+                document.addEventListener("keydown", function(event) {
+					if (event.key === "[") {
+						// camera.position.y -= 10000
+
+						gsap.to(camera.position, {
+							duration: .2,
+							delay: 0,
+							y: "-= 500",
+
+						})
+					}
+				})
+
+
+                document.addEventListener("keydown", function(event) {
+					if (event.key === "]") {
+						// camera.position.y -= 10000
+
+						gsap.to(camera.position, {
+							duration: .2,
+							delay: 0,
+							y: "-= 500",
+
+						})
+					}
+				})
+
+
 			// ----------------------------------------------------------------------------------------------------
             // \- [OOASA6PE01_A8_EveA08__Manual_KeyEvents_Movement] \- 
             // ----------------------------------------------------------------------------------------------------
@@ -7132,7 +7193,7 @@
                 // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
 
                 UserHud_default_root = new THREE.Group()
-				UserHud_default_root.position.set(0, 1, 0)
+				UserHud_default_root.position.set(0, 0.95, 0)
 				UserHud_default_root.rotation.set(0, 0, 0)
 				UserHud_default_root.scale.set(1, 1, 1)
 				scene.add(UserHud_default_root)
@@ -7143,21 +7204,21 @@
                 // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
 
                 ΔA_Menubar_root = new THREE.Group()
-				ΔA_Menubar_root.position.set(0, 3, 0)
+				ΔA_Menubar_root.position.set(0, 10, 0)
 				ΔA_Menubar_root.rotation.set(0, 0, 0)
-				ΔA_Menubar_root.scale.set(0.033, 0.035, 0.035)
+				ΔA_Menubar_root.scale.set(0.0338, 0.035, 0.035)
 				UserHud_default_root.add(ΔA_Menubar_root)
                 camera.attach(ΔA_Menubar_root)
 
 
-                ΔB_Navbar_baseA = new THREE.Group()
-				ΔB_Navbar_baseA.position.set(0, 1, 0)
-				ΔB_Navbar_baseA.rotation.set(0, 0, 0)
-				ΔB_Navbar_baseA.scale.set(1, 1, 1)
-				ΔA_Menubar_root.add(ΔB_Navbar_baseA)
+                ΔA_Menubar_baseA = new THREE.Group()
+				ΔA_Menubar_baseA.position.set(0, 1, 0)
+				ΔA_Menubar_baseA.rotation.set(0, 0, 0)
+				ΔA_Menubar_baseA.scale.set(1, 1, 1)
+				ΔA_Menubar_root.add(ΔA_Menubar_baseA)
 
 
-                ΔB_Navbar_baseA.add(
+                ΔA_Menubar_baseA.add(
                     new hoverObject(
                         'img',
                         0, 0, 0,
@@ -7169,6 +7230,8 @@
                     )
                 )
 
+                
+
 
 
                 // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
@@ -7176,7 +7239,7 @@
                 // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
 
                 ΔB_Navbar_root = new THREE.Group()
-				ΔB_Navbar_root.position.set(0, 3, 0)
+				ΔB_Navbar_root.position.set(0, 10, 0)
 				ΔB_Navbar_root.rotation.set(0, 0, 0)
 				ΔB_Navbar_root.scale.set(0.034, 0.035, 0.035)
 				UserHud_default_root.add(ΔB_Navbar_root)
@@ -7201,6 +7264,580 @@
                         "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
                     )
                 )
+
+
+                document.addEventListener("keydown", function(event) {
+					if (event.key === "=") {
+						
+
+						gsap.to(ΔA_Menubar_root.position, {
+							duration: .2,
+							delay: 0,
+							y: "3.95",
+
+						})
+
+
+                        gsap.to(ΔB_Navbar_root.position, {
+							duration: .3,
+							delay: 0,
+							y: "3.55",
+
+						})
+					}
+				})
+
+
+                document.addEventListener("keydown", function(event) {
+					if (event.ctrlKey && event.key === "=") {
+						
+
+						gsap.to(ΔA_Menubar_root.position, {
+							duration: .2,
+							delay: 0,
+							y: "10",
+
+						})
+
+                        gsap.to(ΔB_Navbar_root.position, {
+							duration: .2,
+							delay: 0,
+							y: "10",
+
+						})
+					}
+				})
+
+
+                // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
+                // \- # ΔA_Menubar_lineA
+                // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
+
+                ΔA_Menubar_lineA = new THREE.Group()
+				ΔA_Menubar_lineA.position.set(0, 2.81, 0)
+				ΔA_Menubar_lineA.rotation.set(0, 0, 0)
+				ΔA_Menubar_lineA.scale.set(0.0338, 0.035, 0.035)
+				UserHud_default_root.add(ΔA_Menubar_lineA)
+                camera.attach(ΔA_Menubar_lineA)
+
+
+                ΔA_Menubar_lineA_BaseA = new THREE.Group()
+				ΔA_Menubar_lineA_BaseA.position.set(0, 1, 0)
+				ΔA_Menubar_lineA_BaseA.rotation.set(0, 0, 0)
+				ΔA_Menubar_lineA_BaseA.scale.set(1, 1, 1)
+				ΔA_Menubar_lineA.add(ΔA_Menubar_lineA_BaseA)
+
+
+                ΔA_Menubar_lineA_BaseA.add(
+                    new hoverObject(
+                        'img',
+                        0, 0, 0,
+                        0, 0, 0,
+                        0.1, 0.1, 0.1,
+                        "Testing234", "TestingClass234",
+                        "./assets/img/03-HudUI/PrimaryHud01_DrLight/A00_Lines/Dotted_Lines/horizontal/compUI_LineDotted_AcrossInterface01.svg", "",
+                        "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+                    )
+                )
+
+
+
+
+                // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
+                // \- # ΔA_Menubar_lineB
+                // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
+
+                ΔA_Menubar_lineB = new THREE.Group()
+				ΔA_Menubar_lineB.position.set(0, 2.4, 0)
+				ΔA_Menubar_lineB.rotation.set(0, 0, 0)
+				ΔA_Menubar_lineB.scale.set(0.0338, 0.035, 0.035)
+				UserHud_default_root.add(ΔA_Menubar_lineB)
+                camera.attach(ΔA_Menubar_lineB)
+
+
+                ΔA_Menubar_lineB_BaseA = new THREE.Group()
+				ΔA_Menubar_lineB_BaseA.position.set(0, 1, 0)
+				ΔA_Menubar_lineB_BaseA.rotation.set(0, 0, 0)
+				ΔA_Menubar_lineB_BaseA.scale.set(1, 1, 1)
+				ΔA_Menubar_lineB.add(ΔA_Menubar_lineB_BaseA)
+
+
+                ΔA_Menubar_lineB_BaseA.add(
+                    new hoverObject(
+                        'img',
+                        0, 0, 0,
+                        0, 0, 0,
+                        0.1, 0.1, 0.1,
+                        "Testing234", "TestingClass234",
+                        "./assets/img/03-HudUI/PrimaryHud01_DrLight/A00_Lines/Dotted_Lines/horizontal/compUI_LineDotted_AcrossInterface01.svg", "",
+                        "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+                    )
+                )
+
+
+                // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
+                // \- # ΔA_Menubar_lineVerticalA
+                // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
+
+                ΔA_Menubar_lineVerticalA = new THREE.Group()
+				ΔA_Menubar_lineVerticalA.position.set(-5.5, 2.6, 0)
+				ΔA_Menubar_lineVerticalA.rotation.set(0, 0, 0)
+				ΔA_Menubar_lineVerticalA.scale.set(0.0338, 0.035, 0.035)
+				UserHud_default_root.add(ΔA_Menubar_lineVerticalA)
+                camera.attach(ΔA_Menubar_lineVerticalA)
+
+
+                ΔA_Menubar_lineVerticalA_BaseA = new THREE.Group()
+				ΔA_Menubar_lineVerticalA_BaseA.position.set(0, 1, 0)
+				ΔA_Menubar_lineVerticalA_BaseA.rotation.set(0, 0, 0)
+				ΔA_Menubar_lineVerticalA_BaseA.scale.set(1, 1, 1)
+				ΔA_Menubar_lineVerticalA.add(ΔA_Menubar_lineVerticalA_BaseA)
+
+
+                ΔA_Menubar_lineVerticalA_BaseA.add(
+                    new hoverObject(
+                        'img',
+                        0, 0, 0,
+                        0, 0, 0,
+                        0.1, 0.1, 0.1,
+                        "Testing234", "TestingClass234",
+                        "./assets/img/03-HudUI/PrimaryHud01_DrLight/A00_Lines/Dotted_Lines/vertical/closed/compUI_LineDotted_VerticalInterface01.svg", "",
+                        "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+                    )
+                )
+
+                // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
+                // \- # ΔA_Menubar_lineVerticalB
+                // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
+
+                ΔA_Menubar_lineVerticalB = new THREE.Group()
+				ΔA_Menubar_lineVerticalB.position.set(5.5, 2.6, 0)
+				ΔA_Menubar_lineVerticalB.rotation.set(0, 0, 0)
+				ΔA_Menubar_lineVerticalB.scale.set(0.0338, 0.035, 0.035)
+				UserHud_default_root.add(ΔA_Menubar_lineVerticalB)
+                camera.attach(ΔA_Menubar_lineVerticalB)
+
+
+                ΔA_Menubar_lineVerticalB_BaseA = new THREE.Group()
+				ΔA_Menubar_lineVerticalB_BaseA.position.set(0, 1, 0)
+				ΔA_Menubar_lineVerticalB_BaseA.rotation.set(0, 0, 0)
+				ΔA_Menubar_lineVerticalB_BaseA.scale.set(1, 1, 1)
+				ΔA_Menubar_lineVerticalB.add(ΔA_Menubar_lineVerticalB_BaseA)
+
+
+                ΔA_Menubar_lineVerticalB_BaseA.add(
+                    new hoverObject(
+                        'img',
+                        0, 0, 0,
+                        0, 0, 0,
+                        0.1, 0.1, 0.1,
+                        "Testing234", "TestingClass234",
+                        "./assets/img/03-HudUI/PrimaryHud01_DrLight/A00_Lines/Dotted_Lines/vertical/closed/compUI_LineDotted_VerticalInterface01.svg", "",
+                        "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+                    )
+                )
+
+
+                // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
+                // \- # ΔB1_LeftDrawer_root
+                // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
+
+                ΔB1_LeftDrawer_root = new THREE.Group()
+				ΔB1_LeftDrawer_root.position.set(-6.5, 2.6, 0)
+				ΔB1_LeftDrawer_root.rotation.set(0, 0, 0)
+				ΔB1_LeftDrawer_root.scale.set(0.034, 0.035, 0.035)
+				UserHud_default_root.add(ΔB1_LeftDrawer_root)
+                camera.attach(ΔB1_LeftDrawer_root)
+
+
+                ΔB1_LeftDrawer_BaseA = new THREE.Group()
+				ΔB1_LeftDrawer_BaseA.position.set(0, 1, 0)
+				ΔB1_LeftDrawer_BaseA.rotation.set(0, 0, 0)
+				ΔB1_LeftDrawer_BaseA.scale.set(1, 1, 1)
+				ΔB1_LeftDrawer_root.add(ΔB1_LeftDrawer_BaseA)
+
+
+                ΔB1_LeftDrawer_BaseA.add(
+                    new hoverObject(
+                        'img',
+                        0, 0, 0,
+                        0, 0, 0,
+                        0.1, 0.1, 0.1,
+                        "Testing234", "TestingClass234",
+                        "./assets/img/03-HudUI/PrimaryHud01_DrLight/A02_DrawerBar_Left/WhiteTheme/compUI_drawerLeft_white_default.svg", "",
+                        "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+                    )
+                )
+
+
+                // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
+                // \- # ΔB1_LeftDrawer_DrawerContainer25percent_root
+                // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
+
+                ΔB1_LeftDrawer_DrawerContainer25percent_root = new THREE.Group()
+				ΔB1_LeftDrawer_DrawerContainer25percent_root.position.set(-12.5, -0.25, 0)
+				ΔB1_LeftDrawer_DrawerContainer25percent_root.rotation.set(0, 0, 0)
+				ΔB1_LeftDrawer_DrawerContainer25percent_root.scale.set(0.034, 0.035, 0.035)
+				UserHud_default_root.add(ΔB1_LeftDrawer_DrawerContainer25percent_root)
+                camera.attach(ΔB1_LeftDrawer_DrawerContainer25percent_root)
+
+
+                ΔB1_LeftDrawer_DrawerContainer25percent_BaseA = new THREE.Group()
+				ΔB1_LeftDrawer_DrawerContainer25percent_BaseA.position.set(0, 1, 0)
+				ΔB1_LeftDrawer_DrawerContainer25percent_BaseA.rotation.set(0, 0, 0)
+				ΔB1_LeftDrawer_DrawerContainer25percent_BaseA.scale.set(1, 1, 1)
+				ΔB1_LeftDrawer_DrawerContainer25percent_root.add(ΔB1_LeftDrawer_DrawerContainer25percent_BaseA)
+
+
+                ΔB1_LeftDrawer_DrawerContainer25percent_BaseA.add(
+                    new hoverObject(
+                        'img',
+                        0, 0, 0,
+                        0, 0, 0,
+                        0.1, 0.1, 0.1,
+                        "Testing234", "TestingClass234",
+                        "./assets/img/03-HudUI/PrimaryHud01_DrLight/A04_DrawerContainer/Open_20Percent/OpenDrawer_20Percent.svg", "",
+                        "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+                    )
+                )
+
+
+                document.addEventListener("keydown", function(event) {
+					if (event.key === "[") {
+						// camera.position.y -= 10000
+
+						gsap.to(ΔB1_LeftDrawer_DrawerContainer25percent_root.position, {
+							duration: .2,
+							delay: 0,
+							x: "-6.5",
+
+						})
+					}
+				})
+
+
+                document.addEventListener("keydown", function(event) {
+					if (event.ctrlKey && event.key === "[") {
+						// camera.position.y -= 10000
+
+						gsap.to(ΔB1_LeftDrawer_DrawerContainer25percent_root.position, {
+							duration: .2,
+							delay: 0,
+							x: "-12.5",
+
+						})
+					}
+				})
+
+
+                // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
+                // \- # ΔB2_RightDrawer_root
+                // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
+
+                ΔB2_RightDrawer_root = new THREE.Group()
+				ΔB2_RightDrawer_root.position.set(6.5, 2.6, 0)
+				ΔB2_RightDrawer_root.rotation.set(0, 0, 0)
+				ΔB2_RightDrawer_root.scale.set(0.034, 0.035, 0.035)
+				UserHud_default_root.add(ΔB2_RightDrawer_root)
+                camera.attach(ΔB2_RightDrawer_root)
+
+
+                ΔB2_RightDrawer_BaseA = new THREE.Group()
+				ΔB2_RightDrawer_BaseA.position.set(0, 1, 0)
+				ΔB2_RightDrawer_BaseA.rotation.set(0, 0, 0)
+				ΔB2_RightDrawer_BaseA.scale.set(1, 1, 1)
+				ΔB2_RightDrawer_root.add(ΔB2_RightDrawer_BaseA)
+
+
+                ΔB2_RightDrawer_BaseA.add(
+                    new hoverObject(
+                        'img',
+                        0, 0, 0,
+                        0, 0, 0,
+                        0.1, 0.1, 0.1,
+                        "Testing234", "TestingClass234",
+                        "./assets/img/03-HudUI/PrimaryHud01_DrLight/A02_DrawerBar_Left/WhiteTheme/compUI_drawerLeft_white_default.svg", "",
+                        "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+                    )
+                )
+
+
+                // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
+                // \- # ΔB1_LeftDrawer_DrawerContainer25percent_root
+                // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
+
+                ΔB1_RightDrawer_DrawerContainer25percent_root = new THREE.Group()
+				ΔB1_RightDrawer_DrawerContainer25percent_root.position.set(12.5, -0.25, 0)
+				ΔB1_RightDrawer_DrawerContainer25percent_root.rotation.set(0, 0, 0)
+				ΔB1_RightDrawer_DrawerContainer25percent_root.scale.set(0.034, 0.035, 0.035)
+				UserHud_default_root.add(ΔB1_RightDrawer_DrawerContainer25percent_root)
+                camera.attach(ΔB1_RightDrawer_DrawerContainer25percent_root)
+
+
+                ΔB1_RightDrawer_DrawerContainer25percent_BaseA = new THREE.Group()
+				ΔB1_RightDrawer_DrawerContainer25percent_BaseA.position.set(0, 1, 0)
+				ΔB1_RightDrawer_DrawerContainer25percent_BaseA.rotation.set(0, 0, 0)
+				ΔB1_RightDrawer_DrawerContainer25percent_BaseA.scale.set(1, 1, 1)
+				ΔB1_RightDrawer_DrawerContainer25percent_root.add(ΔB1_RightDrawer_DrawerContainer25percent_BaseA)
+
+
+                ΔB1_RightDrawer_DrawerContainer25percent_BaseA.add(
+                    new hoverObject(
+                        'img',
+                        0, 0, 0,
+                        0, 0, 0,
+                        0.1, 0.1, 0.1,
+                        "Testing234", "TestingClass234",
+                        "./assets/img/03-HudUI/PrimaryHud01_DrLight/A04_DrawerContainer/Open_20Percent/OpenDrawer_20Percent.svg", "",
+                        "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+                    )
+                )
+
+
+                document.addEventListener("keydown", function(event) {
+					if (event.key === "]") {
+						
+
+						gsap.to(ΔB1_RightDrawer_DrawerContainer25percent_root.position, {
+							duration: .2,
+							delay: 0,
+							x: "6.5",
+
+						})
+					}
+				})
+
+
+                document.addEventListener("keydown", function(event) {
+					if (event.ctrlKey && event.key === "]") {
+						
+
+						gsap.to(ΔB1_RightDrawer_DrawerContainer25percent_root.position, {
+							duration: .2,
+							delay: 0,
+							x: "12.5",
+
+						})
+					}
+				})
+
+
+                // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
+                // \- # ΔC_MainView_GridA_root
+                // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
+
+                ΔC_MainView_GridA_root = new THREE.Group()
+				ΔC_MainView_GridA_root.position.set(0, 10, 0)
+				ΔC_MainView_GridA_root.rotation.set(0, 0, 0)
+				ΔC_MainView_GridA_root.scale.set(0.034, 0.035, 0.035)
+				UserHud_default_root.add(ΔC_MainView_GridA_root)
+                camera.attach(ΔC_MainView_GridA_root)
+
+
+                ΔC_MainView_GridA_baseA = new THREE.Group()
+				ΔC_MainView_GridA_baseA.position.set(0, 0, 0)
+				ΔC_MainView_GridA_baseA.rotation.set(0, 0, 0)
+				ΔC_MainView_GridA_baseA.scale.set(1, 1, 1)
+				ΔC_MainView_GridA_root.add(ΔC_MainView_GridA_baseA)
+
+
+                ΔC_MainView_GridA_baseA.add(
+                    new hoverObject(
+                        'img',
+                        0, 0, 0,
+                        0, 0, 0,
+                        0.1, 0.1, 0.1,
+                        "Testing234", "TestingClass234",
+                        "./assets/img/03-HudUI/PrimaryHud01_DrLight/A07_HudThemeGrids/compUI_HudWhite_Default01.svg", "",
+                        "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+                    )
+                )
+
+
+                
+
+
+                
+
+
+
+                // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
+                // \- # ΔE_LH_Menu_root
+                // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
+
+                ΔE_LH_Menu_root = new THREE.Group()
+				ΔE_LH_Menu_root.position.set(-6.5, -5, 0)
+				ΔE_LH_Menu_root.rotation.set(0, 0, 0)
+				ΔE_LH_Menu_root.scale.set(0.034, 0.035, 0.035)
+				UserHud_default_root.add(ΔE_LH_Menu_root)
+                camera.attach(ΔE_LH_Menu_root)
+
+
+                ΔE_LH_Menu_BaseA = new THREE.Group()
+				ΔE_LH_Menu_BaseA.position.set(0, 1, 0)
+				ΔE_LH_Menu_BaseA.rotation.set(0, 0, 0)
+				ΔE_LH_Menu_BaseA.scale.set(1, 1, 1)
+				ΔE_LH_Menu_root.add(ΔE_LH_Menu_BaseA)
+
+
+                ΔE_LH_Menu_BaseA.add(
+                    new hoverObject(
+                        'img',
+                        0, 0, 0,
+                        0, 0, 0,
+                        0.1, 0.1, 0.1,
+                        "Testing234", "TestingClass234",
+                        "./assets/img/03-HudUI/PrimaryHud01_DrLight/A02_DrawerBar_Left/WhiteTheme/compUI_drawerLeft_white_default.svg", "",
+                        "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+                    )
+                )
+
+
+
+
+                // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
+                // \- # ΔF_RH_Menu_root
+                // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
+
+                ΔF_RH_Menu_root = new THREE.Group()
+				ΔF_RH_Menu_root.position.set(6.5, -5, 0)
+				ΔF_RH_Menu_root.rotation.set(0, 0, 0)
+				ΔF_RH_Menu_root.scale.set(0.034, 0.035, 0.035)
+				UserHud_default_root.add(ΔF_RH_Menu_root)
+                camera.attach(ΔF_RH_Menu_root)
+
+
+                ΔF_RH_Menu_BaseA = new THREE.Group()
+				ΔF_RH_Menu_BaseA.position.set(0, 1, 0)
+				ΔF_RH_Menu_BaseA.rotation.set(0, 0, 0)
+				ΔF_RH_Menu_BaseA.scale.set(1, 1, 1)
+				ΔF_RH_Menu_root.add(ΔF_RH_Menu_BaseA)
+
+
+                ΔF_RH_Menu_BaseA.add(
+                    new hoverObject(
+                        'img',
+                        0, 0, 0,
+                        0, 0, 0,
+                        0.1, 0.1, 0.1,
+                        "Testing234", "TestingClass234",
+                        "./assets/img/03-HudUI/PrimaryHud01_DrLight/A02_DrawerBar_Left/WhiteTheme/compUI_drawerLeft_white_default.svg", "",
+                        "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+                    )
+                )
+
+
+
+                // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
+                // \- # ΔF_RH_Menu_root
+                // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
+
+                ΔF_RH_Menu_root = new THREE.Group()
+				ΔF_RH_Menu_root.position.set(0, -5, 0)
+				ΔF_RH_Menu_root.rotation.set(0, 0, 0)
+				ΔF_RH_Menu_root.scale.set(0.034, 0.035, 0.035)
+				UserHud_default_root.add(ΔF_RH_Menu_root)
+                camera.attach(ΔF_RH_Menu_root)
+
+
+                ΔF_RH_Menu_BaseA = new THREE.Group()
+				ΔF_RH_Menu_BaseA.position.set(0, 1, 0)
+				ΔF_RH_Menu_BaseA.rotation.set(0, 0, 0)
+				ΔF_RH_Menu_BaseA.scale.set(1, 1, 1)
+				ΔF_RH_Menu_root.add(ΔF_RH_Menu_BaseA)
+
+
+                ΔF_RH_Menu_BaseA.add(
+                    new hoverObject(
+                        'img',
+                        0, 0, 0,
+                        0, 0, 0,
+                        0.1, 0.1, 0.1,
+                        "Testing234", "TestingClass234",
+                        "./assets/img/03-HudUI/PrimaryHud01_DrLight/A06_DockPath/form_Dock/compUI_dock_Line.svg", "",
+                        "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+                    )
+                )
+
+
+
+                // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
+                // \- # Test Objects
+                // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
+                // attached_to_Component-ΔC_MainView_GridA_root
+                
+
+                
+                admin_root = new THREE.Group()
+				admin_root.position.set(0, -30, 0)
+				admin_root.rotation.set(0, 0, 0)
+				admin_root.scale.set(10.35, 10.35, 10.35)
+				ΔC_MainView_GridA_root.add(admin_root)
+                camera.attach(admin_root)
+
+
+                admin_baseA = new THREE.Group()
+				admin_baseA.position.set(0, 0, 0)
+				admin_baseA.rotation.set(0, 0, 0)
+				admin_baseA.scale.set(1, 1, 1)
+				admin_root.add(admin_baseA)
+
+
+				const mat_admin_baseA = new THREE.MeshBasicMaterial({ map: SceneWallpaper_01, side: THREE.DoubleSide });
+				mesh_admin_baseA = new THREE.Mesh(geo_objT_BoxA0, mat_admin_baseA);
+                //
+				mat_admin_baseA.transparent = true;
+                mat_admin_baseA.wireframe = false;
+				mat_admin_baseA.alphaMap = SceneWallpaper_01;
+                //
+				mesh_admin_baseA.position.set(0, 0, 0);
+				mesh_admin_baseA.scale.set(0.05, 0.05, 0.05);
+				mesh_admin_baseA.rotation.set(0, 0, 0)
+                // 
+				// mesh_admin_baseA.rotateX( Math.PI / 2 );
+				
+				admin_baseA.add(mesh_admin_baseA)
+
+
+
+                // functions
+                document.addEventListener("keydown", function(event) {
+					if (event.key === "q") {
+						
+						gsap.to(ΔC_MainView_GridA_root.position, {
+							duration: 1,
+							delay: 0,
+							y: 1, 
+						})
+
+                        gsap.to(admin_root.position, {
+							duration: 1,
+							delay: 0,
+							y: 1, 
+						})
+					}
+				})
+
+
+                document.addEventListener("keydown", function(event) {
+					if (event.ctrlKey && event.key === "q") {
+						
+						gsap.to(ΔC_MainView_GridA_root.position, {
+							duration: 1,
+							delay: 0,
+							y: 10, 
+							
+						})
+
+                        gsap.to(admin_root.position, {
+							duration: 1,
+							delay: 0,
+							y: 10, 
+						})
+					}
+				})
+
+                
 
 
 				
@@ -7719,29 +8356,29 @@
 				folderTester01.add(floorDesign01_Grid.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
 				folderTester01.add(floorDesign01_Grid.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
-				const folderLoadTestingContainer01 = gui.addFolder('<<< LoadPoint01 :: ΔB_Navbar_root >>>')
+				const folderLoadTestingContainer01 = gui.addFolder('<<< LoadPoint01 :: admin_root >>>')
 
-				folderLoadTestingContainer01.add(ΔB_Navbar_root.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
-				folderLoadTestingContainer01.add(ΔB_Navbar_root.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
-				folderLoadTestingContainer01.add(ΔB_Navbar_root.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
-				folderLoadTestingContainer01.add(ΔB_Navbar_root.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
-				folderLoadTestingContainer01.add(ΔB_Navbar_root.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
-				folderLoadTestingContainer01.add(ΔB_Navbar_root.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
-				folderLoadTestingContainer01.add(ΔB_Navbar_root.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
-				folderLoadTestingContainer01.add(ΔB_Navbar_root.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
-				folderLoadTestingContainer01.add(ΔB_Navbar_root.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
+				folderLoadTestingContainer01.add(admin_root.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
+				folderLoadTestingContainer01.add(admin_root.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
+				folderLoadTestingContainer01.add(admin_root.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
+				folderLoadTestingContainer01.add(admin_root.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
+				folderLoadTestingContainer01.add(admin_root.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
+				folderLoadTestingContainer01.add(admin_root.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
+				folderLoadTestingContainer01.add(admin_root.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
+				folderLoadTestingContainer01.add(admin_root.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
+				folderLoadTestingContainer01.add(admin_root.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
-				const folderLoadTestingContainer02 = gui.addFolder('<<< LoadPoint02 :: ΔB_Navbar_baseA >>>')
+				const folderLoadTestingContainer02 = gui.addFolder('<<< LoadPoint02 :: ΔA_Menubar_lineA >>>')
 
-				folderLoadTestingContainer02.add(ΔB_Navbar_baseA.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
-				folderLoadTestingContainer02.add(ΔB_Navbar_baseA.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
-				folderLoadTestingContainer02.add(ΔB_Navbar_baseA.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
-				folderLoadTestingContainer02.add(ΔB_Navbar_baseA.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
-				folderLoadTestingContainer02.add(ΔB_Navbar_baseA.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
-				folderLoadTestingContainer02.add(ΔB_Navbar_baseA.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
-				folderLoadTestingContainer02.add(ΔB_Navbar_baseA.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
-				folderLoadTestingContainer02.add(ΔB_Navbar_baseA.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
-				folderLoadTestingContainer02.add(ΔB_Navbar_baseA.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
+				folderLoadTestingContainer02.add(ΔA_Menubar_lineA.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
+				folderLoadTestingContainer02.add(ΔA_Menubar_lineA.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
+				folderLoadTestingContainer02.add(ΔA_Menubar_lineA.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
+				folderLoadTestingContainer02.add(ΔA_Menubar_lineA.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
+				folderLoadTestingContainer02.add(ΔA_Menubar_lineA.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
+				folderLoadTestingContainer02.add(ΔA_Menubar_lineA.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
+				folderLoadTestingContainer02.add(ΔA_Menubar_lineA.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
+				folderLoadTestingContainer02.add(ΔA_Menubar_lineA.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
+				folderLoadTestingContainer02.add(ΔA_Menubar_lineA.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
 				const folderLoadTestingContainer03 = gui.addFolder('<<< LoadPoint03 :: floorDesign01_Grid >>>')
 
@@ -8407,6 +9044,7 @@
 				// Primary Animations 
 				// ###########################
 
+                admin_root.rotation.y = time * 0.001
 				
 				
 
