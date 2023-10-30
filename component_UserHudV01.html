@@ -1715,32 +1715,26 @@
 
 
 							<!-- VideoDomain02: Search_html_video01 -->
-							<video id="openingVideo" class="countDown" playsinline controls webkit-playsinline  autoplay loop width="320" height="240" src="./assets/video/PlexusAnimations/Animation_ParticlesDancing_NeonBluePink.mp4" border: 5px 5px black;"></video>
+							<video id="openingVideo" class="countDown" playsinline controls webkit-playsinline  autoplay loop width="320" height="240" src="./assets/video/TimeLapseAnimations/timeLapse_carViewSide02.mp4" border: 5px 5px black;"></video>
 
 
 
 							<!-- Sounds  -->
 							<audio id="mfx_audio00_test" class="audioTest"  src="./assets/audio/ui_Sounds/SFX_Menus/defaultClick01.wav"></audio>
-
 							<audio id="sfx_click_gen" class="audioTest" volume="0.5" src="./assets/audio/ui_Sounds/SFX_Menus/defaultClick01.wav"></audio>
-
 							<audio id="sfx_click_gen" class="audioTest"  src="./assets/audio/ui_Sounds/SFX_Menu/sfx-click-gen01.wav"></audio>
-
 							<audio id="sfx_click_show" class="audioTest"  src="./assets/audio/ui_Sounds/SFX_Menu/sfx-click-show.wav"></audio>
-
 							<audio id="sfx_click_hide" class="audioTest"  src="./assets/audio/ui_Sounds/SFX_Menu/sfx-click-hide.wav"></audio>
-
 							<audio id="sfx_click_hide" class="audioTest"  src="./assets/audio/ui_Sounds/SFX_Menu/sfx-click-hide.wav"></audio>
-
 							<audio id="sfx_click_hide" class="audioTest"  src="./assets/audio/ui_Sounds/SFX_Menu/sfx-click-hide.wav"></audio>
-
 							<audio id="sfx_panel_show" class="audioTest"  src="./assets/audio/ui_Sounds/SFX_Menu/sfx-panel-show.wav"></audio>
-
 							<audio id="sfx_panel_hide" class="audioTest"  src="./assets/audio/ui_Sounds/SFX_Menu/sfx-panel-hide.wav"></audio>
-
 							<audio id="sfx_hand_show" class="audioTest"  src="./assets/audio/ui_Sounds/SFX_Menus/openMenu001.wav"></audio>
-
 							<audio id="sfx_hand_hide" class="audioTest"  src="./assets/audio/ui_Sounds/SFX_Menus/closeMenu001.wav"></audio>
+
+                            <!--window_open_sfx-->
+                            <audio id="sfx_window_open" class="audioTest"  src="./assets/audio/ui_Sounds/SFX_Menus/window_close01.wav"></audio>
+                            <audio id="sfx_window_hide" class="audioTest"  src="./assets/audio/ui_Sounds/SFX_Menus/window_open01.wav"></audio>
 
 							<audio id="sfx_hand_show1" class="audioTest"  src="./assets/audio/ui_Sounds/SFX_Items/RH_A.wav"></audio>
 							<audio id="sfx_hand_hide1" class="audioTest"  src="./assets/audio/ui_Sounds/SFX_Items/RH_B.wav"></audio>
@@ -1995,6 +1989,21 @@
 			// Hide Data sfx
 			const play_sfx_hide = () => {
 				const play_sfx_hide_item = document.getElementById("sfx_click_hide")
+				play_sfx_hide_item.play()
+				play_sfx_hide_item.volume = 0.3
+			}
+
+
+            // Show Window sfx
+			const play_sfx_window_show = () => {
+				let play_sfx_show_item = document.getElementById("sfx_window_open")
+				play_sfx_show_item.play()
+				play_sfx_show_item.volume = 0.3
+			}
+
+			// Hide Window sfx
+			const play_sfx_window_hide = () => {
+				const play_sfx_hide_item = document.getElementById("sfx_window_close")
 				play_sfx_hide_item.play()
 				play_sfx_hide_item.volume = 0.3
 			}
@@ -2583,6 +2592,7 @@
 
                 let perspectiveΔ_root
                 let perspectiveΔ_baseA, mesh_perspectiveΔ_baseA
+				let perspectiveΔ_baseB, mesh_perspectiveΔ_baseB
                 let mesh_perspectiveΔ
 
                 let realityDrawerMenu_root
@@ -2605,8 +2615,6 @@
                 let ΔA_Menubar_lineVerticalA_BaseA
                 let ΔA_Menubar_lineVerticalB
                 let ΔA_Menubar_lineVerticalB_BaseA
-
-
 
                 let ΔB_Navbar_root
                 let ΔB_Navbar_baseA
@@ -2638,14 +2646,93 @@
                 let ΔE_LH_root
                 let ΔE_LH_baseA
 
+                let ΔE_LH_Menu_coreSphere_root
+                let ΔE_LH_Menu_coreSphere_BaseA, mesh_ΔE_LH_Menu_coreSphere_BaseA
+
                 let ΔF_RH_Menu_root
                 let ΔF_RH_Menu_BaseA
                 let ΔF_RH_root
                 let ΔF_RH_baseA
 
+                let ΔE_RH_Menu_coreSphere_root
+                let ΔE_RH_Menu_coreSphere_BaseA, mesh_ΔE_RH_Menu_coreSphere_BaseA
+
                 let ΔG_Dock_root
                 let ΔG_Dock_
 
+                // userΔ_Controls
+                let userΔ_Controls_root
+                let userΔ_Controls_baseA
+                let userΔ_Controls_startΔ_root
+                let userΔ_Controls_startΔ_button
+                let userΔ_Controls_stopΔ_button
+                let userΔ_Controls_slowΔ_button
+                let userΔ_Controls_reverseΔ_button
+
+                // userΔA = ΔO
+
+                // userΔT = Δ0=0
+                
+                // userΔΔ+ = ΔΟ
+
+                // userΔΔ- = ΔΟ
+
+                // userΔΛ = ΔΟ
+
+                // userΔΘ = ΔΛΘ
+
+                // userΔΞ = ΔΞΔ
+
+                // userΔΓ = Δχ
+
+                // userΔΨ = ΔΛΠ
+
+                // userΔΩ = ΔΟ
+
+
+
+
+
+                // SubTestItems 
+
+                let testGrid_root
+                let testGrid_BaseA, mesh_testGrid_BaseA
+
+
+
+                // testEnv_sectionA_
+
+                let TimeTunnel_root
+                let TimeTunnel_Base01
+                let TimeTunnel_Base02
+                let TimeTunnel_Base03
+                let TimeTunnel_Base04
+                let TimeTunnel_Base05
+                let TimeTunnel_Base06
+                let TimeTunnel_Base07
+                let TimeTunnel_Base08
+                let TimeTunnel_Base09
+                let TimeTunnel_Base10
+                let TimeTunnel_Base11
+                let TimeTunnel_Base12
+                let TimeTunnel_Base13
+                let TimeTunnel_Base14
+                let TimeTunnel_Base15
+                let TimeTunnel_Base16
+                let TimeTunnel_Base17
+                let TimeTunnel_Base18
+                let TimeTunnel_Base19
+                let TimeTunnel_Base20
+                let TimeTunnel_Base21
+                let TimeTunnel_Base22
+                let TimeTunnel_Base23
+                let TimeTunnel_Base24
+                let TimeTunnel_Base25
+                let TimeTunnel_Base26
+                let TimeTunnel_Base27
+                let TimeTunnel_Base28
+                let TimeTunnel_Base29
+                let TimeTunnel_Base30
 
 
                 
@@ -3120,6 +3207,12 @@
                 // ----------------------------------------------------------------------------------------------------
 				// \- [UserHud_Default_assets]
                 // ----------------------------------------------------------------------------------------------------
+
+                const RealityGridA = textureLoader.load('./assets/img/03-HudUI/PrimaryHud01_DrLight/A08_GeneralGrids_Square/formA/SquareGrid_White_formA.png')
+                const RealityGridB = textureLoader.load('./assets/img/03-HudUI/PrimaryHud01_DrLight/A08_GeneralGrids_Square/formB/SquareGrid_White_formB.png')
+                const RealityGridC = textureLoader.load('./assets/img/03-HudUI/PrimaryHud01_DrLight/A08_GeneralGrids_Square/formC/SquareGrid_White_formC.png')
+                const RealityGridD = textureLoader.load('./assets/img/03-HudUI/PrimaryHud01_DrLight/A08_GeneralGrids_Square/formD/SquareGrid_White_formD.png')
+                const RealityGridE = textureLoader.load('./assets/img/03-HudUI/PrimaryHud01_DrLight/A08_GeneralGrids_Square/formE/SquareGrid_White_formE.png')
 
                 
 
@@ -5471,32 +5564,7 @@
 				})
 
 
-                document.addEventListener("keydown", function(event) {
-					if (event.key === "[") {
-						// camera.position.y -= 10000
-
-						gsap.to(camera.position, {
-							duration: .2,
-							delay: 0,
-							y: "-= 500",
-
-						})
-					}
-				})
-
-
-                document.addEventListener("keydown", function(event) {
-					if (event.key === "]") {
-						// camera.position.y -= 10000
-
-						gsap.to(camera.position, {
-							duration: .2,
-							delay: 0,
-							y: "-= 500",
-
-						})
-					}
-				})
+                
 
 
 			// ----------------------------------------------------------------------------------------------------
@@ -7168,16 +7236,16 @@
                 perspectiveΔ_baseA = new THREE.Group()
 				perspectiveΔ_baseA.position.set(0, 1, 0)
 				perspectiveΔ_baseA.rotation.set(0, 0, 0)
-				perspectiveΔ_baseA.scale.set(1, 1, 1)
+				perspectiveΔ_baseA.scale.set(25, 25, 25)
 				scene.add(perspectiveΔ_baseA)
 
 
-				const mat_perspectiveΔ_baseA = new THREE.MeshBasicMaterial({ map: SceneWallpaper_01, side: THREE.DoubleSide });
+				const mat_perspectiveΔ_baseA = new THREE.MeshBasicMaterial({ map: RealityGridC, side: THREE.DoubleSide });
 				mesh_perspectiveΔ_baseA = new THREE.Mesh(geo_objT_SphereA0, mat_perspectiveΔ_baseA);
                 //
 				mat_perspectiveΔ_baseA.transparent = true;
                 mat_perspectiveΔ_baseA.wireframe = false;
-				mat_perspectiveΔ_baseA.alphaMap = SceneWallpaper_01;
+				mat_perspectiveΔ_baseA.alphaMap = RealityGridC;
                 //
 				mesh_perspectiveΔ_baseA.position.set(0, 0, 0);
 				mesh_perspectiveΔ_baseA.scale.set(0.05, 0.05, 0.05);
@@ -7266,47 +7334,7 @@
                 )
 
 
-                document.addEventListener("keydown", function(event) {
-					if (event.key === "=") {
-						
-
-						gsap.to(ΔA_Menubar_root.position, {
-							duration: .2,
-							delay: 0,
-							y: "3.95",
-
-						})
-
-
-                        gsap.to(ΔB_Navbar_root.position, {
-							duration: .3,
-							delay: 0,
-							y: "3.55",
-
-						})
-					}
-				})
-
-
-                document.addEventListener("keydown", function(event) {
-					if (event.ctrlKey && event.key === "=") {
-						
-
-						gsap.to(ΔA_Menubar_root.position, {
-							duration: .2,
-							delay: 0,
-							y: "10",
-
-						})
-
-                        gsap.to(ΔB_Navbar_root.position, {
-							duration: .2,
-							delay: 0,
-							y: "10",
-
-						})
-					}
-				})
+                
 
 
                 // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
@@ -7314,7 +7342,7 @@
                 // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
 
                 ΔA_Menubar_lineA = new THREE.Group()
-				ΔA_Menubar_lineA.position.set(0, 2.81, 0)
+				ΔA_Menubar_lineA.position.set(0, 12.81, 0)
 				ΔA_Menubar_lineA.rotation.set(0, 0, 0)
 				ΔA_Menubar_lineA.scale.set(0.0338, 0.035, 0.035)
 				UserHud_default_root.add(ΔA_Menubar_lineA)
@@ -7348,7 +7376,7 @@
                 // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
 
                 ΔA_Menubar_lineB = new THREE.Group()
-				ΔA_Menubar_lineB.position.set(0, 2.4, 0)
+				ΔA_Menubar_lineB.position.set(0, 12.4, 0)
 				ΔA_Menubar_lineB.rotation.set(0, 0, 0)
 				ΔA_Menubar_lineB.scale.set(0.0338, 0.035, 0.035)
 				UserHud_default_root.add(ΔA_Menubar_lineB)
@@ -7380,7 +7408,7 @@
                 // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
 
                 ΔA_Menubar_lineVerticalA = new THREE.Group()
-				ΔA_Menubar_lineVerticalA.position.set(-5.5, 2.6, 0)
+				ΔA_Menubar_lineVerticalA.position.set(-15.5, 2.6, 0)
 				ΔA_Menubar_lineVerticalA.rotation.set(0, 0, 0)
 				ΔA_Menubar_lineVerticalA.scale.set(0.0338, 0.035, 0.035)
 				UserHud_default_root.add(ΔA_Menubar_lineVerticalA)
@@ -7411,7 +7439,7 @@
                 // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
 
                 ΔA_Menubar_lineVerticalB = new THREE.Group()
-				ΔA_Menubar_lineVerticalB.position.set(5.5, 2.6, 0)
+				ΔA_Menubar_lineVerticalB.position.set(15.5, 2.6, 0)
 				ΔA_Menubar_lineVerticalB.rotation.set(0, 0, 0)
 				ΔA_Menubar_lineVerticalB.scale.set(0.0338, 0.035, 0.035)
 				UserHud_default_root.add(ΔA_Menubar_lineVerticalB)
@@ -7443,7 +7471,7 @@
                 // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
 
                 ΔB1_LeftDrawer_root = new THREE.Group()
-				ΔB1_LeftDrawer_root.position.set(-6.5, 2.6, 0)
+				ΔB1_LeftDrawer_root.position.set(-12.5, 2.6, 0)
 				ΔB1_LeftDrawer_root.rotation.set(0, 0, 0)
 				ΔB1_LeftDrawer_root.scale.set(0.034, 0.035, 0.035)
 				UserHud_default_root.add(ΔB1_LeftDrawer_root)
@@ -7506,6 +7534,10 @@
 					if (event.key === "[") {
 						// camera.position.y -= 10000
 
+                        // play sfx
+                        play_sfx_click_gen()
+
+
 						gsap.to(ΔB1_LeftDrawer_DrawerContainer25percent_root.position, {
 							duration: .2,
 							delay: 0,
@@ -7519,6 +7551,10 @@
                 document.addEventListener("keydown", function(event) {
 					if (event.ctrlKey && event.key === "[") {
 						// camera.position.y -= 10000
+
+                        // play sfx
+                        play_sfx_click_gen()
+
 
 						gsap.to(ΔB1_LeftDrawer_DrawerContainer25percent_root.position, {
 							duration: .2,
@@ -7535,7 +7571,7 @@
                 // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
 
                 ΔB2_RightDrawer_root = new THREE.Group()
-				ΔB2_RightDrawer_root.position.set(6.5, 2.6, 0)
+				ΔB2_RightDrawer_root.position.set(12.5, 2.6, 0)
 				ΔB2_RightDrawer_root.rotation.set(0, 0, 0)
 				ΔB2_RightDrawer_root.scale.set(0.034, 0.035, 0.035)
 				UserHud_default_root.add(ΔB2_RightDrawer_root)
@@ -7560,6 +7596,137 @@
                         "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
                     )
                 )
+
+
+                // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
+                // \- # Main Functions: Menubar and Navbar and drawers
+                // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
+                document.addEventListener("keydown", function(event) {
+					if (event.key === "=") {
+                        play_sfx_click_gen()
+						
+
+						gsap.to(ΔA_Menubar_root.position, {
+							duration: .2,
+							delay: 0,
+							y: "3.95",
+
+						})
+
+
+                        gsap.to(ΔB_Navbar_root.position, {
+							duration: .3,
+							delay: 0,
+							y: "3.55",
+
+						})
+
+                        // Horizontal Menu Lines
+                        gsap.to(ΔA_Menubar_lineA.position, {
+							duration: .4,
+							delay: 0,
+							y: "3.76",
+
+						})
+
+                        gsap.to(ΔA_Menubar_lineB.position, {
+							duration: .4,
+							delay: 0,
+							y: "3.35",
+
+						})
+
+
+                        // Vertical Menu Lines
+                        gsap.to(ΔA_Menubar_lineVerticalA.position, {
+							duration: .3,
+							delay: 0,
+							y: "5.5",
+
+						})
+
+                        gsap.to(ΔA_Menubar_lineVerticalB.position, {
+							duration: .3,
+							delay: 0,
+							y: "-5.5",
+
+						})
+
+                        
+
+                        gsap.to(ΔB1_LeftDrawer_root.position, {
+							duration: .3,
+							delay: 0,
+							x: "-6.5",
+
+						})
+
+                        gsap.to(ΔB2_RightDrawer_root.position, {
+							duration: .3,
+							delay: 0,
+							x: "6.5",
+
+						})
+
+					}
+				})
+
+
+                document.addEventListener("keydown", function(event) {
+					if (event.ctrlKey && event.key === "=") {
+
+                        // sfx_hide
+                        play_sfx_click_gen()
+						
+
+						gsap.to(ΔA_Menubar_root.position, {
+							duration: .2,
+							delay: 0,
+							y: "10",
+
+						})
+
+                        gsap.to(ΔB_Navbar_root.position, {
+							duration: .3,
+							delay: 0,
+							y: "300",
+
+						})
+
+                        // Horizontal Menu Lines
+                        gsap.to(ΔA_Menubar_lineA.position, {
+							duration: .4,
+							delay: 0,
+							y: "10",
+
+						})
+
+                        gsap.to(ΔA_Menubar_lineB.position, {
+							duration: .4,
+							delay: 0,
+							y: "10",
+
+						})
+
+                        // ΔB_Navbar_root.position.set(0, 0, 0)
+
+
+
+                        gsap.to(ΔB1_LeftDrawer_root.position, {
+							duration: .3,
+							delay: 0,
+							x: "-16.5",
+
+						})
+
+                        gsap.to(ΔB2_RightDrawer_root.position, {
+							duration: .3,
+							delay: 0,
+							x: "16.5",
+
+						})
+					}
+				})
 
 
                 // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
@@ -7596,6 +7763,9 @@
 
                 document.addEventListener("keydown", function(event) {
 					if (event.key === "]") {
+
+                        // play sfx
+                        play_sfx_click_gen()
 						
 
 						gsap.to(ΔB1_RightDrawer_DrawerContainer25percent_root.position, {
@@ -7611,6 +7781,8 @@
                 document.addEventListener("keydown", function(event) {
 					if (event.ctrlKey && event.key === "]") {
 						
+                        // play sfx
+                        play_sfx_click_gen()
 
 						gsap.to(ΔB1_RightDrawer_DrawerContainer25percent_root.position, {
 							duration: .2,
@@ -7648,7 +7820,7 @@
                         0, 0, 0,
                         0.1, 0.1, 0.1,
                         "Testing234", "TestingClass234",
-                        "./assets/img/03-HudUI/PrimaryHud01_DrLight/A07_HudThemeGrids/compUI_HudWhite_Default01.svg", "",
+                        "./assets/img/03-HudUI/PrimaryHud01_DrLight/A07_HudThemeGrids/compUI_HudWhite_Default03.svg", "",
                         "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
                     )
                 )
@@ -7800,20 +7972,88 @@
 
 
 
+                
+
+
+
+
+                // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
+                // \- # testGrid_root
+                // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
+                // attached_to_Component-ΔC_MainView_GridA_root
+                
+
+                
+                testGrid_root = new THREE.Group()
+				testGrid_root.position.set(-12, -30, 0)
+				testGrid_root.rotation.set(0, 0, 0)
+				testGrid_root.scale.set(10.35, 10.35, 10.35)
+				ΔC_MainView_GridA_root.add(testGrid_root)
+                camera.attach(testGrid_root)
+
+
+                testGrid_BaseA = new THREE.Group()
+				testGrid_BaseA.position.set(0, 0, 0)
+				testGrid_BaseA.rotation.set(0, 0, 0)
+				testGrid_BaseA.scale.set(1, 1, 1)
+				testGrid_root.add(testGrid_BaseA)
+
+
+				const mat_testGrid_BaseA = new THREE.MeshBasicMaterial({ map: RealityGridA, side: THREE.DoubleSide });
+				mesh_testGrid_BaseA = new THREE.Mesh(geo_objT_BoxA0, mat_testGrid_BaseA);
+                //
+				mat_testGrid_BaseA.transparent = true;
+                mat_testGrid_BaseA.wireframe = false;
+				mat_testGrid_BaseA.alphaMap = RealityGridA;
+                //
+				mesh_testGrid_BaseA.position.set(0, 0, 0);
+				mesh_testGrid_BaseA.scale.set(0.05, 0.05, 0.05);
+				mesh_testGrid_BaseA.rotation.set(0, 0, 0)
+                // 
+				// mesh_testGrid_BaseA.rotateX( Math.PI / 2 );
+				
+				testGrid_BaseA.add(mesh_testGrid_BaseA)
+
+                
+
+
+				let realitySpin = (reality) => {
+                    gsap.to(testGrid_root.rotation, {
+                            repeat: -1,
+							duration: 200,
+							delay: 0,
+							y: 360, 
+						})
+                }
+
+                realitySpin()
+
+
+
+
+                // Functions for mainView_Grid
                 // functions
                 document.addEventListener("keydown", function(event) {
 					if (event.key === "q") {
+                        play_sfx_click_gen()
+
 						
 						gsap.to(ΔC_MainView_GridA_root.position, {
 							duration: 1,
 							delay: 0,
-							y: 1, 
+							y: 0.7, 
 						})
 
                         gsap.to(admin_root.position, {
 							duration: 1,
 							delay: 0,
-							y: 1, 
+							y: 0.12, 
+						})
+
+                        gsap.to(testGrid_root.position, {
+							duration: 1,
+							delay: 0,
+							y: 0.12, 
 						})
 					}
 				})
@@ -7821,6 +8061,8 @@
 
                 document.addEventListener("keydown", function(event) {
 					if (event.ctrlKey && event.key === "q") {
+                        play_sfx_click_gen()
+
 						
 						gsap.to(ΔC_MainView_GridA_root.position, {
 							duration: 1,
@@ -7834,13 +8076,75 @@
 							delay: 0,
 							y: 10, 
 						})
+
+                        gsap.to(testGrid_root.position, {
+							duration: 1,
+							delay: 0,
+							y: 10, 
+						})
 					}
 				})
 
+
                 
 
+                // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
+                // \- # userΔ_Controls_root
+                // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
 
+                userΔ_Controls_root = new THREE.Group()
+				userΔ_Controls_root.position.set(-4, -5, 0)
+				userΔ_Controls_root.rotation.set(0, 0, 0)
+				userΔ_Controls_root.scale.set(0.0035, 0.0035, 0.0035)
+				UserHud_default_root.add(userΔ_Controls_root)
+                camera.attach(userΔ_Controls_root)
+
+
+                userΔ_Controls_baseA = new THREE.Group()
+				userΔ_Controls_baseA.position.set(0, 1, 0)
+				userΔ_Controls_baseA.rotation.set(0, 0, 0)
+				userΔ_Controls_baseA.scale.set(1, 1, 1)
+				userΔ_Controls_root.add(userΔ_Controls_baseA)
+
+
+                userΔ_Controls_baseA.add(
+                    new hoverObject(
+                        'img',
+                        0, 0, 0,
+                        0, 0, 0,
+                        0.1, 0.1, 0.1,
+                        "Testing234", "TestingClass234",
+                        "./assets/img/10-ObjectUI/Shapes/Diamond.png", "",
+                        "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+                    )
+                )
+
+
+                // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
+                // \- # perspectiveΔ_baseB
+                // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
+
+                perspectiveΔ_baseB = new THREE.Group()
+				perspectiveΔ_baseB.position.set(0, 1, 0)
+				perspectiveΔ_baseB.rotation.set(0, 0, 0)
+				perspectiveΔ_baseB.scale.set(25, 25, 25)
+				scene.add(perspectiveΔ_baseB)
+
+
+				const mat_perspectiveΔ_baseB = new THREE.MeshBasicMaterial({ map: RealityGridC, side: THREE.DoubleSide });
+				mesh_perspectiveΔ_baseB = new THREE.Mesh(geo_objT_SphereA0, mat_perspectiveΔ_baseB);
+                //
+				mat_perspectiveΔ_baseB.transparent = true;
+                mat_perspectiveΔ_baseB.wireframe = false;
+				mat_perspectiveΔ_baseB.alphaMap = RealityGridC;
+                //
+				mesh_perspectiveΔ_baseB.position.set(0, 0, 0);
+				mesh_perspectiveΔ_baseB.scale.set(0.05, 0.05, 0.05);
+				mesh_perspectiveΔ_baseB.rotation.set(0, 0, 0)
+                // 
+				// mesh_perspectiveΔ_baseB.rotateX( Math.PI / 2 );
 				
+				perspectiveΔ_baseB.add(mesh_perspectiveΔ_baseB)
 
 
 
@@ -7956,6 +8260,12 @@
 				// particles.position.set(0, 24092, 0)
 				particles.position.set(0, 3500, 0)
 				scene.add(particles);
+
+
+
+
+
+
 
 
 
