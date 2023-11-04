@@ -1715,7 +1715,7 @@
 
 
 							<!-- VideoDomain02: Search_html_video01 -->
-							<video id="openingVideo" class="countDown" playsinline controls webkit-playsinline  autoplay loop width="320" height="240" src="./assets/video/TimeLapseAnimations/timeLapse_carViewSide02.mp4" border: 5px 5px black;"></video>
+							<video id="openingVideo" class="countDown" playsinline controls webkit-playsinline  autoplay loop width="320" height="240" src="./assets/video/TunnelAnimations/GalaxyTunnel01.mp4" border: 5px 5px black;"></video>
 
 
 
@@ -3213,6 +3213,8 @@
                 const RealityGridC = textureLoader.load('./assets/img/03-HudUI/PrimaryHud01_DrLight/A08_GeneralGrids_Square/formC/SquareGrid_White_formC.png')
                 const RealityGridD = textureLoader.load('./assets/img/03-HudUI/PrimaryHud01_DrLight/A08_GeneralGrids_Square/formD/SquareGrid_White_formD.png')
                 const RealityGridE = textureLoader.load('./assets/img/03-HudUI/PrimaryHud01_DrLight/A08_GeneralGrids_Square/formE/SquareGrid_White_formE.png')
+
+				
 
                 
 
@@ -5564,6 +5566,59 @@
 				})
 
 
+				// Speed Adjustments
+				// Height-GoingDown-Functions
+				// search.ChangeSpeedParams
+				document.addEventListener("keydown", function(event) {
+					if (event.key === "5") {
+						speedStrengthsParams.x = 10
+					} 
+				})
+
+
+				document.addEventListener("keydown", function(event) {
+					if (event.ctrlKey && event.key === "5") {
+						speedStrengthsParams.x = 1
+					}
+				})
+
+
+
+				// GodControls Lvl01
+				document.addEventListener("keydown", function(event) {
+					if (event.key === "6") {
+						speedStrengthsParams.x = 2000
+					} 
+				})
+
+
+				document.addEventListener("keydown", function(event) {
+					if (event.ctrlKey && event.key === "6") {
+						speedStrengthsParams.x = 1
+					}
+				})
+
+
+
+				document.addEventListener("keydown", function(event) {
+					if (event.key === "8") {
+						gsap.to(camera.position, {
+							duration: 1,
+							delay: 0,
+							y: 10,
+
+						})
+
+						gsap.to(camera.position, {
+							duration: 1,
+							delay: 0,
+							z: -3
+
+						})
+					}
+				})
+
+
                 
 
 
@@ -7240,12 +7295,12 @@
 				scene.add(perspectiveΔ_baseA)
 
 
-				const mat_perspectiveΔ_baseA = new THREE.MeshBasicMaterial({ map: RealityGridC, side: THREE.DoubleSide });
+				const mat_perspectiveΔ_baseA = new THREE.MeshBasicMaterial({ map: BasicHud03b, side: THREE.DoubleSide });
 				mesh_perspectiveΔ_baseA = new THREE.Mesh(geo_objT_SphereA0, mat_perspectiveΔ_baseA);
                 //
 				mat_perspectiveΔ_baseA.transparent = true;
                 mat_perspectiveΔ_baseA.wireframe = false;
-				mat_perspectiveΔ_baseA.alphaMap = RealityGridC;
+				mat_perspectiveΔ_baseA.alphaMap = BasicHud03b;
                 //
 				mesh_perspectiveΔ_baseA.position.set(0, 0, 0);
 				mesh_perspectiveΔ_baseA.scale.set(0.05, 0.05, 0.05);
@@ -7254,6 +7309,33 @@
 				// mesh_perspectiveΔ_baseA.rotateX( Math.PI / 2 );
 				
 				perspectiveΔ_baseA.add(mesh_perspectiveΔ_baseA)
+
+
+				// #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
+                // \- # perspectiveΔ_baseB
+                // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
+
+                perspectiveΔ_baseB = new THREE.Group()
+				perspectiveΔ_baseB.position.set(0, 1, 0)
+				perspectiveΔ_baseB.rotation.set(0, 0, 0)
+				perspectiveΔ_baseB.scale.set(25, 25, 25)
+				scene.add(perspectiveΔ_baseB)
+
+
+				const mat_perspectiveΔ_baseB = new THREE.MeshBasicMaterial({ map: BasicHud03b, side: THREE.DoubleSide });
+				mesh_perspectiveΔ_baseB = new THREE.Mesh(geo_objT_SphereA0, mat_perspectiveΔ_baseB);
+                //
+				mat_perspectiveΔ_baseB.transparent = true;
+                mat_perspectiveΔ_baseB.wireframe = false;
+				mat_perspectiveΔ_baseB.alphaMap = BasicHud03b;
+                //
+				mesh_perspectiveΔ_baseB.position.set(0, 0, 0);
+				mesh_perspectiveΔ_baseB.scale.set(0.05, 0.05, 0.05);
+				mesh_perspectiveΔ_baseB.rotation.set(0, 0, 0)
+                // 
+				// mesh_perspectiveΔ_baseB.rotateX( Math.PI / 2 );
+				
+				perspectiveΔ_baseB.add(mesh_perspectiveΔ_baseB)
 
 
                 // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
@@ -8120,31 +8202,7 @@
                 )
 
 
-                // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
-                // \- # perspectiveΔ_baseB
-                // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
-
-                perspectiveΔ_baseB = new THREE.Group()
-				perspectiveΔ_baseB.position.set(0, 1, 0)
-				perspectiveΔ_baseB.rotation.set(0, 0, 0)
-				perspectiveΔ_baseB.scale.set(25, 25, 25)
-				scene.add(perspectiveΔ_baseB)
-
-
-				const mat_perspectiveΔ_baseB = new THREE.MeshBasicMaterial({ map: RealityGridC, side: THREE.DoubleSide });
-				mesh_perspectiveΔ_baseB = new THREE.Mesh(geo_objT_SphereA0, mat_perspectiveΔ_baseB);
-                //
-				mat_perspectiveΔ_baseB.transparent = true;
-                mat_perspectiveΔ_baseB.wireframe = false;
-				mat_perspectiveΔ_baseB.alphaMap = RealityGridC;
-                //
-				mesh_perspectiveΔ_baseB.position.set(0, 0, 0);
-				mesh_perspectiveΔ_baseB.scale.set(0.05, 0.05, 0.05);
-				mesh_perspectiveΔ_baseB.rotation.set(0, 0, 0)
-                // 
-				// mesh_perspectiveΔ_baseB.rotateX( Math.PI / 2 );
-				
-				perspectiveΔ_baseB.add(mesh_perspectiveΔ_baseB)
+                
 
 
 
@@ -8678,17 +8736,17 @@
 				folderLoadTestingContainer01.add(admin_root.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
 				folderLoadTestingContainer01.add(admin_root.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
-				const folderLoadTestingContainer02 = gui.addFolder('<<< LoadPoint02 :: ΔA_Menubar_lineA >>>')
+				const folderLoadTestingContainer02 = gui.addFolder('<<< LoadPoint02 :: perspectiveΔ_baseB >>>')
 
-				folderLoadTestingContainer02.add(ΔA_Menubar_lineA.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
-				folderLoadTestingContainer02.add(ΔA_Menubar_lineA.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
-				folderLoadTestingContainer02.add(ΔA_Menubar_lineA.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
-				folderLoadTestingContainer02.add(ΔA_Menubar_lineA.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
-				folderLoadTestingContainer02.add(ΔA_Menubar_lineA.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
-				folderLoadTestingContainer02.add(ΔA_Menubar_lineA.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
-				folderLoadTestingContainer02.add(ΔA_Menubar_lineA.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
-				folderLoadTestingContainer02.add(ΔA_Menubar_lineA.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
-				folderLoadTestingContainer02.add(ΔA_Menubar_lineA.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
+				folderLoadTestingContainer02.add(perspectiveΔ_baseB.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
+				folderLoadTestingContainer02.add(perspectiveΔ_baseB.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
+				folderLoadTestingContainer02.add(perspectiveΔ_baseB.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
+				folderLoadTestingContainer02.add(perspectiveΔ_baseB.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
+				folderLoadTestingContainer02.add(perspectiveΔ_baseB.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
+				folderLoadTestingContainer02.add(perspectiveΔ_baseB.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
+				folderLoadTestingContainer02.add(perspectiveΔ_baseB.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
+				folderLoadTestingContainer02.add(perspectiveΔ_baseB.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
+				folderLoadTestingContainer02.add(perspectiveΔ_baseB.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
 				const folderLoadTestingContainer03 = gui.addFolder('<<< LoadPoint03 :: floorDesign01_Grid >>>')
 

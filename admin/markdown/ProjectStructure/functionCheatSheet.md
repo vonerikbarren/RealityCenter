@@ -13,6 +13,17 @@
 \- randomATT_Items = Search(HomeScreenSaver)
 
 
+
+# SetUp_Shortcuts
+\- setUp_html_videos
+\- setUp_variableBuild
+\- setUp_functionBuild
+\- setUp_keyCommands
+\- setUp_hardCode_ObjectBuild
+\- setUp_datGui
+\- setUp_LoopedAnimations
+
+
 ## makePDF_/_iFrameLinks
 \- https://docs.google.com/spreadsheets/d/1Wbvxc0_2UIZs79aPBVMYO3XTSueMot07YaZ-DlnXNiA/edit#gid=0
 \- https://www.youtube.com/watch?v=4xDzrJKXOOY&ab_channel=LofiGirl
