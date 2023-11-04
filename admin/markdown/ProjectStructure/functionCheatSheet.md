@@ -15,6 +15,7 @@
 
 
 # SetUp_Shortcuts
+\- setUp_ΔTitle
 \- setUp_html_videos
 \- setUp_variableBuild
 \- setUp_functionBuild
