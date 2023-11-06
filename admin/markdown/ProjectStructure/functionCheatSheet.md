@@ -18,6 +18,7 @@
 \- setUp_ΔTitle
 \- setUp_html_videos
 \- setUp_variableBuild
+\- setUp_imageRef
 \- setUp_functionBuild
 \- setUp_keyCommands
 \- setUp_hardCode_ObjectBuild
