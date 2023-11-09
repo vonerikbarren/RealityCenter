@@ -1716,7 +1716,7 @@
 
 
 							<!-- VideoDomain02: Search_html_video01 -->
-							<video id="openingVideo" class="countDown" playsinline controls webkit-playsinline  autoplay loop width="320" height="240" src="./assets/video/PlexusAnimations/Animation_ParticlesWhite01.mp4" border: 5px 5px black;"></video>
+							<video id="openingVideo" class="countDown" playsinline controls webkit-playsinline  autoplay loop width="320" height="240" src="./assets/video/PlexusAnimations/Animation_ParticlesDancing_NeonBluePink.mp4" border: 5px 5px black;"></video>
 
 
 
@@ -2546,6 +2546,118 @@
             //  Testing Area
 			// #################################################################
 
+
+            // Build root of cube
+            let cube_root
+            let cube_baseA
+
+                // Build cubeSphereInner_root
+                let cubeSphereInner_root
+                let cubeSphereInner_baseA, mesh_cubeSphereInner_baseA
+
+                // Build cubeSphereOutter_root
+                let cubeSphereOutter_root
+                let cubeSphereOutter_baseA
+
+
+                // Build LayerCore_root
+                let cube_LayerCore_root
+                let cube_LayerCore_baseA
+
+
+                // Build Faces Of Cube
+                let cubeFaces_root
+                let cubeFaces_baseA
+
+
+                    // Build - cubeFace_Front_root
+                    let cubeFace_Front_root
+                    let cubeFace_Front_baseA
+                    
+                        // cubeFace_FaceContent_root
+                        let cubeFace_Front_component01_root
+                        let cubeFace_Front_component01_option
+
+                            // cubeFront_App01_TimeΔ
+                            let TimeΔ_root
+
+                                // TimeΔ_Clock_root
+                                let TimeΔ_Clock_root
+                                let TimeΔ_Clock_component01
+                                let TimeΔ_Clock_component02
+                                let TimeΔ_Clock_component03
+                                let TimeΔ_Clock_component04
+                                let TimeΔ_Clock_component05
+
+                                // TimeΔ_Clock_Icon01_
+                                let TimeΔ_Clock_Icon01_
+
+                                // TimeΔ_TimeCircle
+                                let TimeCircle_root
+
+                                // TimeΔ_TimeSphere
+                                let TimeΔ_TimeSphere_root
+                                let TimeΔ_OuterSphere_root
+                                let TimeΔ_InnerSphere_root
+
+                                // TimeΔ_TimeTunnel
+                                let TimeΔ_TimeTunnel_root
+                                let TimeΔ_TimeTunnel_tunnel_SpaceTime_root
+                                let TimeΔ_TimeTunnel_tunnel_DigitalTime_root
+                                let TimeΔ_TimeTunnel_tunnel_EventTime_root
+                                let TimeΔ_TimeTunnel_tunnel_DecisionTime_root
+                                
+
+                                // TimeΔ_
+
+                    // cubeFace_Left_root
+                    let cubeFace_Left_root
+                    let cubeFace_Left_baseA
+
+                        // cubeFace_FaceContent_root
+                        let cubeFace_Left_component01_root
+                        let cubeFace_Left_component01_option
+
+                    // Build cubeRight_Face
+                    let cubeFace_Right_root
+                    let cubeFace_Right_baseA
+
+                        // cubeFace_FaceContent_root
+                        let cubeFace_Right_component01_root
+                        let cubeFace_Right_component01_option
+
+                    // Build cubeRear_Face_root
+                    let cubeFace_Rear_root
+                    let cubeFace_Rear_baseA
+
+                        // cubeFace_FaceContent_root
+                        let cubeFace_Rear_component01_root
+                        let cubeFace_Rear_component01_option
+
+
+                    // Build cubeTop_Face_root
+                    let cubeFace_Bottom_root
+                    let cubeFace_Bottom_baseA
+
+                        // cubeFace_FaceContent_root
+                        let cubeFace_Bottom_component01_root
+                        let cubeFace_Bottom_component01_option
+
+                        // Music
+
+                    // Build cubeBottom_Face_root
+                    let cubeFace_Top_root
+                    let cubeFace_Top_baseA
+
+                        // cubeFace_FaceContent_root
+                        let cubeFace_Top_component01_root
+                        let cubeFace_Top_component01_option
+
+                
+                // Build Box
+                let cubeContainer_root
+                let cubeContainer_baseA
+
             
 
 
@@ -2688,6 +2800,7 @@
 				const GalaxyPurple01 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/GalaxyWallpaperPurple01.jpeg')
 				const GalaxyPurple02 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/GalaxyWallpaperPurple02.jpeg')
 				const GalaxyPurple03 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/GalaxyWallpaperPurple03.png')
+                const GalaxyBlue01 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/starrySkyBlue01.jpg')
 
                 // ----------------------------------------------------------------------------------------------------
 				// \- [OOASA6PE01_A5_05_TL__AppWallpapers] -\
@@ -3009,6 +3122,7 @@
 				const dataTravel05 = textureLoader.load('./assets/img/07-StaticImg/galaxyDefault02.jpeg')
 
 
+				// setUp_imageRef
                 // ----------------------------------------------------------------------------------------------------
 				// \- [OOASA6PE01_A5_27_TL__MiniApp_ExtraImports] \- 
                 // ----------------------------------------------------------------------------------------------------
@@ -3017,6 +3131,9 @@
 				const resumeImportPage02 = textureLoader.load('./assets/img/07-StaticImg/resumeP2.png')
 
 
+                // ----------------------------------------------------------------------------------------------------
+				// \- [ CubeΔ_TestImages ]
+                // ----------------------------------------------------------------------------------------------------
 
 
 
@@ -5101,7 +5218,7 @@
 						gsap.to(camera.position, {
 							duration: .5,
 							delay: 0,	
-							y: "+= 50",
+							y: "+= 25",
 						
 						})
 
@@ -5115,7 +5232,7 @@
 						gsap.to(camera.position, {
 							duration: .5,
 							delay: 0,
-							y: "+= 500",
+							y: "+= 100",
 
 						})
 					}
@@ -5143,7 +5260,7 @@
 						gsap.to(camera.position, {
 							duration: .2,
 							delay: 0,	
-							y: "-= 50",
+							y: "-= 25",
 						
 						})
 					}
@@ -5157,7 +5274,61 @@
 						gsap.to(camera.position, {
 							duration: .2,
 							delay: 0,
-							y: "-= 500",
+							y: "-= 100",
+
+						})
+					}
+				})
+
+
+
+                // Speed Adjustments
+				// Height-GoingDown-Functions
+				// search.ChangeSpeedParams
+				document.addEventListener("keydown", function(event) {
+					if (event.key === "5") {
+						speedStrengthsParams.x = 10
+					} 
+				})
+
+
+				document.addEventListener("keydown", function(event) {
+					if (event.ctrlKey && event.key === "5") {
+						speedStrengthsParams.x = 1
+					}
+				})
+
+
+
+				// GodControls Lvl01
+				document.addEventListener("keydown", function(event) {
+					if (event.key === "6") {
+						speedStrengthsParams.x = 2000
+					} 
+				})
+
+
+				document.addEventListener("keydown", function(event) {
+					if (event.ctrlKey && event.key === "6") {
+						speedStrengthsParams.x = 1
+					}
+				})
+
+
+
+				document.addEventListener("keydown", function(event) {
+					if (event.key === "8") {
+						gsap.to(camera.position, {
+							duration: 1,
+							delay: 0,
+							y: 10,
+
+						})
+
+						gsap.to(camera.position, {
+							duration: 1,
+							delay: 0,
+							z: -3
 
 						})
 					}
@@ -6420,7 +6591,7 @@
 				// ATT_Acronyms__Root.position.set(-87, 45, 274) // ||original 
                 ATT_Acronyms__Root.position.set(0, 1.05, 0)
 				ATT_Acronyms__Root.scale.set(0.001, 0.001, 0.001)
-				scene.add(ATT_Acronyms__Root)
+				// scene.add(ATT_Acronyms__Root)
 				
 
 				ATT_Acronyms__Root.add(
@@ -6442,7 +6613,7 @@
                 ATT_CustomerEducationTool__Root.position.set(0.13, 1.05, 0)
                 ATT_CustomerEducationTool__Root.rotation.set(0, 0, 0)
 				ATT_CustomerEducationTool__Root.scale.set(0.001, 0.001, 0.001)
-				scene.add(ATT_CustomerEducationTool__Root)
+				// scene.add(ATT_CustomerEducationTool__Root)
 				
 
 				ATT_CustomerEducationTool__Root.add(
@@ -6464,7 +6635,7 @@
                 ATT_PrimerBooklet__Root.position.set(-0.13, 1.05, 0)
                 ATT_PrimerBooklet__Root.rotation.set(0, 0, 0)
 				ATT_PrimerBooklet__Root.scale.set(0.001, 0.001, 0.001)
-				scene.add(ATT_PrimerBooklet__Root)
+				// scene.add(ATT_PrimerBooklet__Root)
 				
 
 				ATT_PrimerBooklet__Root.add(
@@ -6487,7 +6658,7 @@
                 ATT_RampUp_RSC__Root.position.set(-1.5, 1.05, 1.5)
                 ATT_RampUp_RSC__Root.rotation.set(0, 1.575, 0)
 				ATT_RampUp_RSC__Root.scale.set(0.001, 0.001, 0.001)
-				scene.add(ATT_RampUp_RSC__Root)
+				// scene.add(ATT_RampUp_RSC__Root)
 				
 
 				ATT_RampUp_RSC__Root.add(
@@ -6817,6 +6988,719 @@
 				// -----------------------------------------------------------------
 				// # UI Development (Start)
 
+                // cube_root
+                // ----------------------------------------------------
+                cube_root = new THREE.Group()
+                cube_root.position.set(0, 1, 0)
+                cube_root.rotation.set(0, 0, 0)
+                cube_root.scale.set(1, 1, 1)
+                scene.add(cube_root)
+
+                cube_baseA = new THREE.Group()
+                cube_baseA.position.set(0, 0, 0)
+                cube_baseA.rotation.set(0, 0, 0)
+                cube_baseA.scale.set(1, 1, 1)
+                cube_root.add(cube_baseA)
+
+
+                    // cubeSphereInner_root
+                    // ----------------------------------------------------
+                    cubeSphereInner_root = new THREE.Group()
+                    cubeSphereInner_root.position.set(0, 0, 0)
+                    cubeSphereInner_root.rotation.set(0, 0, 0)
+                    cubeSphereInner_root.scale.set(1, 1, 1)
+                    cube_baseA.add(cubeSphereInner_root)
+
+                    // cubeSphereInner_baseA
+                    cubeSphereInner_baseA = new THREE.Group()
+                    cubeSphereInner_baseA.position.set(0, 0, 0)
+                    cubeSphereInner_baseA.rotation.set(0, 0, 0)
+                    cubeSphereInner_baseA.scale.set(1, 1, 1)
+                    cubeSphereInner_root.add(cubeSphereInner_baseA)
+
+
+                        const mat_cubeSphereInner_baseA = new THREE.MeshBasicMaterial({ map: GalaxyPurple01, side: THREE.DoubleSide });
+                        mesh_cubeSphereInner_baseA = new THREE.Mesh(geo_objT_SphereA0, mat_cubeSphereInner_baseA);
+                        mat_cubeSphereInner_baseA.transparent = true;
+                        mat_cubeSphereInner_baseA.wireframe = false;
+                        mat_cubeSphereInner_baseA.alphaMap = GalaxyPurple01;
+                        mesh_cubeSphereInner_baseA.position.set(0, 0, 0);
+                        // mesh_cubeSphereInner_baseA.position.set(-15000, 0, 0);
+                        mesh_cubeSphereInner_baseA.scale.set(1, 1, 1);
+                        mesh_cubeSphereInner_baseA.rotation.set(0, 0, 0)
+                        // mesh_cubeSphereInner_baseA.rotateX( - Math.PI / 2 );
+
+                        // cubeSphereInner_baseA.lookAt(camera)
+                        
+                        cubeSphereInner_baseA.add(mesh_cubeSphereInner_baseA)
+
+
+                    // cube_LayerCore_root
+                    // ----------------------------------------------------
+                    cube_LayerCore_root = new THREE.Group()
+                    cube_LayerCore_root.position.set(0, 0, 0)
+                    cube_LayerCore_root.rotation.set(0, 0, 0)
+                    cube_LayerCore_root.scale.set(1, 1, 1)
+                    cube_baseA.add(cube_LayerCore_root)
+
+                    // cube_LayerCore_baseA
+                    cube_LayerCore_baseA = new THREE.Group()
+                    cube_LayerCore_baseA.position.set(0, 0, 0)
+                    cube_LayerCore_baseA.rotation.set(0, 0, 0)
+                    cube_LayerCore_baseA.scale.set(1, 1, 1)
+                    cube_LayerCore_root.add(cube_LayerCore_baseA)
+
+
+                    // cubeFaces_root
+                    // ----------------------------------------------------
+                    cubeFaces_root = new THREE.Group()
+                    cubeFaces_root.position.set(0, 0, 0)
+                    cubeFaces_root.rotation.set(0, 0, 0)
+                    cubeFaces_root.scale.set(1, 1, 1)
+                    cube_baseA.add(cubeFaces_root)
+
+                    // cubeFaces_baseA
+                    cubeFaces_baseA = new THREE.Group()
+                    cubeFaces_baseA.position.set(0, 0, 0)
+                    cubeFaces_baseA.rotation.set(0, 0, 0)
+                    cubeFaces_baseA.scale.set(1, 1, 1)
+                    cubeFaces_root.add(cubeFaces_baseA)
+
+            
+
+                        // cubeFace_Front_root - xy
+                        // ----------------------------------------------------
+                        cubeFace_Front_root = new THREE.Group()
+                        cubeFace_Front_root.position.set(0, 0, 0)
+                        cubeFace_Front_root.rotation.set(0, 0, 0)
+                        cubeFace_Front_root.scale.set(1, 1, 1)
+                        cubeFaces_baseA.add(cubeFace_Front_root)
+
+                        // cubeFace_Front_baseA
+                        cubeFace_Front_baseA = new THREE.Group()
+                        cubeFace_Front_baseA.position.set(0, 0, 0)
+                        cubeFace_Front_baseA.rotation.set(0, 0, 0)
+                        cubeFace_Front_baseA.scale.set(1, 1, 1)
+                        cubeFace_Front_root.add(cubeFace_Front_baseA)
+
+
+
+                            // cubeFace_Front_component01_root - x
+                            // ----------------------------------------------------
+                            cubeFace_Front_component01_root = new THREE.Group()
+                            cubeFace_Front_component01_root.position.set(0, 0, 0)
+                            cubeFace_Front_component01_root.rotation.set(0, 0, 0)
+                            cubeFace_Front_component01_root.scale.set(1, 1, 1)
+                            cubeFace_Front_baseA.add(cubeFace_Front_component01_root)
+
+
+                            // cubeFace_Front_component01_root - x
+                            // ----------------------------------------------------
+                            cubeFace_Front_component01_root = new THREE.Group()
+                            cubeFace_Front_component01_root.position.set(0, 0, 1.5)
+                            cubeFace_Front_component01_root.rotation.set(0, 0, 0)
+                            cubeFace_Front_component01_root.scale.set(0.1, 0.1, 0.1)
+                            cubeFace_Front_baseA.add(cubeFace_Front_component01_root)
+
+                            // ./assets/img/10-ObjectUI/Shapes/Square.png
+                            // ./assets/img/10-ObjectUI/Shapes/Square.png
+                            cubeFace_Front_component01_root.add(
+                                new hoverObject(
+                                    'img',
+                                    0, 0, 0,
+                                    0, 0, 0,
+                                    0.1, 0.1, 0.1,
+                                    "Testing234", "TestingClass234",
+                                    "./assets/img/10-ObjectUI/02-TechTiles/DigiTechTile07/01-Base/DigiTechTile07.png", "",
+                                    "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+                                )
+                            )
+
+                                // TimeΔ_root
+                                // ----------------------------------------------------
+                                TimeΔ_root = new THREE.Group()
+                                TimeΔ_root.position.set(0, 0, 0)
+                                TimeΔ_root.rotation.set(0, 0, 0)
+                                TimeΔ_root.scale.set(1, 1, 1)
+                                cubeFace_Front_component01_root.add(TimeΔ_root)
+
+
+                                
+                                    // TimeΔ_Clock_root
+                                    // ----------------------------------------------------
+                                    TimeΔ_Clock_root = new THREE.Group()
+                                    TimeΔ_Clock_root.position.set(0, 0, 0)
+                                    TimeΔ_Clock_root.rotation.set(0, 0, 0)
+                                    TimeΔ_Clock_root.scale.set(1, 1, 1)
+                                    TimeΔ_root.add(TimeΔ_Clock_root)
+
+
+                                    // TimeΔ_Clock_component01 
+                                    // ----------------------------------------------------
+                                    TimeΔ_Clock_component01 = new THREE.Group()
+                                    TimeΔ_Clock_component01.position.set(-6.9, 6.5, 0)
+                                    TimeΔ_Clock_component01.rotation.set(0, 0, 0)
+                                    TimeΔ_Clock_component01.scale.set(0.15, 0.15, 0.15)
+                                    TimeΔ_Clock_root.add(TimeΔ_Clock_component01)
+
+
+                                    let putClockInCenterOnFloor = function moveClockToCenterΔ() {
+
+
+
+                                        gsap.to(TimeΔ_Clock_root.rotation, {
+                                            duration: 1,
+                                            delay: 0,
+                                            x: -1.575,
+
+
+                                        })
+
+                                        gsap.to(TimeΔ_Clock_root.position, {
+                                            duration: 1,
+                                            delay: 1,
+                                            z: -15.5,
+                                            y: -5
+
+                                        })
+
+
+                                        
+
+
+
+                                    }
+
+
+                                    let putClockInCenterBackToTechTile = function moveClockBack() {
+
+                                        gsap.to(TimeΔ_Clock_root.rotation, {
+                                            duration: 1,
+                                            delay: 0,
+                                            x: 0,
+
+
+                                        })
+
+                                        gsap.to(TimeΔ_Clock_root.position, {
+                                            duration: 1,
+                                            delay: 1,
+                                            z: 0,
+                                            y: 0
+
+                                        })
+
+                                    }
+
+
+                                    TimeΔ_Clock_component01.add(
+
+                                        new makePDF_ViewerCircle(
+                                            0, 0, 0,
+                                            0, 0, 0,
+                                            0.1, 0.1, 0.1,
+                                            "hoverClockA1",
+                                            "./pages/Applications/01-TimeClock/TimeClock.html",
+                                            "1200px", "1200px"
+                                        )
+                                    )
+
+
+                                    // TimeΔ_Clock_component02 
+                                    // ----------------------------------------------------
+                                    TimeΔ_Clock_component02 = new THREE.Group()
+                                    TimeΔ_Clock_component02.position.set(0, -0.2, 0)
+                                    TimeΔ_Clock_component02.rotation.set(0, 0, 0)
+                                    TimeΔ_Clock_component02.scale.set(0.025, 0.025, 0.025)
+                                    TimeΔ_Clock_root.add(TimeΔ_Clock_component02)
+
+
+                                    TimeΔ_Clock_component02.add(
+
+                                        new hoverObject(
+                                            'img',
+                                            0, 0, 0,
+                                            0, 0, 0,
+                                            0.1, 0.1, 0.1,
+                                            "Testing234", "TestingClass234",
+                                            "./assets/img/05-Env/Clocks/Clock03_A1.png", "",
+                                            "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+                                        )
+                                    )
+
+                                    // TimeΔ_Clock_component03 
+                                    // ----------------------------------------------------
+                                    TimeΔ_Clock_component03 = new THREE.Group()
+                                    TimeΔ_Clock_component03.position.set(0, -0.2, -0.5)
+                                    TimeΔ_Clock_component03.rotation.set(0, 0, 0)
+                                    TimeΔ_Clock_component03.scale.set(0.25, 0.25, 0.25)
+                                    TimeΔ_Clock_root.add(TimeΔ_Clock_component03)
+
+
+                                    TimeΔ_Clock_component03.add(
+
+                                        new hoverObject(
+                                            'img',
+                                            0, 0, 0,
+                                            0, 0, 0,
+                                            0.1, 0.1, 0.1,
+                                            "Testing234", "TestingClass234",
+                                            "./assets/img/03-HudUI/HudGears/gearWhite_Default01/energyWhite01.svg", "",
+                                            "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+                                        )
+                                    )
+
+
+                                    // TimeΔ_Clock_component04 
+                                    // ----------------------------------------------------
+                                    TimeΔ_Clock_component04 = new THREE.Group()
+                                    TimeΔ_Clock_component04.position.set(0, 0, -1)
+                                    TimeΔ_Clock_component04.rotation.set(0, 0, 0)
+                                    TimeΔ_Clock_component04.scale.set(0.025, 0.025, 0.025)
+                                    TimeΔ_Clock_root.add(TimeΔ_Clock_component04)
+
+
+                                    TimeΔ_Clock_component04.add(
+
+                                        new hoverObject(
+                                            'img',
+                                            0, 0, 0,
+                                            0, 0, 0,
+                                            0.1, 0.1, 0.1,
+                                            "Testing234", "TestingClass234",
+                                            "./assets/img/03-HudUI/HudGears/gearGold_Default01/gearGold01.svg", "",
+                                            "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+                                        )
+                                    )
+
+
+                                    // TimeΔ_Clock_component05 
+                                    // ----------------------------------------------------
+                                    TimeΔ_Clock_component05 = new THREE.Group()
+                                    TimeΔ_Clock_component05.position.set(0, 0, -1)
+                                    TimeΔ_Clock_component05.rotation.set(0, 0, 0)
+                                    TimeΔ_Clock_component05.scale.set(0.075, 0.075, 0.075)
+                                    TimeΔ_Clock_root.add(TimeΔ_Clock_component05)
+
+
+                                    TimeΔ_Clock_component05.add(
+
+                                        new hoverObject(
+                                            'img',
+                                            0, 0, 0,
+                                            0, 0, 0,
+                                            0.1, 0.1, 0.1,
+                                            "Testing234", "TestingClass234",
+                                            "./assets/img/03-HudUI/HudGears/gearGold_Default01/gearGold03.svg", "",
+                                            "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+                                        )
+                                    )
+
+
+
+                                    let testTimeΔ_func01 = function() {
+                                        console.log("working")
+                                    }
+
+
+
+                                    // TimeΔ_Clock_Icon01_ 
+                                    // ----------------------------------------------------
+                                    TimeΔ_Clock_Icon01_ = new THREE.Group()
+                                    TimeΔ_Clock_Icon01_.position.set(-8.9, 8.5, 0)
+                                    TimeΔ_Clock_Icon01_.rotation.set(0, 0, 0)
+                                    TimeΔ_Clock_Icon01_.scale.set(0.1, 0.1, 0.1)
+                                    TimeΔ_Clock_root.add(TimeΔ_Clock_Icon01_)
+
+
+                                   
+
+
+                                    // ./assets/icons/0-Official/Design/06-HelpSupport/svg/010-time.svg - scale = 0.55
+                                    // ./assets/icons/00-Official/UI/MainIconSetA/Folders/world-time.gif
+                                    TimeΔ_Clock_Icon01_.add(
+
+                                        new TechIcon(
+                                            -5, 5, 0,
+                                            0, 0, 0,
+                                            0.05, 0.05, 0.05,
+                                            'DefaultTechIconId', 'DefaultTechIconClassName',
+                                            'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+                                            'DefaultImgId', 'DefaultImgClassName',
+                                            'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+                                            "./assets/icons/00-Official/UI/IconHoldersA/time-management.gif", "",
+                                            putClockInCenterOnFloor, 
+                                            "ShowΔ",
+                                            "Toggle from here or main menu top left"
+                                        ) 
+                                    )
+
+
+
+                                   
+
+
+
+
+                        // cubeFace_Left_root - xy
+                        // ----------------------------------------------------
+                        cubeFace_Left_root = new THREE.Group()
+                        cubeFace_Left_root.position.set(0, 0, 0)
+                        cubeFace_Left_root.rotation.set(0, 0, 0)
+                        cubeFace_Left_root.scale.set(1, 1, 1)
+                        cubeFaces_baseA.add(cubeFace_Left_root)
+
+                        // cube_LayerCore_root
+                        cubeFace_Left_baseA = new THREE.Group()
+                        cubeFace_Left_baseA.position.set(0, 0, 0)
+                        cubeFace_Left_baseA.rotation.set(0, 0, 0)
+                        cubeFace_Left_baseA.scale.set(1, 1, 1)
+                        cubeFace_Left_root.add(cubeFace_Left_baseA)
+
+
+
+                            // cubeFace_Left_component01_root - x
+                            // ----------------------------------------------------
+                            cubeFace_Left_component01_root = new THREE.Group()
+                            cubeFace_Left_component01_root.position.set(-1.5, 0, 0)
+                            cubeFace_Left_component01_root.rotation.set(0, -1.575, 0)
+                            cubeFace_Left_component01_root.scale.set(0.1, 0.1, 0.1)
+                            cubeFace_Left_baseA.add(cubeFace_Left_component01_root)
+
+                            // ./assets/img/10-ObjectUI/Shapes/Square.png
+                            cubeFace_Left_component01_root.add(
+                                new hoverObject(
+                                    'img',
+                                    0, 0, 0,
+                                    0, 0, 0,
+                                    0.1, 0.1, 0.1,
+                                    "Testing234", "TestingClass234",
+                                    "./assets/img/10-ObjectUI/02-TechTiles/DigiTechTile07/01-Base/DigiTechTile07.png", "",
+                                    "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+                                )
+                            )
+
+
+
+                        // cubeFace_Right_root - xy
+                        // ----------------------------------------------------
+                        cubeFace_Right_root = new THREE.Group()
+                        cubeFace_Right_root.position.set(0, 0, 0)
+                        cubeFace_Right_root.rotation.set(0, 0, 0)
+                        cubeFace_Right_root.scale.set(1, 1, 1)
+                        cubeFaces_baseA.add(cubeFace_Right_root)
+
+                        // cubeFace_Right_baseA
+                        cubeFace_Right_baseA = new THREE.Group()
+                        cubeFace_Right_baseA.position.set(0, 0, 0)
+                        cubeFace_Right_baseA.rotation.set(0, 0, 0)
+                        cubeFace_Right_baseA.scale.set(1, 1, 1)
+                        cubeFace_Right_root.add(cubeFace_Right_baseA)
+
+
+
+                            // cubeFace_Right_component01_root - x
+                            // ----------------------------------------------------
+                            cubeFace_Right_component01_root = new THREE.Group()
+                            cubeFace_Right_component01_root.position.set(1.5, 0, 0)
+                            cubeFace_Right_component01_root.rotation.set(0, 1.575, 0)
+                            cubeFace_Right_component01_root.scale.set(0.1, 0.1, 0.1)
+                            cubeFace_Right_baseA.add(cubeFace_Right_component01_root)
+
+                            // ./assets/img/10-ObjectUI/Shapes/Square.png
+                            cubeFace_Right_component01_root.add(
+                                new hoverObject(
+                                    'img',
+                                    0, 0, 0,
+                                    0, 0, 0,
+                                    0.1, 0.1, 0.1,
+                                    "Testing234", "TestingClass234",
+                                    "./assets/img/10-ObjectUI/02-TechTiles/DigiTechTile07/01-Base/DigiTechTile07.png", "",
+                                    "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+                                )
+                            )
+
+
+
+                        // cubeFace_Rear_root - x
+                        // ----------------------------------------------------
+                        cubeFace_Rear_root = new THREE.Group()
+                        cubeFace_Rear_root.position.set(0, 0, 0)
+                        cubeFace_Rear_root.rotation.set(0, 0, 0)
+                        cubeFace_Rear_root.scale.set(1, 1, 1)
+                        cubeFaces_baseA.add(cubeFace_Rear_root)
+
+                        // cubeFace_Rear_baseA
+                        cubeFace_Rear_baseA = new THREE.Group()
+                        cubeFace_Rear_baseA.position.set(0, 0, 0)
+                        cubeFace_Rear_baseA.rotation.set(0, 0, 0)
+                        cubeFace_Rear_baseA.scale.set(1, 1, 1)
+                        cubeFace_Rear_root.add(cubeFace_Rear_baseA)
+
+
+
+                            // cubeFace_Rear_component01_root - x
+                            // ----------------------------------------------------
+                            cubeFace_Rear_component01_root = new THREE.Group()
+                            cubeFace_Rear_component01_root.position.set(0, 0, -1.5)
+                            cubeFace_Rear_component01_root.rotation.set(0, 0, 0)
+                            cubeFace_Rear_component01_root.scale.set(0.1, 0.1, 0.1)
+                            cubeFace_Rear_baseA.add(cubeFace_Rear_component01_root)
+
+                                // ./assets/img/10-ObjectUI/Shapes/Square.png
+                                cubeFace_Rear_component01_root.add(
+                                    new hoverObject(
+                                        'img',
+                                        0, 0, 0,
+                                        0, 0, 0,
+                                        0.1, 0.1, 0.1,
+                                        "Testing234", "TestingClass234",
+                                        "./assets/img/10-ObjectUI/02-TechTiles/DigiTechTile07/01-Base/DigiTechTile07.png", "",
+                                        "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+                                    )
+                                )
+
+
+
+                        // cubeFace_Bottom_root - x
+                        // ----------------------------------------------------
+                        cubeFace_Bottom_root = new THREE.Group()
+                        cubeFace_Bottom_root.position.set(0, 0, 0)
+                        cubeFace_Bottom_root.rotation.set(0, 0, 0)
+                        cubeFace_Bottom_root.scale.set(1, 1, 1)
+                        cubeFaces_baseA.add(cubeFace_Bottom_root)
+
+                        // cubeFace_Bottom_baseA
+                        cubeFace_Bottom_baseA = new THREE.Group()
+                        cubeFace_Bottom_baseA.position.set(0, 0, 0)
+                        cubeFace_Bottom_baseA.rotation.set(0, 0, 0)
+                        cubeFace_Bottom_baseA.scale.set(1, 1, 1)
+                        cubeFace_Bottom_root.add(cubeFace_Bottom_baseA)
+
+
+
+                            // cubeFace_Bottom_component01_root - x
+                            // ----------------------------------------------------
+                            cubeFace_Bottom_component01_root = new THREE.Group()
+                            cubeFace_Bottom_component01_root.position.set(0, -1.5, 0)
+                            cubeFace_Bottom_component01_root.rotation.set(-1.575, 0, 0)
+                            cubeFace_Bottom_component01_root.scale.set(0.1, 0.1, 0.1)
+                            cubeFace_Bottom_baseA.add(cubeFace_Bottom_component01_root)
+
+
+                                // ./assets/img/10-ObjectUI/Shapes/Square.png
+                                cubeFace_Bottom_component01_root.add(
+                                    new hoverObject(
+                                        'img',
+                                        0, 0, 0,
+                                        0, 0, 0,
+                                        0.1, 0.1, 0.1,
+                                        "Testing234", "TestingClass234",
+                                        "./assets/img/10-ObjectUI/02-TechTiles/DigiTechTile07/01-Base/DigiTechTile07.png", "",
+                                        "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+                                    )
+                                )
+
+
+
+
+                        // cubeFace_Top_root
+                        // ----------------------------------------------------
+                        cubeFace_Top_root = new THREE.Group()
+                        cubeFace_Top_root.position.set(0, 0, 0)
+                        cubeFace_Top_root.rotation.set(0, 0, 0)
+                        cubeFace_Top_root.scale.set(1, 1, 1)
+                        cubeFaces_baseA.add(cubeFace_Top_root)
+
+                        // cubeFace_Top_baseA
+                        cubeFace_Top_baseA = new THREE.Group()
+                        cubeFace_Top_baseA.position.set(0, 0, 0)
+                        cubeFace_Top_baseA.rotation.set(0, 0, 0)
+                        cubeFace_Top_baseA.scale.set(1, 1, 1)
+                        cubeFace_Top_root.add(cubeFace_Top_baseA)
+
+
+
+                            // cubeFace_Top_component01_root - x
+                            // ----------------------------------------------------
+                            cubeFace_Top_component01_root = new THREE.Group()
+                            cubeFace_Top_component01_root.position.set(0, 1.5, 0)
+                            cubeFace_Top_component01_root.rotation.set(-1.575, 0, 0)
+                            cubeFace_Top_component01_root.scale.set(0.1, 0.1, 0.1)
+                            cubeFace_Top_baseA.add(cubeFace_Top_component01_root)
+                            
+
+
+                                // ./assets/img/10-ObjectUI/Shapes/Square.png
+                                cubeFace_Top_component01_root.add(
+                                    new hoverObject(
+                                        'img',
+                                        0, 0, 0,
+                                        0, 0, 0,
+                                        0.1, 0.1, 0.1,
+                                        "Testing234", "TestingClass234",
+                                        "./assets/img/10-ObjectUI/02-TechTiles/DigiTechTile07/01-Base/DigiTechTile07.png", "",
+                                        "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+                                    )
+                                )
+
+
+                // ---------------------------------------------------------------------------------------------------------------------
+                document.addEventListener("keydown", function(event) {
+					if (event.key === "[") {
+
+						gsap.to(cube_root.rotation, {
+							duration: 1,
+							delay: 0,
+							y: `+= 0.785`,
+
+						})
+
+						
+					}
+				})
+
+
+                document.addEventListener("keydown", function(event) {
+					if (event.key === "]") {
+
+						gsap.to(cube_root.rotation, {
+							duration: 1,
+							delay: 0,
+							y: `-= 0.785`,
+
+						})
+
+						
+					}
+				})
+
+
+                document.addEventListener("keydown", function(event) {
+					if (event.key === "=") {
+
+						gsap.to(cube_root.rotation, {
+							duration: 1,
+							delay: 0,
+							x: `+= 0.785`,
+
+						})
+
+						
+					}
+				})
+
+
+                document.addEventListener("keydown", function(event) {
+					if (event.key === "'") {
+
+						gsap.to(cube_root.rotation, {
+							duration: 1,
+							delay: 0,
+							x: `-= 0.785`,
+
+						})
+
+						
+					}
+				})
+
+
+                document.addEventListener("keydown", function(event) {
+					if (event.key === "p") {
+
+						gsap.to(cube_root.scale, {
+							duration: 1,
+							delay: 0,
+							x: 25,
+                            y: 25,
+                            z: 25,
+
+						})
+
+
+                        gsap.to(cubeFace_Front_component01_root.rotation, {
+							duration: 1,
+							delay: 0,
+                            y: 3.14,
+ 
+
+						})
+
+                        particlesMaterial.size = 0.1
+						
+					}
+				})
+
+
+                document.addEventListener("keydown", function(event) {
+					if (event.ctrlKey && event.key === "p") {
+
+						gsap.to(cube_root.scale, {
+							duration: 1,
+							delay: 0,
+							x: 1,
+                            y: 1,
+                            z: 1,
+
+						})
+
+
+                        gsap.to(cubeFace_Front_component01_root.rotation, {
+							duration: 1,
+							delay: 0,
+                            y: 0,
+ 
+
+						})
+
+                        particlesMaterial.size = 0.01
+
+						
+					}
+				})
+
+
+                document.addEventListener("keydown", function(event) {
+					if (event.key === "h") {
+
+						gsap.to(cube_root.position, {
+							duration: 1,
+							delay: 0,
+							y: `+= 25`,
+
+						})
+
+						
+					}
+				})
+
+
+                document.addEventListener("keydown", function(event) {
+					if (event.key === "l") {
+
+						gsap.to(cube_root.position, {
+							duration: 1,
+							delay: 0,
+                            y: `-= 25`,
+                            
+
+						})
+
+						
+					}
+				})
+                    
+
+                    
+
+
+
+
+
+
+
+
 
 
 				// # UI Development (End)
@@ -6897,7 +7781,7 @@
 
 				// Large Number here = The box dimensions all at the same time. 
 				for (let i = 0; i < count * 3; i++) {
-					positions[i] = (Math.random() - 0.5) * 50000
+					positions[i] = (Math.random() - 0.5) * 50
 					colors[i] = Math.random()
 				}
 
@@ -6907,7 +7791,7 @@
 				// Particle Material init()
 				const particlesMaterial = new THREE.PointsMaterial()
 				// particlesMaterial.size = 10 // for ContainerHolderTex
-				particlesMaterial.size = 50
+				particlesMaterial.size = 0.01
 				particlesMaterial.sizeAttenuation = true;
 				// particlesMaterial.color = new THREE.Color('#1ADBCB') // neonBlueGreen
 				// particlesMaterial.color = new THREE.Color('#00ffb3') // neonBlueGreen
@@ -6924,8 +7808,9 @@
 
 				particles = new THREE.Points(particlesGeometry, particlesMaterial)
 				// particles.position.set(0, 24092, 0)
-				particles.position.set(0, 3500, 0)
-				scene.add(particles);
+				particles.position.set(0, 0, 0)
+                particles.scale.set(0.05, 0.05, 0.05)
+				cube_root.add(particles)
 
 
 
@@ -7339,29 +8224,29 @@
 				folderLoadTestingContainer01.add(floorDesign01_Grid.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
 				folderLoadTestingContainer01.add(floorDesign01_Grid.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
-				const folderLoadTestingContainer02 = gui.addFolder('<<< LoadPoint02 :: ATT_Acronyms__Root >>>')
+				const folderLoadTestingContainer02 = gui.addFolder('<<< LoadPoint02 :: TimeΔ_Clock_component02 >>>')
 
-				folderLoadTestingContainer02.add(ATT_Acronyms__Root.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
-				folderLoadTestingContainer02.add(ATT_Acronyms__Root.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
-				folderLoadTestingContainer02.add(ATT_Acronyms__Root.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
-				folderLoadTestingContainer02.add(ATT_Acronyms__Root.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
-				folderLoadTestingContainer02.add(ATT_Acronyms__Root.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
-				folderLoadTestingContainer02.add(ATT_Acronyms__Root.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
-				folderLoadTestingContainer02.add(ATT_Acronyms__Root.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
-				folderLoadTestingContainer02.add(ATT_Acronyms__Root.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
-				folderLoadTestingContainer02.add(ATT_Acronyms__Root.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
+				folderLoadTestingContainer02.add(TimeΔ_Clock_component02.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
+				folderLoadTestingContainer02.add(TimeΔ_Clock_component02.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
+				folderLoadTestingContainer02.add(TimeΔ_Clock_component02.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
+				folderLoadTestingContainer02.add(TimeΔ_Clock_component02.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
+				folderLoadTestingContainer02.add(TimeΔ_Clock_component02.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
+				folderLoadTestingContainer02.add(TimeΔ_Clock_component02.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
+				folderLoadTestingContainer02.add(TimeΔ_Clock_component02.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
+				folderLoadTestingContainer02.add(TimeΔ_Clock_component02.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
+				folderLoadTestingContainer02.add(TimeΔ_Clock_component02.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
-				const folderLoadTestingContainer03 = gui.addFolder('<<< LoadPoint03 :: ATT_CustomerEducationTool__Root >>>')
+				const folderLoadTestingContainer03 = gui.addFolder('<<< LoadPoint03 :: particles >>>')
 
-				folderLoadTestingContainer03.add(ATT_CustomerEducationTool__Root.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
-				folderLoadTestingContainer03.add(ATT_CustomerEducationTool__Root.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
-				folderLoadTestingContainer03.add(ATT_CustomerEducationTool__Root.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
-				folderLoadTestingContainer03.add(ATT_CustomerEducationTool__Root.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
-				folderLoadTestingContainer03.add(ATT_CustomerEducationTool__Root.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
-				folderLoadTestingContainer03.add(ATT_CustomerEducationTool__Root.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
-				folderLoadTestingContainer03.add(ATT_CustomerEducationTool__Root.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
-				folderLoadTestingContainer03.add(ATT_CustomerEducationTool__Root.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
-				folderLoadTestingContainer03.add(ATT_CustomerEducationTool__Root.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
+				folderLoadTestingContainer03.add(particles.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
+				folderLoadTestingContainer03.add(particles.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
+				folderLoadTestingContainer03.add(particles.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
+				folderLoadTestingContainer03.add(particles.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
+				folderLoadTestingContainer03.add(particles.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
+				folderLoadTestingContainer03.add(particles.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
+				folderLoadTestingContainer03.add(particles.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
+				folderLoadTestingContainer03.add(particles.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
+				folderLoadTestingContainer03.add(particles.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
 				const folderLoadTestingContainer04 = gui.addFolder('<<< LoadPoint04 :: ATT_PrimerBooklet__Root >>>')
 
@@ -8015,6 +8900,25 @@
 				// ###########################
 				// Primary Animations 
 				// ###########################
+
+                particles.rotation.y = time * 0.0001
+                // particles.rotation.z = time * 0.0001
+
+                // Time LeftPrimaryWindow_root Experience = Math.cos(time * speed) * distance + height
+                // cube_root.position.y = Math.abs(Math.cos(time * 0.00035) * 0.05) + 1
+
+
+                // Inner Sphere
+                mesh_cubeSphereInner_baseA.rotation.y = time * 0.0001
+                mesh_cubeSphereInner_baseA.rotation.z = time * 0.0001
+
+
+                TimeΔ_Clock_component03.rotation.z = time * 0.1
+                TimeΔ_Clock_component04.rotation.z = time * -0.001
+                TimeΔ_Clock_component05.rotation.z = time * 0.001
+
+
+                
 
 				
 				

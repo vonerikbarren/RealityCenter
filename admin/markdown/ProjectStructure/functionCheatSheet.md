@@ -1,6 +1,14 @@
 # Function Cheatsheet
 
 
+# Reminder for tool / reality code transfer
+- Remember to get all variables
+- Remember to get all structures
+- Remember to get all functions
+- Remember to get all animations
+- settings, etc.
+
+
 # Current Log Entry Thought Processes (so we dont get lost)
 \- Enter
     \- Side Panels with Digital/Technical Realities 
