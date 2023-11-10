@@ -78,7 +78,7 @@ anyGeometryName.add(mesh_anyGeometryName)
 ```
 
 ## Main Geometries
-\- [Circle] => geo_objT_CircleA1
+\- [Circle] => geo_objT_CircleA1 = [ThetaLength = 6.283185307179586]
 \- [Plane] => geo_objT_PlaneA1
 \- [Ring] => geo_objT_RingA0
 \- [Sphere] => geo_objT_SphereA0

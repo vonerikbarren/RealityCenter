@@ -1712,7 +1712,7 @@
 
 
 							<!-- VideoDomain02: Trees -->
-							<video id="video07" class="myVideo07" playsinline controls webkit-playsinline  autoplay loop width="320" height="240" src="./assets/video/Sunrise01.mp4" border: 5px 5px black;"></video>
+							<video id="video07" class="myVideo07" playsinline controls webkit-playsinline  autoplay loop width="320" height="240" src="./assets/video/PersonalAnimations/ExplainA01__What_is_a_Reality.mp4" border: 5px 5px black;"></video>
 
 
 							<!-- VideoDomain02: Search_html_video01 -->
@@ -2546,6 +2546,11 @@
             //  Testing Area
 			// #################################################################
 
+            let ΔReality_root
+            let Δreality_baseA
+            let Δreality_baseB
+        
+
 
             // Build root of cube
             let cube_root
@@ -2615,15 +2620,15 @@
                     let cubeFace_Left_baseA
 
                         // cubeFace_FaceContent_root
-                        let cubeFace_Left_component01_root
-                        let cubeFace_Left_component01_option
+                        let cubeFace_Left_component01_root, mesh_cubeFace_Left_component01_root
+                        let cubeFace_Left_component01_option, mesh_cubeFace_Left_component01_option
 
                     // Build cubeRight_Face
                     let cubeFace_Right_root
                     let cubeFace_Right_baseA
 
                         // cubeFace_FaceContent_root
-                        let cubeFace_Right_component01_root
+                        let cubeFace_Right_component01_root, mesh_cubeFace_Right_component01_root
                         let cubeFace_Right_component01_option
 
                     // Build cubeRear_Face_root
@@ -2631,7 +2636,7 @@
                     let cubeFace_Rear_baseA
 
                         // cubeFace_FaceContent_root
-                        let cubeFace_Rear_component01_root
+                        let cubeFace_Rear_component01_root, mesh_cubeFace_Rear_component01_root
                         let cubeFace_Rear_component01_option
 
 
@@ -2659,7 +2664,25 @@
                 let cubeContainer_baseA
 
             
+            let cube_baseB
 
+                let videoDemonstration_root
+
+                    let video_componentA_root
+                    let video_componentA_baseA, mesh_video_componentA_baseA
+
+                    let video_componentB_root
+                    let video_componentB_baseA, mesh_video_componentB_baseA
+
+                    let video_componentC_root
+                    let video_componentC_baseA, mesh_video_componentC_baseA
+                    let video_componentC_baseB, mesh_video_componentC_baseB
+                    let video_componentC_baseC, mesh_video_componentC_baseC
+                    let video_componentC_baseD, mesh_video_componentC_baseD
+                    let video_componentC_baseE, mesh_video_componentC_baseE
+
+                    let video_componentD_root
+                    let video_componentD_baseA, mesh_video_componentD_baseA
 
 
 			
@@ -3135,6 +3158,21 @@
 				// \- [ CubeΔ_TestImages ]
                 // ----------------------------------------------------------------------------------------------------
 
+                const realityDisc01 = textureLoader.load('./assets/img/10-ObjectUI/01-MusicPlayer/RealityDisc.png')
+                const techCircle01 = textureLoader.load('./assets/img/02-UserUI/03-TechCircles/Concrete/TechField06_Black.png')
+                const techCircle02 = textureLoader.load('./assets/img/02-UserUI/03-TechCircles/Concrete/TechField05_Black.png')
+                const techCircle03 = textureLoader.load('./assets/img/02-UserUI/03-TechCircles/Abstract/Circle-Electric02.png')
+                const techCircle04 = textureLoader.load('./assets/img/02-UserUI/03-TechCircles/Abstract/GoldenCircleFlower01.png')
+
+                const circleGoldLeaf = textureLoader.load('./assets/img/02-UserUI/03-TechCircles/Abstract/GoldenCircleFlower01.png')
+                const circleSilverGear = textureLoader.load('./assets/img/02-UserUI/04-Logo/WhiteGear01.png')
+                const circleSilverGearPlus = textureLoader.load('./assets/img/02-UserUI/04-Logo/WhiteLogoBackground01.png')
+                const circleMandela01 = textureLoader.load('./assets/img/02-UserUI/03-TechCircles/Abstract/Circle-Mandela01.png')
+                const circleGearWhite01 = textureLoader.load('./assets/img/08-ObjUI/textureWhite01/whiteGear01.png')
+
+                // ---------------------------------
+                const digiTechTile01 = textureLoader.load('./assets/img/10-ObjectUI/02-TechTiles/DigiTechTile07/01-Base/DigiTechTile07.png')
+                // ---------------------------------
 
 
 				
@@ -5786,7 +5824,7 @@
 						radius: 10,
 						segments: 32,
 						thetaStart: 0,
-						thetaLength: 6.28
+						thetaLength: 6.283185307179586
 					},
 
 
@@ -6988,6 +7026,28 @@
 				// -----------------------------------------------------------------
 				// # UI Development (Start)
 
+
+                // cube_root
+                // ----------------------------------------------------
+                ΔReality_root = new THREE.Group()
+                ΔReality_root.position.set(0, 5, 0)
+                ΔReality_root.rotation.set(0, 0, 0)
+                ΔReality_root.scale.set(1, 1, 1)
+                scene.add(ΔReality_root)
+
+                Δreality_baseA = new THREE.Group()
+                Δreality_baseA.position.set(0, 0, 0)
+                Δreality_baseA.rotation.set(0, 0, 0)
+                Δreality_baseA.scale.set(1, 1, 1)
+                ΔReality_root.add(Δreality_baseA)
+
+
+                Δreality_baseB = new THREE.Group()
+                Δreality_baseB.position.set(0, 0, 0)
+                Δreality_baseB.rotation.set(0, 0, 0)
+                Δreality_baseB.scale.set(1, 1, 1)
+                ΔReality_root.add(Δreality_baseB)
+
                 // cube_root
                 // ----------------------------------------------------
                 cube_root = new THREE.Group()
@@ -7368,17 +7428,32 @@
                             cubeFace_Left_baseA.add(cubeFace_Left_component01_root)
 
                             // ./assets/img/10-ObjectUI/Shapes/Square.png
-                            cubeFace_Left_component01_root.add(
-                                new hoverObject(
-                                    'img',
-                                    0, 0, 0,
-                                    0, 0, 0,
-                                    0.1, 0.1, 0.1,
-                                    "Testing234", "TestingClass234",
-                                    "./assets/img/10-ObjectUI/02-TechTiles/DigiTechTile07/01-Base/DigiTechTile07.png", "",
-                                    "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
-                                )
-                            )
+                            // cubeFace_Left_component01_root.add(
+                            //     new hoverObject(
+                            //         'img',
+                            //         0, 0, 0,
+                            //         0, 0, 0,
+                            //         0.1, 0.1, 0.1,
+                            //         "Testing234", "TestingClass234",
+                            //         "./assets/img/10-ObjectUI/02-TechTiles/DigiTechTile07/01-Base/DigiTechTile07.png", "",
+                            //         "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+                            //     )
+                            // )
+
+                            const mat_cubeFace_Left_component01_root = new THREE.MeshBasicMaterial({ map: digiTechTile01, side: THREE.DoubleSide });
+                            mesh_cubeFace_Left_component01_root = new THREE.Mesh(geo_objT_PlaneA1, mat_cubeFace_Left_component01_root);
+                            mat_cubeFace_Left_component01_root.transparent = true;
+                            mat_cubeFace_Left_component01_root.wireframe = false;
+                            mat_cubeFace_Left_component01_root.alphaMap = digiTechTile01;
+                            mesh_cubeFace_Left_component01_root.position.set(0, 0, -1);
+                            // mesh_cubeFace_Left_component01_root.position.set(-15000, 0, 0);
+                            mesh_cubeFace_Left_component01_root.scale.set(2.2, 2.2, 2.2);
+                            mesh_cubeFace_Left_component01_root.rotation.set(0, 0, 0)
+                            // mesh_cubeFace_Left_component01_root.rotateX( - Math.PI / 2 );
+
+                            // cubeFace_Left_component01_root.lookAt(camera)
+                            
+                            cubeFace_Left_component01_root.add(mesh_cubeFace_Left_component01_root)
 
 
 
@@ -7407,18 +7482,33 @@
                             cubeFace_Right_component01_root.scale.set(0.1, 0.1, 0.1)
                             cubeFace_Right_baseA.add(cubeFace_Right_component01_root)
 
-                            // ./assets/img/10-ObjectUI/Shapes/Square.png
-                            cubeFace_Right_component01_root.add(
-                                new hoverObject(
-                                    'img',
-                                    0, 0, 0,
-                                    0, 0, 0,
-                                    0.1, 0.1, 0.1,
-                                    "Testing234", "TestingClass234",
-                                    "./assets/img/10-ObjectUI/02-TechTiles/DigiTechTile07/01-Base/DigiTechTile07.png", "",
-                                    "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
-                                )
-                            )
+                            // // ./assets/img/10-ObjectUI/Shapes/Square.png
+                            // cubeFace_Right_component01_root.add(
+                            //     new hoverObject(
+                            //         'img',
+                            //         0, 0, 0,
+                            //         0, 0, 0,
+                            //         0.1, 0.1, 0.1,
+                            //         "Testing234", "TestingClass234",
+                            //         "./assets/img/10-ObjectUI/02-TechTiles/DigiTechTile07/01-Base/DigiTechTile07.png", "",
+                            //         "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+                            //     )
+                            // )
+
+                            const mat_cubeFace_Right_component01_root = new THREE.MeshBasicMaterial({ map: digiTechTile01, side: THREE.DoubleSide });
+                            mesh_cubeFace_Right_component01_root = new THREE.Mesh(geo_objT_PlaneA1, mat_cubeFace_Right_component01_root);
+                            mat_cubeFace_Right_component01_root.transparent = true;
+                            mat_cubeFace_Right_component01_root.wireframe = false;
+                            mat_cubeFace_Right_component01_root.alphaMap = digiTechTile01;
+                            mesh_cubeFace_Right_component01_root.position.set(0, 0, -1);
+                            // mesh_cubeFace_Right_component01_root.position.set(-15000, 0, 0);
+                            mesh_cubeFace_Right_component01_root.scale.set(2.2, 2.2, 2.2);
+                            mesh_cubeFace_Right_component01_root.rotation.set(0, 0, 0)
+                            // mesh_cubeFace_Right_component01_root.rotateX( - Math.PI / 2 );
+
+                            // cubeFace_Right_component01_root.lookAt(camera)
+                            
+                            cubeFace_Right_component01_root.add(mesh_cubeFace_Right_component01_root)
 
 
 
@@ -7448,17 +7538,32 @@
                             cubeFace_Rear_baseA.add(cubeFace_Rear_component01_root)
 
                                 // ./assets/img/10-ObjectUI/Shapes/Square.png
-                                cubeFace_Rear_component01_root.add(
-                                    new hoverObject(
-                                        'img',
-                                        0, 0, 0,
-                                        0, 0, 0,
-                                        0.1, 0.1, 0.1,
-                                        "Testing234", "TestingClass234",
-                                        "./assets/img/10-ObjectUI/02-TechTiles/DigiTechTile07/01-Base/DigiTechTile07.png", "",
-                                        "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
-                                    )
-                                )
+                                // cubeFace_Rear_component01_root.add(
+                                //     new hoverObject(
+                                //         'img',
+                                //         0, 0, 0,
+                                //         0, 0, 0,
+                                //         0.1, 0.1, 0.1,
+                                //         "Testing234", "TestingClass234",
+                                //         "./assets/img/10-ObjectUI/02-TechTiles/DigiTechTile07/01-Base/DigiTechTile07.png", "",
+                                //         "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+                                //     )
+                                // )
+                            
+                                const mat_cubeFace_Rear_component01_root = new THREE.MeshBasicMaterial({ map: digiTechTile01, side: THREE.DoubleSide });
+                                mesh_cubeFace_Rear_component01_root = new THREE.Mesh(geo_objT_PlaneA1, mat_cubeFace_Rear_component01_root);
+                                mat_cubeFace_Rear_component01_root.transparent = true;
+                                mat_cubeFace_Rear_component01_root.wireframe = false;
+                                mat_cubeFace_Rear_component01_root.alphaMap = digiTechTile01;
+                                mesh_cubeFace_Rear_component01_root.position.set(0, 0, -1);
+                                // mesh_cubeFace_Rear_component01_root.position.set(-15000, 0, 0);
+                                mesh_cubeFace_Rear_component01_root.scale.set(2.2, 2.2, 2.2);
+                                mesh_cubeFace_Rear_component01_root.rotation.set(0, 0, 0)
+                                // mesh_cubeFace_Rear_component01_root.rotateX( - Math.PI / 2 );
+
+                                // cubeFace_Rear_component01_root.lookAt(camera)
+                                
+                                cubeFace_Rear_component01_root.add(mesh_cubeFace_Rear_component01_root)
 
 
 
@@ -7690,6 +7795,271 @@
 						
 					}
 				})
+
+
+
+
+                // cube_baseB
+                // ----------------------------------------------------
+                cube_baseB = new THREE.Group()
+                cube_baseB.position.set(0, 0, 0)
+                cube_baseB.rotation.set(0, 0, 0)
+                cube_baseB.scale.set(1, 1, 1)
+                Δreality_baseA.add(cube_baseB)
+
+                    // videoDemonstration_root
+                    videoDemonstration_root = new THREE.Group()
+                    videoDemonstration_root.position.set(0, 0, 0)
+                    videoDemonstration_root.rotation.set(0, 0, 0)
+                    videoDemonstration_root.scale.set(1, 1, 1)
+                    cube_baseB.add(videoDemonstration_root)
+
+
+                        // video_componentA_root
+                        video_componentA_root = new THREE.Group()
+                        video_componentA_root.position.set(0, 0, 0)
+                        video_componentA_root.rotation.set(0, 0, 0)
+                        video_componentA_root.scale.set(1, 1, 1)
+                        videoDemonstration_root.add(video_componentA_root)
+
+
+                            // video_componentB_baseA - x
+                            // ----------------------------------------------------
+                            video_componentB_baseA = new THREE.Group()
+                            video_componentB_baseA.position.set(0, 0, -0.01)
+                            video_componentB_baseA.rotation.set(0, 0, 0)
+                            video_componentB_baseA.scale.set(0.01, 0.01, 0.01)
+                            videoDemonstration_root.add(video_componentB_baseA)
+
+                            // ./assets/img/10-ObjectUI/Shapes/Square.png
+                            // ./assets/img/10-ObjectUI/Shapes/Square.png
+                            // cubeFace_Front_component01_root.add(
+                            //     new hoverObject(
+                            //         'img',
+                            //         0, 0, 0,
+                            //         0, 0, 0,
+                            //         0.1, 0.1, 0.1,
+                            //         "Testing234", "TestingClass234",
+                            //         "./assets/img/10-ObjectUI/01-MusicPlayer/RealityDisc.png", "",
+                            //         "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+                            //     )
+                            // )
+
+
+                            const mat_video_componentB_baseA = new THREE.MeshBasicMaterial({ map: realityDisc01, side: THREE.DoubleSide });
+                            mesh_video_componentB_baseA = new THREE.Mesh(geo_objT_CircleA1, mat_video_componentB_baseA);
+                            mat_video_componentB_baseA.transparent = true;
+                            mat_video_componentB_baseA.wireframe = false;
+                            mat_video_componentB_baseA.alphaMap = realityDisc01;
+                            mesh_video_componentB_baseA.position.set(0, 0, 0);
+                            // mesh_video_componentB_baseA.position.set(-15000, 0, 0);
+                            mesh_video_componentB_baseA.scale.set(1, 1, 1);
+                            mesh_video_componentB_baseA.rotation.set(0, 0, 0)
+                            // mesh_video_componentB_baseA.rotateX( - Math.PI / 2 );
+
+                            // video_componentB_baseA.lookAt(camera)
+                            
+                            video_componentB_baseA.add(mesh_video_componentB_baseA)
+
+
+                        // video_componentC_root
+                        video_componentC_root = new THREE.Group()
+                        video_componentC_root.position.set(0, 0, 0)
+                        video_componentC_root.rotation.set(0, 0, 0)
+                        video_componentC_root.scale.set(1, 1, 1)
+                        videoDemonstration_root.add(video_componentC_root)
+
+
+
+                            // video_componentC_baseA - x
+                            // ----------------------------------------------------
+                            video_componentC_baseA = new THREE.Group()
+                            video_componentC_baseA.position.set(0, -4, -0.001)
+                            video_componentC_baseA.rotation.set(0, 0, 0)
+                            video_componentC_baseA.scale.set(0.1, 0.1, 0.1)
+                            video_componentC_root.add(video_componentC_baseA)
+
+
+                            const mat_video_componentC_baseA = new THREE.MeshBasicMaterial({ map: circleGoldLeaf, side: THREE.DoubleSide });
+                            mesh_video_componentC_baseA = new THREE.Mesh(geo_objT_CircleA1, mat_video_componentC_baseA);
+                            mat_video_componentC_baseA.transparent = true;
+                            mat_video_componentC_baseA.wireframe = false;
+                            mat_video_componentC_baseA.alphaMap = circleGoldLeaf;
+                            mesh_video_componentC_baseA.position.set(0, 0, 0);
+                            // mesh_video_componentC_baseA.position.set(-15000, 0, 0);
+                            mesh_video_componentC_baseA.scale.set(1, 1, 1);
+                            mesh_video_componentC_baseA.rotation.set(0, 0, 0)
+                            // mesh_video_componentC_baseA.rotateX( - Math.PI / 2 );
+
+                            // video_componentC_baseA.lookAt(camera)
+                            
+                            video_componentC_baseA.add(mesh_video_componentC_baseA)
+
+
+
+                            // video_componentC_baseB - x
+                            // ----------------------------------------------------
+                            video_componentC_baseB = new THREE.Group()
+                            video_componentC_baseB.position.set(0, -4, -0.004)
+                            video_componentC_baseB.rotation.set(0, 0, 0)
+                            video_componentC_baseB.scale.set(0.12, 0.12, 0.12)
+                            video_componentC_root.add(video_componentC_baseB)
+
+
+                            const mat_video_componentC_baseB = new THREE.MeshBasicMaterial({ map: circleMandela01, side: THREE.DoubleSide });
+                            mesh_video_componentC_baseB = new THREE.Mesh(geo_objT_CircleA1, mat_video_componentC_baseB);
+                            mat_video_componentC_baseB.transparent = true;
+                            mat_video_componentC_baseB.wireframe = false;
+                            mat_video_componentC_baseB.alphaMap = circleMandela01;
+                            mesh_video_componentC_baseB.position.set(0, 0.5, 0);
+                            // mesh_video_componentC_baseB.position.set(-15000, 0, 0);
+                            mesh_video_componentC_baseB.scale.set(1, 1, 1);
+                            mesh_video_componentC_baseB.rotation.set(0, 0, 0)
+                            // mesh_video_componentC_baseB.rotateX( - Math.PI / 2 );
+
+                            // video_componentC_baseB.lookAt(camera)
+                            
+                            video_componentC_baseB.add(mesh_video_componentC_baseB)
+
+
+
+                            // video_componentC_baseC - x
+                            // ----------------------------------------------------
+                            video_componentC_baseC = new THREE.Group()
+                            video_componentC_baseC.position.set(0, -4, -0.01)
+                            video_componentC_baseC.rotation.set(0, 0, 0)
+                            video_componentC_baseC.scale.set(0.15, 0.15, 0.15)
+                            video_componentC_root.add(video_componentC_baseC)
+
+
+                            const mat_video_componentC_baseC = new THREE.MeshBasicMaterial({ map: techCircle03, side: THREE.DoubleSide });
+                            mesh_video_componentC_baseC = new THREE.Mesh(geo_objT_CircleA1, mat_video_componentC_baseC);
+                            mat_video_componentC_baseC.transparent = true;
+                            mat_video_componentC_baseC.wireframe = false;
+                            mat_video_componentC_baseC.alphaMap = techCircle03;
+                            mesh_video_componentC_baseC.position.set(0, 0.5, 0);
+                            // mesh_video_componentC_baseC.position.set(-15000, 0, 0);
+                            mesh_video_componentC_baseC.scale.set(1, 1, 1);
+                            mesh_video_componentC_baseC.rotation.set(0, 0, 0)
+                            // mesh_video_componentC_baseC.rotateX( - Math.PI / 2 );
+
+                            // video_componentC_baseC.lookAt(camera)
+                            
+                            video_componentC_baseC.add(mesh_video_componentC_baseC)
+
+
+
+                            // video_componentC_baseD - x
+                            // ----------------------------------------------------
+                            video_componentC_baseD = new THREE.Group()
+                            video_componentC_baseD.position.set(0, -4, -0.02)
+                            video_componentC_baseD.rotation.set(0, 0, 0)
+                            video_componentC_baseD.scale.set(0.15, 0.15, 0.15)
+                            video_componentC_root.add(video_componentC_baseD)
+
+
+                            const mat_video_componentC_baseD = new THREE.MeshBasicMaterial({ map: circleGearWhite01, side: THREE.DoubleSide });
+                            mesh_video_componentC_baseD = new THREE.Mesh(geo_objT_CircleA1, mat_video_componentC_baseD);
+                            mat_video_componentC_baseD.transparent = true;
+                            mat_video_componentC_baseD.wireframe = false;
+                            mat_video_componentC_baseD.alphaMap = circleGearWhite01;
+                            mesh_video_componentC_baseD.position.set(0, 0.5, 0);
+                            // mesh_video_componentC_baseD.position.set(-15000, 0, 0);
+                            mesh_video_componentC_baseD.scale.set(1, 1, 1);
+                            mesh_video_componentC_baseD.rotation.set(0, 0, 0)
+                            // mesh_video_componentC_baseD.rotateX( - Math.PI / 2 );
+
+                            // video_componentC_baseD.lookAt(camera)
+                            
+                            video_componentC_baseD.add(mesh_video_componentC_baseD)
+
+
+
+                            // video_componentC_baseE - x
+                            // ----------------------------------------------------
+                            video_componentC_baseE = new THREE.Group()
+                            video_componentC_baseE.position.set(0, -4, -0.03)
+                            video_componentC_baseE.rotation.set(0, 0, 0)
+                            video_componentC_baseE.scale.set(0.2, 0.2, 0.2)
+                            video_componentC_root.add(video_componentC_baseE)
+
+
+                            const mat_video_componentC_baseE = new THREE.MeshBasicMaterial({ map: circleSilverGear, side: THREE.DoubleSide });
+                            mesh_video_componentC_baseE = new THREE.Mesh(geo_objT_CircleA1, mat_video_componentC_baseE);
+                            mat_video_componentC_baseE.transparent = true;
+                            mat_video_componentC_baseE.wireframe = false;
+                            mat_video_componentC_baseE.alphaMap = circleSilverGear;
+                            mesh_video_componentC_baseE.position.set(0, 0.5, 0);
+                            // mesh_video_componentC_baseE.position.set(-15000, 0, 0);
+                            mesh_video_componentC_baseE.scale.set(1, 1, 1);
+                            mesh_video_componentC_baseE.rotation.set(0, 0, 0)
+                            // mesh_video_componentC_baseE.rotateX( - Math.PI / 2 );
+
+                            // video_componentC_baseE.lookAt(camera)
+                            
+                            video_componentC_baseE.add(mesh_video_componentC_baseE)
+
+
+
+
+                        // video_componentA_root
+                        video_componentA_root = new THREE.Group()
+                        video_componentA_root.position.set(0, 0, 0)
+                        video_componentA_root.rotation.set(0, 0, 0)
+                        video_componentA_root.scale.set(1, 1, 1)
+                        videoDemonstration_root.add(video_componentA_root)
+
+
+                            // Search.video01
+                            // Opening Video Object
+                            video_componentA_baseA = new THREE.Group()
+                            video_componentA_baseA.position.set(0, 0, 0)
+                            video_componentA_baseA.rotation.set(0, 0, 0)
+                            video_componentA_baseA.scale.set(1, 1, 1)
+
+                            console.log(video_componentA_baseA.position)
+                
+                            scene.add(video_componentA_baseA)
+                            // camera.attach(video_componentA_baseA)
+
+                            const videoOpening2 = document.getElementById('video07')
+                            const videoOpening2_Tex = new THREE.VideoTexture(videoOpening2)
+                            const videoOpening2_Mat = new THREE.MeshBasicMaterial(
+                                {
+                                    map: videoOpening2_Tex,
+                                    side: THREE.DoubleSide,
+                                    toneMapped: false,
+                                }
+                            )
+
+                            mesh_video_componentA_baseA = new THREE.Mesh(
+                                geo_objT_CircleA1, 
+                                videoOpening2_Mat
+                            )
+
+                            mesh_video_componentA_baseA.position.set(0, 1, 0)
+                            mesh_video_componentA_baseA.rotation.set(0, 0, 0)
+                            mesh_video_componentA_baseA.scale.set(0.075, 0.075, 0.075)
+                            video_componentA_baseA.add(mesh_video_componentA_baseA)
+
+
+                            openingButtonIconGroup = new THREE.Group()
+                            openingButtonIconGroup.position.set(0, 0, -20000)
+                            openingButtonIconGroup.rotation.set(0, 0, 0)
+                            openingButtonIconGroup.scale.set(1, 1, 1)
+                            video_componentA_root.add(openingButtonIconGroup)
+
+
+
+
+
+
+
+                // TimeΔ_TimeTunnel_root
+                TimeΔ_TimeTunnel_root = new THREE.Group()
+                TimeΔ_TimeTunnel_root.position.set(0, 0, 0)
+                TimeΔ_TimeTunnel_root.rotation.set(0, 0, 0)
+                TimeΔ_TimeTunnel_root.scale.set(1, 1, 1)
                     
 
                     
@@ -8906,6 +9276,15 @@
 
                 // Time LeftPrimaryWindow_root Experience = Math.cos(time * speed) * distance + height
                 // cube_root.position.y = Math.abs(Math.cos(time * 0.00035) * 0.05) + 1
+
+
+                // videoPresentationComponents
+                mesh_video_componentB_baseA.rotation.z = time * 0.0001
+                mesh_video_componentC_baseB.rotation.z = time * -0.0001
+                mesh_video_componentC_baseC.rotation.z = time * 0.1
+                mesh_video_componentC_baseD.rotation.z = time * -0.0001
+                mesh_video_componentC_baseE.rotation.z = time * 0.00025
+
 
 
                 // Inner Sphere
