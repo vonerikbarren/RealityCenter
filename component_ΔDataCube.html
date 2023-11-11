@@ -2623,6 +2623,19 @@
                         let cubeFace_Left_component01_root, mesh_cubeFace_Left_component01_root
                         let cubeFace_Left_component01_option, mesh_cubeFace_Left_component01_option
 
+                        // LeftFace_Buttons
+                        let cubeFace_Left_ButtonL01_root
+                        let cubeFace_Left_ButtonL02_root
+                        let cubeFace_Left_ButtonL03_root
+                        let cubeFace_Left_ButtonL04_root
+
+
+                        // files
+                        let cubeFace_Left_documentL01_root
+                        let cubeFace_Left_documentL02_root
+                        let cubeFace_Left_documentL03_root
+                        let cubeFace_Left_documentL04_root
+
                     // Build cubeRight_Face
                     let cubeFace_Right_root
                     let cubeFace_Right_baseA
@@ -7456,6 +7469,278 @@
                             cubeFace_Left_component01_root.add(mesh_cubeFace_Left_component01_root)
 
 
+                            // ---------------------------------------------------------------------------------------
+                            cubeFace_Left_ButtonL01_root = new THREE.Group()
+                            cubeFace_Left_ButtonL01_root.position.set(-1.525, 0.25, 0.275)
+                            cubeFace_Left_ButtonL01_root.rotation.set(0, -1.575, 0)
+                            cubeFace_Left_ButtonL01_root.scale.set(0.1, 0.1, 0.1)
+                            cubeFace_Left_baseA.add(cubeFace_Left_ButtonL01_root)
+
+                            let buttonTestFunction = () => {
+                                if (cubeFace_Left_documentL01_root.scale.x === 0.000001) {
+        
+
+                                    gsap.to(cubeFace_Left_documentL01_root.scale, {
+                                        duration: .25,
+                                        delay: 0,
+                                        x: 0.1,
+                                        y: 0.1,
+                                        z: 0.1,
+
+                                    })
+                                    
+                                } else {
+
+                                    gsap.to(cubeFace_Left_documentL01_root.scale, {
+                                        duration: .25,
+                                        delay: 0,
+                                        x: 0.000001,
+                                        y: 0.000001,
+                                        z: 0.000001,
+
+                                    })
+                                }
+                            }
+
+                            cubeFace_Left_ButtonL01_root.add(
+                                new TechIcon(
+                                    0, 0, 0,
+                                    0, 0, 0,
+                                    0.05, 0.05, 0.05,
+                                    'DefaultTechIconId', 'DefaultTechIconClassName',
+                                    'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+                                    'DefaultImgId', 'DefaultImgClassName',
+                                    'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+                                    "./assets/icons/00-Official/UI/Isometric/SocialMedia1/002-wordpress.svg", "",
+                                    buttonTestFunction, 
+                                    "ShowΔ",
+                                    "Toggle from here or main menu top left"
+                                ) 
+                            )
+
+
+                                cubeFace_Left_documentL01_root = new THREE.Group()
+                                cubeFace_Left_documentL01_root.position.set(-1.5, 0.85, 0.2)
+                                cubeFace_Left_documentL01_root.rotation.set(0, -1.575, 0)
+                                cubeFace_Left_documentL01_root.scale.set(0.000001, 0.000001, 0.000001)
+                                // cubeFace_Left_documentL01_root.scale.set(0.1, 0.1, 0.1) // To Display w/o button
+                                cubeFace_Left_baseA.add(cubeFace_Left_documentL01_root)
+
+                                cubeFace_Left_documentL01_root.add(
+                                    new makePDF_Viewer(
+                                        0, 0, 0,
+                                        0, 0, 0,
+                                        0.0035, 0.0035, 0.0035,
+                                        "hoverClockA1",
+                                        "https://www.wikipedia.org/",
+                                        "1920px", "1200"
+                                    )
+                                )
+
+                            //---------------------------------------------------------------------------------------
+                            cubeFace_Left_ButtonL01_root = new THREE.Group()
+                            cubeFace_Left_ButtonL01_root.position.set(-1.525, 0.25, -0.275)
+                            cubeFace_Left_ButtonL01_root.rotation.set(0, -1.575, 0)
+                            cubeFace_Left_ButtonL01_root.scale.set(0.1, 0.1, 0.1)
+                            cubeFace_Left_baseA.add(cubeFace_Left_ButtonL01_root)
+
+                                let buttonTestFunction2 = () => {
+                                    if (cubeFace_Left_documentL02_root.scale.x === 0.000001) {
+        
+
+                                        gsap.to(cubeFace_Left_documentL02_root.scale, {
+                                            duration: .25,
+                                            delay: 0,
+                                            x: 0.1,
+                                            y: 0.1,
+                                            z: 0.1,
+
+                                        })
+                                        
+                                    } else {
+
+                                        gsap.to(cubeFace_Left_documentL02_root.scale, {
+                                            duration: .25,
+                                            delay: 0,
+                                            x: 0.000001,
+                                            y: 0.000001,
+                                            z: 0.000001,
+
+                                        })
+                                    }
+                                }
+
+                                cubeFace_Left_ButtonL01_root.add(
+                                    new TechIcon(
+                                        0, 0, 0,
+                                        0, 0, 0,
+                                        0.05, 0.05, 0.05,
+                                        'DefaultTechIconId', 'DefaultTechIconClassName',
+                                        'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+                                        'DefaultImgId', 'DefaultImgClassName',
+                                        'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+                                        "./assets/icons/00-Official/UI/Isometric/SocialMedia1/002-wordpress.svg", "",
+                                        buttonTestFunction2, 
+                                        "ShowΔ",
+                                        "Toggle from here or main menu top left"
+                                    ) 
+                                )
+
+                                cubeFace_Left_documentL02_root = new THREE.Group()
+                                cubeFace_Left_documentL02_root.position.set(-1.5, 0.85, -0.75)
+                                cubeFace_Left_documentL02_root.rotation.set(0, -1.575, 0)
+                                cubeFace_Left_documentL02_root.scale.set(0.000001, 0.000001, 0.000001)
+                                cubeFace_Left_baseA.add(cubeFace_Left_documentL02_root)
+
+                                cubeFace_Left_documentL02_root.add(
+                                    new makePDF_Viewer(
+                                        0, 0, 0,
+                                        0, 0, 0,
+                                        0.0035, 0.0035, 0.0035,
+                                        "hoverClockA1",
+                                        "https://www.wikipedia.org/",
+                                        "1920px", "1200"
+                                    )
+                                )
+
+                            // ---------------------------------------------------------------------------------------
+                            cubeFace_Left_ButtonL03_root = new THREE.Group()
+                            cubeFace_Left_ButtonL03_root.position.set(-1.525, -0.25, 0.275)
+                            cubeFace_Left_ButtonL03_root.rotation.set(0, -1.575, 0)
+                            cubeFace_Left_ButtonL03_root.scale.set(0.1, 0.1, 0.1)
+                            cubeFace_Left_baseA.add(cubeFace_Left_ButtonL03_root)
+
+                            let buttonTestFunction3 = () => {
+                                if (cubeFace_Left_documentL03_root.scale.x === 0.000001) {
+        
+
+                                    gsap.to(cubeFace_Left_documentL03_root.scale, {
+                                        duration: .25,
+                                        delay: 0,
+                                        x: 0.1,
+                                        y: 0.1,
+                                        z: 0.1,
+
+                                    })
+                                    
+                                } else {
+
+                                    gsap.to(cubeFace_Left_documentL03_root.scale, {
+                                        duration: .25,
+                                        delay: 0,
+                                        x: 0.000001,
+                                        y: 0.000001,
+                                        z: 0.000001,
+
+                                    })
+                                }
+                            }
+
+                            cubeFace_Left_ButtonL03_root.add(
+                                new TechIcon(
+                                    0, 0, 0,
+                                    0, 0, 0,
+                                    0.05, 0.05, 0.05,
+                                    'DefaultTechIconId', 'DefaultTechIconClassName',
+                                    'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+                                    'DefaultImgId', 'DefaultImgClassName',
+                                    'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+                                    "./assets/icons/00-Official/UI/Isometric/SocialMedia1/002-wordpress.svg", "",
+                                    buttonTestFunction3, 
+                                    "ShowΔ",
+                                    "Toggle from here or main menu top left"
+                                ) 
+                            )
+
+                            cubeFace_Left_documentL03_root = new THREE.Group()
+                            cubeFace_Left_documentL03_root.position.set(-1.5, -0.5, 0.2)
+                            cubeFace_Left_documentL03_root.rotation.set(0, -1.575, 0)
+                            cubeFace_Left_documentL03_root.scale.set(0.000001, 0.000001, 0.000001)
+                            cubeFace_Left_baseA.add(cubeFace_Left_documentL03_root)
+
+                            cubeFace_Left_documentL03_root.add(
+                                new makePDF_Viewer(
+                                    0, 0, 0,
+                                    0, 0, 0,
+                                    0.0035, 0.0035, 0.0035,
+                                    "hoverClockA1",
+                                    "https://www.wikipedia.org/",
+                                    "1920px", "1200"
+                                )
+                            )
+
+
+                            // -----------------------------------------------------------------------------------------------------------
+                            cubeFace_Left_ButtonL04_root = new THREE.Group()
+                            cubeFace_Left_ButtonL04_root.position.set(-1.526, -0.25, -0.275)
+                            cubeFace_Left_ButtonL04_root.rotation.set(0, -1.575, 0)
+                            cubeFace_Left_ButtonL04_root.scale.set(0.1, 0.1, 0.1)
+                            cubeFace_Left_baseA.add(cubeFace_Left_ButtonL04_root)
+
+                            let buttonTestFunction4 = () => {
+                                if (cubeFace_Left_documentL04_root.scale.x === 0.000001) {
+        
+
+                                    gsap.to(cubeFace_Left_documentL04_root.scale, {
+                                        duration: .25,
+                                        delay: 0,
+                                        x: 0.1,
+                                        y: 0.1,
+                                        z: 0.1,
+
+                                    })
+                                    
+                                } else {
+
+                                    gsap.to(cubeFace_Left_documentL04_root.scale, {
+                                        duration: .25,
+                                        delay: 0,
+                                        x: 0.000001,
+                                        y: 0.000001,
+                                        z: 0.000001,
+
+                                    })
+                                }
+                            }
+
+                            cubeFace_Left_ButtonL04_root.add(
+                                new TechIcon(
+                                    0, 0, 0,
+                                    0, 0, 0,
+                                    0.05, 0.05, 0.05,
+                                    'DefaultTechIconId', 'DefaultTechIconClassName',
+                                    'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+                                    'DefaultImgId', 'DefaultImgClassName',
+                                    'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+                                    "./assets/icons/00-Official/UI/Isometric/SocialMedia1/002-wordpress.svg", "",
+                                    buttonTestFunction4, 
+                                    "ShowΔ",
+                                    "Toggle from here or main menu top left"
+                                ) 
+                            )
+
+
+                            cubeFace_Left_documentL04_root = new THREE.Group()
+                            cubeFace_Left_documentL04_root.position.set(-1.525, -0.5, -0.75)
+                            cubeFace_Left_documentL04_root.rotation.set(0, -1.575, 0)
+                            cubeFace_Left_documentL04_root.scale.set(0.000001, 0.000001, 0.000001)
+                            cubeFace_Left_baseA.add(cubeFace_Left_documentL04_root)
+
+                            cubeFace_Left_documentL04_root.add(
+                                new makePDF_Viewer(
+                                    0, 0, 0,
+                                    0, 0, 0,
+                                    0.0035, 0.0035, 0.0035,
+                                    "hoverClockA1",
+                                    "https://www.wikipedia.org/",
+                                    "1920px", "1200"
+                                )
+                            )
+
+
+                                
+
+
 
                         // cubeFace_Right_root - xy
                         // ----------------------------------------------------
@@ -7954,7 +8239,7 @@
                             video_componentC_baseD = new THREE.Group()
                             video_componentC_baseD.position.set(0, -4, -0.02)
                             video_componentC_baseD.rotation.set(0, 0, 0)
-                            video_componentC_baseD.scale.set(0.15, 0.15, 0.15)
+                            video_componentC_baseD.scale.set(0.1, 0.1, 0.1)
                             video_componentC_root.add(video_componentC_baseD)
 
 
@@ -7980,7 +8265,7 @@
                             video_componentC_baseE = new THREE.Group()
                             video_componentC_baseE.position.set(0, -4, -0.03)
                             video_componentC_baseE.rotation.set(0, 0, 0)
-                            video_componentC_baseE.scale.set(0.2, 0.2, 0.2)
+                            video_componentC_baseE.scale.set(0.15, 0.15, 0.15)
                             video_componentC_root.add(video_componentC_baseE)
 
 
