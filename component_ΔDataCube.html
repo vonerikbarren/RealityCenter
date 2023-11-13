@@ -2549,6 +2549,47 @@
             let ΔReality_root
             let Δreality_baseA
             let Δreality_baseB
+            let Δreality_baseC
+
+
+            // Build Animation root
+            let cubeAnimations_root
+
+            // move Δs xLeft to xRight and reversable
+            let cubeAnimations_baseA
+
+                // realityBuilds
+                let realityMinisA_root
+                let realityMiniA01, mesh_realityMiniA01
+
+                let realityMiniA02, mesh_realityMiniA02
+                let realityMiniA02a, mesh_realityMiniA02a
+                let realityMiniA02b, mesh_realityMiniA02b
+
+                let realityMiniA03, mesh_realityMiniA03
+                let realityMiniA03a, mesh_realityMiniA03a
+                let realityMiniA03b, mesh_realityMiniA03b
+
+
+                let realityMiniA04, mesh_realityMiniA04
+                let realityMiniA04a, mesh_realityMiniA04a
+                let realityMiniA04b, mesh_realityMiniA04b
+                let realityMiniA04b1, mesh_realityMiniA04b1
+                let realityMiniA04b2, mesh_realityMiniA04b2
+                let realityMiniA04c, mesh_realityMiniA04c
+
+
+                let realityMiniA05, mesh_realityMiniA05
+                let realityMiniA05a, mesh_realityMiniA05a
+                let realityMiniA05b, mesh_realityMiniA05b
+
+
+
+            // move Δs xFront to xBack and reverseable
+            let cubeAnimations_baseB
+
+            // move Δs xTop to xBottom and reversable
+            let cubeAnimations_baseC
         
 
 
@@ -2643,6 +2684,19 @@
                         // cubeFace_FaceContent_root
                         let cubeFace_Right_component01_root, mesh_cubeFace_Right_component01_root
                         let cubeFace_Right_component01_option
+
+                        // RightFace_Buttons
+                        let cubeFace_Right_ButtonL01_root
+                        let cubeFace_Right_ButtonL02_root
+                        let cubeFace_Right_ButtonL03_root
+                        let cubeFace_Right_ButtonL04_root
+
+
+                        // files
+                        let cubeFace_Right_documentL01_root
+                        let cubeFace_Right_documentL02_root
+                        let cubeFace_Right_documentL03_root
+                        let cubeFace_Right_documentL04_root
 
                     // Build cubeRear_Face_root
                     let cubeFace_Rear_root
@@ -3186,6 +3240,13 @@
                 // ---------------------------------
                 const digiTechTile01 = textureLoader.load('./assets/img/10-ObjectUI/02-TechTiles/DigiTechTile07/01-Base/DigiTechTile07.png')
                 // ---------------------------------
+
+
+                const techTileCover01 = textureLoader.load('./assets/img/10-ObjectUI/02a-TechTileCovers/RandomSymbols/LB_vs_RB.jpg')
+                const techTileCover02 = textureLoader.load('./assets/img/10-ObjectUI/02a-TechTileCovers/RandomSymbols/LB_vs_RB01.jpg')
+                const techTileCover03 = textureLoader.load('./assets/img/10-ObjectUI/02a-TechTileCovers/RandomSymbols/infin8teLogoBeta01.jpg')
+                const techTileCoverApple01 = textureLoader.load('./assets/img/10-ObjectUI/02a-TechTileCovers/CompanySymbols/Apple/Apple_Store_logo.png')
+                const techTileCoverApple02 = textureLoader.load('./assets/img/10-ObjectUI/02a-TechTileCovers/CompanySymbols/Apple/Apple_Store_Logo01.png')
 
 
 				
@@ -7061,6 +7122,501 @@
                 Δreality_baseB.scale.set(1, 1, 1)
                 ΔReality_root.add(Δreality_baseB)
 
+
+                Δreality_baseC = new THREE.Group()
+                Δreality_baseC.position.set(0, 0, 0)
+                Δreality_baseC.rotation.set(0, 0, 0)
+                Δreality_baseC.scale.set(1, 1, 1)
+                ΔReality_root.add(Δreality_baseC)
+
+
+                // cubeAnimations_root
+                cubeAnimations_root = new THREE.Group()
+                cubeAnimations_root.position.set(0, -4, 0)
+                cubeAnimations_root.rotation.set(0, 0, 0)
+                cubeAnimations_root.scale.set(1, 1, 1)
+                ΔReality_root.add(cubeAnimations_root)
+
+                    cubeAnimations_baseA = new THREE.Group()
+                    cubeAnimations_baseA.position.set(0, 0, 0)
+                    cubeAnimations_baseA.rotation.set(0, 0, 0)
+                    cubeAnimations_baseA.scale.set(1, 1, 1)
+                    cubeAnimations_root.add(cubeAnimations_baseA)
+
+                        realityMinisA_root = new THREE.Group()
+                        realityMinisA_root.position.set(0, 0, 0)
+                        realityMinisA_root.rotation.set(0, 0, 0)
+                        realityMinisA_root.scale.set(1, 1, 1)
+                        cubeAnimations_baseA.add(realityMinisA_root)
+
+                            realityMiniA01 = new THREE.Group()
+                            realityMiniA01.position.set(0, 0, 0)
+                            realityMiniA01.rotation.set(0, 0, 0)
+                            realityMiniA01.scale.set(0.01, 0.01, 0.01)
+                            realityMinisA_root.add(realityMiniA01)
+
+                            const mat_realityMiniA01 = new THREE.MeshBasicMaterial({ map: techTileCoverApple01, side: THREE.DoubleSide });
+                            mesh_realityMiniA01 = new THREE.Mesh(geo_objT_BoxA0, mat_realityMiniA01);
+                            mat_realityMiniA01.transparent = true;
+                            mat_realityMiniA01.wireframe = false;
+                            mat_realityMiniA01.alphaMap = techTileCoverApple01;
+                            mesh_realityMiniA01.position.set(-35, 30, 10);
+                            // mesh_realityMiniA01.position.set(-15000, 0, 0);
+                            mesh_realityMiniA01.scale.set(1, 1, 1);
+                            mesh_realityMiniA01.rotation.set(0, 0, 0)
+                            // mesh_realityMiniA01.rotateX( - Math.PI / 2 );
+
+                            // realityMiniA01.lookAt(camera)
+                            
+                            realityMiniA01.add(mesh_realityMiniA01)
+
+                            let realityMiniA01_animationLoop = () => {
+                                gsap.from(mesh_realityMiniA01.position, {
+                                    repeat: -1,
+                                    duration: 7,
+                                    delay: 0,
+                                    x: 5,
+                                })
+
+
+                                gsap.from(mesh_realityMiniA01.scale, {
+                                    repeat: -1,
+                                    duration: 7,
+                                    delay: 0,
+                                    x: 0.0001,
+                                    y: 0.0001,
+                                    z: 0.0001,
+                                })
+
+                                gsap.from(mesh_realityMiniA01.rotation, {
+                                    repeat: -1,
+                                    duration: 5,
+                                    delay: 0,
+                                    y: 5,
+                                })
+                            }
+
+                            realityMiniA01_animationLoop()
+
+
+                        
+                            // realityMiniA02
+                            // ------------------------------------------------------------------------------------
+                            realityMiniA02 = new THREE.Group()
+                            realityMiniA02.position.set(0, 0, 0)
+                            realityMiniA02.rotation.set(0, 0, 0)
+                            realityMiniA02.scale.set(0.01, 0.01, 0.01)
+                            realityMinisA_root.add(realityMiniA02)
+
+                            const mat_realityMiniA02 = new THREE.MeshBasicMaterial({ map: techTileCover01, side: THREE.DoubleSide });
+                            mesh_realityMiniA02 = new THREE.Mesh(geo_objT_BoxA0, mat_realityMiniA02);
+                            mat_realityMiniA02.transparent = true;
+                            mat_realityMiniA02.wireframe = false;
+                            mat_realityMiniA02.alphaMap = techTileCover01;
+                            mesh_realityMiniA02.position.set(0, 50, 0);
+                            // mesh_realityMiniA02.position.set(-15000, 0, 0);
+                            mesh_realityMiniA02.scale.set(1, 1, 1);
+                            mesh_realityMiniA02.rotation.set(0, 0, 0)
+                            // mesh_realityMiniA02.rotateX( - Math.PI / 2 );
+
+                            // realityMiniA02.lookAt(camera)
+                            
+                            realityMiniA02.add(mesh_realityMiniA02)
+
+
+
+                            realityMiniA02a = new THREE.Group()
+                            realityMiniA02a.position.set(0, 0, 0)
+                            realityMiniA02a.rotation.set(0, 0, 0)
+                            realityMiniA02a.scale.set(1, 1, 1)
+                            realityMiniA02.add(realityMiniA02a)
+
+                            const mat_realityMiniA02a = new THREE.MeshBasicMaterial({ map: gridH2_PureBrightGreenOoze, side: THREE.DoubleSide });
+                            mesh_realityMiniA02a = new THREE.Mesh(geo_objT_DiamondA0, mat_realityMiniA02a);
+                            mat_realityMiniA02a.transparent = true;
+                            mat_realityMiniA02a.wireframe = true;
+                            mat_realityMiniA02a.alphaMap = gridH2_PureBrightGreenOoze;
+                            mesh_realityMiniA02a.position.set(0, 50, 0);
+                            // mesh_realityMiniA02a.position.set(-15000, 0, 0);
+                            mesh_realityMiniA02a.scale.set(2.5, 2.5, 2.5);
+                            mesh_realityMiniA02a.rotation.set(0, 0, 0)
+                            // mesh_realityMiniA02a.rotateX( - Math.PI / 2 );
+
+                            // realityMiniA02a.lookAt(camera)
+                            
+                            realityMiniA02a.add(mesh_realityMiniA02a)
+
+
+                            realityMiniA02b = new THREE.Group()
+                            realityMiniA02b.position.set(0, 0, 0)
+                            realityMiniA02b.rotation.set(0, 0, 0)
+                            realityMiniA02b.scale.set(1, 1, 1)
+                            realityMiniA02.add(realityMiniA02b)
+
+                            const mat_realityMiniA02b = new THREE.MeshBasicMaterial({ map: gridH2_PureBrightGreenOoze, side: THREE.DoubleSide });
+                            mesh_realityMiniA02b = new THREE.Mesh(geo_objT_SphereA0, mat_realityMiniA02b);
+                            mat_realityMiniA02b.transparent = true;
+                            mat_realityMiniA02b.wireframe = true;
+                            mat_realityMiniA02b.alphaMap = gridH2_PureBrightGreenOoze;
+                            mesh_realityMiniA02b.position.set(0, 50, 0);
+                            // mesh_realityMiniA02b.position.set(-15000, 0, 0);
+                            mesh_realityMiniA02b.scale.set(2.5, 2.5, 2.5);
+                            mesh_realityMiniA02b.rotation.set(0, 0, 0)
+                            // mesh_realityMiniA02b.rotateX( - Math.PI / 2 );
+
+                            // realityMiniA02b.lookAt(camera)
+                            
+                            realityMiniA02b.add(mesh_realityMiniA02b)
+
+
+
+
+                            // realityMiniA03
+                            // ------------------------------------------------------------------------------------
+                            realityMiniA03 = new THREE.Group()
+                            realityMiniA03.position.set(0, 0, 0)
+                            realityMiniA03.rotation.set(0, 0, 0)
+                            realityMiniA03.scale.set(0.01, 0.01, 0.01)
+                            realityMinisA_root.add(realityMiniA03)
+
+                            const mat_realityMiniA03 = new THREE.MeshBasicMaterial({ map: techTileCover01, side: THREE.DoubleSide });
+                            mesh_realityMiniA03 = new THREE.Mesh(geo_objT_BoxA0, mat_realityMiniA03);
+                            mat_realityMiniA03.transparent = true;
+                            mat_realityMiniA03.wireframe = false;
+                            mat_realityMiniA03.alphaMap = techTileCover01;
+                            mesh_realityMiniA03.position.set(0, 50, 0);
+                            // mesh_realityMiniA03.position.set(-15000, 0, 0);
+                            mesh_realityMiniA03.scale.set(1, 1, 1);
+                            mesh_realityMiniA03.rotation.set(0, 0, 0)
+                            // mesh_realityMiniA03.rotateX( - Math.PI / 2 );
+
+                            // realityMiniA03.lookAt(camera)
+                            
+                            realityMiniA03.add(mesh_realityMiniA03)
+
+
+
+                            realityMiniA03a = new THREE.Group()
+                            realityMiniA03a.position.set(0, 0, 0)
+                            realityMiniA03a.rotation.set(0, 0, 0)
+                            realityMiniA03a.scale.set(1, 1, 1)
+                            realityMiniA03.add(realityMiniA03a)
+
+                            const mat_realityMiniA03a = new THREE.MeshBasicMaterial({ map: gridH2_PureBrightGreenOoze, side: THREE.DoubleSide });
+                            mesh_realityMiniA03a = new THREE.Mesh(geo_objT_DiamondA0, mat_realityMiniA03a);
+                            mat_realityMiniA03a.transparent = true;
+                            mat_realityMiniA03a.wireframe = false;
+                            mat_realityMiniA03a.alphaMap = gridH2_PureBrightGreenOoze;
+                            mesh_realityMiniA03a.position.set(0, 50, 0);
+                            // mesh_realityMiniA03a.position.set(-15000, 0, 0);
+                            mesh_realityMiniA03a.scale.set(2.5, 2.5, 2.5);
+                            mesh_realityMiniA03a.rotation.set(0, 0, 0)
+                            // mesh_realityMiniA03a.rotateX( - Math.PI / 2 );
+
+                            // realityMiniA03a.lookAt(camera)
+                            
+                            realityMiniA03a.add(mesh_realityMiniA03a)
+
+
+                            realityMiniA03b = new THREE.Group()
+                            realityMiniA03b.position.set(0, 0, 0)
+                            realityMiniA03b.rotation.set(0, 0, 0)
+                            realityMiniA03b.scale.set(1, 1, 1)
+                            realityMiniA03.add(realityMiniA03b)
+
+                            const mat_realityMiniA03b = new THREE.MeshBasicMaterial({ map: gridH2_PureBrightGreenOoze, side: THREE.DoubleSide });
+                            mesh_realityMiniA03b = new THREE.Mesh(geo_objT_SphereA0, mat_realityMiniA03b);
+                            mat_realityMiniA03b.transparent = true;
+                            mat_realityMiniA03b.wireframe = true;
+                            mat_realityMiniA03b.alphaMap = gridH2_PureBrightGreenOoze;
+                            mesh_realityMiniA03b.position.set(0, 50, 0);
+                            // mesh_realityMiniA03b.position.set(-15000, 0, 0);
+                            mesh_realityMiniA03b.scale.set(1, 1, 1);
+                            mesh_realityMiniA03b.rotation.set(0, 0, 0)
+                            // mesh_realityMiniA03b.rotateX( - Math.PI / 2 );
+
+                            // realityMiniA03b.lookAt(camera)
+                            
+                            realityMiniA03b.add(mesh_realityMiniA03b)
+
+
+
+                            // realityMiniA04
+                            // ------------------------------------------------------------------------------------
+                            realityMiniA04 = new THREE.Group()
+                            realityMiniA04.position.set(0, 0, 0)
+                            realityMiniA04.rotation.set(0, 0, 0)
+                            realityMiniA04.scale.set(0.01, 0.01, 0.01)
+                            realityMinisA_root.add(realityMiniA04)
+
+                            const mat_realityMiniA04 = new THREE.MeshBasicMaterial({ map: techTileCover01, side: THREE.DoubleSide });
+                            mesh_realityMiniA04 = new THREE.Mesh(geo_objT_BoxA0, mat_realityMiniA04);
+                            mat_realityMiniA04.transparent = true;
+                            mat_realityMiniA04.wireframe = false;
+                            mat_realityMiniA04.alphaMap = techTileCover01;
+                            mesh_realityMiniA04.position.set(0, 50, 0);
+                            // mesh_realityMiniA04.position.set(-15000, 0, 0);
+                            mesh_realityMiniA04.scale.set(1, 1, 1);
+                            mesh_realityMiniA04.rotation.set(0, 0, 0)
+                            // mesh_realityMiniA04.rotateX( - Math.PI / 2 );
+
+                            // realityMiniA04.lookAt(camera)
+                            
+                            realityMiniA04.add(mesh_realityMiniA04)
+
+
+
+                            realityMiniA04a = new THREE.Group()
+                            realityMiniA04a.position.set(0, 0, 0)
+                            realityMiniA04a.rotation.set(0, 0, 0)
+                            realityMiniA04a.scale.set(1, 1, 1)
+                            realityMiniA04.add(realityMiniA04a)
+
+                            const mat_realityMiniA04a = new THREE.MeshBasicMaterial({ map: gridH2_PureBrightGreenOoze, side: THREE.DoubleSide });
+                            mesh_realityMiniA04a = new THREE.Mesh(geo_objT_DiamondA0, mat_realityMiniA04a);
+                            mat_realityMiniA04a.transparent = true;
+                            mat_realityMiniA04a.wireframe = true;
+                            mat_realityMiniA04a.alphaMap = gridH2_PureBrightGreenOoze;
+                            mesh_realityMiniA04a.position.set(0, 50, 0);
+                            // mesh_realityMiniA04a.position.set(-15000, 0, 0);
+                            mesh_realityMiniA04a.scale.set(2.5, 2.5, 2.5);
+                            mesh_realityMiniA04a.rotation.set(0, 0, 0)
+                            // mesh_realityMiniA04a.rotateX( - Math.PI / 2 );
+
+                            // realityMiniA04a.lookAt(camera)
+                            
+                            realityMiniA04a.add(mesh_realityMiniA04a)
+
+
+                            realityMiniA04b = new THREE.Group()
+                            realityMiniA04b.position.set(0, 0, 0)
+                            realityMiniA04b.rotation.set(0, 0, 0)
+                            realityMiniA04b.scale.set(1, 1, 1)
+                            realityMiniA04.add(realityMiniA04b)
+
+                            const mat_realityMiniA04b = new THREE.MeshBasicMaterial({ map: gridH2_PureBrightGreenOoze, side: THREE.DoubleSide });
+                            mesh_realityMiniA04b = new THREE.Mesh(geo_objT_DiamondA0, mat_realityMiniA04b);
+                            mat_realityMiniA04b.transparent = true;
+                            mat_realityMiniA04b.wireframe = true;
+                            mat_realityMiniA04b.alphaMap = gridH2_PureBrightGreenOoze;
+                            mesh_realityMiniA04b.position.set(0, 50, 0);
+                            // mesh_realityMiniA04b.position.set(-15000, 0, 0);
+                            mesh_realityMiniA04b.scale.set(2.5, 2.5, 2.5);
+                            mesh_realityMiniA04b.rotation.set(0, 0, 0)
+                            // mesh_realityMiniA04b.rotateX( - Math.PI / 2 );
+
+                            // realityMiniA04b.lookAt(camera)
+                            
+                            realityMiniA04b.add(mesh_realityMiniA04b)
+
+
+                            realityMiniA04b1 = new THREE.Group()
+                            realityMiniA04b1.position.set(0, 0, 0)
+                            realityMiniA04b1.rotation.set(0, 0, 0)
+                            realityMiniA04b1.scale.set(1, 1, 1)
+                            realityMiniA04.add(realityMiniA04b1)
+
+                            const mat_realityMiniA04b1 = new THREE.MeshBasicMaterial({ map: gridH2_PureBrightGreenOoze, side: THREE.DoubleSide });
+                            mesh_realityMiniA04b1 = new THREE.Mesh(geo_objT_DiamondA0, mat_realityMiniA04b1);
+                            mat_realityMiniA04b1.transparent = true;
+                            mat_realityMiniA04b1.wireframe = true;
+                            mat_realityMiniA04b1.alphaMap = gridH2_PureBrightGreenOoze;
+                            mesh_realityMiniA04b1.position.set(0, 50, 0);
+                            // mesh_realityMiniA04b1.position.set(-15000, 0, 0);
+                            mesh_realityMiniA04b1.scale.set(2.5, 2.5, 2.5);
+                            mesh_realityMiniA04b1.rotation.set(0, 0, 0)
+                            // mesh_realityMiniA04b1.rotateX( - Math.PI / 2 );
+
+                            // realityMiniA04b1.lookAt(camera)
+                            
+                            realityMiniA04b1.add(mesh_realityMiniA04b1)
+
+
+                            realityMiniA04b2 = new THREE.Group()
+                            realityMiniA04b2.position.set(0, 0, 0)
+                            realityMiniA04b2.rotation.set(0, 0, 0)
+                            realityMiniA04b2.scale.set(1, 1, 1)
+                            realityMiniA04.add(realityMiniA04b2)
+
+                            const mat_realityMiniA04b2 = new THREE.MeshBasicMaterial({ map: gridH2_PureBrightGreenOoze, side: THREE.DoubleSide });
+                            mesh_realityMiniA04b2 = new THREE.Mesh(geo_objT_SphereA0, mat_realityMiniA04b2);
+                            mat_realityMiniA04b2.transparent = true;
+                            mat_realityMiniA04b2.wireframe = true;
+                            mat_realityMiniA04b2.alphaMap = gridH2_PureBrightGreenOoze;
+                            mesh_realityMiniA04b2.position.set(0, 50, 0);
+                            // mesh_realityMiniA04b2.position.set(-15000, 0, 0);
+                            mesh_realityMiniA04b2.scale.set(1, 1, 1);
+                            mesh_realityMiniA04b2.rotation.set(0, 0, 0)
+                            // mesh_realityMiniA04b2.rotateX( - Math.PI / 2 );
+
+                            // realityMiniA04b2.lookAt(camera)
+                            
+                            realityMiniA04b2.add(mesh_realityMiniA04b2)
+
+
+                            realityMiniA04c = new THREE.Group()
+                            realityMiniA04c.position.set(0, 0, 0)
+                            realityMiniA04c.rotation.set(0, 0, 0)
+                            realityMiniA04c.scale.set(1, 1, 1)
+                            realityMiniA04.add(realityMiniA04c)
+
+                            const mat_realityMiniA04c = new THREE.MeshBasicMaterial({ map: digiTechTile01, side: THREE.DoubleSide });
+                            mesh_realityMiniA04c = new THREE.Mesh(geo_objT_BoxA0, mat_realityMiniA04c);
+                            mat_realityMiniA04c.transparent = true;
+                            mat_realityMiniA04c.wireframe = false;
+                            mat_realityMiniA04c.alphaMap = digiTechTile01;
+                            mesh_realityMiniA04c.position.set(0, 50, 0);
+                            // mesh_realityMiniA04c.position.set(-15000, 0, 0);
+                            mesh_realityMiniA04c.scale.set(1, 1, 1);
+                            mesh_realityMiniA04c.rotation.set(0, 0, 0)
+                            // mesh_realityMiniA04c.rotateX( - Math.PI / 2 );
+
+                            // realityMiniA04c.lookAt(camera)
+                            
+                            realityMiniA04c.add(mesh_realityMiniA04c)
+
+
+                            let iconBoolean_activation = () => {
+                                gsap.to(mesh_realityMiniA04.scale, {
+                                    repeat: -1,
+                                    duration: 2.75,
+                                    delay: 2.75,
+                                    z: 3,
+                                    y: 3,
+                                    x: 3,
+                                    // y: 0,
+                                })
+                            }
+
+
+                            let containerBoolean_activation = () => {
+                                gsap.to(mesh_realityMiniA04c.scale, {
+                                    repeat: -1,
+                                    duration: 1,
+                                    delay: 1,
+                                    z: 4,
+                                    y: 4,
+                                    x: 4,
+                                    // y: 0,
+                                })
+                            }
+
+
+                            let realityBoolean_activation = () => {
+                                gsap.to(mesh_realityMiniA04b1.scale, {
+                                    repeat: -1,
+                                    duration: 0.5,
+                                    delay: 1,
+                                    z: 5,
+                                    y: 5,
+                                    x: 5,
+                                    // y: 0,
+                                })
+                            }
+
+
+                            let spacialBoolean_activation = () => {
+                                gsap.to(mesh_realityMiniA04b2.scale, {
+                                    repeat: -1,
+                                    duration: 0.5,
+                                    delay: 1,
+                                    z: 2,
+                                    y: 2,
+                                    x: 2,
+                                    // y: 0,
+                                })
+                            }
+
+
+                            iconBoolean_activation()
+                            containerBoolean_activation()
+                            realityBoolean_activation()
+                            spacialBoolean_activation()
+
+
+
+                            // realityMiniA05
+                            // ------------------------------------------------------------------------------------
+                            realityMiniA05 = new THREE.Group()
+                            realityMiniA05.position.set(0, 0, 0)
+                            realityMiniA05.rotation.set(0, 0, 0)
+                            realityMiniA05.scale.set(0.01, 0.01, 0.01)
+                            realityMinisA_root.add(realityMiniA05)
+
+                            const mat_realityMiniA05 = new THREE.MeshBasicMaterial({ map: techTileCover01, side: THREE.DoubleSide });
+                            mesh_realityMiniA05 = new THREE.Mesh(geo_objT_BoxA0, mat_realityMiniA05);
+                            mat_realityMiniA05.transparent = true;
+                            mat_realityMiniA05.wireframe = false;
+                            mat_realityMiniA05.alphaMap = techTileCover01;
+                            mesh_realityMiniA05.position.set(0, 50, 0);
+                            // mesh_realityMiniA05.position.set(-15000, 0, 0);
+                            mesh_realityMiniA05.scale.set(1, 1, 1);
+                            mesh_realityMiniA05.rotation.set(0, 0, 0)
+                            // mesh_realityMiniA05.rotateX( - Math.PI / 2 );
+
+                            // realityMiniA05.lookAt(camera)
+                            
+                            realityMiniA05.add(mesh_realityMiniA05)
+
+
+
+                            realityMiniA05a = new THREE.Group()
+                            realityMiniA05a.position.set(0, 0, 0)
+                            realityMiniA05a.rotation.set(0, 0, 0)
+                            realityMiniA05a.scale.set(1, 1, 1)
+                            realityMiniA05.add(realityMiniA05a)
+
+                            const mat_realityMiniA05a = new THREE.MeshBasicMaterial({ map: gridH2_PureBrightGreenOoze, side: THREE.DoubleSide });
+                            mesh_realityMiniA05a = new THREE.Mesh(geo_objT_DiamondA0, mat_realityMiniA05a);
+                            mat_realityMiniA05a.transparent = true;
+                            mat_realityMiniA05a.wireframe = true;
+                            mat_realityMiniA05a.alphaMap = gridH2_PureBrightGreenOoze;
+                            mesh_realityMiniA05a.position.set(0, 50, 0);
+                            // mesh_realityMiniA05a.position.set(-15000, 0, 0);
+                            mesh_realityMiniA05a.scale.set(2.5, 2.5, 2.5);
+                            mesh_realityMiniA05a.rotation.set(0, 0, 0)
+                            // mesh_realityMiniA05a.rotateX( - Math.PI / 2 );
+
+                            // realityMiniA05a.lookAt(camera)
+                            
+                            realityMiniA05a.add(mesh_realityMiniA05a)
+
+
+                            realityMiniA05b = new THREE.Group()
+                            realityMiniA05b.position.set(0, 0, 0)
+                            realityMiniA05b.rotation.set(0, 0, 0)
+                            realityMiniA05b.scale.set(1, 1, 1)
+                            realityMiniA05.add(realityMiniA05b)
+
+                            const mat_realityMiniA05b = new THREE.MeshBasicMaterial({ map: gridH2_PureBrightGreenOoze, side: THREE.DoubleSide });
+                            mesh_realityMiniA05b = new THREE.Mesh(geo_objT_SphereA0, mat_realityMiniA05b);
+                            mat_realityMiniA05b.transparent = true;
+                            mat_realityMiniA05b.wireframe = true;
+                            mat_realityMiniA05b.alphaMap = gridH2_PureBrightGreenOoze;
+                            mesh_realityMiniA05b.position.set(0, 50, 0);
+                            // mesh_realityMiniA05b.position.set(-15000, 0, 0);
+                            mesh_realityMiniA05b.scale.set(1, 1, 1);
+                            mesh_realityMiniA05b.rotation.set(0, 0, 0)
+                            // mesh_realityMiniA05b.rotateX( - Math.PI / 2 );
+
+                            // realityMiniA05b.lookAt(camera)
+                            
+                            realityMiniA05b.add(mesh_realityMiniA05b)
+
+
+
+                            
+
+
+                            
+
+
+
+                        
+
+                    
+
+
                 // cube_root
                 // ----------------------------------------------------
                 cube_root = new THREE.Group()
@@ -7794,6 +8350,7 @@
                             // cubeFace_Right_component01_root.lookAt(camera)
                             
                             cubeFace_Right_component01_root.add(mesh_cubeFace_Right_component01_root)
+                            
 
 
 
@@ -9555,6 +10112,58 @@
 				// ###########################
 				// Primary Animations 
 				// ###########################
+
+
+
+                // Cube Reality Animations
+                mesh_realityMiniA02.position.x = Math.cos(time * 0.00075) * 2000 + 0
+                mesh_realityMiniA02.rotation.y = time * 0.001
+                mesh_realityMiniA02a.position.x = Math.cos(time * 0.00075) * 2000 + 0
+                mesh_realityMiniA02a.rotation.y = time * 0.001
+                mesh_realityMiniA02b.position.x = Math.cos(time * 0.00075) * 2000 + 0
+                mesh_realityMiniA02b.rotation.y = time * 0.001
+
+
+                mesh_realityMiniA03.position.y = Math.cos(time * 0.00075) * 2000 + 0
+                mesh_realityMiniA03.rotation.y = time * 0.001
+                mesh_realityMiniA03a.position.y = Math.cos(time * 0.00075) * 2000 + 0
+                mesh_realityMiniA03a.rotation.y = time * 0.001
+                mesh_realityMiniA03b.position.y = Math.cos(time * 0.00075) * 2000 + 0
+                mesh_realityMiniA03b.rotation.y = time * 0.001
+
+
+                mesh_realityMiniA04.position.x = Math.cos(time * 0.00015) * 2000 + 0
+                mesh_realityMiniA04.rotation.y = time * 0.001
+                mesh_realityMiniA04a.position.x = Math.cos(time * 0.00015) * 2000 + 0
+                mesh_realityMiniA04a.rotation.y = time * 0.01
+                mesh_realityMiniA04b.position.x = Math.cos(time * 0.00015) * 2000 + 0
+                mesh_realityMiniA04b.rotation.y = time * 0.001
+                mesh_realityMiniA04b1.position.x = Math.cos(time * 0.00015) * 2000 + 0
+                mesh_realityMiniA04b1.rotation.y = time * 0.002
+                mesh_realityMiniA04b2.position.x = Math.cos(time * 0.00015) * 2000 + 0
+                mesh_realityMiniA04b2.rotation.y = time * 0.003
+                mesh_realityMiniA04c.position.x = Math.cos(time * 0.00015) * 2000 + 0
+                mesh_realityMiniA04c.rotation.y = time * 0.001
+
+
+
+                mesh_realityMiniA05.position.x = Math.abs(Math.cos(time * 0.00005) * 2000) + 0
+                mesh_realityMiniA05.position.y = Math.abs(Math.cos(time * 0.00005) * 2000) + 0
+                mesh_realityMiniA05.position.z = Math.abs(Math.cos(time * 0.00005) * 2000) + 0
+                mesh_realityMiniA05.rotation.y = time * 0.001
+                mesh_realityMiniA05a.position.x = Math.abs(Math.cos(time * 0.00005) * 2000) + 0
+                mesh_realityMiniA05a.position.y = Math.abs(Math.cos(time * 0.00005) * 2000) + 0
+                mesh_realityMiniA05a.position.z = Math.abs(Math.cos(time * 0.00005) * 2000) + 0
+                mesh_realityMiniA05a.rotation.y = time * 0.01
+                mesh_realityMiniA05b.position.x = Math.abs(Math.cos(time * 0.00005) * 2000) + 0
+                mesh_realityMiniA05b.position.y = Math.abs(Math.cos(time * 0.00005) * 2000) + 0
+                mesh_realityMiniA05b.position.z = Math.abs(Math.cos(time * 0.00005) * 2000) + 0
+                mesh_realityMiniA05b.rotation.y = time * 0.001
+
+
+                // camera.position.x = Math.cos(time * 0.00075) * 5 + 50
+                // camera.rotation.y = time * 0.001
+
 
                 particles.rotation.y = time * 0.0001
                 // particles.rotation.z = time * 0.0001
