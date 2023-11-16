@@ -2605,6 +2605,12 @@
 
                 let ΔF_RH_Menu_root
                 let ΔF_RH_Menu_BaseA
+
+                    // Music Player
+                    let MusicPlayer_root
+                    let MusicPlayer_icon
+                    let MusicPlayer_container
+
                 let ΔF_RH_root
                 let ΔF_RH_baseA
 
@@ -2612,6 +2618,7 @@
                 let ΔE_RH_Menu_coreSphere_BaseA, mesh_ΔE_RH_Menu_coreSphere_BaseA
 
                 let ΔG_Dock_root
+                let ΔG_Dock_baseA
                 let ΔG_Dock_
 
                 // userΔ_Controls
@@ -8020,27 +8027,140 @@
                 )
 
 
+                    // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
+                    // \- # ΔF_RH_Menu_root
+                    // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
+
+                    MusicPlayer_root = new THREE.Group()
+                    MusicPlayer_root.position.set(5.8, -4.98, 0.01)
+                    MusicPlayer_root.rotation.set(0, 0, 0)
+                    MusicPlayer_root.scale.set(0.003, 0.003, 0.003)
+                    UserHud_default_root.add(MusicPlayer_root)
+                    camera.attach(MusicPlayer_root)
+
+
+                    MusicPlayer_icon = new THREE.Group()
+                    MusicPlayer_icon.position.set(0, 1, 0)
+                    MusicPlayer_icon.rotation.set(0, 0, 0)
+                    MusicPlayer_icon.scale.set(1, 1, 1)
+                    MusicPlayer_root.add(MusicPlayer_icon)
+
+
+                    let toggleMusicPlayer = () => {
+                        if (MusicPlayer_container.position.y === -5) {
+
+                            console.log("music player working")
+                            play_sfx_click_gen()
+
+                            gsap.to(MusicPlayer_container.position, {
+                                duration: 1,
+                                delay: 0,
+                                y: -0.5
+                            })
+
+                        } else {
+
+                            play_sfx_click_gen()
+
+                            gsap.to(MusicPlayer_container.position, {
+                                duration: 1,
+                                delay: 0,
+                                y: -5
+                            })
+                        }
+                    }
+
+
+                    MusicPlayer_icon.add(
+                        new hoverObject(
+                            'img',
+                            0, 1, 0,
+                            0, 0, 0,
+                            0.1, 0.1, 0.1,
+                            "Testing234", "TestingClass234",
+                            "./assets/icons/Music/023-music.png", "",
+                            "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+                            toggleMusicPlayer, "white"
+                        )
+                    )
+
+
+                    MusicPlayer_container = new THREE.Group()
+                    MusicPlayer_container.position.set(1.137, -5, 3.5)
+                    MusicPlayer_container.rotation.set(0, 0, 0)
+                    MusicPlayer_container.scale.set(0.01, 0.01, 0.01)
+                    UserHud_default_root.add(MusicPlayer_container)
+                    camera.attach(MusicPlayer_container)
+
+
+                    MusicPlayer_container.add(
+
+                        new makePDF_Viewer(
+                            0, 0, 0,
+                            0, 0, 0,
+                            0.1, 0.1, 0.1,
+                            "hoverClockA1",
+                            "./pages/Applications/02-MusicPlayer00/index.html",
+                            "1245", "720"
+                        )
+
+                    )
+
+
+
+                    // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
+                    // \- # ΔF_RH_Menu_root
+                    // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
+
+                    // ΔF_RH_Menu_root = new THREE.Group()
+                    // ΔF_RH_Menu_root.position.set(5.8, -4.98, 0)
+                    // ΔF_RH_Menu_root.rotation.set(0, 0, 0)
+                    // ΔF_RH_Menu_root.scale.set(0.003, 0.003, 0.003)
+                    // UserHud_default_root.add(ΔF_RH_Menu_root)
+                    // camera.attach(ΔF_RH_Menu_root)
+
+
+                    // ΔF_RH_Menu_BaseA = new THREE.Group()
+                    // ΔF_RH_Menu_BaseA.position.set(0, 1, 0)
+                    // ΔF_RH_Menu_BaseA.rotation.set(0, 0, 0)
+                    // ΔF_RH_Menu_BaseA.scale.set(1, 1, 1)
+                    // ΔF_RH_Menu_root.add(ΔF_RH_Menu_BaseA)
+
+
+                    // ΔF_RH_Menu_BaseA.add(
+                    //     new hoverObject(
+                    //         'img',
+                    //         0, 0, 0,
+                    //         0, 0, 0,
+                    //         0.1, 0.1, 0.1,
+                    //         "Testing234", "TestingClass234",
+                    //         "./assets/icons/Music/023-music.png", "",
+                    //         "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+                    //     )
+                    // )
+
+
 
                 // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
-                // \- # ΔF_RH_Menu_root
+                // \- # ΔG_Dock_root
                 // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
 
-                ΔF_RH_Menu_root = new THREE.Group()
-				ΔF_RH_Menu_root.position.set(0, -5, 0)
-				ΔF_RH_Menu_root.rotation.set(0, 0, 0)
-				ΔF_RH_Menu_root.scale.set(0.034, 0.035, 0.035)
-				UserHud_default_root.add(ΔF_RH_Menu_root)
-                camera.attach(ΔF_RH_Menu_root)
+                ΔG_Dock_root = new THREE.Group()
+				ΔG_Dock_root.position.set(0, -5, 0)
+				ΔG_Dock_root.rotation.set(0, 0, 0)
+				ΔG_Dock_root.scale.set(0.034, 0.035, 0.035)
+				UserHud_default_root.add(ΔG_Dock_root)
+                camera.attach(ΔG_Dock_root)
 
 
-                ΔF_RH_Menu_BaseA = new THREE.Group()
-				ΔF_RH_Menu_BaseA.position.set(0, 1, 0)
-				ΔF_RH_Menu_BaseA.rotation.set(0, 0, 0)
-				ΔF_RH_Menu_BaseA.scale.set(1, 1, 1)
-				ΔF_RH_Menu_root.add(ΔF_RH_Menu_BaseA)
+                ΔG_Dock_baseA = new THREE.Group()
+				ΔG_Dock_baseA.position.set(0, 2, 0)
+				ΔG_Dock_baseA.rotation.set(0, 0, 0)
+				ΔG_Dock_baseA.scale.set(1, 1, 1)
+				ΔG_Dock_root.add(ΔG_Dock_baseA)
 
 
-                ΔF_RH_Menu_BaseA.add(
+                ΔG_Dock_baseA.add(
                     new hoverObject(
                         'img',
                         0, 0, 0,
