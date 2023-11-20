@@ -2645,7 +2645,7 @@
 
 
 				// userΔ_LH_Menu_root
-
+				// -----------------------------------------------------------------
 				let userΔ_LH_Menu_root
 				let userΔ_LH_Menu_baseA
 
@@ -2655,12 +2655,49 @@
 
 				// Gears
 				let userΔ_LH_Menu_baseComponentB_root
+					let userΔ_LH_Menu_baseComponentB_Gear01, mesh_userΔ_LH_Menu_baseComponentB_Gear01
+						let userΔ_LH_Menu_baseComponentB_Gear01a
+						let userΔ_LH_Menu_baseComponentB_Gear01b
+						let userΔ_LH_Menu_baseComponentB_Gear01c
+						let userΔ_LH_Menu_baseComponentB_Gear01d
+						let userΔ_LH_Menu_baseComponentB_Gear01e
+
+
 
 				// Hands
 				let userΔ_LH_Menu_baseComponentC_root
 
 				// HandOptions
 				let userΔ_LH_Menu_baseComponentD_root
+
+
+
+				// userΔ_RH_Menu_root
+				// -----------------------------------------------------------------
+				let userΔ_RH_Menu_root
+				let userΔ_RH_Menu_baseA
+
+				// Orbits
+				let userΔ_RH_Menu_baseComponentA_root
+				let userΔ_RH_Menu_baseComponentA_Orbit01, mesh_userΔ_RH_Menu_baseComponentA_Orbit01
+
+				// Gears
+				let userΔ_RH_Menu_baseComponentB_root
+					let userΔ_RH_Menu_baseComponentB_Gear01, mesh_userΔ_RH_Menu_baseComponentB_Gear01
+						let userΔ_RH_Menu_baseComponentB_Gear01a
+						let userΔ_RH_Menu_baseComponentB_Gear01b
+						let userΔ_RH_Menu_baseComponentB_Gear01c
+						let userΔ_RH_Menu_baseComponentB_Gear01d
+						let userΔ_RH_Menu_baseComponentB_Gear01e
+						
+
+
+
+				// Hands
+				let userΔ_RH_Menu_baseComponentC_root
+
+				// HandOptions
+				let userΔ_RH_Menu_baseComponentD_root
 
 
                 // SubTestItems 
@@ -3494,6 +3531,18 @@
                 const RealityGridC = textureLoader.load('./assets/img/03-HudUI/PrimaryHud01_DrLight/A08_GeneralGrids_Square/formC/SquareGrid_White_formC.png')
                 const RealityGridD = textureLoader.load('./assets/img/03-HudUI/PrimaryHud01_DrLight/A08_GeneralGrids_Square/formD/SquareGrid_White_formD.png')
                 const RealityGridE = textureLoader.load('./assets/img/03-HudUI/PrimaryHud01_DrLight/A08_GeneralGrids_Square/formE/SquareGrid_White_formE.png')
+
+
+
+				// ----------------------------------------------------------------------------------------------------
+				// \- [Hand_Assets]
+                // ----------------------------------------------------------------------------------------------------
+
+				const Gears_Hands01 = textureLoader.load('./assets/img/03-HudUI/HudGears/gearGold_Default02/RealityGearA01.png')
+
+
+
+
 
 
 				
@@ -8438,7 +8487,7 @@
 				// HUD
 				const orbitGeometryDimensions03 = {
 					radius: 20,
-					tube: 1,
+					tube: 0.1,
 					radialSegements: 16,
 					tubularSegments: 100,
 					arc: 6.28
@@ -8500,10 +8549,10 @@
 
 						
 							userΔ_LH_Menu_baseComponentA_Orbit01 = new THREE.Group()
-							userΔ_LH_Menu_baseComponentA_Orbit01.position.set(-250, 300, 0)
+							userΔ_LH_Menu_baseComponentA_Orbit01.position.set(-350, 200, 0)
 							userΔ_LH_Menu_baseComponentA_Orbit01.rotation.set(0, 0, 0)
 							userΔ_LH_Menu_baseComponentA_Orbit01.scale.set(10, 10, 10)
-							userΔ_LH_Menu_baseA.add(userΔ_LH_Menu_baseComponentA_Orbit01)
+							userΔ_LH_Menu_baseComponentA_root.add(userΔ_LH_Menu_baseComponentA_Orbit01)
 
 
 
@@ -8526,10 +8575,408 @@
 						// LH GEAR TREE
 						// #+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#
 
+						userΔ_LH_Menu_baseComponentB_root = new THREE.Group()
+						userΔ_LH_Menu_baseComponentB_root.position.set(0, 1, 0)
+						userΔ_LH_Menu_baseComponentB_root.rotation.set(0, 0, 0)
+						userΔ_LH_Menu_baseComponentB_root.scale.set(1, 1, 1)
+						userΔ_LH_Menu_baseA.add(userΔ_LH_Menu_baseComponentB_root)
+
+
+
+							// LargeGoldGear
+							userΔ_LH_Menu_baseComponentB_Gear01 = new THREE.Group()
+							userΔ_LH_Menu_baseComponentB_Gear01.position.set(-350, 210, 0)
+							userΔ_LH_Menu_baseComponentB_Gear01.rotation.set(0, 0, 0)
+							userΔ_LH_Menu_baseComponentB_Gear01.scale.set(25, 25, 25)
+							userΔ_LH_Menu_baseA.add(userΔ_LH_Menu_baseComponentB_Gear01)
+
+
+							userΔ_LH_Menu_baseComponentB_Gear01.add(
+							    new hoverObject(
+							        'img',
+							        0, 0, 0,
+							        0, 0, 0,
+							        0.1, 0.1, 0.1,
+							        "Testing234", "TestingClass234",
+							        "./assets/img/03-HudUI/HudGears/gearGold_Default02/RealityGearA06.png", "",
+							        "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+							    )
+							)
+
+
+								
+
+								// SmallerGoldGear
+								// Measurer01
+								userΔ_LH_Menu_baseComponentB_Gear01a = new THREE.Group()
+								userΔ_LH_Menu_baseComponentB_Gear01a.position.set(-350, 210, 0.1)
+								userΔ_LH_Menu_baseComponentB_Gear01a.rotation.set(0, 0, 0)
+								userΔ_LH_Menu_baseComponentB_Gear01a.scale.set(35, 35, 35)
+								userΔ_LH_Menu_baseA.add(userΔ_LH_Menu_baseComponentB_Gear01a)
+
+
+								userΔ_LH_Menu_baseComponentB_Gear01a.add(
+									new hoverObject(
+										'img',
+										0, 0, 0,
+										0, 0, 0,
+										0.1, 0.1, 0.1,
+										"Testing234", "TestingClass234",
+										"./assets/img/03-HudUI/HudGears/gearGold_Default02/RealityGearA05.png", "",
+										"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+									)
+								)
+
+
+
+								userΔ_LH_Menu_baseComponentB_Gear01b = new THREE.Group()
+								userΔ_LH_Menu_baseComponentB_Gear01b.position.set(-350, 210, 0.2)
+								userΔ_LH_Menu_baseComponentB_Gear01b.rotation.set(0, 0, 0)
+								userΔ_LH_Menu_baseComponentB_Gear01b.scale.set(25, 25, 25)
+								userΔ_LH_Menu_baseA.add(userΔ_LH_Menu_baseComponentB_Gear01b)
+
+
+								userΔ_LH_Menu_baseComponentB_Gear01b.add(
+									new hoverObject(
+										'img',
+										0, 0, 0,
+										0, 0, 0,
+										0.1, 0.1, 0.1,
+										"Testing234", "TestingClass234",
+										"./assets/img/03-HudUI/HudGears/gearGold_Default02/RealityGearA06.png", "",
+										"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+									)
+								)
+
+
+								// Measurer01
+								userΔ_LH_Menu_baseComponentB_Gear01c = new THREE.Group()
+								userΔ_LH_Menu_baseComponentB_Gear01c.position.set(-350, 210, 0.21)
+								userΔ_LH_Menu_baseComponentB_Gear01c.rotation.set(0, 0, 0)
+								userΔ_LH_Menu_baseComponentB_Gear01c.scale.set(2.5, 2.5, 2.5)
+								userΔ_LH_Menu_baseA.add(userΔ_LH_Menu_baseComponentB_Gear01c)
+
+
+								userΔ_LH_Menu_baseComponentB_Gear01c.add(
+									new hoverObject(
+										'img',
+										0, 0, 0,
+										0, 0, 0,
+										0.1, 0.1, 0.1,
+										"Testing234", "TestingClass234",
+										"./assets/img/02-UserUI/03-TechCircles/Concrete/TechField06_Black.png", "",
+										"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+									)
+								)
+
+
+
+								// Smallest Gear - gold
+								userΔ_LH_Menu_baseComponentB_Gear01d = new THREE.Group()
+								userΔ_LH_Menu_baseComponentB_Gear01d.position.set(-350, 210, 0.22)
+								userΔ_LH_Menu_baseComponentB_Gear01d.rotation.set(0, 0, 0)
+								userΔ_LH_Menu_baseComponentB_Gear01d.scale.set(15, 15, 15)
+								userΔ_LH_Menu_baseA.add(userΔ_LH_Menu_baseComponentB_Gear01d)
+
+
+								userΔ_LH_Menu_baseComponentB_Gear01d.add(
+									new hoverObject(
+										'img',
+										0, 0, 0,
+										0, 0, 0,
+										0.1, 0.1, 0.1,
+										"Testing234", "TestingClass234",
+										"./assets/img/03-HudUI/HudGears/gearGold_Default02/RealityGearA06.png", "",
+										"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+									)
+								)
+
+
+
+								// Smallest Gear - white
+								userΔ_LH_Menu_baseComponentB_Gear01e = new THREE.Group()
+								userΔ_LH_Menu_baseComponentB_Gear01e.position.set(-350, 210, 0.23)
+								userΔ_LH_Menu_baseComponentB_Gear01e.rotation.set(0, 0, 0)
+								userΔ_LH_Menu_baseComponentB_Gear01e.scale.set(12, 12, 12)
+								userΔ_LH_Menu_baseA.add(userΔ_LH_Menu_baseComponentB_Gear01e)
+
+
+								userΔ_LH_Menu_baseComponentB_Gear01e.add(
+									new hoverObject(
+										'img',
+										0, 0, 0,
+										0, 0, 0,
+										0.1, 0.1, 0.1,
+										"Testing234", "TestingClass234",
+										"./assets/img/03-HudUI/HudGears/gearGold_Default02/RealityGearA05.png", "",
+										"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+									)
+								)
+
+
+
+
+							// const mat_userΔ_LH_Menu_baseComponentB_Gear01 = new THREE.MeshBasicMaterial({ map: Gears_Hands01, side: THREE.DoubleSide });
+							// mesh_userΔ_LH_Menu_baseComponentB_Gear01 = new THREE.Mesh(geo_objT_CircleA1, mat_userΔ_LH_Menu_baseComponentB_Gear01);
+							// mat_userΔ_LH_Menu_baseComponentB_Gear01.transparent = true;
+							// mat_userΔ_LH_Menu_baseComponentB_Gear01.wireframe = false;
+							// mat_userΔ_LH_Menu_baseComponentB_Gear01.alphaMap = Gears_Hands01;
+							// mesh_userΔ_LH_Menu_baseComponentB_Gear01.position.set(0, 0.5, 0);
+							// // mesh_userΔ_LH_Menu_baseComponentB_Gear01.position.set(-15000, 0, 0);
+							// mesh_userΔ_LH_Menu_baseComponentB_Gear01.scale.set(1, 1, 1);
+							// mesh_userΔ_LH_Menu_baseComponentB_Gear01.rotation.set(0.544, 0, -0.557)
+							// mesh_userΔ_LH_Menu_baseComponentB_Gear01.rotateX( - Math.PI / 2 );
+
+							// // userΔ_LH_Menu_baseComponentB_Gear01.lookAt(camera)
+							
+							// userΔ_LH_Menu_baseComponentB_Gear01.add(mesh_userΔ_LH_Menu_baseComponentB_Gear01)
+
 
 
 						// #+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#
 						// LH HAND TREE
+						// #+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#
+
+
+
+
+				
+
+
+
+
+
+
+				// #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
+                // \- # userΔ_RH_Menu_root
+                // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
+
+                userΔ_RH_Menu_root = new THREE.Group()
+				userΔ_RH_Menu_root.position.set(4, -5, 0)
+				userΔ_RH_Menu_root.rotation.set(0, 0, 0)
+				userΔ_RH_Menu_root.scale.set(0.0035, 0.0035, 0.0035)
+				UserHud_default_root.add(userΔ_RH_Menu_root)
+                camera.attach(userΔ_RH_Menu_root)
+
+				// userΔ_RH_Menu_baseA.add(
+                //     new hoverObject(
+                //         'img',
+                //         0, 0, 0,
+                //         0, 0, 0,
+                //         0.1, 0.1, 0.1,
+                //         "Testing234", "TestingClass234",
+                //         "./assets/img/10-ObjectUI/Shapes/Diamond.png", "",
+                //         "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+                //     )
+                // )
+
+
+					userΔ_RH_Menu_baseA = new THREE.Group()
+					userΔ_RH_Menu_baseA.position.set(0, 1, 0)
+					userΔ_RH_Menu_baseA.rotation.set(0, 0, 0)
+					userΔ_RH_Menu_baseA.scale.set(1, 1, 1)
+					userΔ_RH_Menu_root.add(userΔ_RH_Menu_baseA)
+
+
+						// #+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#
+						// RH ORBIT TREE
+						// #+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#
+						userΔ_RH_Menu_baseComponentA_root = new THREE.Group()
+						userΔ_RH_Menu_baseComponentA_root.position.set(0, 1, 0)
+						userΔ_RH_Menu_baseComponentA_root.rotation.set(0, 0, 0)
+						userΔ_RH_Menu_baseComponentA_root.scale.set(1, 1, 1)
+						userΔ_RH_Menu_baseA.add(userΔ_RH_Menu_baseComponentA_root)
+
+
+
+						
+							userΔ_RH_Menu_baseComponentA_Orbit01 = new THREE.Group()
+							userΔ_RH_Menu_baseComponentA_Orbit01.position.set(350, 200, 0)
+							userΔ_RH_Menu_baseComponentA_Orbit01.rotation.set(0, 0, 0)
+							userΔ_RH_Menu_baseComponentA_Orbit01.scale.set(10, 10, 10)
+							userΔ_RH_Menu_baseComponentA_root.add(userΔ_RH_Menu_baseComponentA_Orbit01)
+
+
+
+							const mat_userΔ_RH_Menu_baseComponentA_Orbit01 = new THREE.MeshBasicMaterial({ map: SceneWallpaper_01, side: THREE.DoubleSide });
+							mesh_userΔ_RH_Menu_baseComponentA_Orbit01 = new THREE.Mesh(orbitMatrix03, mat_userΔ_RH_Menu_baseComponentA_Orbit01);
+							mat_userΔ_RH_Menu_baseComponentA_Orbit01.transparent = false;
+							mat_userΔ_RH_Menu_baseComponentA_Orbit01.wireframe = false;
+							mat_userΔ_RH_Menu_baseComponentA_Orbit01.alphaMap = SceneWallpaper_01;
+							mesh_userΔ_RH_Menu_baseComponentA_Orbit01.position.set(0, 0.5, 0);
+							// mesh_userΔ_RH_Menu_baseComponentA_Orbit01.position.set(-15000, 0, 0);
+							mesh_userΔ_RH_Menu_baseComponentA_Orbit01.scale.set(1, 1, 1);
+							mesh_userΔ_RH_Menu_baseComponentA_Orbit01.rotation.set(0.544, 0, -0.557)
+							mesh_userΔ_RH_Menu_baseComponentA_Orbit01.rotateX( - Math.PI / 2 );
+
+							// userΔ_RH_Menu_baseComponentA_Orbit01.lookAt(camera)
+							
+							userΔ_RH_Menu_baseComponentA_Orbit01.add(mesh_userΔ_RH_Menu_baseComponentA_Orbit01)
+						
+						// #+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#
+						// RH GEAR TREE
+						// #+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#
+
+						userΔ_RH_Menu_baseComponentB_root = new THREE.Group()
+						userΔ_RH_Menu_baseComponentB_root.position.set(0, 1, 0)
+						userΔ_RH_Menu_baseComponentB_root.rotation.set(0, 0, 0)
+						userΔ_RH_Menu_baseComponentB_root.scale.set(1, 1, 1)
+						userΔ_RH_Menu_baseA.add(userΔ_RH_Menu_baseComponentB_root)
+
+
+
+							// LargeGoldGear
+							userΔ_RH_Menu_baseComponentB_Gear01 = new THREE.Group()
+							userΔ_RH_Menu_baseComponentB_Gear01.position.set(350, 210, 0)
+							userΔ_RH_Menu_baseComponentB_Gear01.rotation.set(0, 0, 0)
+							userΔ_RH_Menu_baseComponentB_Gear01.scale.set(25, 25, 25)
+							userΔ_RH_Menu_baseA.add(userΔ_RH_Menu_baseComponentB_Gear01)
+
+
+							userΔ_RH_Menu_baseComponentB_Gear01.add(
+							    new hoverObject(
+							        'img',
+							        0, 0, 0,
+							        0, 0, 0,
+							        0.1, 0.1, 0.1,
+							        "Testing234", "TestingClass234",
+							        "./assets/img/03-HudUI/HudGears/gearGold_Default02/RealityGearA06.png", "",
+							        "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+							    )
+							)
+
+
+								
+
+								// SmallerGoldGear
+								// Measurer01
+								userΔ_RH_Menu_baseComponentB_Gear01a = new THREE.Group()
+								userΔ_RH_Menu_baseComponentB_Gear01a.position.set(350, 210, 0.1)
+								userΔ_RH_Menu_baseComponentB_Gear01a.rotation.set(0, 0, 0)
+								userΔ_RH_Menu_baseComponentB_Gear01a.scale.set(35, 35, 35)
+								userΔ_RH_Menu_baseA.add(userΔ_RH_Menu_baseComponentB_Gear01a)
+
+
+								userΔ_RH_Menu_baseComponentB_Gear01a.add(
+									new hoverObject(
+										'img',
+										0, 0, 0,
+										0, 0, 0,
+										0.1, 0.1, 0.1,
+										"Testing234", "TestingClass234",
+										"./assets/img/03-HudUI/HudGears/gearGold_Default02/RealityGearA05.png", "",
+										"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+									)
+								)
+
+
+
+								userΔ_RH_Menu_baseComponentB_Gear01b = new THREE.Group()
+								userΔ_RH_Menu_baseComponentB_Gear01b.position.set(350, 210, 0.2)
+								userΔ_RH_Menu_baseComponentB_Gear01b.rotation.set(0, 0, 0)
+								userΔ_RH_Menu_baseComponentB_Gear01b.scale.set(25, 25, 25)
+								userΔ_RH_Menu_baseA.add(userΔ_RH_Menu_baseComponentB_Gear01b)
+
+
+								userΔ_RH_Menu_baseComponentB_Gear01b.add(
+									new hoverObject(
+										'img',
+										0, 0, 0,
+										0, 0, 0,
+										0.1, 0.1, 0.1,
+										"Testing234", "TestingClass234",
+										"./assets/img/03-HudUI/HudGears/gearGold_Default02/RealityGearA06.png", "",
+										"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+									)
+								)
+
+
+								// Measurer01
+								userΔ_RH_Menu_baseComponentB_Gear01c = new THREE.Group()
+								userΔ_RH_Menu_baseComponentB_Gear01c.position.set(350, 210, 0.21)
+								userΔ_RH_Menu_baseComponentB_Gear01c.rotation.set(0, 0, 0)
+								userΔ_RH_Menu_baseComponentB_Gear01c.scale.set(2.5, 2.5, 2.5)
+								userΔ_RH_Menu_baseA.add(userΔ_RH_Menu_baseComponentB_Gear01c)
+
+
+								userΔ_RH_Menu_baseComponentB_Gear01c.add(
+									new hoverObject(
+										'img',
+										0, 0, 0,
+										0, 0, 0,
+										0.1, 0.1, 0.1,
+										"Testing234", "TestingClass234",
+										"./assets/img/02-UserUI/03-TechCircles/Concrete/TechField06_Black.png", "",
+										"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+									)
+								)
+
+
+
+								// Smallest Gear - gold
+								userΔ_RH_Menu_baseComponentB_Gear01d = new THREE.Group()
+								userΔ_RH_Menu_baseComponentB_Gear01d.position.set(350, 210, 0.22)
+								userΔ_RH_Menu_baseComponentB_Gear01d.rotation.set(0, 0, 0)
+								userΔ_RH_Menu_baseComponentB_Gear01d.scale.set(15, 15, 15)
+								userΔ_RH_Menu_baseA.add(userΔ_RH_Menu_baseComponentB_Gear01d)
+
+
+								userΔ_RH_Menu_baseComponentB_Gear01d.add(
+									new hoverObject(
+										'img',
+										0, 0, 0,
+										0, 0, 0,
+										0.1, 0.1, 0.1,
+										"Testing234", "TestingClass234",
+										"./assets/img/03-HudUI/HudGears/gearGold_Default02/RealityGearA06.png", "",
+										"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+									)
+								)
+
+
+
+								// Smallest Gear - white
+								userΔ_RH_Menu_baseComponentB_Gear01e = new THREE.Group()
+								userΔ_RH_Menu_baseComponentB_Gear01e.position.set(350, 210, 0.23)
+								userΔ_RH_Menu_baseComponentB_Gear01e.rotation.set(0, 0, 0)
+								userΔ_RH_Menu_baseComponentB_Gear01e.scale.set(12, 12, 12)
+								userΔ_RH_Menu_baseA.add(userΔ_RH_Menu_baseComponentB_Gear01e)
+
+
+								userΔ_RH_Menu_baseComponentB_Gear01e.add(
+									new hoverObject(
+										'img',
+										0, 0, 0,
+										0, 0, 0,
+										0.1, 0.1, 0.1,
+										"Testing234", "TestingClass234",
+										"./assets/img/03-HudUI/HudGears/gearGold_Default02/RealityGearA05.png", "",
+										"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+									)
+								)
+
+
+
+
+							// const mat_userΔ_RH_Menu_baseComponentB_Gear01 = new THREE.MeshBasicMaterial({ map: Gears_Hands01, side: THREE.DoubleSide });
+							// mesh_userΔ_RH_Menu_baseComponentB_Gear01 = new THREE.Mesh(geo_objT_CircleA1, mat_userΔ_RH_Menu_baseComponentB_Gear01);
+							// mat_userΔ_RH_Menu_baseComponentB_Gear01.transparent = true;
+							// mat_userΔ_RH_Menu_baseComponentB_Gear01.wireframe = false;
+							// mat_userΔ_RH_Menu_baseComponentB_Gear01.alphaMap = Gears_Hands01;
+							// mesh_userΔ_RH_Menu_baseComponentB_Gear01.position.set(0, 0.5, 0);
+							// // mesh_userΔ_RH_Menu_baseComponentB_Gear01.position.set(-15000, 0, 0);
+							// mesh_userΔ_RH_Menu_baseComponentB_Gear01.scale.set(1, 1, 1);
+							// mesh_userΔ_RH_Menu_baseComponentB_Gear01.rotation.set(0.544, 0, -0.557)
+							// mesh_userΔ_RH_Menu_baseComponentB_Gear01.rotateX( - Math.PI / 2 );
+
+							// // userΔ_RH_Menu_baseComponentB_Gear01.lookAt(camera)
+							
+							// userΔ_RH_Menu_baseComponentB_Gear01.add(mesh_userΔ_RH_Menu_baseComponentB_Gear01)
+
+
+
+						// #+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#
+						// RH HAND TREE
 						// #+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#
 
 
@@ -12058,17 +12505,17 @@
 				folderLoadTestingContainer01.add(floorDesign01_Grid.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
 				folderLoadTestingContainer01.add(floorDesign01_Grid.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
-				const folderLoadTestingContainer02 = gui.addFolder('<<< LoadPoint02 :: video_componentC_baseF >>>')
+				const folderLoadTestingContainer02 = gui.addFolder('<<< LoadPoint02 :: mesh_userΔ_LH_Menu_baseComponentA_Orbit01 >>>')
 
-				folderLoadTestingContainer02.add(video_componentC_baseF.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
-				folderLoadTestingContainer02.add(video_componentC_baseF.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
-				folderLoadTestingContainer02.add(video_componentC_baseF.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
-				folderLoadTestingContainer02.add(video_componentC_baseF.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
-				folderLoadTestingContainer02.add(video_componentC_baseF.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
-				folderLoadTestingContainer02.add(video_componentC_baseF.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
-				folderLoadTestingContainer02.add(video_componentC_baseF.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
-				folderLoadTestingContainer02.add(video_componentC_baseF.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
-				folderLoadTestingContainer02.add(video_componentC_baseF.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
+				folderLoadTestingContainer02.add(mesh_userΔ_LH_Menu_baseComponentA_Orbit01.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
+				folderLoadTestingContainer02.add(mesh_userΔ_LH_Menu_baseComponentA_Orbit01.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
+				folderLoadTestingContainer02.add(mesh_userΔ_LH_Menu_baseComponentA_Orbit01.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
+				folderLoadTestingContainer02.add(mesh_userΔ_LH_Menu_baseComponentA_Orbit01.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
+				folderLoadTestingContainer02.add(mesh_userΔ_LH_Menu_baseComponentA_Orbit01.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
+				folderLoadTestingContainer02.add(mesh_userΔ_LH_Menu_baseComponentA_Orbit01.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
+				folderLoadTestingContainer02.add(mesh_userΔ_LH_Menu_baseComponentA_Orbit01.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
+				folderLoadTestingContainer02.add(mesh_userΔ_LH_Menu_baseComponentA_Orbit01.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
+				folderLoadTestingContainer02.add(mesh_userΔ_LH_Menu_baseComponentA_Orbit01.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
 				const folderLoadTestingContainer03 = gui.addFolder('<<< LoadPoint03 :: particles >>>')
 
@@ -12736,6 +13183,26 @@
 				// ###########################
 
 
+				// HUD ANIMATIONS
+
+					// Gears
+
+					userΔ_LH_Menu_baseComponentB_Gear01.rotation.z = time * 0.0001
+					userΔ_LH_Menu_baseComponentB_Gear01a.rotation.z = time * -0.001
+					userΔ_LH_Menu_baseComponentB_Gear01b.rotation.z = time * 0.001
+					userΔ_LH_Menu_baseComponentB_Gear01c.rotation.z = time * -0.002
+					userΔ_LH_Menu_baseComponentB_Gear01d.rotation.z = time * -0.0015
+					userΔ_LH_Menu_baseComponentB_Gear01e.rotation.z = time * 0.01
+
+
+					userΔ_RH_Menu_baseComponentB_Gear01.rotation.z = time * -0.0001
+					userΔ_RH_Menu_baseComponentB_Gear01a.rotation.z = time * 0.001
+					userΔ_RH_Menu_baseComponentB_Gear01b.rotation.z = time * -0.001
+					userΔ_RH_Menu_baseComponentB_Gear01c.rotation.z = time * 0.002
+					userΔ_RH_Menu_baseComponentB_Gear01d.rotation.z = time * 0.0015
+					userΔ_RH_Menu_baseComponentB_Gear01e.rotation.z = time * -0.01
+
+
 
                 // Cube Reality Animations
                 mesh_realityMiniA02.position.x = Math.cos(time * 0.00075) * 2000 + 0
@@ -12829,6 +13296,9 @@
                 mesh_TimeΔ_TimeTunnel_tunnel_SpaceTime_baseA08a.rotation.y = time * -0.001
                 mesh_TimeΔ_TimeTunnel_tunnel_SpaceTime_baseA09a.rotation.y = time * 0.001
                 mesh_TimeΔ_TimeTunnel_tunnel_SpaceTime_baseA10a.rotation.y = time * -0.001
+
+
+				
 
 
                 
