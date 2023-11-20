@@ -19,6 +19,7 @@
 
 # QuickShortcuts
 \- randomATT_Items = Search(HomeScreenSaver)
+\- [function] -> putClockInCenterOnFloor 
 
 
 
@@ -28,6 +29,7 @@
 \- setUp_variableBuild
 \- setUp_imageRef
 \- setUp_functionBuild
+\- setUp_functionSounds
 \- setUp_keyCommands
 \- setUp_hardCode_ObjectBuild
 \- setUp_datGui
@@ -46,6 +48,9 @@ play_sfx_click_gen() - general beep click sound
 play_sfx_hand_show() - general show click sound
 play_sfx_hand_hide() - general hide click sound
 
+
+# images
+Grid01 - BasicHud03b
 
 
 

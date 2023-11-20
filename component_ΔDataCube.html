@@ -2560,10 +2560,22 @@
                 let ΔA_Menubar_root
                 let ΔA_Menubar_baseA
 
-                let ΔA_Menubar_lineA
-                let ΔA_Menubar_lineA_BaseA
-                let ΔA_Menubar_lineB
-                let ΔA_Menubar_lineB_BaseA
+					let ΔA_Menubar_lineA
+					let ΔA_Menubar_lineA_BaseA
+					let ΔA_Menubar_lineB
+					let ΔA_Menubar_lineB_BaseA
+
+						// MenuOptionContainer - Icons
+						let MenuBar_MenuOptionContainer_root
+						let MenuBar_MenuOption00_Logo_Δ
+						let MenuBar_MenuOption01_Object_Δs
+						let MenuBar_MenuOption02_Property_Δs
+						let MenuBar_MenuOption03_Perspective_Δs
+						let MenuBar_MenuOption04_Hiearchy_Δs
+						let MenuBar_MenuOption05_Time_Δs
+						let MenuBar_MenuOption06_Experience_Δs
+						let MenuBar_MenuOption07_Communication_Δs
+						let MenuBar_MenuOption08_Help_Δs
 
                 let ΔA_Menubar_lineVerticalA
                 let ΔA_Menubar_lineVerticalA_BaseA
@@ -2631,6 +2643,26 @@
                 let userΔ_Controls_reverseΔ_button
 
 
+
+				// userΔ_LH_Menu_root
+
+				let userΔ_LH_Menu_root
+				let userΔ_LH_Menu_baseA
+
+				// Orbits
+				let userΔ_LH_Menu_baseComponentA_root
+				let userΔ_LH_Menu_baseComponentA_Orbit01, mesh_userΔ_LH_Menu_baseComponentA_Orbit01
+
+				// Gears
+				let userΔ_LH_Menu_baseComponentB_root
+
+				// Hands
+				let userΔ_LH_Menu_baseComponentC_root
+
+				// HandOptions
+				let userΔ_LH_Menu_baseComponentD_root
+
+
                 // SubTestItems 
 
                 let testGrid_root
@@ -2644,10 +2676,16 @@
             //  Testing Area
 			// #################################################################
 
+			
+
             let ΔReality_root
             let Δreality_baseA
             let Δreality_baseB
             let Δreality_baseC
+
+
+			// Orbit Tester
+			let testOrbit, mesh_testOrbit
 
 
             // Build Animation root
@@ -2658,6 +2696,7 @@
 
                 // realityBuilds
                 let realityMinisA_root
+                let realityMiniA_button
                 let realityMiniA01, mesh_realityMiniA01
                 let realityMiniA01a, mesh_realityMiniA01a
                 let realityMiniA01b, mesh_realityMiniA01b
@@ -2910,9 +2949,26 @@
                     let video_componentC_baseC, mesh_video_componentC_baseC
                     let video_componentC_baseD, mesh_video_componentC_baseD
                     let video_componentC_baseE, mesh_video_componentC_baseE
+					let video_componentC_baseF, mesh_video_componentC_baseF
+					let video_componentC_baseG, mesh_video_componentC_baseG
 
                     let video_componentD_root
                     let video_componentD_baseA, mesh_video_componentD_baseA
+
+
+                    let video_componentE_root
+                    let video_componentE_baseA
+
+                        let video_componentE_baseA01
+                        let video_componentE_baseA02
+                        let video_componentE_baseA03
+
+                    let video_componentF_root
+                    let video_componentF_baseA
+
+                        let video_componentF_baseA01
+                        let video_componentF_baseA02
+                        let video_componentF_baseA03
 
 
 			
@@ -7324,6 +7380,10 @@
                 //.................UUUUU..................
                 //........................................
 
+
+
+				
+
                 // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
                 // \- # PerspectiveΔ_root
                 // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
@@ -7341,47 +7401,47 @@
                     scene.add(perspectiveΔ_baseA)
 
 
-                    const mat_perspectiveΔ_baseA = new THREE.MeshBasicMaterial({ map: BasicHud03b, side: THREE.DoubleSide });
-                    mesh_perspectiveΔ_baseA = new THREE.Mesh(geo_objT_SphereA0, mat_perspectiveΔ_baseA);
-                    //
-                    mat_perspectiveΔ_baseA.transparent = true;
-                    mat_perspectiveΔ_baseA.wireframe = false;
-                    mat_perspectiveΔ_baseA.alphaMap = BasicHud03b;
-                    //
-                    mesh_perspectiveΔ_baseA.position.set(0, 0, 0);
-                    mesh_perspectiveΔ_baseA.scale.set(0.05, 0.05, 0.05);
-                    mesh_perspectiveΔ_baseA.rotation.set(0, 0, 0)
-                    // 
-                    // mesh_perspectiveΔ_baseA.rotateX( Math.PI / 2 );
+                    // const mat_perspectiveΔ_baseA = new THREE.MeshBasicMaterial({ map: BasicHud03b, side: THREE.DoubleSide });
+                    // mesh_perspectiveΔ_baseA = new THREE.Mesh(geo_objT_SphereA0, mat_perspectiveΔ_baseA);
+                    // //
+                    // mat_perspectiveΔ_baseA.transparent = true;
+                    // mat_perspectiveΔ_baseA.wireframe = false;
+                    // mat_perspectiveΔ_baseA.alphaMap = BasicHud03b;
+                    // //
+                    // mesh_perspectiveΔ_baseA.position.set(0, 0, 0);
+                    // mesh_perspectiveΔ_baseA.scale.set(0.05, 0.05, 0.05);
+                    // mesh_perspectiveΔ_baseA.rotation.set(0, 0, 0)
+                    // // 
+                    // // mesh_perspectiveΔ_baseA.rotateX( Math.PI / 2 );
                     
-                    perspectiveΔ_baseA.add(mesh_perspectiveΔ_baseA)
+                    // perspectiveΔ_baseA.add(mesh_perspectiveΔ_baseA)
 
 
 				// #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
                 // \- # perspectiveΔ_baseB
                 // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
 
-                perspectiveΔ_baseB = new THREE.Group()
-				perspectiveΔ_baseB.position.set(0, 1, 0)
-				perspectiveΔ_baseB.rotation.set(0, 0, 0)
-				perspectiveΔ_baseB.scale.set(25, 25, 25)
-				scene.add(perspectiveΔ_baseB)
+                // perspectiveΔ_baseB = new THREE.Group()
+				// perspectiveΔ_baseB.position.set(0, 1, 0)
+				// perspectiveΔ_baseB.rotation.set(0, 0, 0)
+				// perspectiveΔ_baseB.scale.set(25, 25, 25)
+				// scene.add(perspectiveΔ_baseB)
 
 
-                    const mat_perspectiveΔ_baseB = new THREE.MeshBasicMaterial({ map: BasicHud03b, side: THREE.DoubleSide });
-                    mesh_perspectiveΔ_baseB = new THREE.Mesh(geo_objT_SphereA0, mat_perspectiveΔ_baseB);
-                    //
-                    mat_perspectiveΔ_baseB.transparent = true;
-                    mat_perspectiveΔ_baseB.wireframe = false;
-                    mat_perspectiveΔ_baseB.alphaMap = BasicHud03b;
-                    //
-                    mesh_perspectiveΔ_baseB.position.set(0, 0, 0);
-                    mesh_perspectiveΔ_baseB.scale.set(0.05, 0.05, 0.05);
-                    mesh_perspectiveΔ_baseB.rotation.set(0, 0, 0)
-                    // 
-                    // mesh_perspectiveΔ_baseB.rotateX( Math.PI / 2 );
+                //     const mat_perspectiveΔ_baseB = new THREE.MeshBasicMaterial({ map: BasicHud03b, side: THREE.DoubleSide });
+                //     mesh_perspectiveΔ_baseB = new THREE.Mesh(geo_objT_SphereA0, mat_perspectiveΔ_baseB);
+                //     //
+                //     mat_perspectiveΔ_baseB.transparent = false;
+                //     mat_perspectiveΔ_baseB.wireframe = false;
+                //     mat_perspectiveΔ_baseB.alphaMap = BasicHud03b;
+                //     //
+                //     mesh_perspectiveΔ_baseB.position.set(0, 0, 0);
+                //     mesh_perspectiveΔ_baseB.scale.set(0.05, 0.05, 0.05);
+                //     mesh_perspectiveΔ_baseB.rotation.set(0, 0, 0)
+                //     // 
+                //     // mesh_perspectiveΔ_baseB.rotateX( Math.PI / 2 );
                     
-                    perspectiveΔ_baseB.add(mesh_perspectiveΔ_baseB)
+                //     perspectiveΔ_baseB.add(mesh_perspectiveΔ_baseB)
 
 
                 // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
@@ -7729,85 +7789,74 @@
                 // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
                 // \- # Main Functions: Menubar and Navbar and drawers
                 // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
-                document.addEventListener("keydown", function(event) {
-					if (event.key === "=") {
-                        play_sfx_click_gen()
-						
 
-						gsap.to(ΔA_Menubar_root.position, {
-							duration: .2,
-							delay: 0,
-							y: "3.95",
+                let openHomeBar = () => {
+                    gsap.to(ΔA_Menubar_root.position, {
+                        duration: .2,
+                        delay: 0,
+                        y: "3.95",
 
-						})
+                    })
 
 
-                        gsap.to(ΔB_Navbar_root.position, {
-							duration: .3,
-							delay: 0,
-							y: "3.55",
+                    gsap.to(ΔB_Navbar_root.position, {
+                        duration: .3,
+                        delay: 0,
+                        y: "3.55",
 
-						})
+                    })
 
-                        // Horizontal Menu Lines
-                        gsap.to(ΔA_Menubar_lineA.position, {
-							duration: .4,
-							delay: 0,
-							y: "3.76",
+                    // Horizontal Menu Lines
+                    gsap.to(ΔA_Menubar_lineA.position, {
+                        duration: .4,
+                        delay: 0,
+                        y: "3.76",
 
-						})
+                    })
 
-                        gsap.to(ΔA_Menubar_lineB.position, {
-							duration: .4,
-							delay: 0,
-							y: "3.35",
+                    gsap.to(ΔA_Menubar_lineB.position, {
+                        duration: .4,
+                        delay: 0,
+                        y: "3.35",
 
-						})
-
-
-                        // Vertical Menu Lines
-                        gsap.to(ΔA_Menubar_lineVerticalA.position, {
-							duration: .3,
-							delay: 0,
-							y: "5.5",
-
-						})
-
-                        gsap.to(ΔA_Menubar_lineVerticalB.position, {
-							duration: .3,
-							delay: 0,
-							y: "-5.5",
-
-						})
-
-                        
-
-                        gsap.to(ΔB1_LeftDrawer_root.position, {
-							duration: .3,
-							delay: 0,
-							x: "-6.5",
-
-						})
-
-                        gsap.to(ΔB2_RightDrawer_root.position, {
-							duration: .3,
-							delay: 0,
-							x: "6.5",
-
-						})
-
-					}
-				})
+                    })
 
 
-                document.addEventListener("keydown", function(event) {
-					if (event.ctrlKey && event.key === "=") {
+                    // Vertical Menu Lines
+                    gsap.to(ΔA_Menubar_lineVerticalA.position, {
+                        duration: .3,
+                        delay: 0,
+                        y: "5.5",
 
-                        // sfx_hide
-                        play_sfx_click_gen()
-						
+                    })
 
-						gsap.to(ΔA_Menubar_root.position, {
+                    gsap.to(ΔA_Menubar_lineVerticalB.position, {
+                        duration: .3,
+                        delay: 0,
+                        y: "-5.5",
+
+                    })
+
+                    
+
+                    gsap.to(ΔB1_LeftDrawer_root.position, {
+                        duration: .3,
+                        delay: 0,
+                        x: "-6.5",
+
+                    })
+
+                    gsap.to(ΔB2_RightDrawer_root.position, {
+                        duration: .3,
+                        delay: 0,
+                        x: "6.5",
+
+                    })
+                }
+
+
+                let closeHomeBar = () => {
+                        gsap.to(ΔA_Menubar_root.position, {
 							duration: .2,
 							delay: 0,
 							y: "10",
@@ -7853,6 +7902,29 @@
 							x: "16.5",
 
 						})
+                }
+
+
+                document.addEventListener("keydown", function(event) {
+					if (event.key === "=") {
+                        play_sfx_click_gen()
+						
+                        openHomeBar()
+						
+
+					}
+				})
+
+
+                document.addEventListener("keydown", function(event) {
+					if (event.ctrlKey && event.key === "=") {
+
+                        // sfx_hide
+                        play_sfx_click_gen()
+						
+                        closeHomeBar()
+
+						
 					}
 				})
 
@@ -8080,7 +8152,7 @@
                             "Testing234", "TestingClass234",
                             "./assets/icons/Music/008-producer.png", "",
                             "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
-                            toggleMusicPlayer, "white"
+                            toggleMusicPlayer, "rgba(255, 255, 255, 0.25)"
                         )
                     )
 
@@ -8332,6 +8404,7 @@
                 // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
                 // \- # userΔ_Controls_root
                 // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
+				
 
                 userΔ_Controls_root = new THREE.Group()
 				userΔ_Controls_root.position.set(-4, -5, 0)
@@ -8361,6 +8434,111 @@
                 )
 
 
+
+				// HUD
+				const orbitGeometryDimensions03 = {
+					radius: 20,
+					tube: 1,
+					radialSegements: 16,
+					tubularSegments: 100,
+					arc: 6.28
+				}
+
+				let orbitMatrix03 = new THREE.TorusGeometry(
+					orbitGeometryDimensions03.radius,
+					orbitGeometryDimensions03.tube,
+					orbitGeometryDimensions03.radialSegements,
+					orbitGeometryDimensions03.tubularSegments,
+					orbitGeometryDimensions03.arc,
+				)
+
+
+
+
+
+				// #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
+                // \- # userΔ_LH_Menu_root
+                // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
+
+                userΔ_LH_Menu_root = new THREE.Group()
+				userΔ_LH_Menu_root.position.set(-4, -5, 0)
+				userΔ_LH_Menu_root.rotation.set(0, 0, 0)
+				userΔ_LH_Menu_root.scale.set(0.0035, 0.0035, 0.0035)
+				UserHud_default_root.add(userΔ_LH_Menu_root)
+                camera.attach(userΔ_LH_Menu_root)
+
+				// userΔ_LH_Menu_baseA.add(
+                //     new hoverObject(
+                //         'img',
+                //         0, 0, 0,
+                //         0, 0, 0,
+                //         0.1, 0.1, 0.1,
+                //         "Testing234", "TestingClass234",
+                //         "./assets/img/10-ObjectUI/Shapes/Diamond.png", "",
+                //         "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+                //     )
+                // )
+
+
+					userΔ_LH_Menu_baseA = new THREE.Group()
+					userΔ_LH_Menu_baseA.position.set(0, 1, 0)
+					userΔ_LH_Menu_baseA.rotation.set(0, 0, 0)
+					userΔ_LH_Menu_baseA.scale.set(1, 1, 1)
+					userΔ_LH_Menu_root.add(userΔ_LH_Menu_baseA)
+
+
+						// #+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#
+						// LH ORBIT TREE
+						// #+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#
+						userΔ_LH_Menu_baseComponentA_root = new THREE.Group()
+						userΔ_LH_Menu_baseComponentA_root.position.set(0, 1, 0)
+						userΔ_LH_Menu_baseComponentA_root.rotation.set(0, 0, 0)
+						userΔ_LH_Menu_baseComponentA_root.scale.set(1, 1, 1)
+						userΔ_LH_Menu_baseA.add(userΔ_LH_Menu_baseComponentA_root)
+
+
+
+						
+							userΔ_LH_Menu_baseComponentA_Orbit01 = new THREE.Group()
+							userΔ_LH_Menu_baseComponentA_Orbit01.position.set(-250, 300, 0)
+							userΔ_LH_Menu_baseComponentA_Orbit01.rotation.set(0, 0, 0)
+							userΔ_LH_Menu_baseComponentA_Orbit01.scale.set(10, 10, 10)
+							userΔ_LH_Menu_baseA.add(userΔ_LH_Menu_baseComponentA_Orbit01)
+
+
+
+							const mat_userΔ_LH_Menu_baseComponentA_Orbit01 = new THREE.MeshBasicMaterial({ map: SceneWallpaper_01, side: THREE.DoubleSide });
+							mesh_userΔ_LH_Menu_baseComponentA_Orbit01 = new THREE.Mesh(orbitMatrix03, mat_userΔ_LH_Menu_baseComponentA_Orbit01);
+							mat_userΔ_LH_Menu_baseComponentA_Orbit01.transparent = false;
+							mat_userΔ_LH_Menu_baseComponentA_Orbit01.wireframe = false;
+							mat_userΔ_LH_Menu_baseComponentA_Orbit01.alphaMap = SceneWallpaper_01;
+							mesh_userΔ_LH_Menu_baseComponentA_Orbit01.position.set(0, 0.5, 0);
+							// mesh_userΔ_LH_Menu_baseComponentA_Orbit01.position.set(-15000, 0, 0);
+							mesh_userΔ_LH_Menu_baseComponentA_Orbit01.scale.set(1, 1, 1);
+							mesh_userΔ_LH_Menu_baseComponentA_Orbit01.rotation.set(0.544, 0, -0.557)
+							mesh_userΔ_LH_Menu_baseComponentA_Orbit01.rotateX( - Math.PI / 2 );
+
+							// userΔ_LH_Menu_baseComponentA_Orbit01.lookAt(camera)
+							
+							userΔ_LH_Menu_baseComponentA_Orbit01.add(mesh_userΔ_LH_Menu_baseComponentA_Orbit01)
+						
+						// #+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#
+						// LH GEAR TREE
+						// #+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#
+
+
+
+						// #+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#
+						// LH HAND TREE
+						// #+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#
+
+
+
+
+
+
+
+
                 // setUp_hardCode_ObjectBuild
 				// #################################################################
 				// #################################################################
@@ -8388,6 +8566,56 @@
                 //....SSSSSS......cccc......eeee.................eeee.....
                 //........................................................
 
+				// VideoPresentation
+				const orbitGeometryDimensions01 = {
+					radius: 20,
+					tube: 0.25,
+					radialSegements: 16,
+					tubularSegments: 100,
+					arc: 6.28
+				}
+
+				// RealityDataCube
+				const orbitGeometryDimensions02 = {
+					radius: 20,
+					tube: 1,
+					radialSegements: 16,
+					tubularSegments: 100,
+					arc: 6.28
+				}
+
+
+				
+
+				let orbitMatrix01 = new THREE.TorusGeometry(
+					orbitGeometryDimensions01.radius,
+					orbitGeometryDimensions01.tube,
+					orbitGeometryDimensions01.radialSegements,
+					orbitGeometryDimensions01.tubularSegments,
+					orbitGeometryDimensions01.arc,
+				)
+
+
+				testOrbit = new THREE.Group()
+				testOrbit.position.set(0, 0, 0)
+				testOrbit.rotation.set(0, 0, 0)
+				testOrbit.scale.set(0.01, 0.01, 0.01)
+				scene.add(testOrbit)
+
+				const mat_testOrbit = new THREE.MeshBasicMaterial({ map: SceneWallpaper_01, side: THREE.DoubleSide });
+				mesh_testOrbit = new THREE.Mesh(orbitMatrix01, mat_testOrbit);
+				mat_testOrbit.transparent = false;
+				mat_testOrbit.wireframe = false;
+				mat_testOrbit.alphaMap = SceneWallpaper_01;
+				mesh_testOrbit.position.set(-35, 40, 10);
+				// mesh_testOrbit.position.set(-15000, 0, 0);
+				mesh_testOrbit.scale.set(1, 1, 1);
+				mesh_testOrbit.rotation.set(0, 0, 0)
+				// mesh_testOrbit.rotateX( - Math.PI / 2 );
+
+				// testOrbit.lookAt(camera)
+				
+				testOrbit.add(mesh_testOrbit)
 
                 // cube_root
                 // ----------------------------------------------------
@@ -8437,6 +8665,35 @@
                         realityMinisA_root.scale.set(1, 1, 1)
                         cubeAnimations_baseA.add(realityMinisA_root)
 
+
+                        realityMiniA_button = new THREE.Group()
+                        realityMiniA_button.position.set(-0.37, 0.45, 0)
+                        realityMiniA_button.rotation.set(0, 0, 0)
+                        realityMiniA_button.scale.set(1, 1, 1)
+                        cubeAnimations_baseA.add(realityMiniA_button)
+
+                        let testFunctionMini = () => {
+                            console.log("active!")
+                        }
+
+                        realityMiniA_button.add(
+					
+                            new TechIcon(
+                                0, -0.05, 0.25,
+                                0, 0, 0,
+                                0.0055, 0.0055, 0.0055,
+                                'DefaultTechIconId', 'DefaultTechIconClassName',
+                                'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+                                'DefaultImgId', 'DefaultImgClassName',
+                                'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+                                "./assets/icons/00-Official/UI/Isometric/tools/brainstorming.svg", "",
+                                testFunctionMini, 
+                                "Learn More about ❖",
+                                "Click to get started"
+                            )
+
+                        )
+
                             realityMiniA01 = new THREE.Group()
                             realityMiniA01.position.set(0, 0, 0)
                             realityMiniA01.rotation.set(0, 0, 0)
@@ -8465,6 +8722,16 @@
                                     duration: 10,
                                     delay: 0,
                                     x: 5,
+                                })
+
+                                
+                                gsap.from(realityMiniA_button.scale, {
+                                    // repeat: -1,
+                                    duration: 7,
+                                    delay: 0,
+                                    x: 0.0001,
+                                    y: 0.0001,
+                                    z: 0.0001,
                                 })
 
                                 gsap.from(mesh_realityMiniA01.scale, {
@@ -9196,6 +9463,8 @@
 
                                     let putClockInCenterOnFloor = function moveClockToCenterΔ() {
 
+                                        
+
 
 
                                         gsap.to(camera.position, {
@@ -9259,7 +9528,7 @@
 
                                         
 
-                                        
+                                        openHomeBar()
 
 
 
@@ -10338,6 +10607,31 @@
                             
                             video_componentC_baseE.add(mesh_video_componentC_baseE)
 
+
+
+							// video_componentC_baseF - Orbit_Sphere01
+                            // ----------------------------------------------------
+                            video_componentC_baseF = new THREE.Group()
+                            video_componentC_baseF.position.set(0.15, -3.75, -0.03)
+                            video_componentC_baseF.rotation.set(0, 0, 0)
+                            video_componentC_baseF.scale.set(0.075, 0.075, 0.075)
+                            video_componentC_root.add(video_componentC_baseF)
+
+
+                            const mat_video_componentC_baseF = new THREE.MeshBasicMaterial({ map: SceneWallpaper_01, side: THREE.DoubleSide });
+                            mesh_video_componentC_baseF = new THREE.Mesh(orbitMatrix01, mat_video_componentC_baseF);
+                            mat_video_componentC_baseF.transparent = false;
+                            mat_video_componentC_baseF.wireframe = false;
+                            mat_video_componentC_baseF.alphaMap = SceneWallpaper_01;
+                            mesh_video_componentC_baseF.position.set(0, 0.5, 0);
+                            // mesh_video_componentC_baseF.position.set(-15000, 0, 0);
+                            mesh_video_componentC_baseF.scale.set(1, 1, 1);
+                            mesh_video_componentC_baseF.rotation.set(0.544, 0, -0.557)
+                            mesh_video_componentC_baseF.rotateX( - Math.PI / 2 );
+
+                            // video_componentC_baseF.lookAt(camera)
+                            
+                            video_componentC_baseF.add(mesh_video_componentC_baseF)
 
 
 
@@ -11764,17 +12058,17 @@
 				folderLoadTestingContainer01.add(floorDesign01_Grid.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
 				folderLoadTestingContainer01.add(floorDesign01_Grid.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
-				const folderLoadTestingContainer02 = gui.addFolder('<<< LoadPoint02 :: TimeΔ_Clock_root >>>')
+				const folderLoadTestingContainer02 = gui.addFolder('<<< LoadPoint02 :: video_componentC_baseF >>>')
 
-				folderLoadTestingContainer02.add(TimeΔ_Clock_root.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
-				folderLoadTestingContainer02.add(TimeΔ_Clock_root.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
-				folderLoadTestingContainer02.add(TimeΔ_Clock_root.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
-				folderLoadTestingContainer02.add(TimeΔ_Clock_root.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
-				folderLoadTestingContainer02.add(TimeΔ_Clock_root.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
-				folderLoadTestingContainer02.add(TimeΔ_Clock_root.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
-				folderLoadTestingContainer02.add(TimeΔ_Clock_root.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
-				folderLoadTestingContainer02.add(TimeΔ_Clock_root.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
-				folderLoadTestingContainer02.add(TimeΔ_Clock_root.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
+				folderLoadTestingContainer02.add(video_componentC_baseF.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
+				folderLoadTestingContainer02.add(video_componentC_baseF.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
+				folderLoadTestingContainer02.add(video_componentC_baseF.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
+				folderLoadTestingContainer02.add(video_componentC_baseF.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
+				folderLoadTestingContainer02.add(video_componentC_baseF.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
+				folderLoadTestingContainer02.add(video_componentC_baseF.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
+				folderLoadTestingContainer02.add(video_componentC_baseF.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
+				folderLoadTestingContainer02.add(video_componentC_baseF.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
+				folderLoadTestingContainer02.add(video_componentC_baseF.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
 				const folderLoadTestingContainer03 = gui.addFolder('<<< LoadPoint03 :: particles >>>')
 
