@@ -3019,6 +3019,65 @@
                         let video_componentF_baseA02
                         let video_componentF_baseA03
 
+			let dataCycleA00_root
+				let dataCycleA00_baseA
+					let dataCycleA00_front_root
+						let dataCycleA00_front_card_root
+						let dataCycleA00_front_card_TechStream_root
+
+						let dataCycleA00_front_card_base_p01_icons_root
+							let dataCycleA00_front_card_base_p01_viwerPanel
+
+						let dataCycleA00_front_card_base_c01_icon
+							let dataCycleA00_front_card_base_c01_viwerPanel
+
+						let dataCycleA00_front_card_base_n01_icon
+							let dataCycleA00_front_card_base_n01_viewerPanel
+
+					let dataCycleA00_back_root
+						let dataCycleA00_back_card_root
+						let dataCycleA00_back_card_base_p01
+						let dataCycleA00_back_card_base_c01
+						let dataCycleA00_back_card_base_n01
+
+					let dataCycleA00_left_root
+						let dataCycleA00_left_card_root
+						let dataCycleA00_left_card_base_p01
+						let dataCycleA00_left_card_base_c01
+						let dataCycleA00_left_card_base_n01
+
+					let dataCycleA00_Right_root
+						let dataCycleA00_right_card_root
+						let dataCycleA00_right_card_base_p01
+						let dataCycleA00_right_card_base_c01
+						let dataCycleA00_right_card_base_n01
+
+					let dataCycleA00_frontLeft_root
+						let dataCycleA00_frontLeft_card_root
+						let dataCycleA00_frontLeft_card_base_p01
+						let dataCycleA00_frontLeft_card_base_c01
+						let dataCycleA00_frontLeft_card_base_n01
+
+					let dataCycleA00_frontRight_root
+						let dataCycleA00_frontRight_card_root
+						let dataCycleA00_frontRight_card_base_p01
+						let dataCycleA00_frontRight_card_base_c01
+						let dataCycleA00_frontRight_card_base_n01
+
+					let dataCycleA00_backLeft_root
+						let dataCycleA00_backLeft_card_root
+						let dataCycleA00_backLeft_card_base_p01
+						let dataCycleA00_backLeft_card_base_c01
+						let dataCycleA00_backLeft_card_base_n01
+
+					let dataCycleA00_backRight_root
+						let dataCycleA00_backRight_card_root
+						let dataCycleA00_backRight_card_base_p01
+						let dataCycleA00_backRight_card_base_c01
+						let dataCycleA00_backRight_card_base_n01
+
+			
+
 
 			
 
@@ -8573,11 +8632,11 @@
 							mat_userΔ_LH_Menu_baseComponentA_Orbit01.transparent = false;
 							mat_userΔ_LH_Menu_baseComponentA_Orbit01.wireframe = false;
 							mat_userΔ_LH_Menu_baseComponentA_Orbit01.alphaMap = SceneWallpaper_01;
-							mesh_userΔ_LH_Menu_baseComponentA_Orbit01.position.set(0, 0.5, 0);
+							mesh_userΔ_LH_Menu_baseComponentA_Orbit01.position.set(0, -5, 0);
 							// mesh_userΔ_LH_Menu_baseComponentA_Orbit01.position.set(-15000, 0, 0);
-							mesh_userΔ_LH_Menu_baseComponentA_Orbit01.scale.set(1, 1, 1);
+							mesh_userΔ_LH_Menu_baseComponentA_Orbit01.scale.set(2, 2, 2);
 							// mesh_userΔ_LH_Menu_baseComponentA_Orbit01.rotation.set(0.544, 0, -0.557)
-							mesh_userΔ_LH_Menu_baseComponentA_Orbit01.rotation.set(3.14, 3.14, -0.557)
+							mesh_userΔ_LH_Menu_baseComponentA_Orbit01.rotation.set(2.0357437787207306, -0.033, -3.14)
 							mesh_userΔ_LH_Menu_baseComponentA_Orbit01.rotateX( - Math.PI / 2 );
 
 							// userΔ_LH_Menu_baseComponentA_Orbit01.lookAt(camera)
@@ -8838,9 +8897,10 @@
 								// WhiteHand
 								
 								userΔ_LH_Menu_baseComponentC_root = new THREE.Group()
-								userΔ_LH_Menu_baseComponentC_root.position.set(250, 600, 0)
+								userΔ_LH_Menu_baseComponentC_root.position.set(70, 700, 0)
 								userΔ_LH_Menu_baseComponentC_root.rotation.set(0, 0, 0)
-								userΔ_LH_Menu_baseComponentC_root.scale.set(20, 20, 20)
+								// userΔ_LH_Menu_baseComponentC_root.scale.set(20, 20, 20) // OriginalHand
+								userΔ_LH_Menu_baseComponentC_root.scale.set(8.5, 8.5, 8.5) // OriginalHand
 								userΔ_LH_Menu_baseA.add(userΔ_LH_Menu_baseComponentC_root)
 
 
@@ -8851,7 +8911,7 @@
 										0, 0, 0,
 										0.1, 0.1, 0.1,
 										"Testing234", "TestingClass234",
-										"./assets/img/02-UserUI/hands/03_ParticleHands/official01/PlexusHand06.png", "",
+										"./assets/img/02-UserUI/hands/03_ParticleHands/official02/PlexusHandOpenLeft02.png", "",
 										"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
 									)
 								)
@@ -9239,9 +9299,9 @@
 						// WhiteHand
 								
 						userΔ_RH_Menu_baseComponentC_root = new THREE.Group()
-						userΔ_RH_Menu_baseComponentC_root.position.set(-250, 600, 0)
+						userΔ_RH_Menu_baseComponentC_root.position.set(-90, 700, 0)
 						userΔ_RH_Menu_baseComponentC_root.rotation.set(0, 0, 0)
-						userΔ_RH_Menu_baseComponentC_root.scale.set(20, 20, 20)
+						userΔ_RH_Menu_baseComponentC_root.scale.set(8.5, 8.5, 8.5)
 						userΔ_RH_Menu_baseA.add(userΔ_RH_Menu_baseComponentC_root)
 
 
@@ -9252,10 +9312,14 @@
 								0, 0, 0,
 								0.1, 0.1, 0.1,
 								"Testing234", "TestingClass234",
-								"./assets/img/02-UserUI/hands/03_ParticleHands/official01/PlexusHand05.png", "",
+								"./assets/img/02-UserUI/hands/03_ParticleHands/official02/PlexusHandOpenRight02.png", "",
 								"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
 							)
 						)
+
+
+
+				
 
 
 
@@ -12254,9 +12318,119 @@
 
 
 
+				dataCycleA00_root = new THREE.Group()
+				dataCycleA00_root.position.set(0, 0, 0)
+				dataCycleA00_root.rotation.set(0, 0, 0)
+				dataCycleA00_root.scale.set(1, 1, 1)
+				scene.add(dataCycleA00_root)
+
+
+					dataCycleA00_baseA = new THREE.Group()
+					dataCycleA00_baseA.position.set(0, 0, 0)
+					dataCycleA00_baseA.rotation.set(0, 0, 0)
+					dataCycleA00_baseA.scale.set(1, 1, 1)
+					dataCycleA00_root.add(dataCycleA00_baseA)
+
+						dataCycleA00_front_root = new THREE.Group()
+						dataCycleA00_front_root.position.set(0, 0, -10)
+						dataCycleA00_front_root.rotation.set(0, 0, 0)
+						dataCycleA00_front_root.scale.set(1, 1, 1)
+						dataCycleA00_baseA.add(dataCycleA00_front_root)
+
+
+						// TechStream_FrontCard
+						dataCycleA00_front_card_TechStream_root = new THREE.Group()
+						dataCycleA00_front_card_TechStream_root.position.set(-6, 1.87, -10)
+						dataCycleA00_front_card_TechStream_root.rotation.set(0, 0, 0)
+						dataCycleA00_front_card_TechStream_root.scale.set(0.01, 0.01, 0.01)
+						dataCycleA00_baseA.add(dataCycleA00_front_card_TechStream_root)
+
+
+						// ./assets/img/10-ObjectUI/Shapes/Square.png
+						dataCycleA00_front_card_TechStream_root.add(
+							new hoverObject(
+								'img',
+								0, 0, 0,
+								0, 0, 0,
+								0.1, 0.1, 0.1,
+								"Testing234", "TestingClass234",
+								"./assets/img/10-ObjectUI/05-TechStreams/TechStreamDefault.png", "",
+								"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+							)
+						)
+
+
+							dataCycleA00_front_card_base_p01_icons_root = new THREE.Group()
+							dataCycleA00_front_card_base_p01_icons_root.position.set(-6, 4, 0)
+							dataCycleA00_front_card_base_p01_icons_root.rotation.set(0, 0, 0)
+							dataCycleA00_front_card_base_p01_icons_root.scale.set(0.25, 0.25, 0.25)
+							dataCycleA00_front_root.add(dataCycleA00_front_card_base_p01_icons_root)
+
+							let viewerPanelTest = () => {
+								console.log("viewerPanel_Test_Completed")
+
+								if (dataCycleA00_front_card_base_p01_viwerPanel.scale.x === 0.000001) {
+        
+
+                                    gsap.to(dataCycleA00_front_card_base_p01_viwerPanel.scale, {
+                                        duration: .25,
+                                        delay: 0,
+                                        x: 1,
+                                        y: 1,
+                                        z: 1,
+
+                                    })
+                                    
+                                } else {
+
+                                    gsap.to(dataCycleA00_front_card_base_p01_viwerPanel.scale, {
+                                        duration: .25,
+                                        delay: 0,
+                                        x: 0.000001,
+                                        y: 0.000001,
+                                        z: 0.000001,
+
+                                    })
+                                }
+							}
+
+							dataCycleA00_front_card_base_p01_icons_root.add(
+                                new TechIcon(
+                                    0, 0, 0,
+                                    0, 0, 0,
+                                    0.05, 0.05, 0.05,
+                                    'DefaultTechIconId', 'DefaultTechIconClassName',
+                                    'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+                                    'DefaultImgId', 'DefaultImgClassName',
+                                    'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+                                    "./assets/icons/00-Official/UI/Isometric/Tools/list.svg", "",
+                                    viewerPanelTest, 
+                                    "ShowΔ",
+                                    "Toggle from here or main menu top left"
+                                ) 
+                            )
+
+
+								dataCycleA00_front_card_base_p01_viwerPanel = new THREE.Group()
+								dataCycleA00_front_card_base_p01_viwerPanel.position.set(-5, 3, -10)
+								dataCycleA00_front_card_base_p01_viwerPanel.rotation.set(0, 0, 0)
+								dataCycleA00_front_card_base_p01_viwerPanel.scale.set(0.000001, 0.000001, 0.000001)
+								scene.add(dataCycleA00_front_card_base_p01_viwerPanel)
+
+								dataCycleA00_front_card_base_p01_viwerPanel.add(
+									new makePDF_Viewer(
+										0, 0, 0,
+										0, 0, 0,
+										0.0035, 0.0035, 0.0035,
+										"hoverClockA1",
+										"https://www.wikipedia.org/",
+										"1920px", "1200"
+									)
+								)
 
 
 
+				
 
 
 
@@ -12806,17 +12980,17 @@
 				folderLoadTestingContainer03.add(userΔ_LH_Menu_baseComponentC_root.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
 				folderLoadTestingContainer03.add(userΔ_LH_Menu_baseComponentC_root.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
-				const folderLoadTestingContainer04 = gui.addFolder('<<< LoadPoint04 :: ATT_PrimerBooklet__Root >>>')
+				const folderLoadTestingContainer04 = gui.addFolder('<<< LoadPoint04 :: dataCycleA00_front_card_base_p01_icons_root >>>')
 
-				folderLoadTestingContainer04.add(ATT_PrimerBooklet__Root.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
-				folderLoadTestingContainer04.add(ATT_PrimerBooklet__Root.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
-				folderLoadTestingContainer04.add(ATT_PrimerBooklet__Root.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
-				folderLoadTestingContainer04.add(ATT_PrimerBooklet__Root.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
-				folderLoadTestingContainer04.add(ATT_PrimerBooklet__Root.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
-				folderLoadTestingContainer04.add(ATT_PrimerBooklet__Root.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
-				folderLoadTestingContainer04.add(ATT_PrimerBooklet__Root.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
-				folderLoadTestingContainer04.add(ATT_PrimerBooklet__Root.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
-				folderLoadTestingContainer04.add(ATT_PrimerBooklet__Root.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
+				folderLoadTestingContainer04.add(dataCycleA00_front_card_base_p01_icons_root.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
+				folderLoadTestingContainer04.add(dataCycleA00_front_card_base_p01_icons_root.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
+				folderLoadTestingContainer04.add(dataCycleA00_front_card_base_p01_icons_root.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
+				folderLoadTestingContainer04.add(dataCycleA00_front_card_base_p01_icons_root.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
+				folderLoadTestingContainer04.add(dataCycleA00_front_card_base_p01_icons_root.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
+				folderLoadTestingContainer04.add(dataCycleA00_front_card_base_p01_icons_root.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
+				folderLoadTestingContainer04.add(dataCycleA00_front_card_base_p01_icons_root.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
+				folderLoadTestingContainer04.add(dataCycleA00_front_card_base_p01_icons_root.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
+				folderLoadTestingContainer04.add(dataCycleA00_front_card_base_p01_icons_root.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
 				const folderLoadTestingContainer05 = gui.addFolder('<<< LoadPoint05 :: ATT_RampUp_RSC__Root >>>')
 
