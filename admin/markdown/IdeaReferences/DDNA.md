@@ -3,6 +3,8 @@
 - below has a codepen for what I want to model ΔDNA
 \- https://codepen.io/logicbomber/pen/dMvGGo
 
+\- LinkToShadesOfGrey#
+    - https://htmlcolorcodes.com/colors/shades-of-gray/
 
 \- Wikipedia Combos
     - game developer
@@ -50,6 +52,9 @@ Immersive
 User 
 Xperience 
 System
+
+
+# 
 
 
 

@@ -9011,8 +9011,8 @@
 							mat_userΔ_RH_Menu_baseComponentA_Orbit01.alphaMap = SceneWallpaper_01;
 							mesh_userΔ_RH_Menu_baseComponentA_Orbit01.position.set(0, 0.5, 0);
 							// mesh_userΔ_RH_Menu_baseComponentA_Orbit01.position.set(-15000, 0, 0);
-							mesh_userΔ_RH_Menu_baseComponentA_Orbit01.scale.set(1, 1, 1);
-							mesh_userΔ_RH_Menu_baseComponentA_Orbit01.rotation.set(0.544, 0, -0.557)
+							mesh_userΔ_RH_Menu_baseComponentA_Orbit01.scale.set(2, 2, 2);
+							mesh_userΔ_RH_Menu_baseComponentA_Orbit01.rotation.set(2.0357437787207306, -0.033, -3.14)
 							mesh_userΔ_RH_Menu_baseComponentA_Orbit01.rotateX( - Math.PI / 2 );
 
 							// userΔ_RH_Menu_baseComponentA_Orbit01.lookAt(camera)
@@ -12992,17 +12992,17 @@
 				folderLoadTestingContainer04.add(dataCycleA00_front_card_base_p01_icons_root.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
 				folderLoadTestingContainer04.add(dataCycleA00_front_card_base_p01_icons_root.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
-				const folderLoadTestingContainer05 = gui.addFolder('<<< LoadPoint05 :: ATT_RampUp_RSC__Root >>>')
+				const folderLoadTestingContainer05 = gui.addFolder('<<< LoadPoint05 :: userΔ_LH_Menu_root >>>')
 
-				folderLoadTestingContainer05.add(ATT_RampUp_RSC__Root.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
-				folderLoadTestingContainer05.add(ATT_RampUp_RSC__Root.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
-				folderLoadTestingContainer05.add(ATT_RampUp_RSC__Root.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
-				folderLoadTestingContainer05.add(ATT_RampUp_RSC__Root.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
-				folderLoadTestingContainer05.add(ATT_RampUp_RSC__Root.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
-				folderLoadTestingContainer05.add(ATT_RampUp_RSC__Root.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
-				folderLoadTestingContainer05.add(ATT_RampUp_RSC__Root.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
-				folderLoadTestingContainer05.add(ATT_RampUp_RSC__Root.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
-				folderLoadTestingContainer05.add(ATT_RampUp_RSC__Root.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
+				folderLoadTestingContainer05.add(userΔ_LH_Menu_root.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
+				folderLoadTestingContainer05.add(userΔ_LH_Menu_root.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
+				folderLoadTestingContainer05.add(userΔ_LH_Menu_root.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
+				folderLoadTestingContainer05.add(userΔ_LH_Menu_root.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
+				folderLoadTestingContainer05.add(userΔ_LH_Menu_root.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
+				folderLoadTestingContainer05.add(userΔ_LH_Menu_root.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
+				folderLoadTestingContainer05.add(userΔ_LH_Menu_root.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
+				folderLoadTestingContainer05.add(userΔ_LH_Menu_root.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
+				folderLoadTestingContainer05.add(userΔ_LH_Menu_root.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
 				const folderLoadTestingContainer06 = gui.addFolder('<<< LoadPoint06 : EmulatorTest01 >>>')
 
@@ -13665,6 +13665,14 @@
 					userΔ_RH_Menu_baseComponentB_Gear02c.rotation.z = time * 0.002
 					// userΔ_RH_Menu_baseComponentB_Gear02d.rotation.z = time * 0.0015
 					// userΔ_RH_Menu_baseComponentB_Gear02e.rotation.z = time * -0.01
+
+
+					 // Time LeftPrimaryWindow_root Experience = Math.cos(time * speed) * distance + height
+					userΔ_LH_Menu_root.position.y = Math.cos(time * 0.00075) * -0.1 + -4.05
+					userΔ_RH_Menu_root.position.y = Math.cos(time * 0.00075) * -0.1 + -4.05
+
+
+
 
 
 
