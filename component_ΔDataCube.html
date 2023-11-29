@@ -2673,8 +2673,31 @@
 				// Hands
 				let userΔ_LH_Menu_baseComponentC_root
 
-				// HandOptions
+				// LH_MiniGears
 				let userΔ_LH_Menu_baseComponentD_root
+					let LH_miniGearA01
+					let LH_miniGearA02
+
+					let LH_miniGearB01
+					let LH_miniGearB02
+
+
+				// HandOptions
+				let userΔ_LH_Menu_baseComponentE_root
+				
+				let LH_Menu_baseComponentE01_TechPanelA
+				let LH_Menu_baseComponentE01_TechPanelB
+				let LH_Menu_baseComponentE01_TechPanelC
+
+				let LH_Menu_baseComponentE01_TimeCircle01
+
+
+
+				// LH Buttons
+				let LH_Button_TimeΔ_Container
+					let LH_Button_TimeΔ_01
+
+
 
 
 
@@ -2701,6 +2724,9 @@
 						let userΔ_RH_Menu_baseComponentB_Gear02c
 						let userΔ_RH_Menu_baseComponentB_Gear02d
 						let userΔ_RH_Menu_baseComponentB_Gear02e
+
+
+				let userΔ_RH_IconMenuA_
 						
 
 
@@ -2708,8 +2734,16 @@
 				// Hands
 				let userΔ_RH_Menu_baseComponentC_root
 
-				// HandOptions
+				// RH_MiniGears
 				let userΔ_RH_Menu_baseComponentD_root
+					let RH_miniGearA01
+					let RH_miniGearA02
+
+					let RH_miniGearB01
+					let RH_miniGearB02
+
+				// HandOptions
+				
 
 
                 // SubTestItems 
@@ -8894,27 +8928,115 @@
 								)
 
 
-								// WhiteHand
-								
-								userΔ_LH_Menu_baseComponentC_root = new THREE.Group()
-								userΔ_LH_Menu_baseComponentC_root.position.set(70, 700, 0)
-								userΔ_LH_Menu_baseComponentC_root.rotation.set(0, 0, 0)
-								// userΔ_LH_Menu_baseComponentC_root.scale.set(20, 20, 20) // OriginalHand
-								userΔ_LH_Menu_baseComponentC_root.scale.set(8.5, 8.5, 8.5) // OriginalHand
-								userΔ_LH_Menu_baseA.add(userΔ_LH_Menu_baseComponentC_root)
+							// WhiteHand
+							
+							userΔ_LH_Menu_baseComponentC_root = new THREE.Group()
+							userΔ_LH_Menu_baseComponentC_root.position.set(70, 700, 0)
+							userΔ_LH_Menu_baseComponentC_root.rotation.set(0, 0, 0)
+							// userΔ_LH_Menu_baseComponentC_root.scale.set(20, 20, 20) // OriginalHand
+							userΔ_LH_Menu_baseComponentC_root.scale.set(8.5, 8.5, 8.5) // OriginalHand
+							userΔ_LH_Menu_baseA.add(userΔ_LH_Menu_baseComponentC_root)
 
 
-								userΔ_LH_Menu_baseComponentC_root.add(
-									new hoverObject(
-										'img',
-										0, 0, 0,
-										0, 0, 0,
-										0.1, 0.1, 0.1,
-										"Testing234", "TestingClass234",
-										"./assets/img/02-UserUI/hands/03_ParticleHands/official02/PlexusHandOpenLeft02.png", "",
-										"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
-									)
+							userΔ_LH_Menu_baseComponentC_root.add(
+								new hoverObject(
+									'img',
+									0, 0, 0,
+									0, 0, 0,
+									0.1, 0.1, 0.1,
+									"Testing234", "TestingClass234",
+									"./assets/img/02-UserUI/hands/03_ParticleHands/official02/PlexusHandOpenLeft02.png", "",
+									"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
 								)
+							)
+
+
+
+							// Panel Animations
+							
+							LH_miniGearA01 = new THREE.Group()
+							LH_miniGearA01.position.set(-450, 650, 0)
+							LH_miniGearA01.rotation.set(0, 0, 0)
+							// LH_miniGearA01.scale.set(20, 20, 20) // OriginalHand
+							LH_miniGearA01.scale.set(5, 5, 5) // OriginalHand
+							userΔ_LH_Menu_baseA.add(LH_miniGearA01)
+
+
+							LH_miniGearA01.add(
+								new hoverObject(
+									'img',
+									0, 0, 0,
+									0, 0, 0,
+									0.1, 0.1, 0.1,
+									"Testing234", "TestingClass234",
+									"./assets/img/03-HudUI/HudGears/gearGold_Default02/RealityGearA05.png", "",
+									"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+								)
+							)
+
+
+							LH_miniGearA02 = new THREE.Group()
+							LH_miniGearA02.position.set(-450, 650, 0)
+							LH_miniGearA02.rotation.set(0, 0, 0)
+							// LH_miniGearA02.scale.set(20, 20, 20) // OriginalHand
+							LH_miniGearA02.scale.set(3, 3, 3) // OriginalHand
+							userΔ_LH_Menu_baseA.add(LH_miniGearA02)
+
+
+							LH_miniGearA02.add(
+								new hoverObject(
+									'img',
+									0, 0, 0,
+									0, 0, 0,
+									0.1, 0.1, 0.1,
+									"Testing234", "TestingClass234",
+									"./assets/img/03-HudUI/HudGears/gearGold_Default02/RealityGearA06.png", "",
+									"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+								)
+							)
+
+
+
+							LH_miniGearB01 = new THREE.Group()
+							LH_miniGearB01.position.set(-970, 600, 0)
+							LH_miniGearB01.rotation.set(0, 0, 0)
+							// LH_miniGearB01.scale.set(20, 20, 20) // OriginalHand
+							LH_miniGearB01.scale.set(5, 5, 5) // OriginalHand
+							userΔ_LH_Menu_baseA.add(LH_miniGearB01)
+
+
+							LH_miniGearB01.add(
+								new hoverObject(
+									'img',
+									0, 0, 0,
+									0, 0, 0,
+									0.1, 0.1, 0.1,
+									"Testing234", "TestingClass234",
+									"./assets/img/03-HudUI/HudGears/gearGold_Default02/RealityGearA05.png", "",
+									"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+								)
+							)
+
+
+							LH_miniGearB02 = new THREE.Group()
+							LH_miniGearB02.position.set(-970, 600, 0)
+							LH_miniGearB02.rotation.set(0, 0, 0)
+							// LH_miniGearB02.scale.set(20, 20, 20) // OriginalHand
+							LH_miniGearB02.scale.set(3, 3, 3) // OriginalHand
+							userΔ_LH_Menu_baseA.add(LH_miniGearB02)
+
+
+							LH_miniGearB02.add(
+								new hoverObject(
+									'img',
+									0, 0, 0,
+									0, 0, 0,
+									0.1, 0.1, 0.1,
+									"Testing234", "TestingClass234",
+									"./assets/img/03-HudUI/HudGears/gearGold_Default02/RealityGearA06.png", "",
+									"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+								)
+							)
 
 
 
@@ -8944,6 +9066,102 @@
 						)
 
 
+						// #+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#
+						// LH HAND TREE
+						// #+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#
+
+						LH_Menu_baseComponentE01_TechPanelA = new THREE.Group()
+						LH_Menu_baseComponentE01_TechPanelA.position.set(-570, 360, 0)
+						LH_Menu_baseComponentE01_TechPanelA.rotation.set(0, 0, -1.575)
+						// LH_Menu_baseComponentE01_TechPanelA.scale.set(20, 20, 20) // OriginalHand
+						LH_Menu_baseComponentE01_TechPanelA.scale.set(25, 27.5, 25) // OriginalHand
+						userΔ_LH_Menu_baseA.add(LH_Menu_baseComponentE01_TechPanelA)
+
+
+						LH_Menu_baseComponentE01_TechPanelA.add(
+							new hoverObject(
+								'img',
+								0, 0, 0,
+								0, 0, 0,
+								0.1, 0.1, 0.1,
+								"Testing234", "TestingClass234",
+								"./assets/img/05-Env/FloorPanels01/TechFloorPanel03_white_turnedOn.png", "",
+								"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+							)
+						)
+
+
+							LH_Menu_baseComponentE01_TechPanelB = new THREE.Group()
+							LH_Menu_baseComponentE01_TechPanelB.position.set(-70, 440, 1)
+							LH_Menu_baseComponentE01_TechPanelB.rotation.set(0, 0, -1.575)
+							// LH_Menu_baseComponentE01_TechPanelB.scale.set(20, 20, 20) // OriginalHand
+							LH_Menu_baseComponentE01_TechPanelB.scale.set(10, 10, 10) // OriginalHand
+							userΔ_LH_Menu_baseA.add(LH_Menu_baseComponentE01_TechPanelB)
+
+
+							LH_Menu_baseComponentE01_TechPanelB.add(
+								new hoverObject(
+									'img',
+									0, 0, 0,
+									0, 0, 0,
+									0.1, 0.1, 0.1,
+									"Testing234", "TestingClass234",
+									"./assets/img/04-CommunicationUI/01-ContainerHolders/ContainerWhiteA01/0-InActive/ContainerWhiteA02ia.png", "",
+									"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+								)
+							)
+
+
+						// #+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#
+						// \- LH Buttons
+						// \- ./assets/img/04-CommunicationUI/01-ContainerHolders/ContainerWhiteA01/0-InActive/ContainerWhiteA02ia.png
+						// #+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#+#
+
+						LH_Button_TimeΔ_01 = new THREE.Group()
+						LH_Button_TimeΔ_01.position.set(-70, 440, 1.2)
+						LH_Button_TimeΔ_01.rotation.set(0, 0, 0)
+						LH_Button_TimeΔ_01.scale.set(3, 3, 3) 
+						userΔ_LH_Menu_baseA.add(LH_Button_TimeΔ_01)
+
+						let makePanelADisappear = () => {
+							gsap.to(LH_Menu_baseComponentE01_TechPanelA.scale, {
+								repeat: 0,
+								duration: 1.5,
+								delay: 0,
+								x: 0.1,
+								y: 0.1,
+								z: 0.1,
+								
+							})
+						}
+
+
+						LH_Button_TimeΔ_01.add(
+
+							new hoverObject(
+								'img',
+								0, 0, 0,
+								0, 0, 0,
+								0.1, 0.1, 0.1,
+								"Testing234", "TestingClass234",
+								"./assets/icons/00-Official/UI/IconHoldersA/time-management.gif", "",
+								"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+							)
+
+							// new TechIcon(
+							// 	0, 0, 0,
+							// 	0, 0, 0,
+							// 	0.55, 0.55, 0.55,
+							// 	'DefaultTechIconId', 'DefaultTechIconClassName',
+							// 	'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+							// 	'DefaultImgId', 'DefaultImgClassName',
+							// 	'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+							// 	"./assets/icons/00-Official/UI/Isometric/UI_02/Clock.svg", "",
+							// 	makePanelADisappear, 
+							// 	"TimeΔ",
+							// 	"Click to move faster @ 1500"
+							// )
+						)
 
 
 				
@@ -10599,7 +10817,7 @@
                                     'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
                                     'DefaultImgId', 'DefaultImgClassName',
                                     'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
-                                    "./assets/icons/00-Official/UI/Isometric/SocialMedia1/002-wordpress.svg", "",
+                                    "./assets/icons/00-Official/Files02/xlsx-file-3585906.svg", "",
                                     buttonTestFunction, 
                                     "ShowΔ",
                                     "Toggle from here or main menu top left"
@@ -10620,7 +10838,7 @@
                                         0, 0, 0,
                                         0.0035, 0.0035, 0.0035,
                                         "hoverClockA1",
-                                        "https://www.wikipedia.org/",
+                                        "https://docs.google.com/spreadsheets/d/19YrmWzFmSnaTeZgfhyEub1lIZ1tJj2vb_jAJLVdRE-Q/edit?usp=sharing",
                                         "1920px", "1200"
                                     )
                                 )
@@ -13665,6 +13883,19 @@
 					userΔ_RH_Menu_baseComponentB_Gear02c.rotation.z = time * 0.002
 					// userΔ_RH_Menu_baseComponentB_Gear02d.rotation.z = time * 0.0015
 					// userΔ_RH_Menu_baseComponentB_Gear02e.rotation.z = time * -0.01
+
+					LH_miniGearA01.rotation.z = time * -0.001
+					LH_miniGearA02.rotation.z = time * 0.0015
+
+					LH_miniGearA01.position.y = Math.cos(time * 0.00075) * 1400 + 700
+					LH_miniGearA02.position.y = Math.cos(time * 0.00075) * 1400 + 700
+
+
+					LH_miniGearB01.rotation.z = time * -0.001
+					LH_miniGearB02.rotation.z = time * 0.0015
+
+					LH_miniGearB01.position.x = Math.cos(time * 0.00075) * -400 + -850
+					LH_miniGearB02.position.x = Math.cos(time * 0.00075) * -400 + -850
 
 
 					 // Time LeftPrimaryWindow_root Experience = Math.cos(time * speed) * distance + height
