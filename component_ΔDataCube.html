@@ -2496,6 +2496,22 @@
 			// videoAndΔComboTest01
 			let videoAndΔComboTest01
 			let floorDesign01_Grid, mesh_floorDesign01_Grid
+			let floorMainTree01_Grid, mesh_floorMainTree01_Grid
+
+			// TestHandΔs
+			let LeftHandΔ_Test_root, mesh_LeftHandΔ_Test_root
+				let LH_Δ01, mesh_LH_Δ01
+				let LH_Δ02, mesh_LH_Δ02
+				let LH_Δ03, mesh_LH_Δ03
+				let LH_Δ04, mesh_LH_Δ04
+				let LH_Δ05, mesh_LH_Δ05
+
+			let RightHandΔ_Test_root, mesh_RightHandΔ_Test_root
+				let RH_Δ01, mesh_RH_Δ01
+				let RH_Δ02, mesh_RH_Δ02
+				let RH_Δ03, mesh_RH_Δ03
+				let RH_Δ04, mesh_RH_Δ04
+				let RH_Δ05, mesh_RH_Δ05
 
 
 			// ExpressionVideo_MainComponents
@@ -3624,6 +3640,17 @@
 
                 // Time Img
                 const time_cover = textureLoader.load('./assets/img/10-ObjectUI/SquareImgs/TimeΔ_Container.png')
+
+
+
+				// Textures
+				const grassTex01 = textureLoader.load('./assets/textures/natureTextures/grassTex06.jpg')
+				const TreeTex01 = textureLoader.load('./assets/img/02-UserUI/04-Logo/Logo_Tree.png')
+
+
+
+				// ΔHandsItems
+				const clearWhite_ring = textureLoader.load('./assets/img/10-ObjectUI/Shapes/Ring01.png')
 
 
 
@@ -6205,7 +6232,7 @@
 
 				let position = floorGeometry.attributes.position;
 
-				const floorMaterial = new THREE.MeshBasicMaterial( { map: polygonTexBlack } );
+				const floorMaterial = new THREE.MeshBasicMaterial( { map: grassTex01 } );
 
 				// Core Execute of
 				const floor = new THREE.Mesh( floorGeometry, floorMaterial );
@@ -6953,6 +6980,8 @@
 				videoAndΔComboTest01.scale.set(1, 1, 1)
 				scene.add(videoAndΔComboTest01)
 
+
+				// search.floorTex
 				floorDesign01_Grid = new THREE.Group()
 				floorDesign01_Grid.position.set(0, -0.2, 0)
 				floorDesign01_Grid.rotation.set(0, 0, 0)
@@ -6960,19 +6989,167 @@
 				videoAndΔComboTest01.add(floorDesign01_Grid)
 
 
-				const mat_floorDesign01_Grid = new THREE.MeshBasicMaterial({ map: defaultGrid01, side: THREE.DoubleSide });
-				mesh_floorDesign01_Grid = new THREE.Mesh(geo_objT_PlaneA1, mat_floorDesign01_Grid);
-				mat_floorDesign01_Grid.transparent = true;
-				mat_floorDesign01_Grid.alphaMap = defaultGrid01;
+				const mat_floorDesign01_Grid = new THREE.MeshBasicMaterial({ map: grassTex01, side: THREE.DoubleSide });
+				mesh_floorDesign01_Grid = new THREE.Mesh(geo_objT_CircleA1, mat_floorDesign01_Grid);
+				mat_floorDesign01_Grid.transparent = false;
+				mat_floorDesign01_Grid.alphaMap = grassTex01;
 				mesh_floorDesign01_Grid.position.set(0, 0, 0);
 				// mesh_floorDesign01_Grid.position.set(-15000, 0, 0);
-				mesh_floorDesign01_Grid.scale.set(1, 1, 1);
+				mesh_floorDesign01_Grid.scale.set(2, 2, 2);
 				mesh_floorDesign01_Grid.rotation.set(0, 0, 0)
 				mesh_floorDesign01_Grid.rotateX( Math.PI / 2 );
 
 				// floorDesign01_Grid.lookAt(camera)
 				
 				floorDesign01_Grid.add(mesh_floorDesign01_Grid)
+
+
+				floorMainTree01_Grid = new THREE.Group()
+				floorMainTree01_Grid.position.set(-7.5, 4, -4)
+				floorMainTree01_Grid.rotation.set(0, 0, 0)
+				floorMainTree01_Grid.scale.set(0.1, 0.1, 0.1)
+				videoAndΔComboTest01.add(floorMainTree01_Grid)
+
+
+				// const mat_floorMainTree01_Grid = new THREE.MeshBasicMaterial({ map: TreeTex01, side: THREE.DoubleSide });
+				// mesh_floorMainTree01_Grid = new THREE.Mesh(geo_objT_PlaneA1, mat_floorMainTree01_Grid);
+				// mat_floorMainTree01_Grid.transparent = false;
+				// mat_floorMainTree01_Grid.alphaMap = TreeTex01;
+				// mesh_floorMainTree01_Grid.position.set(0, 0, 0);
+				// // mesh_floorMainTree01_Grid.position.set(-15000, 0, 0);
+				// mesh_floorMainTree01_Grid.scale.set(2, 2, 2);
+				// mesh_floorMainTree01_Grid.rotation.set(0, 0, 0)
+				// // mesh_floorMainTree01_Grid.rotateX( Math.PI / 2 );
+
+				// // floorMainTree01_Grid.lookAt(camera)
+				
+				// floorMainTree01_Grid.add(mesh_floorMainTree01_Grid)
+
+
+				floorMainTree01_Grid.add(
+                    new hoverObject(
+                        'img',
+                        0, 0, 0,
+                        0, 0, 0,
+                        0.1, 0.1, 0.1,
+                        "Testing234", "TestingClass234",
+                        "./assets/img/02-UserUI/04-Logo/Logo_Tree.png", "",
+                        "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+                    )
+                )
+
+
+
+
+
+				// Test_Hand_Δs
+				// search.HandΔs
+
+				// ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~~*~*~*~*~*~*~*~
+				// Right Hand Δs
+				// ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~~*~*~*~*~*~*~*~
+				LeftHandΔ_Test_root = new THREE.Group()
+				LeftHandΔ_Test_root.position.set(-3, 0, 0)
+				LeftHandΔ_Test_root.rotation.set(0, 0, 0)
+				LeftHandΔ_Test_root.scale.set(0.1, 0.1, 0.1)
+				scene.add(LeftHandΔ_Test_root)
+				camera.attach(LeftHandΔ_Test_root)
+
+
+					const mat_LeftHandΔ_Test_root = new THREE.MeshBasicMaterial({ map: clearWhite_ring, side: THREE.DoubleSide });
+					mesh_LeftHandΔ_Test_root = new THREE.Mesh(geo_objT_CircleA1, mat_LeftHandΔ_Test_root);
+					mat_LeftHandΔ_Test_root.transparent = true;
+					mat_LeftHandΔ_Test_root.alphaMap = clearWhite_ring;
+					mesh_LeftHandΔ_Test_root.position.set(0, 0, 0);
+					// mesh_LeftHandΔ_Test_root.position.set(-15000, 0, 0);
+					mesh_LeftHandΔ_Test_root.scale.set(1, 1, 1);
+					mesh_LeftHandΔ_Test_root.rotation.set(0, 0, 0)
+					// mesh_LeftHandΔ_Test_root.rotateX( Math.PI / 2 );
+
+					// LeftHandΔ_Test_root.lookAt(camera)
+					
+					LeftHandΔ_Test_root.add(mesh_LeftHandΔ_Test_root)
+
+
+
+						LH_Δ01 = new THREE.Group()
+						LH_Δ01.position.set(0, 0, 0)
+						LH_Δ01.rotation.set(0, 0, 0)
+						LH_Δ01.scale.set(0.4, 0.4, 0.4)
+						LeftHandΔ_Test_root.add(LH_Δ01)
+						camera.attach(LH_Δ01)
+
+
+						const mat_LH_Δ01 = new THREE.MeshBasicMaterial({ map: SceneWallpaper_01, side: THREE.DoubleSide });
+						mesh_LH_Δ01 = new THREE.Mesh(geo_objT_SphereA0, mat_LH_Δ01);
+						mat_LH_Δ01.transparent = false;
+						mat_LH_Δ01.alphaMap = SceneWallpaper_01;
+						mesh_LH_Δ01.position.set(0, 0, 0);
+						// mesh_LH_Δ01.position.set(-15000, 0, 0);
+						mesh_LH_Δ01.scale.set(1, 1, 1);
+						mesh_LH_Δ01.rotation.set(0, 0, 0)
+						// mesh_LH_Δ01.rotateX( Math.PI / 2 );
+
+						// LH_Δ01.lookAt(camera)
+						
+						LH_Δ01.add(mesh_LH_Δ01)
+
+
+
+				// ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~~*~*~*~*~*~*~*~
+				// Right Hand Δs
+				// ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~~*~*~*~*~*~*~*~
+				RightHandΔ_Test_root = new THREE.Group()
+				RightHandΔ_Test_root.position.set(3, 0, 0)
+				RightHandΔ_Test_root.rotation.set(0, 0, 0)
+				RightHandΔ_Test_root.scale.set(0.1, 0.1, 0.1)
+				scene.add(RightHandΔ_Test_root)
+				camera.attach(RightHandΔ_Test_root)
+
+
+					const mat_RightHandΔ_Test_root = new THREE.MeshBasicMaterial({ map: clearWhite_ring, side: THREE.DoubleSide });
+					mesh_RightHandΔ_Test_root = new THREE.Mesh(geo_objT_CircleA1, mat_RightHandΔ_Test_root);
+					mat_RightHandΔ_Test_root.transparent = true;
+					mat_RightHandΔ_Test_root.alphaMap = clearWhite_ring;
+					mesh_RightHandΔ_Test_root.position.set(0, 0, 0);
+					// mesh_RightHandΔ_Test_root.position.set(-15000, 0, 0);
+					mesh_RightHandΔ_Test_root.scale.set(1, 1, 1);
+					mesh_RightHandΔ_Test_root.rotation.set(0, 0, 0)
+					// mesh_RightHandΔ_Test_root.rotateX( Math.PI / 2 );
+
+					// RightHandΔ_Test_root.lookAt(camera)
+					
+					RightHandΔ_Test_root.add(mesh_RightHandΔ_Test_root)
+
+
+
+						RH_Δ01 = new THREE.Group()
+						RH_Δ01.position.set(0, 0, 0)
+						RH_Δ01.rotation.set(0, 0, 0)
+						RH_Δ01.scale.set(0.4, 0.4, 0.4)
+						RightHandΔ_Test_root.add(RH_Δ01)
+						camera.attach(RH_Δ01)
+
+
+						const mat_RH_Δ01 = new THREE.MeshBasicMaterial({ map: SceneWallpaper_01, side: THREE.DoubleSide });
+						mesh_RH_Δ01 = new THREE.Mesh(geo_objT_SphereA0, mat_RH_Δ01);
+						mat_RH_Δ01.transparent = false;
+						mat_RH_Δ01.alphaMap = SceneWallpaper_01;
+						mesh_RH_Δ01.position.set(0, 0, 0);
+						// mesh_RH_Δ01.position.set(-15000, 0, 0);
+						mesh_RH_Δ01.scale.set(1, 1, 1);
+						mesh_RH_Δ01.rotation.set(0, 0, 0)
+						// mesh_RH_Δ01.rotateX( Math.PI / 2 );
+
+						// RH_Δ01.lookAt(camera)
+						
+						RH_Δ01.add(mesh_RH_Δ01)
+
+
+
+
+
+
 
 
 
@@ -9138,29 +9315,19 @@
 
 						LH_Button_TimeΔ_01.add(
 
-							new hoverObject(
-								'img',
+							new TechIcon(
 								0, 0, 0,
 								0, 0, 0,
-								0.1, 0.1, 0.1,
-								"Testing234", "TestingClass234",
-								"./assets/icons/00-Official/UI/IconHoldersA/time-management.gif", "",
-								"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+								0.55, 0.55, 0.55,
+								'DefaultTechIconId', 'DefaultTechIconClassName',
+								'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+								'DefaultImgId', 'DefaultImgClassName',
+								'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+								"./assets/icons/00-Official/UI/Isometric/UI_02/Clock.svg", "",
+								makePanelADisappear, 
+								"TimeΔ",
+								"Click to move faster @ 1500"
 							)
-
-							// new TechIcon(
-							// 	0, 0, 0,
-							// 	0, 0, 0,
-							// 	0.55, 0.55, 0.55,
-							// 	'DefaultTechIconId', 'DefaultTechIconClassName',
-							// 	'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
-							// 	'DefaultImgId', 'DefaultImgClassName',
-							// 	'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
-							// 	"./assets/icons/00-Official/UI/Isometric/UI_02/Clock.svg", "",
-							// 	makePanelADisappear, 
-							// 	"TimeΔ",
-							// 	"Click to move faster @ 1500"
-							// )
 						)
 
 
@@ -10686,7 +10853,7 @@
                                     // TimeΔ_Clock_Icon01_ 
                                     // ----------------------------------------------------
                                     TimeΔ_Clock_Icon01_ = new THREE.Group()
-                                    TimeΔ_Clock_Icon01_.position.set(-8.9, 8.5, 0)
+                                    TimeΔ_Clock_Icon01_.position.set(-6.45, 6, 0)
                                     TimeΔ_Clock_Icon01_.rotation.set(0, 0, 0)
                                     TimeΔ_Clock_Icon01_.scale.set(0.1, 0.1, 0.1)
                                     TimeΔ_Clock_root.add(TimeΔ_Clock_Icon01_)
@@ -10702,12 +10869,12 @@
                                         new TechIcon(
                                             -5, 5, 0,
                                             0, 0, 0,
-                                            0.05, 0.05, 0.05,
+                                            0.55, 0.55, 0.55,
                                             'DefaultTechIconId', 'DefaultTechIconClassName',
                                             'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
                                             'DefaultImgId', 'DefaultImgClassName',
                                             'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
-                                            "./assets/icons/00-Official/UI/IconHoldersA/time-management.gif", "",
+                                            "./assets/icons/00-Official/UI/Isometric/UI_02/Clock.svg", "",
                                             putClockInCenterOnFloor, 
                                             "ShowΔ",
                                             "Toggle from here or main menu top left"
@@ -10885,7 +11052,7 @@
                                         'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
                                         'DefaultImgId', 'DefaultImgClassName',
                                         'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
-                                        "./assets/icons/00-Official/UI/Isometric/SocialMedia1/002-wordpress.svg", "",
+                                        "./assets/icons/00-Official/Files02/doc-file-3585905.svg", "",
                                         buttonTestFunction2, 
                                         "ShowΔ",
                                         "Toggle from here or main menu top left"
@@ -10904,7 +11071,7 @@
                                         0, 0, 0,
                                         0.0035, 0.0035, 0.0035,
                                         "hoverClockA1",
-                                        "https://www.wikipedia.org/",
+                                        "https://docs.google.com/document/d/1SHSSGfMvke6vXJ3a5ZCgtPg0f5Hegwi2YpYHW8TYSmc/edit",
                                         "1920px", "1200"
                                     )
                                 )
@@ -10951,7 +11118,7 @@
                                     'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
                                     'DefaultImgId', 'DefaultImgClassName',
                                     'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
-                                    "./assets/icons/00-Official/UI/Isometric/SocialMedia1/002-wordpress.svg", "",
+                                    "./assets/icons/00-Official/Files02/html-file-3585909.svg", "",
                                     buttonTestFunction3, 
                                     "ShowΔ",
                                     "Toggle from here or main menu top left"
@@ -10970,7 +11137,7 @@
                                     0, 0, 0,
                                     0.0035, 0.0035, 0.0035,
                                     "hoverClockA1",
-                                    "https://www.wikipedia.org/",
+                                    "https://html-css-js.com/",
                                     "1920px", "1200"
                                 )
                             )
@@ -13853,6 +14020,15 @@
 
 
 				// HUD ANIMATIONS
+
+					// Hands
+
+					LH_Δ01.rotation.y = time * 0.001
+
+
+					RH_Δ01.rotation.y = time * -0.001
+
+
 
 					// Gears
 
