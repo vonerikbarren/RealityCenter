@@ -3126,6 +3126,37 @@
 						let dataCycleA00_backRight_card_base_c01
 						let dataCycleA00_backRight_card_base_n01
 
+				
+
+
+
+			// #################################################################
+            // [ ~ Infin8teΔs]
+			// #################################################################
+
+			let infin8teΔs_root
+			let infiniteΔs_simpleAnimation_button_root
+			let infiniteΔs_simpleAnimation_button_start
+			let infiniteΔs_simpleAnimation_button_pause
+			let infiniteΔs_simpleAnimation_button_progress_025
+			let infiniteΔs_simpleAnimation_button_resume
+			let infiniteΔs_simpleAnimation_button_seek1_5
+			let infiniteΔs_simpleAnimation_button_reverse
+
+				let infiniteΔ_A01, mesh_infiniteΔ_A01
+				let infiniteΔ_A02, mesh_infiniteΔ_A02
+				let infiniteΔ_A03, mesh_infiniteΔ_A03
+				let infiniteΔ_A04, mesh_infiniteΔ_A04
+				let infiniteΔ_A05, mesh_infiniteΔ_A05
+
+				let infiniteΔ_A06
+				let infiniteΔ_A07
+				let infiniteΔ_A08
+				let infiniteΔ_A09
+				let infiniteΔ_A10
+
+
+
 			
 
 
@@ -3419,6 +3450,10 @@
 				const PrimaryGrid02 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/Grid19.jpg')
 				const defaultGrid01 = textureLoader.load('./assets/img/05-Env/Panels/defaultPanel01.png')
                 const myNavbarSkin = textureLoader.load('./assets/img/05-Env/Panels/defaultPanel01.png')
+
+
+				// Grids
+				const GridWhiteNeonGreen = textureLoader.load('./assets/img/00-WallpaperUX/Specials/A02-GridWhiteNeonGreen.jpg')
 
 
                 // ----------------------------------------------------------------------------------------------------
@@ -5379,6 +5414,14 @@
 						case 'KeyC':
 							
 							camera.position.set(0, 0, 0)
+
+							gsap.to(camera.position, {
+								duration: .5,
+								delay: 0,
+								z: 0,
+								y: 0,
+								x: 0,
+							})
 							break
 
 						case 'KeyL':
@@ -5843,14 +5886,14 @@
 				// GodControls Lvl01
 				document.addEventListener("keydown", function(event) {
 					if (event.key === "6") {
-						speedStrengthsParams.x = 2000
+						speedStrengthsParams.x = 100
 					} 
 				})
 
 
 				document.addEventListener("keydown", function(event) {
 					if (event.ctrlKey && event.key === "6") {
-						speedStrengthsParams.x = 1
+						speedStrengthsParams.x = 2000
 					}
 				})
 
@@ -7075,15 +7118,15 @@
 						LH_Δ01 = new THREE.Group()
 						LH_Δ01.position.set(0, 0, 0)
 						LH_Δ01.rotation.set(0, 0, 0)
-						LH_Δ01.scale.set(0.4, 0.4, 0.4)
+						LH_Δ01.scale.set(0.25, 0.25, 0.25)
 						LeftHandΔ_Test_root.add(LH_Δ01)
 						camera.attach(LH_Δ01)
 
 
-						const mat_LH_Δ01 = new THREE.MeshBasicMaterial({ map: SceneWallpaper_01, side: THREE.DoubleSide });
+						const mat_LH_Δ01 = new THREE.MeshBasicMaterial({ map: GridWhiteNeonGreen, side: THREE.DoubleSide });
 						mesh_LH_Δ01 = new THREE.Mesh(geo_objT_SphereA0, mat_LH_Δ01);
-						mat_LH_Δ01.transparent = false;
-						mat_LH_Δ01.alphaMap = SceneWallpaper_01;
+						mat_LH_Δ01.transparent = true;
+						mat_LH_Δ01.alphaMap = GridWhiteNeonGreen;
 						mesh_LH_Δ01.position.set(0, 0, 0);
 						// mesh_LH_Δ01.position.set(-15000, 0, 0);
 						mesh_LH_Δ01.scale.set(1, 1, 1);
@@ -7148,7 +7191,298 @@
 
 
 
+				//.........................................................
+				//.....88888888.............ΔΔΔΔΔΔ.........................
+				//....88888888888..........ΔΔΔΔΔΔΔ.........................
+				//...888888888888..........ΔΔΔΔΔΔΔ.........................
+				//..88888888888888........ΔΔΔΔΔΔΔΔΔ........................
+				//..88888888888888........ΔΔΔΔΔΔΔΔΔ........................
+				//..888888...888888.......ΔΔΔΔΔΔΔΔΔΔ.........sssssssss.....
+				//..88888....888888......ΔΔΔΔΔΔΔΔΔΔΔ........sssssssssss....
+				//..888888...88888.......ΔΔΔΔΔΔΔΔΔΔΔ.......sssssssssssss...
+				//..88888888888888......ΔΔΔΔΔΔ.ΔΔΔΔΔΔ.....sssssssssssssss..
+				//...8888888888888......ΔΔΔΔΔΔ.ΔΔΔΔΔΔ.....sssssss.sssssss..
+				//....88888888888.......ΔΔΔΔΔ...ΔΔΔΔΔ.....ssssss...ssssss..
+				//...8888888888888.....ΔΔΔΔΔΔ...ΔΔΔΔΔΔ....ssssssssss.......
+				//..88888888888888.....ΔΔΔΔΔΔ...ΔΔΔΔΔΔ....sssssssssssss....
+				//.8888888..8888888....ΔΔΔΔΔ.....ΔΔΔΔΔΔ....sssssssssssss...
+				//.888888....888888...ΔΔΔΔΔΔ.....ΔΔΔΔΔΔ.....sssssssssssss..
+				//.888888....888888...ΔΔΔΔΔ.......ΔΔΔΔΔ......ssssssssssss..
+				//.888888....888888..ΔΔΔΔΔΔ.......ΔΔΔΔΔΔ..sssss..ssssssss..
+				//.8888888...888888..ΔΔΔΔΔΔΔΔΔΔΔΔΔΔΔΔΔΔΔ..ssssss...ssssss..
+				//..888888888888888..ΔΔΔΔΔΔΔΔΔΔΔΔΔΔΔΔΔΔΔΔ.sssssssssssssss..
+				//..88888888888888..ΔΔΔΔΔΔΔΔΔΔΔΔΔΔΔΔΔΔΔΔΔ.sssssssssssssss..
+				//...8888888888888..ΔΔΔΔΔΔΔΔΔΔΔΔΔΔΔΔΔΔΔΔΔ..sssssssssssss...
+				//....88888888888...ΔΔΔΔΔΔΔΔΔΔΔΔΔΔΔΔΔΔΔΔΔΔ..ssssssssssss...
+				//.....88888888..............................sssssssss.....
+				//.........................................................
 
+
+				infin8teΔs_root = new THREE.Group()
+				infin8teΔs_root.position.set(0, 0, -1)
+				infin8teΔs_root.rotation.set(0, 0, 0)
+				infin8teΔs_root.scale.set(1, 1, 1)
+				scene.add(infin8teΔs_root) 
+				// camera.attach(infin8teΔs_root)
+
+					infiniteΔ_A01 = new THREE.Group()
+					infiniteΔ_A01.position.set(0, 0, 5)
+					infiniteΔ_A01.rotation.set(0, 0, 0)
+					infiniteΔ_A01.scale.set(0.001, 0.001, 0.001)
+					infin8teΔs_root.add(infiniteΔ_A01)
+
+					const mat_infiniteΔ_A01 = new THREE.MeshBasicMaterial({ map: SceneWallpaper_01, side: THREE.DoubleSide });
+					mesh_infiniteΔ_A01 = new THREE.Mesh(geo_objT_PlaneA1, mat_infiniteΔ_A01);
+					mat_infiniteΔ_A01.transparent = false;
+					mat_infiniteΔ_A01.alphaMap = SceneWallpaper_01;
+					mesh_infiniteΔ_A01.position.set(0, 0, 0);
+					// mesh_infiniteΔ_A01.position.set(-15000, 0, 0);
+					mesh_infiniteΔ_A01.scale.set(0.1, 0.1, 0.1);
+					mesh_infiniteΔ_A01.rotation.set(0, 0, 0)
+					// mesh_infiniteΔ_A01.rotateX( Math.PI / 2 );
+
+					// infiniteΔ_A01.lookAt(camera)
+					
+					infiniteΔ_A01.add(mesh_infiniteΔ_A01)
+
+
+				// ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~~*~*~*~*~*~*~*~
+				// ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~~*~*~*~*~*~*~*~
+
+				// ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~~*~*~*~*~*~*~*~
+				// ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~~*~*~*~*~*~*~*~
+
+				
+
+
+				// let infiniteΔ_simpleAnimation_play = () => {
+
+				// 	var tl_panelAnimation = gsap.timeline({repeat: 2, repeatDelay: 1});
+				// 	tl_panelAnimation.to(infiniteΔ_A01.rotation, {
+				// 		repeat: 0,
+				// 		ease: "bounce",
+				// 		duration: 1,
+				// 		delay: 0,
+				// 		x: 1.575,
+						
+						
+				// 	})
+
+				// 	return tl_panelAnimation.play()
+				// }
+
+				// let infiniteΔ_simpleAnimation_pause = () => {
+
+				// 	var tl_panelAnimation = gsap.timeline({repeat: 2, repeatDelay: 1});
+				// 	tl_panelAnimation.to(infiniteΔ_A01.rotation, {
+				// 		repeat: 0,
+				// 		ease: "bounce",
+				// 		duration: 1,
+				// 		delay: 0,
+				// 		x: 1.575,
+						
+						
+				// 	})
+
+				// 	return tl_panelAnimation.pause()
+				// }
+
+
+				var tl_panelAnimation00 = gsap.timeline(
+					{
+						repeat: 0, 
+						repeatDelay: 1
+					}
+				
+				);
+
+				let infiniteΔ_simpleAnimation_play = () => {
+
+					tl_panelAnimation00.to(infiniteΔ_A01.scale, {
+						repeat: 0,
+						ease: "bounce",
+						duration: 1,
+						delay: 0,
+						z: 2,
+						y: 2,
+						x: 2,
+						
+						
+					})
+
+					tl_panelAnimation00.to(infiniteΔ_A01.position, {
+						repeat: 0,
+						ease: "bounce",
+						duration: 1,
+						delay: 0,
+						x: 2,
+						
+						
+					})
+
+					tl_panelAnimation00.to(infiniteΔ_A01.rotation, {
+						repeat: 0,
+						ease: "bounce",
+						duration: 1,
+						delay: 0,
+						x: -1.575,
+						
+						
+					})
+
+					tl_panelAnimation00.to(infiniteΔ_A01.position, {
+						repeat: 0,
+						ease: "bounce",
+						duration: 1,
+						delay: 0,
+						y: 2,
+						
+						
+					})
+
+					tl_panelAnimation00.to(infiniteΔ_A01.rotation, {
+						repeat: 0,
+						ease: "bounce",
+						duration: 1,
+						delay: 0,
+						x: 3.14,
+						
+						
+					})
+
+					tl_panelAnimation00.play()
+
+				}
+
+
+				let infiniteΔ_simpleAnimation_pause = () => tl_panelAnimation00.pause()
+				let infiniteΔ_simpleAnimation_reverse = () => tl_panelAnimation00.reverse()
+				let infiniteΔ_simpleAnimation_progress_025 = () => tl_panelAnimation00.progress(0.25)
+
+					
+
+					
+
+				
+
+
+
+
+
+				let infiniteΔ_simpleAnimation_manager = {
+					
+				}
+
+				infiniteΔs_simpleAnimation_button_root = new THREE.Group()
+				infiniteΔs_simpleAnimation_button_root.position.set(-1.14, -0.34, 4)
+				infiniteΔs_simpleAnimation_button_root.rotation.set(0, 0, 0)
+				infiniteΔs_simpleAnimation_button_root.scale.set(0.0025, 0.0025, 0.0025)
+				scene.add(infiniteΔs_simpleAnimation_button_root) 
+				camera.attach(infiniteΔs_simpleAnimation_button_root)
+
+				infiniteΔs_simpleAnimation_button_start = new THREE.Group()
+				infiniteΔs_simpleAnimation_button_start.position.set(0, 0, 0)
+				infiniteΔs_simpleAnimation_button_start.rotation.set(0, 0, 0)
+				infiniteΔs_simpleAnimation_button_start.scale.set(1, 1, 1)
+				infiniteΔs_simpleAnimation_button_root.add(infiniteΔs_simpleAnimation_button_start) 
+			
+
+				infiniteΔs_simpleAnimation_button_start.add(
+
+					new TechIcon(
+						-5, 5, 0,
+						0, 0, 0,
+						0.55, 0.55, 0.55,
+						'DefaultTechIconId', 'DefaultTechIconClassName',
+						'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+						'DefaultImgId', 'DefaultImgClassName',
+						'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+						"./assets/icons/00-Official/UI/Gestures/gesture_Move_OneFinger_RH.svg", "",
+						infiniteΔ_simpleAnimation_play, 
+						"ShowΔ",
+						"Toggle from here or main menu top left"
+					) 
+					
+				)
+
+
+				infiniteΔs_simpleAnimation_button_pause = new THREE.Group()
+				infiniteΔs_simpleAnimation_button_pause.position.set(-40, 0, 0)
+				infiniteΔs_simpleAnimation_button_pause.rotation.set(0, 0, 0)
+				infiniteΔs_simpleAnimation_button_pause.scale.set(1, 1, 1)
+				infiniteΔs_simpleAnimation_button_root.add(infiniteΔs_simpleAnimation_button_pause) 
+			
+
+				infiniteΔs_simpleAnimation_button_pause.add(
+
+					new TechIcon(
+						-5, 5, 0,
+						0, 0, 0,
+						0.55, 0.55, 0.55,
+						'DefaultTechIconId', 'DefaultTechIconClassName',
+						'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+						'DefaultImgId', 'DefaultImgClassName',
+						'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+						"./assets/icons/00-Official/UI/Gestures/gesture_Move_OneFinger_RH.svg", "",
+						infiniteΔ_simpleAnimation_pause, 
+						"PauseΔ",
+						"Toggle from here or main menu top left"
+					) 
+					
+				)
+
+
+				infiniteΔs_simpleAnimation_button_reverse = new THREE.Group()
+				infiniteΔs_simpleAnimation_button_reverse.position.set(-80, 0, 0)
+				infiniteΔs_simpleAnimation_button_reverse.rotation.set(0, 0, 0)
+				infiniteΔs_simpleAnimation_button_reverse.scale.set(1, 1, 1)
+				infiniteΔs_simpleAnimation_button_root.add(infiniteΔs_simpleAnimation_button_reverse) 
+			
+
+				infiniteΔs_simpleAnimation_button_reverse.add(
+
+					new TechIcon(
+						-5, 5, 0,
+						0, 0, 0,
+						0.55, 0.55, 0.55,
+						'DefaultTechIconId', 'DefaultTechIconClassName',
+						'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+						'DefaultImgId', 'DefaultImgClassName',
+						'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+						"./assets/icons/00-Official/UI/Gestures/gesture_Move_OneFinger_RH.svg", "",
+						infiniteΔ_simpleAnimation_reverse, 
+						"Reverse",
+						"Toggle from here or main menu top left"
+					) 
+					
+				)
+
+
+
+				infiniteΔs_simpleAnimation_button_progress_025 = new THREE.Group()
+				infiniteΔs_simpleAnimation_button_progress_025.position.set(-120, 0, 0)
+				infiniteΔs_simpleAnimation_button_progress_025.rotation.set(0, 0, 0)
+				infiniteΔs_simpleAnimation_button_progress_025.scale.set(1, 1, 1)
+				infiniteΔs_simpleAnimation_button_root.add(infiniteΔs_simpleAnimation_button_progress_025) 
+			
+
+				infiniteΔs_simpleAnimation_button_progress_025.add(
+
+					new TechIcon(
+						-5, 5, 0,
+						0, 0, 0,
+						0.55, 0.55, 0.55,
+						'DefaultTechIconId', 'DefaultTechIconClassName',
+						'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+						'DefaultImgId', 'DefaultImgClassName',
+						'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+						"./assets/icons/00-Official/UI/Gestures/gesture_Move_OneFinger_RH.svg", "",
+						infiniteΔ_simpleAnimation_progress_025, 
+						"Progress 0.25",
+						"Toggle from here or main menu top left"
+					) 
+					
+				)
 
 
 
@@ -13341,17 +13675,17 @@
 				folderLoadTestingContainer01.add(floorDesign01_Grid.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
 				folderLoadTestingContainer01.add(floorDesign01_Grid.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
-				const folderLoadTestingContainer02 = gui.addFolder('<<< LoadPoint02 :: mesh_userΔ_LH_Menu_baseComponentA_Orbit01 >>>')
+				const folderLoadTestingContainer02 = gui.addFolder('<<< LoadPoint02 :: infiniteΔs_simpleAnimation_button_pause >>>')
 
-				folderLoadTestingContainer02.add(mesh_userΔ_LH_Menu_baseComponentA_Orbit01.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
-				folderLoadTestingContainer02.add(mesh_userΔ_LH_Menu_baseComponentA_Orbit01.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
-				folderLoadTestingContainer02.add(mesh_userΔ_LH_Menu_baseComponentA_Orbit01.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
-				folderLoadTestingContainer02.add(mesh_userΔ_LH_Menu_baseComponentA_Orbit01.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
-				folderLoadTestingContainer02.add(mesh_userΔ_LH_Menu_baseComponentA_Orbit01.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
-				folderLoadTestingContainer02.add(mesh_userΔ_LH_Menu_baseComponentA_Orbit01.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
-				folderLoadTestingContainer02.add(mesh_userΔ_LH_Menu_baseComponentA_Orbit01.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
-				folderLoadTestingContainer02.add(mesh_userΔ_LH_Menu_baseComponentA_Orbit01.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
-				folderLoadTestingContainer02.add(mesh_userΔ_LH_Menu_baseComponentA_Orbit01.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
+				folderLoadTestingContainer02.add(infiniteΔs_simpleAnimation_button_pause.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
+				folderLoadTestingContainer02.add(infiniteΔs_simpleAnimation_button_pause.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
+				folderLoadTestingContainer02.add(infiniteΔs_simpleAnimation_button_pause.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
+				folderLoadTestingContainer02.add(infiniteΔs_simpleAnimation_button_pause.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
+				folderLoadTestingContainer02.add(infiniteΔs_simpleAnimation_button_pause.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
+				folderLoadTestingContainer02.add(infiniteΔs_simpleAnimation_button_pause.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
+				folderLoadTestingContainer02.add(infiniteΔs_simpleAnimation_button_pause.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
+				folderLoadTestingContainer02.add(infiniteΔs_simpleAnimation_button_pause.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
+				folderLoadTestingContainer02.add(infiniteΔs_simpleAnimation_button_pause.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
 				const folderLoadTestingContainer03 = gui.addFolder('<<< LoadPoint03 :: userΔ_LH_Menu_baseComponentC_root >>>')
 
@@ -14022,8 +14356,14 @@
 				// HUD ANIMATIONS
 
 					// Hands
+					// Time LeftPrimaryWindow_root Experience = Math.cos(time * speed) * distance + height
 
-					LH_Δ01.rotation.y = time * 0.001
+					LH_Δ01.rotation.y = time * 0.01
+					LH_Δ01.rotation.x = time * 0.01
+					LH_Δ01.rotation.z = time * 0.01
+					LH_Δ01.position.x = Math.tan(time * 75) * 0.01 + -3
+					LH_Δ01.position.z = Math.tan(time * 75) * 0.01 + -5
+					LH_Δ01.position.y = Math.tan(time * 75) * 0.01 + 0
 
 
 					RH_Δ01.rotation.y = time * -0.001
