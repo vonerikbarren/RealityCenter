@@ -20,6 +20,10 @@
 # QuickShortcuts
 \- randomATT_Items = Search(HomeScreenSaver)
 \- [function] -> putClockInCenterOnFloor 
+\- LeftHandComponent = mat_userΔ_LH_Menu_baseComponentA_Orbit01
+\- RightHandComponent = mat_userΔ_RH_Menu_baseComponentA_Orbit01
+
+\- Floor Texture = search.floorTex
 
 
 

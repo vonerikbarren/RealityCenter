@@ -7026,7 +7026,7 @@
 
 				// search.floorTex
 				floorDesign01_Grid = new THREE.Group()
-				floorDesign01_Grid.position.set(0, -0.2, 0)
+				floorDesign01_Grid.position.set(0, -1, 0)
 				floorDesign01_Grid.rotation.set(0, 0, 0)
 				floorDesign01_Grid.scale.set(1, 1, 1)
 				videoAndΔComboTest01.add(floorDesign01_Grid)
@@ -7225,6 +7225,8 @@
 				scene.add(infin8teΔs_root) 
 				// camera.attach(infin8teΔs_root)
 
+
+					// AnimationPanel01
 					infiniteΔ_A01 = new THREE.Group()
 					infiniteΔ_A01.position.set(0, 0, 5)
 					infiniteΔ_A01.rotation.set(0, 0, 0)
@@ -7244,6 +7246,72 @@
 					// infiniteΔ_A01.lookAt(camera)
 					
 					infiniteΔ_A01.add(mesh_infiniteΔ_A01)
+
+
+					// AnimationPanel02
+					infiniteΔ_A02 = new THREE.Group()
+					infiniteΔ_A02.position.set(0, 0, 5)
+					infiniteΔ_A02.rotation.set(0, 0, 0)
+					infiniteΔ_A02.scale.set(0.001, 0.001, 0.001)
+					infin8teΔs_root.add(infiniteΔ_A02)
+
+					const mat_infiniteΔ_A02 = new THREE.MeshBasicMaterial({ map: SceneWallpaper_01, side: THREE.DoubleSide });
+					mesh_infiniteΔ_A02 = new THREE.Mesh(geo_objT_PlaneA1, mat_infiniteΔ_A02);
+					mat_infiniteΔ_A02.transparent = false;
+					mat_infiniteΔ_A02.alphaMap = SceneWallpaper_01;
+					mesh_infiniteΔ_A02.position.set(0, 0, 0);
+					// mesh_infiniteΔ_A02.position.set(-15000, 0, 0);
+					mesh_infiniteΔ_A02.scale.set(0.1, 0.1, 0.1);
+					mesh_infiniteΔ_A02.rotation.set(0, 0, 0)
+					// mesh_infiniteΔ_A02.rotateX( Math.PI / 2 );
+
+					// infiniteΔ_A02.lookAt(camera)
+					
+					infiniteΔ_A02.add(mesh_infiniteΔ_A02)
+
+
+					// AnimationPanel03
+					infiniteΔ_A03 = new THREE.Group()
+					infiniteΔ_A03.position.set(0, 0, 5)
+					infiniteΔ_A03.rotation.set(0, 0, 0)
+					infiniteΔ_A03.scale.set(0.001, 0.001, 0.001)
+					infin8teΔs_root.add(infiniteΔ_A03)
+
+					const mat_infiniteΔ_A03 = new THREE.MeshBasicMaterial({ map: SceneWallpaper_01, side: THREE.DoubleSide });
+					mesh_infiniteΔ_A03 = new THREE.Mesh(geo_objT_PlaneA1, mat_infiniteΔ_A03);
+					mat_infiniteΔ_A03.transparent = false;
+					mat_infiniteΔ_A03.alphaMap = SceneWallpaper_01;
+					mesh_infiniteΔ_A03.position.set(0, 0, 0);
+					// mesh_infiniteΔ_A03.position.set(-15000, 0, 0);
+					mesh_infiniteΔ_A03.scale.set(0.1, 0.1, 0.1);
+					mesh_infiniteΔ_A03.rotation.set(0, 0, 0)
+					// mesh_infiniteΔ_A03.rotateX( Math.PI / 2 );
+
+					// infiniteΔ_A03.lookAt(camera)
+					
+					infiniteΔ_A03.add(mesh_infiniteΔ_A03)
+
+
+					// AnimationPanel04
+					infiniteΔ_A04 = new THREE.Group()
+					infiniteΔ_A04.position.set(0, 0, 5)
+					infiniteΔ_A04.rotation.set(0, 0, 0)
+					infiniteΔ_A04.scale.set(0.001, 0.001, 0.001)
+					infin8teΔs_root.add(infiniteΔ_A04)
+
+					const mat_infiniteΔ_A04 = new THREE.MeshBasicMaterial({ map: SceneWallpaper_01, side: THREE.DoubleSide });
+					mesh_infiniteΔ_A04 = new THREE.Mesh(geo_objT_PlaneA1, mat_infiniteΔ_A04);
+					mat_infiniteΔ_A04.transparent = false;
+					mat_infiniteΔ_A04.alphaMap = SceneWallpaper_01;
+					mesh_infiniteΔ_A04.position.set(0, 0, 0);
+					// mesh_infiniteΔ_A04.position.set(-15000, 0, 0);
+					mesh_infiniteΔ_A04.scale.set(0.1, 0.1, 0.1);
+					mesh_infiniteΔ_A04.rotation.set(0, 0, 0)
+					// mesh_infiniteΔ_A04.rotateX( Math.PI / 2 );
+
+					// infiniteΔ_A04.lookAt(camera)
+					
+					infiniteΔ_A04.add(mesh_infiniteΔ_A04)
 
 
 				// ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~~*~*~*~*~*~*~*~
@@ -7288,6 +7356,64 @@
 				// }
 
 
+			let technicality = (
+				timeLine,
+				object,
+				pos_timesToRepeat, rot_timesToRepeat, sca_timesToRepeat,
+				pos_easeType, rot_easeType, sca_easeType,
+				pos_timeDuration, rot_timeDuration, sca_timeDuration,
+				pos_timeDelay, rot_timeDelay, sca_timeDelay,
+				px, py, pz,
+				rx, ry, rz,
+				sx, sy, sz,
+
+				
+			) => {
+
+				// move it over to the right 
+				timeLine.to(object.position, {
+					repeat: pos_timesToRepeat,
+					ease: pos_easeType,
+					duration: pos_timeDuration,
+					delay: pos_timeDelay,
+					x: px,
+					y: py,
+					z: pz
+					
+					
+				})
+
+				// move it over to the right 
+				timeLine.to(object.rotation, {
+					repeat: rot_timesToRepeat,
+					ease: rot_easeType,
+					duration: rot_timeDuration,
+					delay: rot_timeDelay,
+					x: rx,
+					y: ry,
+					z: rz,
+					
+					
+				})
+
+				// move it over to the right 
+				timeLine.to(object.scale, {
+					repeat: sca_timesToRepeat,
+					ease: sca_easeType,
+					duration: sca_timeDuration,
+					delay: sca_timeDelay,
+					x: sx,
+					y: sy,
+					z: sz
+					
+					
+				})
+
+				
+				timeLine.play()
+			}	
+
+
 				var tl_panelAnimation00 = gsap.timeline(
 					{
 						repeat: 0, 
@@ -7296,63 +7422,324 @@
 				
 				);
 
-				let infiniteΔ_simpleAnimation_play = () => {
+					
 
-					tl_panelAnimation00.to(infiniteΔ_A01.scale, {
-						repeat: 0,
-						ease: "bounce",
-						duration: 1,
-						delay: 0,
-						z: 2,
-						y: 2,
-						x: 2,
-						
-						
-					})
+				// let infiniteΔ_simpleAnimation_play = () => {
 
-					tl_panelAnimation00.to(infiniteΔ_A01.position, {
-						repeat: 0,
-						ease: "bounce",
-						duration: 1,
-						delay: 0,
-						x: 2,
-						
-						
-					})
 
-					tl_panelAnimation00.to(infiniteΔ_A01.rotation, {
-						repeat: 0,
-						ease: "bounce",
-						duration: 1,
-						delay: 0,
-						x: -1.575,
-						
-						
-					})
+				// 	let gsapTween = (timeLine, item, property, repeatAmt, easeType, timeDuration, timeDelay, sz, sy, sx, ) => {
 
-					tl_panelAnimation00.to(infiniteΔ_A01.position, {
-						repeat: 0,
-						ease: "bounce",
-						duration: 1,
-						delay: 0,
-						y: 2,
-						
-						
-					})
+				// 		// Scale to normal size
+				// 		tl_panelAnimation00.to(item.property, {
 
-					tl_panelAnimation00.to(infiniteΔ_A01.rotation, {
-						repeat: 0,
-						ease: "bounce",
-						duration: 1,
-						delay: 0,
-						x: 3.14,
+				// 			repeat: repeatAmt,
+				// 			ease: easeType,
+				// 			duration: timeDuration,
+				// 			delay: timeDelay,
+				// 			z: sz,
+				// 			y: sy,
+				// 			x: sx,
+							
+							
+				// 		})
+
+				// 	}
+
+
+					
+
+					
+
+
+				// 	// Scale to normal size
+				// 	// tl_panelAnimation00.to(infiniteΔ_A01.scale, {
+				// 	// 	repeat: 0,
+				// 	// 	ease: "bounce",
+				// 	// 	duration: 2.575,
+				// 	// 	delay: 0,
+				// 	// 	z: 10,
+				// 	// 	y: 10,
+				// 	// 	x: 10,
 						
 						
-					})
+				// 	// })
 
-					tl_panelAnimation00.play()
+				// 	// move it over to the right 
+				// 	tl_panelAnimation00.to(infiniteΔ_A01.position, {
+				// 		repeat: 0,
+				// 		ease: "bounce",
+				// 		duration: 1,
+				// 		delay: 0,
+				// 		x: 35,
+				// 		z: 10
+						
+						
+				// 	})
 
+				// 	// Move the user over to the right
+				// 	tl_panelAnimation00.to(camera.position, {
+				// 		repeat: 0,
+				// 		ease: "bounce",
+				// 		duration: 1,
+				// 		delay: -0.5,
+				// 		x: 70,
+				// 		z: 20
+						
+						
+				// 	})
+
+				// 	// rotate panel to the side of the ΔT
+				// 	tl_panelAnimation00.to(infiniteΔ_A01.rotation, {
+				// 		repeat: 0,
+				// 		ease: "bounce",
+				// 		duration: 1,
+				// 		delay: 0,
+				// 		y: -1.575,
+						
+						
+				// 	})
+
+				// 	// Bring panel up
+				// 	tl_panelAnimation00.to(infiniteΔ_A01.position, {
+				// 		repeat: 0,
+				// 		ease: "bounce",
+				// 		duration: 1,
+				// 		delay: 0,
+				// 		y: 2,
+						
+						
+				// 	})
+
+
+				// 	tl_panelAnimation00.to(infiniteΔ_A01.scale, {
+				// 		repeat: 0,
+				// 		ease: "bounce",
+				// 		duration: 1,
+				// 		delay: 0,
+				// 		x: 100000,
+						
+						
+				// 	})
+
+				// 	tl_panelAnimation00.to(infiniteΔ_A01.rotation, {
+				// 		repeat: 0,
+				// 		ease: "bounce",
+				// 		duration: 1,
+				// 		delay: 0,
+				// 		x: 3.14,
+						
+						
+				// 	})
+
+				// 	tl_panelAnimation00.play()
+
+				// }
+
+
+				let technicalityAnimation01 = () => {
+
+					// ~*~*~*~*~*~*~*~*~*~*~*~*~*~~*~*~*~*~*~*~*~*~*~*~*~*~*
+					// Show first panel01
+					// ~*~*~*~*~*~*~*~*~*~*~*~*~*~~*~*~*~*~*~*~*~*~*~*~*~*~*
+					technicality(
+						tl_panelAnimation00, // timeline
+						infiniteΔ_A01, // object
+						0, 0, 0, // repeat
+						"", "", "", // ease
+						0.5, 0.5, 0.5, // duration
+						0, 0, 0, // delay
+						5, 0, 0, // position
+						1.575, 0, 0, // rotation
+						10, 10, 10, // scale
+
+					)
+
+
+						// ~*~*~*~*~*~*~*~*~*~*~*~*~*~~*~*~*~*~*~*~*~*~*~*~*~*~*
+						// Show Panel02
+						// ~*~*~*~*~*~*~*~*~*~*~*~*~*~~*~*~*~*~*~*~*~*~*~*~*~*~*
+						technicality(
+							tl_panelAnimation00, // timeline
+							infiniteΔ_A02, // object
+							0, 0, 0, // repeat
+							"", "", "", // ease
+							0.5, 0.5, 0.5, // duration
+							0.1, 0.1, 0.1, // delay
+							5, 0, 0, // position
+							1.575, 0, 0, // rotation
+							10, 10, 10, // scale
+
+						)
+
+
+					// ~*~*~*~*~*~*~*~*~*~*~*~*~*~~*~*~*~*~*~*~*~*~*~*~*~*~*
+					// Move Panel01 to the right and move forward
+					// ~*~*~*~*~*~*~*~*~*~*~*~*~*~~*~*~*~*~*~*~*~*~*~*~*~*~*
+					technicality(
+						tl_panelAnimation00, // timeline
+						infiniteΔ_A01, // object
+						0, 0, 0, // repeat
+						"bounce", "", "", // ease
+						0.25, 0.25, 0.25, // duration
+						0, 0, 0, // delay
+						15, 0, -1, // position
+						1.575, 0, 0, // rotation
+						10, 10, 10, // scale
+
+					)
+
+
+						// ~*~*~*~*~*~*~*~*~*~*~*~*~*~~*~*~*~*~*~*~*~*~*~*~*~*~*
+						// Move Panel02 to the right and move forward as well
+						// ~*~*~*~*~*~*~*~*~*~*~*~*~*~~*~*~*~*~*~*~*~*~*~*~*~*~*
+						technicality(
+							tl_panelAnimation00, // timeline
+							infiniteΔ_A02, // object
+							0, 0, 0, // repeat
+							"bounce", "", "", // ease
+							0.25, 0.25, 0.25, // duration
+							0, 0, 0, // delay
+							15, 0, -1, // position
+							1.575, 0, 0, // rotation
+							10, 10, 10, // scale
+
+						)
+
+
+					// ~*~*~*~*~*~*~*~*~*~*~*~*~*~~*~*~*~*~*~*~*~*~*~*~*~*~*
+					// Raise Panel 01 and push forward
+					// ~*~*~*~*~*~*~*~*~*~*~*~*~*~~*~*~*~*~*~*~*~*~*~*~*~*~*
+					technicality(
+						tl_panelAnimation00, // timeline
+						infiniteΔ_A01, // object
+						0, 0, 0, // repeat
+						"bounce", "", "", // ease
+						0.1, 0.1, 0.1, // duration
+						0, 0, 0, // delay
+						15, 5, -15, // position
+						1.575, 0, 0, // rotation
+						5, 5, 5, // scale
+
+					)
+
+						// ~*~*~*~*~*~*~*~*~*~*~*~*~*~~*~*~*~*~*~*~*~*~*~*~*~*~*
+						// Raise Panel 02 and move forward
+						// ~*~*~*~*~*~*~*~*~*~*~*~*~*~~*~*~*~*~*~*~*~*~*~*~*~*~*
+						technicality(
+							tl_panelAnimation00, // timeline
+							infiniteΔ_A02, // object
+							0, 0, 0, // repeat
+							"bounce", "", "", // ease
+							0.1, 0.1, 0.1, // duration
+							0, 0, 0, // delay
+							15, 5, -15, // position
+							1.575, 0, 0, // rotation
+							5, 5, 5, // scale
+
+						)
+
+
+						// ~*~*~*~*~*~*~*~*~*~*~*~*~*~~*~*~*~*~*~*~*~*~*~*~*~*~*
+						// Move Panel a little to the right and raise it.
+						// ~*~*~*~*~*~*~*~*~*~*~*~*~*~~*~*~*~*~*~*~*~*~*~*~*~*~*
+						technicality(
+							tl_panelAnimation00, // timeline
+							infiniteΔ_A02, // object
+							0, 0, 0, // repeat
+							"bounce", "", "", // ease
+							0.1, 0.1, 0.1, // duration
+							0, 0, 0, // delay
+							10, 10, -15, // position
+							1.575, 0, 0, // rotation
+							5, 5, 5, // scale
+
+						)
+
+
+					// ~*~*~*~*~*~*~*~*~*~*~*~*~*~~*~*~*~*~*~*~*~*~*~*~*~*~*
+					// Move Camera 
+					// ~*~*~*~*~*~*~*~*~*~*~*~*~*~~*~*~*~*~*~*~*~*~*~*~*~*~*
+					technicality(
+						tl_panelAnimation00, // timeline
+						camera, // object
+						0, 0, 0, // repeat
+						"bounce", "", "", // ease
+						0.1, 0.1, 0.1, // duration
+						0, 0, 0, // delay
+						15, 10, -10, // position
+						-0.1, 0, 0, // rotation
+						1, 1, 1, // scale
+
+					)
+
+
+					// camera.lookAt(0, 0, 0)
+
+					
 				}
+
+
+				// [ + ]-[ + ]-[ + ]-[ + ]-[ + ]-[ + ]-[ + ]-[ + ]-[ + ]-[ + ]-[ + ]-[ + ]-[ + ]
+				// CURRENT ANIMATION
+				// [ + ]-[ + ]-[ + ]-[ + ]-[ + ]-[ + ]-[ + ]-[ + ]-[ + ]-[ + ]-[ + ]-[ + ]-[ + ]
+				// let infiniteΔ_simpleAnimation_play01 = () => {
+
+				// 	// Scale to normal size
+				// 	tl_panelAnimation00.to(infiniteΔ_A01.scale, {
+				// 		repeat: 0,
+				// 		ease: "bounce",
+				// 		duration: 0.25,
+				// 		delay: 0,
+				// 		z: 1,
+				// 		y: 1,
+				// 		x: 1,
+						
+						
+				// 	})
+
+				// 	// Move to normal size
+				// 	tl_panelAnimation00.to(infiniteΔ_A01.position, {
+				// 		repeat: 0,
+				// 		ease: "bounce",
+				// 		duration: 0.25,
+				// 		delay: 0,
+				// 		y: 0.5,
+				// 		z: 4.9
+						
+						
+						
+				// 	})
+
+
+				// 	// Scale to normal size
+				// 	tl_panelAnimation00.to(infiniteΔ_A02.scale, {
+				// 		repeat: 0,
+				// 		ease: "bounce",
+				// 		duration: 0.25,
+				// 		delay: 0,
+				// 		z: 1,
+				// 		y: 1,
+				// 		x: 1,
+						
+						
+				// 	})
+
+
+				// 	// Move to normal size
+				// 	tl_panelAnimation00.to(infiniteΔ_A02.position, {
+				// 		repeat: 0,
+				// 		ease: "bounce",
+				// 		duration: 0.25,
+				// 		delay: 0,
+				// 		y: 0.6,
+				// 		z: 4.8
+						
+						
+						
+				// 	})
+
+				// 	tl_panelAnimation00.play()
+				// }
 
 
 				let infiniteΔ_simpleAnimation_pause = () => tl_panelAnimation00.pause()
@@ -7398,7 +7785,7 @@
 						'DefaultImgId', 'DefaultImgClassName',
 						'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
 						"./assets/icons/00-Official/UI/Gestures/gesture_Move_OneFinger_RH.svg", "",
-						infiniteΔ_simpleAnimation_play, 
+						technicalityAnimation01, 
 						"ShowΔ",
 						"Toggle from here or main menu top left"
 					) 
