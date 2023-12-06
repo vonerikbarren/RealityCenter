@@ -2584,14 +2584,18 @@
 						// MenuOptionContainer - Icons
 						let MenuBar_MenuOptionContainer_root
 						let MenuBar_MenuOption00_Logo_Δ
-						let MenuBar_MenuOption01_Object_Δs
-						let MenuBar_MenuOption02_Property_Δs
-						let MenuBar_MenuOption03_Perspective_Δs
-						let MenuBar_MenuOption04_Hiearchy_Δs
-						let MenuBar_MenuOption05_Time_Δs
-						let MenuBar_MenuOption06_Experience_Δs
-						let MenuBar_MenuOption07_Communication_Δs
-						let MenuBar_MenuOption08_Help_Δs
+						let MenuBar_MenuOption01_Reality_Δs
+						let MenuBar_MenuOption02_Perspective_Δs
+						let MenuBar_MenuOption03_Experience_Δs
+						let MenuBar_MenuOption04_Time_Δs
+						let MenuBar_MenuOption05_Space_Δs
+						let MenuBar_MenuOption06_Communication_Δs
+						let MenuBar_MenuOption07_Object_Δs
+						let MenuBar_MenuOption08_Hiearchy_Δs
+						let MenuBar_MenuOption09_Properties_Δs
+						let MenuBar_MenuOption10_Help_Δs
+						// let MenuBar_MenuOption09_Communication_Δs
+						
 
                 let ΔA_Menubar_lineVerticalA
                 let ΔA_Menubar_lineVerticalA_BaseA
@@ -2600,6 +2604,14 @@
 
                 let ΔB_Navbar_root
                 let ΔB_Navbar_baseA
+
+					let Navbar_OptionContainer_root
+					let Navbar_Option_Home
+					let Navbar_Option_AboutMe
+					let Navbar_Option_Portfolio
+					let Navbar_Option_Services
+					let Navbar_Option_Contact
+
                 let ΔB_Navbar_baseB
 
                 let ΔB1_LeftDrawer_root
@@ -8675,73 +8687,543 @@
 						ΔA_Menubar_baseA.add(MenuBar_MenuOptionContainer_root)
 
 							// do something function
-							let doSomethingFunction = () => {
+							let doSomethingFunction01 = () => {
 								play_sfx_click_gen()
 
 
-								// gsap.to(MenuBar_MenuOption00_Logo_Δ.rotation, {
-								// 	repeat: 1,
-								// 	duration: .2,
-								// 	delay: 0,
-								// 	y: "3.14",
+								gsap.to(MenuBar_MenuOptionContainer_root.position, {
+									repeat: 0,
+									duration: .25,
+									delay: 0,
+									y: "0.1",
 
-								// })
+								})
 
-								// gsap.to(MenuBar_MenuOption00_Logo_Δ.rotation, {
-								// 	repeat: 1,
-								// 	duration: .2,
-								// 	delay: 0,
-								// 	y: "-3.14",
+								gsap.to(MenuBar_MenuOptionContainer_root.position, {
+									repeat: 0,
+									duration: .25,
+									delay: .25,
+									y: "-1",
 
-								// })
+								})
 							}
 
 
+							// #~~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~##~#~#~#~#~#~#~#~#~#~##~#~#~#~#~#~#~#~#~#~#~
 							// Menu Bar Logo
+							// #~~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~##~#~#~#~#~#~#~#~#~#~##~#~#~#~#~#~#~#~#~#~#~
 							MenuBar_MenuOption00_Logo_Δ = new THREE.Group()
 							MenuBar_MenuOption00_Logo_Δ.position.set(0, 0, 0)
 							MenuBar_MenuOption00_Logo_Δ.rotation.set(0, 0, 0)
 							MenuBar_MenuOption00_Logo_Δ.scale.set(0.1, 0.1, 0.1)
 							MenuBar_MenuOptionContainer_root.add(MenuBar_MenuOption00_Logo_Δ)
+
+								// LogoJump
+								let LogoJump = () => {
+									play_sfx_click_gen()
+
+
+									gsap.to(MenuBar_MenuOption00_Logo_Δ.position, {
+										repeat: 0,
+										duration: .25,
+										delay: 0,
+										y: "0.55",
+
+									})
+
+									gsap.to(MenuBar_MenuOption00_Logo_Δ.position, {
+										repeat: 0,
+										duration: .25,
+										delay: .25,
+										y: "0",
+
+									})
+								}
 							
 
 
-							MenuBar_MenuOption00_Logo_Δ.add(
-								new hoverObject(
-									'img',
-									0, 0, 0,
-									0, 0, 0,
-									1, 1, 1,
-									"Testing234", "TestingClass234",
-									"./assets/img/03-HudUI/Text/01_MenuBar/01_OrganizationTitle/OrganizationTitle01.svg", "",
-									"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
-									doSomethingFunction
-								)
-							)
+									MenuBar_MenuOption00_Logo_Δ.add(
+										new hoverObject(
+											'img',
+											0, 0, 0,
+											0, 0, 0,
+											1, 1, 1,
+											"Testing234", "TestingClass234",
+											"./assets/img/03-HudUI/Text/01_MenuBar/01_OrganizationTitle/OrganizationTitle02.svg", "",
+											"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+											LogoJump
+										)
+									)
 
 
+							// #~~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~##~#~#~#~#~#~#~#~#~#~##~#~#~#~#~#~#~#~#~#~#~
+							// Menu Bar / Reality
+							// #~~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~##~#~#~#~#~#~#~#~#~#~##~#~#~#~#~#~#~#~#~#~#~
+							MenuBar_MenuOption01_Reality_Δs = new THREE.Group()
+							MenuBar_MenuOption01_Reality_Δs.position.set(40, 0, 0)
+							MenuBar_MenuOption01_Reality_Δs.rotation.set(0, 0, 0)
+							MenuBar_MenuOption01_Reality_Δs.scale.set(0.1, 0.1, 0.1)
+							MenuBar_MenuOptionContainer_root.add(MenuBar_MenuOption01_Reality_Δs)
 
-							// Menu Bar 
-							MenuBar_MenuOption00_Logo_Δ = new THREE.Group()
-							MenuBar_MenuOption00_Logo_Δ.position.set(20, 0, 0)
-							MenuBar_MenuOption00_Logo_Δ.rotation.set(0, 0, 0)
-							MenuBar_MenuOption00_Logo_Δ.scale.set(0.1, 0.1, 0.1)
-							MenuBar_MenuOptionContainer_root.add(MenuBar_MenuOption00_Logo_Δ)
+								// RealityOptionJump
+								let RealityOptionJump = () => {
+									play_sfx_click_gen()
+
+
+									gsap.to(MenuBar_MenuOption01_Reality_Δs.position, {
+										repeat: 0,
+										duration: .25,
+										delay: 0,
+										y: "0.55",
+
+									})
+
+									gsap.to(MenuBar_MenuOption01_Reality_Δs.position, {
+										repeat: 0,
+										duration: .25,
+										delay: .25,
+										y: "0",
+
+									})
+								}
 							
 
 
-							MenuBar_MenuOption00_Logo_Δ.add(
-								new hoverObject(
-									'img',
-									0, 0, 0,
-									0, 0, 0,
-									1, 1, 1,
-									"Testing234", "TestingClass234",
-									"./assets/img/03-HudUI/Text/01_MenuBar/02_Reality/Reality01.svg", "",
-									"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
-									doSomethingFunction
-								)
-							)
+									MenuBar_MenuOption01_Reality_Δs.add(
+										new hoverObject(
+											'img',
+											0, 0, 0,
+											0, 0, 0,
+											1, 1, 1,
+											"Testing234", "TestingClass234",
+											"./assets/img/03-HudUI/Text/01_MenuBar/02_Reality/Reality01.svg", "",
+											"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+											RealityOptionJump
+										)
+									)
+
+
+							
+
+							// #~~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~##~#~#~#~#~#~#~#~#~#~##~#~#~#~#~#~#~#~#~#~#~
+							// Menu Bar / Perspective
+							// #~~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~##~#~#~#~#~#~#~#~#~#~##~#~#~#~#~#~#~#~#~#~#~
+							MenuBar_MenuOption02_Perspective_Δs = new THREE.Group()
+							MenuBar_MenuOption02_Perspective_Δs.position.set(67.5, 0, 0)
+							MenuBar_MenuOption02_Perspective_Δs.rotation.set(0, 0, 0)
+							MenuBar_MenuOption02_Perspective_Δs.scale.set(0.1, 0.1, 0.1)
+							MenuBar_MenuOptionContainer_root.add(MenuBar_MenuOption02_Perspective_Δs)
+
+
+								// PerspectiveOptionJump
+								let PerspectiveOptionJump = () => {
+									play_sfx_click_gen()
+
+
+									gsap.to(MenuBar_MenuOption02_Perspective_Δs.position, {
+										repeat: 0,
+										duration: .25,
+										delay: 0,
+										y: "0.55",
+
+									})
+
+									gsap.to(MenuBar_MenuOption02_Perspective_Δs.position, {
+										repeat: 0,
+										duration: .25,
+										delay: .25,
+										y: "0",
+
+									})
+								}
+							
+
+
+									MenuBar_MenuOption02_Perspective_Δs.add(
+										new hoverObject(
+											'img',
+											0, 0, 0,
+											0, 0, 0,
+											1, 1, 1,
+											"Testing234", "TestingClass234",
+											"./assets/img/03-HudUI/Text/01_MenuBar/03_Perspective/Perspective01.svg", "",
+											"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+											PerspectiveOptionJump
+										)
+									)
+
+
+							// #~~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~##~#~#~#~#~#~#~#~#~#~##~#~#~#~#~#~#~#~#~#~#~
+							// Menu Bar / Perspective
+							// #~~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~##~#~#~#~#~#~#~#~#~#~##~#~#~#~#~#~#~#~#~#~#~
+							MenuBar_MenuOption03_Experience_Δs = new THREE.Group()
+							MenuBar_MenuOption03_Experience_Δs.position.set(97.5, 0, 0)
+							MenuBar_MenuOption03_Experience_Δs.rotation.set(0, 0, 0)
+							MenuBar_MenuOption03_Experience_Δs.scale.set(0.1, 0.1, 0.1)
+							MenuBar_MenuOptionContainer_root.add(MenuBar_MenuOption03_Experience_Δs)
+							
+								// ExperienceOptionJump
+								let ExperienceOptionJump = () => {
+									play_sfx_click_gen()
+
+
+									gsap.to(MenuBar_MenuOption03_Experience_Δs.position, {
+										repeat: 0,
+										duration: .25,
+										delay: 0,
+										y: "0.55",
+
+									})
+
+									gsap.to(MenuBar_MenuOption03_Experience_Δs.position, {
+										repeat: 0,
+										duration: .25,
+										delay: .25,
+										y: "0",
+
+									})
+								}
+
+									MenuBar_MenuOption03_Experience_Δs.add(
+										new hoverObject(
+											'img',
+											0, 0, 0,
+											0, 0, 0,
+											1, 1, 1,
+											"Testing234", "TestingClass234",
+											"./assets/img/03-HudUI/Text/01_MenuBar/04_Experience/Experience.svg", "",
+											"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+											ExperienceOptionJump
+										)
+									)
+
+
+							// #~~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~##~#~#~#~#~#~#~#~#~#~##~#~#~#~#~#~#~#~#~#~#~
+							// Menu Bar / Time
+							// #~~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~##~#~#~#~#~#~#~#~#~#~##~#~#~#~#~#~#~#~#~#~#~
+							MenuBar_MenuOption04_Time_Δs = new THREE.Group()
+							MenuBar_MenuOption04_Time_Δs.position.set(120, 0, 0)
+							MenuBar_MenuOption04_Time_Δs.rotation.set(0, 0, 0)
+							MenuBar_MenuOption04_Time_Δs.scale.set(0.1, 0.1, 0.1)
+							MenuBar_MenuOptionContainer_root.add(MenuBar_MenuOption04_Time_Δs)
+
+								// TimeOptionJump
+								let TimeOptionJump = () => {
+									play_sfx_click_gen()
+
+
+									gsap.to(MenuBar_MenuOption04_Time_Δs.position, {
+										repeat: 0,
+										duration: .25,
+										delay: 0,
+										y: "0.55",
+
+									})
+
+									gsap.to(MenuBar_MenuOption04_Time_Δs.position, {
+										repeat: 0,
+										duration: .25,
+										delay: .25,
+										y: "0",
+
+									})
+								}
+							
+
+
+									MenuBar_MenuOption04_Time_Δs.add(
+										new hoverObject(
+											'img',
+											0, 0, 0,
+											0, 0, 0,
+											1, 1, 1,
+											"Testing234", "TestingClass234",
+											"./assets/img/03-HudUI/Text/01_MenuBar/05_Time/Time.svg", "",
+											"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+											TimeOptionJump
+										)
+									)
+
+							// #~~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~##~#~#~#~#~#~#~#~#~#~##~#~#~#~#~#~#~#~#~#~#~
+							// Menu Bar / Space
+							// #~~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~##~#~#~#~#~#~#~#~#~#~##~#~#~#~#~#~#~#~#~#~#~
+							MenuBar_MenuOption05_Space_Δs = new THREE.Group()
+							MenuBar_MenuOption05_Space_Δs.position.set(137.5, 0, 0)
+							MenuBar_MenuOption05_Space_Δs.rotation.set(0, 0, 0)
+							MenuBar_MenuOption05_Space_Δs.scale.set(0.1, 0.1, 0.1)
+							MenuBar_MenuOptionContainer_root.add(MenuBar_MenuOption05_Space_Δs)
+
+
+								// SpaceOptionJump
+								let SpaceOptionJump = () => {
+									play_sfx_click_gen()
+
+
+									gsap.to(MenuBar_MenuOption05_Space_Δs.position, {
+										repeat: 0,
+										duration: .25,
+										delay: 0,
+										y: "0.55",
+
+									})
+
+									gsap.to(MenuBar_MenuOption05_Space_Δs.position, {
+										repeat: 0,
+										duration: .25,
+										delay: .25,
+										y: "0",
+
+									})
+								}
+							
+
+
+									MenuBar_MenuOption05_Space_Δs.add(
+										new hoverObject(
+											'img',
+											0, 0, 0,
+											0, 0, 0,
+											1, 1, 1,
+											"Testing234", "TestingClass234",
+											"./assets/img/03-HudUI/Text/01_MenuBar/06_Space/Space01.svg", "",
+											"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+											SpaceOptionJump
+										)
+									)
+
+
+							// #~~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~##~#~#~#~#~#~#~#~#~#~##~#~#~#~#~#~#~#~#~#~#~
+							// Menu Bar / Communication
+							// #~~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~##~#~#~#~#~#~#~#~#~#~##~#~#~#~#~#~#~#~#~#~#~
+							MenuBar_MenuOption06_Communication_Δs = new THREE.Group()
+							MenuBar_MenuOption06_Communication_Δs.position.set(165, 0, 0)
+							MenuBar_MenuOption06_Communication_Δs.rotation.set(0, 0, 0)
+							MenuBar_MenuOption06_Communication_Δs.scale.set(0.1, 0.1, 0.1)
+							MenuBar_MenuOptionContainer_root.add(MenuBar_MenuOption06_Communication_Δs)
+
+								// CommunicationOptionJump
+								let CommunicationOptionJump = () => {
+									play_sfx_click_gen()
+
+
+									gsap.to(MenuBar_MenuOption06_Communication_Δs.position, {
+										repeat: 0,
+										duration: .25,
+										delay: 0,
+										y: "0.55",
+
+									})
+
+									gsap.to(MenuBar_MenuOption06_Communication_Δs.position, {
+										repeat: 0,
+										duration: .25,
+										delay: .25,
+										y: "0",
+
+									})
+								}
+							
+
+
+									MenuBar_MenuOption06_Communication_Δs.add(
+										new hoverObject(
+											'img',
+											0, 0, 0,
+											0, 0, 0,
+											1, 1, 1,
+											"Testing234", "TestingClass234",
+											"./assets/img/03-HudUI/Text/01_MenuBar/07_Communication/Communication.svg", "",
+											"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+											CommunicationOptionJump
+										)
+									)
+
+							// #~~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~##~#~#~#~#~#~#~#~#~#~##~#~#~#~#~#~#~#~#~#~#~
+							// Menu Bar / Object
+							// #~~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~##~#~#~#~#~#~#~#~#~#~##~#~#~#~#~#~#~#~#~#~#~
+							MenuBar_MenuOption07_Object_Δs = new THREE.Group()
+							MenuBar_MenuOption07_Object_Δs.position.set(195, 0.2, 0)
+							MenuBar_MenuOption07_Object_Δs.rotation.set(0, 0, 0)
+							MenuBar_MenuOption07_Object_Δs.scale.set(0.1, 0.1, 0.1)
+							MenuBar_MenuOptionContainer_root.add(MenuBar_MenuOption07_Object_Δs)
+
+								// ObjectOptionJump
+								let ObjectOptionJump = () => {
+									play_sfx_click_gen()
+
+
+									gsap.to(MenuBar_MenuOption07_Object_Δs.position, {
+										repeat: 0,
+										duration: .25,
+										delay: 0,
+										y: "0.55",
+
+									})
+
+									gsap.to(MenuBar_MenuOption07_Object_Δs.position, {
+										repeat: 0,
+										duration: .25,
+										delay: .25,
+										y: "0",
+
+									})
+								}
+							
+
+
+									MenuBar_MenuOption07_Object_Δs.add(
+										new hoverObject(
+											'img',
+											0, 0, 0,
+											0, 0, 0,
+											1, 1, 1,
+											"Testing234", "TestingClass234",
+											"./assets/img/03-HudUI/Text/01_MenuBar/08_Object/Object.svg", "",
+											"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+											ObjectOptionJump
+										)
+									)
+
+
+							// #~~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~##~#~#~#~#~#~#~#~#~#~##~#~#~#~#~#~#~#~#~#~#~
+							// Menu Bar / Hiearchy
+							// #~~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~##~#~#~#~#~#~#~#~#~#~##~#~#~#~#~#~#~#~#~#~#~
+							MenuBar_MenuOption08_Hiearchy_Δs = new THREE.Group()
+							MenuBar_MenuOption08_Hiearchy_Δs.position.set(220, 0, 0)
+							MenuBar_MenuOption08_Hiearchy_Δs.rotation.set(0, 0, 0)
+							MenuBar_MenuOption08_Hiearchy_Δs.scale.set(0.1, 0.1, 0.1)
+							MenuBar_MenuOptionContainer_root.add(MenuBar_MenuOption08_Hiearchy_Δs)
+
+
+								// HiearchyOptionJump
+								let HiearchyOptionJump = () => {
+									play_sfx_click_gen()
+
+
+									gsap.to(MenuBar_MenuOption08_Hiearchy_Δs.position, {
+										repeat: 0,
+										duration: .25,
+										delay: 0,
+										y: "0.55",
+
+									})
+
+									gsap.to(MenuBar_MenuOption08_Hiearchy_Δs.position, {
+										repeat: 0,
+										duration: .25,
+										delay: .25,
+										y: "0",
+
+									})
+								}
+							
+
+
+									MenuBar_MenuOption08_Hiearchy_Δs.add(
+										new hoverObject(
+											'img',
+											0, 0, 0,
+											0, 0, 0,
+											1, 1, 1,
+											"Testing234", "TestingClass234",
+											"./assets/img/03-HudUI/Text/01_MenuBar/08_Hierarchy/Hierarchy01.svg", "",
+											"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+											HiearchyOptionJump
+										)
+									)
+
+							// #~~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~##~#~#~#~#~#~#~#~#~#~##~#~#~#~#~#~#~#~#~#~#~
+							// Menu Bar / Properties
+							// #~~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~##~#~#~#~#~#~#~#~#~#~##~#~#~#~#~#~#~#~#~#~#~
+							MenuBar_MenuOption09_Properties_Δs = new THREE.Group()
+							MenuBar_MenuOption09_Properties_Δs.position.set(245, 0.1, 0)
+							MenuBar_MenuOption09_Properties_Δs.rotation.set(0, 0, 0)
+							MenuBar_MenuOption09_Properties_Δs.scale.set(0.1, 0.1, 0.1)
+							MenuBar_MenuOptionContainer_root.add(MenuBar_MenuOption09_Properties_Δs)
+
+
+								// PropertyOptionJump
+								let PropertyOptionJump = () => {
+									play_sfx_click_gen()
+
+
+									gsap.to(MenuBar_MenuOption09_Properties_Δs.position, {
+										repeat: 0,
+										duration: .25,
+										delay: 0,
+										y: "0.55",
+
+									})
+
+									gsap.to(MenuBar_MenuOption09_Properties_Δs.position, {
+										repeat: 0,
+										duration: .25,
+										delay: .25,
+										y: "0",
+
+									})
+								}
+							
+
+
+									MenuBar_MenuOption09_Properties_Δs.add(
+										new hoverObject(
+											'img',
+											0, 0, 0,
+											0, 0, 0,
+											1, 1, 1,
+											"Testing234", "TestingClass234",
+											"./assets/img/03-HudUI/Text/01_MenuBar/09_Property/Property01.svg", "",
+											"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+											PropertyOptionJump
+										)
+									)
+
+							// #~~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~##~#~#~#~#~#~#~#~#~#~##~#~#~#~#~#~#~#~#~#~#~
+							// Menu Bar / Help
+							// #~~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~##~#~#~#~#~#~#~#~#~#~##~#~#~#~#~#~#~#~#~#~#~
+							MenuBar_MenuOption10_Help_Δs = new THREE.Group()
+							MenuBar_MenuOption10_Help_Δs.position.set(265, 0.1, 0)
+							MenuBar_MenuOption10_Help_Δs.rotation.set(0, 0, 0)
+							MenuBar_MenuOption10_Help_Δs.scale.set(0.1, 0.1, 0.1)
+							MenuBar_MenuOptionContainer_root.add(MenuBar_MenuOption10_Help_Δs)
+
+								// HelpOptionJump
+								let HelpOptionJump = () => {
+									play_sfx_click_gen()
+
+
+									gsap.to(MenuBar_MenuOption10_Help_Δs.position, {
+										repeat: 0,
+										duration: .25,
+										delay: 0,
+										y: "0.55",
+
+									})
+
+									gsap.to(MenuBar_MenuOption10_Help_Δs.position, {
+										repeat: 0,
+										duration: .25,
+										delay: .25,
+										y: "0",
+
+									})
+								}
+							
+
+
+									MenuBar_MenuOption10_Help_Δs.add(
+										new hoverObject(
+											'img',
+											0, 0, 0,
+											0, 0, 0,
+											1, 1, 1,
+											"Testing234", "TestingClass234",
+											"./assets/img/03-HudUI/Text/01_MenuBar/10_Help/Help.svg", "",
+											"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+											HelpOptionJump
+										)
+									) 
 
 
 
@@ -8780,6 +9262,277 @@
 							"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
 						)
 					)
+
+
+					// Menu Items
+					MenuBar_MenuOptionContainer_root = new THREE.Group()
+					MenuBar_MenuOptionContainer_root.position.set(90, 9, 0.1)
+					MenuBar_MenuOptionContainer_root.rotation.set(0, 0, 0)
+					MenuBar_MenuOptionContainer_root.scale.set(1, 1, 1)
+					ΔB_Navbar_baseA.add(MenuBar_MenuOptionContainer_root)
+
+						// do something function
+						let doSomethingFunction02 = () => {
+							play_sfx_click_gen()
+
+
+							gsap.to(ΔB_Navbar_root.position, {
+								repeat: 0,
+								duration: .25,
+								delay: 0,
+								y: "0.1",
+
+							})
+
+							gsap.to(ΔB_Navbar_root.position, {
+								repeat: 0,
+								duration: .25,
+								delay: .25,
+								y: "-1",
+
+							})
+						}
+
+						// #~~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~##~#~#~#~#~#~#~#~#~#~##~#~#~#~#~#~#~#~#~#~#~
+							// Menu Bar / Help
+							// #~~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~##~#~#~#~#~#~#~#~#~#~##~#~#~#~#~#~#~#~#~#~#~
+							Navbar_Option_Portfolio = new THREE.Group()
+							Navbar_Option_Portfolio.position.set(0, -10, 0)
+							Navbar_Option_Portfolio.rotation.set(0, 0, 0)
+							Navbar_Option_Portfolio.scale.set(0.1, 0.1, 0.1)
+							MenuBar_MenuOptionContainer_root.add(Navbar_Option_Portfolio)
+
+								// HelpOptionJump
+								let HomeOptionJump = () => {
+									play_sfx_click_gen()
+
+
+									gsap.to(Navbar_Option_Portfolio.position, {
+										repeat: 0,
+										duration: .25,
+										delay: 0,
+										y: "-9.5",
+
+									})
+
+									gsap.to(Navbar_Option_Portfolio.position, {
+										repeat: 0,
+										duration: .25,
+										delay: .25,
+										y: "-10",
+
+									})
+								}
+							
+
+
+									Navbar_Option_Portfolio.add(
+										new hoverObject(
+											'img',
+											0, 0, 0,
+											0, 0, 0,
+											1, 1, 1,
+											"Testing234", "TestingClass234",
+											"./assets/img/03-HudUI/Text/02_Navbar/03_Portfolio/Portfolio.svg", "",
+											"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+											HomeOptionJump
+										)
+									) 
+
+									
+
+
+
+
+
+							// #~~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~##~#~#~#~#~#~#~#~#~#~##~#~#~#~#~#~#~#~#~#~#~
+							// Menu Bar / Help
+							// #~~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~##~#~#~#~#~#~#~#~#~#~##~#~#~#~#~#~#~#~#~#~#~
+							Navbar_Option_AboutMe = new THREE.Group()
+							Navbar_Option_AboutMe.position.set(-30, -10, 0)
+							Navbar_Option_AboutMe.rotation.set(0, 0, 0)
+							Navbar_Option_AboutMe.scale.set(0.1, 0.1, 0.1)
+							MenuBar_MenuOptionContainer_root.add(Navbar_Option_AboutMe)
+
+								// HelpOptionJump
+								let AboutMe_OptionJump = () => {
+									play_sfx_click_gen()
+
+
+									gsap.to(Navbar_Option_AboutMe.position, {
+										repeat: 0,
+										duration: .25,
+										delay: 0,
+										y: "-9.5",
+
+									})
+
+									gsap.to(Navbar_Option_AboutMe.position, {
+										repeat: 0,
+										duration: .25,
+										delay: .25,
+										y: "-10",
+
+									})
+								}
+							
+
+
+									Navbar_Option_AboutMe.add(
+										new hoverObject(
+											'img',
+											0, 0, 0,
+											0, 0, 0,
+											1, 1, 1,
+											"Testing234", "TestingClass234",
+											"./assets/img/03-HudUI/Text/02_Navbar/02_AboutMe/AboutMe01.svg", "",
+											"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+											AboutMe_OptionJump
+										)
+									) 
+
+
+							
+							// #~~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~##~#~#~#~#~#~#~#~#~#~##~#~#~#~#~#~#~#~#~#~#~
+							// Menu Bar / Help
+							// #~~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~##~#~#~#~#~#~#~#~#~#~##~#~#~#~#~#~#~#~#~#~#~
+							Navbar_Option_Home = new THREE.Group()
+							Navbar_Option_Home.position.set(-55, -10, 0)
+							Navbar_Option_Home.rotation.set(0, 0, 0)
+							Navbar_Option_Home.scale.set(0.1, 0.1, 0.1)
+							MenuBar_MenuOptionContainer_root.add(Navbar_Option_Home)
+
+								// HelpOptionJump
+								let Home_OptionJump = () => {
+									play_sfx_click_gen()
+
+
+									gsap.to(Navbar_Option_Home.position, {
+										repeat: 0,
+										duration: .25,
+										delay: 0,
+										y: "-9.5",
+
+									})
+
+									gsap.to(Navbar_Option_Home.position, {
+										repeat: 0,
+										duration: .25,
+										delay: .25,
+										y: "-10",
+
+									})
+								}
+							
+
+
+									Navbar_Option_Home.add(
+										new hoverObject(
+											'img',
+											0, 0, 0,
+											0, 0, 0,
+											1, 1, 1,
+											"Testing234", "TestingClass234",
+											"./assets/img/03-HudUI/Text/02_Navbar/01_Home/Home.svg", "",
+											"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+											Home_OptionJump
+										)
+									) 
+
+
+
+							// #~~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~##~#~#~#~#~#~#~#~#~#~##~#~#~#~#~#~#~#~#~#~#~
+							// Menu Bar / Navbar / Services
+							// #~~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~##~#~#~#~#~#~#~#~#~#~##~#~#~#~#~#~#~#~#~#~#~
+							Navbar_Option_Services = new THREE.Group()
+							Navbar_Option_Services.position.set(30, -10, 0)
+							Navbar_Option_Services.rotation.set(0, 0, 0)
+							Navbar_Option_Services.scale.set(0.1, 0.1, 0.1)
+							MenuBar_MenuOptionContainer_root.add(Navbar_Option_Services)
+
+								// HelpOptionJump
+								let Services_OptionJump = () => {
+									play_sfx_click_gen()
+
+
+									gsap.to(Navbar_Option_Services.position, {
+										repeat: 0,
+										duration: .25,
+										delay: 0,
+										y: "-9.5",
+
+									})
+
+									gsap.to(Navbar_Option_Services.position, {
+										repeat: 0,
+										duration: .25,
+										delay: .25,
+										y: "-10",
+
+									})
+								}
+							
+
+
+									Navbar_Option_Services.add(
+										new hoverObject(
+											'img',
+											0, 0, 0,
+											0, 0, 0,
+											1, 1, 1,
+											"Testing234", "TestingClass234",
+											"./assets/img/03-HudUI/Text/02_Navbar/04_Services/Services.svg", "",
+											"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+											Services_OptionJump
+										)
+									) 
+
+
+							// #~~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~##~#~#~#~#~#~#~#~#~#~##~#~#~#~#~#~#~#~#~#~#~
+							// Menu Bar / Navbar / Contact
+							// #~~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~##~#~#~#~#~#~#~#~#~#~##~#~#~#~#~#~#~#~#~#~#~
+							Navbar_Option_Contact = new THREE.Group()
+							Navbar_Option_Contact.position.set(60, -10, 0)
+							Navbar_Option_Contact.rotation.set(0, 0, 0)
+							Navbar_Option_Contact.scale.set(0.1, 0.1, 0.1)
+							MenuBar_MenuOptionContainer_root.add(Navbar_Option_Contact)
+
+								// HelpOptionJump
+								let Contact_OptionJump = () => {
+									play_sfx_click_gen()
+
+
+									gsap.to(Navbar_Option_Contact.position, {
+										repeat: 0,
+										duration: .25,
+										delay: 0,
+										y: "-9.5",
+
+									})
+
+									gsap.to(Navbar_Option_Contact.position, {
+										repeat: 0,
+										duration: .25,
+										delay: .25,
+										y: "-10",
+
+									})
+								}
+							
+
+
+									Navbar_Option_Contact.add(
+										new hoverObject(
+											'img',
+											0, 0, 0,
+											0, 0, 0,
+											1, 1, 1,
+											"Testing234", "TestingClass234",
+											"./assets/img/03-HudUI/Text/02_Navbar/05_Contact/Contact01.svg", "",
+											"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+											Contact_OptionJump
+										)
+									) 
 
 
                 
