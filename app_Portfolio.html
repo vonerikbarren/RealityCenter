@@ -1699,8 +1699,9 @@
 							<video id="video03" class="myVideo03" playsinline autoplay controls webkit-playsinline autoplay loop width="320" height="240" src="./assets/video/whiteHexBg02.mp4"border: 5px 5px black;"></video>
 			
 			
-							<!-- VideoDomain03: cContainerTest -->
-							<video id="video04" class="myVideo04" playsinline controls webkit-playsinline autoplay loop width="320" height="240" src="./assets/video/PlexusAnimations/Animation_WhiteWithPurplePlexus.mp4" border: 5px 5px black;"></video>
+							<!-- TimeTunnel -->
+							<!-- VideoDomain03: cContainerTest --> 
+							<video id="video04" class="myVideo04" playsinline controls webkit-playsinline autoplay loop width="320" height="240" src="./assets/video/TunnelAnimations/TimeTunnel02.mp4" border: 5px 5px black;"></video>
 			
 			
 							<!-- VideoDomain03: PurpleTechTunnel -->
@@ -2622,6 +2623,38 @@
 					let Δ02_LeftDrawer_Options_root
 					let Δ02_LeftDrawer_Options_baseA
 
+					let IconHolder_LeftDrawerOption01
+					let IconHolder_LeftDrawerOption02
+					let IconHolder_LeftDrawerOption03
+					let IconHolder_LeftDrawerOption04
+					let IconHolder_LeftDrawerOption05
+					let IconHolder_LeftDrawerOption06
+					let IconHolder_LeftDrawerOption07
+					let IconHolder_LeftDrawerOption08
+					let IconHolder_LeftDrawerOption09
+					// let IconHolder_LeftDrawerOption10
+
+					let IconBracket_LeftDrawer_Opt01
+					let IconBracket_LeftDrawer_Opt02
+					let IconBracket_LeftDrawer_Opt03
+					let IconBracket_LeftDrawer_Opt04
+					let IconBracket_LeftDrawer_Opt05
+					let IconBracket_LeftDrawer_Opt06
+					let IconBracket_LeftDrawer_Opt07
+					let IconBracket_LeftDrawer_Opt08
+					let IconBracket_LeftDrawer_Opt09
+					let IconBracket_LeftDrawer_Opt10
+					let IconBracket_LeftDrawer_Opt11
+					let IconBracket_LeftDrawer_Opt12
+					let IconBracket_LeftDrawer_Opt13
+					let IconBracket_LeftDrawer_Opt14
+					let IconBracket_LeftDrawer_Opt15
+					let IconBracket_LeftDrawer_Opt16
+					let IconBracket_LeftDrawer_Opt17
+					let IconBracket_LeftDrawer_Opt18
+					
+
+
                 let ΔB2_RightDrawer_root
                 let ΔB2_RightDrawer_BaseA
                 let ΔB1_RightDrawer_DrawerContainer25percent_root
@@ -2629,6 +2662,35 @@
 
 					let Δ02_RightDrawer_Options_root
 					let Δ02_RightDrawer_Options_baseA
+
+					let IconHolder_RightDrawerOption01
+					let IconHolder_RightDrawerOption02
+					let IconHolder_RightDrawerOption03
+					let IconHolder_RightDrawerOption04
+					let IconHolder_RightDrawerOption05
+					let IconHolder_RightDrawerOption06
+					let IconHolder_RightDrawerOption07
+					let IconHolder_RightDrawerOption08
+					let IconHolder_RightDrawerOption09
+
+					let IconBracket_RightDrawer_Opt01
+					let IconBracket_RightDrawer_Opt02
+					let IconBracket_RightDrawer_Opt03
+					let IconBracket_RightDrawer_Opt04
+					let IconBracket_RightDrawer_Opt05
+					let IconBracket_RightDrawer_Opt06
+					let IconBracket_RightDrawer_Opt07
+					let IconBracket_RightDrawer_Opt08
+					let IconBracket_RightDrawer_Opt09
+					let IconBracket_RightDrawer_Opt10
+					let IconBracket_RightDrawer_Opt11
+					let IconBracket_RightDrawer_Opt12
+					let IconBracket_RightDrawer_Opt13
+					let IconBracket_RightDrawer_Opt14
+					let IconBracket_RightDrawer_Opt15
+					let IconBracket_RightDrawer_Opt16
+					let IconBracket_RightDrawer_Opt17
+					let IconBracket_RightDrawer_Opt18
 
 				
 				// RealityMaps
@@ -2678,6 +2740,8 @@
 					let RealityMap_Example01_IconItem05
 					let RealityMap_Example01_IconItem06
 
+				let MainViewPort_root
+				let MainViewPort_Grid01
 
 
                 let ΔC_MainViews_root
@@ -7227,10 +7291,10 @@
 						camera.attach(LH_Δ01)
 
 
-						const mat_LH_Δ01 = new THREE.MeshBasicMaterial({ map: GridWhiteNeonGreen, side: THREE.DoubleSide });
+						const mat_LH_Δ01 = new THREE.MeshBasicMaterial({ map: SceneWallpaper_01, side: THREE.DoubleSide });
 						mesh_LH_Δ01 = new THREE.Mesh(geo_objT_SphereA0, mat_LH_Δ01);
-						mat_LH_Δ01.transparent = true;
-						mat_LH_Δ01.alphaMap = GridWhiteNeonGreen;
+						mat_LH_Δ01.transparent = false;
+						mat_LH_Δ01.alphaMap = SceneWallpaper_01;
 						mesh_LH_Δ01.position.set(0, 0, 0);
 						// mesh_LH_Δ01.position.set(-15000, 0, 0);
 						mesh_LH_Δ01.scale.set(1, 1, 1);
@@ -7273,7 +7337,7 @@
 						RH_Δ01 = new THREE.Group()
 						RH_Δ01.position.set(0, 0, 0)
 						RH_Δ01.rotation.set(0, 0, 0)
-						RH_Δ01.scale.set(0.4, 0.4, 0.4)
+						RH_Δ01.scale.set(0.24, 0.24, 0.24)
 						RightHandΔ_Test_root.add(RH_Δ01)
 						camera.attach(RH_Δ01)
 
@@ -8098,6 +8162,573 @@
 
 
 
+				//.................................................................................
+				//..LL.........HH......H.................AAA.......................................
+				//.LLLL.......HHHH...HHHH...............AAAAA......................................
+				//.LLLL.......HHHH...HHHH...............AAAAA......................................
+				//.LLLL.......HHHH...HHHH..............AAAAAAA.....................................
+				//.LLLL.......HHHH...HHHH..............AAAAAAA...AAppppppp..ppppppppp...ssssssss...
+				//.LLLL.......HHHHHHHHHHH..............AAAAAAA...AApppppppp.pppppppppp..ssssssss...
+				//.LLLL.......HHHHHHHHHHH.............AAAAAAAAA..AApppppppppppppppppppppsssssssss..
+				//.LLLL.......HHHHHHHHHHH.............AAAA.AAAA..AAppp.pppppppppp.ppppppsssssssss..
+				//.LLLL.......HHHHHHHHHHH.............AAAAAAAAAA.AApp...pppppppp...pppp.ssssssss...
+				//.LLLL.......HHHH...HHHH............_AAAAAAAAAA.AApp...pppppppp...pppp.ssssssss...
+				//.LLLL.......HHHH...HHHH............_AAAAAAAAAA.AApp...pppppppp...pppppsssssssss..
+				//.LLLLLLLLLL.HHHH...HHHH............_AAAAAAAAAAAAApppppppppppppppppppppssss.ssss..
+				//.LLLLLLLLLL.HHHH...HHHH...........__AAA....AAAAAApppppppp.pppppppppp.psssssssss..
+				//.LLLLLLLLLL.HHHH...HHHH...........__AA.....AAAAAApppppppp.pppppppppp..ssssssss...
+				//...............................................AApp.ppp...pppp.ppp.....ssssss....
+				//.......................HH__________............AApp.......pppp...................
+				//.......................HH__________............AApp.......pppp...................
+				//...............................................AApp.......pppp...................
+				//.................................................................................
+
+
+
+
+				Δ02_LeftDrawer_Options_root = new THREE.Group()
+				Δ02_LeftDrawer_Options_root.position.set(-1.14, -0.34, 4)
+				Δ02_LeftDrawer_Options_root.rotation.set(0, 0, 0)
+				Δ02_LeftDrawer_Options_root.scale.set(0.0025, 0.0025, 0.0025)
+				scene.add(Δ02_LeftDrawer_Options_root) 
+				camera.attach(Δ02_LeftDrawer_Options_root)
+
+
+				IconHolder_LeftDrawerOption01 = new THREE.Group()
+				IconHolder_LeftDrawerOption01.position.set(-120, 375, 0)
+				IconHolder_LeftDrawerOption01.rotation.set(0, 0, 0)
+				IconHolder_LeftDrawerOption01.scale.set(1, 1, 1)
+				Δ02_LeftDrawer_Options_root.add(IconHolder_LeftDrawerOption01) 
+			
+
+				// IconHolder_LeftDrawerOption01.add(
+
+				// 	new TechIcon(
+				// 		0, 5, 0.1,
+				// 		0, 0, 0,
+				// 		0.55, 0.55, 0.55,
+				// 		'DefaultTechIconId', 'DefaultTechIconClassName',
+				// 		'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+				// 		'DefaultImgId', 'DefaultImgClassName',
+				// 		'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+				// 		"./assets/icons/Hud_LH_RH_Apps/LH/01_System/01_Admin_Systems/01_Notification_Systems/icon00_AdminSystem/iconA01_AdminSystem.svg", "",
+				// 		infiniteΔ_simpleAnimation_progress_025, 
+				// 		"Admin System",
+				// 		"Click to show other systems"
+				// 	) 
+					
+				// )
+
+				IconHolder_LeftDrawerOption01.add(
+					new hoverObject(
+						'img',
+						2.5, 2, 0,
+						0, 0, 0,
+						0.55, 0.55, 0.55,
+						"Testing234", "TestingClass234",
+						"./assets/icons/Hud_LH_RH_Apps/General/IconHolder_InActive.svg", "",
+						"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+						
+					)
+				)
+
+
+				IconHolder_LeftDrawerOption02 = new THREE.Group()
+				IconHolder_LeftDrawerOption02.position.set(-120, 330, 0)
+				IconHolder_LeftDrawerOption02.rotation.set(0, 0, 0)
+				IconHolder_LeftDrawerOption02.scale.set(1, 1, 1)
+				infiniteΔs_simpleAnimation_button_root.add(IconHolder_LeftDrawerOption02) 
+			
+
+				IconHolder_LeftDrawerOption02.add(
+					new hoverObject(
+						'img',
+						2.5, 2, 0,
+						0, 0, 0,
+						0.55, 0.55, 0.55,
+						"Testing234", "TestingClass234",
+						"./assets/icons/Hud_LH_RH_Apps/General/IconHolder_InActive.svg", "",
+						"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+						
+					)
+				)
+
+
+				// IconHolder_LeftDrawerOption02.add(
+
+				// 	new TechIcon(
+				// 		0, 5, 0.1,
+				// 		0, 0, 0,
+				// 		0.55, 0.55, 0.55,
+				// 		'DefaultTechIconId', 'DefaultTechIconClassName',
+				// 		'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+				// 		'DefaultImgId', 'DefaultImgClassName',
+				// 		'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+				// 		"./assets/icons/Hud_LH_RH_Apps/LH/01_System/01_Admin_Systems/01_Notification_Systems/icon00_AdminSystem/iconA01_AdminSystem.svg", "",
+				// 		infiniteΔ_simpleAnimation_progress_025, 
+				// 		"Admin System",
+				// 		"Click to show other systems"
+				// 	) 
+					
+				// )
+
+
+
+				IconHolder_LeftDrawerOption03 = new THREE.Group()
+				IconHolder_LeftDrawerOption03.position.set(-120, 285, 0)
+				IconHolder_LeftDrawerOption03.rotation.set(0, 0, 0)
+				IconHolder_LeftDrawerOption03.scale.set(1, 1, 1)
+				infiniteΔs_simpleAnimation_button_root.add(IconHolder_LeftDrawerOption03) 
+			
+
+				IconHolder_LeftDrawerOption03.add(
+					new hoverObject(
+						'img',
+						2.5, 2, 0,
+						0, 0, 0,
+						0.55, 0.55, 0.55,
+						"Testing234", "TestingClass234",
+						"./assets/icons/Hud_LH_RH_Apps/General/IconHolder_InActive.svg", "",
+						"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+						
+					)
+				)
+
+
+
+				IconHolder_LeftDrawerOption04 = new THREE.Group()
+				IconHolder_LeftDrawerOption04.position.set(-120, 240, 0)
+				IconHolder_LeftDrawerOption04.rotation.set(0, 0, 0)
+				IconHolder_LeftDrawerOption04.scale.set(1, 1, 1)
+				infiniteΔs_simpleAnimation_button_root.add(IconHolder_LeftDrawerOption04) 
+			
+
+				IconHolder_LeftDrawerOption04.add(
+					new hoverObject(
+						'img',
+						2.5, 2, 0,
+						0, 0, 0,
+						0.55, 0.55, 0.55,
+						"Testing234", "TestingClass234",
+						"./assets/icons/Hud_LH_RH_Apps/General/IconHolder_InActive.svg", "",
+						"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+						
+					)
+				)
+
+
+
+				IconHolder_LeftDrawerOption05 = new THREE.Group()
+				IconHolder_LeftDrawerOption05.position.set(-120, 195, 0)
+				IconHolder_LeftDrawerOption05.rotation.set(0, 0, 0)
+				IconHolder_LeftDrawerOption05.scale.set(1, 1, 1)
+				infiniteΔs_simpleAnimation_button_root.add(IconHolder_LeftDrawerOption05) 
+			
+
+				IconHolder_LeftDrawerOption05.add(
+					new hoverObject(
+						'img',
+						2.5, 2, 0,
+						0, 0, 0,
+						0.55, 0.55, 0.55,
+						"Testing234", "TestingClass234",
+						"./assets/icons/Hud_LH_RH_Apps/General/IconHolder_InActive.svg", "",
+						"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+						
+					)
+				)
+
+
+				IconHolder_LeftDrawerOption06 = new THREE.Group()
+				IconHolder_LeftDrawerOption06.position.set(-120, 150, 0)
+				IconHolder_LeftDrawerOption06.rotation.set(0, 0, 0)
+				IconHolder_LeftDrawerOption06.scale.set(1, 1, 1)
+				infiniteΔs_simpleAnimation_button_root.add(IconHolder_LeftDrawerOption06) 
+			
+
+				IconHolder_LeftDrawerOption06.add(
+					new hoverObject(
+						'img',
+						2.5, 2, 0,
+						0, 0, 0,
+						0.55, 0.55, 0.55,
+						"Testing234", "TestingClass234",
+						"./assets/icons/Hud_LH_RH_Apps/General/IconHolder_InActive.svg", "",
+						"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+						
+					)
+				)
+
+
+				IconHolder_LeftDrawerOption07 = new THREE.Group()
+				IconHolder_LeftDrawerOption07.position.set(-120, 105, 0)
+				IconHolder_LeftDrawerOption07.rotation.set(0, 0, 0)
+				IconHolder_LeftDrawerOption07.scale.set(1, 1, 1)
+				infiniteΔs_simpleAnimation_button_root.add(IconHolder_LeftDrawerOption07) 
+			
+
+				IconHolder_LeftDrawerOption07.add(
+					new hoverObject(
+						'img',
+						2.5, 2, 0,
+						0, 0, 0,
+						0.55, 0.55, 0.55,
+						"Testing234", "TestingClass234",
+						"./assets/icons/Hud_LH_RH_Apps/General/IconHolder_InActive.svg", "",
+						"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+						
+					)
+				)
+
+
+				IconHolder_LeftDrawerOption08 = new THREE.Group()
+				IconHolder_LeftDrawerOption08.position.set(-120, 60, 0)
+				IconHolder_LeftDrawerOption08.rotation.set(0, 0, 0)
+				IconHolder_LeftDrawerOption08.scale.set(1, 1, 1)
+				infiniteΔs_simpleAnimation_button_root.add(IconHolder_LeftDrawerOption08) 
+			
+
+				IconHolder_LeftDrawerOption08.add(
+					new hoverObject(
+						'img',
+						2.5, 2, 0,
+						0, 0, 0,
+						0.55, 0.55, 0.55,
+						"Testing234", "TestingClass234",
+						"./assets/icons/Hud_LH_RH_Apps/General/IconHolder_InActive.svg", "",
+						"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+						
+					)
+				)
+
+
+				IconHolder_LeftDrawerOption09 = new THREE.Group()
+				IconHolder_LeftDrawerOption09.position.set(-120, 15, 0)
+				IconHolder_LeftDrawerOption09.rotation.set(0, 0, 0)
+				IconHolder_LeftDrawerOption09.scale.set(1, 1, 1)
+				infiniteΔs_simpleAnimation_button_root.add(IconHolder_LeftDrawerOption09) 
+			
+
+				IconHolder_LeftDrawerOption09.add(
+					new hoverObject(
+						'img',
+						2.5, 2, 0,
+						0, 0, 0,
+						0.55, 0.55, 0.55,
+						"Testing234", "TestingClass234",
+						"./assets/icons/Hud_LH_RH_Apps/General/IconHolder_InActive.svg", "",
+						"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+						
+					)
+				)
+
+
+				//...................................................................................................................
+				//..LL.........HH......H...............SSSSSS..............................AAA.......................................
+				//.LLLL.......HHHH...HHHH.............SSSSSSSS.............uubb...........AAAAA......................................
+				//.LLLL.......HHHH...HHHH............_SSSSSSSSS............uubb...........AAAAA......................................
+				//.LLLL.......HHHH...HHHH............_SSSSSSSSS............uubb..........AAAAAAA.....................................
+				//.LLLL.......HHHH...HHHH...........__SS...SSSSSSSuu...uuu.uubbbbbbb.....AAAAAAA...Apppppppp..ppppppppp...ssssssss...
+				//.LLLL.......HHHHHHHHHHH...........__SSSS......SSuu...uuu.uubbbbbbbb....AAAAAAA...Appppppppp.pppppppppp..ssssssss...
+				//.LLLL.......HHHHHHHHHHH............_SSSSSSSS..SSuu...uuu.uubbbbbbbbb..AAAAAAAAA..Appppppppppppppppppppppsssssssss..
+				//.LLLL.......HHHHHHHHHHH............_SSSSSSSSS.SSuu...uuu.uubbb.bbbbb..AAAA.AAAA..Apppp.pppppppppp.ppppppsssssssss..
+				//.LLLL.......HHHHHHHHHHH..............SSSSSSSSSSSuu...uuu.uubb...bbbb..AAAAAAAAAA.Appp...pppppppp...pppp.ssssssss...
+				//.LLLL.......HHHH...HHHH...........__SS..SSSSSSSSuu...uuu.uubb...bbbb.bAAAAAAAAAA.Appp...pppppppp...pppp.ssssssss...
+				//.LLLL.......HHHH...HHHH...........__SS....SSSS.Suu..uuuu.uubbb..bbbb.bAAAAAAAAAA.Appp...pppppppp...pppppsssssssss..
+				//.LLLLLLLLLL.HHHH...HHHH...........__SSSSSSSSSS.Suuuuuuuu.uubbbbbbbbb.bAAAAAAAAAAAAppppppppppppppppppppppssss.ssss..
+				//.LLLLLLLLLL.HHHH...HHHH............_SSSSSSSSS..Suuuuuuuu.uubbbbbbbb.bbAAA....AAAAAppppppppp.pppppppppp.psssssssss..
+				//.LLLLLLLLLL.HHHH...HHHH.............SSSSSSSSS..Suuuuuuuu.uubbbbbbbb.bbAA.....AAAAAppppppppp.pppppppppp..ssssssss...
+				//.....................................SSSSSS......uuu..........bbb................Appp.ppp...pppp.ppp.....ssssss....
+				//.......................HH__________..............................................Appp.......pppp...................
+				//.......................HH__________..............................................Appp.......pppp...................
+				//.................................................................................Appp.......pppp...................
+				//...................................................................................................................
+
+
+
+				//...................................................................................
+				//..RRRRR........HH......H.................AAA.......................................
+				//.RRRRRRRRRR...HHHH...HHHH...............AAAAA......................................
+				//.RRRRRRRRRRR..HHHH...HHHH...............AAAAA......................................
+				//.RRRRRRRRRRR..HHHH...HHHH..............AAAAAAA.....................................
+				//.RRRR...RRRRR.HHHH...HHHH..............AAAAAAA...AAppppppp..ppppppppp...ssssssss...
+				//.RRRR...RRRRR.HHHHHHHHHHH..............AAAAAAA...AApppppppp.pppppppppp..ssssssss...
+				//.RRRRRRRRRRR..HHHHHHHHHHH.............AAAAAAAAA..AApppppppppppppppppppppsssssssss..
+				//.RRRRRRRRRRR..HHHHHHHHHHH.............AAAA.AAAA..AAppp.pppppppppp.ppppppsssssssss..
+				//.RRRRRRRRRRR..HHHHHHHHHHH.............AAAAAAAAAA.AApp...pppppppp...pppp.ssssssss...
+				//.RRRR..RRRRR..HHHH...HHHH............_AAAAAAAAAA.AApp...pppppppp...pppp.ssssssss...
+				//.RRRR...RRRR..HHHH...HHHH............_AAAAAAAAAA.AApp...pppppppp...pppppsssssssss..
+				//.RRRR...RRRR..HHHH...HHHH............_AAAAAAAAAAAAApppppppppppppppppppppssss.ssss..
+				//.RRRR...RRRR..HHHH...HHHH...........__AAA....AAAAAApppppppp.pppppppppp.psssssssss..
+				//.RRRR...RRRRR.HHHH...HHHH...........__AA.....AAAAAApppppppp.pppppppppp..ssssssss...
+				//.................................................AApp.ppp...pppp.ppp.....ssssss....
+				//.........................HH__________............AApp.......pppp...................
+				//.........................HH__________............AApp.......pppp...................
+				//.................................................AApp.......pppp...................
+				//...................................................................................
+
+
+				Δ02_RightDrawer_Options_root = new THREE.Group()
+				Δ02_RightDrawer_Options_root.position.set(-1.14, -0.34, 4)
+				Δ02_RightDrawer_Options_root.rotation.set(0, 0, 0)
+				Δ02_RightDrawer_Options_root.scale.set(0.0025, 0.0025, 0.0025)
+				scene.add(Δ02_RightDrawer_Options_root) 
+				camera.attach(Δ02_RightDrawer_Options_root)
+
+
+				IconHolder_RightDrawerOption01 = new THREE.Group()
+				IconHolder_RightDrawerOption01.position.set(1025, 375, 0)
+				IconHolder_RightDrawerOption01.rotation.set(0, 0, 0)
+				IconHolder_RightDrawerOption01.scale.set(1, 1, 1)
+				Δ02_RightDrawer_Options_root.add(IconHolder_RightDrawerOption01) 
+			
+
+				// IconHolder_RightDrawerOption01.add(
+
+				// 	new TechIcon(
+				// 		0, 5, 0.1,
+				// 		0, 0, 0,
+				// 		0.55, 0.55, 0.55,
+				// 		'DefaultTechIconId', 'DefaultTechIconClassName',
+				// 		'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+				// 		'DefaultImgId', 'DefaultImgClassName',
+				// 		'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+				// 		"./assets/icons/Hud_LH_RH_Apps/LH/01_System/01_Admin_Systems/01_Notification_Systems/icon00_AdminSystem/iconA01_AdminSystem.svg", "",
+				// 		infiniteΔ_simpleAnimation_progress_025, 
+				// 		"Admin System",
+				// 		"Click to show other systems"
+				// 	) 
+					
+				// )
+
+				IconHolder_RightDrawerOption01.add(
+					new hoverObject(
+						'img',
+						2.5, 2, 0,
+						0, 0, 0,
+						0.55, 0.55, 0.55,
+						"Testing234", "TestingClass234",
+						"./assets/icons/Hud_LH_RH_Apps/General/IconHolder_InActive.svg", "",
+						"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+						
+					)
+				)
+
+
+				IconHolder_RightDrawerOption02 = new THREE.Group()
+				IconHolder_RightDrawerOption02.position.set(1025, 330, 0)
+				IconHolder_RightDrawerOption02.rotation.set(0, 0, 0)
+				IconHolder_RightDrawerOption02.scale.set(1, 1, 1)
+				infiniteΔs_simpleAnimation_button_root.add(IconHolder_RightDrawerOption02) 
+			
+
+				IconHolder_RightDrawerOption02.add(
+					new hoverObject(
+						'img',
+						2.5, 2, 0,
+						0, 0, 0,
+						0.55, 0.55, 0.55,
+						"Testing234", "TestingClass234",
+						"./assets/icons/Hud_LH_RH_Apps/General/IconHolder_InActive.svg", "",
+						"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+						
+					)
+				)
+
+
+				// IconHolder_RightDrawerOption02.add(
+
+				// 	new TechIcon(
+				// 		0, 5, 0.1,
+				// 		0, 0, 0,
+				// 		0.55, 0.55, 0.55,
+				// 		'DefaultTechIconId', 'DefaultTechIconClassName',
+				// 		'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+				// 		'DefaultImgId', 'DefaultImgClassName',
+				// 		'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+				// 		"./assets/icons/Hud_LH_RH_Apps/LH/01_System/01_Admin_Systems/01_Notification_Systems/icon00_AdminSystem/iconA01_AdminSystem.svg", "",
+				// 		infiniteΔ_simpleAnimation_progress_025, 
+				// 		"Admin System",
+				// 		"Click to show other systems"
+				// 	) 
+					
+				// )
+
+
+
+				IconHolder_RightDrawerOption03 = new THREE.Group()
+				IconHolder_RightDrawerOption03.position.set(1025, 285, 0)
+				IconHolder_RightDrawerOption03.rotation.set(0, 0, 0)
+				IconHolder_RightDrawerOption03.scale.set(1, 1, 1)
+				infiniteΔs_simpleAnimation_button_root.add(IconHolder_RightDrawerOption03) 
+			
+
+				IconHolder_RightDrawerOption03.add(
+					new hoverObject(
+						'img',
+						2.5, 2, 0,
+						0, 0, 0,
+						0.55, 0.55, 0.55,
+						"Testing234", "TestingClass234",
+						"./assets/icons/Hud_LH_RH_Apps/General/IconHolder_InActive.svg", "",
+						"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+						
+					)
+				)
+
+
+
+				IconHolder_RightDrawerOption04 = new THREE.Group()
+				IconHolder_RightDrawerOption04.position.set(1025, 240, 0)
+				IconHolder_RightDrawerOption04.rotation.set(0, 0, 0)
+				IconHolder_RightDrawerOption04.scale.set(1, 1, 1)
+				infiniteΔs_simpleAnimation_button_root.add(IconHolder_RightDrawerOption04) 
+			
+
+				IconHolder_RightDrawerOption04.add(
+					new hoverObject(
+						'img',
+						2.5, 2, 0,
+						0, 0, 0,
+						0.55, 0.55, 0.55,
+						"Testing234", "TestingClass234",
+						"./assets/icons/Hud_LH_RH_Apps/General/IconHolder_InActive.svg", "",
+						"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+						
+					)
+				)
+
+
+
+				IconHolder_RightDrawerOption05 = new THREE.Group()
+				IconHolder_RightDrawerOption05.position.set(1025, 195, 0)
+				IconHolder_RightDrawerOption05.rotation.set(0, 0, 0)
+				IconHolder_RightDrawerOption05.scale.set(1, 1, 1)
+				infiniteΔs_simpleAnimation_button_root.add(IconHolder_RightDrawerOption05) 
+			
+
+				IconHolder_RightDrawerOption05.add(
+					new hoverObject(
+						'img',
+						2.5, 2, 0,
+						0, 0, 0,
+						0.55, 0.55, 0.55,
+						"Testing234", "TestingClass234",
+						"./assets/icons/Hud_LH_RH_Apps/General/IconHolder_InActive.svg", "",
+						"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+						
+					)
+				)
+
+
+				IconHolder_RightDrawerOption06 = new THREE.Group()
+				IconHolder_RightDrawerOption06.position.set(1025, 150, 0)
+				IconHolder_RightDrawerOption06.rotation.set(0, 0, 0)
+				IconHolder_RightDrawerOption06.scale.set(1, 1, 1)
+				infiniteΔs_simpleAnimation_button_root.add(IconHolder_RightDrawerOption06) 
+			
+
+				IconHolder_RightDrawerOption06.add(
+					new hoverObject(
+						'img',
+						2.5, 2, 0,
+						0, 0, 0,
+						0.55, 0.55, 0.55,
+						"Testing234", "TestingClass234",
+						"./assets/icons/Hud_LH_RH_Apps/General/IconHolder_InActive.svg", "",
+						"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+						
+					)
+				)
+
+
+				IconHolder_RightDrawerOption07 = new THREE.Group()
+				IconHolder_RightDrawerOption07.position.set(1025, 105, 0)
+				IconHolder_RightDrawerOption07.rotation.set(0, 0, 0)
+				IconHolder_RightDrawerOption07.scale.set(1, 1, 1)
+				infiniteΔs_simpleAnimation_button_root.add(IconHolder_RightDrawerOption07) 
+			
+
+				IconHolder_RightDrawerOption07.add(
+					new hoverObject(
+						'img',
+						2.5, 2, 0,
+						0, 0, 0,
+						0.55, 0.55, 0.55,
+						"Testing234", "TestingClass234",
+						"./assets/icons/Hud_LH_RH_Apps/General/IconHolder_InActive.svg", "",
+						"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+						
+					)
+				)
+
+
+				IconHolder_RightDrawerOption08 = new THREE.Group()
+				IconHolder_RightDrawerOption08.position.set(1025, 60, 0)
+				IconHolder_RightDrawerOption08.rotation.set(0, 0, 0)
+				IconHolder_RightDrawerOption08.scale.set(1, 1, 1)
+				infiniteΔs_simpleAnimation_button_root.add(IconHolder_RightDrawerOption08) 
+			
+
+				IconHolder_RightDrawerOption08.add(
+					new hoverObject(
+						'img',
+						2.5, 2, 0,
+						0, 0, 0,
+						0.55, 0.55, 0.55,
+						"Testing234", "TestingClass234",
+						"./assets/icons/Hud_LH_RH_Apps/General/IconHolder_InActive.svg", "",
+						"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+						
+					)
+				)
+
+
+				IconHolder_RightDrawerOption09 = new THREE.Group()
+				IconHolder_RightDrawerOption09.position.set(1025, 15, 0)
+				IconHolder_RightDrawerOption09.rotation.set(0, 0, 0)
+				IconHolder_RightDrawerOption09.scale.set(1, 1, 1)
+				infiniteΔs_simpleAnimation_button_root.add(IconHolder_RightDrawerOption09) 
+			
+
+				IconHolder_RightDrawerOption09.add(
+					new hoverObject(
+						'img',
+						2.5, 2, 0,
+						0, 0, 0,
+						0.55, 0.55, 0.55,
+						"Testing234", "TestingClass234",
+						"./assets/icons/Hud_LH_RH_Apps/General/IconHolder_InActive.svg", "",
+						"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+						
+					)
+				)
+
+
+
+				//.....................................................................................................................
+				//..RRRRR........HH......H...............SSSSSS..............................AAA.......................................
+				//.RRRRRRRRRR...HHHH...HHHH.............SSSSSSSS.............uubb...........AAAAA......................................
+				//.RRRRRRRRRRR..HHHH...HHHH............_SSSSSSSSS............uubb...........AAAAA......................................
+				//.RRRRRRRRRRR..HHHH...HHHH............_SSSSSSSSS............uubb..........AAAAAAA.....................................
+				//.RRRR...RRRRR.HHHH...HHHH...........__SS...SSSSSSSuu...uuu.uubbbbbbb.....AAAAAAA...AAppppppp..ppppppppp...ssssssss...
+				//.RRRR...RRRRR.HHHHHHHHHHH...........__SSSS......SSuu...uuu.uubbbbbbbb....AAAAAAA...AApppppppp.pppppppppp..ssssssss...
+				//.RRRRRRRRRRR..HHHHHHHHHHH............_SSSSSSSS..SSuu...uuu.uubbbbbbbbb..AAAAAAAAA..AApppppppppppppppppppppsssssssss..
+				//.RRRRRRRRRRR..HHHHHHHHHHH............_SSSSSSSSS.SSuu...uuu.uubbb.bbbbb..AAAA.AAAA..AAppp.pppppppppp.ppppppsssssssss..
+				//.RRRRRRRRRRR..HHHHHHHHHHH..............SSSSSSSSSSSuu...uuu.uubb...bbbb..AAAAAAAAAA.AApp...pppppppp...pppp.ssssssss...
+				//.RRRR..RRRRR..HHHH...HHHH...........__SS..SSSSSSSSuu...uuu.uubb...bbbb.bAAAAAAAAAA.AApp...pppppppp...pppp.ssssssss...
+				//.RRRR...RRRR..HHHH...HHHH...........__SS....SSSS.Suu..uuuu.uubbb..bbbb.bAAAAAAAAAA.AApp...pppppppp...pppppsssssssss..
+				//.RRRR...RRRR..HHHH...HHHH...........__SSSSSSSSSS.Suuuuuuuu.uubbbbbbbbb.bAAAAAAAAAAAAApppppppppppppppppppppssss.ssss..
+				//.RRRR...RRRR..HHHH...HHHH............_SSSSSSSSS..Suuuuuuuu.uubbbbbbbb.bbAAA....AAAAAApppppppp.pppppppppp.psssssssss..
+				//.RRRR...RRRRR.HHHH...HHHH.............SSSSSSSSS..Suuuuuuuu.uubbbbbbbb.bbAA.....AAAAAApppppppp.pppppppppp..ssssssss...
+				//.......................................SSSSSS......uuu..........bbb................AApp.ppp...pppp.ppp.....ssssss....
+				//.........................HH__________..............................................AApp.......pppp...................
+				//.........................HH__________..............................................AApp.......pppp...................
+				//...................................................................................AApp.......pppp...................
+				//.....................................................................................................................
+
+
+
 
 				// PrimaryBoundary
 				// ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~~*~*~*~*~*~*~*~
@@ -8732,6 +9363,28 @@
 				scene.add(UserHud_default_root)
 
 
+
+
+
+				//.............................................................................
+				//..MMM.....MMM................................................................
+				//.MMMMM...MMMMM.................................ubbb..........................
+				//.MMMMM...MMMMM.................................ubbb..........................
+				//.MMMMMM..MMMMM.................................ubbb..........................
+				//.MMMMMM.MMMMMM...eeeeee...ennnnnnnn.nuuu...uuu.ubbbbbbbb....aaaaaaa..arrrrr..
+				//.MMMMMM.MMMMMM..eeeeeeee..ennnnnnnn.nuuu...uuu.ubbbbbbbbb..aaaaaaaa..arrrrr..
+				//.MMMMMM.MMMMMM.Meeeeeeeee.ennnnnnnn.nuuu...uuu.ubbbbbbbbbbbaaaaaaaaa.arrrrr..
+				//.MMMMMM.MMMMMM.Meee..eeee.ennn.nnnn.nuuu...uuu.ubbbb.bbbbbbaaa.aaaaa.arrr....
+				//.MMMMMMMMMMMMM.Meeeeeeeee.enn...nnn.nuuu...uuu.ubbb...bbbb.aaaaaaaaa.arr.....
+				//.MMM.MMMMMMMMM.Meeeeeeeee.enn...nnn.nuuu...uuu.ubbb...bbbbbaaaaaaaaa.arr.....
+				//.MMM.MMMMM.MMM.Meee.......enn...nnn..uuu..uuuu.ubbbb..bbbbbaaaa.aaaa.arr.....
+				//.MMM.MMMMM.MMM.Meeeeeeeee.enn...nnn..uuuuuuuuu.ubbbbbbbbbbbaaa.aaaaa.arr.....
+				//.MMM.MMMMM.MMM.Meeeeeeee..enn...nnn..uuuuuuuuu.ubbbbbbbbb.baaaaaaaaa.arr.....
+				//.MMM.MMMMM.MMM..eeeeeeee..enn...nnn..uuuuuuuuu.ubbbbbbbbb.baaaaaaaaa.arr.....
+				//..................eeee.................uuu..........bbb.....aaa..............
+				//.............................................................................
+
+
                 // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
                 // \- # ΔA_Menubar_root
                 // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
@@ -9312,7 +9965,23 @@
 
 
 
-
+				//...............................................................
+				//..NN......N....................................................
+				//.NNNN....NNN.....................vvbb..........................
+				//.NNNNN...NNN.....................vvbb..........................
+				//.NNNNN...NNN.....................vvbb..........................
+				//.NNNNNN..NNN...aaaaaaa.aavv..vvvvvvbbbbbbb....aaaaaaa..arrrrr..
+				//.NNNNNNN.NNN..aaaaaaaa.aavv..vvvvvvbbbbbbbb..baaaaaaa..arrrrr..
+				//.NNNNNNN.NNN.Naaaaaaaaaaavv..vvvvvvbbbbbbbbbbbaaaaaaaa.arrrrr..
+				//.NNN.NNNNNNN.Naaa.aaaaa.avvvvvvv.vvbbb.bbbbbbbaa.aaaaa.arrr....
+				//.NNN.NNNNNNN..aaaaaaaaa.avvvvvvv.vvbb...bbbb.baaaaaaaa.arr.....
+				//.NNN..NNNNNN.Naaaaaaaaa.avvvvvvv.vvbb...bbbbbbaaaaaaaa.arr.....
+				//.NNN..NNNNNN.Naaaa.aaaa..vvvvvv..vvbbb..bbbbbbaaa.aaaa.arr.....
+				//.NNN...NNNNN.Naaa.aaaaa..vvvvvv..vvbbbbbbbbbbbaa.aaaaa.arr.....
+				//.NNN...NNNNN.Naaaaaaaaa..vvvvvv..vvbbbbbbbb.bbaaaaaaaa.arr.....
+				//.NNN....NNNN.Naaaaaaaaa...vvvv...vvbbbbbbbb.bbaaaaaaaa.arr.....
+				//...............aaa....................bbb.....aaa..............
+				//...............................................................
                 
 
 
@@ -9382,7 +10051,7 @@
 							// Menu Bar / Help
 							// #~~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~##~#~#~#~#~#~#~#~#~#~##~#~#~#~#~#~#~#~#~#~#~
 							Navbar_Option_Portfolio = new THREE.Group()
-							Navbar_Option_Portfolio.position.set(0, -10, 0)
+							Navbar_Option_Portfolio.position.set(-65, -10, 0)
 							Navbar_Option_Portfolio.rotation.set(0, 0, 0)
 							Navbar_Option_Portfolio.scale.set(0.1, 0.1, 0.1)
 							MenuBar_MenuOptionContainer_root.add(Navbar_Option_Portfolio)
@@ -9434,7 +10103,7 @@
 							// Menu Bar / Help
 							// #~~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~##~#~#~#~#~#~#~#~#~#~##~#~#~#~#~#~#~#~#~#~#~
 							Navbar_Option_AboutMe = new THREE.Group()
-							Navbar_Option_AboutMe.position.set(-30, -10, 0)
+							Navbar_Option_AboutMe.position.set(-140, -10, 0)
 							Navbar_Option_AboutMe.rotation.set(0, 0, 0)
 							Navbar_Option_AboutMe.scale.set(0.1, 0.1, 0.1)
 							MenuBar_MenuOptionContainer_root.add(Navbar_Option_AboutMe)
@@ -9482,7 +10151,7 @@
 							// Menu Bar / Help
 							// #~~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~##~#~#~#~#~#~#~#~#~#~##~#~#~#~#~#~#~#~#~#~#~
 							Navbar_Option_Home = new THREE.Group()
-							Navbar_Option_Home.position.set(-55, -10, 0)
+							Navbar_Option_Home.position.set(-90, -10, 0)
 							Navbar_Option_Home.rotation.set(0, 0, 0)
 							Navbar_Option_Home.scale.set(0.1, 0.1, 0.1)
 							MenuBar_MenuOptionContainer_root.add(Navbar_Option_Home)
@@ -9530,7 +10199,7 @@
 							// Menu Bar / Navbar / Services
 							// #~~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~##~#~#~#~#~#~#~#~#~#~##~#~#~#~#~#~#~#~#~#~#~
 							Navbar_Option_Services = new THREE.Group()
-							Navbar_Option_Services.position.set(30, -10, 0)
+							Navbar_Option_Services.position.set(-115, -10, 0)
 							Navbar_Option_Services.rotation.set(0, 0, 0)
 							Navbar_Option_Services.scale.set(0.1, 0.1, 0.1)
 							MenuBar_MenuOptionContainer_root.add(Navbar_Option_Services)
@@ -9577,7 +10246,7 @@
 							// Menu Bar / Navbar / Contact
 							// #~~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~##~#~#~#~#~#~#~#~#~#~##~#~#~#~#~#~#~#~#~#~#~
 							Navbar_Option_Contact = new THREE.Group()
-							Navbar_Option_Contact.position.set(60, -10, 0)
+							Navbar_Option_Contact.position.set(-40, -10, 0)
 							Navbar_Option_Contact.rotation.set(0, 0, 0)
 							Navbar_Option_Contact.scale.set(0.1, 0.1, 0.1)
 							MenuBar_MenuOptionContainer_root.add(Navbar_Option_Contact)
@@ -10092,6 +10761,12 @@
                 )
 
 
+
+
+
+
+
+
 				// #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
                 // \- # ΔB1_LeftDrawer_Options
                 // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
@@ -10127,7 +10802,7 @@
 				// #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
 
 				Δ02_RightDrawer_Options_root = new THREE.Group()
-				Δ02_RightDrawer_Options_root.position.set(0, 1, 0)
+				Δ02_RightDrawer_Options_root.position.set(1, 1, 0)
 				Δ02_RightDrawer_Options_root.rotation.set(0, 0, 0)
 				Δ02_RightDrawer_Options_root.scale.set(1, 1, 1)
 				ΔB1_LeftDrawer_root.add(Δ02_RightDrawer_Options_root)
@@ -10245,7 +10920,7 @@
 							0, 0, 0,
 							0.1, 0.1, 0.1,
 							"Testing234", "TestingClass234",
-							"./assets/img/03-HudUI/PrimaryHud01_DrLight/A10_RealityMaps/RealityMaps01/B02_RealityMapGearMedium.svg", "",
+							"./assets/img/03-HudUI/PrimaryHud01_DrLight/A10_RealityMaps/RealityMaps01/B06_RealityMapGearWhite02.svg", "",
 							"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
 						)
                	 	)
@@ -10273,7 +10948,7 @@
 							0, 0, 0,
 							0.1, 0.1, 0.1,
 							"Testing234", "TestingClass234",
-							"./assets/img/03-HudUI/PrimaryHud01_DrLight/A10_RealityMaps/RealityMaps01/B02_RealityMapGearMedium.svg", "",
+							"./assets/img/03-HudUI/PrimaryHud01_DrLight/A10_RealityMaps/RealityMaps01/B06_RealityMapGearWhite02.svg", "",
 							"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
 						)
                	 	)
@@ -10302,7 +10977,7 @@
 							0, 0, 0,
 							0.1, 0.1, 0.1,
 							"Testing234", "TestingClass234",
-							"./assets/img/03-HudUI/PrimaryHud01_DrLight/A10_RealityMaps/RealityMaps01/B01_RealityMapGearLarge.svg", "",
+							"./assets/img/03-HudUI/PrimaryHud01_DrLight/A10_RealityMaps/RealityMaps01/B06_RealityMapGearWhite02.svg", "",
 							"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
 						)
                	 	)
@@ -10331,7 +11006,7 @@
 							0, 0, 0,
 							0.1, 0.1, 0.1,
 							"Testing234", "TestingClass234",
-							"./assets/img/03-HudUI/PrimaryHud01_DrLight/A10_RealityMaps/RealityMaps01/B02_RealityMapGearMedium.svg", "",
+							"./assets/img/03-HudUI/PrimaryHud01_DrLight/A10_RealityMaps/RealityMaps01/B06_RealityMapGearWhite02.svg", "",
 							"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
 						)
                	 	)
@@ -10359,7 +11034,7 @@
 							0, 0, 0,
 							0.1, 0.1, 0.1,
 							"Testing234", "TestingClass234",
-							"./assets/img/03-HudUI/PrimaryHud01_DrLight/A10_RealityMaps/RealityMaps01/B02_RealityMapGearMedium.svg", "",
+							"./assets/img/03-HudUI/PrimaryHud01_DrLight/A10_RealityMaps/RealityMaps01/B06_RealityMapGearWhite02.svg", "",
 							"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
 						)
                	 	)
@@ -10409,7 +11084,7 @@
 							0, 0, 0,
 							0.1, 0.1, 0.1,
 							"Testing234", "TestingClass234",
-							"./assets/img/03-HudUI/PrimaryHud01_DrLight/A10_RealityMaps/RealityMaps01/B03_RealityMapGearMediumSmall.svg", "",
+							"./assets/img/03-HudUI/PrimaryHud01_DrLight/A10_RealityMaps/RealityMaps01/B06_RealityMapGearWhite02.svg", "",
 							"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
 						)
                	 	)
@@ -10437,7 +11112,7 @@
 							0, 0, 0,
 							0.1, 0.1, 0.1,
 							"Testing234", "TestingClass234",
-							"./assets/img/03-HudUI/PrimaryHud01_DrLight/A10_RealityMaps/RealityMaps01/B03_RealityMapGearMediumSmall.svg", "",
+							"./assets/img/03-HudUI/PrimaryHud01_DrLight/A10_RealityMaps/RealityMaps01/B06_RealityMapGearWhite02.svg", "",
 							"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
 						)
                	 	)
@@ -10465,7 +11140,7 @@
 							0, 0, 0,
 							0.1, 0.1, 0.1,
 							"Testing234", "TestingClass234",
-							"./assets/img/03-HudUI/PrimaryHud01_DrLight/A10_RealityMaps/RealityMaps01/B03_RealityMapGearMediumSmall.svg", "",
+							"./assets/img/03-HudUI/PrimaryHud01_DrLight/A10_RealityMaps/RealityMaps01/B06_RealityMapGearWhite02.svg", "",
 							"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
 						)
                	 	)
@@ -10494,7 +11169,7 @@
 							0, 0, 0,
 							0.1, 0.1, 0.1,
 							"Testing234", "TestingClass234",
-							"./assets/img/03-HudUI/PrimaryHud01_DrLight/A10_RealityMaps/RealityMaps01/B03_RealityMapGearMediumSmall.svg", "",
+							"./assets/img/03-HudUI/PrimaryHud01_DrLight/A10_RealityMaps/RealityMaps01/B06_RealityMapGearWhite02.svg", "",
 							"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
 						)
                	 	)
@@ -10521,7 +11196,7 @@
 				//...........................................................................................
 
 				RealityMap_Example01_Cover_root = new THREE.Group()
-				RealityMap_Example01_Cover_root.position.set(67, -42.5, -0.9)
+				RealityMap_Example01_Cover_root.position.set(68.5, -45.5, -0.9)
 				RealityMap_Example01_Cover_root.rotation.set(0, 0, 0)
 				RealityMap_Example01_Cover_root.scale.set(0.85, 0.85, 0.85)
 				ΔB1_LeftDrawer_root.add(RealityMap_Example01_Cover_root)
@@ -10542,10 +11217,56 @@
 							0, 0, 0,
 							0.1, 0.1, 0.1,
 							"Testing234", "TestingClass234",
-							"./assets/img/03-HudUI/PrimaryHud01_DrLight/A10_RealityMaps/RealityMaps01/C01_RealityMapCover01.svg", "",
+							"./assets/img/03-HudUI/PrimaryHud01_DrLight/A10_RealityMaps/RealityMaps01/C01_RealityMapCover03.svg", "",
 							"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
 						)
                	 	)
+
+
+
+				//...................................................................................
+				//..LL.........HH......H..............I..............................................
+				//.LLLL.......HHHH...HHHH............_II.............................................
+				//.LLLL.......HHHH...HHHH............_II.............................................
+				//.LLLL.......HHHH...HHHH............_II.............................................
+				//.LLLL.......HHHH...HHHH............_II...ccccccc...ooooooo...onnnnnnnn..nsssssss...
+				//.LLLL.......HHHHHHHHHHH............_II..Icccccccc.coooooooo..onnnnnnnn..nsssssss...
+				//.LLLL.......HHHHHHHHHHH............_II.IIccccccccccooooooooo.onnnnnnnn.nnssssssss..
+				//.LLLL.......HHHHHHHHHHH............_II.IIcc..ccccccoo...oooo.onnn.nnnn.nnssssssss..
+				//.LLLL.......HHHHHHHHHHH............_II.IIcc......ccoo...oooo.onn...nnn..nsssssss...
+				//.LLLL.......HHHH...HHHH............_II.IIcc......ccoo...oooo.onn...nnn..nsssssss...
+				//.LLLL.......HHHH...HHHH............_II.IIcc..ccccccoo...oooo.onn...nnn.nnssssssss..
+				//.LLLLLLLLLL.HHHH...HHHH............_II.IIccccccccccooooooooo.onn...nnn.nnsss.ssss..
+				//.LLLLLLLLLL.HHHH...HHHH............_II..Iccccccc..coooooooo..onn...nnn.nnssssssss..
+				//.LLLLLLLLLL.HHHH...HHHH............_II..Iccccccc...ooooooo...onn...nnn..nsssssss...
+				//..........................................cccc......ooooo................ssssss....
+				//.......................HH__________................................................
+				//.......................HH__________................................................
+				//...................................................................................
+
+
+
+
+
+
+
+					//..............................................................................................
+					//....SSSSSS.....................................I..............................................
+					//...SSSSSSSS...tttt............................III.............................................
+					//..SSSSSSSSSS..tttt............................III.............................................
+					//..SSSSSSSSSS..tttt............................III.............................................
+					//.SSSS...SSSSSSttttt..eeeeee...mmmmmmmmmmmmm...III...ccccccc...ooooooo...nnnnnnnnn..ssssssss...
+					//.SSSSSS......Sttttt.eeeeeeee..mmmmmmmmmmmmmm..III..ccccccccc.ooooooooo..nnnnnnnnn..ssssssss...
+					//..SSSSSSSSS..Sttttteeeeeeeeee.mmmmmmmmmmmmmm..III.Iccccccccccoooooooooo.nnnnnnnnn.nsssssssss..
+					//..SSSSSSSSSS..tttt.eeee..eeee.mmmm.mmmm..mmm..III.Iccc..cccccooo...oooo.nnnn.nnnn.nsssssssss..
+					//....SSSSSSSSS.tttt.eeeeeeeeee.mmm..mmmm..mmm..III.Iccc......cooo...oooo.nnn...nnn..ssssssss...
+					//.SSSS..SSSSSS.tttt.eeeeeeeeee.mmm..mmmm..mmm..III.Iccc......cooo...oooo.nnn...nnn..ssssssss...
+					//.SSSS....SSSS.tttt.eeee.......mmm..mmmm..mmm..III.Iccc..cccccooo...oooo.nnn...nnn.nsssssssss..
+					//.SSSSSSSSSSSS.tttt.eeeeeeeeee.mmm..mmmm..mmm..III.Iccccccccccoooooooooo.nnn...nnn.nssss.ssss..
+					//..SSSSSSSSSS..ttttteeeeeeeee..mmm..mmmm..mmm..III..cccccccc..ooooooooo..nnn...nnn.nsssssssss..
+					//...SSSSSSSSS..ttttt.eeeeeeee..mmm..mmmm..mmm..III..cccccccc...ooooooo...nnn...nnn..ssssssss...
+					//....SSSSSS......ttt...eeee...........................cccc......ooooo................ssssss....
+					//..............................................................................................
 
 
 
@@ -10572,7 +11293,57 @@
 
 
 
-					
+
+
+
+
+
+				//.........................................
+				//..MMM.....MMM...VV......VV...PPPPP.......
+				//.MMMMM...MMMMM.MVVV....VVVV.PPPPPPPPPP...
+				//.MMMMM...MMMMM.MVVV....VVVV.PPPPPPPPPP...
+				//.MMMMMM..MMMMM.MVVVV...VVVV.PPPPPPPPPPP..
+				//.MMMMMM.MMMMMM..VVVV..VVVV..PPPP...PPPP..
+				//.MMMMMM.MMMMMM..VVVV..VVVV..PPPP...PPPP..
+				//.MMMMMM.MMMMMM..VVVVV.VVVV..PPPPPPPPPPP..
+				//.MMMMMM.MMMMMM...VVVVVVVV...PPPPPPPPPPP..
+				//.MMMMMMMMMMMMM...VVVVVVVV...PPPPPPPPPP...
+				//.MMM.MMMMMMMMM....VVVVVVV...PPPPPPPPP....
+				//.MMM.MMMMM.MMM....VVVVVV....PPPP.........
+				//.MMM.MMMMM.MMM....VVVVVV....PPPP.........
+				//.MMM.MMMMM.MMM.....VVVVV....PPPP.........
+				//.MMM.MMMMM.MMM.....VVVV.....PPPP.........
+				//.........................................
+
+
+
+				MainViewPort_root = new THREE.Group()
+				MainViewPort_root.position.set(91, -55.5, 0)
+				MainViewPort_root.rotation.set(0, 0, 0)
+				MainViewPort_root.scale.set(1, 1, 1)
+				ΔB1_LeftDrawer_root.add(MainViewPort_root)
+				// -> connect_to_UserHud_default_root <-
+                // camera.attach(ΔB1_LeftDrawer_root)
+
+					// RealityMap_Example01_Skeleton
+					// -----------------------------------------------------------
+					MainViewPort_Grid01 = new THREE.Group()
+					MainViewPort_Grid01.position.set(100, -25, 0)
+					MainViewPort_Grid01.rotation.set(0, 0, 0)
+					MainViewPort_Grid01.scale.set(1, 1, 1)
+					MainViewPort_root.add(MainViewPort_Grid01)
+
+					MainViewPort_Grid01.add(
+						new hoverObject(
+							'img',
+							0, 0, 0,
+							0, 0, 0,
+							0.1, 0.1, 0.1,
+							"Testing234", "TestingClass234",
+							"./assets/img/03-HudUI/PrimaryHud01_DrLight/A11_MainViewPort/MainViewPort_Grid03.png", "",
+							"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+						)
+               	 	)
 
 					
 
@@ -10645,6 +11416,10 @@
 						})
 					}
 				})
+
+
+
+				
 
 
                 // #*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~#
@@ -15972,17 +16747,17 @@
 				folderLoadTestingContainer01.add(MenuBar_MenuOptionContainer_root.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
 				folderLoadTestingContainer01.add(MenuBar_MenuOptionContainer_root.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
-				const folderLoadTestingContainer02 = gui.addFolder('<<< LoadPoint02 :: RealityMap_Example01_Cover_root >>>')
+				const folderLoadTestingContainer02 = gui.addFolder('<<< LoadPoint02 :: ΔB1_LeftDrawer_DrawerContainer25percent_root >>>')
 
-				folderLoadTestingContainer02.add(RealityMap_Example01_Cover_root.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
-				folderLoadTestingContainer02.add(RealityMap_Example01_Cover_root.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
-				folderLoadTestingContainer02.add(RealityMap_Example01_Cover_root.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
-				folderLoadTestingContainer02.add(RealityMap_Example01_Cover_root.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
-				folderLoadTestingContainer02.add(RealityMap_Example01_Cover_root.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
-				folderLoadTestingContainer02.add(RealityMap_Example01_Cover_root.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
-				folderLoadTestingContainer02.add(RealityMap_Example01_Cover_root.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
-				folderLoadTestingContainer02.add(RealityMap_Example01_Cover_root.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
-				folderLoadTestingContainer02.add(RealityMap_Example01_Cover_root.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
+				folderLoadTestingContainer02.add(ΔB1_LeftDrawer_DrawerContainer25percent_root.position, 'x').min(-500).max(500).step(1).name('[ ⇄ Scroll ]');
+				folderLoadTestingContainer02.add(ΔB1_LeftDrawer_DrawerContainer25percent_root.position, 'y').min(-500).max(500).step(1).name('[ ⇅ Scroll ]');
+				folderLoadTestingContainer02.add(ΔB1_LeftDrawer_DrawerContainer25percent_root.position, 'z').min(-500).max(500).step(1).name('[ ⇄⇅ Scroll ]');
+				folderLoadTestingContainer02.add(ΔB1_LeftDrawer_DrawerContainer25percent_root.rotation, 'x').min(-3.14).max(3.14).step(.001).name('Rotation-x');
+				folderLoadTestingContainer02.add(ΔB1_LeftDrawer_DrawerContainer25percent_root.rotation, 'y').min(-3.14).max(3.14).step(.001).name('Rotation-y');
+				folderLoadTestingContainer02.add(ΔB1_LeftDrawer_DrawerContainer25percent_root.rotation, 'z').min(-3.14).max(3.14).step(.001).name('Rotation-z');
+				folderLoadTestingContainer02.add(ΔB1_LeftDrawer_DrawerContainer25percent_root.scale, 'x').min(-1500).max(1500).step(1).name('Scale-x');
+				folderLoadTestingContainer02.add(ΔB1_LeftDrawer_DrawerContainer25percent_root.scale, 'y').min(-1500).max(1500).step(1).name('Scale-y');
+				folderLoadTestingContainer02.add(ΔB1_LeftDrawer_DrawerContainer25percent_root.scale, 'z').min(-1500).max(1500).step(1).name('Scale-z');
 
 				const folderLoadTestingContainer03 = gui.addFolder('<<< LoadPoint03 :: RealityMap_Example01_GearBaseB_TopGear_root >>>')
 
@@ -16655,15 +17430,15 @@
 					// Hands
 					// Time LeftPrimaryWindow_root Experience = Math.cos(time * speed) * distance + height
 
-					LH_Δ01.rotation.y = time * 0.01
-					LH_Δ01.rotation.x = time * 0.01
-					LH_Δ01.rotation.z = time * 0.01
-					LH_Δ01.position.x = Math.tan(time * 75) * 0.01 + -3
-					LH_Δ01.position.z = Math.tan(time * 75) * 0.01 + -5
-					LH_Δ01.position.y = Math.tan(time * 75) * 0.01 + 0
+					LH_Δ01.rotation.y = time * 0.001
+					// LH_Δ01.rotation.x = time * 0.01
+					// LH_Δ01.rotation.z = time * 0.01
+					// LH_Δ01.position.x = Math.tan(time * 75) * 0.01 + -3
+					// LH_Δ01.position.z = Math.tan(time * 75) * 0.01 + -5
+					// LH_Δ01.position.y = Math.tan(time * 75) * 0.01 + 0
 
 
-					RH_Δ01.rotation.y = time * -0.001
+					RH_Δ01.rotation.y = time * -0.01
 
 
 
