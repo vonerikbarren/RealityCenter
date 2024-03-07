@@ -1866,6 +1866,7 @@
 			// Toc.GUI
 
 			const gui = new GUI();
+            gui.close()
 
 			const folderSky = gui.addFolder('Sky');
 			folderSky.add(parameters, 'elevation', 0, 90, 0.1).onChange(updateSun);
