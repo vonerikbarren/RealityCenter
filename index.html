@@ -20,7 +20,7 @@
 
 	<div id="container"></div>
 	<div id="info">
-		<a href="" target="_blank" rel="noopener">Von'Erik Barren-Tucker</a> - Δ of Time Prototype
+		<a href="" target="_blank" rel="noopener">Von'Erik Barren-Tucker</a> - Portfolio Prototype
        
 
 
@@ -35,7 +35,7 @@
 
          <video id="none" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/WeatherAnimations/clouds_Sphere01.mp4" style="display: none" ></video>
 
-         <video id="openingVideo" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/WeatherAnimations/clouds_timelapse05.mp4" style="display: none" ></video>
+         <video id="openingVideo" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/AtmosphereAnimations/Animation_SpaceDance01.mp4" style="display: none" ></video>
 	</div>
 
     <!-- ./assets/video/SphereAnimations/Equations3.mp4 -->
@@ -2121,11 +2121,31 @@
                     
 
                     gsap.to(water.position, {
-                        duration: .25,
+                        duration: 7,
                         delay: 0,
-                        x: 30,
-                        y: '+= -10000',
-                        z: 23000,
+                        x: 0,
+                        y: -500000,
+                        z: 0,
+
+                    })
+
+                   
+
+                }
+            })
+
+
+
+            document.addEventListener("keydown", function(event) {
+                if (event.ctrlKey && event.key === "0") {
+                    
+
+                    gsap.to(water.position, {
+                        duration: 7,
+                        delay: 0,
+                        x: 0,
+                        y: 0,
+                        z: 0,
 
                     })
 
