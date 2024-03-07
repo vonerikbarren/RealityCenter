@@ -97,6 +97,7 @@
 		let mesh_timeSphere_L2, mesh_timeSphere_L3, mesh_TimeSphereHourBase_L0
 		let animatedTime, mesh_timeSphere_L4
         let newSpeedStrengthParams
+        let Control_newSpeedStrengthParams
 
 
 
@@ -247,6 +248,7 @@
 
         const img_websiteTemplateC01 = textureLoader.load('./assets/img/10-ObjectUI/08-Panels_Websites/Bundle03/1x/WebsiteTemplate_C01.png')
         const img_websiteTemplateC02 = textureLoader.load('./assets/img/10-ObjectUI/08-Panels_Websites/Bundle03/1x/WebsiteTemplate_C02.png')
+        const img_websiteTemplateC03 = textureLoader.load('./assets/img/10-ObjectUI/08-Panels_Websites/Bundle03/1x/WebsiteTemplate_C03.png')
 
         // |- ContainerHolders
         const ContainerHolderWhiteA1 = textureLoader.load('./assets/img/04-CommunicationUI/01-ContainerHolders/ContainerWhiteA01/1-Active/ContainerWhiteA01a.png')
@@ -997,6 +999,19 @@
 					}
 				})
 
+                document.addEventListener("keydown", function(event) {
+					if (event.ctrlKey && event.key === "w") {
+						
+
+						gsap.to(camera.position, {
+							duration: .25,
+							delay: 0,
+							z: `-= ${Control_newSpeedStrengthParams.forwards}`,
+
+						})
+					}
+				})
+
 
 				document.addEventListener("keydown", function(event) {
 					if (event.key === "s") {
@@ -1006,6 +1021,19 @@
 							duration: .25,
 							delay: 0,
 							z: `+= ${newSpeedStrengthParams.backwards}`,
+
+						})
+					}
+				})
+
+                document.addEventListener("keydown", function(event) {
+					if (event.ctrlKey && event.key === "s") {
+						
+
+						gsap.to(camera.position, {
+							duration: .25,
+							delay: 0,
+							z: `+= ${Control_newSpeedStrengthParams.forwards}`,
 
 						})
 					}
@@ -1027,6 +1055,20 @@
 				})
 
 
+                document.addEventListener("keydown", function(event) {
+					if (event.ctrlKey && event.key === "a") {
+						
+
+						gsap.to(camera.position, {
+							duration: .25,
+							delay: 0,
+							x: `-= ${Control_newSpeedStrengthParams.forwards}`,
+
+						})
+					}
+				})
+
+
 				document.addEventListener("keydown", function(event) {
 					if (event.key === "d") {
 						
@@ -1040,12 +1082,25 @@
 					}
 				})
 
+                document.addEventListener("keydown", function(event) {
+					if (event.ctrlKey && event.key === "d") {
+						
+
+						gsap.to(camera.position, {
+							duration: .25,
+							delay: 0,
+							x: `+= ${Control_newSpeedStrengthParams.forwards}`,
+
+						})
+					}
+				})
+
             // ###########################################################
             // Height-Movement Settings
             // ###########################################################
 
                 document.addEventListener("keydown", function(event) {
-					if (event.key === "4") {
+					if (event.key === "2") {
 						// camera.position.y += 10000
 
 						gsap.to(camera.position, {
@@ -1059,13 +1114,13 @@
 
 
                 document.addEventListener("keydown", function(event) {
-					if (event.ctrlKey && event.key === "4") {
+					if (event.ctrlKey && event.key === "2") {
 						// camera.position.y += 10000
 
 						gsap.to(camera.position, {
 							duration: .5,
 							delay: 0,
-							y: "-= 100",
+							y: "-= 1000",
 
 						})
 					}
@@ -1074,7 +1129,7 @@
 
 
                 document.addEventListener("keydown", function(event) {
-					if (event.key === "3") {
+					if (event.key === "1") {
 						// camera.position.y += 10000
 
 						gsap.to(camera.position, {
@@ -1088,13 +1143,13 @@
 
 
                 document.addEventListener("keydown", function(event) {
-					if (event.ctrlKey && event.key === "3") {
+					if (event.ctrlKey && event.key === "11") {
 						// camera.position.y += 10000
 
 						gsap.to(camera.position, {
 							duration: .5,
 							delay: 0,
-							y: "+= 100",
+							y: "+= 1000",
 
 						})
 					}
@@ -1428,10 +1483,31 @@
                     websiteTemplateC02.add(mesh_websiteTemplateC02)
 
 
+                websiteTemplateC03 = new THREE.Group()
+                websiteTemplateC03.position.set(0, -20, 0)
+                websiteTemplateC03.rotation.set(0, 0, 0)
+                websiteTemplateC03.scale.set(1.2, 1, 1)
+                websiteGroup01_root.add(websiteTemplateC03)
+
+                    const mat_websiteTemplateC03 = new THREE.MeshBasicMaterial({ map: img_websiteTemplateC03, side: THREE.DoubleSide });
+                    mesh_websiteTemplateC03 = new THREE.Mesh(geo_objT_PlaneA1, mat_websiteTemplateC03);
+                    mat_websiteTemplateC03.transparent = true;
+                    mat_websiteTemplateC03.alphaMap = img_websiteTemplateC03;
+                    mesh_websiteTemplateC03.position.set(0, 0, 0);
+                    // mesh_websiteTemplateC03.position.set(-15000, 0, 0);
+                    mesh_websiteTemplateC03.scale.set(1, 1, 1);
+                    mesh_websiteTemplateC03.rotation.set(0, 0, 0)
+                    // mesh_websiteTemplateC03.rotateX( - Math.PI / 2 );
+
+                    // websiteTemplateC03.lookAt(camera)
+                    
+                    websiteTemplateC03.add(mesh_websiteTemplateC03)
+
+
 
                     
             pdfTest_root = new THREE.Group()
-            pdfTest_root.position.set(1800, 6000, 21000)
+            pdfTest_root.position.set(1600, 6130, 21000)
             pdfTest_root.rotation.set(0, 0, 0)
             pdfTest_root.scale.set(1, 1, 1)
             scene.add(pdfTest_root)
@@ -1444,7 +1520,7 @@
                         1, 1, 1,
                         "hoverClockA1",
                         "https://vonerikbarren.github.io/Portfolio--V3/#",
-                        "1920px", "1200"
+                        "1200px", "720px"
                     )
 
                 )
@@ -1560,6 +1636,13 @@
 					right: 200,
 					forwards: 200,
 					backwards: 200, 
+				}
+
+                Control_newSpeedStrengthParams = {
+					left: 2200,
+					right: 2200,
+					forwards: 2200,
+					backwards: 2200, 
 				}
 
 			// Toc.GUI
