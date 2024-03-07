@@ -2095,6 +2095,14 @@
                     })
 
 
+                    gsap.to(camera.position, {
+                        duration: 30,
+                        delay: 30,
+                        y: 100000,
+
+                    })
+
+
 
 
 
@@ -2112,14 +2120,16 @@
                 if (event.key === "0") {
                     
 
-                    gsap.to(camera.position, {
+                    gsap.to(water.position, {
                         duration: .25,
                         delay: 0,
                         x: 30,
-                        y: 6000,
+                        y: '+= -10000',
                         z: 23000,
 
                     })
+
+                   
 
                 }
             })
