@@ -6,6 +6,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 	<link type="text/css" rel="stylesheet" href="./assets/css/main.css">
+    <link type="text/css" rel="stylesheet" href="./assets/css/CSS3D_Assets/01-Tech_Icons/TechIcons.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -158,6 +159,12 @@
 
         let pdfTest_root
         let pdfFileTest_root
+
+
+        let specialButtonGroup
+            let testButton01
+            let testButton02
+            let testButton03
 
 
         //....................................................................
@@ -313,7 +320,7 @@
             cssrenderer = new CSS3DRenderer();
             cssrenderer.setSize(window.innerWidth, window.innerHeight);
             cssrenderer.domElement.style.position = 'fixed'
-            cssrenderer.domElement.style.zindex = '-100'
+            cssrenderer.domElement.style.zindex = '100'
             cssrenderer.domElement.style.top = 0
             document.body.appendChild( cssrenderer.domElement );
 
@@ -964,6 +971,65 @@
             }
 
 
+            // ----------------------------------------------------------------------------------------------------
+            // \- [OOASA6PE01_A7_03__CS3dObj_TechIcon] \- 
+            // ----------------------------------------------------------------------------------------------------
+
+
+            function TechIcon (
+					tx, ty, tz,
+					rx, ry, rz,
+					sx, sy, sz,
+					theID, theClassName, 
+					HeaderPanelID, HeaderPanelClassName,
+					imgId, imgClassName,
+					panelInfoID, panelInfoClassName,
+					srcLink, hrefLink,
+					action, 
+					HeaderPanelMessage, 
+					panelInfoMessage
+				) {
+
+					// Building the root Div
+
+					// |- # Root
+					const panelroot = document.createElement('div')
+					panelroot.id = theID
+					panelroot.className = theClassName
+					panelroot.addEventListener('click', action)
+
+					// |- HeaderPanel
+					const HeaderPanel = document.createElement('div')
+					HeaderPanel.id = HeaderPanelID
+					HeaderPanel.className = HeaderPanelClassName
+					HeaderPanel.textContent = HeaderPanelMessage
+					panelroot.appendChild(HeaderPanel)
+
+					// |- # IconImg
+					const IconImg = document.createElement('img')
+					IconImg.id = imgId
+					IconImg.className = imgClassName
+					IconImg.src = srcLink
+					IconImg.href = hrefLink
+					panelroot.appendChild(IconImg)
+
+					// |- # InformationPanel
+					const panelInfo = document.createElement('div')
+					panelInfo.id = panelInfoID
+					panelInfo.className = panelInfoClassName
+					panelInfo.textContent = panelInfoMessage
+					panelroot.appendChild(panelInfo)
+
+					// Build the object for pushing and placing
+					const panelData = new CSS3DObject(panelroot)
+					panelData.position.set(tx, ty, tz)
+					panelData.rotation.set(rx, ry, rz)
+					panelData.scale.set(sx, sy, sz)
+
+					return panelData
+				}
+
+
             //.............................................................................................
             //....SSSSSS.....EEEEEEEEE..TTTTTTTTT..TTTTTTTTT...I....NN......N.......GGGGG.......SSSSSS.....
             //...SSSSSSSS...EEEEEEEEEEEETTTTTTTTTTTTTTTTTTTTT.III..NNNN....NNN....GGGGGGGGG....SSSSSSSS....
@@ -1545,6 +1611,43 @@
                         "1200px", "1920px"
                     )
 
+                    
+                )
+
+
+            
+            testButton01 = new THREE.Group()
+            testButton01.position.set(-794.68, 5530, 21000)
+            testButton01.rotation.set(0, 0, 0)
+            testButton01.scale.set(1, 1, 1)
+            scene.add(testButton01)
+
+            let moveCamera_unknown = () => {
+                gsap.to(camera.position, {
+                    duration: 2.5,
+                    delay: .25,
+                    y: -105,
+                })
+            }
+
+
+                testButton01.add(
+
+                    	new TechIcon(
+						0, 0, 0,
+						0, 0, 0,
+						2.5, 2.5, 2.5,
+						'DefaultTechIconId', 'DefaultTechIconClassName',
+						'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+						'DefaultImgId', 'DefaultImgClassName',
+						'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+						"./assets/icons/00-Official/UI/Isometric/tools/target1.svg", "",
+						moveCamera_unknown, 
+						"ShowΔ",
+						"Toggle from here or main menu top left"
+					)
+
+                    
                 )
 
 
@@ -1697,10 +1800,10 @@
 			folderCamera.add(camera.position, 'y').min(-25000).max(25000).step(0.001).name('y-camera')
 			folderCamera.add(camera.position, 'z').min(-25000).max(25000).step(0.001).name('z-camera')
 
-            const folderPDF = gui.addFolder('pdfTest');
-			folderPDF.add(pdfTest_root.position, 'x').min(-25000).max(25000).step(0.001).name('x-camera')
-			folderPDF.add(pdfTest_root.position, 'y').min(-25000).max(25000).step(0.001).name('y-camera')
-			folderPDF.add(pdfTest_root.position, 'z').min(-25000).max(25000).step(0.001).name('z-camera')
+            const folderButton = gui.addFolder('testButton01');
+			folderButton.add(testButton01.position, 'x').min(-1000).max(1000).step(0.001).name('x-camera')
+			folderButton.add(testButton01.position, 'y').min(-1000).max(1000).step(0.001).name('y-camera')
+			folderButton.add(testButton01.position, 'z').min(-1000).max(1000).step(0.001).name('z-camera')
 
 
 
