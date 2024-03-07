@@ -20,6 +20,8 @@
     \- Perspectives
     \- Experiences
     \- Time
+    \- Space
+    \- Communication
     \- Objects
     \- Properties
     \- Help
@@ -30,7 +32,33 @@
     \- Services
     \- Contact
 
-[Drawers]
+
+# UI (Open) ( Details )
+[Bars]
+\- Menu Bar - [_]
+    \- Infin8te Realities
+        \- About us
+        \- 
+    \- Realities
+    \- Perspectives
+    \- Experiences
+    \- Time
+    \- Space
+    \- Communication
+    \- Objects
+    \- Properties
+    \- Help
+\- Nav Bar - [_]
+    \- Home
+    \- About Me
+    \- Projects
+    \- Services
+    \- Contact
+
+
+
+
+# [Drawers]
 \- LeftDrawers - [_]
 \- RightDrawers - [_]
 \- ΔDrawer - [_]
@@ -86,4 +114,3 @@
     \- RightSide
         \- ExperienceΔ_details
         \- TimeΔ_details
-        
