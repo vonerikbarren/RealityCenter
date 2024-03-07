@@ -28,7 +28,7 @@
 
 	<div class="virtualkeyboard-container-L0">
          <!-- VideoDomain02: Search_html_video01 -->
-         <video id="openingVideo" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/SphereAnimations/Equations3.mp4" border: 5px 5px black;"></video>
+         <video id="openingVideo" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/SphereAnimations/Equations3.mp4" style="display: none" ></video>
 	</div>
 
 	<!-- <script src="./THREE_Scene.js"></script> -->
@@ -157,6 +157,7 @@
             let websiteTemplateC03, mesh_websiteTemplateC03
 
         let pdfTest_root
+        let pdfFileTest_root
 
 
         //....................................................................
@@ -1523,8 +1524,28 @@
                         "1200px", "720px"
                     )
 
-                )
+                ) 
                     
+                
+            
+            pdfFileTest_root = new THREE.Group()
+            pdfFileTest_root.position.set(-1600, 5530, 21000)
+            pdfFileTest_root.rotation.set(0, 0, 0)
+            pdfFileTest_root.scale.set(1, 1, 1)
+            scene.add(pdfFileTest_root)
+
+                pdfFileTest_root.add(
+
+                    new makePDF_Viewer(
+                        0, 0, 0,
+                        0, 0, 0,
+                        1, 1, 1,
+                        "hoverClockA1",
+                        "./assets/docs/02-PDFs/MyPersonalLibrary/02-Math/Precalculus_by_mSullivan.pdf",
+                        "1200px", "1920px"
+                    )
+
+                )
 
 
 
