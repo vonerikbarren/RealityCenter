@@ -29,8 +29,10 @@
 
 	<div class="virtualkeyboard-container-L0">
          <!-- VideoDomain02: Search_html_video01 -->
-         <video id="openingVideo" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/SphereAnimations/Equations3.mp4" style="display: none" ></video>
+         <video id="openingVideo" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/SphereAnimations/WormholeAnimation.mp4" style="display: none" ></video>
 	</div>
+
+    <!-- ./assets/video/SphereAnimations/Equations3.mp4 -->
 
 	<!-- <script src="./THREE_Scene.js"></script> -->
 
@@ -1753,12 +1755,12 @@
                 )
 
 
-            testButton01 = new THREE.Group()
-            testButton01.position.set(-794.68, 5140, 21000)
-            testButton01.rotation.set(0, 0, 0)
-            testButton01.scale.set(1, 1, 1)
-            scene.add(testButton01)
-            // camera.attach(testButton01)
+            testButton02 = new THREE.Group()
+            testButton02.position.set(-794.68, 5140, 21000)
+            testButton02.rotation.set(0, 0, 0)
+            testButton02.scale.set(1, 1, 1)
+            scene.add(testButton02)
+            // camera.attach(testButton02)
 
 
             
@@ -1795,22 +1797,22 @@
             
 
 
-                testButton01.add(
+            testButton02.add(
 
-                new hoverObject(
-						'img',
-						0, 0, 0,
-						0, 0, 0,
-						0.1, 0.1, 0.1,
-						"Testing234", "TestingClass234",
-						"./assets/icons/00-Official/UI/Isometric/tools/target1.svg", '',
-						"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Love each other...correctly.",
-                        rotateCameraAroundCenterPointCounterClockwise, "",
-						
-					)
-
+            new hoverObject(
+                    'img',
+                    0, 0, 0,
+                    0, 0, 0,
+                    0.1, 0.1, 0.1,
+                    "Testing234", "TestingClass234",
+                    "./assets/icons/00-Official/UI/Isometric/tools/target1.svg", '',
+                    "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Love each other...correctly.",
+                    rotateCameraAroundCenterPointCounterClockwise, "",
                     
                 )
+
+                
+            )
 
 
             
@@ -2022,8 +2024,29 @@
                         duration: .25,
                         delay: 0,
                         x: `-= ${newSpeedStrengthParams.left}`,
+                        y: `+= ${newSpeedStrengthParams.left}`,
+                        z: `-= ${newSpeedStrengthParams.left}`,
 
                     })
+
+
+                    // gsap.to(camera.position, {
+                    //     duration: .25,
+                    //     delay: .25,
+                    //     x: `-= ${newSpeedStrengthParams.left}`,
+                    //     y: `+= ${newSpeedStrengthParams.left}`,
+                    //     z: `-= ${newSpeedStrengthParams.left}`,
+
+                    // })
+
+                    // gsap.to(camera.position, {
+                    //     duration: .25,
+                    //     delay: 0.50,
+                    //     x: `-= ${newSpeedStrengthParams.left}`,
+                    //     y: `+= ${newSpeedStrengthParams.left}`,
+                    //     z: `-= ${newSpeedStrengthParams.left}`,
+
+                    // })
 
                 }
             })
@@ -2034,15 +2057,66 @@
                     
 
                     gsap.to(camera.position, {
+                        duration: 1,
+                        delay: 0,
+                        y: 0,
+
+                    })
+
+
+                    gsap.to(camera.position, {
+                        duration: 5,
+                        delay: 1,
+                        z: 50000,
+
+                    })
+
+
+                    gsap.to(camera.position, {
+                        duration: 15.5,
+                        delay: 5,
+                        z: -150000,
+                        onComplete: rotateCameraAroundCenterPointClockwise()
+                    })
+
+
+
+                    gsap.to(camera.position, {
+                        duration: 15.5,
+                        delay: 15.5,
+                        y: 6000,
+                        onComplete: rotateCameraAroundCenterPointCounterClockwise()
+                    })
+
+
+
+
+
+                    
+
+
+                    
+
+                }
+            })
+
+
+
+            document.addEventListener("keydown", function(event) {
+                if (event.key === "0") {
+                    
+
+                    gsap.to(camera.position, {
                         duration: .25,
                         delay: 0,
-                        x: `-= ${newSpeedStrengthParams.left}`,
+                        x: 30,
+                        y: 6000,
+                        z: 23000,
 
                     })
 
                 }
             })
-
 
 
 
