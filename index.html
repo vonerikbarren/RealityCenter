@@ -285,19 +285,21 @@
 
 			//
 
+            
+            cssrenderer = new CSS3DRenderer();
+            cssrenderer.setSize(window.innerWidth, window.innerHeight);
+            cssrenderer.domElement.style.position = 'fixed'
+            cssrenderer.domElement.style.zindex = '-100'
+            cssrenderer.domElement.style.top = 0
+            document.body.appendChild( cssrenderer.domElement );
+
 			renderer = new THREE.WebGLRenderer();
 			renderer.setPixelRatio(window.devicePixelRatio);
 			renderer.setSize(window.innerWidth, window.innerHeight);
 			renderer.toneMapping = THREE.ACESFilmicToneMapping;
 			container.appendChild(renderer.domElement);
 
-            // cssRendererSetup
-            cssrenderer = new CSS3DRenderer();
-            cssrenderer.setSize(window.innerWidth, window.innerHeight);
-            cssrenderer.domElement.style.position = 'fixed'
-            cssrenderer.domElement.style.zindex = '0'
-            cssrenderer.domElement.style.top = 0
-            document.body.appendChild( cssrenderer.domElement );
+            
 
 
 			//
@@ -1278,7 +1280,7 @@
 			scene.add(directionalLight)
 
 
-			controls = new OrbitControls( camera, renderer.domElement );
+			controls = new OrbitControls( camera, cssrenderer.domElement );
 			controls.maxPolarAngle = Math.PI * 0.495;
             // controls.minPolarAngle = Math.PI * 0.495;
             controls.maxAzimuthAngle = Math.PI * 0.495;
@@ -1358,6 +1360,7 @@
 			camera.lookAt()
 
 			renderer.setSize(window.innerWidth, window.innerHeight);
+            cssrenderer.setSize(window.innerWidth, window.innerHeight);
 
 		}
 
