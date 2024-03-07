@@ -54,6 +54,8 @@
 		import { Sky } from './assets/objects/Sky.js';
 		import { GLTFLoader } from './libraries/loaders/GLTFLoader.js';
 		import { DRACOLoader } from './libraries/loaders/DRACOLoader.js'
+        import { CSS2DRenderer, CSS2DObject } from './libraries/renderers/CSS2DRenderer.js';
+        import { CSS3DRenderer, CSS3DObject } from './libraries/renderers/CSS3DRenderer.js';
 		const clock = new THREE.Clock();
 
 
@@ -77,6 +79,7 @@
 
 		let container, stats;
 		let camera, scene, renderer;
+        let cssrenderer
 		let controls, water, sun, mesh, ΔΦ, ΔΩ;
 		let Φ, MeshHDC_01, meshA1, goldenGearTest, goldenGearTest2;
 		let neoncircle;
@@ -130,6 +133,8 @@
             let websiteTemplateC01, mesh_websiteTemplateC01
             let websiteTemplateC02, mesh_websiteTemplateC02
             let websiteTemplateC03, mesh_websiteTemplateC03
+
+        let pdfTest_root
 
 
         //....................................................................
@@ -285,6 +290,14 @@
 			renderer.setSize(window.innerWidth, window.innerHeight);
 			renderer.toneMapping = THREE.ACESFilmicToneMapping;
 			container.appendChild(renderer.domElement);
+
+            // cssRendererSetup
+            cssrenderer = new CSS3DRenderer();
+            cssrenderer.setSize(window.innerWidth, window.innerHeight);
+            cssrenderer.domElement.style.position = 'fixed'
+            cssrenderer.domElement.style.zindex = '0'
+            cssrenderer.domElement.style.top = 0
+            document.body.appendChild( cssrenderer.domElement );
 
 
 			//
@@ -885,6 +898,43 @@
 				objectTestingGroup.add(objT_CylinderOpenedA0)
 
 
+            
+            // ----------------------------------------------------------------------------------------------------
+            // \- [OOASA6PE01_A7_06__CS3dObj_makePDF_Viewer] \- 
+            // ----------------------------------------------------------------------------------------------------
+            function makePDF_Viewer(
+                px, py, pz, 
+                rx, ry, rz,
+                sx, sy, sz,
+                pdfID,
+                fileRef,
+                fileWidth, fileHeight,
+                
+
+            ){
+                // |- # Create Root Div
+                const pdfDiv = document.createElement("div");
+                pdfDiv.id = pdfID
+                pdfDiv.width = fileWidth
+                pdfDiv.height = fileHeight
+
+                // |- ## Create Component
+                const pdfComponent = document.createElement("embed")
+                pdfComponent.setAttribute("src", fileRef)
+                pdfComponent.setAttribute("width", fileWidth)
+                pdfComponent.setAttribute("height", fileHeight)
+                pdfComponent.style.display = "default"
+                pdfComponent.style.border = "3px solid rgba(0, 255, 208, 0.75)"
+                pdfDiv.appendChild(pdfComponent)			
+
+                // Pushing Function Out
+                const pdfComponentData = new CSS3DObject(pdfDiv)
+                pdfComponentData.position.set(px, py, pz)
+                pdfComponentData.rotation.set(rx, ry, rz)
+                pdfComponentData.scale.set(sx, sy, sz)
+
+                return pdfComponentData
+            }
 
 			// Toc_Geometries
 
@@ -1132,6 +1182,28 @@
                     // websiteTemplateC02.lookAt(camera)
                     
                     websiteTemplateC02.add(mesh_websiteTemplateC02)
+
+
+
+                    
+            pdfTest_root = new THREE.Group()
+            pdfTest_root.position.set(10, 6000, 21000)
+            pdfTest_root.rotation.set(0, 0, 0)
+            pdfTest_root.scale.set(1, 1, 1)
+            scene.add(pdfTest_root)
+
+                pdfTest_root.add(
+
+                    new makePDF_Viewer(
+                        0, 0, 0,
+                        0, 0, 0,
+                        1, 1, 1,
+                        "hoverClockA1",
+                        "https://matrix.logic-wire.de/",
+                        "1920px", "1200"
+                    )
+
+                )
                     
 
 
@@ -1264,9 +1336,14 @@
 			// folderTransformations.add(ΔΩ.rotation, 'z').min(-3.14).max(3.14).step(0.001).name('z-rotation');
 
 			const folderCamera = gui.addFolder('Camera');
-			folderCamera.add(camera.position, 'x').min(-5000).max(5000).step(0.001).name('x-camera')
-			folderCamera.add(camera.position, 'y').min(-5000).max(5000).step(0.001).name('y-camera')
-			folderCamera.add(camera.position, 'z').min(-5000).max(5000).step(0.001).name('z-camera')
+			folderCamera.add(camera.position, 'x').min(-25000).max(25000).step(0.001).name('x-camera')
+			folderCamera.add(camera.position, 'y').min(-25000).max(25000).step(0.001).name('y-camera')
+			folderCamera.add(camera.position, 'z').min(-25000).max(25000).step(0.001).name('z-camera')
+
+            const folderPDF = gui.addFolder('pdfTest');
+			folderPDF.add(pdfTest_root.position, 'x').min(-25000).max(25000).step(0.001).name('x-camera')
+			folderPDF.add(pdfTest_root.position, 'y').min(-25000).max(25000).step(0.001).name('y-camera')
+			folderPDF.add(pdfTest_root.position, 'z').min(-25000).max(25000).step(0.001).name('z-camera')
 
 
 
@@ -1386,6 +1463,7 @@
 			water.material.uniforms['time'].value += 1.0 / 60.0;
 
 			renderer.render(scene, camera);
+            cssrenderer.render( scene, camera);
 
 		}
 
