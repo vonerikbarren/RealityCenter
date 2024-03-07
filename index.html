@@ -322,11 +322,19 @@
             cssrenderer.domElement.style.position = 'fixed'
             cssrenderer.domElement.style.zindex = '100'
             cssrenderer.domElement.style.top = 0
-            document.body.appendChild( cssrenderer.domElement );
+            container.appendChild( cssrenderer.domElement );
 
-			renderer = new THREE.WebGLRenderer();
+			renderer = new THREE.WebGLRenderer(
+                {
+                    alpha: true,
+                    antialias: true,
+                }
+            );
 			renderer.setPixelRatio(window.devicePixelRatio);
 			renderer.setSize(window.innerWidth, window.innerHeight);
+            // renderer.domElement.style.position = 'absolute'
+            renderer.domElement.style.zindex = '-100'
+            // renderer.domElement.style.top = 0
 			renderer.toneMapping = THREE.ACESFilmicToneMapping;
 			container.appendChild(renderer.domElement);
 
@@ -996,7 +1004,8 @@
 					const panelroot = document.createElement('div')
 					panelroot.id = theID
 					panelroot.className = theClassName
-					panelroot.addEventListener('click', action)
+					panelroot.addEventListener('pointerdown', action)
+                    panelroot.addEventListener('touchdown', action)
 
 					// |- HeaderPanel
 					const HeaderPanel = document.createElement('div')
@@ -1019,6 +1028,54 @@
 					panelInfo.className = panelInfoClassName
 					panelInfo.textContent = panelInfoMessage
 					panelroot.appendChild(panelInfo)
+
+					// Build the object for pushing and placing
+					const panelData = new CSS3DObject(panelroot)
+					panelData.position.set(tx, ty, tz)
+					panelData.rotation.set(rx, ry, rz)
+					panelData.scale.set(sx, sy, sz)
+
+					return panelData
+				}
+
+            // ----------------------------------------------------------------------------------------------------
+            // \- [OOASA6PE01_A7_08__CS3dObj_makePDF_hoverObject] \- 
+            // ----------------------------------------------------------------------------------------------------
+				function hoverObject (
+					objectType, 
+					tx, ty, tz,
+					rx, ry, rz,
+					sx, sy, sz,
+					theID, theClassName, 
+					srcLink, hrefLink,
+					HeaderID, HeaderClassName, HeaderName, message,
+					action, bgColor
+				) {
+
+					// Building the root Div
+					const panelroot = document.createElement(objectType)
+					panelroot.id = theID
+					panelroot.className = theClassName
+					panelroot.src = srcLink
+					panelroot.href = hrefLink
+					panelroot.backgroundColor = bgColor
+					panelroot.addEventListener('pointerdown', action)
+                    panelroot.addEventListener('touchdown', action)
+					panelroot.textContent = message
+					panelroot.style.alignText = "center"
+                    panelroot.style.position = 'absolute'
+					
+					
+					// const panelHeader = document.createElement('h2')
+					// panelHeader.id = HeaderID
+					// panelHeader.className = HeaderClassName
+					// panelHeader.style.textContent = HeaderName
+					// panelHeader.style.textContent = message
+					// panelHeader.style.background = "rgba(0, 255, 255)"
+					// panelHeader.style.textSize = "120px"
+					
+					// panelroot.appendChild(panelHeader)
+
 
 					// Build the object for pushing and placing
 					const panelData = new CSS3DObject(panelroot)
@@ -1628,6 +1685,8 @@
                     delay: .25,
                     y: -105,
                 })
+
+                console.log("button pressed")
             }
 
 
@@ -1645,6 +1704,41 @@
 						moveCamera_unknown, 
 						"ShowΔ",
 						"Toggle from here or main menu top left"
+					)
+
+                    
+                )
+
+
+            testButton01 = new THREE.Group()
+            testButton01.position.set(-794.68, 5140, 21000)
+            testButton01.rotation.set(0, 0, 0)
+            testButton01.scale.set(1, 1, 1)
+            scene.add(testButton01)
+
+            let moveCamera_unknown1 = () => {
+                gsap.to(camera.position, {
+                    duration: 2.5,
+                    delay: .25,
+                    y: -105,
+                })
+
+                console.log("button pressed")
+            }
+
+
+                testButton01.add(
+
+                new hoverObject(
+						'img',
+						0, 0, 0,
+						0, 0, 0,
+						0.1, 0.1, 0.1,
+						"Testing234", "TestingClass234",
+						"./assets/img/10-ObjectUI/02-TechTiles/Version04/TechTileBase01.svg", '',
+						"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Love each other...correctly.",
+                        moveCamera_unknown1, "",
+						
 					)
 
                     
