@@ -167,6 +167,9 @@
             let testButton03
 
 
+        // Settings Items
+        let rotator_root
+
         //....................................................................
         //.............DDDDD................OOOOOO......BBBBB............JJ...
         //...333333...DDDDDDDDD............OOOOOOOOO...BBBBBBBBBB.......JJJJ..
@@ -966,7 +969,13 @@
                 pdfComponent.setAttribute("width", fileWidth)
                 pdfComponent.setAttribute("height", fileHeight)
                 pdfComponent.style.display = "default"
-                pdfComponent.style.border = "3px solid rgba(0, 255, 208, 0.75)"
+                pdfComponent.style.border = "3px dotted rgba(255, 255, 255, 0.75)"
+                pdfComponent.style.borderWidth = "15px"
+                pdfComponent.style.borderRadius = "10px"
+                pdfComponent.style.borderStyle = "double",
+                pdfComponent.style.borderStyle = "double",
+                pdfComponent.style.boxShadow = "2px 2px 5px, 2px 2px 2px white"
+                
                 pdfDiv.appendChild(pdfComponent)			
 
                 // Pushing Function Out
@@ -1223,14 +1232,15 @@
             // Height-Movement Settings
             // ###########################################################
 
+
                 document.addEventListener("keydown", function(event) {
-					if (event.key === "2") {
+					if (event.key === "r") {
 						// camera.position.y += 10000
 
 						gsap.to(camera.position, {
 							duration: .5,
 							delay: 0,
-							y: "-= 25",
+							y: "+= 200",
 
 						})
 					}
@@ -1238,28 +1248,26 @@
 
 
                 document.addEventListener("keydown", function(event) {
-					if (event.ctrlKey && event.key === "2") {
+					if (event.ctrlKey && event.key === "r") {
 						// camera.position.y += 10000
 
 						gsap.to(camera.position, {
 							duration: .5,
 							delay: 0,
-							y: "-= 1000",
+							y: "+= 10000",
 
 						})
 					}
 				})
 
-
-
                 document.addEventListener("keydown", function(event) {
-					if (event.key === "1") {
+					if (event.key === "f") {
 						// camera.position.y += 10000
 
 						gsap.to(camera.position, {
 							duration: .5,
 							delay: 0,
-							y: "+= 25",
+							y: "-= 200",
 
 						})
 					}
@@ -1267,17 +1275,26 @@
 
 
                 document.addEventListener("keydown", function(event) {
-					if (event.ctrlKey && event.key === "11") {
+					if (event.ctrlKey && event.key === "f") {
 						// camera.position.y += 10000
 
 						gsap.to(camera.position, {
 							duration: .5,
 							delay: 0,
-							y: "+= 1000",
+							y: "-= 10000",
 
 						})
 					}
 				})
+
+
+
+               
+
+
+            // ###########################################################
+            //  Settings
+            // ###########################################################
 
 
 			// Toc_Geometries
@@ -1673,6 +1690,13 @@
 
 
             
+            rotator_root = new THREE.Group()
+            rotator_root.position.set(0, 0, 0)
+            rotator_root.rotation.set(0, 0, 0)
+            rotator_root.scale.set(1, 1, 1)
+            scene.add(rotator_root)
+
+            
             testButton01 = new THREE.Group()
             testButton01.position.set(-794.68, 5530, 21000)
             testButton01.rotation.set(0, 0, 0)
@@ -1686,7 +1710,26 @@
                     y: -105,
                 })
 
+                gui.hide()
+
                 console.log("button pressed")
+            }
+
+
+            let rotateCameraAroundCenterPointClockwise = () => {
+                rotator_root.attach(camera)
+
+                // gsap.to(rotator_root.rotation, {
+                //     duration: 2.5,
+                //     delay: .25,
+                //     y: '-= 1.575',
+                // })
+
+                gsap.to(rotator_root.rotation, {
+                    duration: 2.5,
+                    delay: .25,
+                    y: '-= 0.26166666666',
+                })
             }
 
 
@@ -1701,7 +1744,7 @@
 						'DefaultImgId', 'DefaultImgClassName',
 						'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
 						"./assets/icons/00-Official/UI/Isometric/tools/target1.svg", "",
-						moveCamera_unknown, 
+						rotateCameraAroundCenterPointClockwise, 
 						"ShowΔ",
 						"Toggle from here or main menu top left"
 					)
@@ -1715,6 +1758,10 @@
             testButton01.rotation.set(0, 0, 0)
             testButton01.scale.set(1, 1, 1)
             scene.add(testButton01)
+            // camera.attach(testButton01)
+
+
+            
 
             let moveCamera_unknown1 = () => {
                 gsap.to(camera.position, {
@@ -1723,8 +1770,29 @@
                     y: -105,
                 })
 
+                gui.show()
+
                 console.log("button pressed")
             }
+
+
+            let rotateCameraAroundCenterPointCounterClockwise = () => {
+                rotator_root.attach(camera)
+
+                // gsap.to(rotator_root.rotation, {
+                //     duration: 2.5,
+                //     delay: .25,
+                //     y: '+= 1.575',
+                // })
+
+                gsap.to(rotator_root.rotation, {
+                    duration: 2.5,
+                    delay: .25,
+                    y: '+= 0.26166666666',
+                })
+            }
+
+            
 
 
                 testButton01.add(
@@ -1735,14 +1803,34 @@
 						0, 0, 0,
 						0.1, 0.1, 0.1,
 						"Testing234", "TestingClass234",
-						"./assets/img/10-ObjectUI/02-TechTiles/Version04/TechTileBase01.svg", '',
+						"./assets/icons/00-Official/UI/Isometric/tools/target1.svg", '',
 						"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Love each other...correctly.",
-                        moveCamera_unknown1, "",
+                        rotateCameraAroundCenterPointCounterClockwise, "",
 						
 					)
 
                     
                 )
+
+
+            
+//..................................................
+//......CCC......TTTTTTTTT...LL.........RRRRR.......
+//....CCCCCCCC..TTTTTTTTTTT.LLLL.......RRRRRRRRRR...
+//...CCCCCCCCCC.TTTTTTTTTTT.LLLL.......RRRRRRRRRRR..
+//..CCCCCCCCCCC.TTTTTTTTTTT.LLLL.......RRRRRRRRRRR..
+//..CCCC...CCCCC....TTTT....LLLL.......RRRR...RRRR..
+//.CCCCC....CCCC....TTTT....LLLL.......RRRR...RRRR..
+//.CCCC.............TTTT....LLLL.......RRRRRRRRRRR..
+//.CCCC.............TTTT....LLLL.......RRRRRRRRRRR..
+//.CCCC.............TTTT....LLLL.......RRRRRRRRRRR..
+//.CCCCC....CCCC....TTTT....LLLL.......RRRR..RRRRR..
+//..CCCC...CCCCC....TTTT....LLLL.......RRRR...RRRR..
+//..CCCCCCCCCCC.....TTTT....LLLLLLLLLL.RRRR...RRRR..
+//...CCCCCCCCCC.....TTTT....LLLLLLLLLL.RRRR...RRRR..
+//....CCCCCCCC......TTTT....LLLLLLLLLL.RRRR...RRRR..
+//.....CCCCC........................................
+//..................................................
 
 
 
@@ -1825,7 +1913,7 @@
 			controls.maxDistance = 70000.0;
             controls.screenSpacePanning = false
             controls.enablePan = false
-            controls.rotateSpeed = 0.01
+            controls.rotateSpeed = 0.025
             controls.zoomSpeed = 0.1
 			controls.update();
 
@@ -1844,7 +1932,119 @@
 			// // controls.update();
 
 			//
-			camera.lookAt(0, 55, 0)
+			// camera.lookAt(0, 55, 0)
+
+//..........................................................................................................
+//......CCC......TTTTTTTTT...LL.........RRRRR.........................UU.....UU....NN......N.......CCC......
+//....CCCCCCCC..TTTTTTTTTTT.LLLL.......RRRRRRRRRR.........FFFFFFFFFF.UUUU...UUUU..NNNN....NNN....CCCCCCCC...
+//...CCCCCCCCCC.TTTTTTTTTTT.LLLL.......RRRRRRRRRRR........FFFFFFFFFF.UUUU...UUUU..NNNNN...NNN...CCCCCCCCCC..
+//..CCCCCCCCCCC.TTTTTTTTTTT.LLLL.......RRRRRRRRRRR........FFFFFFFFFF.UUUU...UUUU..NNNNN...NNN..CCCCCCCCCCC..
+//..CCCC...CCCCC....TTTT....LLLL.......RRRR...RRRRR.......FFFF.......UUUU...UUUU..NNNNNN..NNN..CCCC...CCCC..
+//.CCCCC....CCCC....TTTT....LLLL.......RRRR...RRRRR.......FFFF.......UUUU...UUUU..NNNNNNN.NNN.CCCCC....CCC..
+//.CCCC.............TTTT....LLLL.......RRRRRRRRRRR........FFFFFFFFF..UUUU...UUUU..NNNNNNN.NNN.CCCC..........
+//.CCCC.............TTTT....LLLL.......RRRRRRRRRRR.------.FFFFFFFFF..UUUU...UUUU..NNN.NNNNNNN.CCCC..........
+//.CCCC.............TTTT....LLLL.......RRRRRRRRRRR.------.FFFFFFFFF..UUUU...UUUU..NNN.NNNNNNN.CCCC..........
+//.CCCCC....CCCC....TTTT....LLLL.......RRRR..RRRRR.------.FFFF.......UUUU...UUUU..NNN..NNNNNN.CCCCC....CCC..
+//..CCCC...CCCCC....TTTT....LLLL.......RRRR...RRRR.------.FFFF.......UUUU...UUUU..NNN..NNNNNN..CCCC...CCCC..
+//..CCCCCCCCCCC.....TTTT....LLLLLLLLLL.RRRR...RRRR........FFFF.......UUUUUUUUUUU..NNN...NNNNN..CCCCCCCCCCC..
+//...CCCCCCCCCC.....TTTT....LLLLLLLLLL.RRRR...RRRR........FFFF.......UUUUUUUUUUU..NNN...NNNNN...CCCCCCCCCC..
+//....CCCCCCCC......TTTT....LLLLLLLLLL.RRRR...RRRRR.......FFFF........UUUUUUUUU...NNN....NNNN....CCCCCCCC...
+//.....CCCCC............................................................UUUUU.....................CCCCC.....
+//..........................................................................................................
+
+
+
+            document.addEventListener("keydown", function(event) {
+                if (event.key === "[") {
+                    
+                    
+                    rotateCameraAroundCenterPointClockwise()
+
+                    // gsap.to(camera.rotation, {
+                    //     duration: 1,
+                    //     delay: 0,
+                    //     x: '+= 1.575',
+
+                    // })
+
+
+                    // gsap.to(camera.rotation, {
+                    //     duration: 1,
+                    //     delay: 1,
+                    //     x: '-= 1.575',
+
+                    // })
+
+
+                    
+
+
+
+                }
+            })
+
+
+
+            document.addEventListener("keydown", function(event) {
+                if (event.key === "]") {
+                    
+                    
+                    rotateCameraAroundCenterPointCounterClockwise()
+
+                    // gsap.to(camera.rotation, {
+                    //     duration: 1,
+                    //     delay: 0,
+                    //     x: '+=1.575',
+
+                    // })
+
+
+                    // gsap.to(camera.rotation, {
+                    //     duration: 1,
+                    //     delay: 1,
+                    //     x: '-=1.575',
+
+
+                    // })
+
+
+                    
+
+                }
+            })
+
+
+            document.addEventListener("keydown", function(event) {
+                if (event.key === "=") {
+                    
+
+                    gsap.to(camera.position, {
+                        duration: .25,
+                        delay: 0,
+                        x: `-= ${newSpeedStrengthParams.left}`,
+
+                    })
+
+                }
+            })
+
+
+            document.addEventListener("keydown", function(event) {
+                if (event.key === "'") {
+                    
+
+                    gsap.to(camera.position, {
+                        duration: .25,
+                        delay: 0,
+                        x: `-= ${newSpeedStrengthParams.left}`,
+
+                    })
+
+                }
+            })
+
+
+
 
 			stats = new Stats();
 			container.appendChild(stats.dom);
@@ -1867,6 +2067,7 @@
 
 			const gui = new GUI();
             gui.close()
+            gui.hide()
 
 			const folderSky = gui.addFolder('Sky');
 			folderSky.add(parameters, 'elevation', 0, 90, 0.1).onChange(updateSun);
