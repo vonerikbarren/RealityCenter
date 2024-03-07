@@ -20,12 +20,15 @@
 	<div id="container"></div>
 	<div id="info">
 		<a href="" target="_blank" rel="noopener">Von'Erik Barren-Tucker</a> - Δ of Time Prototype
+       
+
 
 		<div class="pressStart">Dimensions of Time</div>
 	</div>
 
 	<div class="virtualkeyboard-container-L0">
-
+         <!-- VideoDomain02: Search_html_video01 -->
+         <video id="openingVideo" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/SphereAnimations/Equations3.mp4" border: 5px 5px black;"></video>
 	</div>
 
 	<!-- <script src="./THREE_Scene.js"></script> -->
@@ -132,6 +135,16 @@
 
 			let objT_CylinderOpenedA0
 			let mesh_objT_CylinderOpenedA0
+
+        // Opening Video
+			let CenterBrain_VideoSphere_Opening
+			let mesh_CenterBrain_VideoSphere_Opening
+			let openingButtonIconGroup
+			let OpeningMeshA
+			let mesh_OpeningMeshA
+			let UpdatedTechTileV3_Opening
+			let openingTimeΔ
+			let openingButtonIcon
 
 
 
@@ -1185,6 +1198,80 @@
 
 
 
+            // Search.video01
+				// Opening Video Object
+				CenterBrain_VideoSphere_Opening = new THREE.Group()
+				CenterBrain_VideoSphere_Opening.position.set(0, 1.15, 0)
+				// CenterBrain_VideoSphere_Opening.position.set(0, 0, -500144) // Away from User
+				CenterBrain_VideoSphere_Opening.rotation.set(0, 0, 0)
+				CenterBrain_VideoSphere_Opening.scale.set(1, 1, 1)
+
+				console.log(CenterBrain_VideoSphere_Opening.position)
+	
+				scene.add(CenterBrain_VideoSphere_Opening)
+				// camera.attach(CenterBrain_VideoSphere_Opening)
+
+				const videoOpening = document.getElementById('openingVideo')
+				const videoOpening_Tex = new THREE.VideoTexture(videoOpening)
+				const videoOpening_Mat = new THREE.MeshBasicMaterial(
+					{
+						map: videoOpening_Tex,
+						side: THREE.DoubleSide,
+						toneMapped: false,
+					}
+				)
+
+				mesh_CenterBrain_VideoSphere_Opening = new THREE.Mesh(
+					geo_objT_SphereA0, 
+					videoOpening_Mat
+				)
+
+                videoOpening_Mat.transparent = false
+
+				mesh_CenterBrain_VideoSphere_Opening.position.set(0, 0, 0)
+				mesh_CenterBrain_VideoSphere_Opening.rotation.set(0, 1.565, 0)
+				mesh_CenterBrain_VideoSphere_Opening.scale.set(10000, 10000, 10000)
+				CenterBrain_VideoSphere_Opening.add(mesh_CenterBrain_VideoSphere_Opening)
+
+
+				openingButtonIconGroup = new THREE.Group()
+				openingButtonIconGroup.position.set(0, 0, -20000)
+				openingButtonIconGroup.rotation.set(0, 0, 0)
+				openingButtonIconGroup.scale.set(1, 1, 1)
+				scene.add(openingButtonIconGroup)
+
+
+                let Toggle_VideoSphere = () => {
+                    if (mesh_CenterBrain_VideoSphere_Opening.scale.x === 100) {
+                        gsap.to(mesh_CenterBrain_VideoSphere_Opening.scale, {
+							repeat: 0,
+							duration: 2.5,
+							delay: 0,
+							x: 0.5,
+                            y: 0.5,
+                            z: 0.5
+							
+						})
+                    } else if (mesh_CenterBrain_VideoSphere_Opening.scale.x === 0.5) {
+                        gsap.to(mesh_CenterBrain_VideoSphere_Opening.scale, {
+							repeat: 0,
+							duration: 2.5,
+							delay: 0,
+							x: 100,
+                            y: 100,
+                            z: 100
+							
+						})
+                    }
+                }
+
+                document.addEventListener("keydown", function(event) {
+					if (event.key === "0") {
+						Toggle_VideoSphere()
+					}
+				})
+
+
 
 
 			// Groups	
@@ -1258,11 +1345,16 @@
 			const geo_timeSphere_L4 = new THREE.SphereGeometry(305500, 32, 32)
 			const mat_timeSphere_L4 = new THREE.MeshBasicMaterial({ map: SceneWallpaper_01, side: THREE.DoubleSide });
 			mesh_timeSphere_L4 = new THREE.Mesh(geo_timeSphere_L4, mat_timeSphere_L4)
-			mat_timeSphere_L4.transparent = false;
+			mat_timeSphere_L4.transparent = true;
 			mat_timeSphere_L4.alphaMap = SceneWallpaper_01
 			mat_timeSphere_L4.wireframe = false;
 			mesh_timeSphere_L4.position.set(0, 0, 200)
 			group01_timeSphere.add(mesh_timeSphere_L4);
+
+
+
+            
+
 
 
 
@@ -1440,6 +1532,7 @@
             controls.screenSpacePanning = false
             controls.enablePan = false
             controls.rotateSpeed = 0.01
+            controls.zoomSpeed = 0.1
 			controls.update();
 
 
