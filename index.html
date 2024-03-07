@@ -85,6 +85,15 @@
 		let animatedTime, mesh_timeSphere_L4
 
 
+
+        // -------------------------------------------------------------------
+
+        let websiteGroup01_root
+            let websiteTemplateC01, mesh_websiteTemplateC01
+            let websiteTemplateC02, mesh_websiteTemplateC02
+            let websiteTemplateC03, mesh_websiteTemplateC03
+
+
         //....................................................................
         //.............DDDDD................OOOOOO......BBBBB............JJ...
         //...333333...DDDDDDDDD............OOOOOOOOO...BBBBBBBBBB.......JJJJ..
@@ -158,18 +167,22 @@
 
 		// TimeSphereImgs
 		const timeSphereImg_01 = textureLoader.load('./assets/img/00-WallpaperUX/Specials/T01-TimeTravel.png')
-
 		const realitySphereImg_01 = textureLoader.load('./assets/img/backgrounds/TimeTravel.png')
-
 		const realitySphereImg_02 = textureLoader.load('./assets/img/backgrounds/marbleWhite.jpg')
-
 		const realitySphereImg_03 = textureLoader.load('./assets/img/00-WallpaperUX/Specials/T01-TimeTravel.png')
-
 		const realitySphereImg_04 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/Grid19.jpg')
+
+
+        // WebsiteTemplates
 
 
 		init();
 		animate();
+
+        //.........................................................................
+        //.______________________________________________________________________..
+        //.______________________________________________________________________..
+        //.........................................................................
 
 
         //...................................
@@ -552,30 +565,30 @@
 			scene.add(directionalLight)
 
 
-			// controls = new OrbitControls( camera, renderer.domElement );
-			// controls.maxPolarAngle = Math.PI * 0.2;
-            // controls.minPolarAngle = Math.PI * 0.495;
-            // controls.maxAzimuthAngle = Math.PI * 0.495;
-			// controls.target.set( 0, 55, 0 );
-			// controls.minDistance = 100.0;
-			// controls.maxDistance = 200.0;
-            // controls.screenSpacePanning = false
-            // controls.enablePan = false
-			// controls.update();
+			controls = new OrbitControls( camera, renderer.domElement );
+			controls.maxPolarAngle = Math.PI * 0.2;
+            controls.minPolarAngle = Math.PI * 0.495;
+            controls.maxAzimuthAngle = Math.PI * 0.495;
+			controls.target.set( 0, 55, 0 );
+			controls.minDistance = 100.0;
+			controls.maxDistance = 200.0;
+            controls.screenSpacePanning = false
+            controls.enablePan = false
+			controls.update();
 
 
-			controls = new FirstPersonControls(camera, renderer.domElement);
+			// controls = new FirstPersonControls(camera, renderer.domElement);
 
-			controls.movementSpeed = 100;
-			controls.lookSpeed = 0.035
-			controls.noFly = false;
-			controls.lookVertical = true;
-			controls.mouseDragOn = false;
-            controls.verticalMax = 0
-            controls.verticalMin = 0
-            controls.heightMax = 0
-            controls.heightMin = 0
-			// controls.update();
+			// controls.movementSpeed = 100;
+			// controls.lookSpeed = 0.035
+			// controls.noFly = false;
+			// controls.lookVertical = true;
+			// controls.mouseDragOn = false;
+            // controls.verticalMax = 0
+            // controls.verticalMin = 0
+            // controls.heightMax = 0
+            // controls.heightMin = 0
+			// // controls.update();
 
 			//
 			camera.lookAt(0, 55, 0)
@@ -691,7 +704,7 @@
 			mesh_timeSphere_L2.rotation.x = time * 0.1;
 
 			mesh_timeSphere_L3.rotation.x = time * 0.1;
-			mesh_timeSphere_L4.rotation.y = time * 0.1;
+			mesh_timeSphere_L4.rotation.y = time * 0.55;
 
 			mesh_TimeSphereHourBase_L0.rotation.z = time * 1
 
