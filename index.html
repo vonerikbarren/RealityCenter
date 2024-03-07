@@ -429,7 +429,8 @@
 					planeGeometryDimensions: {
 						width: 10,
 						height: 10,
-						widthSegments: 1,
+						widthSegments: 10,
+                        heightSegments: 10,
 					},
 
 
@@ -1255,10 +1256,10 @@
 			group01_timeSphere.add(animatedTime)
 
 			const geo_timeSphere_L4 = new THREE.SphereGeometry(305500, 32, 32)
-			const mat_timeSphere_L4 = new THREE.MeshBasicMaterial({ map: realitySphereImg_04, side: THREE.DoubleSide });
+			const mat_timeSphere_L4 = new THREE.MeshBasicMaterial({ map: SceneWallpaper_01, side: THREE.DoubleSide });
 			mesh_timeSphere_L4 = new THREE.Mesh(geo_timeSphere_L4, mat_timeSphere_L4)
-			mat_timeSphere_L4.transparent = true;
-			mat_timeSphere_L4.alphaMap = realitySphereImg_04
+			mat_timeSphere_L4.transparent = false;
+			mat_timeSphere_L4.alphaMap = SceneWallpaper_01
 			mat_timeSphere_L4.wireframe = false;
 			mesh_timeSphere_L4.position.set(0, 0, 200)
 			group01_timeSphere.add(mesh_timeSphere_L4);
@@ -1438,6 +1439,7 @@
 			controls.maxDistance = 50000.0;
             controls.screenSpacePanning = false
             controls.enablePan = false
+            controls.rotateSpeed = 0.01
 			controls.update();
 
 
