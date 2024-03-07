@@ -947,7 +947,30 @@
             }
 
 
-            document.addEventListener("keydown", function(event) {
+            //.............................................................................................
+            //....SSSSSS.....EEEEEEEEE..TTTTTTTTT..TTTTTTTTT...I....NN......N.......GGGGG.......SSSSSS.....
+            //...SSSSSSSS...EEEEEEEEEEEETTTTTTTTTTTTTTTTTTTTT.III..NNNN....NNN....GGGGGGGGG....SSSSSSSS....
+            //..SSSSSSSSSS..EEEEEEEEEEEETTTTTTTTTTTTTTTTTTTTT.III..NNNNN...NNN...GGGGGGGGGG...SSSSSSSSSS...
+            //..SSSSSSSSSS..EEEEEEEEEEEETTTTTTTTTTTTTTTTTTTTT.III..NNNNN...NNN..GGGGGGGGGGGG..SSSSSSSSSS...
+            //.SSSS...SSSSS.EEEE...........TTTT.......TTTT....III..NNNNNN..NNN..GGGG....GGGG.GSSS...SSSSS..
+            //.SSSSSS.......EEEEEEEEEE.....TTTT.......TTTT....III..NNNNNNN.NNN.NGGGG....GGGG.GSSSSS........
+            //..SSSSSSSSS...EEEEEEEEEE.....TTTT.......TTTT....III..NNNNNNN.NNN.NGGG...GGGGGG..SSSSSSSSS....
+            //..SSSSSSSSSS..EEEEEEEEEE.....TTTT.......TTTT....III..NNN.NNNNNNN.NGGG...GGGGGG..SSSSSSSSSS...
+            //....SSSSSSSSS.EEEEEEEEEE.....TTTT.......TTTT....III..NNN.NNNNNNN.NGGG...GGGGGG....SSSSSSSSS..
+            //.SSSS..SSSSSS.EEEE...........TTTT.......TTTT....III..NNN..NNNNNN.NGGGG..GGGGGG.GSSS..SSSSSS..
+            //.SSSS....SSSS.EEEE...........TTTT.......TTTT....III..NNN..NNNNNN..GGGG....GGGG.GSSS....SSSS..
+            //.SSSSSSSSSSSS.EEEEEEEEEEE....TTTT.......TTTT....III..NNN...NNNNN..GGGGGGGGGGGG.GSSSSSSSSSSS..
+            //..SSSSSSSSSS..EEEEEEEEEEE....TTTT.......TTTT....III..NNN...NNNNN...GGGGGGGGGGG..SSSSSSSSSS...
+            //...SSSSSSSSS..EEEEEEEEEEE....TTTT.......TTTT....III..NNN....NNNN....GGGGGGGGGG...SSSSSSSSS...
+            //....SSSSSS...........................................................GGGG.........SSSSSS.....
+            //.............................................................................................
+
+
+
+            // ###########################################################
+            // Movement Settings
+            // ###########################################################
+                document.addEventListener("keydown", function(event) {
 					if (event.key === "w") {
 						
 
@@ -998,6 +1021,66 @@
 							duration: .25,
 							delay: 0,
 							x: `+= ${newSpeedStrengthParams.right}`,
+
+						})
+					}
+				})
+
+            // ###########################################################
+            // Height-Movement Settings
+            // ###########################################################
+
+                document.addEventListener("keydown", function(event) {
+					if (event.key === "4") {
+						// camera.position.y += 10000
+
+						gsap.to(camera.position, {
+							duration: .5,
+							delay: 0,
+							y: "-= 25",
+
+						})
+					}
+				})
+
+
+                document.addEventListener("keydown", function(event) {
+					if (event.ctrlKey && event.key === "4") {
+						// camera.position.y += 10000
+
+						gsap.to(camera.position, {
+							duration: .5,
+							delay: 0,
+							y: "-= 100",
+
+						})
+					}
+				})
+
+
+
+                document.addEventListener("keydown", function(event) {
+					if (event.key === "3") {
+						// camera.position.y += 10000
+
+						gsap.to(camera.position, {
+							duration: .5,
+							delay: 0,
+							y: "+= 25",
+
+						})
+					}
+				})
+
+
+                document.addEventListener("keydown", function(event) {
+					if (event.ctrlKey && event.key === "3") {
+						// camera.position.y += 10000
+
+						gsap.to(camera.position, {
+							duration: .5,
+							delay: 0,
+							y: "+= 100",
 
 						})
 					}
@@ -1255,7 +1338,7 @@
 
                     
             pdfTest_root = new THREE.Group()
-            pdfTest_root.position.set(1600, 6000, 21000)
+            pdfTest_root.position.set(1800, 6000, 21000)
             pdfTest_root.rotation.set(0, 0, 0)
             pdfTest_root.scale.set(1, 1, 1)
             scene.add(pdfTest_root)
