@@ -6,6 +6,13 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 	<link type="text/css" rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/EasePack.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/CustomEase.min.js"></script>
+
 </head>
 
 <body>
@@ -86,6 +93,7 @@
 		let timeSphere, mesh_timeSphere_L0, mesh_Reality_A0, mesh_timeSphere_L1, mesh_lightContainer_A0;
 		let mesh_timeSphere_L2, mesh_timeSphere_L3, mesh_TimeSphereHourBase_L0
 		let animatedTime, mesh_timeSphere_L4
+        let newSpeedStrengthParams
 
 
 
@@ -938,6 +946,64 @@
                 return pdfComponentData
             }
 
+
+            document.addEventListener("keydown", function(event) {
+					if (event.key === "w") {
+						
+
+						gsap.to(camera.position, {
+							duration: .25,
+							delay: 0,
+							z: `-= ${newSpeedStrengthParams.forwards}`,
+
+						})
+					}
+				})
+
+
+				document.addEventListener("keydown", function(event) {
+					if (event.key === "s") {
+						
+
+						gsap.to(camera.position, {
+							duration: .25,
+							delay: 0,
+							z: `+= ${newSpeedStrengthParams.backwards}`,
+
+						})
+					}
+				})
+
+
+				document.addEventListener("keydown", function(event) {
+					if (event.key === "a") {
+						
+
+						gsap.to(camera.position, {
+							duration: .25,
+							delay: 0,
+							x: `-= ${newSpeedStrengthParams.left}`,
+
+						})
+
+					}
+				})
+
+
+				document.addEventListener("keydown", function(event) {
+					if (event.key === "d") {
+						
+
+						gsap.to(camera.position, {
+							duration: .25,
+							delay: 0,
+							x: `+= ${newSpeedStrengthParams.right}`,
+
+						})
+					}
+				})
+
+
 			// Toc_Geometries
 
 			const geometry = new THREE.BoxGeometry(30, 30, 30);
@@ -1189,7 +1255,7 @@
 
                     
             pdfTest_root = new THREE.Group()
-            pdfTest_root.position.set(10, 6000, 21000)
+            pdfTest_root.position.set(1600, 6000, 21000)
             pdfTest_root.rotation.set(0, 0, 0)
             pdfTest_root.scale.set(1, 1, 1)
             scene.add(pdfTest_root)
@@ -1201,7 +1267,7 @@
                         0, 0, 0,
                         1, 1, 1,
                         "hoverClockA1",
-                        "https://matrix.logic-wire.de/",
+                        "https://vonerikbarren.github.io/Portfolio--V3/#",
                         "1920px", "1200"
                     )
 
@@ -1310,6 +1376,13 @@
 
 			stats = new Stats();
 			container.appendChild(stats.dom);
+
+            newSpeedStrengthParams = {
+					left: 200,
+					right: 200,
+					forwards: 200,
+					backwards: 200, 
+				}
 
 			// Toc.GUI
 
