@@ -1704,6 +1704,75 @@
                     websiteReality01.add(mesh_websiteReality01)
 
 
+                websiteReality02 = new THREE.Group()
+                websiteReality02.position.set(8, 0, 0)
+                websiteReality02.rotation.set(0, 0, 0)
+                websiteReality02.scale.set(0.1, 0.1, 0.1)
+                websiteGroup01_root.add(websiteReality02)
+
+                    const mat_websiteReality02 = new THREE.MeshBasicMaterial({ map: BaseContainer01, side: THREE.DoubleSide });
+                    mesh_websiteReality02 = new THREE.Mesh(geo_objT_BoxA0, mat_websiteReality02);
+                    mat_websiteReality02.transparent = true;
+                    mat_websiteReality02.alphaMap = BaseContainer01;
+                    mesh_websiteReality02.position.set(0, 0, 0);
+                    // mesh_websiteReality02.position.set(-15000, 0, 0);
+                    mesh_websiteReality02.scale.set(1, 1, 1);
+                    mesh_websiteReality02.rotation.set(0, 0, 0)
+                    // mesh_websiteReality02.rotateX( - Math.PI / 2 );
+
+                    // websiteReality02.lookAt(camera)
+                    
+                    websiteReality02.add(mesh_websiteReality02)
+                
+                let rotate_websiteReality02 = () => {
+                    gsap.to(mesh_websiteReality02.rotation, {
+                        repeat: -1,
+                        duration: 2.5,
+                        delay: .25,
+                        ease: "none",
+                        y: '-= 3.14',
+                    })
+                }
+
+
+                rotate_websiteReality02()
+
+
+
+                websiteReality03 = new THREE.Group()
+                websiteReality03.position.set(8, -3, 0)
+                websiteReality03.rotation.set(0, 0, 0)
+                websiteReality03.scale.set(0.1, 0.1, 0.1)
+                websiteGroup01_root.add(websiteReality03)
+
+                    const mat_websiteReality03 = new THREE.MeshBasicMaterial({ map: BaseContainer01, side: THREE.DoubleSide });
+                    mesh_websiteReality03 = new THREE.Mesh(geo_objT_BoxA0, mat_websiteReality03);
+                    mat_websiteReality03.transparent = true;
+                    mat_websiteReality03.alphaMap = BaseContainer01;
+                    mesh_websiteReality03.position.set(0, 0, 0);
+                    // mesh_websiteReality03.position.set(-15000, 0, 0);
+                    mesh_websiteReality03.scale.set(1, 1, 1);
+                    mesh_websiteReality03.rotation.set(0, 0, 0)
+                    // mesh_websiteReality03.rotateX( - Math.PI / 2 );
+
+                    // websiteReality03.lookAt(camera)
+                    
+                    websiteReality03.add(mesh_websiteReality03)
+                
+                let rotate_websiteReality03 = () => {
+                    gsap.to(mesh_websiteReality03.rotation, {
+                        repeat: -1,
+                        duration: 2.5,
+                        delay: .25,
+                        ease: "none",
+                        y: '+= 3.14',
+                    })
+                }
+
+
+                rotate_websiteReality03()
+
+
 
 
                     
@@ -1933,7 +2002,11 @@
 
 
 
+            const raycaster = new THREE.Raycaster();
+            const mouse = new THREE.Vector2();
 
+
+            scene.addEventListener("click", onMouseClick);
 
 
 
@@ -2325,6 +2398,24 @@
 					backwards: 2200, 
 				}
 
+            // Update the raycaster
+            raycaster.setFromCamera(mouse, camera);
+
+            // Check for intersections with your meshes
+            const intersects = raycaster.intersectObjects([mesh_websiteReality02, mesh_websiteReality03], true);
+
+            if (intersects.length > 0) {
+                // Handle the click event for the intersected mesh
+                const clickedMesh = intersects[0].object;
+                console.log("Mesh clicked:", clickedMesh.name);
+
+               
+
+
+
+                // You can open a URL or perform other actions here
+            }
+
 			// Toc.GUI
 
 			const gui = new GUI();
@@ -2379,6 +2470,12 @@
             cssrenderer.setSize(window.innerWidth, window.innerHeight);
 
 		}
+
+        function onMouseClick(event) {
+            // Calculate normalized device coordinates
+            mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+            mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+        }
 
 		function animate() {
 
