@@ -35,7 +35,7 @@
 
          <video id="none" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/WeatherAnimations/clouds_Sphere01.mp4" style="display: none" ></video>
 
-         <video id="openingVideo" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/AtmosphereAnimations/Animation_SpaceDance01.mp4" style="display: none" ></video>
+         <video id="openingVideo" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/SphereAnimations/Equations3.mp4" style="display: none" ></video>
 	</div>
 
     <!-- ./assets/video/SphereAnimations/Equations3.mp4 -->
@@ -164,8 +164,14 @@
             let websiteTemplateC01, mesh_websiteTemplateC01
             let websiteTemplateC02, mesh_websiteTemplateC02
             let websiteTemplateC03, mesh_websiteTemplateC03
+        
+        let websiteRealities_root
+            let websiteReality01, mesh_websiteReality01
+            let websiteReality02, mesh_websiteReality02
+            let websiteReality03, mesh_websiteReality03
 
         let pdfTest_root
+        let googSheet_root
         let pdfFileTest_root
 
 
@@ -268,6 +274,10 @@
         const img_websiteTemplateC01 = textureLoader.load('./assets/img/10-ObjectUI/08-Panels_Websites/Bundle03/1x/WebsiteTemplate_C01.png')
         const img_websiteTemplateC02 = textureLoader.load('./assets/img/10-ObjectUI/08-Panels_Websites/Bundle03/1x/WebsiteTemplate_C02.png')
         const img_websiteTemplateC03 = textureLoader.load('./assets/img/10-ObjectUI/08-Panels_Websites/Bundle03/1x/WebsiteTemplate_C03.png')
+
+
+        // ContainerBase
+        const BaseContainer01 = textureLoader.load('./assets/img/10-ObjectUI/07-ContainerRealities/00_ContainerBaseItems/BaseContainer01.png')
 
         // |- ContainerHolders
         const ContainerHolderWhiteA1 = textureLoader.load('./assets/img/04-CommunicationUI/01-ContainerHolders/ContainerWhiteA01/1-Active/ContainerWhiteA01a.png')
@@ -1470,10 +1480,25 @@
                 }
 
                 document.addEventListener("keydown", function(event) {
-					if (event.key === "0") {
+					if (event.key === "9") {
 						Toggle_VideoSphere()
 					}
 				})
+
+                let rotateSphere = () => {
+                gsap.to(mesh_CenterBrain_VideoSphere_Opening.rotation, {
+                    repeat: -1,
+                    duration: 4.5,
+                    ease: "none",
+                    delay: .25,
+                    y: '-= 1.575',
+                })
+            }
+
+                rotateSphere()
+
+
+
 
 
 
@@ -1539,6 +1564,9 @@
 			mesh_TimeSphereHourBase_L0.position.set(0, 1.5, 200)
 			mesh_TimeSphereHourBase_L0.rotation.x = - Math.PI * 0.5
 			group01_timeSphere.add(mesh_TimeSphereHourBase_L0);
+
+
+            
 
 
 			animatedTime = new THREE.Group()
@@ -1654,6 +1682,30 @@
 
 
 
+
+                websiteReality01 = new THREE.Group()
+                websiteReality01.position.set(0, 0, 0)
+                websiteReality01.rotation.set(0, 0, 0)
+                websiteReality01.scale.set(5, 5, 5)
+                websiteGroup01_root.add(websiteReality01)
+
+                    const mat_websiteReality01 = new THREE.MeshBasicMaterial({ map: BaseContainer01, side: THREE.DoubleSide });
+                    mesh_websiteReality01 = new THREE.Mesh(geo_objT_BoxA0, mat_websiteReality01);
+                    mat_websiteReality01.transparent = true;
+                    mat_websiteReality01.alphaMap = BaseContainer01;
+                    mesh_websiteReality01.position.set(0, 0, 0);
+                    // mesh_websiteReality01.position.set(-15000, 0, 0);
+                    mesh_websiteReality01.scale.set(1, 1, 1);
+                    mesh_websiteReality01.rotation.set(0, 0, 0)
+                    // mesh_websiteReality01.rotateX( - Math.PI / 2 );
+
+                    // websiteReality01.lookAt(camera)
+                    
+                    websiteReality01.add(mesh_websiteReality01)
+
+
+
+
                     
             pdfTest_root = new THREE.Group()
             pdfTest_root.position.set(1600, 6130, 21000)
@@ -1669,6 +1721,26 @@
                         1, 1, 1,
                         "hoverClockA1",
                         "https://vonerikbarren.github.io/Portfolio--V3/#",
+                        "1200px", "720px"
+                    )
+
+                ) 
+
+
+            googSheet_root = new THREE.Group()
+            googSheet_root.position.set(1600, 5130, 21000)
+            googSheet_root.rotation.set(0, 0, 0)
+            googSheet_root.scale.set(1, 1, 1)
+            scene.add(googSheet_root)
+
+                googSheet_root.add(
+
+                    new makePDF_Viewer(
+                        0, 0, 0,
+                        0, 0, 0,
+                        1, 1, 1,
+                        "hoverClockA1",
+                        "https://docs.google.com/spreadsheets/d/1fmksJV-MoIsQLEI5eAcuCaK8Jh3ZjROV96SxBmhQkqg/edit?usp=sharing",
                         "1200px", "720px"
                     )
 
@@ -1727,17 +1799,27 @@
             let rotateCameraAroundCenterPointClockwise = () => {
                 rotator_root.attach(camera)
 
-                // gsap.to(rotator_root.rotation, {
-                //     duration: 2.5,
-                //     delay: .25,
-                //     y: '-= 1.575',
-                // })
+                
 
                 gsap.to(rotator_root.rotation, {
                     duration: 2.5,
                     delay: .25,
                     y: '-= 0.26166666666',
                 })
+
+            }
+
+
+            let rotateCameraAroundCenterPointClockwiseLong = () => {
+                rotator_root.attach(camera)
+
+                gsap.to(rotator_root.rotation, {
+                    duration: 2.5,
+                    delay: .25,
+                    y: '-= 1.575',
+                })
+
+                
             }
 
 
@@ -1787,17 +1869,26 @@
             let rotateCameraAroundCenterPointCounterClockwise = () => {
                 rotator_root.attach(camera)
 
-                // gsap.to(rotator_root.rotation, {
-                //     duration: 2.5,
-                //     delay: .25,
-                //     y: '+= 1.575',
-                // })
+                
 
                 gsap.to(rotator_root.rotation, {
                     duration: 2.5,
                     delay: .25,
                     y: '+= 0.26166666666',
                 })
+            }
+
+
+            let rotateCameraAroundCenterPointCounterClockwiseLong = () => {
+                rotator_root.attach(camera)
+
+                gsap.to(rotator_root.rotation, {
+                    duration: 2.5,
+                    delay: .25,
+                    y: '+= 1.575',
+                })
+
+                
             }
 
             
@@ -1994,6 +2085,37 @@
 
 
             document.addEventListener("keydown", function(event) {
+                if (event.ctrlKey &&  event.key === "[") {
+                    
+                    
+                    rotateCameraAroundCenterPointClockwiseLong()
+
+                    // gsap.to(camera.rotation, {
+                    //     duration: 1,
+                    //     delay: 0,
+                    //     x: '+= 1.575',
+
+                    // })
+
+
+                    // gsap.to(camera.rotation, {
+                    //     duration: 1,
+                    //     delay: 1,
+                    //     x: '-= 1.575',
+
+                    // })
+
+
+                    
+
+
+
+                }
+            })
+
+
+
+            document.addEventListener("keydown", function(event) {
                 if (event.key === "]") {
                     
                     
@@ -2017,6 +2139,36 @@
 
 
                     
+
+                }
+            })
+
+
+            document.addEventListener("keydown", function(event) {
+                if (event.ctrlKey &&  event.key === "]") {
+                    
+                    
+                    rotateCameraAroundCenterPointCounterClockwiseLong()
+
+                    // gsap.to(camera.rotation, {
+                    //     duration: 1,
+                    //     delay: 0,
+                    //     x: '+= 1.575',
+
+                    // })
+
+
+                    // gsap.to(camera.rotation, {
+                    //     duration: 1,
+                    //     delay: 1,
+                    //     x: '-= 1.575',
+
+                    // })
+
+
+                    
+
+
 
                 }
             })
@@ -2071,7 +2223,7 @@
 
 
                     gsap.to(camera.position, {
-                        duration: 5,
+                        duration: 15,
                         delay: 1,
                         z: 50000,
 
@@ -2080,27 +2232,27 @@
 
                     gsap.to(camera.position, {
                         duration: 15.5,
-                        delay: 5,
+                        delay: 15,
                         z: -150000,
                         onComplete: rotateCameraAroundCenterPointClockwise()
                     })
 
 
 
-                    gsap.to(camera.position, {
-                        duration: 15.5,
-                        delay: 15.5,
-                        y: 6000,
-                        onComplete: rotateCameraAroundCenterPointCounterClockwise()
-                    })
+                    // gsap.to(camera.position, {
+                    //     duration: 15.5,
+                    //     delay: 15.5,
+                    //     y: 6000,
+                    //     onComplete: rotateCameraAroundCenterPointCounterClockwise()
+                    // })
 
 
-                    gsap.to(camera.position, {
-                        duration: 30,
-                        delay: 30,
-                        y: 100000,
+                    // gsap.to(camera.position, {
+                    //     duration: 30,
+                    //     delay: 30,
+                    //     y: 100000,
 
-                    })
+                    // })
 
 
 
