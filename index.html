@@ -20,11 +20,11 @@
 
 	<div id="container"></div>
 	<div id="info">
-		<a href="" target="_blank" rel="noopener">Von'Erik Barren-Tucker</a> - Portfolio Prototype
+		<!-- <a href="" target="_blank" rel="noopener">Von'Erik Barren-Tucker</a> - Portfolio Prototype
        
 
 
-		<div class="pressStart">Dimensions of Time</div>
+		<div class="pressStart">Dimensions of Time</div> -->
 	</div>
 
 	<div class="virtualkeyboard-container-L0">
@@ -35,7 +35,11 @@
 
          <video id="none" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/WeatherAnimations/clouds_Sphere01.mp4" style="display: none" ></video>
 
-         <video id="openingVideo" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/SphereAnimations/Equations3.mp4" style="display: none" ></video>
+         <video id="none" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/SphereAnimations/Equations3.mp4" style="display: none" ></video>
+
+         <video id="openingVideo" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/SphereAnimations/Animation_DataRoom01.mp4" style="display: none" ></video>
+
+         <video id="userVideo" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/PersonalAnimations/userActionBackwards_SpiralUp_SpiralDown_stars01.mp4" style="display: none" ></video>
 	</div>
 
     <!-- ./assets/video/SphereAnimations/Equations3.mp4 -->
@@ -107,6 +111,8 @@
 		let animatedTime, mesh_timeSphere_L4
         let newSpeedStrengthParams
         let Control_newSpeedStrengthParams
+        let particles
+        
 
 
 
@@ -184,6 +190,41 @@
         // Settings Items
         let rotator_root
 
+
+        
+
+
+        // Presentation Container
+        let UserContainer_root
+                let UserContainer_MediaContainer_root
+
+                let UserContainer_MediaContainer_baseA
+                    let UserContainer_MediaContainer_Media, mesh_UserContainer_MediaContainer_Media
+                        
+                let UserContainer_MediaContainer_baseB
+                    let UserContainer_DecorativeCircle01, mesh_UserContainer_DecorativeCircle01
+                    let UserContainer_DecorativeCircle02, mesh_UserContainer_DecorativeCircle02
+                    let UserContainer_DecorativeCircle03, mesh_UserContainer_DecorativeCircle03
+                    
+
+                let UserContainer_MediaContainer_baseC
+                    let UserContainer_PersonalSpace_root
+                    let UserContainer_PersonalSpace_Space, mesh_UserContainer_PersonalSpace_Space
+                            
+
+                let UserContainer_MediaContainer_baseD
+                    let UserContainer_Orbit01_root
+                    let UserContainer_Orbit01_TheOrbit01, mesh_UserContainer_Orbit01_TheOrbit01
+                        let UserContainer_Δ01, mesh_UserContainer_Δ01
+                        let UserContainer_Δ02, mesh_UserContainer_Δ02
+                        let UserContainer_Δ03, mesh_UserContainer_Δ03
+                        let UserContainer_Δ04, mesh_UserContainer_Δ04
+
+
+                    let UserContainer_Orbit02_root, mesh_UserContainer_Orbit02_root
+                    let UserContainer_Orbit03_root, mesh_UserContainer_Orbit03_root
+
+
         //....................................................................
         //.............DDDDD................OOOOOO......BBBBB............JJ...
         //...333333...DDDDDDDDD............OOOOOOOOO...BBBBBBBBBB.......JJJJ..
@@ -260,6 +301,20 @@
         const SceneWallpaper_01 = textureLoader.load('./assets/img/00-WallpaperUX/Covers/whiteCover01.jpg')
         const SceneWallpaper_02 = textureLoader.load('./assets/img/00-WallpaperUX/Covers/whiteCover02.jpg')
         const SceneWallpaper_03 = textureLoader.load('./assets/img/00-WallpaperUX/Covers/whiteCover03.jpg')
+
+
+        // Gears
+        const BaseUI_Gear01 = textureLoader.load('./assets/img/02-UserUI/04-Logo/WhiteGear01.png')
+        const BaseUI_Gear02 = textureLoader.load('./assets/img/02-UserUI/04-Logo/WhiteGear01.png')
+        const BaseUI_LightGear01 = textureLoader.load('./assets/img/01-BaseUI/L00-BaseRoot/BaseUI-Gear02.png')
+        const BaseUI_LightTechCircle01 = textureLoader.load('./assets/img/01-BaseUI/L00-BaseRoot/BaseUI-LightTechCircle01.png')
+
+        // ΔΙcons
+        const ΔIcon01_TheWeb = textureLoader.load('./assets/icons/Websites01/002-globe_grid.png')
+        const ΔIcon02_Schedule = textureLoader.load('./assets/icons/Websites01/003-schedule.png')
+        const ΔIcon03_Location = textureLoader.load('./assets/icons/Websites01/003-schedule.png')
+        const ΔIcon04_Settings = textureLoader.load('./assets/icons/Websites01/078-settings.png')
+
 
 		// TimeSphereImgs
 		const timeSphereImg_01 = textureLoader.load('./assets/img/00-WallpaperUX/Specials/T01-TimeTravel.png')
@@ -1144,6 +1199,7 @@
 						gsap.to(camera.position, {
 							duration: .25,
 							delay: 0,
+                            ease: "none",
 							z: `-= ${newSpeedStrengthParams.forwards}`,
 
 						})
@@ -1157,6 +1213,7 @@
 						gsap.to(camera.position, {
 							duration: .25,
 							delay: 0,
+                            ease: "none",
 							z: `-= ${Control_newSpeedStrengthParams.forwards}`,
 
 						})
@@ -1171,6 +1228,7 @@
 						gsap.to(camera.position, {
 							duration: .25,
 							delay: 0,
+                            ease: "none",
 							z: `+= ${newSpeedStrengthParams.backwards}`,
 
 						})
@@ -1184,6 +1242,7 @@
 						gsap.to(camera.position, {
 							duration: .25,
 							delay: 0,
+                            ease: "none",
 							z: `+= ${Control_newSpeedStrengthParams.forwards}`,
 
 						})
@@ -1198,6 +1257,7 @@
 						gsap.to(camera.position, {
 							duration: .25,
 							delay: 0,
+                            ease: "none",
 							x: `-= ${newSpeedStrengthParams.left}`,
 
 						})
@@ -1213,6 +1273,7 @@
 						gsap.to(camera.position, {
 							duration: .25,
 							delay: 0,
+                            ease: "none",
 							x: `-= ${Control_newSpeedStrengthParams.forwards}`,
 
 						})
@@ -1227,6 +1288,7 @@
 						gsap.to(camera.position, {
 							duration: .25,
 							delay: 0,
+                            ease: "none",
 							x: `+= ${newSpeedStrengthParams.right}`,
 
 						})
@@ -1240,6 +1302,7 @@
 						gsap.to(camera.position, {
 							duration: .25,
 							delay: 0,
+                            ease: "none",
 							x: `+= ${Control_newSpeedStrengthParams.forwards}`,
 
 						})
@@ -1258,6 +1321,7 @@
 						gsap.to(camera.position, {
 							duration: .5,
 							delay: 0,
+                            ease: "none",
 							y: "+= 200",
 
 						})
@@ -1272,6 +1336,7 @@
 						gsap.to(camera.position, {
 							duration: .5,
 							delay: 0,
+                            ease: "none",
 							y: "+= 10000",
 
 						})
@@ -1285,6 +1350,7 @@
 						gsap.to(camera.position, {
 							duration: .5,
 							delay: 0,
+                            ease: "none",
 							y: "-= 200",
 
 						})
@@ -1299,6 +1365,7 @@
 						gsap.to(camera.position, {
 							duration: .5,
 							delay: 0,
+                            ease: "none",
 							y: "-= 10000",
 
 						})
@@ -1448,15 +1515,10 @@
 				CenterBrain_VideoSphere_Opening.add(mesh_CenterBrain_VideoSphere_Opening)
 
 
-				openingButtonIconGroup = new THREE.Group()
-				openingButtonIconGroup.position.set(0, 0, -20000)
-				openingButtonIconGroup.rotation.set(0, 0, 0)
-				openingButtonIconGroup.scale.set(1, 1, 1)
-				scene.add(openingButtonIconGroup)
-
+			
 
                 let Toggle_VideoSphere = () => {
-                    if (mesh_CenterBrain_VideoSphere_Opening.scale.x === 100) {
+                    if (mesh_CenterBrain_VideoSphere_Opening.scale.x === 10000) {
                         gsap.to(mesh_CenterBrain_VideoSphere_Opening.scale, {
 							repeat: 0,
 							duration: 2.5,
@@ -1471,16 +1533,16 @@
 							repeat: 0,
 							duration: 2.5,
 							delay: 0,
-							x: 100,
-                            y: 100,
-                            z: 100
+							x: 10000,
+                            y: 10000,
+                            z: 10000
 							
 						})
                     }
                 }
 
                 document.addEventListener("keydown", function(event) {
-					if (event.key === "9") {
+					if (event.key === "(") {
 						Toggle_VideoSphere()
 					}
 				})
@@ -1495,9 +1557,15 @@
                 })
             }
 
-                rotateSphere()
+                // rotateSphere()
 
 
+
+                openingButtonIconGroup = new THREE.Group()
+				openingButtonIconGroup.position.set(0, 0, -20000)
+				openingButtonIconGroup.rotation.set(0, 0, 0)
+				openingButtonIconGroup.scale.set(1, 1, 1)
+				scene.add(openingButtonIconGroup)
 
 
 
@@ -1566,6 +1634,10 @@
 			group01_timeSphere.add(mesh_TimeSphereHourBase_L0);
 
 
+
+            
+
+
             
 
 
@@ -1581,7 +1653,40 @@
 			mat_timeSphere_L4.alphaMap = SceneWallpaper_01
 			mat_timeSphere_L4.wireframe = false;
 			mesh_timeSphere_L4.position.set(0, 0, 200)
+            mesh_timeSphere_L4.rotation.set(0, 0, 0)
+            mesh_timeSphere_L4.scale.set(1, 1, 1)
 			group01_timeSphere.add(mesh_timeSphere_L4);
+
+
+            let Toggle_StaticWallpaper = () => {
+                    if (mesh_timeSphere_L4.scale.x === 1) {
+                        gsap.to(mesh_timeSphere_L4.scale, {
+							repeat: 0,
+							duration: 2.5,
+							delay: 0,
+							x: 0.001,
+                            y: 0.001,
+                            z: 0.001
+							
+						})
+                    } else if (mesh_timeSphere_L4.scale.x === 0.01) {
+                        gsap.to(mesh_timeSphere_L4.scale, {
+							repeat: 0,
+							duration: 2.5,
+							delay: 0,
+							x: 1,
+                            y: 1,
+                            z: 1
+							
+						})
+                    }
+                }
+
+                document.addEventListener("keydown", function(event) {
+					if (event.key === ")") {
+						Toggle_StaticWallpaper()
+					}
+				})
 
 
 
@@ -1830,7 +1935,7 @@
                         0, 0, 0,
                         1, 1, 1,
                         "hoverClockA1",
-                        "./assets/docs/02-PDFs/MyPersonalLibrary/02-Math/Precalculus_by_mSullivan.pdf",
+                        "./assets/docs/02-PDFs/MyPersonalLibrary/00-Admin/ResumeIterations/Resume_ΔΑ01.pdf",
                         "1200px", "1920px"
                     )
 
@@ -2340,7 +2445,7 @@
             })
 
 
-
+            // Raise and Lower Water
             document.addEventListener("keydown", function(event) {
                 if (event.key === "0") {
                     
@@ -2360,7 +2465,6 @@
             })
 
 
-
             document.addEventListener("keydown", function(event) {
                 if (event.ctrlKey && event.key === "0") {
                     
@@ -2378,6 +2482,483 @@
 
                 }
             })
+
+
+
+            // dat.Gui options
+            document.addEventListener("keydown", function(event) {
+                if (event.key === "1") {
+                    gui.show()
+                    
+
+                    setTimeout(gui.open(), 10000)
+                }
+            })
+
+
+            document.addEventListener("keydown", function(event) {
+                if (event.ctrlKey && event.key === "1") {
+                    gui.close()
+                    gui.hide()
+
+                }
+            })
+
+
+
+
+
+
+//...................................................................................
+//......AAA.......NN......N....I....MMM.....MMM.......AAA....ATTTTTTTTT...EEEEEEEE...
+//.....AAAAA.....NNNN....NNN..III..MMMMM...MMMMM.....AAAAA..AATTTTTTTTTT.EEEEEEEEEE..
+//.....AAAAA.....NNNNN...NNN..III..MMMMM...MMMMM.....AAAAA..AATTTTTTTTTT.EEEEEEEEEE..
+//....AAAAAAA....NNNNN...NNN..III..MMMMMM..MMMMM....AAAAAAA.AATTTTTTTTTT.EEEEEEEEEE..
+//....AAAAAAA....NNNNNN..NNN..III..MMMMMM.MMMMMM....AAAAAAA.....TTTT.....EEE.........
+//....AAAAAAA....NNNNNNN.NNN..III..MMMMMM.MMMMMM....AAAAAAA.....TTTT.....EEEEEEEEEE..
+//...AAAAAAAAA...NNNNNNN.NNN..III..MMMMMM.MMMMMM...AAAAAAAAA....TTTT.....EEEEEEEEEE..
+//...AAAA.AAAA...NNN.NNNNNNN..III..MMMMMM.MMMMMM...AAAA.AAAA....TTTT.....EEEEEEEEEE..
+//...AAAAAAAAAA..NNN.NNNNNNN..III..MMMMMMMMMMMMM...AAAAAAAAAA...TTTT.....EEEEEEEEEE..
+//..AAAAAAAAAAA..NNN..NNNNNN..III..MMM.MMMMMMMMM..AAAAAAAAAAA...TTTT.....EEE.........
+//..AAAAAAAAAAA..NNN..NNNNNN..III..MMM.MMMMM.MMM..AAAAAAAAAAA...TTTT.....EEE.........
+//..AAAAAAAAAAAA.NNN...NNNNN..III..MMM.MMMMM.MMM..AAAAAAAAAAAA..TTTT.....EEEEEEEEEE..
+//.AAAAA....AAAA.NNN...NNNNN..III..MMM.MMMMM.MMM.AAAAA....AAAA..TTTT.....EEEEEEEEEE..
+//.AAAA.....AAAA.NNN....NNNN..III..MMM.MMMMM.MMM.AAAA.....AAAA..TTTT.....EEEEEEEEEE..
+//...................................................................................
+
+
+                UserContainer_root = new THREE.Group()
+                UserContainer_root.position.set(30, 5990, 22950);
+                UserContainer_root.rotation.set(0, 0, 0)
+                UserContainer_root.scale.set(10, 10, 10)
+                scene.add(UserContainer_root)
+
+                    UserContainer_MediaContainer_baseA = new THREE.Group()
+                    UserContainer_MediaContainer_baseA.position.set(0, 0, 0)
+                    UserContainer_MediaContainer_baseA.rotation.set(0, 0, 0)
+                    UserContainer_MediaContainer_baseA.scale.set(1, 1, 1)
+                    UserContainer_root.add(UserContainer_MediaContainer_baseA)
+
+                        UserContainer_MediaContainer_Media = new THREE.Group()
+                        UserContainer_MediaContainer_Media.position.set(0, 1.15, 0)
+                        UserContainer_MediaContainer_Media.rotation.set(0, 0, 0)
+                        UserContainer_MediaContainer_Media.scale.set(1, 1, 1)	
+                        UserContainer_MediaContainer_baseA.add(UserContainer_MediaContainer_Media)
+                        
+
+                        const userContainerMedia = document.getElementById('userVideo')
+                        const userContainerMedia_Tex = new THREE.VideoTexture(userContainerMedia)
+                        const userContainerMedia_Mat = new THREE.MeshBasicMaterial(
+                            {
+                                map: userContainerMedia_Tex,
+                                side: THREE.DoubleSide,
+                                toneMapped: false,
+                            }
+                        )
+
+                        mesh_UserContainer_MediaContainer_Media = new THREE.Mesh(
+                            geo_objT_CircleA1, 
+                            userContainerMedia_Mat
+                        )
+
+                        mesh_UserContainer_MediaContainer_Media.position.set(0, 0, 0)
+                        mesh_UserContainer_MediaContainer_Media.rotation.set(0, 0, 0)
+                        mesh_UserContainer_MediaContainer_Media.scale.set(0.1, 0.09, 0.1)
+                        UserContainer_MediaContainer_Media.add(mesh_UserContainer_MediaContainer_Media)
+
+                    
+                    UserContainer_MediaContainer_baseB = new THREE.Group()
+                    UserContainer_MediaContainer_baseB.position.set(0, 0, -0.1)
+                    UserContainer_MediaContainer_baseB.rotation.set(0, 0, 0)
+                    UserContainer_MediaContainer_baseB.scale.set(1, 1, 1)
+                    UserContainer_root.add(UserContainer_MediaContainer_baseB)
+
+                        // # UserContainer_DecorativeCircle01
+                        // ------------------------------------------------------------------------------------
+                        UserContainer_DecorativeCircle01 = new THREE.Group()
+                        UserContainer_DecorativeCircle01.position.set(0, 1.15, 0)
+                        UserContainer_DecorativeCircle01.rotation.set(0, 0, 0)
+                        UserContainer_DecorativeCircle01.scale.set(1, 1, 1)
+                        UserContainer_MediaContainer_baseB.add(UserContainer_DecorativeCircle01)
+
+                        const mat_UserContainer_DecorativeCircle01 = new THREE.MeshBasicMaterial({ map: BaseUI_Gear01, side: THREE.DoubleSide });
+                        mesh_UserContainer_DecorativeCircle01 = new THREE.Mesh(geo_objT_CircleA1, mat_UserContainer_DecorativeCircle01);
+
+                            mat_UserContainer_DecorativeCircle01.transparent = true;
+                            mat_UserContainer_DecorativeCircle01.alphaMap = BaseUI_Gear01;
+
+                        mesh_UserContainer_DecorativeCircle01.position.set(0, 0, 0);
+                        mesh_UserContainer_DecorativeCircle01.rotation.set(0, 0, 0)
+                        mesh_UserContainer_DecorativeCircle01.scale.set(0.12, 0.12, 0.12);
+                        // mesh_UserContainer_DecorativeCircle01.rotateX( - Math.PI / 2 );
+
+                        // UserContainer_DecorativeCircle01.lookAt(camera)
+                        
+                        UserContainer_DecorativeCircle01.add(mesh_UserContainer_DecorativeCircle01)
+
+
+                        // # UserContainer_DecorativeCircle02
+                        // ------------------------------------------------------------------------------------
+                        UserContainer_DecorativeCircle02 = new THREE.Group()
+                        UserContainer_DecorativeCircle02.position.set(0, 1.15, -0.1)
+                        UserContainer_DecorativeCircle02.rotation.set(0, 0, 0)
+                        UserContainer_DecorativeCircle02.scale.set(1, 1, 1)
+                        UserContainer_MediaContainer_baseB.add(UserContainer_DecorativeCircle02)
+
+                        const mat_UserContainer_DecorativeCircle02 = new THREE.MeshBasicMaterial({ map: BaseUI_Gear01, side: THREE.DoubleSide });
+                        mesh_UserContainer_DecorativeCircle02 = new THREE.Mesh(geo_objT_CircleA1, mat_UserContainer_DecorativeCircle02);
+
+                            mat_UserContainer_DecorativeCircle02.transparent = true;
+                            mat_UserContainer_DecorativeCircle02.alphaMap = BaseUI_Gear01;
+
+                        mesh_UserContainer_DecorativeCircle02.position.set(0, 0, 0);
+                        mesh_UserContainer_DecorativeCircle02.rotation.set(0, 0, 0)
+                        mesh_UserContainer_DecorativeCircle02.scale.set(0.14, 0.14, 0.14);
+                            // mesh_UserContainer_DecorativeCircle02.rotateX( - Math.PI / 2 );
+                        
+                        UserContainer_DecorativeCircle02.add(mesh_UserContainer_DecorativeCircle02)
+                            // UserContainer_DecorativeCircle02.lookAt(camera) 
+
+
+                        // # UserContainer_DecorativeCircle03
+                        // ------------------------------------------------------------------------------------
+                        UserContainer_DecorativeCircle03 = new THREE.Group()
+                        UserContainer_DecorativeCircle03.position.set(0, 1.15, -0.12)
+                        UserContainer_DecorativeCircle03.rotation.set(0, 0, 0)
+                        UserContainer_DecorativeCircle03.scale.set(1, 1, 1)
+                        UserContainer_MediaContainer_baseB.add(UserContainer_DecorativeCircle03)
+
+                        const mat_UserContainer_DecorativeCircle03 = new THREE.MeshBasicMaterial({ map: BaseUI_Gear01, side: THREE.DoubleSide });
+                        mesh_UserContainer_DecorativeCircle03 = new THREE.Mesh(geo_objT_CircleA1, mat_UserContainer_DecorativeCircle03);
+
+                            mat_UserContainer_DecorativeCircle03.transparent = true;
+                            mat_UserContainer_DecorativeCircle03.alphaMap = BaseUI_Gear01;
+
+                        mesh_UserContainer_DecorativeCircle03.position.set(0, 0, 0);
+                        mesh_UserContainer_DecorativeCircle03.rotation.set(0, 0, 0)
+                        mesh_UserContainer_DecorativeCircle03.scale.set(0.16, 0.16, 0.16);
+                        // mesh_UserContainer_DecorativeCircle03.rotateX( - Math.PI / 2 );
+
+                        // UserContainer_DecorativeCircle03.lookAt(camera)
+                        
+                        UserContainer_DecorativeCircle03.add(mesh_UserContainer_DecorativeCircle03)
+
+                        let spinGears = () => {
+                            gsap.to(mesh_UserContainer_DecorativeCircle01.rotation, {
+                                repeat: -1,
+                                duration: 2.5,
+                                ease: "none",
+                                delay: 0,
+                                z: 3.14,
+						
+					        })
+
+                            gsap.to(mesh_UserContainer_DecorativeCircle02.rotation, {
+                                repeat: -1,
+                                duration: 5,
+                                ease: "none",
+                                delay: 0,
+                                z: -3.14,
+						
+					        })
+
+                            gsap.to(mesh_UserContainer_DecorativeCircle03.rotation, {
+                                repeat: -1,
+                                duration: 10,
+                                ease: "none",
+                                delay: 0,
+                                z: 3.14,
+						
+					        })
+                        }
+
+                        spinGears()
+
+
+
+                    UserContainer_MediaContainer_baseC = new THREE.Group()
+                    UserContainer_MediaContainer_baseC.position.set(0, 0, 0)
+                    UserContainer_MediaContainer_baseC.rotation.set(0, 0, 0)
+                    UserContainer_MediaContainer_baseC.scale.set(1, 1, 1)
+                    UserContainer_root.add(UserContainer_MediaContainer_baseC)
+
+                        UserContainer_PersonalSpace_root = new THREE.Group()
+                        UserContainer_PersonalSpace_root.position.set(0, 0, 0)
+                        UserContainer_PersonalSpace_root.rotation.set(0, 0, 0)
+                        UserContainer_PersonalSpace_root.scale.set(1, 1, 1)
+                        UserContainer_MediaContainer_baseC.add(UserContainer_PersonalSpace_root)
+
+                            UserContainer_PersonalSpace_Space = new THREE.Group()
+                            UserContainer_PersonalSpace_Space.position.set(0, 1.15, 0)
+                            UserContainer_PersonalSpace_Space.rotation.set(0, 0, 0)
+                            UserContainer_PersonalSpace_Space.scale.set(1, 1, 1)
+                            UserContainer_PersonalSpace_root.add(UserContainer_PersonalSpace_Space)
+
+                            const mat_UserContainer_PersonalSpace_Space = new THREE.MeshBasicMaterial({ map: SceneWallpaper_01, side: THREE.DoubleSide });
+                            mesh_UserContainer_PersonalSpace_Space = new THREE.Mesh(geo_objT_SphereA0, mat_UserContainer_PersonalSpace_Space);
+
+                                mat_UserContainer_PersonalSpace_Space.transparent = true;
+                                mat_UserContainer_PersonalSpace_Space.wireframe = true;
+                                mat_UserContainer_PersonalSpace_Space.alphaMap = SceneWallpaper_01;
+
+                            mesh_UserContainer_PersonalSpace_Space.position.set(0, 0, 0);
+                            mesh_UserContainer_PersonalSpace_Space.rotation.set(0, 1.55, 0)
+                            mesh_UserContainer_PersonalSpace_Space.scale.set(0.11, 0.11, 0.11);
+                            // mesh_UserContainer_PersonalSpace_Space.rotateX( - Math.PI / 2 );
+
+                            // UserContainer_PersonalSpace_Space.lookAt(camera)
+                            
+                            UserContainer_PersonalSpace_Space.add(mesh_UserContainer_PersonalSpace_Space)
+
+
+                            let spinPersonalSpaceOnly = () => {
+                                gsap.to(mesh_UserContainer_PersonalSpace_Space.rotation, {
+                                    repeat: -1,
+                                    duration: 10,
+                                    ease: "none",
+                                    delay: 0,
+                                    y: 3.14,
+                            
+                                })
+                            }
+
+                            spinPersonalSpaceOnly()
+
+
+                    UserContainer_MediaContainer_baseD = new THREE.Group()
+                    UserContainer_MediaContainer_baseD.position.set(0, 0, 0)
+                    UserContainer_MediaContainer_baseD.rotation.set(0, 0, 0)
+                    UserContainer_MediaContainer_baseD.scale.set(1, 1, 1)
+                    UserContainer_root.add(UserContainer_MediaContainer_baseD)
+
+                        UserContainer_Orbit01_root = new THREE.Group()
+                        UserContainer_Orbit01_root.position.set(0, 0, 0)
+                        UserContainer_Orbit01_root.rotation.set(0, 0, 0)
+                        UserContainer_Orbit01_root.scale.set(1, 1, 1)
+                        UserContainer_MediaContainer_baseD.add(UserContainer_Orbit01_root)
+
+                            UserContainer_Orbit01_TheOrbit01 = new THREE.Group()
+                            UserContainer_Orbit01_TheOrbit01.position.set(0, 1.15, 0)
+                            UserContainer_Orbit01_TheOrbit01.rotation.set(-1.448, 0.832, 0)
+                            UserContainer_Orbit01_TheOrbit01.scale.set(1, 1, 1)
+                            UserContainer_Orbit01_root.add(UserContainer_Orbit01_TheOrbit01)
+
+                            let OrbitDimensions = {
+                                radius: 10,
+                                tube: 0.2049,
+                                radialSegements: 30,
+                                tubularSegments: 200,
+                                arc: 6.283185307179586,
+                            }
+
+                            const geo_objT_Orbit = new THREE.TorusGeometry(
+
+                               OrbitDimensions.radius,
+                               OrbitDimensions.tube,
+                               OrbitDimensions.radialSegments,
+                               OrbitDimensions.tubularSegments,
+                               OrbitDimensions.arc,
+
+                            )
+
+                            const mat_UserContainer_Orbit01_TheOrbit01 = new THREE.MeshBasicMaterial({ map: SceneWallpaper_01, side: THREE.DoubleSide });
+                            mesh_UserContainer_Orbit01_TheOrbit01 = new THREE.Mesh(geo_objT_Orbit, mat_UserContainer_Orbit01_TheOrbit01);
+
+                                mat_UserContainer_Orbit01_TheOrbit01.transparent = true;
+                                mat_UserContainer_Orbit01_TheOrbit01.wireframe = false;
+                                mat_UserContainer_Orbit01_TheOrbit01.alphaMap = SceneWallpaper_01;
+
+                            mesh_UserContainer_Orbit01_TheOrbit01.position.set(0, 0, 0);
+                            mesh_UserContainer_Orbit01_TheOrbit01.rotation.set(0, 0, 0)
+                            mesh_UserContainer_Orbit01_TheOrbit01.scale.set(0.2, 0.2, 0.2);
+                            // mesh_UserContainer_Orbit01_TheOrbit01.rotateX( - Math.PI / 2 );
+
+                            // UserContainer_Orbit01_TheOrbit01.lookAt(camera)
+                            
+                            UserContainer_Orbit01_TheOrbit01.add(mesh_UserContainer_Orbit01_TheOrbit01)
+
+
+                                // # UserContainer_Δ01
+                                // ********************************************************************
+                                UserContainer_Δ01 = new THREE.Group()
+                                UserContainer_Δ01.position.set(0, 0, 0)
+                                UserContainer_Δ01.rotation.set(0, 0, 0)
+                                UserContainer_Δ01.scale.set(1, 1, 1)
+                                UserContainer_Orbit01_TheOrbit01.add(UserContainer_Δ01)
+
+                                    const mat_UserContainer_Δ01 = new THREE.MeshBasicMaterial({ map: ΔIcon01_TheWeb, side: THREE.DoubleSide });
+                                    mesh_UserContainer_Δ01 = new THREE.Mesh(geo_objT_BoxA0, mat_UserContainer_Δ01);
+
+                                        mat_UserContainer_Δ01.transparent = false;
+                                        mat_UserContainer_Δ01.wireframe = false;
+                                        mat_UserContainer_Δ01.alphaMap = ΔIcon01_TheWeb;
+
+                                    mesh_UserContainer_Δ01.position.set(0, 2, 0);
+                                    mesh_UserContainer_Δ01.rotation.set(0, 0, 0)
+                                    mesh_UserContainer_Δ01.scale.set(0.022, 0.022, 0.022);
+                                    // mesh_UserContainer_Δ01.rotateX( - Math.PI / 2 );
+
+                                    // UserContainer_Δ01.lookAt(camera)
+                                    
+                                    UserContainer_Δ01.add(mesh_UserContainer_Δ01)
+
+                                // # UserContainer_Δ02
+                                // ********************************************************************
+                                UserContainer_Δ02 = new THREE.Group()
+                                UserContainer_Δ02.position.set(0, 0, 0)
+                                UserContainer_Δ02.rotation.set(0, 0, 0)
+                                UserContainer_Δ02.scale.set(1, 1, 1)
+                                UserContainer_Orbit01_TheOrbit01.add(UserContainer_Δ02)
+
+                                    const mat_UserContainer_Δ02 = new THREE.MeshBasicMaterial({ map: ΔIcon02_Schedule, side: THREE.DoubleSide });
+                                    mesh_UserContainer_Δ02 = new THREE.Mesh(geo_objT_BoxA0, mat_UserContainer_Δ02);
+
+                                        mat_UserContainer_Δ02.transparent = false;
+                                        mat_UserContainer_Δ02.wireframe = false;
+                                        mat_UserContainer_Δ02.alphaMap = ΔIcon02_Schedule;
+
+                                    mesh_UserContainer_Δ02.position.set(-2, 0, 0);
+                                    mesh_UserContainer_Δ02.rotation.set(0, 0, 0)
+                                    mesh_UserContainer_Δ02.scale.set(0.022, 0.022, 0.022);
+                                    // mesh_UserContainer_Δ02.rotateX( - Math.PI / 2 );
+
+                                    // UserContainer_Δ02.lookAt(camera)
+                                    
+                                    UserContainer_Δ02.add(mesh_UserContainer_Δ02)
+
+
+                                // # UserContainer_Δ03
+                                // ********************************************************************
+                                UserContainer_Δ03 = new THREE.Group()
+                                UserContainer_Δ03.position.set(0, 0, 0)
+                                UserContainer_Δ03.rotation.set(0, 0, 0)
+                                UserContainer_Δ03.scale.set(1, 1, 1)
+                                UserContainer_Orbit01_TheOrbit01.add(UserContainer_Δ03)
+
+                                    const mat_UserContainer_Δ03 = new THREE.MeshBasicMaterial({ map: ΔIcon03_Location, side: THREE.DoubleSide });
+                                    mesh_UserContainer_Δ03 = new THREE.Mesh(geo_objT_BoxA0, mat_UserContainer_Δ03);
+
+                                        mat_UserContainer_Δ03.transparent = false;
+                                        mat_UserContainer_Δ03.wireframe = false;
+                                        mat_UserContainer_Δ03.alphaMap = ΔIcon03_Location;
+
+                                    mesh_UserContainer_Δ03.position.set(2, 0, 0);
+                                    mesh_UserContainer_Δ03.rotation.set(0, 0, 0)
+                                    mesh_UserContainer_Δ03.scale.set(0.022, 0.022, 0.022);
+                                    // mesh_UserContainer_Δ03.rotateX( - Math.PI / 2 );
+
+                                    // UserContainer_Δ03.lookAt(camera)
+                                    
+                                    UserContainer_Δ03.add(mesh_UserContainer_Δ03)
+
+                                // # UserContainer_Δ04
+                                // ********************************************************************
+                                UserContainer_Δ04 = new THREE.Group()
+                                UserContainer_Δ04.position.set(0, 0, 0)
+                                UserContainer_Δ04.rotation.set(0, 0, 0)
+                                UserContainer_Δ04.scale.set(1, 1, 1)
+                                UserContainer_Orbit01_TheOrbit01.add(UserContainer_Δ04)
+
+                                    const mat_UserContainer_Δ04 = new THREE.MeshBasicMaterial({ map: ΔIcon04_Settings, side: THREE.DoubleSide });
+                                    mesh_UserContainer_Δ04 = new THREE.Mesh(geo_objT_BoxA0, mat_UserContainer_Δ04);
+
+                                        mat_UserContainer_Δ04.transparent = false;
+                                        mat_UserContainer_Δ04.wireframe = false;
+                                        mat_UserContainer_Δ04.alphaMap = ΔIcon04_Settings;
+
+                                    mesh_UserContainer_Δ04.position.set(0, -2, 0);
+                                    mesh_UserContainer_Δ04.rotation.set(0, 0, 0)
+                                    mesh_UserContainer_Δ04.scale.set(0.022, 0.022, 0.022);
+                                    // mesh_UserContainer_Δ04.rotateX( - Math.PI / 2 );
+
+                                    // UserContainer_Δ04.lookAt(camera)
+                                    
+                                    UserContainer_Δ04.add(mesh_UserContainer_Δ04)
+
+
+                            // FUNCTION: SpinOrbit01_Δs
+                            let SpinOrbit01_Δs = () => {
+                                gsap.to(mesh_UserContainer_Δ01.rotation, {
+                                    repeat: -1,
+                                    duration: 5,
+                                    ease: "none",
+                                    delay: 0,
+                                    z: 3.14,
+						
+					             })
+
+                                gsap.to(mesh_UserContainer_Δ02.rotation, {
+                                    repeat: -1,
+                                    duration: 5,
+                                    ease: "none",
+                                    delay: 0,
+                                    z: 3.14,
+                            
+                                })
+
+                                gsap.to(mesh_UserContainer_Δ03.rotation, {
+                                    repeat: -1,
+                                    duration: 5,
+                                    ease: "none",
+                                    delay: 0,
+                                    z: 3.14,
+                            
+                                })
+
+                                gsap.to(mesh_UserContainer_Δ04.rotation, {
+                                    repeat: -1,
+                                    duration: 5,
+                                    ease: "none",
+                                    delay: 0,
+                                    z: 3.14,
+                            
+                                })
+                            }
+
+                            SpinOrbit01_Δs()
+
+                            
+                            // SpinOrbit01
+                            let SpinOrbit01 = () => {
+
+                                gsap.to(UserContainer_Orbit01_TheOrbit01.rotation, {
+                                    repeat: -1,
+                                    duration: 5,
+                                    ease: "none",
+                                    delay: 0,
+                                    z: 3.14,
+						
+					             })
+
+                            }
+
+                            SpinOrbit01()
+
+
+
+
+
+
+
+
+
+            //..................................................
+//..UU.....UU....I.....////UU.....UU...XX......XX...
+//.UUUU...UUUU..III....////UUU...UUUU.UXXXX..XXXXX..
+//.UUUU...UUUU..III....////UUU...UUUU.UXXXX..XXXXX..
+//.UUUU...UUUU..III.../////UUU...UUUU..XXXXXXXXXX...
+//.UUUU...UUUU..III...///./UUU...UUUU...XXXXXXXX....
+//.UUUU...UUUU..III..////./UUU...UUUU...XXXXXXXX....
+//.UUUU...UUUU..III..////./UUU...UUUU....XXXXXX.....
+//.UUUU...UUUU..III..///../UUU...UUUU....XXXXXX.....
+//.UUUU...UUUU..III.I///../UUU...UUUU....XXXXXX.....
+//.UUUU...UUUU..III.I///../UUU...UUUU...XXXXXXXX....
+//.UUUU...UUUU..III.I//.../UUU...UUUU...XXXXXXXXX...
+//.UUUUUUUUUUU..IIIII//.../UUUUUUUUUU..XXXXXXXXXX...
+//.UUUUUUUUUUU..IIIII/..../UUUUUUUUUU.UXXXX..XXXXX..
+//..UUUUUUUUU...IIIII/.....UUUUUUUUU..UXXXX..XXXXX..
+//....UUUUU..................UUUUU..................
+//..................................................
 
 
 
@@ -2420,7 +3001,7 @@
 
 			const gui = new GUI();
             gui.close()
-            gui.hide()
+            // gui.hide()
 
 			const folderSky = gui.addFolder('Sky');
 			folderSky.add(parameters, 'elevation', 0, 90, 0.1).onChange(updateSun);
