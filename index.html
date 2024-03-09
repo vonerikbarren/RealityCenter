@@ -37,7 +37,7 @@
 
          <video id="none" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/SphereAnimations/Equations3.mp4" style="display: none" ></video>
 
-         <video id="openingVideo" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/TunnelAnimations/TechTunnelA10.mp4" style="display: none" ></video>
+         <video id="openingVideo" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/TunnelAnimations/GalaxyTunnel01.mp4" style="display: none" ></video>
 
          <video id="userVideo" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/PersonalAnimations/userActionBackwards_SpiralUp_SpiralDown_stars01.mp4" style="display: none" ></video>
 	</div>
@@ -191,6 +191,22 @@
         let rotator_root
 
 
+        let RealityCenter_OrbitBase_root
+        let RealityCenter_Orbit01_root
+        let RealityCenter_Orbit01, mesh_RealityCenter_Orbit01
+
+        let RealityCenter_Orbit02_root
+        let RealityCenter_Orbit02, mesh_RealityCenter_Orbit02
+
+        let RealityCenter_Orbit03_root
+        let RealityCenter_Orbit03, mesh_RealityCenter_Orbit03
+
+        let RealityCenter_Orbit04_root
+        let RealityCenter_Orbit04, mesh_RealityCenter_Orbit04
+
+        let RealityCenter_Orbit05_root
+        let RealityCenter_Orbit05, mesh_RealityCenter_Orbit05
+
         
 
 
@@ -223,6 +239,7 @@
 
                     let UserContainer_Orbit02_root, mesh_UserContainer_Orbit02_root
                     let UserContainer_Orbit03_root, mesh_UserContainer_Orbit03_root
+
 
 
         //....................................................................
@@ -296,6 +313,9 @@
 		// Test ui_Folder_01
 		const neoncircle01 = textureLoader.load('./assets/img/backgrounds/InfiniteContainer.jpg')
 
+        // ParticleTextures
+        const particleTexture01 = textureLoader.load('./assets/textures/textures_lib/particles-A1/1.png')
+		const particleTexture02 = textureLoader.load('./assets/textures/textures_lib/particles-B1/window_04.png')
 
         // StandardImports
         const SceneWallpaper_01 = textureLoader.load('./assets/img/00-WallpaperUX/Covers/whiteCover01.jpg')
@@ -453,6 +473,7 @@
 			);
 
 			water.rotation.x = - Math.PI / 2;
+            water.position.y = -100
 
 			scene.add(water);
 
@@ -1309,6 +1330,24 @@
 					}
 				})
 
+
+                document.addEventListener("keydown", function(event) {
+					if (event.key === "g") {
+						
+
+						gsap.to(camera.position, {
+							duration: .25,
+							delay: 0,
+                            ease: "none",
+                            z: 23000,
+							y: 6000,
+                            x: 30,
+
+						})
+					}
+				})
+
+
             // ###########################################################
             // Height-Movement Settings
             // ###########################################################
@@ -1636,7 +1675,57 @@
 
 
             
+            RealityCenter_OrbitBase_root = new THREE.Group()
+            RealityCenter_OrbitBase_root.position.set(0, 0, 0)
+            RealityCenter_OrbitBase_root.rotation.set(0, 0, 0)
+            RealityCenter_OrbitBase_root.scale.set(1, 1, 1)
+            scene.add(RealityCenter_OrbitBase_root)
 
+                        RealityCenter_Orbit01_root = new THREE.Group()
+                        RealityCenter_Orbit01_root.position.set(0, 0, 0)
+                        RealityCenter_Orbit01_root.rotation.set(0, 0, 0)
+                        RealityCenter_Orbit01_root.scale.set(1, 1, 1)
+                        RealityCenter_OrbitBase_root.add(RealityCenter_Orbit01_root)
+
+                            RealityCenter_Orbit01 = new THREE.Group()
+                            RealityCenter_Orbit01.position.set(0, 6030.20, 0)
+                            RealityCenter_Orbit01.rotation.set(0, 0, 0)
+                            RealityCenter_Orbit01.scale.set(10000, 10000, 10000)
+                            RealityCenter_Orbit01_root.add(RealityCenter_Orbit01)
+
+                            let RealityCenter_OrbitDimensions = {
+                                radius: 10.65,
+                                tube: 0.1049,
+                                radialSegements: 30,
+                                tubularSegments: 200,
+                                arc: 6.283185307179586,
+                            }
+
+                            const geo_objT_RealityCenterOrbit = new THREE.TorusGeometry(
+
+                               RealityCenter_OrbitDimensions.radius,
+                               RealityCenter_OrbitDimensions.tube,
+                               RealityCenter_OrbitDimensions.radialSegments,
+                               RealityCenter_OrbitDimensions.tubularSegments,
+                               RealityCenter_OrbitDimensions.arc,
+
+                            )
+
+                            const mat_RealityCenter_Orbit01 = new THREE.MeshBasicMaterial({ map: SceneWallpaper_01, side: THREE.DoubleSide });
+                            mesh_RealityCenter_Orbit01 = new THREE.Mesh(geo_objT_RealityCenterOrbit, mat_RealityCenter_Orbit01);
+
+                                mat_RealityCenter_Orbit01.transparent = true;
+                                mat_RealityCenter_Orbit01.wireframe = false;
+                                mat_RealityCenter_Orbit01.alphaMap = SceneWallpaper_01;
+
+                            mesh_RealityCenter_Orbit01.position.set(0, 0, 0);
+                            mesh_RealityCenter_Orbit01.rotation.set(0, 0, 0)
+                            mesh_RealityCenter_Orbit01.scale.set(0.2, 0.2, 0.2);
+                            mesh_RealityCenter_Orbit01.rotateX( - Math.PI / 2 );
+
+                            // RealityCenter_Orbit01.lookAt(camera)
+                            
+                            RealityCenter_Orbit01.add(mesh_RealityCenter_Orbit01)
 
             
 
@@ -1690,7 +1779,81 @@
 
 
 
+            // #################################################################
+				// #################################################################
+
+
+				// Particles
+				// Search.Particles
+				// Particle Geometry - Defined @ beginnning of init()
+				// ******************************************************
+				const particlesGeometry = new THREE.BufferGeometry();
+				const count = 10000
+				const positions = new Float32Array(count * 3);
+				const colors = new Float32Array(count * 3);
             
+
+				// Large Number here = The box dimensions all at the same time. 
+				for (let i = 0; i < count * 3; i++) {
+					positions[i] = (Math.random() - 0.5) * 50000
+					colors[i] = Math.random()
+				}
+
+				particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3))
+				particlesGeometry.setAttribute('color', new THREE.BufferAttribute(colors,3))
+
+				// Particle Material init()
+				const particlesMaterial = new THREE.PointsMaterial()
+				// particlesMaterial.size = 10 // for ContainerHolderTex
+				particlesMaterial.size = 45.5
+				particlesMaterial.sizeAttenuation = true;
+				// particlesMaterial.color = new THREE.Color('#1ADBCB') // neonBlueGreen
+				// particlesMaterial.color = new THREE.Color('#00ffb3') // neonBlueGreen
+				particlesMaterial.color = new THREE.Color('#1ed9d0') // neonGreenBlue
+				// particlesMaterial.color = new THREE.Color('#FFD700') // Gold
+				// particlesMaterial.color = new THREE.Color('#323232') // Black
+				// particlesMaterial.color = new THREE.Color('#a9a9a9') // Black
+				particlesMaterial.transparent = false;
+				// particlesMaterial.alphaMap = ContainerHolderWhiteA1
+				particlesMaterial.alphaMap = particleTexture02
+				particlesMaterial.depthWrite = false
+				particlesMaterial.blending = THREE.AdditiveBlending
+				particlesMaterial.vertextColors = true
+
+				particles = new THREE.Points(particlesGeometry, particlesMaterial)
+				particles.position.set(0, 6000, 0)
+				// particles.position.set(0, 0, 0)
+				scene.add(particles);
+
+
+                let rotateParticles = () => {
+                    gsap.to(particles.rotation, {
+                        repeat: -1,
+                        duration: 15,
+                        ease: "none",
+                        delay: 0,
+                        
+                        y: "+= 3.14",
+                        // z: "+= 3.14",
+                        
+
+                
+                    })
+
+                    // gsap.to(particles.scale, {
+                    //     repeat: -1,
+                    //     duration: 2.5,
+                    //     ease: "none",
+                    //     delay: 0,
+                    //     z: 15.5,
+                    //     y: 15.5,
+                    //     x: 15.5,
+
+                
+                    // })
+                }
+
+                rotateParticles()
 
 
 
@@ -2181,35 +2344,58 @@
 			scene.add(directionalLight)
 
 
-			controls = new OrbitControls( camera, cssrenderer.domElement );
-			controls.maxPolarAngle = Math.PI * 0.495;
-            // controls.minPolarAngle = Math.PI * 0.495;
-            controls.maxAzimuthAngle = Math.PI * 0.495;
-			controls.target.set( 0, 55, 0 );
-			controls.minDistance = 100.0;
-			controls.maxDistance = 70000.0;
-            controls.screenSpacePanning = false
-            controls.enablePan = false
-            controls.rotateSpeed = 0.025
-            controls.zoomSpeed = 0.1
-			controls.update();
+			    controls = new OrbitControls( camera, cssrenderer.domElement );
+                controls.maxPolarAngle = Math.PI * 0.495;
+                // controls.minPolarAngle = Math.PI * 0.495;
+                controls.maxAzimuthAngle = Math.PI * 0.495;
+                controls.target.set( 0, 55, 0 );
+                controls.minDistance = 100.0;
+                controls.maxDistance = 70000.0;
+                controls.screenSpacePanning = true
+                controls.enablePan = true
+                controls.rotateSpeed = 0.025
+                controls.zoomSpeed = 0.1
+                controls.update();
+            
 
 
-			// controls = new FirstPersonControls(camera, renderer.domElement);
+            let activateOrbitControls = () => {
+                controls = new OrbitControls( camera, cssrenderer.domElement );
+                controls.maxPolarAngle = Math.PI * 0.495;
+                // controls.minPolarAngle = Math.PI * 0.495;
+                controls.maxAzimuthAngle = Math.PI * 0.495;
+                controls.target.set( 0, 55, 0 );
+                controls.minDistance = 100.0;
+                controls.maxDistance = 70000.0;
+                controls.screenSpacePanning = false
+                controls.enablePan = false
+                controls.rotateSpeed = 0.025
+                controls.zoomSpeed = 0.1
+                controls.update();
+            }
 
-			// controls.movementSpeed = 100;
-			// controls.lookSpeed = 0.035
-			// controls.noFly = false;
-			// controls.lookVertical = true;
-			// controls.mouseDragOn = false;
-            // controls.verticalMax = 0
-            // controls.verticalMin = 0
-            // controls.heightMax = 0
-            // controls.heightMin = 0
-			// // controls.update();
 
-			//
-			// camera.lookAt(0, 55, 0)
+
+            let activeFirstPersonControls = () => {
+
+            }
+
+
+			controls = new FirstPersonControls(camera, renderer.domElement);
+
+			controls.movementSpeed = 100;
+			controls.lookSpeed = 0.035
+			controls.noFly = false;
+			controls.lookVertical = true;
+			controls.mouseDragOn = true;
+            controls.verticalMax = 0
+            controls.verticalMin = 0
+            controls.heightMax = 0
+            controls.heightMin = 0
+			// controls.update();
+
+			
+			camera.lookAt(0, 55, 0)
 
 //..........................................................................................................
 //......CCC......TTTTTTTTT...LL.........RRRRR.........................UU.....UU....NN......N.......CCC......
@@ -2961,19 +3147,57 @@
 						// camera.position.y += 10000
 
                         camera.lookAt(UserContainer_root)
+
+
+                        let tl01 = gsap.timeline(
+                            {
+                                repeat: 2,
+                                repeatDelay: 1,
+                                delay:  0.01
+                            }
+                        )
+
+
+                        let tl02 = gsap.timeline(
+                            {
+                                repeat: 2,
+                                repeatDelay: 1,
+                            }
+                        )
+
+                        // tl01.to(UserContainer_root.position, {
+						// 	duration: 2.5,
+						// 	delay: 0,
+                        //     opacity: 0.5,
+                        //     ease: "none",
+						// 	y: 5,
+
+						// })
+
+
+                        // tl02.to(camera.position, {
+						// 	duration: 2.5,
+						// 	delay: 0,
+                        //     ease: "none",
+						// 	y: 0,
+
+						// })
+
+                        
                         
 
-						gsap.to(UserContainer_root.position, {
-							duration: 7,
-							delay: 0.01,
+						tl01.to(UserContainer_root.position, {
+							duration: 3.5,
+							delay: 0,
+                            opacity: 0.5,
                             ease: "none",
 							x: "-= 19999",
 
 						})
 
 
-                        gsap.to(camera.position, {
-							duration: 7,
+                        tl02.to(camera.position, {
+							duration: 3.5,
 							delay: 0,
                             ease: "none",
 							x: "-= 20000",
@@ -2981,40 +3205,58 @@
 						})
 
 
-                        gsap.to(UserContainer_root.position, {
+                        tl01.to(UserContainer_root.position, {
 							duration: 7,
-							delay: 7,
-                            ease: "none",
-							y: "+= 19999",
+							delay: 0,
+                            ease: "stagger",
+							y: 1,
 
 						})
 
 
-                        gsap.to(camera.position, {
+                        tl02.to(camera.position, {
 							duration: 7,
-							delay: 6.99,
-                            ease: "none",
-							y: "+= 20000",
+							delay: 0,
+                            ease: "stagger",
+							y: 1,
 
 						})
 
 
-                        // gsap.to(UserContainer_root.position, {
-						// 	duration: 7,
-						// 	delay: 7,
-                        //     ease: "none",
-						// 	x: "+= 19999",
+                        tl01.to(UserContainer_root.position, {
+							duration: 7,
+							delay: 0,
+                            // ease: "none",
+							z: "+= 19999",
 
-						// })
+						})
 
 
-                        // gsap.to(camera.position, {
-						// 	duration: 7,
-						// 	delay: 6.99,
-                        //     ease: "none",
-						// 	x: "+= 20000",
+                        tl02.to(camera.position, {
+							duration: 7,
+							delay: 0,
+                            // ease: "none",
+							z: "+= 20000",
 
-						// })
+						})
+
+
+                        tl01.to(UserContainer_root.position, {
+							duration: 7,
+							delay: -0.005,
+                            ease: "none",
+							x: "+= 19999.99",
+
+						})
+
+
+                        tl02.to(camera.position, {
+							duration: 7,
+							delay: 0,
+                            ease: "none",
+							x: "+= 20000",
+
+						})
 
 
 
@@ -3108,15 +3350,15 @@
 			// folderTransformations.add(ΔΩ.rotation, 'y').min(-3.14).max(3.14).step(0.001).name('y-rotation');
 			// folderTransformations.add(ΔΩ.rotation, 'z').min(-3.14).max(3.14).step(0.001).name('z-rotation');
 
-			const folderCamera = gui.addFolder('Camera');
+			const folderCamera = gui.addFolder('camera-position');
 			folderCamera.add(camera.position, 'x').min(-25000).max(25000).step(0.001).name('x-camera')
 			folderCamera.add(camera.position, 'y').min(-25000).max(25000).step(0.001).name('y-camera')
 			folderCamera.add(camera.position, 'z').min(-25000).max(25000).step(0.001).name('z-camera')
 
-            const folderButton = gui.addFolder('testButton01');
-			folderButton.add(testButton01.position, 'x').min(-1000).max(1000).step(0.001).name('x-camera')
-			folderButton.add(testButton01.position, 'y').min(-1000).max(1000).step(0.001).name('y-camera')
-			folderButton.add(testButton01.position, 'z').min(-1000).max(1000).step(0.001).name('z-camera')
+            const folderButton = gui.addFolder('camera-rotation');
+			folderButton.add(camera.position, 'x').min(-3.14).max(3.14).step(0.001).name('x-camera')
+			folderButton.add(camera.position, 'y').min(-3.14).max(3.14).step(0.001).name('y-camera')
+			folderButton.add(camera.position, 'z').min(-3.14).max(3.14).step(0.001).name('z-camera')
 
 
 
