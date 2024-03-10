@@ -1672,7 +1672,23 @@
 			mesh_TimeSphereHourBase_L0.rotation.x = - Math.PI * 0.5
 			group01_timeSphere.add(mesh_TimeSphereHourBase_L0);
 
-
+//.......................................................................
+//.....OOOOOO......RRRRR........BBBBB........I...TTTTTTTTT....SSSSSS.....
+//....OOOOOOOOO...RRRRRRRRRR...BBBBBBBBBB...III.TTTTTTTTTTT..SSSSSSSS....
+//...OOOOOOOOOO...RRRRRRRRRRR..BBBBBBBBBBB..III.TTTTTTTTTTT.SSSSSSSSSS...
+//..OOOOOOOOOOOO..RRRRRRRRRRR..BBBBBBBBBBB..III.TTTTTTTTTTT.SSSSSSSSSS...
+//..OOOO....OOOO..RRRR...RRRRR.BBBB...BBBB..III.....TTTT...SSSS...SSSSS..
+//..OOOO....OOOOO.RRRR...RRRRR.BBBB..BBBBB..III.....TTTT...SSSSSS........
+//.OOOO......OOOO.RRRRRRRRRRR..BBBBBBBBBBB..III.....TTTT....SSSSSSSSS....
+//.OOOO......OOOO.RRRRRRRRRRR..BBBBBBBBBBB..III.....TTTT....SSSSSSSSSS...
+//.OOOO......OOOO.RRRRRRRRRRR..BBBBBBBBBBB..III.....TTTT......SSSSSSSSS..
+//..OOOO....OOOOO.RRRR..RRRRR..BBBB....BBBB.III.....TTTT...SSSS..SSSSSS..
+//..OOOO....OOOO..RRRR...RRRR..BBBB...BBBBB.III.....TTTT...SSSS....SSSS..
+//..OOOOOOOOOOOO..RRRR...RRRR..BBBBBBBBBBB..III.....TTTT...SSSSSSSSSSSS..
+//...OOOOOOOOOO...RRRR...RRRR..BBBBBBBBBBB..III.....TTTT....SSSSSSSSSS...
+//....OOOOOOOOO...RRRR...RRRRR.BBBBBBBBBB...III.....TTTT.....SSSSSSSSS...
+//.....OOOOOO.................................................SSSSSS.....
+//.......................................................................
 
             
             RealityCenter_OrbitBase_root = new THREE.Group()
@@ -1695,7 +1711,7 @@
 
                             let RealityCenter_OrbitDimensions = {
                                 radius: 10.65,
-                                tube: 0.1049,
+                                tube: 0.0049,
                                 radialSegements: 30,
                                 tubularSegments: 200,
                                 arc: 6.283185307179586,
@@ -1726,6 +1742,95 @@
                             // RealityCenter_Orbit01.lookAt(camera)
                             
                             RealityCenter_Orbit01.add(mesh_RealityCenter_Orbit01)
+
+
+                        RealityCenter_Orbit02_root = new THREE.Group()
+                        RealityCenter_Orbit02_root.position.set(0, 0, 0)
+                        RealityCenter_Orbit02_root.rotation.set(0, 0, 0)
+                        RealityCenter_Orbit02_root.scale.set(1, 1, 1)
+                        RealityCenter_OrbitBase_root.add(RealityCenter_Orbit02_root)
+
+                            RealityCenter_Orbit02 = new THREE.Group()
+                            RealityCenter_Orbit02.position.set(0, 6030.20, 0)
+                            RealityCenter_Orbit02.rotation.set(0, 0, 0)
+                            RealityCenter_Orbit02.scale.set(9000, 9000, 9000)
+                            RealityCenter_Orbit02_root.add(RealityCenter_Orbit02)
+
+                            const mat_RealityCenter_Orbit02 = new THREE.MeshBasicMaterial({ map: SceneWallpaper_01, side: THREE.DoubleSide });
+                            mesh_RealityCenter_Orbit02 = new THREE.Mesh(geo_objT_RealityCenterOrbit, mat_RealityCenter_Orbit02);
+
+                                mat_RealityCenter_Orbit02.transparent = true;
+                                mat_RealityCenter_Orbit02.wireframe = false;
+                                mat_RealityCenter_Orbit02.alphaMap = SceneWallpaper_01;
+
+                            mesh_RealityCenter_Orbit02.position.set(0, 0, 0);
+                            mesh_RealityCenter_Orbit02.rotation.set(-1.492, -0.951, 0)
+                            mesh_RealityCenter_Orbit02.scale.set(0.2, 0.2, 0.2);
+                            // mesh_RealityCenter_Orbit02.rotateX( - Math.PI / 2 );
+
+                            // RealityCenter_Orbit02.lookAt(camera)
+                            
+                            RealityCenter_Orbit02.add(mesh_RealityCenter_Orbit02)
+
+
+                        RealityCenter_Orbit03_root = new THREE.Group()
+                        RealityCenter_Orbit03_root.position.set(0, 0, 0)
+                        RealityCenter_Orbit03_root.rotation.set(0, 0, 0)
+                        RealityCenter_Orbit03_root.scale.set(1, 1, 1)
+                        RealityCenter_OrbitBase_root.add(RealityCenter_Orbit03_root)
+
+                            RealityCenter_Orbit03 = new THREE.Group()
+                            RealityCenter_Orbit03.position.set(0, 6030.20, 0)
+                            RealityCenter_Orbit03.rotation.set(0, 0, 0)
+                            RealityCenter_Orbit03.scale.set(6000, 6000, 6000)
+                            RealityCenter_Orbit03_root.add(RealityCenter_Orbit03)
+
+                            const mat_RealityCenter_Orbit03 = new THREE.MeshBasicMaterial({ map: SceneWallpaper_01, side: THREE.DoubleSide });
+                            mesh_RealityCenter_Orbit03 = new THREE.Mesh(geo_objT_RealityCenterOrbit, mat_RealityCenter_Orbit03);
+
+                                mat_RealityCenter_Orbit03.transparent = false;
+                                mat_RealityCenter_Orbit03.wireframe = false;
+                                mat_RealityCenter_Orbit03.alphaMap = SceneWallpaper_01;
+
+                            mesh_RealityCenter_Orbit03.position.set(0, 0, 0);
+                            mesh_RealityCenter_Orbit03.rotation.set(-1.492, -0.151, 0)
+                            mesh_RealityCenter_Orbit03.scale.set(0.2, 0.2, 0.2);
+                            // mesh_RealityCenter_Orbit03.rotateX( - Math.PI / 2 );
+
+                            // RealityCenter_Orbit03.lookAt(camera)
+                            
+                            RealityCenter_Orbit03.add(mesh_RealityCenter_Orbit03)
+
+
+                            
+
+                        RealityCenter_Orbit04_root = new THREE.Group()
+                        RealityCenter_Orbit04_root.position.set(0, 0, 0)
+                        RealityCenter_Orbit04_root.rotation.set(0, 0, 0)
+                        RealityCenter_Orbit04_root.scale.set(1, 1, 1)
+                        RealityCenter_OrbitBase_root.add(RealityCenter_Orbit04_root)
+
+                            RealityCenter_Orbit04 = new THREE.Group()
+                            RealityCenter_Orbit04.position.set(0, 6030.20, 0)
+                            RealityCenter_Orbit04.rotation.set(0, 0, 0)
+                            RealityCenter_Orbit04.scale.set(4500, 4500, 4500)
+                            RealityCenter_Orbit04_root.add(RealityCenter_Orbit04)
+
+                            const mat_RealityCenter_Orbit04 = new THREE.MeshBasicMaterial({ map: SceneWallpaper_01, side: THREE.DoubleSide });
+                            mesh_RealityCenter_Orbit04 = new THREE.Mesh(geo_objT_RealityCenterOrbit, mat_RealityCenter_Orbit04);
+
+                                mat_RealityCenter_Orbit04.transparent = false;
+                                mat_RealityCenter_Orbit04.wireframe = false;
+                                mat_RealityCenter_Orbit04.alphaMap = SceneWallpaper_01;
+
+                            mesh_RealityCenter_Orbit04.position.set(0, 0, 0);
+                            mesh_RealityCenter_Orbit04.rotation.set(-1.492, 0.67, 0)
+                            mesh_RealityCenter_Orbit04.scale.set(0.2, 0.2, 0.2);
+                            // mesh_RealityCenter_Orbit04.rotateX( - Math.PI / 2 );
+
+                            // RealityCenter_Orbit04.lookAt(camera)
+                            
+                            RealityCenter_Orbit04.add(mesh_RealityCenter_Orbit04)
 
             
 
@@ -1795,7 +1900,7 @@
 
 				// Large Number here = The box dimensions all at the same time. 
 				for (let i = 0; i < count * 3; i++) {
-					positions[i] = (Math.random() - 0.5) * 50000
+					positions[i] = (Math.random() - 0.5) * 100000
 					colors[i] = Math.random()
 				}
 
@@ -1805,7 +1910,7 @@
 				// Particle Material init()
 				const particlesMaterial = new THREE.PointsMaterial()
 				// particlesMaterial.size = 10 // for ContainerHolderTex
-				particlesMaterial.size = 45.5
+				particlesMaterial.size = 75
 				particlesMaterial.sizeAttenuation = true;
 				// particlesMaterial.color = new THREE.Color('#1ADBCB') // neonBlueGreen
 				// particlesMaterial.color = new THREE.Color('#00ffb3') // neonBlueGreen
@@ -1952,7 +2057,7 @@
 
 
                 websiteReality01 = new THREE.Group()
-                websiteReality01.position.set(0, 0, 0)
+                websiteReality01.position.set(0, 0, -4000)
                 websiteReality01.rotation.set(0, 0, 0)
                 websiteReality01.scale.set(5, 5, 5)
                 websiteGroup01_root.add(websiteReality01)
@@ -2045,7 +2150,7 @@
 
                     
             pdfTest_root = new THREE.Group()
-            pdfTest_root.position.set(1600, 6130, 21000)
+            pdfTest_root.position.set(2000, 6530, 21000)
             pdfTest_root.rotation.set(0, 0, 0)
             pdfTest_root.scale.set(1, 1, 1)
             scene.add(pdfTest_root)
@@ -2058,14 +2163,14 @@
                         1, 1, 1,
                         "hoverClockA1",
                         "https://vonerikbarren.github.io/Portfolio--V3/#",
-                        "1200px", "720px"
+                        "1920px", "1200px"
                     )
 
                 ) 
 
 
             googSheet_root = new THREE.Group()
-            googSheet_root.position.set(1600, 5130, 21000)
+            googSheet_root.position.set(2000, 5130, 21000)
             googSheet_root.rotation.set(0, 0, 0)
             googSheet_root.scale.set(1, 1, 1)
             scene.add(googSheet_root)
@@ -2077,8 +2182,8 @@
                         0, 0, 0,
                         1, 1, 1,
                         "hoverClockA1",
-                        "https://docs.google.com/spreadsheets/d/1fmksJV-MoIsQLEI5eAcuCaK8Jh3ZjROV96SxBmhQkqg/edit?usp=sharing",
-                        "1200px", "720px"
+                        "https://vonerikbarren.github.io/Complex-Design-Architecture/",
+                        "1920px", "1200px"
                     )
 
                 ) 
@@ -2344,23 +2449,25 @@
 			scene.add(directionalLight)
 
 
-			    controls = new OrbitControls( camera, cssrenderer.domElement );
-                controls.maxPolarAngle = Math.PI * 0.495;
-                // controls.minPolarAngle = Math.PI * 0.495;
-                controls.maxAzimuthAngle = Math.PI * 0.495;
-                controls.target.set( 0, 55, 0 );
-                controls.minDistance = 100.0;
-                controls.maxDistance = 70000.0;
-                controls.screenSpacePanning = true
-                controls.enablePan = true
-                controls.rotateSpeed = 0.025
-                controls.zoomSpeed = 0.1
-                controls.update();
+            controls = new OrbitControls( camera, cssrenderer.domElement );
+            controls.maxPolarAngle = Math.PI * 0.495;
+            // controls.minPolarAngle = Math.PI * 0.495;
+            controls.maxAzimuthAngle = Math.PI * 0.495;
+            controls.target.set( 0, 55, 0 );
+            controls.minDistance = 100.0;
+            controls.maxDistance = 70000.0;
+            controls.screenSpacePanning = true
+            controls.enablePan = false
+            controls.rotateSpeed = 0.000025
+            controls.zoomSpeed = 0.1
+            controls.movementSpeed = 10;
+            controls.update();
             
 
 
             let activateOrbitControls = () => {
                 controls = new OrbitControls( camera, cssrenderer.domElement );
+                controls.lookAt(0, 6000, 0)
                 controls.maxPolarAngle = Math.PI * 0.495;
                 // controls.minPolarAngle = Math.PI * 0.495;
                 controls.maxAzimuthAngle = Math.PI * 0.495;
@@ -2369,23 +2476,39 @@
                 controls.maxDistance = 70000.0;
                 controls.screenSpacePanning = false
                 controls.enablePan = false
-                controls.rotateSpeed = 0.025
+                controls.rotateSpeed = 0.0025
                 controls.zoomSpeed = 0.1
+                controls.movementSpeed = 10;
                 controls.update();
             }
 
 
+            
+
+
 
             let activeFirstPersonControls = () => {
+                controls = new FirstPersonControls(camera, renderer.domElement);
+
+                controls.movementSpeed = 10;
+                controls.lookSpeed = 0.035
+                controls.noFly = true;
+                controls.lookVertical = true;
+                controls.mouseDragOn = false;
+                controls.verticalMax = 0
+                controls.verticalMin = 0
+                controls.heightMax = 0
+                controls.heightMin = 0
+                controls.update();
 
             }
 
 
 			controls = new FirstPersonControls(camera, renderer.domElement);
 
-			controls.movementSpeed = 100;
+			controls.movementSpeed = 10;
 			controls.lookSpeed = 0.035
-			controls.noFly = false;
+			controls.noFly = true;
 			controls.lookVertical = true;
 			controls.mouseDragOn = true;
             controls.verticalMax = 0
@@ -2396,6 +2519,20 @@
 
 			
 			camera.lookAt(0, 55, 0)
+
+
+
+            document.addEventListener("keydown", function(event) {
+                if (event.key === "z") {
+                    activateOrbitControls()
+                }
+            })
+
+            document.addEventListener("keydown", function(event) {
+                if (event.key === "x") {
+                    activeFirstPersonControls()
+                }
+            })
 
 //..........................................................................................................
 //......CCC......TTTTTTTTT...LL.........RRRRR.........................UU.....UU....NN......N.......CCC......
@@ -3361,6 +3498,18 @@
 			folderButton.add(camera.position, 'z').min(-3.14).max(3.14).step(0.001).name('z-camera')
 
 
+            const folderOrbits = gui.addFolder('mesh_RealityCenter_Orbit04');
+			folderOrbits.add(mesh_RealityCenter_Orbit04.rotation, 'x').min(-3.14).max(3.14).step(0.001).name('x-camera')
+			folderOrbits.add(mesh_RealityCenter_Orbit04.rotation, 'y').min(-3.14).max(3.14).step(0.001).name('y-camera')
+			folderOrbits.add(mesh_RealityCenter_Orbit04.rotation, 'z').min(-3.14).max(3.14).step(0.001).name('z-camera')
+
+            const folderPanels = gui.addFolder('pdfTest_root');
+			folderPanels.add(pdfTest_root.position, 'x').min(-10000).max(10000).step(0.01).name('x-camera')
+			folderPanels.add(pdfTest_root.position, 'y').min(-10000).max(10000).step(0.01).name('y-camera')
+			folderPanels.add(pdfTest_root.position, 'z').min(-10000).max(10000).step(0.01).name('z-camera')
+
+
+
 
 			window.addEventListener('resize', onWindowResize);
 
@@ -3396,6 +3545,8 @@
 			const time = performance.now() * 0.001;
 			const delta = clock.getDelta();
 			controls.update(delta);
+
+            
 
             
 
