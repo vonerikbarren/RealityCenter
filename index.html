@@ -2617,50 +2617,50 @@
             controls.maxDistance = 70000.0;
             controls.screenSpacePanning = true
             controls.enablePan = false
-            controls.rotateSpeed = 0.000025
+            controls.rotateSpeed = 0.025
             controls.zoomSpeed = 0.1
-            controls.movementSpeed = 10;
+            controls.movementSpeed = 10000;
             controls.update();
             
 
 
-            let activateOrbitControls = () => {
-                controls = new OrbitControls( camera, cssrenderer.domElement );
-                controls.lookAt(0, 6000, 0)
-                controls.maxPolarAngle = Math.PI * 0.495;
-                // controls.minPolarAngle = Math.PI * 0.495;
-                controls.maxAzimuthAngle = Math.PI * 0.495;
-                controls.target.set( 0, 55, 0 );
-                controls.minDistance = 100.0;
-                controls.maxDistance = 70000.0;
-                controls.screenSpacePanning = false
-                controls.enablePan = false
-                controls.rotateSpeed = 0.0025
-                controls.zoomSpeed = 0.1
-                controls.movementSpeed = 10;
-                controls.update();
-            }
+            // let activateOrbitControls = () => {
+            //     controls = new OrbitControls( camera, cssrenderer.domElement );
+            //     controls.lookAt(0, 6000, 0)
+            //     controls.maxPolarAngle = Math.PI * 0.495;
+            //     // controls.minPolarAngle = Math.PI * 0.495;
+            //     controls.maxAzimuthAngle = Math.PI * 0.495;
+            //     controls.target.set( 0, 55, 0 );
+            //     controls.minDistance = 100.0;
+            //     controls.maxDistance = 70000.0;
+            //     controls.screenSpacePanning = false
+            //     controls.enablePan = false
+            //     controls.rotateSpeed = 0.0025
+            //     controls.zoomSpeed = 0.1
+            //     controls.movementSpeed = 10;
+            //     controls.update();
+            // }
 
 
             
 
 
 
-            let activeFirstPersonControls = () => {
-                controls = new FirstPersonControls(camera, renderer.domElement);
+            // let activeFirstPersonControls = () => {
+            //     controls = new FirstPersonControls(camera, renderer.domElement);
 
-                controls.movementSpeed = 10;
-                controls.lookSpeed = 0.035
-                controls.noFly = true;
-                controls.lookVertical = true;
-                controls.mouseDragOn = false;
-                controls.verticalMax = 0
-                controls.verticalMin = 0
-                controls.heightMax = 0
-                controls.heightMin = 0
-                controls.update();
+            //     controls.movementSpeed = 10;
+            //     controls.lookSpeed = 0.035
+            //     controls.noFly = true;
+            //     controls.lookVertical = true;
+            //     controls.mouseDragOn = false;
+            //     controls.verticalMax = 0
+            //     controls.verticalMin = 0
+            //     controls.heightMax = 0
+            //     controls.heightMin = 0
+            //     controls.update();
 
-            }
+            // }
 
 
 			// controls = new FirstPersonControls(camera, renderer.domElement);
@@ -2681,17 +2681,17 @@
 
 
 
-            document.addEventListener("keydown", function(event) {
-                if (event.key === "z") {
-                    activateOrbitControls()
-                }
-            })
+            // document.addEventListener("keydown", function(event) {
+            //     if (event.key === "z") {
+            //         activateOrbitControls()
+            //     }
+            // })
 
-            document.addEventListener("keydown", function(event) {
-                if (event.key === "x") {
-                    activeFirstPersonControls()
-                }
-            })
+            // document.addEventListener("keydown", function(event) {
+            //     if (event.key === "x") {
+            //         activeFirstPersonControls()
+            //     }
+            // })
 
 //..........................................................................................................
 //......CCC......TTTTTTTTT...LL.........RRRRR.........................UU.....UU....NN......N.......CCC......
