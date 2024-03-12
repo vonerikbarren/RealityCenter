@@ -2088,7 +2088,7 @@
                 WebsitePanel01 = new THREE.Group()
                 WebsitePanel01.position.set(0, 0, 10)
                 WebsitePanel01.rotation.set(0, 0, 0)
-                WebsitePanel01.scale.set(3.5, 10, 1)
+                WebsitePanel01.scale.set(3, 10, 1)
                 websiteGroup01_root.add(WebsitePanel01)
 
                     const mat_WebsitePanel01 = new THREE.MeshBasicMaterial({ map: root_WebsitePanelImg01, side: THREE.DoubleSide });
@@ -2189,7 +2189,7 @@
 
             
             testButton01 = new THREE.Group()
-            testButton01.position.set(-794.68, 5530, 21000)
+            testButton01.position.set(-7794.68, 5530, 21000)
             testButton01.rotation.set(0, 0, 0)
             testButton01.scale.set(1, 1, 1)
             scene.add(testButton01)
@@ -2255,7 +2255,7 @@
 
 
             testButton02 = new THREE.Group()
-            testButton02.position.set(-794.68, 5140, 21000)
+            testButton02.position.set(-7794.68, 5140, 21000)
             testButton02.rotation.set(0, 0, 0)
             testButton02.scale.set(1, 1, 1)
             scene.add(testButton02)
@@ -2608,19 +2608,19 @@
 			scene.add(directionalLight)
 
 
-            // controls = new OrbitControls( camera, cssrenderer.domElement );
-            // controls.maxPolarAngle = Math.PI * 0.495;
-            // // controls.minPolarAngle = Math.PI * 0.495;
-            // controls.maxAzimuthAngle = Math.PI * 0.495;
-            // controls.target.set( 0, 55, 0 );
-            // controls.minDistance = 100.0;
-            // controls.maxDistance = 70000.0;
-            // controls.screenSpacePanning = true
-            // controls.enablePan = false
-            // controls.rotateSpeed = 0.000025
-            // controls.zoomSpeed = 0.1
-            // controls.movementSpeed = 10;
-            // controls.update();
+            controls = new OrbitControls( camera, cssrenderer.domElement );
+            controls.maxPolarAngle = Math.PI * 0.495;
+            // controls.minPolarAngle = Math.PI * 0.495;
+            controls.maxAzimuthAngle = Math.PI * 0.495;
+            controls.target.set( 0, 55, 0 );
+            controls.minDistance = 100.0;
+            controls.maxDistance = 70000.0;
+            controls.screenSpacePanning = true
+            controls.enablePan = false
+            controls.rotateSpeed = 0.000025
+            controls.zoomSpeed = 0.1
+            controls.movementSpeed = 10;
+            controls.update();
             
 
 
@@ -2663,21 +2663,21 @@
             }
 
 
-			controls = new FirstPersonControls(camera, renderer.domElement);
+			// controls = new FirstPersonControls(camera, renderer.domElement);
 
-			controls.movementSpeed = 10;
-			controls.lookSpeed = 0.035
-			controls.noFly = true;
-			controls.lookVertical = true;
-			controls.mouseDragOn = true;
-            controls.verticalMax = 0
-            controls.verticalMin = 0
-            controls.heightMax = 0
-            controls.heightMin = 0
-			// controls.update();
+			// controls.movementSpeed = 10;
+			// controls.lookSpeed = 0.035
+			// controls.noFly = true;
+			// controls.lookVertical = true;
+			// controls.mouseDragOn = true;
+            // controls.verticalMax = 0
+            // controls.verticalMin = 0
+            // controls.heightMax = 0
+            // controls.heightMin = 0
+			// // controls.update();
 
 			
-			camera.lookAt(0, 55, 0)
+			// camera.lookAt(0, 55, 0)
 
 
 
