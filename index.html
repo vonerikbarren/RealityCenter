@@ -166,6 +166,9 @@
 
         // -------------------------------------------------------------------
 
+        let root_WebsitePanel01
+        let WebsitePanel01, mesh_WebsitePanel01
+
         let websiteGroup01_root
             let websiteTemplateC01, mesh_websiteTemplateC01
             let websiteTemplateC02, mesh_websiteTemplateC02
@@ -180,11 +183,19 @@
         let googSheet_root
         let pdfFileTest_root
 
+        let originalPortfolio_site_root
+            let originalPortfolio_site
+
 
         let specialButtonGroup
             let testButton01
             let testButton02
             let testButton03
+
+        
+        let root_PageScrollButtons
+            let pageUp_button
+            let pageDown_button
 
 
         // Settings Items
@@ -241,6 +252,9 @@
                     let UserContainer_Orbit03_root, mesh_UserContainer_Orbit03_root
 
 
+        let Hud_root
+            let Hud_Menubar
+            let Hud_
 
         //....................................................................
         //.............DDDDD................OOOOOO......BBBBB............JJ...
@@ -361,6 +375,10 @@
         const whiteRoom01_GoldFloor = textureLoader.load('./assets/img/00-WallpaperUX/Specials/B01-WhiteBackground_FloorGold.jpg')
 
 
+        // 
+        const root_WebsitePanelImg01 = textureLoader.load('./assets/img/11_RealityItems/01_WebsitePanels/1x/Services.png')
+
+
 		init();
 		animate();
 
@@ -443,7 +461,7 @@
 
 			// Search.Camera
 			camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 500000);
-			camera.position.set(30, 6000, 23000);
+			camera.position.set(30, 6000, 24000);
 			camera.view = sun;
 
 			//
@@ -1939,7 +1957,7 @@
                         delay: 0,
                         
                         y: "+= 3.14",
-                        // z: "+= 3.14",
+                        z: "-= 3.14",
                         
 
                 
@@ -1992,185 +2010,136 @@
             websiteGroup01_root.scale.set(100, 100, 100)
             scene.add(websiteGroup01_root)
 
-                websiteTemplateC01 = new THREE.Group()
-                websiteTemplateC01.position.set(0, 0, 0)
-                websiteTemplateC01.rotation.set(0, 0, 0)
-                websiteTemplateC01.scale.set(1.2, 1, 1)
-                websiteGroup01_root.add(websiteTemplateC01)
+                // websiteTemplateC01 = new THREE.Group()
+                // websiteTemplateC01.position.set(0, 0, 0)
+                // websiteTemplateC01.rotation.set(0, 0, 0)
+                // websiteTemplateC01.scale.set(1.2, 1, 1)
+                // websiteGroup01_root.add(websiteTemplateC01)
 
-                    const mat_websiteTemplateC01 = new THREE.MeshBasicMaterial({ map: img_websiteTemplateC01, side: THREE.DoubleSide });
-                    mesh_websiteTemplateC01 = new THREE.Mesh(geo_objT_PlaneA1, mat_websiteTemplateC01);
-                    mat_websiteTemplateC01.transparent = true;
-                    mat_websiteTemplateC01.alphaMap = img_websiteTemplateC01;
-                    mesh_websiteTemplateC01.position.set(0, 0, 0);
-                    // mesh_websiteTemplateC01.position.set(-15000, 0, 0);
-                    mesh_websiteTemplateC01.scale.set(1, 1, 1);
-                    mesh_websiteTemplateC01.rotation.set(0, 0, 0)
-                    // mesh_websiteTemplateC01.rotateX( - Math.PI / 2 );
+                //     const mat_websiteTemplateC01 = new THREE.MeshBasicMaterial({ map: img_websiteTemplateC01, side: THREE.DoubleSide });
+                //     mesh_websiteTemplateC01 = new THREE.Mesh(geo_objT_PlaneA1, mat_websiteTemplateC01);
+                //     mat_websiteTemplateC01.transparent = true;
+                //     mat_websiteTemplateC01.alphaMap = img_websiteTemplateC01;
+                //     mesh_websiteTemplateC01.position.set(0, 0, 0);
+                //     // mesh_websiteTemplateC01.position.set(-15000, 0, 0);
+                //     mesh_websiteTemplateC01.scale.set(1, 1, 1);
+                //     mesh_websiteTemplateC01.rotation.set(0, 0, 0)
+                //     // mesh_websiteTemplateC01.rotateX( - Math.PI / 2 );
 
-                    // websiteTemplateC01.lookAt(camera)
+                //     // websiteTemplateC01.lookAt(camera)
                     
-                    websiteTemplateC01.add(mesh_websiteTemplateC01)
+                //     websiteTemplateC01.add(mesh_websiteTemplateC01)
 
-                websiteTemplateC02 = new THREE.Group()
-                websiteTemplateC02.position.set(0, -10, 0)
-                websiteTemplateC02.rotation.set(0, 0, 0)
-                websiteTemplateC02.scale.set(1.2, 1, 1)
-                websiteGroup01_root.add(websiteTemplateC02)
+                // websiteTemplateC02 = new THREE.Group()
+                // websiteTemplateC02.position.set(0, -10, 0)
+                // websiteTemplateC02.rotation.set(0, 0, 0)
+                // websiteTemplateC02.scale.set(1.2, 1, 1)
+                // websiteGroup01_root.add(websiteTemplateC02)
 
-                    const mat_websiteTemplateC02 = new THREE.MeshBasicMaterial({ map: img_websiteTemplateC02, side: THREE.DoubleSide });
-                    mesh_websiteTemplateC02 = new THREE.Mesh(geo_objT_PlaneA1, mat_websiteTemplateC02);
-                    mat_websiteTemplateC02.transparent = true;
-                    mat_websiteTemplateC02.alphaMap = img_websiteTemplateC02;
-                    mesh_websiteTemplateC02.position.set(0, 0, 0);
-                    // mesh_websiteTemplateC02.position.set(-15000, 0, 0);
-                    mesh_websiteTemplateC02.scale.set(1, 1, 1);
-                    mesh_websiteTemplateC02.rotation.set(0, 0, 0)
-                    // mesh_websiteTemplateC02.rotateX( - Math.PI / 2 );
+                //     const mat_websiteTemplateC02 = new THREE.MeshBasicMaterial({ map: img_websiteTemplateC02, side: THREE.DoubleSide });
+                //     mesh_websiteTemplateC02 = new THREE.Mesh(geo_objT_PlaneA1, mat_websiteTemplateC02);
+                //     mat_websiteTemplateC02.transparent = true;
+                //     mat_websiteTemplateC02.alphaMap = img_websiteTemplateC02;
+                //     mesh_websiteTemplateC02.position.set(0, 0, 0);
+                //     // mesh_websiteTemplateC02.position.set(-15000, 0, 0);
+                //     mesh_websiteTemplateC02.scale.set(1, 1, 1);
+                //     mesh_websiteTemplateC02.rotation.set(0, 0, 0);
+                //     // mesh_websiteTemplateC02.rotateX( - Math.PI / 2 );
 
-                    // websiteTemplateC02.lookAt(camera)
+                //     // websiteTemplateC02.lookAt(camera)
                     
-                    websiteTemplateC02.add(mesh_websiteTemplateC02)
+                //     websiteTemplateC02.add(mesh_websiteTemplateC02)
 
 
-                websiteTemplateC03 = new THREE.Group()
-                websiteTemplateC03.position.set(0, -20, 0)
-                websiteTemplateC03.rotation.set(0, 0, 0)
-                websiteTemplateC03.scale.set(1.2, 1, 1)
-                websiteGroup01_root.add(websiteTemplateC03)
+                // websiteTemplateC03 = new THREE.Group()
+                // websiteTemplateC03.position.set(0, -20, 0)
+                // websiteTemplateC03.rotation.set(0, 0, 0)
+                // websiteTemplateC03.scale.set(1.2, 1, 1)
+                // websiteGroup01_root.add(websiteTemplateC03)
 
-                    const mat_websiteTemplateC03 = new THREE.MeshBasicMaterial({ map: img_websiteTemplateC03, side: THREE.DoubleSide });
-                    mesh_websiteTemplateC03 = new THREE.Mesh(geo_objT_PlaneA1, mat_websiteTemplateC03);
-                    mat_websiteTemplateC03.transparent = true;
-                    mat_websiteTemplateC03.alphaMap = img_websiteTemplateC03;
-                    mesh_websiteTemplateC03.position.set(0, 0, 0);
-                    // mesh_websiteTemplateC03.position.set(-15000, 0, 0);
-                    mesh_websiteTemplateC03.scale.set(1, 1, 1);
-                    mesh_websiteTemplateC03.rotation.set(0, 0, 0)
-                    // mesh_websiteTemplateC03.rotateX( - Math.PI / 2 );
+                //     const mat_websiteTemplateC03 = new THREE.MeshBasicMaterial({ map: img_websiteTemplateC03, side: THREE.DoubleSide });
+                //     mesh_websiteTemplateC03 = new THREE.Mesh(geo_objT_PlaneA1, mat_websiteTemplateC03);
+                //     mat_websiteTemplateC03.transparent = true;
+                //     mat_websiteTemplateC03.alphaMap = img_websiteTemplateC03;
+                //     mesh_websiteTemplateC03.position.set(0, 0, 0);
+                //     // mesh_websiteTemplateC03.position.set(-15000, 0, 0);
+                //     mesh_websiteTemplateC03.scale.set(1, 1, 1);
+                //     mesh_websiteTemplateC03.rotation.set(0, 0, 0)
+                //     // mesh_websiteTemplateC03.rotateX( - Math.PI / 2 );
 
-                    // websiteTemplateC03.lookAt(camera)
+                //     // websiteTemplateC03.lookAt(camera)
                     
-                    websiteTemplateC03.add(mesh_websiteTemplateC03)
+                //     websiteTemplateC03.add(mesh_websiteTemplateC03)
 
 
 
-
-                websiteReality01 = new THREE.Group()
-                websiteReality01.position.set(0, 0, -4000)
-                websiteReality01.rotation.set(0, 0, 0)
-                websiteReality01.scale.set(5, 5, 5)
-                websiteGroup01_root.add(websiteReality01)
-
-                    const mat_websiteReality01 = new THREE.MeshBasicMaterial({ map: BaseContainer01, side: THREE.DoubleSide });
-                    mesh_websiteReality01 = new THREE.Mesh(geo_objT_BoxA0, mat_websiteReality01);
-                    mat_websiteReality01.transparent = true;
-                    mat_websiteReality01.alphaMap = BaseContainer01;
-                    mesh_websiteReality01.position.set(0, 0, 0);
-                    // mesh_websiteReality01.position.set(-15000, 0, 0);
-                    mesh_websiteReality01.scale.set(1, 1, 1);
-                    mesh_websiteReality01.rotation.set(0, 0, 0)
-                    // mesh_websiteReality01.rotateX( - Math.PI / 2 );
-
-                    // websiteReality01.lookAt(camera)
-                    
-                    websiteReality01.add(mesh_websiteReality01)
-
-
-                websiteReality02 = new THREE.Group()
-                websiteReality02.position.set(8, 0, 0)
-                websiteReality02.rotation.set(0, 0, 0)
-                websiteReality02.scale.set(0.1, 0.1, 0.1)
-                websiteGroup01_root.add(websiteReality02)
-
-                    const mat_websiteReality02 = new THREE.MeshBasicMaterial({ map: BaseContainer01, side: THREE.DoubleSide });
-                    mesh_websiteReality02 = new THREE.Mesh(geo_objT_BoxA0, mat_websiteReality02);
-                    mat_websiteReality02.transparent = true;
-                    mat_websiteReality02.alphaMap = BaseContainer01;
-                    mesh_websiteReality02.position.set(0, 0, 0);
-                    // mesh_websiteReality02.position.set(-15000, 0, 0);
-                    mesh_websiteReality02.scale.set(1, 1, 1);
-                    mesh_websiteReality02.rotation.set(0, 0, 0)
-                    // mesh_websiteReality02.rotateX( - Math.PI / 2 );
-
-                    // websiteReality02.lookAt(camera)
-                    
-                    websiteReality02.add(mesh_websiteReality02)
-                
-                let rotate_websiteReality02 = () => {
-                    gsap.to(mesh_websiteReality02.rotation, {
-                        repeat: -1,
-                        duration: 2.5,
-                        delay: .25,
-                        ease: "none",
-                        y: '-= 3.14',
-                    })
-                }
-
-
-                rotate_websiteReality02()
-
-
-
-                websiteReality03 = new THREE.Group()
-                websiteReality03.position.set(8, -3, 0)
-                websiteReality03.rotation.set(0, 0, 0)
-                websiteReality03.scale.set(0.1, 0.1, 0.1)
-                websiteGroup01_root.add(websiteReality03)
-
-                    const mat_websiteReality03 = new THREE.MeshBasicMaterial({ map: BaseContainer01, side: THREE.DoubleSide });
-                    mesh_websiteReality03 = new THREE.Mesh(geo_objT_BoxA0, mat_websiteReality03);
-                    mat_websiteReality03.transparent = true;
-                    mat_websiteReality03.alphaMap = BaseContainer01;
-                    mesh_websiteReality03.position.set(0, 0, 0);
-                    // mesh_websiteReality03.position.set(-15000, 0, 0);
-                    mesh_websiteReality03.scale.set(1, 1, 1);
-                    mesh_websiteReality03.rotation.set(0, 0, 0)
-                    // mesh_websiteReality03.rotateX( - Math.PI / 2 );
-
-                    // websiteReality03.lookAt(camera)
-                    
-                    websiteReality03.add(mesh_websiteReality03)
-                
-                let rotate_websiteReality03 = () => {
-                    gsap.to(mesh_websiteReality03.rotation, {
-                        repeat: -1,
-                        duration: 2.5,
-                        delay: .25,
-                        ease: "none",
-                        y: '+= 3.14',
-                    })
-                }
-
-
-                rotate_websiteReality03()
 
 
 
 
                     
-            pdfTest_root = new THREE.Group()
-            pdfTest_root.position.set(2000, 6530, 21000)
-            pdfTest_root.rotation.set(0, 0, 0)
-            pdfTest_root.scale.set(1, 1, 1)
-            scene.add(pdfTest_root)
 
-                pdfTest_root.add(
+            root_WebsitePanel01 = new THREE.Group()
+            root_WebsitePanel01.position.set(0, 900000, 21000)
+            root_WebsitePanel01.rotation.set(0, 0, 0)
+            root_WebsitePanel01.scale.set(100, 100, 100)
+            scene.add(root_WebsitePanel01)
 
-                    new makePDF_Viewer(
-                        0, 0, 0,
-                        0, 0, 0,
-                        1, 1, 1,
-                        "hoverClockA1",
-                        "https://vonerikbarren.github.io/Portfolio--V3/#",
-                        "1920px", "1200px"
-                    )
+                WebsitePanel01 = new THREE.Group()
+                WebsitePanel01.position.set(0, 0, 10)
+                WebsitePanel01.rotation.set(0, 0, 0)
+                WebsitePanel01.scale.set(3.5, 10, 1)
+                websiteGroup01_root.add(WebsitePanel01)
 
-                ) 
+                    const mat_WebsitePanel01 = new THREE.MeshBasicMaterial({ map: root_WebsitePanelImg01, side: THREE.DoubleSide });
+                    mesh_WebsitePanel01 = new THREE.Mesh(geo_objT_PlaneA1, mat_WebsitePanel01);
+                    mat_WebsitePanel01.transparent = false;
+                    mat_WebsitePanel01.alphaMap = root_WebsitePanelImg01;
+                    mesh_WebsitePanel01.position.set(0, 0, 0);
+                    // mesh_WebsitePanel01.position.set(-15000, 0, 0);
+                    mesh_WebsitePanel01.scale.set(1, 1, 1);
+                    mesh_WebsitePanel01.rotation.set(0, 0, 0)
+                    // mesh_WebsitePanel01.rotateX( - Math.PI / 2 );
+
+                    // WebsitePanel01.lookAt(camera)
+                    
+                    WebsitePanel01.add(mesh_WebsitePanel01)
+
+                originalPortfolio_site_root = new THREE.Group()
+                originalPortfolio_site_root.position.set(0, 15, 1)
+                originalPortfolio_site_root.rotation.set(0, 0, 0)
+                originalPortfolio_site_root.scale.set(1, 1, 1)
+                websiteGroup01_root.add(originalPortfolio_site_root)
+
+                    // --------------------------------------------------------------
+                    originalPortfolio_site = new THREE.Group()
+                    // originalPortfolio_site.position.set(2000, 6530, 21000) // by itself
+                    originalPortfolio_site.position.set(0, 0, 10)
+                    originalPortfolio_site.rotation.set(0, 0, 0)
+                    originalPortfolio_site.scale.set(1, 1, 1)
+                    // scene.add(originalPortfolio_site) // by itself
+                    originalPortfolio_site_root.add(originalPortfolio_site)
+
+
+                        originalPortfolio_site.add(
+
+                            new makePDF_Viewer(
+                                0, 0, 0,
+                                0, 0, 0,
+                                0.01, 0.01, 0.01,
+                                "hoverClockA1",
+                                "https://vonerikbarren.github.io/Portfolio--V3/#",
+                                "1920px", "1200px"
+                            )
+
+                        ) 
+
+                    
+            
 
 
             googSheet_root = new THREE.Group()
-            googSheet_root.position.set(2000, 5130, 21000)
+            googSheet_root.position.set(6000, 5130, 21000)
             googSheet_root.rotation.set(0, 0, 0)
             googSheet_root.scale.set(1, 1, 1)
             scene.add(googSheet_root)
@@ -2191,7 +2160,7 @@
                 
             
             pdfFileTest_root = new THREE.Group()
-            pdfFileTest_root.position.set(-1600, 5530, 21000)
+            pdfFileTest_root.position.set(-9600, 5530, 21000)
             pdfFileTest_root.rotation.set(0, 0, 0)
             pdfFileTest_root.scale.set(1, 1, 1)
             scene.add(pdfFileTest_root)
@@ -2354,6 +2323,196 @@
             )
 
 
+            root_PageScrollButtons = new THREE.Group()
+            root_PageScrollButtons.position.set(2000, 5140, 21000)
+            root_PageScrollButtons.rotation.set(0, 0, 0)
+            root_PageScrollButtons.scale.set(1, 1, 1)
+            scene.add(root_PageScrollButtons)
+
+
+                pageUp_button = new THREE.Group()
+                pageUp_button.position.set(-10, 200, 0)
+                pageUp_button.rotation.set(0, 0, 0)
+                pageUp_button.scale.set(1, 1, 1)
+                root_PageScrollButtons.add(pageUp_button)
+
+                let scrollPageUp = () => {
+                    rotator_root.attach(camera)
+
+                    
+
+                    gsap.to(WebsitePanel01.position, {
+                        duration: 2.5,
+                        delay: 0,
+                        y: '+= 10',
+                    })
+
+                    gsap.to(originalPortfolio_site_root.position, {
+                        duration: 2.5,
+                        delay: 0,
+                        y: '+= 10',
+                    })
+                }
+
+                pageUp_button.add(
+
+                    	new TechIcon(
+						0, 0, 0,
+						0, 0, 0,
+						0.5, 0.5, 0.5,
+						'DefaultTechIconId', 'DefaultTechIconClassName',
+						'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+						'DefaultImgId', 'DefaultImgClassName',
+						'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+						"/assets/icons/Arrows/AnimatedArrows/up-arrow.gif", "",
+						scrollPageUp, 
+						"ShowΔ",
+						"Toggle from here or main menu top left"
+					)
+
+                    
+                )
+
+
+
+                pageDown_button = new THREE.Group()
+                pageDown_button.position.set(-10, -200, 0)
+                pageDown_button.rotation.set(0, 0, 0)
+                pageDown_button.scale.set(1, 1, 1)
+                root_PageScrollButtons.add(pageDown_button)
+
+                let scrollPageDown = () => {
+                    rotator_root.attach(camera)
+
+                    
+
+                    gsap.to(WebsitePanel01.position, {
+                        duration: 2.5,
+                        delay: 0,
+                        y: '-= 10',
+                    })
+
+                    gsap.to(originalPortfolio_site_root.position, {
+                        duration: 2.5,
+                        delay: 0,
+                        y: '-= 10',
+                    })
+                }
+
+                pageDown_button.add(
+
+                    	new TechIcon(
+						0, 0, 0,
+						0, 0, 0,
+						0.5, 0.5, 0.5,
+						'DefaultTechIconId', 'DefaultTechIconClassName',
+						'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+						'DefaultImgId', 'DefaultImgClassName',
+						'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+						"/assets/icons/Arrows/AnimatedArrows/down-arrow.gif", "",
+						scrollPageDown, 
+						"ShowΔ",
+						"Toggle from here or main menu top left"
+					)
+
+                    
+                )
+
+// Website Realities
+// -----------------------------------------------------------------------
+                websiteReality01 = new THREE.Group()
+                websiteReality01.position.set(0, 0, -4000)
+                websiteReality01.rotation.set(0, 0, 0)
+                websiteReality01.scale.set(5, 5, 5)
+                websiteGroup01_root.add(websiteReality01)
+
+                    const mat_websiteReality01 = new THREE.MeshBasicMaterial({ map: BaseContainer01, side: THREE.DoubleSide });
+                    mesh_websiteReality01 = new THREE.Mesh(geo_objT_BoxA0, mat_websiteReality01);
+                    mat_websiteReality01.transparent = true;
+                    mat_websiteReality01.alphaMap = BaseContainer01;
+                    mesh_websiteReality01.position.set(0, 0, 0);
+                    // mesh_websiteReality01.position.set(-15000, 0, 0);
+                    mesh_websiteReality01.scale.set(1, 1, 1);
+                    mesh_websiteReality01.rotation.set(0, 0, 0)
+                    // mesh_websiteReality01.rotateX( - Math.PI / 2 );
+
+                    // websiteReality01.lookAt(camera)
+                    
+                    websiteReality01.add(mesh_websiteReality01)
+
+
+                websiteReality02 = new THREE.Group()
+                websiteReality02.position.set(8, 0, 0)
+                websiteReality02.rotation.set(0, 0, 0)
+                websiteReality02.scale.set(0.1, 0.1, 0.1)
+                websiteGroup01_root.add(websiteReality02)
+
+                    const mat_websiteReality02 = new THREE.MeshBasicMaterial({ map: BaseContainer01, side: THREE.DoubleSide });
+                    mesh_websiteReality02 = new THREE.Mesh(geo_objT_BoxA0, mat_websiteReality02);
+                    mat_websiteReality02.transparent = true;
+                    mat_websiteReality02.alphaMap = BaseContainer01;
+                    mesh_websiteReality02.position.set(0, 0, 0);
+                    // mesh_websiteReality02.position.set(-15000, 0, 0);
+                    mesh_websiteReality02.scale.set(1, 1, 1);
+                    mesh_websiteReality02.rotation.set(0, 0, 0)
+                    // mesh_websiteReality02.rotateX( - Math.PI / 2 );
+
+                    // websiteReality02.lookAt(camera)
+                    
+                    websiteReality02.add(mesh_websiteReality02)
+                
+                let rotate_websiteReality02 = () => {
+                    gsap.to(mesh_websiteReality02.rotation, {
+                        repeat: -1,
+                        duration: 2.5,
+                        delay: .25,
+                        ease: "none",
+                        y: '-= 3.14',
+                    })
+                }
+
+
+                rotate_websiteReality02()
+
+
+
+                websiteReality03 = new THREE.Group()
+                websiteReality03.position.set(8, -3, 0)
+                websiteReality03.rotation.set(0, 0, 0)
+                websiteReality03.scale.set(0.1, 0.1, 0.1)
+                websiteGroup01_root.add(websiteReality03)
+
+                    const mat_websiteReality03 = new THREE.MeshBasicMaterial({ map: BaseContainer01, side: THREE.DoubleSide });
+                    mesh_websiteReality03 = new THREE.Mesh(geo_objT_BoxA0, mat_websiteReality03);
+                    mat_websiteReality03.transparent = true;
+                    mat_websiteReality03.alphaMap = BaseContainer01;
+                    mesh_websiteReality03.position.set(0, 0, 0);
+                    // mesh_websiteReality03.position.set(-15000, 0, 0);
+                    mesh_websiteReality03.scale.set(1, 1, 1);
+                    mesh_websiteReality03.rotation.set(0, 0, 0)
+                    // mesh_websiteReality03.rotateX( - Math.PI / 2 );
+
+                    // websiteReality03.lookAt(camera)
+                    
+                    websiteReality03.add(mesh_websiteReality03)
+                
+                let rotate_websiteReality03 = () => {
+                    gsap.to(mesh_websiteReality03.rotation, {
+                        repeat: -1,
+                        duration: 2.5,
+                        delay: .25,
+                        ease: "none",
+                        y: '+= 3.14',
+                    })
+                }
+
+
+                rotate_websiteReality03()
+
+
+
+
+
             
 //..................................................
 //......CCC......TTTTTTTTT...LL.........RRRRR.......
@@ -2449,19 +2608,19 @@
 			scene.add(directionalLight)
 
 
-            controls = new OrbitControls( camera, cssrenderer.domElement );
-            controls.maxPolarAngle = Math.PI * 0.495;
-            // controls.minPolarAngle = Math.PI * 0.495;
-            controls.maxAzimuthAngle = Math.PI * 0.495;
-            controls.target.set( 0, 55, 0 );
-            controls.minDistance = 100.0;
-            controls.maxDistance = 70000.0;
-            controls.screenSpacePanning = true
-            controls.enablePan = false
-            controls.rotateSpeed = 0.000025
-            controls.zoomSpeed = 0.1
-            controls.movementSpeed = 10;
-            controls.update();
+            // controls = new OrbitControls( camera, cssrenderer.domElement );
+            // controls.maxPolarAngle = Math.PI * 0.495;
+            // // controls.minPolarAngle = Math.PI * 0.495;
+            // controls.maxAzimuthAngle = Math.PI * 0.495;
+            // controls.target.set( 0, 55, 0 );
+            // controls.minDistance = 100.0;
+            // controls.maxDistance = 70000.0;
+            // controls.screenSpacePanning = true
+            // controls.enablePan = false
+            // controls.rotateSpeed = 0.000025
+            // controls.zoomSpeed = 0.1
+            // controls.movementSpeed = 10;
+            // controls.update();
             
 
 
@@ -2856,7 +3015,7 @@
 
 
                 UserContainer_root = new THREE.Group()
-                UserContainer_root.position.set(30, 5990, 22950);
+                UserContainer_root.position.set(30, 5990, 23950);
                 UserContainer_root.rotation.set(0, 0, 0)
                 UserContainer_root.scale.set(10, 10, 10)
                 scene.add(UserContainer_root)
@@ -3073,7 +3232,7 @@
 
                             let OrbitDimensions = {
                                 radius: 10,
-                                tube: 0.2049,
+                                tube: 0.0549,
                                 radialSegements: 30,
                                 tubularSegments: 200,
                                 arc: 6.283185307179586,
@@ -3401,6 +3560,27 @@
 				})
 
 
+//................................................................
+//..UU.....UU....I..........HH......H....UU.....UU....DDDDD.......
+//.UUUU...UUUU..III........HHHH...HHHH..UUUU...UUUU..DDDDDDDDD....
+//.UUUU...UUUU..III........HHHH...HHHH..UUUU...UUUU..DDDDDDDDDDD..
+//.UUUU...UUUU..III........HHHH...HHHH..UUUU...UUUU..DDDDDDDDDDD..
+//.UUUU...UUUU..III........HHHH...HHHH..UUUU...UUUU..DDDD...DDDD..
+//.UUUU...UUUU..III........HHHHHHHHHHH..UUUU...UUUU..DDDD....DDD..
+//.UUUU...UUUU..III........HHHHHHHHHHH..UUUU...UUUU..DDDD....DDD..
+//.UUUU...UUUU..III.I-----.HHHHHHHHHHH..UUUU...UUUU..DDDD....DDD..
+//.UUUU...UUUU..III.I-----.HHHHHHHHHHH..UUUU...UUUU..DDDD....DDD..
+//.UUUU...UUUU..III.I-----.HHHH...HHHH..UUUU...UUUU..DDDD...DDDD..
+//.UUUU...UUUU..III.I-----.HHHH...HHHH..UUUU...UUUU..DDDD...DDDD..
+//.UUUUUUUUUUU..III........HHHH...HHHH..UUUUUUUUUUU..DDDDDDDDDDD..
+//.UUUUUUUUUUU..III........HHHH...HHHH..UUUUUUUUUUU..DDDDDDDDDD...
+//..UUUUUUUUU...III........HHHH...HHHH...UUUUUUUUU...DDDDDDDDD....
+//....UUUUU................................UUUUU..................
+//................................................................
+
+
+
+
 
 
 
@@ -3503,10 +3683,10 @@
 			folderOrbits.add(mesh_RealityCenter_Orbit04.rotation, 'y').min(-3.14).max(3.14).step(0.001).name('y-camera')
 			folderOrbits.add(mesh_RealityCenter_Orbit04.rotation, 'z').min(-3.14).max(3.14).step(0.001).name('z-camera')
 
-            const folderPanels = gui.addFolder('pdfTest_root');
-			folderPanels.add(pdfTest_root.position, 'x').min(-10000).max(10000).step(0.01).name('x-camera')
-			folderPanels.add(pdfTest_root.position, 'y').min(-10000).max(10000).step(0.01).name('y-camera')
-			folderPanels.add(pdfTest_root.position, 'z').min(-10000).max(10000).step(0.01).name('z-camera')
+            const folderPanels = gui.addFolder('mesh_RealityCenter_Orbit04');
+			folderPanels.add(mesh_RealityCenter_Orbit04.position, 'x').min(-10000).max(10000).step(0.01).name('x-camera')
+			folderPanels.add(mesh_RealityCenter_Orbit04.position, 'y').min(-10000).max(10000).step(0.01).name('y-camera')
+			folderPanels.add(mesh_RealityCenter_Orbit04.position, 'z').min(-10000).max(10000).step(0.01).name('z-camera')
 
 
 
@@ -3545,6 +3725,9 @@
 			const time = performance.now() * 0.001;
 			const delta = clock.getDelta();
 			controls.update(delta);
+
+
+            // camera.lookAt(7000, 5080, 21000)
 
             
 
