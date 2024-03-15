@@ -192,6 +192,8 @@
             let testButton02
             let testButton03
 
+            let testButton04
+
         
         let root_PageScrollButtons
             let pageUp_button
@@ -217,6 +219,13 @@
 
         let RealityCenter_Orbit05_root
         let RealityCenter_Orbit05, mesh_RealityCenter_Orbit05
+
+
+        let orbiter01_rotator01_root
+            let orbiterObject01_root
+            let orbiterObject01, mesh_orbiterObject01
+
+        let orbiter02_rotator02_root
 
         
 
@@ -335,6 +344,7 @@
         const SceneWallpaper_01 = textureLoader.load('./assets/img/00-WallpaperUX/Covers/whiteCover01.jpg')
         const SceneWallpaper_02 = textureLoader.load('./assets/img/00-WallpaperUX/Covers/whiteCover02.jpg')
         const SceneWallpaper_03 = textureLoader.load('./assets/img/00-WallpaperUX/Covers/whiteCover03.jpg')
+        const whitePureRoom = textureLoader.load('./assets/img/00-WallpaperUX/Covers/pureWhiteWallpaper01.jpeg')
 
 
         // Gears
@@ -1850,6 +1860,168 @@
                             
                             RealityCenter_Orbit04.add(mesh_RealityCenter_Orbit04)
 
+
+                        RealityCenter_Orbit05_root = new THREE.Group()
+                        RealityCenter_Orbit05_root.position.set(0, 0, 0)
+                        RealityCenter_Orbit05_root.rotation.set(0, 0, 0)
+                        RealityCenter_Orbit05_root.scale.set(1, 1, 1)
+                        RealityCenter_OrbitBase_root.add(RealityCenter_Orbit05_root)
+
+                            RealityCenter_Orbit05 = new THREE.Group()
+                            RealityCenter_Orbit05.position.set(0, 6030.20, 0)
+                            RealityCenter_Orbit05.rotation.set(0, 0, 0)
+                            RealityCenter_Orbit05.scale.set(12000, 12000, 12000)
+                            RealityCenter_Orbit05_root.add(RealityCenter_Orbit05)
+
+                            const mat_RealityCenter_Orbit05 = new THREE.MeshBasicMaterial({ map: SceneWallpaper_01, side: THREE.DoubleSide });
+                            mesh_RealityCenter_Orbit05 = new THREE.Mesh(geo_objT_RealityCenterOrbit, mat_RealityCenter_Orbit05);
+
+                                mat_RealityCenter_Orbit05.transparent = true;
+                                mat_RealityCenter_Orbit05.wireframe = false;
+                                mat_RealityCenter_Orbit05.alphaMap = SceneWallpaper_01;
+
+                            mesh_RealityCenter_Orbit05.position.set(0, 0, 0);
+                            mesh_RealityCenter_Orbit05.rotation.set(0, 0, 0)
+                            mesh_RealityCenter_Orbit05.scale.set(0.2, 0.2, 0.2);
+                            mesh_RealityCenter_Orbit05.rotateX( - Math.PI / 2 );
+
+                            // RealityCenter_Orbit05.lookAt(camera)
+                            
+                            RealityCenter_Orbit05.add(mesh_RealityCenter_Orbit05)
+
+
+//................................................................................................
+//.....OOOOOO......RRRRR........BBBBB........I...TTTTTTTTT...EEEEEEEEE...RRRRR.........SSSSSS.....
+//....OOOOOOOOO...RRRRRRRRRR...BBBBBBBBBB...III.TTTTTTTTTTT.EEEEEEEEEEE.RRRRRRRRRR....SSSSSSSS....
+//...OOOOOOOOOO...RRRRRRRRRRR..BBBBBBBBBBB..III.TTTTTTTTTTT.EEEEEEEEEEE.RRRRRRRRRRR..SSSSSSSSSS...
+//..OOOOOOOOOOOO..RRRRRRRRRRR..BBBBBBBBBBB..III.TTTTTTTTTTT.EEEEEEEEEEE.RRRRRRRRRRR..SSSSSSSSSS...
+//..OOOO....OOOO..RRRR...RRRRR.BBBB...BBBB..III.....TTTT....EEEE........RRRR...RRRRRSSSS...SSSSS..
+//..OOOO....OOOOO.RRRR...RRRRR.BBBB..BBBBB..III.....TTTT....EEEEEEEEEE..RRRR...RRRRRSSSSSS........
+//.OOOO......OOOO.RRRRRRRRRRR..BBBBBBBBBBB..III.....TTTT....EEEEEEEEEE..RRRRRRRRRRR..SSSSSSSSS....
+//.OOOO......OOOO.RRRRRRRRRRR..BBBBBBBBBBB..III.....TTTT....EEEEEEEEEE..RRRRRRRRRRR..SSSSSSSSSS...
+//.OOOO......OOOO.RRRRRRRRRRR..BBBBBBBBBBB..III.....TTTT....EEEEEEEEEE..RRRRRRRRRRR....SSSSSSSSS..
+//..OOOO....OOOOO.RRRR..RRRRR..BBBB....BBBB.III.....TTTT....EEEE........RRRR..RRRRR.SSSS..SSSSSS..
+//..OOOO....OOOO..RRRR...RRRR..BBBB...BBBBB.III.....TTTT....EEEE........RRRR...RRRR.SSSS....SSSS..
+//..OOOOOOOOOOOO..RRRR...RRRR..BBBBBBBBBBB..III.....TTTT....EEEEEEEEEEE.RRRR...RRRR.SSSSSSSSSSSS..
+//...OOOOOOOOOO...RRRR...RRRR..BBBBBBBBBBB..III.....TTTT....EEEEEEEEEEE.RRRR...RRRR..SSSSSSSSSS...
+//....OOOOOOOOO...RRRR...RRRRR.BBBBBBBBBB...III.....TTTT....EEEEEEEEEEE.RRRR...RRRRR..SSSSSSSSS...
+//.....OOOOOO..........................................................................SSSSSS.....
+//................................................................................................
+
+
+            orbiter01_rotator01_root = new THREE.Group()
+            orbiter01_rotator01_root.position.set(0, 0, 0)
+            orbiter01_rotator01_root.rotation.set(0, 0, 0)
+            orbiter01_rotator01_root.scale.set(1, 1, 1)
+            scene.add(orbiter01_rotator01_root)
+
+
+            orbiterObject01_root = new THREE.Group()
+            orbiterObject01_root.position.set(0, 6000, 21000)
+            orbiterObject01_root.rotation.set(0, 0, 0)
+            orbiterObject01_root.scale.set(17.5, 17.5, 17.5)
+            scene.add(orbiterObject01_root)
+
+                orbiterObject01 = new THREE.Group()
+                orbiterObject01.position.set(0, 0, 10)
+                orbiterObject01.rotation.set(0, 0, 0)
+                orbiterObject01.scale.set(1, 1, 1)
+                orbiterObject01_root.add(orbiterObject01)
+
+                    const mat_orbiterObject01 = new THREE.MeshBasicMaterial({ map: whitePureRoom, side: THREE.DoubleSide });
+                    mesh_orbiterObject01 = new THREE.Mesh(geo_objT_SphereA0, mat_orbiterObject01);
+                    mat_orbiterObject01.transparent = false;
+                    mat_orbiterObject01.alphaMap = whitePureRoom;
+                    mat_orbiterObject01.AdditiveBlending = true
+                    mat_orbiterObject01.blendColor = 0x000000
+                    mesh_orbiterObject01.position.set(0, 0, 0);
+                    // mesh_orbiterObject01.position.set(-15000, 0, 0);
+                    mesh_orbiterObject01.scale.set(1, 1, 1);
+                    mesh_orbiterObject01.rotation.set(0, 0, 0)
+                    // mesh_orbiterObject01.rotateX( - Math.PI / 2 );
+
+                    // orbiterObject01.lookAt(camera)
+                    
+                    orbiterObject01.add(mesh_orbiterObject01)
+
+            
+            testButton04 = new THREE.Group()
+            testButton04.position.set(-2794.68, 5530, 21000)
+            testButton04.rotation.set(0, 0, 0)
+            testButton04.scale.set(1, 1, 1)
+            scene.add(testButton04)
+
+            // let moveCamera_unknown = () => {
+            //     gsap.to(camera.position, {
+            //         duration: 2.5,
+            //         delay: .25,
+            //         y: -105,
+            //     })
+
+            //     gui.hide()
+
+            //     console.log("button pressed")
+            // }
+
+
+            let rotateOrbiter01_AroundCenterPointClockwise = () => {
+                orbiter01_rotator01_root.attach(orbiterObject01)
+
+                
+
+                gsap.to(orbiter01_rotator01_root.rotation, {
+                    duration: 2.5,
+                    delay: .25,
+                    y: '-= 0.26166666666',
+                })
+
+            }
+
+
+            let rotateOrbiter01_AroundCenterPointClockwiseLong = () => {
+                orbiter01_rotator01_root.attach(orbiterObject01)
+
+                gsap.to(orbiter01_rotator01_root.rotation, {
+                    repeat: -1,
+                    ease: "none",
+                    duration: 5,
+                    delay: .25,
+                    y: '-= 6.28',
+                })
+
+
+                // gsap.to(orbiter01_rotator01_root.rotation, {
+                //     repeat: -1,
+                //     duration: 2.5,
+                //     delay: .50,
+                //     y: '-= 3.14',
+                // })
+
+                
+            }
+
+            rotateOrbiter01_AroundCenterPointClockwiseLong()
+
+
+            testButton04.add(
+
+                    new TechIcon(
+                    0, 0, 0,
+                    0, 0, 0,
+                    2.5, 2.5, 2.5,
+                    'DefaultTechIconId', 'DefaultTechIconClassName',
+                    'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+                    'DefaultImgId', 'DefaultImgClassName',
+                    'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+                    "./assets/icons/00-Official/UI/Isometric/tools/target1.svg", "",
+                    rotateOrbiter01_AroundCenterPointClockwiseLong, 
+                    "ShowΔ",
+                    "Toggle from here or main menu top left"
+
+                )
+            )
+        
+
             
 
 
@@ -1902,6 +2074,26 @@
 
 
 
+
+
+//......................................................................................................
+//..PPPPP.........AAA.......ARRRR......RRRTTTTTTT..TI.......CCC.......L..........EEEEEEEE.....SSSSS.....
+//.PPPPPPPPPP....AAAAA.....AARRRRRRRR.RRRRTTTTTTTTTTII...CCCCCCCCC...CLL........LEEEEEEEEE..ESSSSSSSS...
+//.PPPPPPPPPP....AAAAA.....AARRRRRRRRRRRRRTTTTTTTTTTII..ICCCCCCCCCC..CLL........LEEEEEEEEE..ESSSSSSSSS..
+//.PPPPPPPPPPP..AAAAAAA....AARRRRRRRRRRRRRTTTTTTTTTTII..ICCCCCCCCCC..CLL........LEEEEEEEEE.EESSSSSSSSS..
+//.PPPP...PPPP..AAAAAAA....AAR....RRRR....TTTT....TTII.IICCC...CCCCC.CLL........LEE........EESS...SSSS..
+//.PPPP...PPPP.PAAAAAAA....AAR....RRRR....TTTT....TTII.IICC.....CCCC.CLL........LEEEEEEEEE.EESSSS.......
+//.PPPPPPPPPPP.PAAAAAAAA...AARRRRRRRRR....TTTT....TTII.IICC..........CLL........LEEEEEEEEE.EESSSSSSS....
+//.PPPPPPPPPPP.PAAA.AAAA...AARRRRRRRR.....TTTT....TTII.IICC..........CLL........LEEEEEEEEE..ESSSSSSSSS..
+//.PPPPPPPPPP.PPAAAAAAAA...AARRRRRRRRR....TTTT....TTII.IICC..........CLL........LEEEEEEEEE...SSSSSSSSS..
+//.PPPPPPPPP..PPAAAAAAAAA..AAR..RRRRRR....TTTT....TTII.IICC.....CCCC.CLL........LEE........EESS..SSSSS..
+//.PPPP.......PPAAAAAAAAA..AAR....RRRR....TTTT....TTII.IICCC...CCCC..CLL........LEE........EESS....SSS..
+//.PPPP......PPPAAAAAAAAA..AAR....RRRR....TTTT....TTII..ICCCCCCCCCC..CLLLLLLLLL.LEEEEEEEEEEEESSSSSSSSS..
+//.PPPP......PPPA....AAAAA.AAR....RRRR....TTTT....TTII..ICCCCCCCCCC..CLLLLLLLLL.LEEEEEEEEEEEESSSSSSSSS..
+//.PPPP......PPPA.....AAAA.AAR....RRRRR...TTTT....TTII...CCCCCCCCC...CLLLLLLLLL.LEEEEEEEEEE.ESSSSSSSS...
+//.........................................................CCCCC..............................SSSSSS....
+//......................................................................................................
+
             // #################################################################
 				// #################################################################
 
@@ -1910,6 +2102,9 @@
 				// Search.Particles
 				// Particle Geometry - Defined @ beginnning of init()
 				// ******************************************************
+
+
+
 				const particlesGeometry = new THREE.BufferGeometry();
 				const count = 10000
 				const positions = new Float32Array(count * 3);

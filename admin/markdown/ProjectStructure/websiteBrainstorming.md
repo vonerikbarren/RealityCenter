@@ -15,7 +15,7 @@ Calendar
     \- Mon[08.11.24] - SubjectiveReality +
     \- Tue[08.12.24] - ObjectiveReality
     \- Wed[08.13.24] - PortfolioTemplate
-    \- Thu[08.14.24] - 
+    \- Thu[08.14.24] - ****
     \- Fri[08.15.24]
     \- Sat[08.16.24]
 
