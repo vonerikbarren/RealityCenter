@@ -33,13 +33,13 @@
 
          <video id="none" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/PlexusAnimations/Animation_ParticlesWhite01.mp4" style="display: none" ></video>
 
-         <video id="none" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/WeatherAnimations/clouds_Sphere01.mp4" style="display: none" ></video>
+         <video id="openingVideo" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/SphereAnimations/ColorfulDiamonds.mp4" style="display: none" ></video>
 
          <video id="none" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/SphereAnimations/Equations3.mp4" style="display: none" ></video>
 
-         <video id="openingVideo" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/TunnelAnimations/GalaxyTunnel01.mp4" style="display: none" ></video>
+         <video id="none" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/TunnelAnimations/TechTunnelA03.mp4" style="display: none" ></video>
 
-         <video id="userVideo" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/PersonalAnimations/userActionBackwards_SpiralUp_SpiralDown_stars01.mp4" style="display: none" ></video>
+         <video id="userVideo" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/PersonalAnimations/ΔExplanationA01.mp4" style="display: none" ></video>
 	</div>
 
     <!-- ./assets/video/SphereAnimations/Equations3.mp4 -->
@@ -1561,6 +1561,7 @@
 
 				const videoOpening = document.getElementById('openingVideo')
 				const videoOpening_Tex = new THREE.VideoTexture(videoOpening)
+                videoOpening_Tex.format = THREE.RGBAFormat
 				const videoOpening_Mat = new THREE.MeshBasicMaterial(
 					{
 						map: videoOpening_Tex,
@@ -1574,7 +1575,7 @@
 					videoOpening_Mat
 				)
 
-                videoOpening_Mat.transparent = false
+                videoOpening_Mat.transparent = true
 
 				mesh_CenterBrain_VideoSphere_Opening.position.set(0, 0, 0)
 				mesh_CenterBrain_VideoSphere_Opening.rotation.set(0, 1.565, 0)
@@ -1587,6 +1588,7 @@
                 let Toggle_VideoSphere = () => {
                     if (mesh_CenterBrain_VideoSphere_Opening.scale.x === 10000) {
                         gsap.to(mesh_CenterBrain_VideoSphere_Opening.scale, {
+
 							repeat: 0,
 							duration: 2.5,
 							delay: 0,
@@ -1595,6 +1597,7 @@
                             z: 0.5
 							
 						})
+                        
                     } else if (mesh_CenterBrain_VideoSphere_Opening.scale.x === 0.5) {
                         gsap.to(mesh_CenterBrain_VideoSphere_Opening.scale, {
 							repeat: 0,
@@ -2033,7 +2036,7 @@
 			const geo_timeSphere_L4 = new THREE.SphereGeometry(305500, 32, 32)
 			const mat_timeSphere_L4 = new THREE.MeshBasicMaterial({ map: SceneWallpaper_01, side: THREE.DoubleSide });
 			mesh_timeSphere_L4 = new THREE.Mesh(geo_timeSphere_L4, mat_timeSphere_L4)
-			mat_timeSphere_L4.transparent = true;
+			mat_timeSphere_L4.transparent = false;
 			mat_timeSphere_L4.alphaMap = SceneWallpaper_01
 			mat_timeSphere_L4.wireframe = false;
 			mesh_timeSphere_L4.position.set(0, 0, 200)
@@ -2173,30 +2176,47 @@
 
                 rotateParticles()
 
+//.................................................................
+//....SSSSSS........CCC.......EEEEEEEEE...NN......N....EEEEEEEEE...
+//...SSSSSSSS.....CCCCCCCC...EEEEEEEEEEE.NNNN....NNN..EEEEEEEEEEE..
+//..SSSSSSSSSS...CCCCCCCCCC..EEEEEEEEEEE.NNNNN...NNN..EEEEEEEEEEE..
+//..SSSSSSSSSS..CCCCCCCCCCC..EEEEEEEEEEE.NNNNN...NNN..EEEEEEEEEEE..
+//.SSSS...SSSSS.CCCC...CCCCC.EEEE........NNNNNN..NNN..EEEE.........
+//.SSSSSS......SCCCC....CCCC.EEEEEEEEEE..NNNNNNN.NNN..EEEEEEEEEE...
+//..SSSSSSSSS..SCCC..........EEEEEEEEEE..NNNNNNN.NNN..EEEEEEEEEE...
+//..SSSSSSSSSS.SCCC..........EEEEEEEEEE..NNN.NNNNNNN..EEEEEEEEEE...
+//....SSSSSSSSSSCCC..........EEEEEEEEEE..NNN.NNNNNNN..EEEEEEEEEE...
+//.SSSS..SSSSSSSCCCC....CCCC.EEEE........NNN..NNNNNN..EEEE.........
+//.SSSS....SSSS.CCCC...CCCCC.EEEE........NNN..NNNNNN..EEEE.........
+//.SSSSSSSSSSSS.CCCCCCCCCCC..EEEEEEEEEEE.NNN...NNNNN..EEEEEEEEEEE..
+//..SSSSSSSSSS...CCCCCCCCCC..EEEEEEEEEEE.NNN...NNNNN..EEEEEEEEEEE..
+//...SSSSSSSSS....CCCCCCCC...EEEEEEEEEEE.NNN....NNNN..EEEEEEEEEEE..
+//....SSSSSS.......CCCCC...........................................
+//.................................................................
+
+
+                
 
 
 
 
-
-
-
-            //.................................................................................................
-            //..WW....WWW....WW...EEEEEEEEE...BBBBB.........SSSSSS.....I...TTTTTTTTT...EEEEEEEEE....SSSSSS.....
-            //.WWWW..WWWWW..WWWW.EEEEEEEEEEE.BBBBBBBBBB....SSSSSSSS...III.ITTTTTTTTTT.EEEEEEEEEEE..SSSSSSSS....
-            //.WWWW..WWWWW..WWWW.EEEEEEEEEEE.BBBBBBBBBBB..SSSSSSSSSS..III.ITTTTTTTTTT.EEEEEEEEEEE.SSSSSSSSSS...
-            //.WWWW..WWWWW..WWWW.EEEEEEEEEEE.BBBBBBBBBBB..SSSSSSSSSS..III.ITTTTTTTTTT.EEEEEEEEEEE.SSSSSSSSSS...
-            //..WWWW.WWWWW.WWWW..EEEE........BBBB...BBBB.SSSS...SSSSS.III.....TTTT....EEEE.......ESSS...SSSSS..
-            //..WWWWWWWWWWWWWWW..EEEEEEEEEE..BBBB..BBBBB.SSSSSS.......III.....TTTT....EEEEEEEEEE.ESSSSS........
-            //..WWWWWWWWWWWWWWW..EEEEEEEEEE..BBBBBBBBBBB..SSSSSSSSS...III.....TTTT....EEEEEEEEEE..SSSSSSSSS....
-            //..WWWWWWWWWWWWWWW..EEEEEEEEEE..BBBBBBBBBBB..SSSSSSSSSS..III.....TTTT....EEEEEEEEEE..SSSSSSSSSS...
-            //...WWWWWW.WWWWWW...EEEEEEEEEE..BBBBBBBBBBB....SSSSSSSSS.III.....TTTT....EEEEEEEEEE....SSSSSSSSS..
-            //...WWWWWW.WWWWWW...EEEE........BBBB....BBBBSSSS..SSSSSS.III.....TTTT....EEEE.......ESSS..SSSSSS..
-            //...WWWWWW.WWWWWW...EEEE........BBBB...BBBBBSSSS....SSSS.III.....TTTT....EEEE.......ESSS....SSSS..
-            //....WWWWW.WWWWW....EEEEEEEEEEE.BBBBBBBBBBB.SSSSSSSSSSSS.III.....TTTT....EEEEEEEEEEEESSSSSSSSSSS..
-            //....WWWW...WWWW....EEEEEEEEEEE.BBBBBBBBBBB..SSSSSSSSSS..III.....TTTT....EEEEEEEEEEE.SSSSSSSSSS...
-            //....WWWW...WWWW....EEEEEEEEEEE.BBBBBBBBBB....SSSSSSSSS..III.....TTTT....EEEEEEEEEEE..SSSSSSSSS...
-            //..............................................SSSSSS..................................SSSSSS.....
-            //.................................................................................................
+//.....................................................................................
+//..WW....WWW....WW...EEEEEEEEE...BBBBB.........SSSSSS.....I...TTTTTTTTT...EEEEEEEEE...
+//.WWWW..WWWWW..WWWW.EEEEEEEEEEE.BBBBBBBBBB....SSSSSSSS...III.ITTTTTTTTTT.EEEEEEEEEEE..
+//.WWWW..WWWWW..WWWW.EEEEEEEEEEE.BBBBBBBBBBB..SSSSSSSSSS..III.ITTTTTTTTTT.EEEEEEEEEEE..
+//.WWWW..WWWWW..WWWW.EEEEEEEEEEE.BBBBBBBBBBB..SSSSSSSSSS..III.ITTTTTTTTTT.EEEEEEEEEEE..
+//..WWWW.WWWWW.WWWW..EEEE........BBBB...BBBB.SSSS...SSSSS.III.....TTTT....EEEE.........
+//..WWWWWWWWWWWWWWW..EEEEEEEEEE..BBBB..BBBBB.SSSSSS.......III.....TTTT....EEEEEEEEEE...
+//..WWWWWWWWWWWWWWW..EEEEEEEEEE..BBBBBBBBBBB..SSSSSSSSS...III.....TTTT....EEEEEEEEEE...
+//..WWWWWWWWWWWWWWW..EEEEEEEEEE..BBBBBBBBBBB..SSSSSSSSSS..III.....TTTT....EEEEEEEEEE...
+//...WWWWWW.WWWWWW...EEEEEEEEEE..BBBBBBBBBBB....SSSSSSSSS.III.....TTTT....EEEEEEEEEE...
+//...WWWWWW.WWWWWW...EEEE........BBBB....BBBBSSSS..SSSSSS.III.....TTTT....EEEE.........
+//...WWWWWW.WWWWWW...EEEE........BBBB...BBBBBSSSS....SSSS.III.....TTTT....EEEE.........
+//....WWWWW.WWWWW....EEEEEEEEEEE.BBBBBBBBBBB.SSSSSSSSSSSS.III.....TTTT....EEEEEEEEEEE..
+//....WWWW...WWWW....EEEEEEEEEEE.BBBBBBBBBBB..SSSSSSSSSS..III.....TTTT....EEEEEEEEEEE..
+//....WWWW...WWWW....EEEEEEEEEEE.BBBBBBBBBB....SSSSSSSSS..III.....TTTT....EEEEEEEEEEE..
+//..............................................SSSSSS.................................
+//.....................................................................................
 
 
             websiteGroup01_root = new THREE.Group()
