@@ -1,0 +1,4101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Δ-Center</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<link type="text/css" rel="stylesheet" href="./assets/css/main.css">
+    <link type="text/css" rel="stylesheet" href="./assets/css/CSS3D_Assets/01-Tech_Icons/TechIcons.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/EasePack.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/CustomEase.min.js"></script>
+
+</head>
+
+<body>
+
+	<div id="container"></div>
+	<div id="info">
+		<!-- <a href="" target="_blank" rel="noopener">Von'Erik Barren-Tucker</a> - Portfolio Prototype
+       
+
+
+		<div class="pressStart">Dimensions of Time</div> -->
+	</div>
+
+	<div class="virtualkeyboard-container-L0">
+         <!-- VideoDomain02: Search_html_video01 -->
+         <video id="none" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/TunnelAnimations/GalaxyTunnel01.mp4" style="display: none" ></video>
+
+         <video id="none" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/PlexusAnimations/Animation_ParticlesWhite01.mp4" style="display: none" ></video>
+
+         <video id="openingVideo" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/TunnelAnimations/GalaxyTunnel01.mp4" style="display: none" ></video>
+
+         <video id="none" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/SphereAnimations/Equations3.mp4" style="display: none" ></video>
+
+         <video id="none" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/TunnelAnimations/TechTunnelA03.mp4" style="display: none" ></video>
+
+         <video id="userVideo" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/PersonalAnimations/ΔExplanationA01.mp4" style="display: none" ></video>
+	</div>
+
+    <!-- ./assets/video/SphereAnimations/Equations3.mp4 -->
+
+	<!-- <script src="./THREE_Scene.js"></script> -->
+
+	<script type="module">
+
+        //....................................................................................
+        //..I....MMM.....MMM....PPPPP.........OOOOOO......RRRRR.......RTTTTTTTT....SSSSSS.....
+        //.III..IMMMM...MMMMM..PPPPPPPPPP....OOOOOOOOO...ORRRRRRRRR..RRTTTTTTTTT..SSSSSSSS....
+        //.III..IMMMM...MMMMM..PPPPPPPPPP...OOOOOOOOOO...ORRRRRRRRRR.RRTTTTTTTTT.SSSSSSSSSS...
+        //.III..IMMMMM..MMMMM..PPPPPPPPPPP.POOOOOOOOOOO..ORRRRRRRRRR.RRTTTTTTTTT.SSSSSSSSSS...
+        //.III..IMMMMM.MMMMMM..PPPP...PPPP.POOO....OOOO..ORRR...RRRRR....TTTT...TSSS...SSSSS..
+        //.III..IMMMMM.MMMMMM..PPPP...PPPP.POOO....OOOOO.ORRR...RRRRR....TTTT...TSSSSS........
+        //.III..IMMMMM.MMMMMM..PPPPPPPPPPPPPOO......OOOO.ORRRRRRRRRR.....TTTT....SSSSSSSSS....
+        //.III..IMMMMM.MMMMMM..PPPPPPPPPPPPPOO......OOOO.ORRRRRRRRRR.....TTTT....SSSSSSSSSS...
+        //.III..IMMMMMMMMMMMM..PPPPPPPPPP.PPOO......OOOO.ORRRRRRRRRR.....TTTT......SSSSSSSSS..
+        //.III..IMM.MMMMMMMMM..PPPPPPPPP...POOO....OOOOO.ORRR..RRRRR.....TTTT...TSSS..SSSSSS..
+        //.III..IMM.MMMMM.MMM..PPPP........POOO....OOOO..ORRR...RRRR.....TTTT...TSSS....SSSS..
+        //.III..IMM.MMMMM.MMM..PPPP........POOOOOOOOOOO..ORRR...RRRR.....TTTT...TSSSSSSSSSSS..
+        //.III..IMM.MMMMM.MMM..PPPP.........OOOOOOOOOO...ORRR...RRRR.....TTTT....SSSSSSSSSS...
+        //.III..IMM.MMMMM.MMM..PPPP..........OOOOOOOOO...ORRR...RRRRR....TTTT.....SSSSSSSSS...
+        //....................................OOOOOO...............................SSSSSS.....
+        //....................................................................................
+
+		import * as THREE from './libraries/modules/three.module.js';
+
+		import Stats from './libraries/modules/stats.module.js';
+
+		import { GUI } from './libraries/config/lil-gui.module.min.js';
+		import { OrbitControls } from './libraries/controllers/OrbitControls.js';
+		import { FirstPersonControls } from './libraries/controllers/FirstPersonControls.js';
+		import { Water } from './assets/objects/Water.js';
+		import { Sky } from './assets/objects/Sky.js';
+		import { GLTFLoader } from './libraries/loaders/GLTFLoader.js';
+		import { DRACOLoader } from './libraries/loaders/DRACOLoader.js'
+        import { CSS2DRenderer, CSS2DObject } from './libraries/renderers/CSS2DRenderer.js';
+        import { CSS3DRenderer, CSS3DObject } from './libraries/renderers/CSS3DRenderer.js';
+		const clock = new THREE.Clock();
+
+
+        //........................................................
+        //..VV......VV.....AAA.......RRRRR.......RI.....SSSSS.....
+        //.VVVV....VVVV...AAAAA.....ARRRRRRRRR..RRII..ISSSSSSSS...
+        //.VVVV....VVVV...AAAAA.....ARRRRRRRRRR.RRII..ISSSSSSSSS..
+        //.VVVVV...VVVV..AAAAAAA....ARRRRRRRRRR.RRII.IISSSSSSSSS..
+        //..VVVV..VVVV...AAAAAAA....ARR....RRRR.RRII.IISS...SSSS..
+        //..VVVV..VVVV..AAAAAAAA....ARR....RRRR.RRII.IISSSS.......
+        //..VVVVV.VVVV..AAAAAAAAA...ARRRRRRRRRR.RRII.IISSSSSSS....
+        //...VVVVVVVV...AAAA.AAAA...ARRRRRRRRR..RRII..ISSSSSSSSS..
+        //...VVVVVVVV..VAAAAAAAAA...ARRRRRRRRRR.RRII...SSSSSSSSS..
+        //....VVVVVVV..VAAAAAAAAAA..ARR..RRRRRR.RRII.IISS..SSSSS..
+        //....VVVVVV...VAAAAAAAAAA..ARR....RRRR.RRII.IISS....SSS..
+        //....VVVVVV..VVAAAAAAAAAA..ARR....RRRR.RRII.IISSSSSSSSS..
+        //.....VVVVV..VVAA....AAAAA.ARR....RRRR.RRII.IISSSSSSSSS..
+        //.....VVVV...VVAA.....AAAA.ARR....RRRRRRRII..ISSSSSSSS...
+        //..............................................SSSSSS....
+        //........................................................
+
+		let container, stats;
+		let camera, scene, renderer;
+        let cssrenderer
+		let controls, water, sun, mesh, ΔΦ, ΔΩ;
+		let Φ, MeshHDC_01, meshA1, goldenGearTest, goldenGearTest2;
+		let neoncircle;
+		let timeSphere, mesh_timeSphere_L0, mesh_Reality_A0, mesh_timeSphere_L1, mesh_lightContainer_A0;
+		let mesh_timeSphere_L2, mesh_timeSphere_L3, mesh_TimeSphereHourBase_L0
+		let animatedTime, mesh_timeSphere_L4
+        let newSpeedStrengthParams
+        let Control_newSpeedStrengthParams
+        let particles
+        
+
+
+
+        
+        // Test Object Group
+        let objectTestingGroup
+            let objT_CircleA1
+			let mesh_objT_CircleA1
+
+			let objT_PlaneA1
+			let mesh_objT_PlaneA1
+
+			let objT_RingA0
+			let mesh_objT_RingA0
+
+			let objT_SphereA0
+			let mesh_objT_SphereA0
+
+			let objT_BoxA0
+			let mesh_objT_BoxA0
+
+			let objT_ConeA0
+			let mesh_objT_ConeA0
+
+			let objT_PyramidA0
+			let mesh_objT_PyramidA0
+
+			let objT_DiamondA0
+			let mesh_objT_DiamondA0
+
+			let objT_TorusA0
+			let mesh_objT_TorusA0
+
+			let objT_CylinderClosedA0
+			let mesh_objT_CylinderClosedA0
+
+			let objT_CylinderOpenedA0
+			let mesh_objT_CylinderOpenedA0
+
+        // Opening Video
+			let CenterBrain_VideoSphere_Opening
+			let mesh_CenterBrain_VideoSphere_Opening
+			let openingButtonIconGroup
+			let OpeningMeshA
+			let mesh_OpeningMeshA
+			let UpdatedTechTileV3_Opening
+			let openingTimeΔ
+			let openingButtonIcon
+
+
+
+        // -------------------------------------------------------------------
+
+        let root_WebsitePanel01
+        let WebsitePanel01, mesh_WebsitePanel01
+
+        let websiteGroup01_root
+            let websiteTemplateC01, mesh_websiteTemplateC01
+            let websiteTemplateC02, mesh_websiteTemplateC02
+            let websiteTemplateC03, mesh_websiteTemplateC03
+        
+        let websiteRealities_root
+            let websiteReality01, mesh_websiteReality01
+            let websiteReality02, mesh_websiteReality02
+            let websiteReality03, mesh_websiteReality03
+
+        let pdfTest_root
+        let googSheet_root
+        let pdfFileTest_root
+
+        let originalPortfolio_site_root
+            let originalPortfolio_site
+
+
+        let specialButtonGroup
+            let testButton01
+            let testButton02
+            let testButton03
+
+            let testButton04
+
+        
+        let root_PageScrollButtons
+            let pageUp_button
+            let pageDown_button
+
+
+        // Settings Items
+        let rotator_root
+
+
+        let RealityCenter_OrbitBase_root
+        let RealityCenter_Orbit01_root
+        let RealityCenter_Orbit01, mesh_RealityCenter_Orbit01
+
+        let RealityCenter_Orbit02_root
+        let RealityCenter_Orbit02, mesh_RealityCenter_Orbit02
+
+        let RealityCenter_Orbit03_root
+        let RealityCenter_Orbit03, mesh_RealityCenter_Orbit03
+
+        let RealityCenter_Orbit04_root
+        let RealityCenter_Orbit04, mesh_RealityCenter_Orbit04
+
+        let RealityCenter_Orbit05_root
+        let RealityCenter_Orbit05, mesh_RealityCenter_Orbit05
+
+
+        let orbiter01_rotator01_root
+            let orbiterObject01_root
+            let orbiterObject01, mesh_orbiterObject01
+
+        let orbiter02_rotator02_root
+
+        
+
+
+        // Presentation Container
+        let UserContainer_root
+                let UserContainer_MediaContainer_root
+
+                let UserContainer_MediaContainer_baseA
+                    let UserContainer_MediaContainer_Media, mesh_UserContainer_MediaContainer_Media
+                        
+                let UserContainer_MediaContainer_baseB
+                    let UserContainer_DecorativeCircle01, mesh_UserContainer_DecorativeCircle01
+                    let UserContainer_DecorativeCircle02, mesh_UserContainer_DecorativeCircle02
+                    let UserContainer_DecorativeCircle03, mesh_UserContainer_DecorativeCircle03
+                    
+
+                let UserContainer_MediaContainer_baseC
+                    let UserContainer_PersonalSpace_root
+                    let UserContainer_PersonalSpace_Space, mesh_UserContainer_PersonalSpace_Space
+                            
+
+                let UserContainer_MediaContainer_baseD
+                    let UserContainer_Orbit01_root
+                    let UserContainer_Orbit01_TheOrbit01, mesh_UserContainer_Orbit01_TheOrbit01
+                        let UserContainer_Δ01, mesh_UserContainer_Δ01
+                        let UserContainer_Δ02, mesh_UserContainer_Δ02
+                        let UserContainer_Δ03, mesh_UserContainer_Δ03
+                        let UserContainer_Δ04, mesh_UserContainer_Δ04
+
+
+                    let UserContainer_Orbit02_root, mesh_UserContainer_Orbit02_root
+                    let UserContainer_Orbit03_root, mesh_UserContainer_Orbit03_root
+
+
+        let Hud_root
+            let Hud_Menubar
+            let Hud_
+
+        //....................................................................
+        //.............DDDDD................OOOOOO......BBBBB............JJ...
+        //...333333...DDDDDDDDD............OOOOOOOOO...BBBBBBBBBB.......JJJJ..
+        //..33333333..DDDDDDDDDDD.........OOOOOOOOOO...BBBBBBBBBBB......JJJJ..
+        //.333333333..DDDDDDDDDDD........OOOOOOOOOOOO..BBBBBBBBBBB......JJJJ..
+        //.3333.3333..DDDD...DDDDD.......OOOO....OOOO..BBBB...BBBB......JJJJ..
+        //.3333.3333..DDDD....DDDD.......OOOO....OOOOO.BBBB..BBBBB......JJJJ..
+        //....333333..DDDD....DDDD......-OOO......OOOO.BBBBBBBBBBB......JJJJ..
+        //....333333..DDDD....DDDDD------OOO......OOOO.BBBBBBBBBBB......JJJJ..
+        //....3333333.DDDD....DDDDD------OOO......OOOO.BBBBBBBBBBB.BJJ..JJJJ..
+        //.3333..3333.DDDD...DDDDDD-----.OOOO....OOOOO.BBBB....BBBBBJJJ.JJJJ..
+        //.3333..3333.DDDD...DDDD.D-----.OOOO....OOOO..BBBB...BBBBBBJJJ.JJJJ..
+        //.3333333333.DDDDDDDDDDD........OOOOOOOOOOOO..BBBBBBBBBBB.BJJJJJJJJ..
+        //.333333333..DDDDDDDDDD..........OOOOOOOOOO...BBBBBBBBBBB.BJJJJJJJJ..
+        //..33333333..DDDDDDDDD............OOOOOOOOO...BBBBBBBBBB...JJJJJJJ...
+        //....3333..........................OOOOOO...................JJJJJ....
+        //....................................................................
+		
+
+		const particlesGeometryA = new THREE.BufferGeometry()
+
+		const dracoLoader = new DRACOLoader()
+		dracoLoader.setDecoderPath('/draco/')
+
+		const gltfLoader = new GLTFLoader()
+		gltfLoader.setDRACOLoader(dracoLoader);
+
+		let mixer = null
+
+		gltfLoader.load('./assets/models/PanelTest.glb', (gltf) => {
+			scene.add(gltf.scene)
+
+		})
+
+
+        //.........................................................................
+        //..I....MMM.....MMM.......AAA..........GGGGG......EEEEEEEEE....SSSSSS.....
+        //.III..IMMMM...MMMMM.....AAAAA.......GGGGGGGGG...EEEEEEEEEEE..SSSSSSSS....
+        //.III..IMMMM...MMMMM.....AAAAA......GGGGGGGGGG...EEEEEEEEEEE.ESSSSSSSSS...
+        //.III..IMMMMM..MMMMM....AAAAAAA....GGGGGGGGGGGG..EEEEEEEEEEE.ESSSSSSSSS...
+        //.III..IMMMMM.MMMMMM....AAAAAAA....GGGG....GGGG..EEEE.......EESS...SSSSS..
+        //.III..IMMMMM.MMMMMM....AAAAAAA...AGGGG....GGGG..EEEEEEEEEE.EESSSS........
+        //.III..IMMMMM.MMMMMM...AAAAAAAAA..AGGG...GGGGGG..EEEEEEEEEE..ESSSSSSSS....
+        //.III..IMMMMM.MMMMMM...AAAA.AAAA..AGGG...GGGGGG..EEEEEEEEEE..ESSSSSSSSS...
+        //.III..IMMMMMMMMMMMM...AAAAAAAAAA.AGGG...GGGGGG..EEEEEEEEEE....SSSSSSSSS..
+        //.III..IMM.MMMMMMMMM..AAAAAAAAAAA.AGGGG..GGGGGG..EEEE.......EESS..SSSSSS..
+        //.III..IMM.MMMMM.MMM..AAAAAAAAAAA..GGGG....GGGG..EEEE.......EESS....SSSS..
+        //.III..IMM.MMMMM.MMM..AAAAAAAAAAAA.GGGGGGGGGGGG..EEEEEEEEEEEEESSSSSSSSSS..
+        //.III..IMM.MMMMM.MMM.MAAAA....AAAA..GGGGGGGGGGG..EEEEEEEEEEE.ESSSSSSSSS...
+        //.III..IMM.MMMMM.MMM.MAAA.....AAAA...GGGGGGGGGG..EEEEEEEEEEE..SSSSSSSSS...
+        //.....................................GGGG.....................SSSSSS.....
+        //.........................................................................
+
+		const textureLoader = new THREE.TextureLoader();
+		// const testImg01 = textureLoader.load('./assets/img/Purple_Tech01.jpeg')
+
+		// |- Glitter_Pixels.jpeg
+		const testImg01 = textureLoader.load('./assets/img/backgrounds/grid_01.jpg')
+
+		const testImg02 = textureLoader.load('./assets/img/backgrounds/01_Purple_Galaxy.jpeg')
+
+		const clockPNG = textureLoader.load('./assets/img/05-Env/Clocks/Clock03_A1.png')
+
+		const gear01_png = textureLoader.load('./assets/img/03-HudUI/HudGears/gearGold_Default02/RealityGearA06.png')
+
+
+		// const neoncircle01 = textureLoader.load('./assets/img/gears/neoncircle.png')
+
+		// Test ui_Folder_01
+		const neoncircle01 = textureLoader.load('./assets/img/backgrounds/InfiniteContainer.jpg')
+
+        // ParticleTextures
+        const particleTexture01 = textureLoader.load('./assets/textures/textures_lib/particles-A1/1.png')
+		const particleTexture02 = textureLoader.load('./assets/textures/textures_lib/particles-B1/window_04.png')
+
+        // StandardImports
+        const SceneWallpaper_01 = textureLoader.load('./assets/img/00-WallpaperUX/Covers/whiteCover01.jpg')
+        const SceneWallpaper_02 = textureLoader.load('./assets/img/00-WallpaperUX/Covers/whiteCover02.jpg')
+        const SceneWallpaper_03 = textureLoader.load('./assets/img/00-WallpaperUX/Covers/whiteCover03.jpg')
+        const whitePureRoom = textureLoader.load('./assets/img/00-WallpaperUX/Covers/pureWhiteWallpaper01.jpeg')
+
+
+        // Gears
+        const BaseUI_Gear01 = textureLoader.load('./assets/img/02-UserUI/04-Logo/WhiteGear01.png')
+        const BaseUI_Gear02 = textureLoader.load('./assets/img/02-UserUI/04-Logo/WhiteGear01.png')
+        const BaseUI_LightGear01 = textureLoader.load('./assets/img/01-BaseUI/L00-BaseRoot/BaseUI-Gear02.png')
+        const BaseUI_LightTechCircle01 = textureLoader.load('./assets/img/01-BaseUI/L00-BaseRoot/BaseUI-LightTechCircle01.png')
+
+        // ΔΙcons
+        const ΔIcon01_TheWeb = textureLoader.load('./assets/icons/Websites01/002-globe_grid.png')
+        const ΔIcon02_Schedule = textureLoader.load('./assets/icons/Websites01/003-schedule.png')
+        const ΔIcon03_Location = textureLoader.load('./assets/icons/Websites01/003-schedule.png')
+        const ΔIcon04_Settings = textureLoader.load('./assets/icons/Websites01/078-settings.png')
+
+        // ΔIcons_containers
+        const ΔIconConainer_rootSingle01 = textureLoader.load('./assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png')
+        const ΔIconConainer_rootGroup01 = textureLoader.load('./assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic01.png')
+        const ΔIconConainer_complexDesignBlack01 = textureLoader.load('./assets/img/10-ObjectUI/02-TechTiles/DigiTechTile00/ComplexBlackDesign01.png')
+        const ΔIconConainer_complexDesignBlack02 = textureLoader.load('./assets/img/10-ObjectUI/02-TechTiles/DigiTechTile00/ComplexBlackDesign02.png')
+
+
+		// TimeSphereImgs
+		const timeSphereImg_01 = textureLoader.load('./assets/img/00-WallpaperUX/Specials/T01-TimeTravel.png')
+		const realitySphereImg_01 = textureLoader.load('./assets/img/backgrounds/TimeTravel.png')
+		const realitySphereImg_02 = textureLoader.load('./assets/img/backgrounds/marbleWhite.jpg')
+		const realitySphereImg_03 = textureLoader.load('./assets/img/00-WallpaperUX/Specials/T01-TimeTravel.png')
+		const realitySphereImg_04 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/Grid19.jpg')
+
+
+        // WebsiteTemplates
+
+        const img_websiteTemplateC01 = textureLoader.load('./assets/img/10-ObjectUI/08-Panels_Websites/Bundle03/1x/WebsiteTemplate_C01.png')
+        const img_websiteTemplateC02 = textureLoader.load('./assets/img/10-ObjectUI/08-Panels_Websites/Bundle03/1x/WebsiteTemplate_C02.png')
+        const img_websiteTemplateC03 = textureLoader.load('./assets/img/10-ObjectUI/08-Panels_Websites/Bundle03/1x/WebsiteTemplate_C03.png')
+
+
+        // ContainerBase
+        const BaseContainer01 = textureLoader.load('./assets/img/10-ObjectUI/07-ContainerRealities/00_ContainerBaseItems/BaseContainer01.png')
+
+        // |- ContainerHolders
+        const ContainerHolderWhiteA1 = textureLoader.load('./assets/img/04-CommunicationUI/01-ContainerHolders/ContainerWhiteA01/1-Active/ContainerWhiteA01a.png')
+
+        // WhiteRoomSpecialFloors
+        const whiteRoom01_GoldFloor = textureLoader.load('./assets/img/00-WallpaperUX/Specials/B01-WhiteBackground_FloorGold.jpg')
+
+
+        // 
+        const root_WebsitePanelImg01 = textureLoader.load('./assets/img/11_RealityItems/01_WebsitePanels/1x/Services.png')
+
+
+		init();
+		animate();
+
+        //.........................................................................
+        //.______________________________________________________________________..
+        //.______________________________________________________________________..
+        //.........................................................................
+
+
+        //...................................
+        //..I....NN......N....I...ITTTTTTTT..
+        //.III..INNN....NNN..III.IITTTTTTTT..
+        //.III..INNNN...NNN..III.IITTTTTTTT..
+        //.III..INNNN...NNN..III.IITTTTTTTT..
+        //.III..INNNNN..NNN..III.....TTTT....
+        //.III..INNNNNN.NNN..III.....TTTT....
+        //.III..INNNNNN.NNN..III.....TTTT....
+        //.III..INN.NNNNNNN..III.....TTTT....
+        //.III..INN.NNNNNNN..III.....TTTT....
+        //.III..INN..NNNNNN..III.....TTTT....
+        //.III..INN..NNNNNN..III.....TTTT....
+        //.III..INN...NNNNN..III.....TTTT....
+        //.III..INN...NNNNN..III.....TTTT....
+        //.III..INN....NNNN..III.....TTTT....
+        //...................................
+
+        //...................................................
+        //.............UU.....UU....NN......N.......CCC......
+        //.FFFFFFFFFF.UUUU...UUUU..NNNN....NNN....CCCCCCCC...
+        //.FFFFFFFFFF.UUUU...UUUU..NNNNN...NNN...CCCCCCCCCC..
+        //.FFFFFFFFFF.UUUU...UUUU..NNNNN...NNN..CCCCCCCCCCC..
+        //.FFFF.......UUUU...UUUU..NNNNNN..NNN..CCCC...CCCC..
+        //.FFFF.......UUUU...UUUU..NNNNNNN.NNN.NCCCC....CCC..
+        //.FFFFFFFFF..UUUU...UUUU..NNNNNNN.NNN.NCCC..........
+        //.FFFFFFFFF..UUUU...UUUU..NNN.NNNNNNN.NCCC..........
+        //.FFFFFFFFF..UUUU...UUUU..NNN.NNNNNNN.NCCC..........
+        //.FFFF.......UUUU...UUUU..NNN..NNNNNN.NCCCC....CCC..
+        //.FFFF.......UUUU...UUUU..NNN..NNNNNN..CCCC...CCCC..
+        //.FFFF.......UUUUUUUUUUU..NNN...NNNNN..CCCCCCCCCCC..
+        //.FFFF.......UUUUUUUUUUU..NNN...NNNNN...CCCCCCCCCC..
+        //.FFFF........UUUUUUUUU...NNN....NNNN....CCCCCCCC...
+        //...............UUUUU.....................CCCCC.....
+        //...................................................
+
+
+		function init() {
+
+			container = document.getElementById('container');
+
+			//
+
+            
+            cssrenderer = new CSS3DRenderer();
+            cssrenderer.setSize(window.innerWidth, window.innerHeight);
+            cssrenderer.domElement.style.position = 'fixed'
+            cssrenderer.domElement.style.zindex = '100'
+            cssrenderer.domElement.style.top = 0
+            container.appendChild( cssrenderer.domElement );
+
+			renderer = new THREE.WebGLRenderer(
+                {
+                    alpha: true,
+                    antialias: true,
+                }
+            );
+			renderer.setPixelRatio(window.devicePixelRatio);
+			renderer.setSize(window.innerWidth, window.innerHeight);
+            // renderer.domElement.style.position = 'absolute'
+            renderer.domElement.style.zindex = '-100'
+            // renderer.domElement.style.top = 0
+			renderer.toneMapping = THREE.ACESFilmicToneMapping;
+			container.appendChild(renderer.domElement);
+
+
+            // const light = new THREE.AmbientLight( 0x404040 ); // soft white light
+            // light.position.set(0, 0, 0)
+            // scene.add(light);
+
+            
+
+
+			//
+
+			scene = new THREE.Scene();
+
+			// Search.Camera
+			camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 500000);
+			// camera.position.set(30, 6000, 24000); // previous
+            camera.position.set(0, 0, 160); // previous
+			camera.view = sun;
+
+
+            const newLight = new THREE.AmbientLight(0x404040)
+            scene.add(newLight)
+
+
+			// Scene with Water
+
+			sun = new THREE.Vector3();
+
+			// Water
+
+			const waterGeometry = new THREE.PlaneGeometry(500000, 500000);
+
+			water = new Water(
+				waterGeometry,
+				{
+					textureWidth: 512,
+					textureHeight: 512,
+					waterNormals: new THREE.TextureLoader().load('./assets/textures/waternormals.jpg', function (texture) {
+
+						texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
+
+					}),
+					sunDirection: new THREE.Vector3(),
+					sunColor: 0xffffff,
+					waterColor: 0x001e0f,
+					distortionScale: 3.7,
+					fog: scene.fog !== undefined
+				}
+			);
+
+			water.rotation.x = - Math.PI / 2;
+            water.position.y = -1000000
+
+			scene.add(water);
+
+			// Skybox
+
+			const sky = new Sky();
+			sky.scale.setScalar(100000);
+			scene.add(sky);
+
+			const skyUniforms = sky.material.uniforms;
+
+			skyUniforms['turbidity'].value = 10;
+			skyUniforms['rayleigh'].value = 2;
+			skyUniforms['mieCoefficient'].value = 0.005;
+			skyUniforms['mieDirectionalG'].value = 0.8;
+
+			const parameters = {
+				elevation: 2,
+				azimuth: 180
+			};
+
+			sky.rotation.x = Math.PI / 2;
+
+			const pmremGenerator = new THREE.PMREMGenerator(renderer);
+
+			function updateSun() {
+
+				const phi = THREE.MathUtils.degToRad(90 - parameters.elevation);
+				const theta = THREE.MathUtils.degToRad(parameters.azimuth);
+
+				sun.setFromSphericalCoords(1, phi, theta);
+
+				sky.material.uniforms['sunPosition'].value.copy(sun);
+				water.material.uniforms['sunDirection'].value.copy(sun).normalize();
+
+				scene.environment = pmremGenerator.fromScene(sky).texture;
+
+			}
+
+			updateSun();
+
+
+             // Testing Object Group
+             objectTestingGroup = new THREE.Group()
+				objectTestingGroup.position.set(-500, 700, 1000)
+				scene.add(objectTestingGroup)
+
+
+                //.................................................
+                //..TTTTTTTTT...EEEEEEEEE....SSSSSS....TTTTTTTTT...
+                //.TTTTTTTTTTT.EEEEEEEEEEE..SSSSSSSS..STTTTTTTTTT..
+                //.TTTTTTTTTTT.EEEEEEEEEEE.SSSSSSSSSS.STTTTTTTTTT..
+                //.TTTTTTTTTTT.EEEEEEEEEEE.SSSSSSSSSS.STTTTTTTTTT..
+                //.....TTTT....EEEE.......ESSS...SSSSS....TTTT.....
+                //.....TTTT....EEEEEEEEEE.ESSSSS..........TTTT.....
+                //.....TTTT....EEEEEEEEEE..SSSSSSSSS......TTTT.....
+                //.....TTTT....EEEEEEEEEE..SSSSSSSSSS.....TTTT.....
+                //.....TTTT....EEEEEEEEEE....SSSSSSSSS....TTTT.....
+                //.....TTTT....EEEE.......ESSS..SSSSSS....TTTT.....
+                //.....TTTT....EEEE.......ESSS....SSSS....TTTT.....
+                //.....TTTT....EEEEEEEEEEEESSSSSSSSSSS....TTTT.....
+                //.....TTTT....EEEEEEEEEEE.SSSSSSSSSS.....TTTT.....
+                //.....TTTT....EEEEEEEEEEE..SSSSSSSSS.....TTTT.....
+                //...........................SSSSSS................
+                //.................................................
+
+				
+
+				const objectTestingGroupParams = {
+
+					// ObjectTestingGroup/CircleGeometry
+					circleGeometryDimensions: {
+						radius: 10,
+						segments: 32,
+						thetaStart: 0,
+						thetaLength: 6.28
+					},
+
+
+					// ObjectTestingGroup/PlaneGeometry
+					planeGeometryDimensions: {
+						width: 10,
+						height: 10,
+						widthSegments: 10,
+                        heightSegments: 10,
+					},
+
+
+					// ObjectTestingGroup/RingGeometry
+					ringGeometryDimensions: {
+						innerRadius: 5,
+						outerRadius: 10,
+						thetaSegments: 30,
+						phiSegments: 10,
+						thetaStart: 0,
+						thetaLength: 6.283185307179586
+					},
+
+					// ObjectTestingGroup/SphereDimensions
+					sphereGeometryDimensions: {
+						radius: 15,
+						widthSegments: 32,
+						heightSegments: 16,
+						phiStart: 0,
+						phiLength: 6.2831,
+						thetaStart: 0,
+						thetaLength: Math.PI,
+						
+					},
+
+					// ObjectTestingGroup/CubeDimensions
+					boxGeometryDimensions: {
+						width: 15,
+						height: 15,
+						depth: 15,
+						widthSegments: 16,
+						heightSegments: 16,
+						depthSegments: 16,
+					},
+
+
+					// ObjectTestingGroup/ConeGeometry
+					coneGeometryDimensions: {
+						radius: 5,
+						height: 10,
+						radialSegments: 4,
+						heightSegments: 1,
+						openEnded: false,
+						thetaStart: 0,
+						thetaLength: 6.28,
+					},
+
+
+					// ObjectTestingGroup/TetrahedronGeometry
+					tetrahedronGeometryDimensions: {
+						radius: 10,
+						detail: 0,
+					},
+
+
+					// // ObjectTestingGroup/OctahedronGeometry
+					octahedronGeometryDimensions: {
+						radius: 10,
+						detail: 0,
+					},
+
+
+					// ObjectTestingGroup/TorusGeometry
+					torusGeometryDimensions: {
+						radius: 10,
+						tube: 3,
+						radialSegements: 16,
+						tubularSegments: 100,
+						arc: 6.28
+					},
+
+					// ObjectTestingGroup/Cylinder-Full
+					cylinderGeometryClosedDimensions: {
+						radiusTop: 5,
+						radiusBottom: 5,
+						height: 10,
+						radialSegments: 24,
+						heightSegments: 1,
+						openEnded: true,
+						thetaStart: 0,
+						thetaLength: 6.28318,
+					},
+
+
+					// ObjectTestingGroup/Cylinder-Open
+					cylinderGeometryOpenedDimensions: {
+						radiusTop: 5,
+						radiusBottom: 5,
+						height: 10,
+						radialSegments: 24,
+						heightSegments: 1,
+						openEnded: false,
+						thetaStart: 0,
+						thetaLength: 2.34362,
+					},
+
+				}
+
+
+				// Object-Circle
+				// =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+				objT_CircleA1 = new THREE.Group()
+				objT_CircleA1.position.set(-50, 0, 0)
+				objT_CircleA1.scale.set(1, 1, 1)
+
+				const geo_objT_CircleA1 = new THREE.CircleGeometry(
+
+					objectTestingGroupParams.circleGeometryDimensions.radius,
+					objectTestingGroupParams.circleGeometryDimensions.segments,
+					objectTestingGroupParams.circleGeometryDimensions.thetaStart,
+					objectTestingGroupParams.circleGeometryDimensions.thetaLength,
+				)
+
+				const mat_objT_CircleA1 = new THREE.MeshBasicMaterial({ map: SceneWallpaper_01, side: THREE.DoubleSide });
+				mesh_objT_CircleA1 = new THREE.Mesh(geo_objT_CircleA1, mat_objT_CircleA1);
+				mat_objT_CircleA1.transparent = false;
+				mat_objT_CircleA1.alphaMap = SceneWallpaper_01;
+				mesh_objT_CircleA1.position.set(0, 0, 0);
+				// mesh_objT_CircleA1.position.set(-15000, 0, 0);
+				mesh_objT_CircleA1.rotation.set(0, 0, 0)
+				mesh_objT_CircleA1.scale.set(1, 1, 1);
+				// mesh_objT_CircleA1.rotateX( - Math.PI / 2 );
+
+				// objT_CircleA1.lookAt(camera)
+				
+				objT_CircleA1.add(mesh_objT_CircleA1)
+				objectTestingGroup.add(objT_CircleA1)
+                // orbit.attach(objT_CircleA1)
+
+
+				
+
+			
+
+
+				// Object-Plane
+				// =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+				objT_PlaneA1 = new THREE.Group()
+				objT_PlaneA1.position.set(-50, 0, -50)
+				objT_PlaneA1.scale.set(1, 1, 1)
+
+				const geo_objT_PlaneA1 = new THREE.PlaneGeometry(
+
+					objectTestingGroupParams.planeGeometryDimensions.width,
+					objectTestingGroupParams.planeGeometryDimensions.height,
+					objectTestingGroupParams.planeGeometryDimensions.widthSegments,
+					
+				)
+
+				const mat_objT_PlaneA1 = new THREE.MeshBasicMaterial({ map: SceneWallpaper_01, side: THREE.DoubleSide });
+				mesh_objT_PlaneA1 = new THREE.Mesh(geo_objT_PlaneA1, mat_objT_PlaneA1);
+				mat_objT_PlaneA1.transparent = false;
+				mat_objT_PlaneA1.alphaMap = SceneWallpaper_01;
+				mesh_objT_PlaneA1.position.set(0, 0, 0);
+				// mesh_objT_PlaneA1.position.set(-15000, 0, 0);
+				mesh_objT_PlaneA1.scale.set(1, 1, 1);
+				mesh_objT_PlaneA1.rotation.set(0, 0, 0)
+				// mesh_objT_PlaneA1.rotateX( - Math.PI / 2 );
+
+				// objT_PlaneA1.lookAt(camera)
+				
+				objT_PlaneA1.add(mesh_objT_PlaneA1)
+				objectTestingGroup.add(objT_PlaneA1)
+
+
+				// Object-Ring
+				// =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+				objT_RingA0 = new THREE.Group()
+				objT_RingA0.position.set(-50, 0, -100)
+				objT_RingA0.scale.set(1, 1, 1)
+
+				const geo_objT_RingA0 = new THREE.RingGeometry(
+
+					objectTestingGroupParams.ringGeometryDimensions.innerRadius,
+					objectTestingGroupParams.ringGeometryDimensions.outerRadius,
+					objectTestingGroupParams.ringGeometryDimensions.thetaSegments,
+					objectTestingGroupParams.ringGeometryDimensions.phiSegments,
+					objectTestingGroupParams.ringGeometryDimensions.thetaStart,
+					objectTestingGroupParams.ringGeometryDimensions.thetaLength,
+					
+				)
+
+				const mat_objT_RingA0 = new THREE.MeshBasicMaterial({ map: SceneWallpaper_01, side: THREE.DoubleSide });
+				mesh_objT_RingA0 = new THREE.Mesh(geo_objT_RingA0, mat_objT_RingA0);
+				mat_objT_RingA0.transparent = false;
+				mat_objT_RingA0.alphaMap = SceneWallpaper_01;
+				mesh_objT_RingA0.position.set(0, 0, 0);
+				// mesh_objT_RingA0.position.set(-15000, 0, 0);
+				mesh_objT_RingA0.scale.set(1, 1, 1);
+				mesh_objT_RingA0.rotation.set(0, 0, 0)
+				// mesh_objT_RingA0.rotateX( - Math.PI / 2 );
+
+				// objT_RingA0.lookAt(camera)
+				
+				objT_RingA0.add(mesh_objT_RingA0)
+				objectTestingGroup.add(objT_RingA0)
+
+
+
+				// Object-Sphere
+				// =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+				objT_SphereA0 = new THREE.Group()
+				objT_SphereA0.position.set(0, 0, 0)
+				objT_SphereA0.scale.set(1, 1, 1)
+
+				const geo_objT_SphereA0 = new THREE.SphereGeometry(
+
+					objectTestingGroupParams.sphereGeometryDimensions.radius,
+					objectTestingGroupParams.sphereGeometryDimensions.widthSegments,
+					objectTestingGroupParams.sphereGeometryDimensions.heightSegments,
+					objectTestingGroupParams.sphereGeometryDimensions.phiStart,
+					objectTestingGroupParams.sphereGeometryDimensions.phiLength,
+					objectTestingGroupParams.sphereGeometryDimensions.thetaStart,
+					objectTestingGroupParams.sphereGeometryDimensions.thetaLength,
+					
+				)
+
+				const mat_objT_SphereA0 = new THREE.MeshBasicMaterial({ map: SceneWallpaper_01, side: THREE.DoubleSide });
+				mesh_objT_SphereA0 = new THREE.Mesh(geo_objT_SphereA0, mat_objT_SphereA0);
+				mat_objT_SphereA0.transparent = false;
+				mat_objT_SphereA0.alphaMap = SceneWallpaper_01;
+				mesh_objT_SphereA0.position.set(0, 0, 0);
+				// mesh_objT_SphereA0.position.set(-15000, 0, 0);
+				mesh_objT_SphereA0.scale.set(1, 1, 1);
+				mesh_objT_SphereA0.rotation.set(0, 0, 0)
+				// mesh_objT_SphereA0.rotateX( - Math.PI / 2 );
+
+				// objT_SphereA0.lookAt(camera)
+				
+				objT_SphereA0.add(mesh_objT_SphereA0)
+				objectTestingGroup.add(objT_SphereA0)
+
+				// Object-Box
+				// =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+				objT_BoxA0 = new THREE.Group()
+				objT_BoxA0.position.set(0, 0, -50)
+				objT_BoxA0.scale.set(1, 1, 1)
+
+				const geo_objT_BoxA0 = new THREE.BoxGeometry(
+
+
+					objectTestingGroupParams.boxGeometryDimensions.width,
+					objectTestingGroupParams.boxGeometryDimensions.height,
+					objectTestingGroupParams.boxGeometryDimensions.depth,
+					objectTestingGroupParams.boxGeometryDimensions.widthSegments,
+					objectTestingGroupParams.boxGeometryDimensions.heightSegments,
+					objectTestingGroupParams.boxGeometryDimensions.depthSegments,
+					
+					
+				)
+
+				const mat_objT_BoxA0 = new THREE.MeshBasicMaterial({ map: ContainerHolderWhiteA1, side: THREE.DoubleSide });
+				mesh_objT_BoxA0 = new THREE.Mesh(geo_objT_BoxA0, mat_objT_BoxA0);
+				mat_objT_BoxA0.transparent = true;
+				mat_objT_BoxA0.alphaMap = ContainerHolderWhiteA1;
+				mesh_objT_BoxA0.position.set(0, 0, 0);
+				// mesh_objT_BoxA0.position.set(-15000, 0, 0);
+				mesh_objT_BoxA0.scale.set(1, 1, 1);
+				mesh_objT_BoxA0.rotation.set(0, 0, 0)
+				// mesh_objT_BoxA0.rotateX( - Math.PI / 2 );
+
+				// objT_BoxA0.lookAt(camera)
+				
+				objT_BoxA0.add(mesh_objT_BoxA0)
+				objectTestingGroup.add(objT_BoxA0)
+
+
+				// Object-Cone
+				// =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+				objT_ConeA0 = new THREE.Group()
+				objT_ConeA0.position.set(0, 0, -100)
+				objT_ConeA0.scale.set(1, 1, 1)
+
+				const geo_objT_ConeA0 = new THREE.ConeGeometry(
+
+					objectTestingGroupParams.coneGeometryDimensions.radius,
+					objectTestingGroupParams.coneGeometryDimensions.height,
+					objectTestingGroupParams.coneGeometryDimensions.radialSegments,
+					objectTestingGroupParams.coneGeometryDimensions.heightSegments,
+					objectTestingGroupParams.coneGeometryDimensions.openEnded,
+					objectTestingGroupParams.coneGeometryDimensions.thetaStart,
+					objectTestingGroupParams.coneGeometryDimensions.thetaLength,
+					
+				)
+
+				const mat_objT_ConeA0 = new THREE.MeshBasicMaterial({ map: SceneWallpaper_01, side: THREE.DoubleSide });
+				mesh_objT_ConeA0 = new THREE.Mesh(geo_objT_ConeA0, mat_objT_ConeA0);
+				mat_objT_ConeA0.transparent = false;
+				mat_objT_ConeA0.alphaMap = SceneWallpaper_01;
+				mesh_objT_ConeA0.position.set(0, 0, 0);
+				// mesh_objT_ConeA0.position.set(-15000, 0, 0);
+				mesh_objT_ConeA0.scale.set(1, 1, 1);
+				mesh_objT_ConeA0.rotation.set(0, 0, 0)
+				// mesh_objT_ConeA0.rotateX( - Math.PI / 2 );
+
+				// objT_ConeA0.lookAt(camera)
+				
+				objT_ConeA0.add(mesh_objT_ConeA0)
+				objectTestingGroup.add(objT_ConeA0)
+
+
+				// Object-Pyramid
+				// =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+				objT_PyramidA0 = new THREE.Group()
+				objT_PyramidA0.position.set(50, 0, 0)
+				objT_PyramidA0.scale.set(1, 1, 1)
+
+				const geo_objT_PyramidA0 = new THREE.TetrahedronGeometry(
+
+					objectTestingGroupParams.tetrahedronGeometryDimensions.radius,
+					objectTestingGroupParams.tetrahedronGeometryDimensions.detail,
+					
+					
+				)
+
+				const mat_objT_PyramidA0 = new THREE.MeshBasicMaterial({ map: SceneWallpaper_01, side: THREE.DoubleSide });
+				mesh_objT_PyramidA0 = new THREE.Mesh(geo_objT_PyramidA0, mat_objT_PyramidA0);
+				mat_objT_PyramidA0.transparent = false;
+				mat_objT_PyramidA0.alphaMap = SceneWallpaper_01;
+				mesh_objT_PyramidA0.position.set(0, 0, 0);
+				// mesh_objT_PyramidA0.position.set(-15000, 0, 0);
+				mesh_objT_PyramidA0.scale.set(1, 1, 1);
+				mesh_objT_PyramidA0.rotation.set(0, 0, 0)
+				// mesh_objT_PyramidA0.rotateX( - Math.PI / 2 );
+
+				// objT_PyramidA0.lookAt(camera)
+				objT_PyramidA0.add(mesh_objT_PyramidA0)
+				objectTestingGroup.add(objT_PyramidA0)
+
+
+
+				// Object-Diamond
+				// =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+				objT_DiamondA0 = new THREE.Group()
+				objT_DiamondA0.position.set(50, 0, -50)
+				objT_DiamondA0.scale.set(1, 1, 1)
+
+				const geo_objT_DiamondA0 = new THREE.OctahedronGeometry(
+
+					objectTestingGroupParams.octahedronGeometryDimensions.radius,
+					objectTestingGroupParams.octahedronGeometryDimensions.detail,
+				)
+
+				const mat_objT_DiamondA0 = new THREE.MeshBasicMaterial({ map: SceneWallpaper_01, side: THREE.DoubleSide });
+				mesh_objT_DiamondA0 = new THREE.Mesh(geo_objT_DiamondA0, mat_objT_DiamondA0);
+				mat_objT_DiamondA0.transparent = false;
+				mat_objT_DiamondA0.alphaMap = SceneWallpaper_01;
+				mesh_objT_DiamondA0.position.set(0, 0, 0);
+				// mesh_objT_DiamondA0.position.set(-15000, 0, 0);
+				mesh_objT_DiamondA0.scale.set(1, 1, 1);
+				mesh_objT_DiamondA0.rotation.set(0, 0, 0)
+				// mesh_objT_DiamondA0.rotateX( - Math.PI / 2 );
+
+				// objT_DiamondA0.lookAt(camera)
+				objT_DiamondA0.add(mesh_objT_DiamondA0)
+				objectTestingGroup.add(objT_DiamondA0)
+
+
+
+				// Object-Torus
+				// =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+				objT_TorusA0 = new THREE.Group()
+				objT_TorusA0.position.set(50, 0, -100)
+				objT_TorusA0.scale.set(1, 1, 1)
+
+				const geo_objT_TorusA0 = new THREE.TorusGeometry(
+
+					objectTestingGroupParams.torusGeometryDimensions.radius,
+					objectTestingGroupParams.torusGeometryDimensions.tube,
+					objectTestingGroupParams.torusGeometryDimensions.radialSegments,
+					objectTestingGroupParams.torusGeometryDimensions.tubularSegments,
+					objectTestingGroupParams.torusGeometryDimensions.arc,
+
+				)
+
+				const mat_objT_TorusA0 = new THREE.MeshBasicMaterial({ map: SceneWallpaper_01, side: THREE.DoubleSide });
+				mesh_objT_TorusA0 = new THREE.Mesh(geo_objT_TorusA0, mat_objT_TorusA0);
+				mat_objT_TorusA0.transparent = false;
+				mat_objT_TorusA0.alphaMap = SceneWallpaper_01;
+				mesh_objT_TorusA0.position.set(0, 0, 0);
+				// mesh_objT_TorusA0.position.set(-15000, 0, 0);
+				mesh_objT_TorusA0.scale.set(1, 1, 1);
+				mesh_objT_TorusA0.rotation.set(0, 0, 0)
+				// mesh_objT_TorusA0.rotateX( - Math.PI / 2 );
+
+				// objT_TorusA0.lookAt(camera)
+				objT_TorusA0.add(mesh_objT_TorusA0)
+				objectTestingGroup.add(objT_TorusA0)
+
+
+
+				// Object-Cylinder-Closed
+				// =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+
+				objT_CylinderClosedA0 = new THREE.Group()
+				objT_CylinderClosedA0.position.set(100, 0, 0)
+				objT_CylinderClosedA0.scale.set(1, 1, 1)
+
+				const geo_objT_CylinderClosedA0 = new THREE.CylinderGeometry(
+
+					objectTestingGroupParams.cylinderGeometryClosedDimensions.radiusTop,
+					objectTestingGroupParams.cylinderGeometryClosedDimensions.radiusBottom,
+					objectTestingGroupParams.cylinderGeometryClosedDimensions.height,
+					objectTestingGroupParams.cylinderGeometryClosedDimensions.radialSegments,
+					objectTestingGroupParams.cylinderGeometryClosedDimensions.heightSegments,
+					objectTestingGroupParams.cylinderGeometryClosedDimensions.openEnded,
+					objectTestingGroupParams.cylinderGeometryClosedDimensions.thetaStart,
+					objectTestingGroupParams.cylinderGeometryClosedDimensions.thetaLength,
+					
+					
+				)
+
+				const mat_objT_CylinderClosedA0 = new THREE.MeshBasicMaterial({ map: SceneWallpaper_01, side: THREE.DoubleSide });
+				mesh_objT_CylinderClosedA0 = new THREE.Mesh(geo_objT_CylinderClosedA0, mat_objT_CylinderClosedA0);
+				mat_objT_CylinderClosedA0.transparent = false;
+				mat_objT_CylinderClosedA0.alphaMap = SceneWallpaper_01;
+				mesh_objT_CylinderClosedA0.position.set(0, 0, 0);
+				// mesh_objT_CylinderClosedA0.position.set(-15000, 0, 0);
+				mesh_objT_CylinderClosedA0.scale.set(1, 1, 1);
+				mesh_objT_CylinderClosedA0.rotation.set(0, 0, 0)
+				// mesh_objT_CylinderClosedA0.rotateX( - Math.PI / 2 );
+
+				// objT_CylinderClosedA0.lookAt(camera)
+				
+				objT_CylinderClosedA0.add(mesh_objT_CylinderClosedA0)
+				objectTestingGroup.add(objT_CylinderClosedA0)
+
+
+
+
+				// Object-Cylinder-Opened
+				// =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+
+				objT_CylinderOpenedA0 = new THREE.Group()
+				objT_CylinderOpenedA0.position.set(100, 0, -50)
+				objT_CylinderOpenedA0.scale.set(1, 1, 1)
+
+				const geo_objT_CylinderOpenedA0 = new THREE.CylinderGeometry(
+
+					objectTestingGroupParams.cylinderGeometryOpenedDimensions.radiusTop,
+					objectTestingGroupParams.cylinderGeometryOpenedDimensions.radiusBottom,
+					objectTestingGroupParams.cylinderGeometryOpenedDimensions.height,
+					objectTestingGroupParams.cylinderGeometryOpenedDimensions.radialSegments,
+					objectTestingGroupParams.cylinderGeometryOpenedDimensions.heightSegments,
+					objectTestingGroupParams.cylinderGeometryOpenedDimensions.openEnded,
+					objectTestingGroupParams.cylinderGeometryOpenedDimensions.thetaStart,
+					objectTestingGroupParams.cylinderGeometryOpenedDimensions.thetaLength,
+					
+					
+				)
+
+				const mat_objT_CylinderOpenedA0 = new THREE.MeshBasicMaterial({ map: whiteRoom01_GoldFloor, side: THREE.DoubleSide });
+				mesh_objT_CylinderOpenedA0 = new THREE.Mesh(geo_objT_CylinderOpenedA0, mat_objT_CylinderOpenedA0);
+				mat_objT_CylinderOpenedA0.transparent = false;
+				mat_objT_CylinderOpenedA0.alphaMap = whiteRoom01_GoldFloor;
+				mesh_objT_CylinderOpenedA0.position.set(0, 0, 0);
+				// mesh_objT_CylinderOpenedA0.position.set(-15000, 0, 0);
+				mesh_objT_CylinderOpenedA0.scale.set(1, 1, 1);
+				mesh_objT_CylinderOpenedA0.rotation.set(0, 0, 0)
+				// mesh_objT_CylinderOpenedA0.rotateX( - Math.PI / 2 );
+
+				// objT_CylinderOpenedA0.lookAt(camera)
+				
+				objT_CylinderOpenedA0.add(mesh_objT_CylinderOpenedA0)
+				objectTestingGroup.add(objT_CylinderOpenedA0)
+
+
+            
+            // ----------------------------------------------------------------------------------------------------
+            // \- [OOASA6PE01_A7_06__CS3dObj_makePDF_Viewer] \- 
+            // ----------------------------------------------------------------------------------------------------
+            function makePDF_Viewer(
+                px, py, pz, 
+                rx, ry, rz,
+                sx, sy, sz,
+                pdfID,
+                fileRef,
+                fileWidth, fileHeight,
+                
+
+            ){
+                // |- # Create Root Div
+                const pdfDiv = document.createElement("div");
+                pdfDiv.id = pdfID
+                pdfDiv.width = fileWidth
+                pdfDiv.height = fileHeight
+
+                // |- ## Create Component
+                const pdfComponent = document.createElement("embed")
+                pdfComponent.setAttribute("src", fileRef)
+                pdfComponent.setAttribute("width", fileWidth)
+                pdfComponent.setAttribute("height", fileHeight)
+                pdfComponent.style.display = "default"
+                pdfComponent.style.border = "3px dotted rgba(255, 255, 255, 0.75)"
+                pdfComponent.style.borderWidth = "15px"
+                pdfComponent.style.borderRadius = "10px"
+                pdfComponent.style.borderStyle = "double",
+                pdfComponent.style.borderStyle = "double",
+                pdfComponent.style.boxShadow = "2px 2px 5px, 2px 2px 2px white"
+                
+                pdfDiv.appendChild(pdfComponent)			
+
+                // Pushing Function Out
+                const pdfComponentData = new CSS3DObject(pdfDiv)
+                pdfComponentData.position.set(px, py, pz)
+                pdfComponentData.rotation.set(rx, ry, rz)
+                pdfComponentData.scale.set(sx, sy, sz)
+
+                return pdfComponentData
+            }
+
+
+            // ----------------------------------------------------------------------------------------------------
+            // \- [OOASA6PE01_A7_03__CS3dObj_TechIcon] \- 
+            // ----------------------------------------------------------------------------------------------------
+
+
+            function TechIcon (
+					tx, ty, tz,
+					rx, ry, rz,
+					sx, sy, sz,
+					theID, theClassName, 
+					HeaderPanelID, HeaderPanelClassName,
+					imgId, imgClassName,
+					panelInfoID, panelInfoClassName,
+					srcLink, hrefLink,
+					action, 
+					HeaderPanelMessage, 
+					panelInfoMessage
+				) {
+
+					// Building the root Div
+
+					// |- # Root
+					const panelroot = document.createElement('div')
+					panelroot.id = theID
+					panelroot.className = theClassName
+					panelroot.addEventListener('pointerdown', action)
+                    panelroot.addEventListener('touchdown', action)
+
+					// |- HeaderPanel
+					const HeaderPanel = document.createElement('div')
+					HeaderPanel.id = HeaderPanelID
+					HeaderPanel.className = HeaderPanelClassName
+					HeaderPanel.textContent = HeaderPanelMessage
+					panelroot.appendChild(HeaderPanel)
+
+					// |- # IconImg
+					const IconImg = document.createElement('img')
+					IconImg.id = imgId
+					IconImg.className = imgClassName
+					IconImg.src = srcLink
+					IconImg.href = hrefLink
+					panelroot.appendChild(IconImg)
+
+					// |- # InformationPanel
+					const panelInfo = document.createElement('div')
+					panelInfo.id = panelInfoID
+					panelInfo.className = panelInfoClassName
+					panelInfo.textContent = panelInfoMessage
+					panelroot.appendChild(panelInfo)
+
+					// Build the object for pushing and placing
+					const panelData = new CSS3DObject(panelroot)
+					panelData.position.set(tx, ty, tz)
+					panelData.rotation.set(rx, ry, rz)
+					panelData.scale.set(sx, sy, sz)
+
+					return panelData
+				}
+
+            // ----------------------------------------------------------------------------------------------------
+            // \- [OOASA6PE01_A7_08__CS3dObj_makePDF_hoverObject] \- 
+            // ----------------------------------------------------------------------------------------------------
+				function hoverObject (
+					objectType, 
+					tx, ty, tz,
+					rx, ry, rz,
+					sx, sy, sz,
+					theID, theClassName, 
+					srcLink, hrefLink,
+					HeaderID, HeaderClassName, HeaderName, message,
+					action, bgColor
+				) {
+
+					// Building the root Div
+					const panelroot = document.createElement(objectType)
+					panelroot.id = theID
+					panelroot.className = theClassName
+					panelroot.src = srcLink
+					panelroot.href = hrefLink
+					panelroot.backgroundColor = bgColor
+					panelroot.addEventListener('pointerdown', action)
+                    panelroot.addEventListener('touchdown', action)
+					panelroot.textContent = message
+					panelroot.style.alignText = "center"
+                    panelroot.style.position = 'absolute'
+					
+					
+					// const panelHeader = document.createElement('h2')
+					// panelHeader.id = HeaderID
+					// panelHeader.className = HeaderClassName
+					// panelHeader.style.textContent = HeaderName
+					// panelHeader.style.textContent = message
+					// panelHeader.style.background = "rgba(0, 255, 255)"
+					// panelHeader.style.textSize = "120px"
+					
+					// panelroot.appendChild(panelHeader)
+
+
+					// Build the object for pushing and placing
+					const panelData = new CSS3DObject(panelroot)
+					panelData.position.set(tx, ty, tz)
+					panelData.rotation.set(rx, ry, rz)
+					panelData.scale.set(sx, sy, sz)
+
+					return panelData
+				}
+
+
+            //.............................................................................................
+            //....SSSSSS.....EEEEEEEEE..TTTTTTTTT..TTTTTTTTT...I....NN......N.......GGGGG.......SSSSSS.....
+            //...SSSSSSSS...EEEEEEEEEEEETTTTTTTTTTTTTTTTTTTTT.III..NNNN....NNN....GGGGGGGGG....SSSSSSSS....
+            //..SSSSSSSSSS..EEEEEEEEEEEETTTTTTTTTTTTTTTTTTTTT.III..NNNNN...NNN...GGGGGGGGGG...SSSSSSSSSS...
+            //..SSSSSSSSSS..EEEEEEEEEEEETTTTTTTTTTTTTTTTTTTTT.III..NNNNN...NNN..GGGGGGGGGGGG..SSSSSSSSSS...
+            //.SSSS...SSSSS.EEEE...........TTTT.......TTTT....III..NNNNNN..NNN..GGGG....GGGG.GSSS...SSSSS..
+            //.SSSSSS.......EEEEEEEEEE.....TTTT.......TTTT....III..NNNNNNN.NNN.NGGGG....GGGG.GSSSSS........
+            //..SSSSSSSSS...EEEEEEEEEE.....TTTT.......TTTT....III..NNNNNNN.NNN.NGGG...GGGGGG..SSSSSSSSS....
+            //..SSSSSSSSSS..EEEEEEEEEE.....TTTT.......TTTT....III..NNN.NNNNNNN.NGGG...GGGGGG..SSSSSSSSSS...
+            //....SSSSSSSSS.EEEEEEEEEE.....TTTT.......TTTT....III..NNN.NNNNNNN.NGGG...GGGGGG....SSSSSSSSS..
+            //.SSSS..SSSSSS.EEEE...........TTTT.......TTTT....III..NNN..NNNNNN.NGGGG..GGGGGG.GSSS..SSSSSS..
+            //.SSSS....SSSS.EEEE...........TTTT.......TTTT....III..NNN..NNNNNN..GGGG....GGGG.GSSS....SSSS..
+            //.SSSSSSSSSSSS.EEEEEEEEEEE....TTTT.......TTTT....III..NNN...NNNNN..GGGGGGGGGGGG.GSSSSSSSSSSS..
+            //..SSSSSSSSSS..EEEEEEEEEEE....TTTT.......TTTT....III..NNN...NNNNN...GGGGGGGGGGG..SSSSSSSSSS...
+            //...SSSSSSSSS..EEEEEEEEEEE....TTTT.......TTTT....III..NNN....NNNN....GGGGGGGGGG...SSSSSSSSS...
+            //....SSSSSS...........................................................GGGG.........SSSSSS.....
+            //.............................................................................................
+
+
+
+            // ###########################################################
+            // Movement Settings
+            // ###########################################################
+                document.addEventListener("keydown", function(event) {
+					if (event.key === "w") {
+						
+
+						gsap.to(camera.position, {
+							duration: .25,
+							delay: 0,
+                            ease: "none",
+							z: `-= ${newSpeedStrengthParams.forwards}`,
+
+						})
+					}
+				})
+
+                document.addEventListener("keydown", function(event) {
+					if (event.ctrlKey && event.key === "w") {
+						
+
+						gsap.to(camera.position, {
+							duration: .25,
+							delay: 0,
+                            ease: "none",
+							z: `-= ${Control_newSpeedStrengthParams.forwards}`,
+
+						})
+					}
+				})
+
+
+				document.addEventListener("keydown", function(event) {
+					if (event.key === "s") {
+						
+
+						gsap.to(camera.position, {
+							duration: .25,
+							delay: 0,
+                            ease: "none",
+							z: `+= ${newSpeedStrengthParams.backwards}`,
+
+						})
+					}
+				})
+
+                document.addEventListener("keydown", function(event) {
+					if (event.ctrlKey && event.key === "s") {
+						
+
+						gsap.to(camera.position, {
+							duration: .25,
+							delay: 0,
+                            ease: "none",
+							z: `+= ${Control_newSpeedStrengthParams.forwards}`,
+
+						})
+					}
+				})
+
+
+				document.addEventListener("keydown", function(event) {
+					if (event.key === "a") {
+						
+
+						gsap.to(camera.position, {
+							duration: .25,
+							delay: 0,
+                            ease: "none",
+							x: `-= ${newSpeedStrengthParams.left}`,
+
+						})
+
+					}
+				})
+
+
+                document.addEventListener("keydown", function(event) {
+					if (event.ctrlKey && event.key === "a") {
+						
+
+						gsap.to(camera.position, {
+							duration: .25,
+							delay: 0,
+                            ease: "none",
+							x: `-= ${Control_newSpeedStrengthParams.forwards}`,
+
+						})
+					}
+				})
+
+
+				document.addEventListener("keydown", function(event) {
+					if (event.key === "d") {
+						
+
+						gsap.to(camera.position, {
+							duration: .25,
+							delay: 0,
+                            ease: "none",
+							x: `+= ${newSpeedStrengthParams.right}`,
+
+						})
+					}
+				})
+
+                document.addEventListener("keydown", function(event) {
+					if (event.ctrlKey && event.key === "d") {
+						
+
+						gsap.to(camera.position, {
+							duration: .25,
+							delay: 0,
+                            ease: "none",
+							x: `+= ${Control_newSpeedStrengthParams.forwards}`,
+
+						})
+					}
+				})
+
+
+                document.addEventListener("keydown", function(event) {
+					if (event.key === "g") {
+						
+
+						gsap.to(camera.position, {
+							duration: .25,
+							delay: 0,
+                            ease: "none",
+                            z: 23000,
+							y: 6000,
+                            x: 30,
+
+						})
+					}
+				})
+
+
+            // ###########################################################
+            // Height-Movement Settings
+            // ###########################################################
+
+
+                document.addEventListener("keydown", function(event) {
+					if (event.key === "r") {
+						// camera.position.y += 10000
+
+						gsap.to(camera.position, {
+							duration: .5,
+							delay: 0,
+                            ease: "none",
+							y: "+= 200",
+
+						})
+					}
+				})
+
+
+                document.addEventListener("keydown", function(event) {
+					if (event.ctrlKey && event.key === "r") {
+						// camera.position.y += 10000
+
+						gsap.to(camera.position, {
+							duration: .5,
+							delay: 0,
+                            ease: "none",
+							y: "+= 10000",
+
+						})
+					}
+				})
+
+                document.addEventListener("keydown", function(event) {
+					if (event.key === "f") {
+						// camera.position.y += 10000
+
+						gsap.to(camera.position, {
+							duration: .5,
+							delay: 0,
+                            ease: "none",
+							y: "-= 200",
+
+						})
+					}
+				})
+
+
+                document.addEventListener("keydown", function(event) {
+					if (event.ctrlKey && event.key === "f") {
+						// camera.position.y += 10000
+
+						gsap.to(camera.position, {
+							duration: .5,
+							delay: 0,
+                            ease: "none",
+							y: "-= 10000",
+
+						})
+					}
+				})
+
+
+
+               
+
+
+            // ###########################################################
+            //  Settings
+            // ###########################################################
+
+            //....................................................................
+            //......CCC................................OOOOOO................jjj..
+            //....CCCCCCCC...tttt.....................OOOOOOOOO..Obbb........jjj..
+            //...CCCCCCCCCC..tttt....................OOOOOOOOOO..Obbb........jjj..
+            //..CCCCCCCCCCC..tttt...................OOOOOOOOOOOO.Obbb........jjj..
+            //..CCCC...CCCCCtttttt.rrrrrr...........OOOO....OOOO.Obbbbbbbb...jjj..
+            //.CCCCC....CCCCtttttt.rrrrrr...........OOOO....OOOOOObbbbbbbbb..jjj..
+            //.CCCC.........tttttt.rrrrrr.........._OOO......OOOOObbbbbbbbbb.jjj..
+            //.CCCC..........tttt..rrrr............_OOO......OOOOObbbb.bbbbb.jjj..
+            //.CCCC..........tttt..rrr............._OOO......OOOOObbb...bbbb.jjj..
+            //.CCCCC....CCCC.tttt..rrr..............OOOO....OOOOOObbb...bbbb.jjj..
+            //..CCCC...CCCCC.tttt..rrr..............OOOO....OOOO.Obbbb..bbbb.jjj..
+            //..CCCCCCCCCCC..tttt..rrr..............OOOOOOOOOOOO.Obbbbbbbbbb.jjj..
+            //...CCCCCCCCCC..ttttt.rrr...............OOOOOOOOOO..Obbbbbbbbb..jjj..
+            //....CCCCCCCC...ttttt.rrr................OOOOOOOOO..Obbbbbbbbb..jjj..
+            //.....CCCCC.......ttt.....................OOOOOO.........bbb....jjj..
+            //..........................r___________.......................bbjjj..
+            //..........................r___________.......................bbjjj..
+            //.............................................................bbjjj..
+            //....................................................................
+
+
+			// Toc_Geometries
+
+			const geometry = new THREE.BoxGeometry(30, 30, 30);
+			const material = new THREE.MeshStandardMaterial({ map: SceneWallpaper_01, roughness: 10, metalness: 2 });
+
+			mesh = new THREE.Mesh(geometry, material);
+			scene.add(mesh);
+
+			const ΔΦ01_OA1 = new THREE.ConeGeometry(30, 30, 3);
+			ΔΦ = new THREE.Mesh(ΔΦ01_OA1, material);
+			ΔΦ.position.x = 0
+			ΔΦ.position.y = 75
+			scene.add(ΔΦ);
+
+			const ΔΦ01_0Α2 = new THREE.ConeGeometry(30, 30, 3);
+			const ΔΦ01_1Α2 = new THREE.MeshStandardMaterial({ side: THREE.DoubleSide });
+			ΔΩ = new THREE.Mesh(ΔΦ01_0Α2, material);
+			ΔΩ.position.x = 0
+			ΔΩ.position.y = 40
+			ΔΩ.rotation.z = 3.14
+			scene.add(ΔΩ);
+
+
+
+			const ΔΦ02_Α1 = new THREE.IcosahedronGeometry(7, 2);
+			Φ = new THREE.Mesh(ΔΦ02_Α1, ΔΦ01_1Α2);
+			Φ.position.y = 57.423
+			scene.add(Φ)
+
+            // White Room
+            // whitePureRoom
+			const geometry2 = new THREE.SphereGeometry(5000, 32, 32)
+			const material2 = new THREE.MeshStandardMaterial({ map: SceneWallpaper_01, side: THREE.DoubleSide, roughness: 3, metalness: 2 });
+			meshA1 = new THREE.Mesh(geometry2, material2)
+			material2.transparent = false;
+			material2.alphaMap = SceneWallpaper_01
+			material2.wireframe = false;
+			meshA1.position.set(0, 0, 0)
+            meshA1.rotation.set(0, 0.575, 0)
+            meshA1.scale.set(0.05, 0.05, 0.05)
+			scene.add(meshA1)
+
+
+			// const geometry4 = new THREE.BoxGeometry(500, 500, 500, 32, 32, 32)
+			// const material4 = new THREE.MeshBasicMaterial({ map: testImg01, side: THREE.DoubleSide });
+			// const mesh3 = new THREE.Mesh(geometry4, material4)
+			// material4.transparent = true;
+			// material4.alphaMap = testImg01
+			// material4.wireframe = false;
+			// mesh3.position.set(0, 2000, 0)
+			// scene.add(mesh3)
+
+			// const geometry_neon01 = new THREE.BoxGeometry(1000, 1000, 1000, 32, 32, 32)
+			// const mat_neoncircle = new THREE.MeshBasicMaterial({ map: neoncircle01, side: THREE.DoubleSide });
+			// const mesh_neoncircle = new THREE.Mesh(geometry_neon01, mat_neoncircle);
+			// mat_neoncircle.transparent = false;
+			// mat_neoncircle.alphaMap = neoncircle01;
+			// mesh_neoncircle.position.set(0, 90000, 0);
+			// scene.add(mesh_neoncircle);
+			// 3.7
+
+
+			const geometry04_HyperDataCardTest = new THREE.PlaneGeometry(400, 400);
+			const mat_clock = new THREE.MeshBasicMaterial({ map: clockPNG, side: THREE.DoubleSide });
+			MeshHDC_01 = new THREE.Mesh(geometry04_HyperDataCardTest, mat_clock);
+			mat_clock.transparent = true;
+            // mat_clock.alphaMap = clockPNG;
+			MeshHDC_01.position.set(5, -5555, 3);
+			scene.add(MeshHDC_01);
+
+			const geometry04_GoldenGear01 = new THREE.PlaneGeometry(300, 300);
+			const mat_goldengear01 = new THREE.MeshBasicMaterial(
+				{
+					map: gear01_png,
+					side: THREE.DoubleSide
+				}
+			);
+			goldenGearTest = new THREE.Mesh(
+				geometry04_GoldenGear01,
+				mat_goldengear01
+			);
+
+			mat_goldengear01.transparent = true;
+            // mat_goldengear01.alphaMap = gear01_png;
+			goldenGearTest.position.set(0, -5555, -1);
+			scene.add(goldenGearTest);
+
+			const geometry05_NeonCircle = new THREE.PlaneGeometry(500, 500);
+			const mat_goldengear02 = new THREE.MeshBasicMaterial(
+				{
+					map: gear01_png,
+					side: THREE.DoubleSide
+				}
+			);
+			goldenGearTest2 = new THREE.Mesh(
+				geometry05_NeonCircle,
+				mat_goldengear02,
+			);
+
+			mat_goldengear02.transparent = true;
+            mat_goldengear02.alphaMap = gear01_png;
+			goldenGearTest2.position.set(10, -5555, -2);
+			scene.add(goldenGearTest2);
+
+
+
+            // Search.video01
+				// Opening Video Object
+				CenterBrain_VideoSphere_Opening = new THREE.Group()
+				CenterBrain_VideoSphere_Opening.position.set(0, 1.15, 0)
+				// CenterBrain_VideoSphere_Opening.position.set(0, 0, -500144) // Away from User
+				CenterBrain_VideoSphere_Opening.rotation.set(0, 0, 0)
+				CenterBrain_VideoSphere_Opening.scale.set(1, 1, 1)
+
+				console.log(CenterBrain_VideoSphere_Opening.position)
+	
+				scene.add(CenterBrain_VideoSphere_Opening)
+				// camera.attach(CenterBrain_VideoSphere_Opening)
+
+				const videoOpening = document.getElementById('openingVideo')
+				const videoOpening_Tex = new THREE.VideoTexture(videoOpening)
+                videoOpening_Tex.format = THREE.RGBAFormat
+				const videoOpening_Mat = new THREE.MeshBasicMaterial(
+					{
+						map: videoOpening_Tex,
+						side: THREE.DoubleSide,
+						toneMapped: false,
+					}
+				)
+
+				mesh_CenterBrain_VideoSphere_Opening = new THREE.Mesh(
+					geo_objT_SphereA0, 
+					videoOpening_Mat
+				)
+
+                videoOpening_Mat.transparent = true
+
+				mesh_CenterBrain_VideoSphere_Opening.position.set(0, 0, 0)
+				mesh_CenterBrain_VideoSphere_Opening.rotation.set(0, 1.565, 0)
+				mesh_CenterBrain_VideoSphere_Opening.scale.set(10000, 10000, 10000)
+				CenterBrain_VideoSphere_Opening.add(mesh_CenterBrain_VideoSphere_Opening)
+
+
+			
+
+                let Toggle_VideoSphere = () => {
+                    if (mesh_CenterBrain_VideoSphere_Opening.scale.x === 10000) {
+                        gsap.to(mesh_CenterBrain_VideoSphere_Opening.scale, {
+
+							repeat: 0,
+							duration: 2.5,
+							delay: 0,
+							x: 0.5,
+                            y: 0.5,
+                            z: 0.5
+							
+						})
+                        
+                    } else if (mesh_CenterBrain_VideoSphere_Opening.scale.x === 0.5) {
+                        gsap.to(mesh_CenterBrain_VideoSphere_Opening.scale, {
+							repeat: 0,
+							duration: 2.5,
+							delay: 0,
+							x: 10000,
+                            y: 10000,
+                            z: 10000
+							
+						})
+                    }
+                }
+
+                document.addEventListener("keydown", function(event) {
+					if (event.key === "(") {
+						Toggle_VideoSphere()
+					}
+				})
+
+                let rotateSphere = () => {
+                gsap.to(mesh_CenterBrain_VideoSphere_Opening.rotation, {
+                    repeat: -1,
+                    duration: 4.5,
+                    ease: "none",
+                    delay: .25,
+                    y: '-= 1.575',
+                })
+            }
+
+                // rotateSphere()
+
+
+
+                openingButtonIconGroup = new THREE.Group()
+				openingButtonIconGroup.position.set(0, 0, -20000)
+				openingButtonIconGroup.rotation.set(0, 0, 0)
+				openingButtonIconGroup.scale.set(1, 1, 1)
+				scene.add(openingButtonIconGroup)
+
+
+
+
+
+			// Groups	
+			const group01_timeSphere = new THREE.Group();
+			group01_timeSphere.position.set(500, 5000, 0);
+			scene.add(group01_timeSphere);
+
+			const group02_RealityContainer = new THREE.Group();
+			group02_RealityContainer.position.set(0, 0, 0);
+			scene.add(group02_RealityContainer)
+
+			// TimeSphere_Layer01_Skeleton
+			const geo_timeSphere_L0 = new THREE.SphereGeometry(4500, 32, 32)
+			const mat_timeSphere_L0 = new THREE.MeshBasicMaterial({ map: timeSphereImg_01, side: THREE.DoubleSide });
+			mesh_timeSphere_L0 = new THREE.Mesh(geo_timeSphere_L0, mat_timeSphere_L0)
+			mat_timeSphere_L0.transparent = true;
+			mat_timeSphere_L0.alphaMap = timeSphereImg_01
+			mat_timeSphere_L0.wireframe = false;
+			mesh_timeSphere_L0.position.set(0, 0, 200)
+			group01_timeSphere.add(mesh_timeSphere_L0);
+
+			// TimeSphere_Layer02_Skeleton
+			const geo_timeSphere_L1 = new THREE.SphereGeometry(7500, 32, 32)
+			const mat_timeSphere_L1 = new THREE.MeshBasicMaterial({ map: timeSphereImg_01, side: THREE.DoubleSide });
+			mesh_timeSphere_L1 = new THREE.Mesh(geo_timeSphere_L1, mat_timeSphere_L1)
+			mat_timeSphere_L1.transparent = true;
+			mat_timeSphere_L1.alphaMap = timeSphereImg_01
+			mat_timeSphere_L1.wireframe = false;
+			mesh_timeSphere_L1.rotation.set(80, 0, 0)
+			mesh_timeSphere_L1.position.set(0, 0, 200)
+			group01_timeSphere.add(mesh_timeSphere_L1);
+
+			// TimeSphere_layer03_Skeleton
+			const geo_timeSphere_L2 = new THREE.SphereGeometry(10500, 32, 32)
+			const mat_timeSphere_L2 = new THREE.MeshBasicMaterial({ map: timeSphereImg_01, side: THREE.DoubleSide });
+			mesh_timeSphere_L2 = new THREE.Mesh(geo_timeSphere_L2, mat_timeSphere_L2)
+			mat_timeSphere_L2.transparent = true;
+			mat_timeSphere_L2.alphaMap = timeSphereImg_01
+			mat_timeSphere_L2.wireframe = false;
+			mesh_timeSphere_L2.position.set(0, 0, 200)
+			group01_timeSphere.add(mesh_timeSphere_L2);
+
+
+			// TimeSphere_layer03_Skeleton
+			const geo_timeSphere_L3 = new THREE.SphereGeometry(15500, 32, 32)
+			const mat_timeSphere_L3 = new THREE.MeshBasicMaterial({ map: timeSphereImg_01, side: THREE.DoubleSide });
+			mesh_timeSphere_L3 = new THREE.Mesh(geo_timeSphere_L3, mat_timeSphere_L3)
+			mat_timeSphere_L3.transparent = true;
+			mat_timeSphere_L3.alphaMap = timeSphereImg_01
+			mat_timeSphere_L3.wireframe = false;
+			mesh_timeSphere_L3.position.set(0, 0, 200)
+			group01_timeSphere.add(mesh_timeSphere_L3);
+
+			// TimeSphereHourBase_layer00_Skeleton
+			const geo_TimeSphereHourBase_L0 = new THREE.CircleGeometry(5000, 50)
+			const mat_TimeSphereHourBase_L0 = new THREE.MeshBasicMaterial({ map: timeSphereImg_01, side: THREE.DoubleSide });
+			mesh_TimeSphereHourBase_L0 = new THREE.Mesh(geo_TimeSphereHourBase_L0, mat_TimeSphereHourBase_L0)
+			mat_TimeSphereHourBase_L0.transparent = true;
+			mat_TimeSphereHourBase_L0.alphaMap = timeSphereImg_01
+			mat_TimeSphereHourBase_L0.wireframe = false;
+			mesh_TimeSphereHourBase_L0.position.set(0, 1.5, 200)
+			mesh_TimeSphereHourBase_L0.rotation.x = - Math.PI * 0.5
+			group01_timeSphere.add(mesh_TimeSphereHourBase_L0);
+
+//.......................................................................
+//.....OOOOOO......RRRRR........BBBBB........I...TTTTTTTTT....SSSSSS.....
+//....OOOOOOOOO...RRRRRRRRRR...BBBBBBBBBB...III.TTTTTTTTTTT..SSSSSSSS....
+//...OOOOOOOOOO...RRRRRRRRRRR..BBBBBBBBBBB..III.TTTTTTTTTTT.SSSSSSSSSS...
+//..OOOOOOOOOOOO..RRRRRRRRRRR..BBBBBBBBBBB..III.TTTTTTTTTTT.SSSSSSSSSS...
+//..OOOO....OOOO..RRRR...RRRRR.BBBB...BBBB..III.....TTTT...SSSS...SSSSS..
+//..OOOO....OOOOO.RRRR...RRRRR.BBBB..BBBBB..III.....TTTT...SSSSSS........
+//.OOOO......OOOO.RRRRRRRRRRR..BBBBBBBBBBB..III.....TTTT....SSSSSSSSS....
+//.OOOO......OOOO.RRRRRRRRRRR..BBBBBBBBBBB..III.....TTTT....SSSSSSSSSS...
+//.OOOO......OOOO.RRRRRRRRRRR..BBBBBBBBBBB..III.....TTTT......SSSSSSSSS..
+//..OOOO....OOOOO.RRRR..RRRRR..BBBB....BBBB.III.....TTTT...SSSS..SSSSSS..
+//..OOOO....OOOO..RRRR...RRRR..BBBB...BBBBB.III.....TTTT...SSSS....SSSS..
+//..OOOOOOOOOOOO..RRRR...RRRR..BBBBBBBBBBB..III.....TTTT...SSSSSSSSSSSS..
+//...OOOOOOOOOO...RRRR...RRRR..BBBBBBBBBBB..III.....TTTT....SSSSSSSSSS...
+//....OOOOOOOOO...RRRR...RRRRR.BBBBBBBBBB...III.....TTTT.....SSSSSSSSS...
+//.....OOOOOO.................................................SSSSSS.....
+//.......................................................................
+
+            
+            RealityCenter_OrbitBase_root = new THREE.Group()
+            RealityCenter_OrbitBase_root.position.set(0, 0, 0)
+            RealityCenter_OrbitBase_root.rotation.set(0, 0, 0)
+            RealityCenter_OrbitBase_root.scale.set(1, 1, 1)
+            scene.add(RealityCenter_OrbitBase_root)
+
+                        RealityCenter_Orbit01_root = new THREE.Group()
+                        RealityCenter_Orbit01_root.position.set(0, 0, 0)
+                        RealityCenter_Orbit01_root.rotation.set(0, 0, 0)
+                        RealityCenter_Orbit01_root.scale.set(1, 1, 1)
+                        RealityCenter_OrbitBase_root.add(RealityCenter_Orbit01_root)
+
+                            RealityCenter_Orbit01 = new THREE.Group()
+                            RealityCenter_Orbit01.position.set(0, 6030.20, 0)
+                            RealityCenter_Orbit01.rotation.set(0, 0, 0)
+                            RealityCenter_Orbit01.scale.set(10000, 10000, 10000)
+                            RealityCenter_Orbit01_root.add(RealityCenter_Orbit01)
+
+                            let RealityCenter_OrbitDimensions = {
+                                radius: 10.65,
+                                tube: 0.0049,
+                                radialSegements: 30,
+                                tubularSegments: 200,
+                                arc: 6.283185307179586,
+                            }
+
+                            const geo_objT_RealityCenterOrbit = new THREE.TorusGeometry(
+
+                               RealityCenter_OrbitDimensions.radius,
+                               RealityCenter_OrbitDimensions.tube,
+                               RealityCenter_OrbitDimensions.radialSegments,
+                               RealityCenter_OrbitDimensions.tubularSegments,
+                               RealityCenter_OrbitDimensions.arc,
+
+                            )
+
+                            const mat_RealityCenter_Orbit01 = new THREE.MeshBasicMaterial({ map: SceneWallpaper_01, side: THREE.DoubleSide });
+                            mesh_RealityCenter_Orbit01 = new THREE.Mesh(geo_objT_RealityCenterOrbit, mat_RealityCenter_Orbit01);
+
+                                mat_RealityCenter_Orbit01.transparent = true;
+                                mat_RealityCenter_Orbit01.wireframe = false;
+                                mat_RealityCenter_Orbit01.alphaMap = SceneWallpaper_01;
+
+                            mesh_RealityCenter_Orbit01.position.set(0, 0, 0);
+                            mesh_RealityCenter_Orbit01.rotation.set(0, 0, 0)
+                            mesh_RealityCenter_Orbit01.scale.set(0.2, 0.2, 0.2);
+                            mesh_RealityCenter_Orbit01.rotateX( - Math.PI / 2 );
+
+                            // RealityCenter_Orbit01.lookAt(camera)
+                            
+                            RealityCenter_Orbit01.add(mesh_RealityCenter_Orbit01)
+
+
+                        RealityCenter_Orbit02_root = new THREE.Group()
+                        RealityCenter_Orbit02_root.position.set(0, 0, 0)
+                        RealityCenter_Orbit02_root.rotation.set(0, 0, 0)
+                        RealityCenter_Orbit02_root.scale.set(1, 1, 1)
+                        RealityCenter_OrbitBase_root.add(RealityCenter_Orbit02_root)
+
+                            RealityCenter_Orbit02 = new THREE.Group()
+                            RealityCenter_Orbit02.position.set(0, 6030.20, 0)
+                            RealityCenter_Orbit02.rotation.set(0, 0, 0)
+                            RealityCenter_Orbit02.scale.set(9000, 9000, 9000)
+                            RealityCenter_Orbit02_root.add(RealityCenter_Orbit02)
+
+                            const mat_RealityCenter_Orbit02 = new THREE.MeshBasicMaterial({ map: SceneWallpaper_01, side: THREE.DoubleSide });
+                            mesh_RealityCenter_Orbit02 = new THREE.Mesh(geo_objT_RealityCenterOrbit, mat_RealityCenter_Orbit02);
+
+                                mat_RealityCenter_Orbit02.transparent = true;
+                                mat_RealityCenter_Orbit02.wireframe = false;
+                                mat_RealityCenter_Orbit02.alphaMap = SceneWallpaper_01;
+
+                            mesh_RealityCenter_Orbit02.position.set(0, 0, 0);
+                            mesh_RealityCenter_Orbit02.rotation.set(-1.492, -0.951, 0)
+                            mesh_RealityCenter_Orbit02.scale.set(0.2, 0.2, 0.2);
+                            // mesh_RealityCenter_Orbit02.rotateX( - Math.PI / 2 );
+
+                            // RealityCenter_Orbit02.lookAt(camera)
+                            
+                            RealityCenter_Orbit02.add(mesh_RealityCenter_Orbit02)
+
+
+                        RealityCenter_Orbit03_root = new THREE.Group()
+                        RealityCenter_Orbit03_root.position.set(0, 0, 0)
+                        RealityCenter_Orbit03_root.rotation.set(0, 0, 0)
+                        RealityCenter_Orbit03_root.scale.set(1, 1, 1)
+                        RealityCenter_OrbitBase_root.add(RealityCenter_Orbit03_root)
+
+                            RealityCenter_Orbit03 = new THREE.Group()
+                            RealityCenter_Orbit03.position.set(0, 6030.20, 0)
+                            RealityCenter_Orbit03.rotation.set(0, 0, 0)
+                            RealityCenter_Orbit03.scale.set(6000, 6000, 6000)
+                            RealityCenter_Orbit03_root.add(RealityCenter_Orbit03)
+
+                            const mat_RealityCenter_Orbit03 = new THREE.MeshBasicMaterial({ map: SceneWallpaper_01, side: THREE.DoubleSide });
+                            mesh_RealityCenter_Orbit03 = new THREE.Mesh(geo_objT_RealityCenterOrbit, mat_RealityCenter_Orbit03);
+
+                                mat_RealityCenter_Orbit03.transparent = false;
+                                mat_RealityCenter_Orbit03.wireframe = false;
+                                mat_RealityCenter_Orbit03.alphaMap = SceneWallpaper_01;
+
+                            mesh_RealityCenter_Orbit03.position.set(0, 0, 0);
+                            mesh_RealityCenter_Orbit03.rotation.set(-1.492, -0.151, 0)
+                            mesh_RealityCenter_Orbit03.scale.set(0.2, 0.2, 0.2);
+                            // mesh_RealityCenter_Orbit03.rotateX( - Math.PI / 2 );
+
+                            // RealityCenter_Orbit03.lookAt(camera)
+                            
+                            RealityCenter_Orbit03.add(mesh_RealityCenter_Orbit03)
+
+
+                            
+
+                        RealityCenter_Orbit04_root = new THREE.Group()
+                        RealityCenter_Orbit04_root.position.set(0, 0, 0)
+                        RealityCenter_Orbit04_root.rotation.set(0, 0, 0)
+                        RealityCenter_Orbit04_root.scale.set(1, 1, 1)
+                        RealityCenter_OrbitBase_root.add(RealityCenter_Orbit04_root)
+
+                            RealityCenter_Orbit04 = new THREE.Group()
+                            RealityCenter_Orbit04.position.set(0, 6030.20, 0)
+                            RealityCenter_Orbit04.rotation.set(0, 0, 0)
+                            RealityCenter_Orbit04.scale.set(4500, 4500, 4500)
+                            RealityCenter_Orbit04_root.add(RealityCenter_Orbit04)
+
+                            const mat_RealityCenter_Orbit04 = new THREE.MeshBasicMaterial({ map: SceneWallpaper_01, side: THREE.DoubleSide });
+                            mesh_RealityCenter_Orbit04 = new THREE.Mesh(geo_objT_RealityCenterOrbit, mat_RealityCenter_Orbit04);
+
+                                mat_RealityCenter_Orbit04.transparent = false;
+                                mat_RealityCenter_Orbit04.wireframe = false;
+                                mat_RealityCenter_Orbit04.alphaMap = SceneWallpaper_01;
+
+                            mesh_RealityCenter_Orbit04.position.set(0, 0, 0);
+                            mesh_RealityCenter_Orbit04.rotation.set(-1.492, 0.67, 0)
+                            mesh_RealityCenter_Orbit04.scale.set(0.2, 0.2, 0.2);
+                            // mesh_RealityCenter_Orbit04.rotateX( - Math.PI / 2 );
+
+                            // RealityCenter_Orbit04.lookAt(camera)
+                            
+                            RealityCenter_Orbit04.add(mesh_RealityCenter_Orbit04)
+
+
+                        RealityCenter_Orbit05_root = new THREE.Group()
+                        RealityCenter_Orbit05_root.position.set(0, 0, 0)
+                        RealityCenter_Orbit05_root.rotation.set(0, 0, 0)
+                        RealityCenter_Orbit05_root.scale.set(1, 1, 1)
+                        RealityCenter_OrbitBase_root.add(RealityCenter_Orbit05_root)
+
+                            RealityCenter_Orbit05 = new THREE.Group()
+                            RealityCenter_Orbit05.position.set(0, 6030.20, 0)
+                            RealityCenter_Orbit05.rotation.set(0, 0, 0)
+                            RealityCenter_Orbit05.scale.set(12000, 12000, 12000)
+                            RealityCenter_Orbit05_root.add(RealityCenter_Orbit05)
+
+                            const mat_RealityCenter_Orbit05 = new THREE.MeshBasicMaterial({ map: SceneWallpaper_01, side: THREE.DoubleSide });
+                            mesh_RealityCenter_Orbit05 = new THREE.Mesh(geo_objT_RealityCenterOrbit, mat_RealityCenter_Orbit05);
+
+                                mat_RealityCenter_Orbit05.transparent = true;
+                                mat_RealityCenter_Orbit05.wireframe = false;
+                                mat_RealityCenter_Orbit05.alphaMap = SceneWallpaper_01;
+
+                            mesh_RealityCenter_Orbit05.position.set(0, 0, 0);
+                            mesh_RealityCenter_Orbit05.rotation.set(0, 0, 0)
+                            mesh_RealityCenter_Orbit05.scale.set(0.2, 0.2, 0.2);
+                            mesh_RealityCenter_Orbit05.rotateX( - Math.PI / 2 );
+
+                            // RealityCenter_Orbit05.lookAt(camera)
+                            
+                            RealityCenter_Orbit05.add(mesh_RealityCenter_Orbit05)
+
+
+//................................................................................................
+//.....OOOOOO......RRRRR........BBBBB........I...TTTTTTTTT...EEEEEEEEE...RRRRR.........SSSSSS.....
+//....OOOOOOOOO...RRRRRRRRRR...BBBBBBBBBB...III.TTTTTTTTTTT.EEEEEEEEEEE.RRRRRRRRRR....SSSSSSSS....
+//...OOOOOOOOOO...RRRRRRRRRRR..BBBBBBBBBBB..III.TTTTTTTTTTT.EEEEEEEEEEE.RRRRRRRRRRR..SSSSSSSSSS...
+//..OOOOOOOOOOOO..RRRRRRRRRRR..BBBBBBBBBBB..III.TTTTTTTTTTT.EEEEEEEEEEE.RRRRRRRRRRR..SSSSSSSSSS...
+//..OOOO....OOOO..RRRR...RRRRR.BBBB...BBBB..III.....TTTT....EEEE........RRRR...RRRRRSSSS...SSSSS..
+//..OOOO....OOOOO.RRRR...RRRRR.BBBB..BBBBB..III.....TTTT....EEEEEEEEEE..RRRR...RRRRRSSSSSS........
+//.OOOO......OOOO.RRRRRRRRRRR..BBBBBBBBBBB..III.....TTTT....EEEEEEEEEE..RRRRRRRRRRR..SSSSSSSSS....
+//.OOOO......OOOO.RRRRRRRRRRR..BBBBBBBBBBB..III.....TTTT....EEEEEEEEEE..RRRRRRRRRRR..SSSSSSSSSS...
+//.OOOO......OOOO.RRRRRRRRRRR..BBBBBBBBBBB..III.....TTTT....EEEEEEEEEE..RRRRRRRRRRR....SSSSSSSSS..
+//..OOOO....OOOOO.RRRR..RRRRR..BBBB....BBBB.III.....TTTT....EEEE........RRRR..RRRRR.SSSS..SSSSSS..
+//..OOOO....OOOO..RRRR...RRRR..BBBB...BBBBB.III.....TTTT....EEEE........RRRR...RRRR.SSSS....SSSS..
+//..OOOOOOOOOOOO..RRRR...RRRR..BBBBBBBBBBB..III.....TTTT....EEEEEEEEEEE.RRRR...RRRR.SSSSSSSSSSSS..
+//...OOOOOOOOOO...RRRR...RRRR..BBBBBBBBBBB..III.....TTTT....EEEEEEEEEEE.RRRR...RRRR..SSSSSSSSSS...
+//....OOOOOOOOO...RRRR...RRRRR.BBBBBBBBBB...III.....TTTT....EEEEEEEEEEE.RRRR...RRRRR..SSSSSSSSS...
+//.....OOOOOO..........................................................................SSSSSS.....
+//................................................................................................
+
+
+            orbiter01_rotator01_root = new THREE.Group()
+            orbiter01_rotator01_root.position.set(0, 0, 0)
+            orbiter01_rotator01_root.rotation.set(0, 0, 0)
+            orbiter01_rotator01_root.scale.set(1, 1, 1)
+            scene.add(orbiter01_rotator01_root)
+
+
+            orbiterObject01_root = new THREE.Group()
+            orbiterObject01_root.position.set(0, 6000, 21000)
+            orbiterObject01_root.rotation.set(0, 0, 0)
+            orbiterObject01_root.scale.set(17.5, 17.5, 17.5)
+            scene.add(orbiterObject01_root)
+
+                orbiterObject01 = new THREE.Group()
+                orbiterObject01.position.set(0, 0, 10)
+                orbiterObject01.rotation.set(0, 0, 0)
+                orbiterObject01.scale.set(1, 1, 1)
+                orbiterObject01_root.add(orbiterObject01)
+
+                    const mat_orbiterObject01 = new THREE.MeshBasicMaterial({ map: whitePureRoom, side: THREE.DoubleSide });
+                    mesh_orbiterObject01 = new THREE.Mesh(geo_objT_SphereA0, mat_orbiterObject01);
+                    mat_orbiterObject01.transparent = false;
+                    mat_orbiterObject01.alphaMap = whitePureRoom;
+                    mat_orbiterObject01.AdditiveBlending = true
+                    mat_orbiterObject01.blendColor = 0x000000
+                    mesh_orbiterObject01.position.set(0, 0, 0);
+                    // mesh_orbiterObject01.position.set(-15000, 0, 0);
+                    mesh_orbiterObject01.scale.set(1, 1, 1);
+                    mesh_orbiterObject01.rotation.set(0, 0, 0)
+                    // mesh_orbiterObject01.rotateX( - Math.PI / 2 );
+
+                    // orbiterObject01.lookAt(camera)
+                    
+                    orbiterObject01.add(mesh_orbiterObject01)
+
+            
+            testButton04 = new THREE.Group()
+            testButton04.position.set(-2794.68, 5530, 21000)
+            testButton04.rotation.set(0, 0, 0)
+            testButton04.scale.set(1, 1, 1)
+            scene.add(testButton04)
+
+            // let moveCamera_unknown = () => {
+            //     gsap.to(camera.position, {
+            //         duration: 2.5,
+            //         delay: .25,
+            //         y: -105,
+            //     })
+
+            //     gui.hide()
+
+            //     console.log("button pressed")
+            // }
+
+
+            let rotateOrbiter01_AroundCenterPointClockwise = () => {
+                orbiter01_rotator01_root.attach(orbiterObject01)
+
+                
+
+                gsap.to(orbiter01_rotator01_root.rotation, {
+                    duration: 2.5,
+                    delay: .25,
+                    y: '-= 0.26166666666',
+                })
+
+            }
+
+
+            let rotateOrbiter01_AroundCenterPointClockwiseLong = () => {
+                orbiter01_rotator01_root.attach(orbiterObject01)
+
+                gsap.to(orbiter01_rotator01_root.rotation, {
+                    repeat: -1,
+                    ease: "none",
+                    duration: 5,
+                    delay: .25,
+                    y: '-= 6.28',
+                })
+
+
+                // gsap.to(orbiter01_rotator01_root.rotation, {
+                //     repeat: -1,
+                //     duration: 2.5,
+                //     delay: .50,
+                //     y: '-= 3.14',
+                // })
+
+                
+            }
+
+            rotateOrbiter01_AroundCenterPointClockwiseLong()
+
+
+            testButton04.add(
+
+                    new TechIcon(
+                    0, 0, 0,
+                    0, 0, 0,
+                    2.5, 2.5, 2.5,
+                    'DefaultTechIconId', 'DefaultTechIconClassName',
+                    'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+                    'DefaultImgId', 'DefaultImgClassName',
+                    'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+                    "./assets/icons/00-Official/UI/Isometric/tools/target1.svg", "",
+                    rotateOrbiter01_AroundCenterPointClockwiseLong, 
+                    "ShowΔ",
+                    "Toggle from here or main menu top left"
+
+                )
+            )
+        
+
+            
+
+
+			animatedTime = new THREE.Group()
+			animatedTime.position.set(0, 0, 0)
+			animatedTime.scale.set(1000, 1000, 1000)
+			group01_timeSphere.add(animatedTime)
+
+			const geo_timeSphere_L4 = new THREE.SphereGeometry(305500, 32, 32)
+			const mat_timeSphere_L4 = new THREE.MeshBasicMaterial({ map: SceneWallpaper_01, side: THREE.DoubleSide });
+			mesh_timeSphere_L4 = new THREE.Mesh(geo_timeSphere_L4, mat_timeSphere_L4)
+			mat_timeSphere_L4.transparent = false;
+			mat_timeSphere_L4.alphaMap = SceneWallpaper_01
+			mat_timeSphere_L4.wireframe = false;
+			mesh_timeSphere_L4.position.set(0, 0, 200)
+            mesh_timeSphere_L4.rotation.set(0, 0, 0)
+            mesh_timeSphere_L4.scale.set(1, 1, 1)
+			group01_timeSphere.add(mesh_timeSphere_L4);
+
+
+            let Toggle_StaticWallpaper = () => {
+                    if (mesh_timeSphere_L4.scale.x === 1) {
+                        gsap.to(mesh_timeSphere_L4.scale, {
+							repeat: 0,
+							duration: 2.5,
+							delay: 0,
+							x: 0.001,
+                            y: 0.001,
+                            z: 0.001
+							
+						})
+                    } else if (mesh_timeSphere_L4.scale.x === 0.01) {
+                        gsap.to(mesh_timeSphere_L4.scale, {
+							repeat: 0,
+							duration: 2.5,
+							delay: 0,
+							x: 1,
+                            y: 1,
+                            z: 1
+							
+						})
+                    }
+                }
+
+                document.addEventListener("keydown", function(event) {
+					if (event.key === ")") {
+						Toggle_StaticWallpaper()
+					}
+				})
+
+
+
+
+
+//......................................................................................................
+//..PPPPP.........AAA.......ARRRR......RRRTTTTTTT..TI.......CCC.......L..........EEEEEEEE.....SSSSS.....
+//.PPPPPPPPPP....AAAAA.....AARRRRRRRR.RRRRTTTTTTTTTTII...CCCCCCCCC...CLL........LEEEEEEEEE..ESSSSSSSS...
+//.PPPPPPPPPP....AAAAA.....AARRRRRRRRRRRRRTTTTTTTTTTII..ICCCCCCCCCC..CLL........LEEEEEEEEE..ESSSSSSSSS..
+//.PPPPPPPPPPP..AAAAAAA....AARRRRRRRRRRRRRTTTTTTTTTTII..ICCCCCCCCCC..CLL........LEEEEEEEEE.EESSSSSSSSS..
+//.PPPP...PPPP..AAAAAAA....AAR....RRRR....TTTT....TTII.IICCC...CCCCC.CLL........LEE........EESS...SSSS..
+//.PPPP...PPPP.PAAAAAAA....AAR....RRRR....TTTT....TTII.IICC.....CCCC.CLL........LEEEEEEEEE.EESSSS.......
+//.PPPPPPPPPPP.PAAAAAAAA...AARRRRRRRRR....TTTT....TTII.IICC..........CLL........LEEEEEEEEE.EESSSSSSS....
+//.PPPPPPPPPPP.PAAA.AAAA...AARRRRRRRR.....TTTT....TTII.IICC..........CLL........LEEEEEEEEE..ESSSSSSSSS..
+//.PPPPPPPPPP.PPAAAAAAAA...AARRRRRRRRR....TTTT....TTII.IICC..........CLL........LEEEEEEEEE...SSSSSSSSS..
+//.PPPPPPPPP..PPAAAAAAAAA..AAR..RRRRRR....TTTT....TTII.IICC.....CCCC.CLL........LEE........EESS..SSSSS..
+//.PPPP.......PPAAAAAAAAA..AAR....RRRR....TTTT....TTII.IICCC...CCCC..CLL........LEE........EESS....SSS..
+//.PPPP......PPPAAAAAAAAA..AAR....RRRR....TTTT....TTII..ICCCCCCCCCC..CLLLLLLLLL.LEEEEEEEEEEEESSSSSSSSS..
+//.PPPP......PPPA....AAAAA.AAR....RRRR....TTTT....TTII..ICCCCCCCCCC..CLLLLLLLLL.LEEEEEEEEEEEESSSSSSSSS..
+//.PPPP......PPPA.....AAAA.AAR....RRRRR...TTTT....TTII...CCCCCCCCC...CLLLLLLLLL.LEEEEEEEEEE.ESSSSSSSS...
+//.........................................................CCCCC..............................SSSSSS....
+//......................................................................................................
+
+            // #################################################################
+				// #################################################################
+
+
+				// Particles
+				// Search.Particles
+				// Particle Geometry - Defined @ beginnning of init()
+				// ******************************************************
+
+
+
+				const particlesGeometry = new THREE.BufferGeometry();
+				const count = 10000
+				const positions = new Float32Array(count * 3);
+				const colors = new Float32Array(count * 3);
+            
+
+				// Large Number here = The box dimensions all at the same time. 
+				for (let i = 0; i < count * 3; i++) {
+					positions[i] = (Math.random() - 0.5) * 100000
+					colors[i] = Math.random()
+				}
+
+				particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3))
+				particlesGeometry.setAttribute('color', new THREE.BufferAttribute(colors,3))
+
+				// Particle Material init()
+				const particlesMaterial = new THREE.PointsMaterial()
+				// particlesMaterial.size = 10 // for ContainerHolderTex
+				particlesMaterial.size = 75
+				particlesMaterial.sizeAttenuation = true;
+				// particlesMaterial.color = new THREE.Color('#1ADBCB') // neonBlueGreen
+				// particlesMaterial.color = new THREE.Color('#00ffb3') // neonBlueGreen
+				particlesMaterial.color = new THREE.Color('#1ed9d0') // neonGreenBlue
+				// particlesMaterial.color = new THREE.Color('#FFD700') // Gold
+				// particlesMaterial.color = new THREE.Color('#323232') // Black
+				// particlesMaterial.color = new THREE.Color('#a9a9a9') // Black
+				particlesMaterial.transparent = false;
+				// particlesMaterial.alphaMap = ContainerHolderWhiteA1
+				particlesMaterial.alphaMap = particleTexture02
+				particlesMaterial.depthWrite = false
+				particlesMaterial.blending = THREE.AdditiveBlending
+				particlesMaterial.vertextColors = true
+
+				particles = new THREE.Points(particlesGeometry, particlesMaterial)
+				particles.position.set(0, 6000, 0)
+				// particles.position.set(0, 0, 0)
+				scene.add(particles);
+
+
+                let rotateParticles = () => {
+                    gsap.to(particles.rotation, {
+                        repeat: -1,
+                        duration: 15,
+                        ease: "none",
+                        delay: 0,
+                        
+                        y: "+= 3.14",
+                        z: "-= 3.14",
+                        
+
+                
+                    })
+
+                    // gsap.to(particles.scale, {
+                    //     repeat: -1,
+                    //     duration: 2.5,
+                    //     ease: "none",
+                    //     delay: 0,
+                    //     z: 15.5,
+                    //     y: 15.5,
+                    //     x: 15.5,
+
+                
+                    // })
+                }
+
+                rotateParticles()
+
+//.................................................................
+//....SSSSSS........CCC.......EEEEEEEEE...NN......N....EEEEEEEEE...
+//...SSSSSSSS.....CCCCCCCC...EEEEEEEEEEE.NNNN....NNN..EEEEEEEEEEE..
+//..SSSSSSSSSS...CCCCCCCCCC..EEEEEEEEEEE.NNNNN...NNN..EEEEEEEEEEE..
+//..SSSSSSSSSS..CCCCCCCCCCC..EEEEEEEEEEE.NNNNN...NNN..EEEEEEEEEEE..
+//.SSSS...SSSSS.CCCC...CCCCC.EEEE........NNNNNN..NNN..EEEE.........
+//.SSSSSS......SCCCC....CCCC.EEEEEEEEEE..NNNNNNN.NNN..EEEEEEEEEE...
+//..SSSSSSSSS..SCCC..........EEEEEEEEEE..NNNNNNN.NNN..EEEEEEEEEE...
+//..SSSSSSSSSS.SCCC..........EEEEEEEEEE..NNN.NNNNNNN..EEEEEEEEEE...
+//....SSSSSSSSSSCCC..........EEEEEEEEEE..NNN.NNNNNNN..EEEEEEEEEE...
+//.SSSS..SSSSSSSCCCC....CCCC.EEEE........NNN..NNNNNN..EEEE.........
+//.SSSS....SSSS.CCCC...CCCCC.EEEE........NNN..NNNNNN..EEEE.........
+//.SSSSSSSSSSSS.CCCCCCCCCCC..EEEEEEEEEEE.NNN...NNNNN..EEEEEEEEEEE..
+//..SSSSSSSSSS...CCCCCCCCCC..EEEEEEEEEEE.NNN...NNNNN..EEEEEEEEEEE..
+//...SSSSSSSSS....CCCCCCCC...EEEEEEEEEEE.NNN....NNNN..EEEEEEEEEEE..
+//....SSSSSS.......CCCCC...........................................
+//.................................................................
+
+
+                
+
+
+
+
+//.....................................................................................
+//..WW....WWW....WW...EEEEEEEEE...BBBBB.........SSSSSS.....I...TTTTTTTTT...EEEEEEEEE...
+//.WWWW..WWWWW..WWWW.EEEEEEEEEEE.BBBBBBBBBB....SSSSSSSS...III.ITTTTTTTTTT.EEEEEEEEEEE..
+//.WWWW..WWWWW..WWWW.EEEEEEEEEEE.BBBBBBBBBBB..SSSSSSSSSS..III.ITTTTTTTTTT.EEEEEEEEEEE..
+//.WWWW..WWWWW..WWWW.EEEEEEEEEEE.BBBBBBBBBBB..SSSSSSSSSS..III.ITTTTTTTTTT.EEEEEEEEEEE..
+//..WWWW.WWWWW.WWWW..EEEE........BBBB...BBBB.SSSS...SSSSS.III.....TTTT....EEEE.........
+//..WWWWWWWWWWWWWWW..EEEEEEEEEE..BBBB..BBBBB.SSSSSS.......III.....TTTT....EEEEEEEEEE...
+//..WWWWWWWWWWWWWWW..EEEEEEEEEE..BBBBBBBBBBB..SSSSSSSSS...III.....TTTT....EEEEEEEEEE...
+//..WWWWWWWWWWWWWWW..EEEEEEEEEE..BBBBBBBBBBB..SSSSSSSSSS..III.....TTTT....EEEEEEEEEE...
+//...WWWWWW.WWWWWW...EEEEEEEEEE..BBBBBBBBBBB....SSSSSSSSS.III.....TTTT....EEEEEEEEEE...
+//...WWWWWW.WWWWWW...EEEE........BBBB....BBBBSSSS..SSSSSS.III.....TTTT....EEEE.........
+//...WWWWWW.WWWWWW...EEEE........BBBB...BBBBBSSSS....SSSS.III.....TTTT....EEEE.........
+//....WWWWW.WWWWW....EEEEEEEEEEE.BBBBBBBBBBB.SSSSSSSSSSSS.III.....TTTT....EEEEEEEEEEE..
+//....WWWW...WWWW....EEEEEEEEEEE.BBBBBBBBBBB..SSSSSSSSSS..III.....TTTT....EEEEEEEEEEE..
+//....WWWW...WWWW....EEEEEEEEEEE.BBBBBBBBBB....SSSSSSSSS..III.....TTTT....EEEEEEEEEEE..
+//..............................................SSSSSS.................................
+//.....................................................................................
+
+
+            websiteGroup01_root = new THREE.Group()
+            websiteGroup01_root.position.set(0, 6000, 21000)
+            websiteGroup01_root.rotation.set(0, 0, 0)
+            websiteGroup01_root.scale.set(100, 100, 100)
+            scene.add(websiteGroup01_root)
+
+                // websiteTemplateC01 = new THREE.Group()
+                // websiteTemplateC01.position.set(0, 0, 0)
+                // websiteTemplateC01.rotation.set(0, 0, 0)
+                // websiteTemplateC01.scale.set(1.2, 1, 1)
+                // websiteGroup01_root.add(websiteTemplateC01)
+
+                //     const mat_websiteTemplateC01 = new THREE.MeshBasicMaterial({ map: img_websiteTemplateC01, side: THREE.DoubleSide });
+                //     mesh_websiteTemplateC01 = new THREE.Mesh(geo_objT_PlaneA1, mat_websiteTemplateC01);
+                //     mat_websiteTemplateC01.transparent = true;
+                //     mat_websiteTemplateC01.alphaMap = img_websiteTemplateC01;
+                //     mesh_websiteTemplateC01.position.set(0, 0, 0);
+                //     // mesh_websiteTemplateC01.position.set(-15000, 0, 0);
+                //     mesh_websiteTemplateC01.scale.set(1, 1, 1);
+                //     mesh_websiteTemplateC01.rotation.set(0, 0, 0)
+                //     // mesh_websiteTemplateC01.rotateX( - Math.PI / 2 );
+
+                //     // websiteTemplateC01.lookAt(camera)
+                    
+                //     websiteTemplateC01.add(mesh_websiteTemplateC01)
+
+                // websiteTemplateC02 = new THREE.Group()
+                // websiteTemplateC02.position.set(0, -10, 0)
+                // websiteTemplateC02.rotation.set(0, 0, 0)
+                // websiteTemplateC02.scale.set(1.2, 1, 1)
+                // websiteGroup01_root.add(websiteTemplateC02)
+
+                //     const mat_websiteTemplateC02 = new THREE.MeshBasicMaterial({ map: img_websiteTemplateC02, side: THREE.DoubleSide });
+                //     mesh_websiteTemplateC02 = new THREE.Mesh(geo_objT_PlaneA1, mat_websiteTemplateC02);
+                //     mat_websiteTemplateC02.transparent = true;
+                //     mat_websiteTemplateC02.alphaMap = img_websiteTemplateC02;
+                //     mesh_websiteTemplateC02.position.set(0, 0, 0);
+                //     // mesh_websiteTemplateC02.position.set(-15000, 0, 0);
+                //     mesh_websiteTemplateC02.scale.set(1, 1, 1);
+                //     mesh_websiteTemplateC02.rotation.set(0, 0, 0);
+                //     // mesh_websiteTemplateC02.rotateX( - Math.PI / 2 );
+
+                //     // websiteTemplateC02.lookAt(camera)
+                    
+                //     websiteTemplateC02.add(mesh_websiteTemplateC02)
+
+
+                // websiteTemplateC03 = new THREE.Group()
+                // websiteTemplateC03.position.set(0, -20, 0)
+                // websiteTemplateC03.rotation.set(0, 0, 0)
+                // websiteTemplateC03.scale.set(1.2, 1, 1)
+                // websiteGroup01_root.add(websiteTemplateC03)
+
+                //     const mat_websiteTemplateC03 = new THREE.MeshBasicMaterial({ map: img_websiteTemplateC03, side: THREE.DoubleSide });
+                //     mesh_websiteTemplateC03 = new THREE.Mesh(geo_objT_PlaneA1, mat_websiteTemplateC03);
+                //     mat_websiteTemplateC03.transparent = true;
+                //     mat_websiteTemplateC03.alphaMap = img_websiteTemplateC03;
+                //     mesh_websiteTemplateC03.position.set(0, 0, 0);
+                //     // mesh_websiteTemplateC03.position.set(-15000, 0, 0);
+                //     mesh_websiteTemplateC03.scale.set(1, 1, 1);
+                //     mesh_websiteTemplateC03.rotation.set(0, 0, 0)
+                //     // mesh_websiteTemplateC03.rotateX( - Math.PI / 2 );
+
+                //     // websiteTemplateC03.lookAt(camera)
+                    
+                //     websiteTemplateC03.add(mesh_websiteTemplateC03)
+
+
+
+
+
+
+
+                    
+
+            root_WebsitePanel01 = new THREE.Group()
+            root_WebsitePanel01.position.set(0, 900000, 21000)
+            root_WebsitePanel01.rotation.set(0, 0, 0)
+            root_WebsitePanel01.scale.set(100, 100, 100)
+            scene.add(root_WebsitePanel01)
+
+                WebsitePanel01 = new THREE.Group()
+                WebsitePanel01.position.set(0, 0, 10)
+                WebsitePanel01.rotation.set(0, 0, 0)
+                WebsitePanel01.scale.set(3, 10, 1)
+                websiteGroup01_root.add(WebsitePanel01)
+
+                    const mat_WebsitePanel01 = new THREE.MeshBasicMaterial({ map: root_WebsitePanelImg01, side: THREE.DoubleSide });
+                    mesh_WebsitePanel01 = new THREE.Mesh(geo_objT_PlaneA1, mat_WebsitePanel01);
+                    mat_WebsitePanel01.transparent = false;
+                    mat_WebsitePanel01.alphaMap = root_WebsitePanelImg01;
+                    mesh_WebsitePanel01.position.set(0, 0, 0);
+                    // mesh_WebsitePanel01.position.set(-15000, 0, 0);
+                    mesh_WebsitePanel01.scale.set(1, 1, 1);
+                    mesh_WebsitePanel01.rotation.set(0, 0, 0)
+                    // mesh_WebsitePanel01.rotateX( - Math.PI / 2 );
+
+                    // WebsitePanel01.lookAt(camera)
+                    
+                    WebsitePanel01.add(mesh_WebsitePanel01)
+
+                originalPortfolio_site_root = new THREE.Group()
+                originalPortfolio_site_root.position.set(0, 15, 1)
+                originalPortfolio_site_root.rotation.set(0, 0, 0)
+                originalPortfolio_site_root.scale.set(1, 1, 1)
+                websiteGroup01_root.add(originalPortfolio_site_root)
+
+                    // --------------------------------------------------------------
+                    originalPortfolio_site = new THREE.Group()
+                    // originalPortfolio_site.position.set(2000, 6530, 21000) // by itself
+                    originalPortfolio_site.position.set(0, 0, 10)
+                    originalPortfolio_site.rotation.set(0, 0, 0)
+                    originalPortfolio_site.scale.set(1, 1, 1)
+                    // scene.add(originalPortfolio_site) // by itself
+                    originalPortfolio_site_root.add(originalPortfolio_site)
+
+
+                        originalPortfolio_site.add(
+
+                            new makePDF_Viewer(
+                                0, 0, 0,
+                                0, 0, 0,
+                                0.01, 0.01, 0.01,
+                                "hoverClockA1",
+                                "https://vonerikbarren.github.io/Portfolio--V3/#",
+                                "1920px", "1200px"
+                            )
+
+                        ) 
+
+                    
+            
+
+
+            googSheet_root = new THREE.Group()
+            googSheet_root.position.set(6000, 5130, 21000)
+            googSheet_root.rotation.set(0, 0, 0)
+            googSheet_root.scale.set(1, 1, 1)
+            scene.add(googSheet_root)
+
+                googSheet_root.add(
+
+                    new makePDF_Viewer(
+                        0, 0, 0,
+                        0, 0, 0,
+                        1, 1, 1,
+                        "hoverClockA1",
+                        "https://vonerikbarren.github.io/Complex-Design-Architecture/",
+                        "1920px", "1200px"
+                    )
+
+                ) 
+                    
+                
+            
+            pdfFileTest_root = new THREE.Group()
+            pdfFileTest_root.position.set(-9600, 5530, 21000)
+            pdfFileTest_root.rotation.set(0, 0, 0)
+            pdfFileTest_root.scale.set(1, 1, 1)
+            scene.add(pdfFileTest_root)
+
+                pdfFileTest_root.add(
+
+                    new makePDF_Viewer(
+                        0, 0, 0,
+                        0, 0, 0,
+                        1, 1, 1,
+                        "hoverClockA1",
+                        "./assets/docs/02-PDFs/MyPersonalLibrary/00-Admin/ResumeIterations/Resume_ΔΑ01.pdf",
+                        "1200px", "1920px"
+                    )
+
+                    
+                )
+
+
+            
+            rotator_root = new THREE.Group()
+            rotator_root.position.set(0, 0, 0)
+            rotator_root.rotation.set(0, 0, 0)
+            rotator_root.scale.set(1, 1, 1)
+            scene.add(rotator_root)
+
+            
+            testButton01 = new THREE.Group()
+            testButton01.position.set(-7794.68, 5530, 21000)
+            testButton01.rotation.set(0, 0, 0)
+            testButton01.scale.set(1, 1, 1)
+            scene.add(testButton01)
+
+            let moveCamera_unknown = () => {
+                gsap.to(camera.position, {
+                    duration: 2.5,
+                    delay: .25,
+                    y: -105,
+                })
+
+                gui.hide()
+
+                console.log("button pressed")
+            }
+
+
+            let rotateCameraAroundCenterPointClockwise = () => {
+                rotator_root.attach(camera)
+
+                
+
+                gsap.to(rotator_root.rotation, {
+                    duration: 2.5,
+                    delay: .25,
+                    y: '-= 0.26166666666',
+                })
+
+            }
+
+
+            let rotateCameraAroundCenterPointClockwiseLong = () => {
+                rotator_root.attach(camera)
+
+                gsap.to(rotator_root.rotation, {
+                    duration: 2.5,
+                    delay: .25,
+                    y: '-= 1.575',
+                })
+
+                
+            }
+
+
+                testButton01.add(
+
+                    	new TechIcon(
+						0, 0, 0,
+						0, 0, 0,
+						2.5, 2.5, 2.5,
+						'DefaultTechIconId', 'DefaultTechIconClassName',
+						'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+						'DefaultImgId', 'DefaultImgClassName',
+						'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+						"./assets/icons/00-Official/UI/Isometric/tools/target1.svg", "",
+						rotateCameraAroundCenterPointClockwise, 
+						"ShowΔ",
+						"Toggle from here or main menu top left"
+					)
+
+                    
+                )
+
+
+            testButton02 = new THREE.Group()
+            testButton02.position.set(-7794.68, 5140, 21000)
+            testButton02.rotation.set(0, 0, 0)
+            testButton02.scale.set(1, 1, 1)
+            scene.add(testButton02)
+            // camera.attach(testButton02)
+
+
+            
+
+            let moveCamera_unknown1 = () => {
+                gsap.to(camera.position, {
+                    duration: 2.5,
+                    delay: .25,
+                    y: -105,
+                })
+
+                gui.show()
+
+                console.log("button pressed")
+            }
+
+
+            let rotateCameraAroundCenterPointCounterClockwise = () => {
+                rotator_root.attach(camera)
+
+                
+
+                gsap.to(rotator_root.rotation, {
+                    duration: 2.5,
+                    delay: .25,
+                    y: '+= 0.26166666666',
+                })
+            }
+
+
+            let rotateCameraAroundCenterPointCounterClockwiseLong = () => {
+                rotator_root.attach(camera)
+
+                gsap.to(rotator_root.rotation, {
+                    duration: 2.5,
+                    delay: .25,
+                    y: '+= 1.575',
+                })
+
+                
+            }
+
+            
+
+
+            testButton02.add(
+
+            new hoverObject(
+                    'img',
+                    0, 0, 0,
+                    0, 0, 0,
+                    0.1, 0.1, 0.1,
+                    "Testing234", "TestingClass234",
+                    "./assets/icons/00-Official/UI/Isometric/tools/target1.svg", '',
+                    "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Love each other...correctly.",
+                    rotateCameraAroundCenterPointCounterClockwise, "",
+                    
+                )
+
+                
+            )
+
+
+            root_PageScrollButtons = new THREE.Group()
+            root_PageScrollButtons.position.set(2000, 5140, 21000)
+            root_PageScrollButtons.rotation.set(0, 0, 0)
+            root_PageScrollButtons.scale.set(1, 1, 1)
+            scene.add(root_PageScrollButtons)
+
+
+                pageUp_button = new THREE.Group()
+                pageUp_button.position.set(-10, 200, 0)
+                pageUp_button.rotation.set(0, 0, 0)
+                pageUp_button.scale.set(1, 1, 1)
+                root_PageScrollButtons.add(pageUp_button)
+
+                let scrollPageUp = () => {
+                    rotator_root.attach(camera)
+
+                    
+
+                    gsap.to(WebsitePanel01.position, {
+                        duration: 2.5,
+                        delay: 0,
+                        y: '+= 10',
+                    })
+
+                    gsap.to(originalPortfolio_site_root.position, {
+                        duration: 2.5,
+                        delay: 0,
+                        y: '+= 10',
+                    })
+                }
+
+                pageUp_button.add(
+
+                    	new TechIcon(
+						0, 0, 0,
+						0, 0, 0,
+						0.5, 0.5, 0.5,
+						'DefaultTechIconId', 'DefaultTechIconClassName',
+						'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+						'DefaultImgId', 'DefaultImgClassName',
+						'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+						"/assets/icons/Arrows/AnimatedArrows/up-arrow.gif", "",
+						scrollPageUp, 
+						"ShowΔ",
+						"Toggle from here or main menu top left"
+					)
+
+                    
+                )
+
+
+
+                pageDown_button = new THREE.Group()
+                pageDown_button.position.set(-10, -200, 0)
+                pageDown_button.rotation.set(0, 0, 0)
+                pageDown_button.scale.set(1, 1, 1)
+                root_PageScrollButtons.add(pageDown_button)
+
+                let scrollPageDown = () => {
+                    rotator_root.attach(camera)
+
+                    
+
+                    gsap.to(WebsitePanel01.position, {
+                        duration: 2.5,
+                        delay: 0,
+                        y: '-= 10',
+                    })
+
+                    gsap.to(originalPortfolio_site_root.position, {
+                        duration: 2.5,
+                        delay: 0,
+                        y: '-= 10',
+                    })
+                }
+
+                pageDown_button.add(
+
+                    	new TechIcon(
+						0, 0, 0,
+						0, 0, 0,
+						0.5, 0.5, 0.5,
+						'DefaultTechIconId', 'DefaultTechIconClassName',
+						'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+						'DefaultImgId', 'DefaultImgClassName',
+						'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+						"/assets/icons/Arrows/AnimatedArrows/down-arrow.gif", "",
+						scrollPageDown, 
+						"ShowΔ",
+						"Toggle from here or main menu top left"
+					)
+
+                    
+                )
+
+// Website Realities
+// -----------------------------------------------------------------------
+                websiteReality01 = new THREE.Group()
+                websiteReality01.position.set(0, 0, -4000)
+                websiteReality01.rotation.set(0, 0, 0)
+                websiteReality01.scale.set(5, 5, 5)
+                websiteGroup01_root.add(websiteReality01)
+
+                    const mat_websiteReality01 = new THREE.MeshBasicMaterial({ map: BaseContainer01, side: THREE.DoubleSide });
+                    mesh_websiteReality01 = new THREE.Mesh(geo_objT_BoxA0, mat_websiteReality01);
+                    mat_websiteReality01.transparent = true;
+                    mat_websiteReality01.alphaMap = BaseContainer01;
+                    mesh_websiteReality01.position.set(0, 0, 0);
+                    // mesh_websiteReality01.position.set(-15000, 0, 0);
+                    mesh_websiteReality01.scale.set(1, 1, 1);
+                    mesh_websiteReality01.rotation.set(0, 0, 0)
+                    // mesh_websiteReality01.rotateX( - Math.PI / 2 );
+
+                    // websiteReality01.lookAt(camera)
+                    
+                    websiteReality01.add(mesh_websiteReality01)
+
+
+                websiteReality02 = new THREE.Group()
+                websiteReality02.position.set(8, 0, 0)
+                websiteReality02.rotation.set(0, 0, 0)
+                websiteReality02.scale.set(0.1, 0.1, 0.1)
+                websiteGroup01_root.add(websiteReality02)
+
+                    const mat_websiteReality02 = new THREE.MeshBasicMaterial({ map: BaseContainer01, side: THREE.DoubleSide });
+                    mesh_websiteReality02 = new THREE.Mesh(geo_objT_BoxA0, mat_websiteReality02);
+                    mat_websiteReality02.transparent = true;
+                    mat_websiteReality02.alphaMap = BaseContainer01;
+                    mesh_websiteReality02.position.set(0, 0, 0);
+                    // mesh_websiteReality02.position.set(-15000, 0, 0);
+                    mesh_websiteReality02.scale.set(1, 1, 1);
+                    mesh_websiteReality02.rotation.set(0, 0, 0)
+                    // mesh_websiteReality02.rotateX( - Math.PI / 2 );
+
+                    // websiteReality02.lookAt(camera)
+                    
+                    websiteReality02.add(mesh_websiteReality02)
+                
+                let rotate_websiteReality02 = () => {
+                    gsap.to(mesh_websiteReality02.rotation, {
+                        repeat: -1,
+                        duration: 2.5,
+                        delay: .25,
+                        ease: "none",
+                        y: '-= 3.14',
+                    })
+                }
+
+
+                rotate_websiteReality02()
+
+
+
+                websiteReality03 = new THREE.Group()
+                websiteReality03.position.set(8, -3, 0)
+                websiteReality03.rotation.set(0, 0, 0)
+                websiteReality03.scale.set(0.1, 0.1, 0.1)
+                websiteGroup01_root.add(websiteReality03)
+
+                    const mat_websiteReality03 = new THREE.MeshBasicMaterial({ map: BaseContainer01, side: THREE.DoubleSide });
+                    mesh_websiteReality03 = new THREE.Mesh(geo_objT_BoxA0, mat_websiteReality03);
+                    mat_websiteReality03.transparent = true;
+                    mat_websiteReality03.alphaMap = BaseContainer01;
+                    mesh_websiteReality03.position.set(0, 0, 0);
+                    // mesh_websiteReality03.position.set(-15000, 0, 0);
+                    mesh_websiteReality03.scale.set(1, 1, 1);
+                    mesh_websiteReality03.rotation.set(0, 0, 0)
+                    // mesh_websiteReality03.rotateX( - Math.PI / 2 );
+
+                    // websiteReality03.lookAt(camera)
+                    
+                    websiteReality03.add(mesh_websiteReality03)
+                
+                let rotate_websiteReality03 = () => {
+                    gsap.to(mesh_websiteReality03.rotation, {
+                        repeat: -1,
+                        duration: 2.5,
+                        delay: .25,
+                        ease: "none",
+                        y: '+= 3.14',
+                    })
+                }
+
+
+                rotate_websiteReality03()
+
+
+
+
+
+            
+//..................................................
+//......CCC......TTTTTTTTT...LL.........RRRRR.......
+//....CCCCCCCC..TTTTTTTTTTT.LLLL.......RRRRRRRRRR...
+//...CCCCCCCCCC.TTTTTTTTTTT.LLLL.......RRRRRRRRRRR..
+//..CCCCCCCCCCC.TTTTTTTTTTT.LLLL.......RRRRRRRRRRR..
+//..CCCC...CCCCC....TTTT....LLLL.......RRRR...RRRR..
+//.CCCCC....CCCC....TTTT....LLLL.......RRRR...RRRR..
+//.CCCC.............TTTT....LLLL.......RRRRRRRRRRR..
+//.CCCC.............TTTT....LLLL.......RRRRRRRRRRR..
+//.CCCC.............TTTT....LLLL.......RRRRRRRRRRR..
+//.CCCCC....CCCC....TTTT....LLLL.......RRRR..RRRRR..
+//..CCCC...CCCCC....TTTT....LLLL.......RRRR...RRRR..
+//..CCCCCCCCCCC.....TTTT....LLLLLLLLLL.RRRR...RRRR..
+//...CCCCCCCCCC.....TTTT....LLLLLLLLLL.RRRR...RRRR..
+//....CCCCCCCC......TTTT....LLLLLLLLLL.RRRR...RRRR..
+//.....CCCCC........................................
+//..................................................
+
+
+
+            const raycaster = new THREE.Raycaster();
+            const mouse = new THREE.Vector2();
+
+
+            scene.addEventListener("click", onMouseClick);
+
+
+
+
+
+
+
+
+
+			// const geo_TimeSphereHourBase_L0 = new THREE.CircleGeometry(5000, 50)
+			// const mat_TimeSphereHourBase_L0 = new THREE.MeshBasicMaterial({ map: timeSphereImg_01, side: THREE.DoubleSide });
+			// mesh_TimeSphereHourBase_L0 = new THREE.Mesh(geo_TimeSphereHourBase_L0, mat_TimeSphereHourBase_L0)
+			// mat_TimeSphereHourBase_L0.transparent = true;
+			// mat_TimeSphereHourBase_L0.alphaMap = timeSphereImg_01
+			// mat_TimeSphereHourBase_L0.wireframe = false;
+			// mesh_TimeSphereHourBase_L0.position.set(0, 1.5, 200)
+			// mesh_TimeSphereHourBase_L0.rotation.x = - Math.PI * 0.5
+			// group01_timeSphere.add(mesh_TimeSphereHourBase_L0);
+
+
+
+
+
+			// const geo_Reality_A0 = new THREE.SphereGeometry(90000, 150000, 4)
+			// const mat_Reality_A0 = new THREE.MeshBasicMaterial({
+			// 	color: 0xffffff,
+			// 	map: realitySphereImg_01,
+			// 	side: THREE.DoubleSide
+			// });
+			// mesh_Reality_A0 = new THREE.Mesh(geo_Reality_A0, mat_Reality_A0)
+			// mat_Reality_A0.transparent = true;
+			// mat_Reality_A0.alphaMap = realitySphereImg_01
+			// mat_Reality_A0.wireframe = false;
+			// mesh_Reality_A0.position.set(0, 74550, 0)
+			// group02_RealityContainer.add(mesh_Reality_A0)
+
+
+
+
+			const geo_lightContainer_A0 = new THREE.CylinderGeometry(50, 50, 50, 32);
+			const mat_lightContainer_A0 = new THREE.MeshBasicMaterial({ color: 0xffffff, side: THREE.DoubleSide });
+			mesh_lightContainer_A0 = new THREE.Mesh(geo_lightContainer_A0, mat_lightContainer_A0);
+			mat_lightContainer_A0.transparent = true;
+			mesh_lightContainer_A0.position.set(500000, 0, 0);
+			group02_RealityContainer.add(mesh_lightContainer_A0);
+
+
+
+			// -------------------------------------------------------------
+			// const ambientLight = new THREE.AmbientLight(0xffffff, 0.3)
+			// scene.add(ambientLight)
+
+			const directionalLight = new THREE.DirectionalLight(0xffffff, 0.3)
+			scene.add(directionalLight)
+
+			directionalLight.position.x = 255
+			directionalLight.shadow.mapSize.width = 1024
+			directionalLight.shadow.mapSize.height = 1024
+			directionalLight.shadow.camera.near = 1
+			directionalLight.shadow.camera.far = 6
+			directionalLight.shadow.camera.top = 2
+			directionalLight.shadow.camera.right = 2
+			directionalLight.shadow.camera.bottom = - 2
+			directionalLight.shadow.camera.left = - 2
+
+			directionalLight.position.set(2, 2, - 1)
+			scene.add(directionalLight)
+
+
+            controls = new OrbitControls( camera, cssrenderer.domElement );
+            controls.maxPolarAngle = Math.PI * 0.495;
+            // controls.minPolarAngle = Math.PI * 0.495;
+            controls.maxAzimuthAngle = Math.PI * 0.495;
+            controls.target.set( 0, 55, 0 );
+            controls.minDistance = 100.0;
+            controls.maxDistance = 70000.0;
+            controls.screenSpacePanning = true
+            controls.enablePan = false
+            controls.rotateSpeed = 0.025
+            controls.zoomSpeed = 0.1
+            controls.movementSpeed = 10000;
+            controls.update();
+            
+
+
+            // let activateOrbitControls = () => {
+            //     controls = new OrbitControls( camera, cssrenderer.domElement );
+            //     controls.lookAt(0, 6000, 0)
+            //     controls.maxPolarAngle = Math.PI * 0.495;
+            //     // controls.minPolarAngle = Math.PI * 0.495;
+            //     controls.maxAzimuthAngle = Math.PI * 0.495;
+            //     controls.target.set( 0, 55, 0 );
+            //     controls.minDistance = 100.0;
+            //     controls.maxDistance = 70000.0;
+            //     controls.screenSpacePanning = false
+            //     controls.enablePan = false
+            //     controls.rotateSpeed = 0.0025
+            //     controls.zoomSpeed = 0.1
+            //     controls.movementSpeed = 10;
+            //     controls.update();
+            // }
+
+
+            
+
+
+
+            // let activeFirstPersonControls = () => {
+            //     controls = new FirstPersonControls(camera, renderer.domElement);
+
+            //     controls.movementSpeed = 10;
+            //     controls.lookSpeed = 0.035
+            //     controls.noFly = true;
+            //     controls.lookVertical = true;
+            //     controls.mouseDragOn = false;
+            //     controls.verticalMax = 0
+            //     controls.verticalMin = 0
+            //     controls.heightMax = 0
+            //     controls.heightMin = 0
+            //     controls.update();
+
+            // }
+
+
+			// controls = new FirstPersonControls(camera, renderer.domElement);
+
+			// controls.movementSpeed = 10;
+			// controls.lookSpeed = 0.035
+			// controls.noFly = true;
+			// controls.lookVertical = true;
+			// controls.mouseDragOn = true;
+            // controls.verticalMax = 0
+            // controls.verticalMin = 0
+            // controls.heightMax = 0
+            // controls.heightMin = 0
+			// // controls.update();
+
+			
+			// camera.lookAt(0, 55, 0)
+
+
+
+            // document.addEventListener("keydown", function(event) {
+            //     if (event.key === "z") {
+            //         activateOrbitControls()
+            //     }
+            // })
+
+            // document.addEventListener("keydown", function(event) {
+            //     if (event.key === "x") {
+            //         activeFirstPersonControls()
+            //     }
+            // })
+
+//..........................................................................................................
+//......CCC......TTTTTTTTT...LL.........RRRRR.........................UU.....UU....NN......N.......CCC......
+//....CCCCCCCC..TTTTTTTTTTT.LLLL.......RRRRRRRRRR.........FFFFFFFFFF.UUUU...UUUU..NNNN....NNN....CCCCCCCC...
+//...CCCCCCCCCC.TTTTTTTTTTT.LLLL.......RRRRRRRRRRR........FFFFFFFFFF.UUUU...UUUU..NNNNN...NNN...CCCCCCCCCC..
+//..CCCCCCCCCCC.TTTTTTTTTTT.LLLL.......RRRRRRRRRRR........FFFFFFFFFF.UUUU...UUUU..NNNNN...NNN..CCCCCCCCCCC..
+//..CCCC...CCCCC....TTTT....LLLL.......RRRR...RRRRR.......FFFF.......UUUU...UUUU..NNNNNN..NNN..CCCC...CCCC..
+//.CCCCC....CCCC....TTTT....LLLL.......RRRR...RRRRR.......FFFF.......UUUU...UUUU..NNNNNNN.NNN.CCCCC....CCC..
+//.CCCC.............TTTT....LLLL.......RRRRRRRRRRR........FFFFFFFFF..UUUU...UUUU..NNNNNNN.NNN.CCCC..........
+//.CCCC.............TTTT....LLLL.......RRRRRRRRRRR.------.FFFFFFFFF..UUUU...UUUU..NNN.NNNNNNN.CCCC..........
+//.CCCC.............TTTT....LLLL.......RRRRRRRRRRR.------.FFFFFFFFF..UUUU...UUUU..NNN.NNNNNNN.CCCC..........
+//.CCCCC....CCCC....TTTT....LLLL.......RRRR..RRRRR.------.FFFF.......UUUU...UUUU..NNN..NNNNNN.CCCCC....CCC..
+//..CCCC...CCCCC....TTTT....LLLL.......RRRR...RRRR.------.FFFF.......UUUU...UUUU..NNN..NNNNNN..CCCC...CCCC..
+//..CCCCCCCCCCC.....TTTT....LLLLLLLLLL.RRRR...RRRR........FFFF.......UUUUUUUUUUU..NNN...NNNNN..CCCCCCCCCCC..
+//...CCCCCCCCCC.....TTTT....LLLLLLLLLL.RRRR...RRRR........FFFF.......UUUUUUUUUUU..NNN...NNNNN...CCCCCCCCCC..
+//....CCCCCCCC......TTTT....LLLLLLLLLL.RRRR...RRRRR.......FFFF........UUUUUUUUU...NNN....NNNN....CCCCCCCC...
+//.....CCCCC............................................................UUUUU.....................CCCCC.....
+//..........................................................................................................
+
+
+
+            document.addEventListener("keydown", function(event) {
+                if (event.key === "[") {
+                    
+                    
+                    rotateCameraAroundCenterPointClockwise()
+
+                    // gsap.to(camera.rotation, {
+                    //     duration: 1,
+                    //     delay: 0,
+                    //     x: '+= 1.575',
+
+                    // })
+
+
+                    // gsap.to(camera.rotation, {
+                    //     duration: 1,
+                    //     delay: 1,
+                    //     x: '-= 1.575',
+
+                    // })
+
+
+                    
+
+
+
+                }
+            })
+
+
+
+            document.addEventListener("keydown", function(event) {
+                if (event.ctrlKey &&  event.key === "[") {
+                    
+                    
+                    rotateCameraAroundCenterPointClockwiseLong()
+
+                    // gsap.to(camera.rotation, {
+                    //     duration: 1,
+                    //     delay: 0,
+                    //     x: '+= 1.575',
+
+                    // })
+
+
+                    // gsap.to(camera.rotation, {
+                    //     duration: 1,
+                    //     delay: 1,
+                    //     x: '-= 1.575',
+
+                    // })
+
+
+                    
+
+
+
+                }
+            })
+
+
+
+            document.addEventListener("keydown", function(event) {
+                if (event.key === "]") {
+                    
+                    
+                    rotateCameraAroundCenterPointCounterClockwise()
+
+                    // gsap.to(camera.rotation, {
+                    //     duration: 1,
+                    //     delay: 0,
+                    //     x: '+=1.575',
+
+                    // })
+
+
+                    // gsap.to(camera.rotation, {
+                    //     duration: 1,
+                    //     delay: 1,
+                    //     x: '-=1.575',
+
+
+                    // })
+
+
+                    
+
+                }
+            })
+
+
+            document.addEventListener("keydown", function(event) {
+                if (event.ctrlKey &&  event.key === "]") {
+                    
+                    
+                    rotateCameraAroundCenterPointCounterClockwiseLong()
+
+                    // gsap.to(camera.rotation, {
+                    //     duration: 1,
+                    //     delay: 0,
+                    //     x: '+= 1.575',
+
+                    // })
+
+
+                    // gsap.to(camera.rotation, {
+                    //     duration: 1,
+                    //     delay: 1,
+                    //     x: '-= 1.575',
+
+                    // })
+
+
+                    
+
+
+
+                }
+            })
+
+
+            document.addEventListener("keydown", function(event) {
+                if (event.key === "=") {
+                    
+
+                    gsap.to(camera.position, {
+                        duration: .25,
+                        delay: 0,
+                        x: `-= ${newSpeedStrengthParams.left}`,
+                        y: `+= ${newSpeedStrengthParams.left}`,
+                        z: `-= ${newSpeedStrengthParams.left}`,
+
+                    })
+
+
+                    // gsap.to(camera.position, {
+                    //     duration: .25,
+                    //     delay: .25,
+                    //     x: `-= ${newSpeedStrengthParams.left}`,
+                    //     y: `+= ${newSpeedStrengthParams.left}`,
+                    //     z: `-= ${newSpeedStrengthParams.left}`,
+
+                    // })
+
+                    // gsap.to(camera.position, {
+                    //     duration: .25,
+                    //     delay: 0.50,
+                    //     x: `-= ${newSpeedStrengthParams.left}`,
+                    //     y: `+= ${newSpeedStrengthParams.left}`,
+                    //     z: `-= ${newSpeedStrengthParams.left}`,
+
+                    // })
+
+                }
+            })
+
+
+            document.addEventListener("keydown", function(event) {
+                if (event.key === "'") {
+                    
+
+                    gsap.to(camera.position, {
+                        duration: 1,
+                        delay: 0,
+                        y: 0,
+
+                    })
+
+
+                    gsap.to(camera.position, {
+                        duration: 15,
+                        delay: 1,
+                        z: 50000,
+
+                    })
+
+
+                    gsap.to(camera.position, {
+                        duration: 15.5,
+                        delay: 15,
+                        z: -150000,
+                        onComplete: rotateCameraAroundCenterPointClockwise()
+                    })
+
+
+
+                    // gsap.to(camera.position, {
+                    //     duration: 15.5,
+                    //     delay: 15.5,
+                    //     y: 6000,
+                    //     onComplete: rotateCameraAroundCenterPointCounterClockwise()
+                    // })
+
+
+                    // gsap.to(camera.position, {
+                    //     duration: 30,
+                    //     delay: 30,
+                    //     y: 100000,
+
+                    // })
+
+
+
+
+
+                    
+
+
+                    
+
+                }
+            })
+
+
+            // Raise and Lower Water
+            document.addEventListener("keydown", function(event) {
+                if (event.key === "0") {
+                    
+
+                    gsap.to(water.position, {
+                        duration: 7,
+                        delay: 0,
+                        x: 0,
+                        y: -500000,
+                        z: 0,
+
+                    })
+
+                   
+
+                }
+            })
+
+
+            document.addEventListener("keydown", function(event) {
+                if (event.ctrlKey && event.key === "0") {
+                    
+
+                    gsap.to(water.position, {
+                        duration: 7,
+                        delay: 0,
+                        x: 0,
+                        y: 0,
+                        z: 0,
+
+                    })
+
+                   
+
+                }
+            })
+
+
+
+            // dat.Gui options
+            document.addEventListener("keydown", function(event) {
+                if (event.key === "1") {
+                    gui.show()
+                    
+
+                    setTimeout(gui.open(), 10000)
+                }
+            })
+
+
+            document.addEventListener("keydown", function(event) {
+                if (event.ctrlKey && event.key === "1") {
+                    gui.close()
+                    gui.hide()
+
+                }
+            })
+
+
+
+
+
+
+
+
+
+
+//.................................................................
+//..UU.....UU.....SSSSSS.....EEEEEEEEE...RRRRR.....................
+//.UUUU...UUUU...SSSSSSSS...SEEEEEEEEEE.ERRRRRRRRR......ΔΔΔΔΔ......
+//.UUUU...UUUU..SSSSSSSSSS..SEEEEEEEEEE.ERRRRRRRRRR.....ΔΔΔΔΔ......
+//.UUUU...UUUU..SSSSSSSSSS..SEEEEEEEEEE.ERRRRRRRRRR.....ΔΔΔΔΔ......
+//.UUUU...UUUU.USSS...SSSSS.SEEE........ERRR...RRRRR...ΔΔΔΔΔΔΔ.....
+//.UUUU...UUUU.USSSSS.......SEEEEEEEEE..ERRR...RRRRR...ΔΔΔΔΔΔΔ.....
+//.UUUU...UUUU..SSSSSSSSS...SEEEEEEEEE..ERRRRRRRRRR...ΔΔΔΔ.ΔΔΔΔ....
+//.UUUU...UUUU..SSSSSSSSSS..SEEEEEEEEE..ERRRRRRRRRR...ΔΔΔΔ.ΔΔΔΔ....
+//.UUUU...UUUU....SSSSSSSSS.SEEEEEEEEE..ERRRRRRRRRR...ΔΔΔ..ΔΔΔΔ....
+//.UUUU...UUUU.USSS..SSSSSS.SEEE........ERRR..RRRRR..RΔΔΔ...ΔΔΔΔ...
+//.UUUU...UUUU.USSS....SSSS.SEEE........ERRR...RRRR..RΔΔΔ...ΔΔΔΔ...
+//.UUUUUUUUUUU.USSSSSSSSSSS.SEEEEEEEEEE.ERRR...RRRR.RRΔΔΔΔΔΔΔΔΔΔΔ..
+//.UUUUUUUUUUU..SSSSSSSSSS..SEEEEEEEEEE.ERRR...RRRR.RRΔΔΔΔΔΔΔΔΔΔΔ..
+//..UUUUUUUUU....SSSSSSSSS..SEEEEEEEEEE.ERRR...RRRRRRRΔΔΔΔΔΔΔΔΔΔΔ..
+//....UUUUU.......SSSSSS...........................................
+//.................................................................
+
+
+                UserContainer_root = new THREE.Group()
+                // UserContainer_root.position.set(30, 5990, 23950);
+                UserContainer_root.position.set(0, 45, 130);
+                UserContainer_root.rotation.set(0, 0, 0)
+                UserContainer_root.scale.set(10, 10, 10)
+                scene.add(UserContainer_root)
+
+                    UserContainer_MediaContainer_baseA = new THREE.Group()
+                    UserContainer_MediaContainer_baseA.position.set(0, 0, 0)
+                    UserContainer_MediaContainer_baseA.rotation.set(0, 0, 0)
+                    UserContainer_MediaContainer_baseA.scale.set(1, 1, 1)
+                    UserContainer_root.add(UserContainer_MediaContainer_baseA)
+
+                        UserContainer_MediaContainer_Media = new THREE.Group()
+                        UserContainer_MediaContainer_Media.position.set(0, 1.15, 0)
+                        UserContainer_MediaContainer_Media.rotation.set(0, 0, 0)
+                        UserContainer_MediaContainer_Media.scale.set(1, 1, 1)	
+                        UserContainer_MediaContainer_baseA.add(UserContainer_MediaContainer_Media)
+                        
+
+                        const userContainerMedia = document.getElementById('userVideo')
+                        const userContainerMedia_Tex = new THREE.VideoTexture(userContainerMedia)
+                        const userContainerMedia_Mat = new THREE.MeshBasicMaterial(
+                            {
+                                map: userContainerMedia_Tex,
+                                side: THREE.DoubleSide,
+                                toneMapped: false,
+                            }
+                        )
+
+                        userContainerMedia.load()
+                        userContainerMedia.play()
+                        // userContainerMedia_Mat.alphaMap = userContainerMedia_Tex
+                        userContainerMedia_Mat.transparent = true
+
+                        mesh_UserContainer_MediaContainer_Media = new THREE.Mesh(
+                            geo_objT_CircleA1, 
+                            userContainerMedia_Mat
+                        )
+
+                        mesh_UserContainer_MediaContainer_Media.position.set(0, 0, 0)
+                        mesh_UserContainer_MediaContainer_Media.rotation.set(0, 0, 0)
+                        mesh_UserContainer_MediaContainer_Media.scale.set(0.1, 0.09, 0.1)
+                        UserContainer_MediaContainer_Media.add(mesh_UserContainer_MediaContainer_Media)
+
+                    
+                    UserContainer_MediaContainer_baseB = new THREE.Group()
+                    UserContainer_MediaContainer_baseB.position.set(0, 0, -0.1)
+                    UserContainer_MediaContainer_baseB.rotation.set(0, 0, 0)
+                    UserContainer_MediaContainer_baseB.scale.set(1, 1, 1)
+                    UserContainer_root.add(UserContainer_MediaContainer_baseB)
+
+                        // # UserContainer_DecorativeCircle01
+                        // ------------------------------------------------------------------------------------
+                        UserContainer_DecorativeCircle01 = new THREE.Group()
+                        UserContainer_DecorativeCircle01.position.set(0, 1.15, 0)
+                        UserContainer_DecorativeCircle01.rotation.set(0, 0, 0)
+                        UserContainer_DecorativeCircle01.scale.set(1, 1, 1)
+                        UserContainer_MediaContainer_baseB.add(UserContainer_DecorativeCircle01)
+
+                        const mat_UserContainer_DecorativeCircle01 = new THREE.MeshBasicMaterial({ map: BaseUI_Gear01, side: THREE.DoubleSide });
+                        mesh_UserContainer_DecorativeCircle01 = new THREE.Mesh(geo_objT_CircleA1, mat_UserContainer_DecorativeCircle01);
+
+                            mat_UserContainer_DecorativeCircle01.transparent = true;
+                            mat_UserContainer_DecorativeCircle01.alphaMap = BaseUI_Gear01;
+
+                        mesh_UserContainer_DecorativeCircle01.position.set(0, 0, 0);
+                        mesh_UserContainer_DecorativeCircle01.rotation.set(0, 0, 0)
+                        mesh_UserContainer_DecorativeCircle01.scale.set(0.12, 0.12, 0.12);
+                        // mesh_UserContainer_DecorativeCircle01.rotateX( - Math.PI / 2 );
+
+                        // UserContainer_DecorativeCircle01.lookAt(camera)
+                        
+                        UserContainer_DecorativeCircle01.add(mesh_UserContainer_DecorativeCircle01)
+
+
+                        // # UserContainer_DecorativeCircle02
+                        // ------------------------------------------------------------------------------------
+                        UserContainer_DecorativeCircle02 = new THREE.Group()
+                        UserContainer_DecorativeCircle02.position.set(0, 1.15, -0.1)
+                        UserContainer_DecorativeCircle02.rotation.set(0, 0, 0)
+                        UserContainer_DecorativeCircle02.scale.set(1, 1, 1)
+                        UserContainer_MediaContainer_baseB.add(UserContainer_DecorativeCircle02)
+
+                        const mat_UserContainer_DecorativeCircle02 = new THREE.MeshBasicMaterial({ map: BaseUI_Gear01, side: THREE.DoubleSide });
+                        mesh_UserContainer_DecorativeCircle02 = new THREE.Mesh(geo_objT_CircleA1, mat_UserContainer_DecorativeCircle02);
+
+                            mat_UserContainer_DecorativeCircle02.transparent = true;
+                            mat_UserContainer_DecorativeCircle02.alphaMap = BaseUI_Gear01;
+
+                        mesh_UserContainer_DecorativeCircle02.position.set(0, 0, 0);
+                        mesh_UserContainer_DecorativeCircle02.rotation.set(0, 0, 0)
+                        mesh_UserContainer_DecorativeCircle02.scale.set(0.14, 0.14, 0.14);
+                            // mesh_UserContainer_DecorativeCircle02.rotateX( - Math.PI / 2 );
+                        
+                        UserContainer_DecorativeCircle02.add(mesh_UserContainer_DecorativeCircle02)
+                            // UserContainer_DecorativeCircle02.lookAt(camera) 
+
+
+                        // # UserContainer_DecorativeCircle03
+                        // ------------------------------------------------------------------------------------
+                        UserContainer_DecorativeCircle03 = new THREE.Group()
+                        UserContainer_DecorativeCircle03.position.set(0, 1.15, -0.12)
+                        UserContainer_DecorativeCircle03.rotation.set(0, 0, 0)
+                        UserContainer_DecorativeCircle03.scale.set(1, 1, 1)
+                        UserContainer_MediaContainer_baseB.add(UserContainer_DecorativeCircle03)
+
+                        const mat_UserContainer_DecorativeCircle03 = new THREE.MeshBasicMaterial({ map: BaseUI_Gear01, side: THREE.DoubleSide });
+                        mesh_UserContainer_DecorativeCircle03 = new THREE.Mesh(geo_objT_CircleA1, mat_UserContainer_DecorativeCircle03);
+
+                            mat_UserContainer_DecorativeCircle03.transparent = true;
+                            mat_UserContainer_DecorativeCircle03.alphaMap = BaseUI_Gear01;
+
+                        mesh_UserContainer_DecorativeCircle03.position.set(0, 0, 0);
+                        mesh_UserContainer_DecorativeCircle03.rotation.set(0, 0, 0)
+                        mesh_UserContainer_DecorativeCircle03.scale.set(0.16, 0.16, 0.16);
+                        // mesh_UserContainer_DecorativeCircle03.rotateX( - Math.PI / 2 );
+
+                        // UserContainer_DecorativeCircle03.lookAt(camera)
+                        
+                        UserContainer_DecorativeCircle03.add(mesh_UserContainer_DecorativeCircle03)
+
+                        let spinGears = () => {
+                            gsap.to(mesh_UserContainer_DecorativeCircle01.rotation, {
+                                repeat: -1,
+                                duration: 2.5,
+                                ease: "none",
+                                delay: 0,
+                                z: 3.14,
+						
+					        })
+
+                            gsap.to(mesh_UserContainer_DecorativeCircle02.rotation, {
+                                repeat: -1,
+                                duration: 5,
+                                ease: "none",
+                                delay: 0,
+                                z: -3.14,
+						
+					        })
+
+                            gsap.to(mesh_UserContainer_DecorativeCircle03.rotation, {
+                                repeat: -1,
+                                duration: 10,
+                                ease: "none",
+                                delay: 0,
+                                z: 3.14,
+						
+					        })
+                        }
+
+                        spinGears()
+
+
+
+                    UserContainer_MediaContainer_baseC = new THREE.Group()
+                    UserContainer_MediaContainer_baseC.position.set(0, 0, 0)
+                    UserContainer_MediaContainer_baseC.rotation.set(0, 0, 0)
+                    UserContainer_MediaContainer_baseC.scale.set(1, 1, 1)
+                    UserContainer_root.add(UserContainer_MediaContainer_baseC)
+
+                        UserContainer_PersonalSpace_root = new THREE.Group()
+                        UserContainer_PersonalSpace_root.position.set(0, 0, 0)
+                        UserContainer_PersonalSpace_root.rotation.set(0, 0, 0)
+                        UserContainer_PersonalSpace_root.scale.set(1, 1, 1)
+                        UserContainer_MediaContainer_baseC.add(UserContainer_PersonalSpace_root)
+
+                            UserContainer_PersonalSpace_Space = new THREE.Group()
+                            UserContainer_PersonalSpace_Space.position.set(0, 1.15, 0)
+                            UserContainer_PersonalSpace_Space.rotation.set(0, 0, 0)
+                            UserContainer_PersonalSpace_Space.scale.set(1, 1, 1)
+                            UserContainer_PersonalSpace_root.add(UserContainer_PersonalSpace_Space)
+
+                            const mat_UserContainer_PersonalSpace_Space = new THREE.MeshBasicMaterial({ map: SceneWallpaper_01, side: THREE.DoubleSide });
+                            mesh_UserContainer_PersonalSpace_Space = new THREE.Mesh(geo_objT_SphereA0, mat_UserContainer_PersonalSpace_Space);
+
+                                mat_UserContainer_PersonalSpace_Space.transparent = true;
+                                mat_UserContainer_PersonalSpace_Space.wireframe = true;
+                                mat_UserContainer_PersonalSpace_Space.alphaMap = SceneWallpaper_01;
+
+                            mesh_UserContainer_PersonalSpace_Space.position.set(0, 0, 0);
+                            mesh_UserContainer_PersonalSpace_Space.rotation.set(0, 1.55, 0)
+                            mesh_UserContainer_PersonalSpace_Space.scale.set(0.11, 0.11, 0.11);
+                            // mesh_UserContainer_PersonalSpace_Space.rotateX( - Math.PI / 2 );
+
+                            // UserContainer_PersonalSpace_Space.lookAt(camera)
+                            
+                            UserContainer_PersonalSpace_Space.add(mesh_UserContainer_PersonalSpace_Space)
+
+
+                            let spinPersonalSpaceOnly = () => {
+                                gsap.to(mesh_UserContainer_PersonalSpace_Space.rotation, {
+                                    repeat: -1,
+                                    duration: 10,
+                                    ease: "none",
+                                    delay: 0,
+                                    y: 3.14,
+                            
+                                })
+                            }
+
+                            spinPersonalSpaceOnly()
+
+
+                    UserContainer_MediaContainer_baseD = new THREE.Group()
+                    UserContainer_MediaContainer_baseD.position.set(0, 0, 0)
+                    UserContainer_MediaContainer_baseD.rotation.set(0, 0, 0)
+                    UserContainer_MediaContainer_baseD.scale.set(1, 1, 1)
+                    UserContainer_root.add(UserContainer_MediaContainer_baseD)
+
+                        UserContainer_Orbit01_root = new THREE.Group()
+                        UserContainer_Orbit01_root.position.set(0, 0, 0)
+                        UserContainer_Orbit01_root.rotation.set(0, 0, 0)
+                        UserContainer_Orbit01_root.scale.set(1, 1, 1)
+                        UserContainer_MediaContainer_baseD.add(UserContainer_Orbit01_root)
+
+                            UserContainer_Orbit01_TheOrbit01 = new THREE.Group()
+                            UserContainer_Orbit01_TheOrbit01.position.set(0, 1.15, 0)
+                            // UserContainer_Orbit01_TheOrbit01.rotation.set(-1.448, 0.832, 0)
+                            UserContainer_Orbit01_TheOrbit01.rotation.set(0, 0, 0)
+                            UserContainer_Orbit01_TheOrbit01.scale.set(1, 1, 1)
+                            UserContainer_Orbit01_root.add(UserContainer_Orbit01_TheOrbit01)
+
+                            let OrbitDimensions = {
+                                radius: 10,
+                                tube: 0.0549,
+                                radialSegements: 30,
+                                tubularSegments: 200,
+                                arc: 6.283185307179586,
+                            }
+
+                            const geo_objT_Orbit = new THREE.TorusGeometry(
+
+                               OrbitDimensions.radius,
+                               OrbitDimensions.tube,
+                               OrbitDimensions.radialSegments,
+                               OrbitDimensions.tubularSegments,
+                               OrbitDimensions.arc,
+
+                            )
+
+                            const mat_UserContainer_Orbit01_TheOrbit01 = new THREE.MeshBasicMaterial({ map: SceneWallpaper_01, side: THREE.DoubleSide });
+                            mesh_UserContainer_Orbit01_TheOrbit01 = new THREE.Mesh(geo_objT_Orbit, mat_UserContainer_Orbit01_TheOrbit01);
+
+                                mat_UserContainer_Orbit01_TheOrbit01.transparent = true;
+                                mat_UserContainer_Orbit01_TheOrbit01.wireframe = false;
+                                mat_UserContainer_Orbit01_TheOrbit01.alphaMap = SceneWallpaper_01;
+
+                            mesh_UserContainer_Orbit01_TheOrbit01.position.set(0, 0, 0);
+                            mesh_UserContainer_Orbit01_TheOrbit01.rotation.set(0, 0, 0)
+                            mesh_UserContainer_Orbit01_TheOrbit01.scale.set(0.2, 0.2, 0.2);
+                            // mesh_UserContainer_Orbit01_TheOrbit01.rotateX( - Math.PI / 2 );
+
+                            // UserContainer_Orbit01_TheOrbit01.lookAt(camera)
+                            
+                            UserContainer_Orbit01_TheOrbit01.add(mesh_UserContainer_Orbit01_TheOrbit01)
+
+
+                                // # UserContainer_Δ01
+                                // ********************************************************************
+                                UserContainer_Δ01 = new THREE.Group()
+                                UserContainer_Δ01.position.set(0, 0, 0)
+                                UserContainer_Δ01.rotation.set(0, 0, 0)
+                                UserContainer_Δ01.scale.set(1, 1, 1)
+                                UserContainer_Orbit01_TheOrbit01.add(UserContainer_Δ01)
+
+                                    const mat_UserContainer_Δ01 = new THREE.MeshBasicMaterial({ map: ΔIconConainer_complexDesignBlack02, side: THREE.DoubleSide });
+                                    mesh_UserContainer_Δ01 = new THREE.Mesh(geo_objT_BoxA0, mat_UserContainer_Δ01);
+
+                                        mat_UserContainer_Δ01.transparent = true;
+                                        mat_UserContainer_Δ01.wireframe = false;
+                                        mat_UserContainer_Δ01.alphaMap = ΔIconConainer_complexDesignBlack02;
+
+                                    mesh_UserContainer_Δ01.position.set(0, 2, 0);
+                                    mesh_UserContainer_Δ01.rotation.set(0, 0, 0)
+                                    mesh_UserContainer_Δ01.scale.set(0.022, 0.022, 0.022);
+                                    // mesh_UserContainer_Δ01.rotateX( - Math.PI / 2 );
+
+                                    // UserContainer_Δ01.lookAt(camera)
+                                    
+                                    UserContainer_Δ01.add(mesh_UserContainer_Δ01)
+
+                                // # UserContainer_Δ02
+                                // ********************************************************************
+                                UserContainer_Δ02 = new THREE.Group()
+                                UserContainer_Δ02.position.set(0, 0, 0)
+                                UserContainer_Δ02.rotation.set(0, 0, 0)
+                                UserContainer_Δ02.scale.set(1, 1, 1)
+                                UserContainer_Orbit01_TheOrbit01.add(UserContainer_Δ02)
+
+                                    const mat_UserContainer_Δ02 = new THREE.MeshBasicMaterial({ map: ΔIconConainer_complexDesignBlack02, side: THREE.DoubleSide });
+                                    mesh_UserContainer_Δ02 = new THREE.Mesh(geo_objT_BoxA0, mat_UserContainer_Δ02);
+
+                                        mat_UserContainer_Δ02.transparent = true;
+                                        mat_UserContainer_Δ02.wireframe = false;
+                                        mat_UserContainer_Δ02.alphaMap = ΔIconConainer_complexDesignBlack02;
+
+                                    mesh_UserContainer_Δ02.position.set(-2, 0, 0);
+                                    mesh_UserContainer_Δ02.rotation.set(0, 0, 0)
+                                    mesh_UserContainer_Δ02.scale.set(0.022, 0.022, 0.022);
+                                    // mesh_UserContainer_Δ02.rotateX( - Math.PI / 2 );
+
+                                    // UserContainer_Δ02.lookAt(camera)
+                                    
+                                    UserContainer_Δ02.add(mesh_UserContainer_Δ02)
+
+
+                                // # UserContainer_Δ03
+                                // ********************************************************************
+                                UserContainer_Δ03 = new THREE.Group()
+                                UserContainer_Δ03.position.set(0, 0, 0)
+                                UserContainer_Δ03.rotation.set(0, 0, 0)
+                                UserContainer_Δ03.scale.set(1, 1, 1)
+                                UserContainer_Orbit01_TheOrbit01.add(UserContainer_Δ03)
+
+                                    const mat_UserContainer_Δ03 = new THREE.MeshBasicMaterial({ map: ΔIconConainer_complexDesignBlack02, side: THREE.DoubleSide });
+                                    mesh_UserContainer_Δ03 = new THREE.Mesh(geo_objT_BoxA0, mat_UserContainer_Δ03);
+
+                                        mat_UserContainer_Δ03.transparent = true;
+                                        mat_UserContainer_Δ03.wireframe = false;
+                                        mat_UserContainer_Δ03.alphaMap = ΔIconConainer_complexDesignBlack02;
+
+                                    mesh_UserContainer_Δ03.position.set(2, 0, 0);
+                                    mesh_UserContainer_Δ03.rotation.set(0, 0, 0)
+                                    mesh_UserContainer_Δ03.scale.set(0.022, 0.022, 0.022);
+                                    // mesh_UserContainer_Δ03.rotateX( - Math.PI / 2 );
+
+                                    // UserContainer_Δ03.lookAt(camera)
+                                    
+                                    UserContainer_Δ03.add(mesh_UserContainer_Δ03)
+
+                                // # UserContainer_Δ04
+                                // ********************************************************************
+                                UserContainer_Δ04 = new THREE.Group()
+                                UserContainer_Δ04.position.set(0, 0, 0)
+                                UserContainer_Δ04.rotation.set(0, 0, 0)
+                                UserContainer_Δ04.scale.set(1, 1, 1)
+                                UserContainer_Orbit01_TheOrbit01.add(UserContainer_Δ04)
+
+                                    const mat_UserContainer_Δ04 = new THREE.MeshBasicMaterial({ map: ΔIconConainer_complexDesignBlack02, side: THREE.DoubleSide });
+                                    mesh_UserContainer_Δ04 = new THREE.Mesh(geo_objT_BoxA0, mat_UserContainer_Δ04);
+
+                                        mat_UserContainer_Δ04.transparent = true;
+                                        mat_UserContainer_Δ04.wireframe = false;
+                                        mat_UserContainer_Δ04.alphaMap = ΔIconConainer_complexDesignBlack02;
+
+                                    mesh_UserContainer_Δ04.position.set(0, -2, 0);
+                                    mesh_UserContainer_Δ04.rotation.set(0, 0, 0)
+                                    mesh_UserContainer_Δ04.scale.set(0.022, 0.022, 0.022);
+                                    // mesh_UserContainer_Δ04.rotateX( - Math.PI / 2 );
+
+                                    // UserContainer_Δ04.lookAt(camera)
+                                    
+                                    UserContainer_Δ04.add(mesh_UserContainer_Δ04)
+
+
+                            // FUNCTION: SpinOrbit01_Δs
+                            let SpinOrbit01_Δs = () => {
+                                gsap.to(mesh_UserContainer_Δ01.rotation, {
+                                    repeat: -1,
+                                    duration: 5,
+                                    ease: "none",
+                                    delay: 0,
+                                    z: 3.14,
+						
+					             })
+
+                                gsap.to(mesh_UserContainer_Δ02.rotation, {
+                                    repeat: -1,
+                                    duration: 5,
+                                    ease: "none",
+                                    delay: 0,
+                                    z: 3.14,
+                            
+                                })
+
+                                gsap.to(mesh_UserContainer_Δ03.rotation, {
+                                    repeat: -1,
+                                    duration: 5,
+                                    ease: "none",
+                                    delay: 0,
+                                    z: 3.14,
+                            
+                                })
+
+                                gsap.to(mesh_UserContainer_Δ04.rotation, {
+                                    repeat: -1,
+                                    duration: 5,
+                                    ease: "none",
+                                    delay: 0,
+                                    z: 3.14,
+                            
+                                })
+                            }
+
+                            // SpinOrbit01_Δs()
+
+                            
+                            // SpinOrbit01
+                            let SpinOrbit01 = () => {
+
+                                gsap.to(UserContainer_Orbit01_TheOrbit01.rotation, {
+                                    repeat: -1,
+                                    duration: 5,
+                                    ease: "none",
+                                    delay: 0,
+                                    z: 3.14,
+						
+					             })
+
+                            }
+
+                            // SpinOrbit01()
+//...................................................................................
+//......AAA.......NN......N....I....MMM.....MMM.......AAA....ATTTTTTTTT...EEEEEEEE...
+//.....AAAAA.....NNNN....NNN..III..MMMMM...MMMMM.....AAAAA..AATTTTTTTTTT.EEEEEEEEEE..
+//.....AAAAA.....NNNNN...NNN..III..MMMMM...MMMMM.....AAAAA..AATTTTTTTTTT.EEEEEEEEEE..
+//....AAAAAAA....NNNNN...NNN..III..MMMMMM..MMMMM....AAAAAAA.AATTTTTTTTTT.EEEEEEEEEE..
+//....AAAAAAA....NNNNNN..NNN..III..MMMMMM.MMMMMM....AAAAAAA.....TTTT.....EEE.........
+//....AAAAAAA....NNNNNNN.NNN..III..MMMMMM.MMMMMM....AAAAAAA.....TTTT.....EEEEEEEEEE..
+//...AAAAAAAAA...NNNNNNN.NNN..III..MMMMMM.MMMMMM...AAAAAAAAA....TTTT.....EEEEEEEEEE..
+//...AAAA.AAAA...NNN.NNNNNNN..III..MMMMMM.MMMMMM...AAAA.AAAA....TTTT.....EEEEEEEEEE..
+//...AAAAAAAAAA..NNN.NNNNNNN..III..MMMMMMMMMMMMM...AAAAAAAAAA...TTTT.....EEEEEEEEEE..
+//..AAAAAAAAAAA..NNN..NNNNNN..III..MMM.MMMMMMMMM..AAAAAAAAAAA...TTTT.....EEE.........
+//..AAAAAAAAAAA..NNN..NNNNNN..III..MMM.MMMMM.MMM..AAAAAAAAAAA...TTTT.....EEE.........
+//..AAAAAAAAAAAA.NNN...NNNNN..III..MMM.MMMMM.MMM..AAAAAAAAAAAA..TTTT.....EEEEEEEEEE..
+//.AAAAA....AAAA.NNN...NNNNN..III..MMM.MMMMM.MMM.AAAAA....AAAA..TTTT.....EEEEEEEEEE..
+//.AAAA.....AAAA.NNN....NNNN..III..MMM.MMMMM.MMM.AAAA.....AAAA..TTTT.....EEEEEEEEEE..
+//...................................................................................
+
+
+                document.addEventListener("keydown", function(event) {
+					if (event.key === "*") {
+						// camera.position.y += 10000
+
+                        camera.lookAt(UserContainer_root)
+
+
+                        let tl01 = gsap.timeline(
+                            {
+                                repeat: 2,
+                                repeatDelay: 1,
+                                delay:  0.01
+                            }
+                        )
+
+
+                        let tl02 = gsap.timeline(
+                            {
+                                repeat: 2,
+                                repeatDelay: 1,
+                            }
+                        )
+
+                        // tl01.to(UserContainer_root.position, {
+						// 	duration: 2.5,
+						// 	delay: 0,
+                        //     opacity: 0.5,
+                        //     ease: "none",
+						// 	y: 5,
+
+						// })
+
+
+                        // tl02.to(camera.position, {
+						// 	duration: 2.5,
+						// 	delay: 0,
+                        //     ease: "none",
+						// 	y: 0,
+
+						// })
+
+                        
+                        
+
+						tl01.to(UserContainer_root.position, {
+							duration: 3.5,
+							delay: 0,
+                            opacity: 0.5,
+                            ease: "none",
+							x: "-= 19999",
+
+						})
+
+
+                        tl02.to(camera.position, {
+							duration: 3.5,
+							delay: 0,
+                            ease: "none",
+							x: "-= 20000",
+
+						})
+
+
+                        tl01.to(UserContainer_root.position, {
+							duration: 7,
+							delay: 0,
+                            ease: "stagger",
+							y: 1,
+
+						})
+
+
+                        tl02.to(camera.position, {
+							duration: 7,
+							delay: 0,
+                            ease: "stagger",
+							y: 1,
+
+						})
+
+
+                        tl01.to(UserContainer_root.position, {
+							duration: 7,
+							delay: 0,
+                            // ease: "none",
+							z: "+= 19999",
+
+						})
+
+
+                        tl02.to(camera.position, {
+							duration: 7,
+							delay: 0,
+                            // ease: "none",
+							z: "+= 20000",
+
+						})
+
+
+                        tl01.to(UserContainer_root.position, {
+							duration: 7,
+							delay: -0.005,
+                            ease: "none",
+							x: "+= 19999.99",
+
+						})
+
+
+                        tl02.to(camera.position, {
+							duration: 7,
+							delay: 0,
+                            ease: "none",
+							x: "+= 20000",
+
+						})
+
+
+
+					}
+				})
+
+
+//................................................................
+//..UU.....UU....I..........HH......H....UU.....UU....DDDDD.......
+//.UUUU...UUUU..III........HHHH...HHHH..UUUU...UUUU..DDDDDDDDD....
+//.UUUU...UUUU..III........HHHH...HHHH..UUUU...UUUU..DDDDDDDDDDD..
+//.UUUU...UUUU..III........HHHH...HHHH..UUUU...UUUU..DDDDDDDDDDD..
+//.UUUU...UUUU..III........HHHH...HHHH..UUUU...UUUU..DDDD...DDDD..
+//.UUUU...UUUU..III........HHHHHHHHHHH..UUUU...UUUU..DDDD....DDD..
+//.UUUU...UUUU..III........HHHHHHHHHHH..UUUU...UUUU..DDDD....DDD..
+//.UUUU...UUUU..III.I-----.HHHHHHHHHHH..UUUU...UUUU..DDDD....DDD..
+//.UUUU...UUUU..III.I-----.HHHHHHHHHHH..UUUU...UUUU..DDDD....DDD..
+//.UUUU...UUUU..III.I-----.HHHH...HHHH..UUUU...UUUU..DDDD...DDDD..
+//.UUUU...UUUU..III.I-----.HHHH...HHHH..UUUU...UUUU..DDDD...DDDD..
+//.UUUUUUUUUUU..III........HHHH...HHHH..UUUUUUUUUUU..DDDDDDDDDDD..
+//.UUUUUUUUUUU..III........HHHH...HHHH..UUUUUUUUUUU..DDDDDDDDDD...
+//..UUUUUUUUU...III........HHHH...HHHH...UUUUUUUUU...DDDDDDDDD....
+//....UUUUU................................UUUUU..................
+//................................................................
+
+
+
+
+
+
+
+            //..................................................
+//..UU.....UU....I.....////UU.....UU...XX......XX...
+//.UUUU...UUUU..III....////UUU...UUUU.UXXXX..XXXXX..
+//.UUUU...UUUU..III....////UUU...UUUU.UXXXX..XXXXX..
+//.UUUU...UUUU..III.../////UUU...UUUU..XXXXXXXXXX...
+//.UUUU...UUUU..III...///./UUU...UUUU...XXXXXXXX....
+//.UUUU...UUUU..III..////./UUU...UUUU...XXXXXXXX....
+//.UUUU...UUUU..III..////./UUU...UUUU....XXXXXX.....
+//.UUUU...UUUU..III..///../UUU...UUUU....XXXXXX.....
+//.UUUU...UUUU..III.I///../UUU...UUUU....XXXXXX.....
+//.UUUU...UUUU..III.I///../UUU...UUUU...XXXXXXXX....
+//.UUUU...UUUU..III.I//.../UUU...UUUU...XXXXXXXXX...
+//.UUUUUUUUUUU..IIIII//.../UUUUUUUUUU..XXXXXXXXXX...
+//.UUUUUUUUUUU..IIIII/..../UUUUUUUUUU.UXXXX..XXXXX..
+//..UUUUUUUUU...IIIII/.....UUUUUUUUU..UXXXX..XXXXX..
+//....UUUUU..................UUUUU..................
+//..................................................
+
+
+
+			stats = new Stats();
+			container.appendChild(stats.dom);
+
+            newSpeedStrengthParams = {
+					left: 200,
+					right: 200,
+					forwards: 200,
+					backwards: 200, 
+				}
+
+                Control_newSpeedStrengthParams = {
+					left: 2200,
+					right: 2200,
+					forwards: 2200,
+					backwards: 2200, 
+				}
+
+            // Update the raycaster
+            raycaster.setFromCamera(mouse, camera);
+
+            // Check for intersections with your meshes
+            const intersects = raycaster.intersectObjects([mesh_websiteReality02, mesh_websiteReality03], true);
+
+            if (intersects.length > 0) {
+                // Handle the click event for the intersected mesh
+                const clickedMesh = intersects[0].object;
+                console.log("Mesh clicked:", clickedMesh.name);
+
+               
+
+
+
+                // You can open a URL or perform other actions here
+            }
+
+			// Toc.GUI
+
+			const gui = new GUI();
+            gui.close()
+            // gui.hide()
+
+			const folderSky = gui.addFolder('Sky');
+			folderSky.add(parameters, 'elevation', 0, 90, 0.1).onChange(updateSun);
+			folderSky.add(parameters, 'azimuth', - 180, 180, 0.1).onChange(updateSun);
+			folderSky.open();
+
+			const waterUniforms = water.material.uniforms;
+
+			const folderWater = gui.addFolder('Water');
+			folderWater.add(waterUniforms.distortionScale, 'value', 0, 8, 0.1).name('distortionScale');
+			folderWater.add(waterUniforms.size, 'value', 0.1, 10, 0.1).name('size');
+			folderWater.open();
+
+			// const folderPositions = gui.addFolder('Positions')
+			// folderPositions.add(Φ.position, 'x').min(-200).max(200).step(0.001).name('x-position');
+			// folderPositions.add(Φ.position, 'y').min(-200).max(200).step(0.001).name('y-position');
+			// folderPositions.add(Φ.position, 'z').min(-200).max(200).step(0.001).name('z-position');
+
+			// const folderTransformations = gui.addFolder('Transformations');
+			// folderTransformations.add(ΔΩ.rotation, 'x').min(-3.14).max(3.14).step(0.001).name('x-rotation');
+			// folderTransformations.add(ΔΩ.rotation, 'y').min(-3.14).max(3.14).step(0.001).name('y-rotation');
+			// folderTransformations.add(ΔΩ.rotation, 'z').min(-3.14).max(3.14).step(0.001).name('z-rotation');
+
+			const folderCamera = gui.addFolder('camera-position');
+			folderCamera.add(camera.position, 'x').min(-25000).max(25000).step(0.001).name('x-camera')
+			folderCamera.add(camera.position, 'y').min(-25000).max(25000).step(0.001).name('y-camera')
+			folderCamera.add(camera.position, 'z').min(-25000).max(25000).step(0.001).name('z-camera')
+
+            const folderButton = gui.addFolder('camera-rotation');
+			folderButton.add(camera.position, 'x').min(-3.14).max(3.14).step(0.001).name('x-camera')
+			folderButton.add(camera.position, 'y').min(-3.14).max(3.14).step(0.001).name('y-camera')
+			folderButton.add(camera.position, 'z').min(-3.14).max(3.14).step(0.001).name('z-camera')
+
+
+            const folderOrbits = gui.addFolder('mesh_RealityCenter_Orbit04');
+			folderOrbits.add(mesh_RealityCenter_Orbit04.rotation, 'x').min(-3.14).max(3.14).step(0.001).name('x-camera')
+			folderOrbits.add(mesh_RealityCenter_Orbit04.rotation, 'y').min(-3.14).max(3.14).step(0.001).name('y-camera')
+			folderOrbits.add(mesh_RealityCenter_Orbit04.rotation, 'z').min(-3.14).max(3.14).step(0.001).name('z-camera')
+
+            const folderPanels = gui.addFolder('mesh_RealityCenter_Orbit04');
+			folderPanels.add(mesh_RealityCenter_Orbit04.position, 'x').min(-10000).max(10000).step(0.01).name('x-camera')
+			folderPanels.add(mesh_RealityCenter_Orbit04.position, 'y').min(-10000).max(10000).step(0.01).name('y-camera')
+			folderPanels.add(mesh_RealityCenter_Orbit04.position, 'z').min(-10000).max(10000).step(0.01).name('z-camera')
+
+
+
+
+			window.addEventListener('resize', onWindowResize);
+
+		}
+
+		function onWindowResize() {
+
+			camera.aspect = window.innerWidth / window.innerHeight;
+			camera.updateProjectionMatrix();
+			camera.lookAt()
+
+			renderer.setSize(window.innerWidth, window.innerHeight);
+            cssrenderer.setSize(window.innerWidth, window.innerHeight);
+
+		}
+
+        function onMouseClick(event) {
+            // Calculate normalized device coordinates
+            mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+            mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+        }
+
+		function animate() {
+
+			requestAnimationFrame(animate);
+			render();
+			stats.update();
+
+		}
+
+		function render() {
+
+			const time = performance.now() * 0.001;
+			const delta = clock.getDelta();
+			controls.update(delta);
+
+
+            // camera.lookAt(7000, 5080, 21000)
+
+            
+
+            
+
+			mesh_timeSphere_L4.position.x = time * 1;
+
+
+			// mesh.position.z = Math.PI / 3 ;
+			// mesh.rotation.z = Math.PI / 4 ;
+			// mesh.position.y = 35;
+			// mesh.position.x = 300;
+			// mesh.scale.x = 0.5;
+
+			// mesh.position.y = Math.sin( time ) * 20 + 5;
+
+			// mesh.position.y = 30
+
+			// mesh.rotation.z = 260
+			// mesh.rotation.y = 80
+			// mesh.rotation.x = time * 0.00001;
+			// mesh.rotation.y = time * 1;
+			// mesh.rotation.z = time * 0;
+
+			// mesh.rotation.y = time * 0.1;
+			// mesh2.rotation.y = time * 0.1;
+
+			// camera.rotation.x = time * 0.1;
+			// mesh.position.x = Math.cos(time * 2) * 212.5
+			// mesh.position.z = Math.sin(time * 2) * 212.5
+			// mesh.position.y = Math.sin(time * 2) * 112.5
+
+			ΔΦ.rotation.y = time * 15;
+			ΔΩ.rotation.y = time * 15;
+			// // meshA1.rotation.y = time * 15;
+			// meshA1.rotation.x = time * 15
+			// MeshHDC_01.rotation.z = time * -0.5;
+			// goldenGearTest.rotation.z = time * 0.5;
+			// goldenGearTest2.rotation.z = time * 0.5;
+
+			mesh_timeSphere_L0.rotation.x = time * 1;
+			// mesh_timeSphere_L0.position.x = Math.cos(time * 2) * 2012.5
+			// mesh_timeSphere_L0.position.z = Math.sin(time * 0.5) * 2012.5
+			// mesh_timeSphere_L0.position.y = Math.sin(time * 0.1) * 10012.5
+
+			mesh_timeSphere_L1.rotation.x = time * 0.2;
+			mesh_timeSphere_L1.rotation.y = time * 0.1;
+
+
+			mesh_timeSphere_L2.rotation.x = time * 0.1;
+
+			mesh_timeSphere_L3.rotation.x = time * 0.1;
+			mesh_timeSphere_L4.rotation.y = time * 0.55;
+
+			mesh_TimeSphereHourBase_L0.rotation.z = time * 1
+
+			// Creates a bug. Figure out why this doesnt work. 
+			// group01_timeSphere.position.y = time * 5;
+
+			/**
+				* |-- The code below is how you get a flat plane. Its simple Math.
+				*/
+
+
+
+			// setTimeout(() => {
+			// camera.position.x = Math.cos(time * 0.1) * 1200.5
+			// camera.position.z = Math.sin(time * 0.1) * 1200.5
+			// camera.lookAt(110, -10, -500)
+			// }, 10000)
+
+
+			// |- # Camera Animations
+			// setTimeout(() => {
+			// 	setTimeout(() => {
+			// 		camera.position.set(2000, 3000, 7000)
+			// 		camera.position.x = Math.cos(time * 0.1) * 1200.5
+			// 		camera.position.z = Math.sin(time * 0.1) * 1200.5
+			// 		camera.lookAt(110, -10, -500)
+			// 	}, 10000) 
+
+			// 	setTimeout(() => {
+			// 		camera.position.set(20000, 30000, 70000)
+			// 		camera.position.x = Math.cos(time * 0.1) * 1200.5
+			// 		camera.position.z = Math.sin(time * 0.1) * 1200.5
+			// 		camera.lookAt(110, -10, -500)
+			// 	}, 50000) 
+
+			// }, 5000)
+
+			water.material.uniforms['time'].value += 1.0 / 60.0;
+            meshA1.rotation.y = time * 0.1
+
+			renderer.render(scene, camera);
+            cssrenderer.render( scene, camera);
+
+		}
+
+	</script>
+</body>
+
+</html>

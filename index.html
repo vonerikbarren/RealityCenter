@@ -471,7 +471,8 @@
 
 			// Search.Camera
 			camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 500000);
-			camera.position.set(30, 6000, 24000);
+			// camera.position.set(30, 6000, 24000); // previous
+            camera.position.set(0, 0, 500); // previous
 			camera.view = sun;
 
 			//
@@ -1478,13 +1479,14 @@
 			Φ.position.y = 57.423
 			scene.add(Φ)
 
+            // White Room
 			const geometry2 = new THREE.SphereGeometry(5000, 32, 32)
-			const material2 = new THREE.MeshBasicMaterial({ map: testImg02, side: THREE.DoubleSide });
+			const material2 = new THREE.MeshBasicMaterial({ map: whitePureRoom, side: THREE.DoubleSide });
 			meshA1 = new THREE.Mesh(geometry2, material2)
 			material2.transparent = false;
-			material2.alphaMap = testImg02
+			material2.alphaMap = whitePureRoom
 			material2.wireframe = false;
-			meshA1.position.set(0, 120000, 0)
+			meshA1.position.set(0, 0, 0)
 			scene.add(meshA1)
 
 
