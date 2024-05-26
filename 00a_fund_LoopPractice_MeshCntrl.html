@@ -341,56 +341,9 @@
                 let ΔaOmniX_PerspectivesΔ_RealityPerspectives_root
 
             let ΔaOmniX_TimeΔ_root
-                let ΔaOmniX_TimeΔ_Skeleton_root
-                    let ΔaOmniX_TimeΔ_Skeleton_TimeSpace_root
-                    let ΔaOmniX_TimeΔ_Skeleton_Platform_root
-                    let ΔaOmniX_TimeΔ_Skeleton_Clocks_root
-
-                    // Natural Time Flow
-                    let ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_root
-
-                        let ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Forwards_root
-                            let ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Forwards, mesh_ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Forwards
-
-                        let ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Backwards_root
-                            let ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Backwards, mesh_ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Backwards
-
-                    // Controlled Time Flow
-                    let ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_root
-                        let ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_Left_root
-                            let ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_Left, mesh_ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_Left
-
-                        let ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_Right_root
-                            let ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_Right, mesh_ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_Right
-
-                    // Decisions Time Flow
-                    let ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_root
-                        let ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_MovingForward_root
-                            let ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_MovingForward, mesh_ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_MovingForward
-
-                        let ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_MovingBackwards_root
-                            let ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_MovingBackwards, mesh_ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_MovingBackwards
-
-                    // User Choices
-                    let ΔaOmniX_TimeΔ_Skeleton_User_choices_root
-                        let ΔaOmniX_TimeΔ_Skeleton_User_choices, mesh_ΔaOmniX_TimeΔ_Skeleton_User_choices
-
-                    let ΔaOmniX_TimeΔ_Skeleton_Users_choices_root
-                        let ΔaOmniX_TimeΔ_Skeleton_Users_choices, mesh_ΔaOmniX_TimeΔ_Skeleton_Users_choices
-
-                    let ΔaOmniX_TimeΔ_Skeleton_Avatars_choices_root
-                    let ΔaOmniX_TimeΔ_Skeleton_Spaces_root
-                    let ΔaOmniX_TimeΔ_Skeleton_Events_root
-                    let ΔaOmniX_TimeΔ_Skeleton_Obj_root
-                    let ΔaOmniX_TimeΔ_Skeleton_User_root
-                    let ΔaOmniX_TimeΔ_Skeleton_Users_root
-                    let ΔaOmniX_TimeΔ_Skeleton_Avatars_root
-
-
-                let ΔaOmniX_TimeΔ_TimeTunnel_root_Random
-                let ΔaOmniX_TimeΔ_TimeTunnel_root_Skeleton
-                let ΔaOmniX_TimeΔ_TimeTunnel_root_Primaries
-                let ΔaOmniX_TimeΔ_TimeTunnel_root_Secondaries
+                let ΔaOmniX_TimeΔ_TimeTunnel_Skeleton
+                let ΔaOmniX_TimeΔ_TimeTunnel_Primary
+                let ΔaOmniX_TimeΔ_TimeTunnel_Secondary
 
             let ΔaOmniX_Particles_Normal_root
                 let ΔaOmniX_Particles_Normal01, mesh_ΔaOmniX_Particles_Normal01
@@ -707,8 +660,8 @@
 					// ObjectTestingGroup/SphereDimensions
 					sphereGeometryDimensions: {
 						radius: 15,
-						widthSegments: 32,
-						heightSegments: 16,
+						widthSegments: 64,
+						heightSegments: 64,
 						phiStart: 0,
 						phiLength: 6.2831,
 						thetaStart: 0,
@@ -2557,7 +2510,7 @@ for (let i = 0; i < numCubes; i++) {
     // duration + ease = bpm(80)
   // -------------------------------------------------
   cubes[i].position.set(x, y, z);
-  cubes[i].scale.set(0.15, 0.15, 0.15);
+  cubes[i].scale.set(0.25, 0.25, 0.25);
   ΔaOmniX_root.add(cubes[i]);
 
     gsap.to(cubes[i].position, {
@@ -2603,890 +2556,6 @@ let rotate_ΔaOmniX_CubeLoopStructure = () => {
 }
 
 rotate_ΔaOmniX_CubeLoopStructure()
-
-//........................................................
-//.....OOOOOO.......................iii...................
-//....OOOOOOOOO.........rbbb........iii..tttt.............
-//...OOOOOOOOOO.........rbbb........iii..tttt.............
-//..OOOOOOOOOOOO........rbbb........iii..tttt.............
-//..OOOO....OOOO..rrrrrrrbbbbbbbb...iii.ittttt.ssssssss...
-//..OOOO....OOOOO.rrrrrrrbbbbbbbbb..iii.ittttt.ssssssss...
-//.OOOO......OOOO.rrrrrrrbbbbbbbbbb.iii.itttttssssssssss..
-//.OOOO......OOOO.rrrr..rbbbb.bbbbb.iii..tttt.ssssssssss..
-//.OOOO......OOOO.rrr...rbbb...bbbb.iii..tttt..ssssssss...
-//..OOOO....OOOOO.rrr...rbbb...bbbb.iii..tttt..ssssssss...
-//..OOOO....OOOO..rrr...rbbbb..bbbb.iii..tttt.ssssssssss..
-//..OOOOOOOOOOOO..rrr...rbbbbbbbbbb.iii..tttt.sssss.ssss..
-//...OOOOOOOOOO...rrr...rbbbbbbbbb..iii..tttttssssssssss..
-//....OOOOOOOOO...rrr...rbbbbbbbbb..iii..ttttt.ssssssss...
-//.....OOOOOO................bbb...........ttt..ssssss....
-//........................................................
-
-ΔaOmniX_LoopOrbits_root = new THREE.Group()
-ΔaOmniX_LoopOrbits_root.position.set(0, 0, 0)
-ΔaOmniX_LoopOrbits_root.rotation.set(0, 0, 0)
-ΔaOmniX_LoopOrbits_root.scale.set(1, 1, 1)
-ΔaOmniX_root.add(ΔaOmniX_LoopOrbits_root)
-
-
-let orbitSeries01_geoDimensions = {
-    radius: 20,
-    tube: 0.1,
-    radialSegements: 16,
-    tubularSegments: 100,
-    arc: 6.28
-}
-
-let orbitSeries02_geoDimensions = {
-    radius: 20,
-    tube: 0.1,
-    radialSegements: 16,
-    tubularSegments: 100,
-    arc: 6.28
-}
-
-let orbitSeries03_geoDimensions = {
-    radius: 12,
-    tube: 0.1,
-    radialSegements: 16,
-    tubularSegments: 100,
-    arc: 6.28
-}
-
-const geo_ΔaOmniX_LoopOrbit01 = new THREE.TorusGeometry(
-    orbitSeries01_geoDimensions.radius,
-    orbitSeries01_geoDimensions.tube,
-    orbitSeries01_geoDimensions.radialSegements,
-    orbitSeries01_geoDimensions.tubularSegments,
-    orbitSeries01_geoDimensions.arc,
-
-
-)
-
-const geo_ΔaOmniX_LoopOrbit02 = new THREE.TorusGeometry(
-    orbitSeries02_geoDimensions.radius,
-    orbitSeries02_geoDimensions.tube,
-    orbitSeries02_geoDimensions.radialSegements,
-    orbitSeries02_geoDimensions.tubularSegments,
-    orbitSeries02_geoDimensions.arc,
-
-
-)
-
-const geo_ΔaOmniX_LoopOrbit03 = new THREE.TorusGeometry(
-    orbitSeries03_geoDimensions.radius,
-    orbitSeries03_geoDimensions.tube,
-    orbitSeries03_geoDimensions.radialSegements,
-    orbitSeries03_geoDimensions.tubularSegments,
-    orbitSeries03_geoDimensions.arc,
-
-
-)
-
-
-
-    ΔaOmniX_LoopOrbit01 = new THREE.Group()
-    ΔaOmniX_LoopOrbit01.position.set(0, 0, 0)
-    ΔaOmniX_LoopOrbit01.rotation.set(0, 0, 0)
-    ΔaOmniX_LoopOrbit01.scale.set(10, 10, 10)
-    ΔaOmniX_LoopOrbits_root.add(ΔaOmniX_LoopOrbit01)
-
-
-    const mat_ΔaOmniX_LoopOrbit01 = new THREE.MeshBasicMaterial({ map: SceneWallpaper_01, side: THREE.DoubleSide });
-        mesh_ΔaOmniX_LoopOrbit01 = new THREE.Mesh(geo_ΔaOmniX_LoopOrbit01, mat_ΔaOmniX_LoopOrbit01);
-        mat_ΔaOmniX_LoopOrbit01.transparent = false;
-        mat_ΔaOmniX_LoopOrbit01.alphaMap = SceneWallpaper_01;
-        mesh_ΔaOmniX_LoopOrbit01.position.set(0, 0, 0);
-        // mesh_ΔaOmniX_LoopOrbit01.position.set(-15000, 0, 0);
-        mesh_ΔaOmniX_LoopOrbit01.scale.set(1, 1, 1);
-        mesh_ΔaOmniX_LoopOrbit01.rotation.set(0, 0, 0)
-        mesh_ΔaOmniX_LoopOrbit01.rotateX( - Math.PI / 2 );
-
-        // ΔaOmniX_LoopOrbit01.lookAt(camera)
-        ΔaOmniX_LoopOrbit01.add(mesh_ΔaOmniX_LoopOrbit01)
-
-    
-    ΔaOmniX_LoopOrbit02 = new THREE.Group()
-    ΔaOmniX_LoopOrbit02.position.set(0, 0, 0)
-    ΔaOmniX_LoopOrbit02.rotation.set(0, 0, 0)
-    ΔaOmniX_LoopOrbit02.scale.set(11, 11, 11)
-    ΔaOmniX_LoopOrbits_root.add(ΔaOmniX_LoopOrbit02)
-
-
-    const mat_ΔaOmniX_LoopOrbit02 = new THREE.MeshBasicMaterial({ map: SceneWallpaper_01, side: THREE.DoubleSide });
-        mesh_ΔaOmniX_LoopOrbit02 = new THREE.Mesh(geo_ΔaOmniX_LoopOrbit02, mat_ΔaOmniX_LoopOrbit02);
-        mat_ΔaOmniX_LoopOrbit02.transparent = false;
-        mat_ΔaOmniX_LoopOrbit02.alphaMap = SceneWallpaper_01;
-        mesh_ΔaOmniX_LoopOrbit02.position.set(0, 0, 0);
-        // mesh_ΔaOmniX_LoopOrbit02.position.set(-15000, 0, 0);
-        mesh_ΔaOmniX_LoopOrbit02.scale.set(1, 1, 1);
-        mesh_ΔaOmniX_LoopOrbit02.rotation.set(0, 0, 0)
-        // mesh_ΔaOmniX_LoopOrbit02.rotateX( - Math.PI / 2 );
-
-        // ΔaOmniX_LoopOrbit02.lookAt(camera)
-        ΔaOmniX_LoopOrbit02.add(mesh_ΔaOmniX_LoopOrbit02)
-    
-
-        let rotate_ΔaOmniX_LoopOrbit02 = () => {
-            gsap.to(mesh_ΔaOmniX_LoopOrbit02.rotation, {
-                repeat: -1,
-                duration: 5,
-                ease: "none",
-                delay: 0,
-                x: 3.14,
-                y: 3.14,
-                z: 3.14,
-
-            })
-
-            // gsap.to(mesh_ΔaOmniX_LoopOrbit02.rotation, {
-            //     repeat: -1,
-            //     duration: 0.5,
-            //     ease: "none",
-            //     delay: 0,
-            //     x: 3.14,
-                
-
-            // })
-        }
-
-        rotate_ΔaOmniX_LoopOrbit02()
-
-
-    ΔaOmniX_LoopOrbit03 = new THREE.Group()
-    ΔaOmniX_LoopOrbit03.position.set(0, 0, 0)
-    ΔaOmniX_LoopOrbit03.rotation.set(0, 0, 0)
-    ΔaOmniX_LoopOrbit03.scale.set(11, 11, 11)
-    ΔaOmniX_LoopOrbits_root.add(ΔaOmniX_LoopOrbit03)
-
-
-    const mat_ΔaOmniX_LoopOrbit03 = new THREE.MeshBasicMaterial({ map: SceneWallpaper_01, side: THREE.DoubleSide });
-        mesh_ΔaOmniX_LoopOrbit03 = new THREE.Mesh(geo_ΔaOmniX_LoopOrbit03, mat_ΔaOmniX_LoopOrbit03);
-        mat_ΔaOmniX_LoopOrbit03.transparent = false;
-        mat_ΔaOmniX_LoopOrbit03.alphaMap = SceneWallpaper_01;
-        mesh_ΔaOmniX_LoopOrbit03.position.set(0, 0, 0);
-        // mesh_ΔaOmniX_LoopOrbit03.position.set(-15000, 0, 0);
-        mesh_ΔaOmniX_LoopOrbit03.scale.set(1, 1, 1);
-        mesh_ΔaOmniX_LoopOrbit03.rotation.set(0, 0, 0)
-        // mesh_ΔaOmniX_LoopOrbit03.rotateX( - Math.PI / 2 );
-
-        // ΔaOmniX_LoopOrbit03.lookAt(camera)
-        ΔaOmniX_LoopOrbit03.add(mesh_ΔaOmniX_LoopOrbit03)
-    
-
-        let rotate_ΔaOmniX_LoopOrbit03 = () => {
-            gsap.to(mesh_ΔaOmniX_LoopOrbit03.rotation, {
-                repeat: -1,
-                duration: 2.5,
-                ease: "none",
-                delay: 0,
-                x: -3.14,
-                y: -3.14,
-                z: -2.14,
-
-            })
-
-            // gsap.to(mesh_ΔaOmniX_LoopOrbit03.rotation, {
-            //     repeat: -1,
-            //     duration: 0.5,
-            //     ease: "none",
-            //     delay: 0,
-            //     x: 3.14,
-                
-
-            // })
-        }
-
-        rotate_ΔaOmniX_LoopOrbit03()
-
-    
-
-//............................................
-//..TTTTTTTTT.iiii............................
-//.TTTTTTTTTTTiiii............................
-//.TTTTTTTTTTTiiii............................
-//.TTTTTTTTTTTiiii............................
-//.....TTTT...iiii.mmmmmmmmmmmmmm...eeeeeee...
-//.....TTTT...iiii.mmmmmmmmmmmmmmm..eeeeeeee..
-//.....TTTT...iiii.mmmmmmmmmmmmmmm.meeeeeeee..
-//.....TTTT...iiii.mmmm..mmmm.mmmm.meee..eee..
-//.....TTTT...iiii.mmmm..mmmm.mmmm.meeeeeeee..
-//.....TTTT...iiii.mmmm..mmmm.mmmm.meeeeeeee..
-//.....TTTT...iiii.mmmm..mmmm.mmmm.meee.......
-//.....TTTT...iiii.mmmm..mmmm.mmmm.meeeeeeee..
-//.....TTTT...iiii.mmmm..mmmm.mmmm.meeeeeeee..
-//.....TTTT...iiii.mmmm..mmmm.mmmm..eeeeeeee..
-//....................................eeee....
-//............................................
-
-
-//............................................................................
-//..RRRRR............................l...lii........tii.......................
-//.RRRRRRRRRR.......................all..lii..ittt..tii.......................
-//.RRRRRRRRRRR......................all..lii..ittt..tii.......................
-//.RRRRRRRRRRR......................all..lii..ittt..tii.......................
-//.RRRR...RRRRR..eeeeee....aaaaaaa..all..lii.iitttt.tii...eeeeee...esssssss...
-//.RRRR...RRRRR.eeeeeeee..eaaaaaaa..all..lii.iitttt.tii..ieeeeeee..esssssss...
-//.RRRRRRRRRRR.Reeeeeeeeeeeaaaaaaaa.all..lii.iitttt.tii.iieeeeeeeeeessssssss..
-//.RRRRRRRRRRR.Reee..eeeeeeaa.aaaaa.all..lii..ittt..tii.iiee..eeeeeessssssss..
-//.RRRRRRRRRRR.Reeeeeeeee.eaaaaaaaa.all..lii..ittt..tii.iieeeeeeee.esssssss...
-//.RRRR..RRRRR.Reeeeeeeeeeeaaaaaaaa.all..lii..ittt..tii.iieeeeeeee.esssssss...
-//.RRRR...RRRR.Reee......eeaaa.aaaa.all..lii..ittt..tii.iiee......eessssssss..
-//.RRRR...RRRR.Reeeeeeeeeeeaa.aaaaa.all..lii..ittt..tii.iieeeeeeeeeesss.ssss..
-//.RRRR...RRRR.Reeeeeeee.eeaaaaaaaa.all..lii..itttt.tii.iieeeeeee.eessssssss..
-//.RRRR...RRRRR.eeeeeeee.eeaaaaaaaa.all..lii..itttt.tii..ieeeeeee..esssssss...
-//................eeee.....aaa..................ttt........eeee.....ssssss....
-//............................................................................
-
-
-ΔaOmniX_TimeΔ_root = new THREE.Group()
-ΔaOmniX_TimeΔ_root.position.set(0, 0, 0)
-ΔaOmniX_TimeΔ_root.rotation.set(0, 0, 0)
-ΔaOmniX_TimeΔ_root.scale.set(1, 1, 1)
-ΔaOmniX_root.add(ΔaOmniX_TimeΔ_root)
-
-
-
-ΔaOmniX_TimeΔ_Skeleton_root = new THREE.Group()
-ΔaOmniX_TimeΔ_Skeleton_root.position.set(0, 0, 0)
-ΔaOmniX_TimeΔ_Skeleton_root.rotation.set(0, 0, 0)
-ΔaOmniX_TimeΔ_Skeleton_root.scale.set(1, 1, 1)
-ΔaOmniX_TimeΔ_root.add(ΔaOmniX_TimeΔ_Skeleton_root)
-
-
-
-// geo_params_cones
-// --------------------------------------------------
-let geo_params_cones_01 = {
-    radius: 5,
-    height: 10,
-    radialSegments: 4,
-    heightSegments: 1,
-    openEnded: false,
-    thetaStart: 0,
-    thetaLength: 6.28,
-}
-
-let geo_params_cones_02 = {
-    radius: 5,
-    height: 10,
-    radialSegments: 4,
-    heightSegments: 1,
-    openEnded: false,
-    thetaStart: 0,
-    thetaLength: 6.28,
-}
-
-const geo_Cones_01 = new THREE.ConeGeometry(
-    geo_params_cones_01.radius,
-    geo_params_cones_01.height,
-    geo_params_cones_01.radialSegments,
-    geo_params_cones_01.heightSegments,
-    geo_params_cones_01.openEnded,
-    geo_params_cones_01.thetaStart,
-    geo_params_cones_01.thetaLength,
-)
-
-const geo_Cones_02 = new THREE.ConeGeometry(
-    geo_params_cones_02.radius,
-    geo_params_cones_02.height,
-    geo_params_cones_02.radialSegments,
-    geo_params_cones_02.heightSegments,
-    geo_params_cones_02.openEnded,
-    geo_params_cones_02.thetaStart,
-    geo_params_cones_02.thetaLength,
-)
-
-
-// geo_params_cylindersClosed
-// --------------------------------------------------
-let geo_params_pyramids_01 = {
-    radius: 10,
-    detail: 0,
-}
-
-let geo_params_pyramids_02 = {
-    radius: 10,
-    detail: 0,
-}
-
-let geo_params_diamond_01 = {
-    radius: 10,
-    detail: 0,
-}
-
-let geo_params_diamond_02 = {
-    radius: 10,
-    detail: 0,
-}
-
-
-const geo_Pyramids_01 = new THREE.TetrahedronGeometry(
-    geo_params_pyramids_01.radius,
-	geo_params_pyramids_01.detail,
-)
-
-const geo_Pyramids_02 = new THREE.TetrahedronGeometry(
-    geo_params_pyramids_01.radius,
-	geo_params_pyramids_01.detail,
-)
-
-
-
-
-const geo_diamond_01 = new THREE.TetrahedronGeometry(
-    geo_params_diamond_01.radius,
-	geo_params_diamond_01.detail,
-)
-
-const geo_diamond_02 = new THREE.TetrahedronGeometry(
-    geo_params_diamond_02.radius,
-	geo_params_diamond_02.detail,
-)
-
-
-// geo_params_cylindersClosed
-// --------------------------------------------------
-let geo_params_cylinderClosed_01 = {
-    radiusTop: 5,
-    radiusBottom: 5,
-    height: 10,
-    radialSegments: 24,
-    heightSegments: 1,
-    openEnded: true,
-    thetaStart: 0,
-    thetaLength: 6.28318,
-}
-
-let geo_params_cylinderClosed_02 = {
-    radiusTop: 5,
-    radiusBottom: 5,
-    height: 10,
-    radialSegments: 24,
-    heightSegments: 1,
-    openEnded: true,
-    thetaStart: 0,
-    thetaLength: 6.28318,
-}
-
-let geo_params_cylinderClosed_03 = {
-    radiusTop: 5,
-    radiusBottom: 5,
-    height: 10,
-    radialSegments: 24,
-    heightSegments: 1,
-    openEnded: true,
-    thetaStart: 0,
-    thetaLength: 6.28318,
-}
-
-
-const geo_CylinderClosed_01 = new THREE.CylinderGeometry(
-    geo_params_cylinderClosed_01.radiusTop,
-    geo_params_cylinderClosed_01.radiusBottom,
-    geo_params_cylinderClosed_01.height,
-    geo_params_cylinderClosed_01.radialSegments,
-    geo_params_cylinderClosed_01.heightSegments,
-    geo_params_cylinderClosed_01.openEnded,
-    geo_params_cylinderClosed_01.thetaStart,
-    geo_params_cylinderClosed_01.thetaLength,
-)
-
-const geo_CylinderClosed_02 = new THREE.CylinderGeometry(
-    geo_params_cylinderClosed_02.radiusTop,
-    geo_params_cylinderClosed_02.radiusBottom,
-    geo_params_cylinderClosed_02.height,
-    geo_params_cylinderClosed_02.radialSegments,
-    geo_params_cylinderClosed_02.heightSegments,
-    geo_params_cylinderClosed_02.openEnded,
-    geo_params_cylinderClosed_02.thetaStart,
-    geo_params_cylinderClosed_02.thetaLength,
-)
-
-const geo_CylinderClosed_03 = new THREE.CylinderGeometry(
-    geo_params_cylinderClosed_03.radiusTop,
-    geo_params_cylinderClosed_03.radiusBottom,
-    geo_params_cylinderClosed_03.height,
-    geo_params_cylinderClosed_03.radialSegments,
-    geo_params_cylinderClosed_03.heightSegments,
-    geo_params_cylinderClosed_03.openEnded,
-    geo_params_cylinderClosed_03.thetaStart,
-    geo_params_cylinderClosed_03.thetaLength,
-)
-
-
-// geo_params_cylindersOpen 
-// --------------------------------------------------
-let geo_params_cylinderOpen_01 = {
-    radiusTop: 5,
-    radiusBottom: 5,
-    height: 10,
-    radialSegments: 24,
-    heightSegments: 1,
-    openEnded: true,
-    thetaStart: 0,
-    thetaLength: 2.34362,
-}
-
-let geo_params_cylinderOpen_02 = {
-    radiusTop: 5,
-    radiusBottom: 5,
-    height: 10,
-    radialSegments: 24,
-    heightSegments: 1,
-    openEnded: true,
-    thetaStart: 0,
-    thetaLength: 2.34362,
-}
-
-let geo_params_cylinderOpen_03 = {
-    radiusTop: 5,
-    radiusBottom: 5,
-    height: 10,
-    radialSegments: 24,
-    heightSegments: 1,
-    openEnded: true,
-    thetaStart: 0,
-    thetaLength: 2.34362,
-}
-
-
-const geo_CylinderOpen_01 = new THREE.CylinderGeometry(
-    geo_params_cylinderOpen_01.radiusTop,
-    geo_params_cylinderOpen_01.radiusBottom,
-    geo_params_cylinderOpen_01.height,
-    geo_params_cylinderOpen_01.radialSegments,
-    geo_params_cylinderOpen_01.heightSegments,
-    geo_params_cylinderOpen_01.openEnded,
-    geo_params_cylinderOpen_01.thetaStart,
-    geo_params_cylinderOpen_01.thetaLength,
-)
-
-const geo_CylinderOpen_02 = new THREE.CylinderGeometry(
-    geo_params_cylinderOpen_02.radiusTop,
-    geo_params_cylinderOpen_02.radiusBottom,
-    geo_params_cylinderOpen_02.height,
-    geo_params_cylinderOpen_02.radialSegments,
-    geo_params_cylinderOpen_02.heightSegments,
-    geo_params_cylinderOpen_02.openEnded,
-    geo_params_cylinderOpen_02.thetaStart,
-    geo_params_cylinderOpen_02.thetaLength,
-)
-
-const geo_CylinderOpen_03 = new THREE.CylinderGeometry(
-    geo_params_cylinderOpen_03.radiusTop,
-    geo_params_cylinderOpen_03.radiusBottom,
-    geo_params_cylinderOpen_03.height,
-    geo_params_cylinderOpen_03.radialSegments,
-    geo_params_cylinderOpen_03.heightSegments,
-    geo_params_cylinderOpen_03.openEnded,
-    geo_params_cylinderOpen_03.thetaStart,
-    geo_params_cylinderOpen_03.thetaLength,
-)
-
-    ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_root = new THREE.Group()
-    ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_root.position.set(0, 0, 0)
-    ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_root.rotation.set(0, 0, 0)
-    ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_root.scale.set(1, 1, 1)
-    ΔaOmniX_TimeΔ_Skeleton_root.add(ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_root)
-
-        ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Forwards_root = new THREE.Group()
-        ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Forwards_root.position.set(0, 0, 0)
-        ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Forwards_root.rotation.set(0, 0, 0)
-        ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Forwards_root.scale.set(1, 1, 1)
-        ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_root.add(ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Forwards_root)
-
-            ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Forwards = new THREE.Group()
-            ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Forwards.position.set(0, 125, 0)
-            ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Forwards.rotation.set(0, 0, 0)
-            ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Forwards.scale.set(1, 1, 1)
-            ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_root.add(ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Forwards)
-
-                const mat_ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Forwards = new THREE.MeshBasicMaterial({ map: SceneWallpaper_03, side: THREE.DoubleSide });
-                mesh_ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Forwards = new THREE.Mesh(geo_Cones_01, mat_ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Forwards);
-                mat_ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Forwards.transparent = false;
-                mat_ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Forwards.alphaMap = whitePureRoom;
-                mesh_ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Forwards.position.set(0, 0, 0);
-                // mesh_ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Forwards.position.set(-15000, 0, 0);
-                mesh_ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Forwards.scale.set(5, 5, 5);
-                mesh_ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Forwards.rotation.set(0, 0, 0)
-                // mesh_ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Forwards.rotateX( - Math.PI / 2 );
-                // mesh_ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Forwards.rotateY( - Math.PI / 2 );
-
-                // ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Forwards.lookAt(camera)
-                
-                ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Forwards.add(mesh_ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Forwards)
-
-        
-        ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Backwards_root = new THREE.Group()
-        ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Backwards_root.position.set(0, 0, 0)
-        ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Backwards_root.rotation.set(0, 0, 0)
-        ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Backwards_root.scale.set(1, 1, 1)
-        ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_root.add(ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Backwards_root)
-
-            ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Backwards = new THREE.Group()
-            ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Backwards.position.set(0, -125, 0)
-            ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Backwards.rotation.set(0, 0, 0)
-            ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Backwards.scale.set(1, 1, 1)
-            ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_root.add(ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Backwards)
-
-                const mat_ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Backwards = new THREE.MeshBasicMaterial({ map: SceneWallpaper_03, side: THREE.DoubleSide });
-                mesh_ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Backwards = new THREE.Mesh(geo_Cones_01, mat_ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Backwards);
-                mat_ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Backwards.transparent = false;
-                mat_ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Backwards.alphaMap = whitePureRoom;
-                mesh_ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Backwards.position.set(0, 0, 0);
-                // mesh_ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Backwards.position.set(-15000, 0, 0);
-                mesh_ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Backwards.scale.set(5, 5, 5);
-                mesh_ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Backwards.rotation.set(-3.14, 0, 0)
-                // mesh_ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Backwards.rotateX( - Math.PI / 2 );
-                // mesh_ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Backwards.rotateY( - Math.PI / 2 );
-
-                // ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Backwards.lookAt(camera)
-                
-                ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Backwards.add(mesh_ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Backwards)
-
-        
-    ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_root = new THREE.Group()
-    ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_root.position.set(0, 0, 0)
-    ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_root.rotation.set(0, 0, 0)
-    ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_root.scale.set(1, 1, 1)
-    ΔaOmniX_TimeΔ_Skeleton_root.add(ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_root)
-
-        ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_Left_root = new THREE.Group()
-        ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_Left_root.position.set(0, 0, 0)
-        ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_Left_root.rotation.set(0, 0, 0)
-        ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_Left_root.scale.set(1, 1, 1)
-        ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_root.add(ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_Left_root)
-
-            ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_Left = new THREE.Group()
-            ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_Left.position.set(-125, 0, 0)
-            ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_Left.rotation.set(0, 0, 0)
-            ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_Left.scale.set(1, 1, 1)
-            ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_Left_root.add(ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_Left)
-
-                const mat_ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_Left = new THREE.MeshBasicMaterial({ map: SceneWallpaper_03, side: THREE.DoubleSide });
-                mesh_ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_Left = new THREE.Mesh(geo_Cones_01, mat_ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_Left);
-                mat_ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_Left.transparent = false;
-                mat_ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_Left.alphaMap = whitePureRoom;
-                mesh_ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_Left.position.set(0, 0, 0);
-                // mesh_ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_Left.position.set(-15000, 0, 0);
-                mesh_ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_Left.scale.set(5, 5, 5);
-                mesh_ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_Left.rotation.set(0, 1.575, 0)
-                mesh_ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_Left.rotateX( - Math.PI / 2 );
-                // mesh_ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_Left.rotateY( - Math.PI / 2 );
-
-                // ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_Left.lookAt(camera)
-                
-                ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_Left.add(mesh_ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_Left)
-
-
-        ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_Right_root = new THREE.Group()
-        ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_Right_root.position.set(0, 0, 0)
-        ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_Right_root.rotation.set(0, 0, 0)
-        ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_Right_root.scale.set(1, 1, 1)
-        ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_root.add(ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_Right_root)
-
-            ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_Right = new THREE.Group()
-            ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_Right.position.set(125, 0, 0)
-            ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_Right.rotation.set(0, 0, 0)
-            ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_Right.scale.set(1, 1, 1)
-            ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_Right_root.add(ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_Right)
-
-                const mat_ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_Right = new THREE.MeshBasicMaterial({ map: SceneWallpaper_03, side: THREE.DoubleSide });
-                mesh_ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_Right = new THREE.Mesh(geo_Cones_01, mat_ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_Right);
-                mat_ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_Right.transparent = false;
-                mat_ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_Right.alphaMap = whitePureRoom;
-                mesh_ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_Right.position.set(0, 0, 0);
-                // mesh_ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_Right.position.set(-15000, 0, 0);
-                mesh_ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_Right.scale.set(5, 5, 5);
-                mesh_ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_Right.rotation.set(0, -1.575, 0)
-                mesh_ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_Right.rotateX( - Math.PI / 2 );
-                // mesh_ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_Right.rotateY( - Math.PI / 2 );
-
-                // ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_Right.lookAt(camera)
-                
-                ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_Right.add(mesh_ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_Right)
-
-
-
-    ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_root = new THREE.Group()
-    ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_root.position.set(0, 0, 0)
-    ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_root.rotation.set(0, 0, 0)
-    ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_root.scale.set(1, 1, 1)
-    ΔaOmniX_TimeΔ_Skeleton_root.add(ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_root)
-
-        ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_MovingForward_root = new THREE.Group()
-        ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_MovingForward_root.position.set(0, 0, 0)
-        ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_MovingForward_root.rotation.set(0, 0, 0)
-        ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_MovingForward_root.scale.set(1, 1, 1)
-        ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_root.add(ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_MovingForward_root)
-
-            ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_MovingForward = new THREE.Group()
-            ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_MovingForward.position.set(0, 0, -125)
-            ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_MovingForward.rotation.set(0, 0, 0)
-            ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_MovingForward.scale.set(1, 1, 1)
-            ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_MovingForward_root.add(ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_MovingForward)
-
-                const mat_ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_MovingForward = new THREE.MeshBasicMaterial({ map: SceneWallpaper_03, side: THREE.DoubleSide });
-                mesh_ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_MovingForward = new THREE.Mesh(geo_Cones_01, mat_ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_MovingForward);
-                mat_ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_MovingForward.transparent = false;
-                mat_ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_MovingForward.alphaMap = whitePureRoom;
-                mesh_ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_MovingForward.position.set(0, 0, 0);
-                // mesh_ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_MovingForward.position.set(-15000, 0, 0);
-                mesh_ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_MovingForward.scale.set(5, 5, 5);
-                mesh_ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_MovingForward.rotation.set(0, 0, 0)
-                mesh_ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_MovingForward.rotateX( - Math.PI / 2 );
-                mesh_ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_MovingForward.rotateY( - Math.PI / 2 );
-
-                // ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_MovingForward.lookAt(camera)
-                
-                ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_MovingForward.add(mesh_ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_MovingForward)
-
-        
-        ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_MovingBackwards_root = new THREE.Group()
-        ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_MovingBackwards_root.position.set(0, 0, 0)
-        ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_MovingBackwards_root.rotation.set(0, 0, 0)
-        ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_MovingBackwards_root.scale.set(1, 1, 1)
-        ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_root.add(ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_MovingBackwards_root)
-
-            ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_MovingBackwards = new THREE.Group()
-            ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_MovingBackwards.position.set(0, 0, 125)
-            ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_MovingBackwards.rotation.set(0, 0, 0)
-            ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_MovingBackwards.scale.set(1, 1, 1)
-            ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_MovingBackwards_root.add(ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_MovingBackwards)
-
-                const mat_ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_MovingBackwards = new THREE.MeshBasicMaterial({ map: SceneWallpaper_03, side: THREE.DoubleSide });
-                mesh_ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_MovingBackwards = new THREE.Mesh(geo_Cones_01, mat_ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_MovingBackwards);
-                mat_ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_MovingBackwards.transparent = false;
-                mat_ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_MovingBackwards.alphaMap = whitePureRoom;
-                mesh_ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_MovingBackwards.position.set(0, 0, 0);
-                // mesh_ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_MovingBackwards.position.set(-15000, 0, 0);
-                mesh_ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_MovingBackwards.scale.set(5, 5, 5);
-                mesh_ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_MovingBackwards.rotation.set(0, 3.14, 0)
-                mesh_ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_MovingBackwards.rotateX( - Math.PI / 2 );
-                mesh_ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_MovingBackwards.rotateY( - Math.PI / 2 );
-
-                // ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_MovingBackwards.lookAt(camera)
-                
-                ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_MovingBackwards.add(mesh_ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_MovingBackwards)
-
-    
-    let spin_Meshes_Specifically = () => {
-
-        gsap.to(ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Forwards.rotation, {
-            repeat: -1,
-            duration: 1,
-            ease: "none",
-            delay: 0,
-            y: 3.14
-
-        })
-
-        gsap.to(ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Backwards.rotation, {
-            repeat: -1,
-            duration: 1,
-            ease: "none",
-            delay: 0,
-            y: 3.14
-
-        })
-
-
-
-
-        gsap.to(ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_Left.rotation, {
-            repeat: -1,
-            duration: 1,
-            ease: "none",
-            delay: 0,
-            x: 3.14
-
-        })
-
-        gsap.to(ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_Right.rotation, {
-            repeat: -1,
-            duration: 1,
-            ease: "none",
-            delay: 0,
-            x: 3.14
-
-        })
-
-
-        gsap.to(ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_MovingForward.rotation, {
-            repeat: -1,
-            duration: 1,
-            ease: "none",
-            delay: 0,
-            z: 3.14
-
-        })
-
-        gsap.to(ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_MovingBackwards.rotation, {
-            repeat: -1,
-            duration: 1,
-            ease: "none",
-            delay: 0,
-            z: 3.14
-
-        })
-    }
-
-    spin_Meshes_Specifically()
-
-
-
-    let spin_timeΔ = () => {
-        gsap.to(ΔaOmniX_TimeΔ_Skeleton_root.rotation, {
-            repeat: -1,
-            duration: 10,
-            ease: "none",
-            delay: 0,
-            x: 1.575,
-            y: -3.14,
-            z: 1.575
-
-        })
-
-        gsap.to(ΔaOmniX_TimeΔ_Skeleton_root.scale, {
-            repeat: -1,
-            duration: 1,
-            ease: "none",
-            delay: 2,
-            x: 0.1,
-            y: 0.1,
-            z: 0.1,
-            
-
-        })
-
-        gsap.to(ΔaOmniX_TimeΔ_Skeleton_root.scale, {
-            repeat: -1,
-            duration: 1,
-            ease: "none",
-            delay: 5,
-            x: 1,
-            y: 1,
-            z: 1,
-            
-
-        })
-    }
-       
-    // spin_timeΔ()
-
-
-
-
-        ΔaOmniX_TimeΔ_Skeleton_User_choices_root = new THREE.Group()
-        ΔaOmniX_TimeΔ_Skeleton_User_choices_root.position.set(0, 0, 0)
-        ΔaOmniX_TimeΔ_Skeleton_User_choices_root.rotation.set(0, 0, 0)
-        ΔaOmniX_TimeΔ_Skeleton_User_choices_root.scale.set(1, 1, 1)
-        ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_root.add(ΔaOmniX_TimeΔ_Skeleton_User_choices_root)
-
-            ΔaOmniX_TimeΔ_Skeleton_User_choices = new THREE.Group()
-            ΔaOmniX_TimeΔ_Skeleton_User_choices.position.set(0, 0, 0)
-            ΔaOmniX_TimeΔ_Skeleton_User_choices.rotation.set(0, 0, 0)
-            ΔaOmniX_TimeΔ_Skeleton_User_choices.scale.set(1, 1, 1)
-            ΔaOmniX_TimeΔ_Skeleton_User_choices_root.add(ΔaOmniX_TimeΔ_Skeleton_User_choices)
-
-                const mat_ΔaOmniX_TimeΔ_Skeleton_User_choices = new THREE.MeshBasicMaterial({ map: SceneWallpaper_03, side: THREE.DoubleSide });
-                mesh_ΔaOmniX_TimeΔ_Skeleton_User_choices = new THREE.Mesh(geo_CylinderClosed_01, mat_ΔaOmniX_TimeΔ_Skeleton_User_choices);
-                mat_ΔaOmniX_TimeΔ_Skeleton_User_choices.transparent = true;
-                mat_ΔaOmniX_TimeΔ_Skeleton_User_choices.alphaMap = whitePureRoom;
-                mesh_ΔaOmniX_TimeΔ_Skeleton_User_choices.position.set(0, 0, 0);
-                // mesh_ΔaOmniX_TimeΔ_Skeleton_User_choices.position.set(-15000, 0, 0);
-                mesh_ΔaOmniX_TimeΔ_Skeleton_User_choices.scale.set(20, 150, 20);
-                mesh_ΔaOmniX_TimeΔ_Skeleton_User_choices.rotation.set(0, 0, 0)
-                mesh_ΔaOmniX_TimeΔ_Skeleton_User_choices.rotateX( - Math.PI / 2 );
-                // mesh_ΔaOmniX_TimeΔ_Skeleton_User_choices.rotateY( - Math.PI / 2 );
-
-                // ΔaOmniX_TimeΔ_Skeleton_User_choices.lookAt(camera)
-                
-                ΔaOmniX_TimeΔ_Skeleton_User_choices.add(mesh_ΔaOmniX_TimeΔ_Skeleton_User_choices)
-
-
-
-        let userChoices_animation = () => {
-            gsap.from(mesh_ΔaOmniX_TimeΔ_Skeleton_User_choices.position, {
-                repeat: -1,
-                duration: 7.5,
-                ease: "none",
-                delay: 0,
-                z: -1000,
-            
-
-            })
-
-            gsap.from(mesh_ΔaOmniX_TimeΔ_Skeleton_User_choices.position, {
-                repeat: -1,
-                duration: 10,
-                ease: "none",
-                delay: 5,
-                z: 10000,
-            
-
-            })
-        }
-
-        userChoices_animation()
-
-
-
-        ΔaOmniX_TimeΔ_Skeleton_Users_choices_root = new THREE.Group()
-        ΔaOmniX_TimeΔ_Skeleton_Users_choices_root.position.set(0, 0, 0)
-        ΔaOmniX_TimeΔ_Skeleton_Users_choices_root.rotation.set(0, 0, 0)
-        ΔaOmniX_TimeΔ_Skeleton_Users_choices_root.scale.set(1, 1, 1)
-        ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_root.add(ΔaOmniX_TimeΔ_Skeleton_Users_choices_root)
-
-            ΔaOmniX_TimeΔ_Skeleton_Users_choices = new THREE.Group()
-            ΔaOmniX_TimeΔ_Skeleton_Users_choices.position.set(0, 0, 0)
-            ΔaOmniX_TimeΔ_Skeleton_Users_choices.rotation.set(0, 0, 0)
-            ΔaOmniX_TimeΔ_Skeleton_Users_choices.scale.set(1, 1, 1)
-            ΔaOmniX_TimeΔ_Skeleton_Users_choices_root.add(ΔaOmniX_TimeΔ_Skeleton_Users_choices)
-
-                const mat_ΔaOmniX_TimeΔ_Skeleton_Users_choices = new THREE.MeshBasicMaterial({ map: SceneWallpaper_03, side: THREE.DoubleSide });
-                mesh_ΔaOmniX_TimeΔ_Skeleton_Users_choices = new THREE.Mesh(geo_CylinderClosed_01, mat_ΔaOmniX_TimeΔ_Skeleton_Users_choices);
-                mat_ΔaOmniX_TimeΔ_Skeleton_Users_choices.transparent = true;
-                mat_ΔaOmniX_TimeΔ_Skeleton_Users_choices.alphaMap = whitePureRoom;
-                mesh_ΔaOmniX_TimeΔ_Skeleton_Users_choices.position.set(0, 0, 0);
-                // mesh_ΔaOmniX_TimeΔ_Skeleton_Users_choices.position.set(-15000, 0, 0);
-                mesh_ΔaOmniX_TimeΔ_Skeleton_Users_choices.scale.set(15, 150, 15);
-                mesh_ΔaOmniX_TimeΔ_Skeleton_Users_choices.rotation.set(0, 0, 0)
-                mesh_ΔaOmniX_TimeΔ_Skeleton_Users_choices.rotateX( - Math.PI / 2 );
-                // mesh_ΔaOmniX_TimeΔ_Skeleton_Users_choices.rotateY( - Math.PI / 2 );
-
-                // ΔaOmniX_TimeΔ_Skeleton_Users_choices.lookAt(camera)
-                
-                ΔaOmniX_TimeΔ_Skeleton_Users_choices.add(mesh_ΔaOmniX_TimeΔ_Skeleton_Users_choices)
-        
-        let usersChoices_animation = () => {
-            gsap.from(mesh_ΔaOmniX_TimeΔ_Skeleton_Users_choices.position, {
-                repeat: -1,
-                duration: 7.5,
-                ease: "none",
-                delay: 0,
-                z: 1000,
-            
-
-            })
-
-            gsap.from(mesh_ΔaOmniX_TimeΔ_Skeleton_Users_choices.position, {
-                repeat: -1,
-                duration: 10,
-                ease: "none",
-                delay: 5,
-                z: -10000,
-            
-
-            })
-        }
-
-        usersChoices_animation()
-
-
-
-
 
 
 //...................................................................................................
@@ -3542,8 +2611,7 @@ const geo_CylinderOpen_03 = new THREE.CylinderGeometry(
 
 				mesh_CenterBrain_VideoSphere_Opening.position.set(0, 0, 0)
 				mesh_CenterBrain_VideoSphere_Opening.rotation.set(0, 1.565, 0)
-				// mesh_CenterBrain_VideoSphere_Opening.scale.set(10000, 10000, 10000)
-                mesh_CenterBrain_VideoSphere_Opening.scale.set(7.5, 7.5, 7.5)
+				mesh_CenterBrain_VideoSphere_Opening.scale.set(10000, 10000, 10000)
 				CenterBrain_VideoSphere_Opening.add(mesh_CenterBrain_VideoSphere_Opening)
 
 
@@ -3617,61 +2685,9 @@ const geo_CylinderOpen_03 = new THREE.CylinderGeometry(
                     delay: .25,
                     y: '-= 1.575',
                 })
-
-
-                
-
-                
             }
 
-            let videoSphereDemo = () => {
-
-                gsap.to(mesh_CenterBrain_VideoSphere_Opening.scale, {
-                    repeat: -1,
-                    duration: 0.75,
-                    // yoyo: true,
-                    // ease: "power1",
-                    // ease: "bounce.inOut",
-                    ease: "slow(0.1,2,false)",
-                    delay: 0,
-                    x: 0.01,
-                    y: 0.01,
-                    z: 0.01, 
-
-                })
-
-                gsap.to(mesh_CenterBrain_VideoSphere_Opening.scale, {
-                    repeat: -1,
-                    duration: 10,
-                    // yoyo: true,
-                    // ease: "power1",
-                    // ease: "bounce.inOut",
-                    ease: "slow(0.1,2,false)",
-                    delay: 0,
-                    x: 100,
-                    y: 100,
-                    z: 100, 
-
-                })
-
-                gsap.to(mesh_CenterBrain_VideoSphere_Opening.scale, {
-                    repeat: -1,
-                    duration: 10,
-                    // yoyo: true,
-                    // ease: "power1",
-                    // ease: "bounce.inOut",
-                    ease: "slow(0.1,2,false)",
-                    delay: 10,
-                    x: 1,
-                    y: 1,
-                    z: 1, 
-
-                })
-            }
-
-            videoSphereDemo()
-
-            // rotateSphere()
+                // rotateSphere()
 
 
 
@@ -3707,7 +2723,23 @@ const geo_CylinderOpen_03 = new THREE.CylinderGeometry(
             aOmniScene.scale.set(0.00001, 0.00001, 0.00001)
             ΔaOmniX_root.add(aOmniScene)
 
-            
+            let toggle_aOmniScene = () => {
+                gsap.to(aOmniScene.scale, {
+                    repeat: 0,
+                    duration: 0.75,
+                    // yoyo: true,
+                    // ease: "power1",
+                    // ease: "bounce.inOut",
+                    ease: "slow(0.1,2,false)",
+                    delay: 10,
+                    x:1,
+                    y:1,
+                    z:1, 
+
+                })
+            }
+
+            toggle_aOmniScene()
 
 			sun = new THREE.Vector3();
 
@@ -3776,73 +2808,6 @@ const geo_CylinderOpen_03 = new THREE.CylinderGeometry(
 			}
 
 			updateSun();
-
-
-
-
-            let summon_aOmniScene = () => {
-
-                gsap.to(aOmniScene.scale, {
-
-                    repeat: 0,
-                    duration: 0.75,
-                    // yoyo: true,
-                    ease: "power1",
-                    // ease: "bounce.inOut",
-                    // ease: "slow(0.1,2,false)",
-                    delay: 10,
-                    x:1,
-                    y:1,
-                    z:1, 
-
-                })
-
-                gsap.to(aOmniScene.scale, {
-
-                    repeat: 0,
-                    duration: 0.75,
-                    // yoyo: true,
-                    ease: "power1",
-                    // ease: "bounce.inOut",
-                    // ease: "slow(0.1,2,false)",
-                    delay: 20,
-                    x:0.01,
-                    y:0.01,
-                    z:0.01, 
-
-                })
-                
-
-                gsap.to(aOmniScene.position, {
-
-                    repeat: 0,
-                    duration: 0.75,
-                    // yoyo: true,
-                    ease: "power1",
-                    // ease: "bounce.inOut",
-                    // ease: "slow(0.1,2,false)",
-                    delay: 20,
-                    y: -10,
-                    
-
-                })
-
-                gsap.to(water.position, {
-
-                    repeat: 0,
-                    duration: 1,
-                    // yoyo: true,
-                    ease: "power1",
-                    // ease: "bounce.inOut",
-                    // ease: "slow(0.1,2,false)",
-                    delay: 22,
-                    y: -20000,
-                    
-                })
-                
-            }
-
-            summon_aOmniScene()
 
 
 
@@ -4588,7 +3553,7 @@ let particlesToCoreFunction = () => {
 
                 UserContainer_root = new THREE.Group()
                 // UserContainer_root.position.set(30, 5990, 23950);
-                UserContainer_root.position.set(0, 45, 330);
+                UserContainer_root.position.set(0, 45, 200);
                 UserContainer_root.rotation.set(0, 0, 0)
                 UserContainer_root.scale.set(10, 10, 10)
                 scene.add(UserContainer_root)
@@ -5133,6 +4098,8 @@ let particlesToCoreFunction = () => {
 
 						})
 
+
+
 					}
 				})
 
@@ -5241,15 +4208,18 @@ let particlesToCoreFunction = () => {
 			folderButton.add(camera.position, 'z').min(-3.14).max(3.14).step(0.001).name('z-camera')
 
 
-            const folderOrbits = gui.addFolder('mesh_ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Forwards');
-			folderOrbits.add(mesh_ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Backwards.rotation, 'x').min(-3.14).max(3.14).step(0.001).name('x-TimeCone')
-			folderOrbits.add(mesh_ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Backwards.rotation, 'y').min(-3.14).max(3.14).step(0.001).name('y-TimeCone')
-			folderOrbits.add(mesh_ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Backwards.rotation, 'z').min(-3.14).max(3.14).step(0.001).name('z-TimeCone')
+            const folderOrbits = gui.addFolder('camera');
+			folderOrbits.add(camera.rotation, 'x').min(-3.14).max(3.14).step(0.001).name('x-camera')
+			folderOrbits.add(camera.rotation, 'y').min(-3.14).max(3.14).step(0.001).name('y-camera')
+			folderOrbits.add(camera.rotation, 'z').min(-3.14).max(3.14).step(0.001).name('z-camera')
 
-            const folderPanels = gui.addFolder('aOmniScene');
-			folderPanels.add(aOmniScene.position, 'x').min(-1000).max(1000).step(1).name('x-aOmniScene')
-			folderPanels.add(aOmniScene.position, 'y').min(-1000).max(1000).step(1).name('y-aOmniScene')
-			folderPanels.add(aOmniScene.position, 'z').min(-1000).max(1000).step(1).name('z-aOmniScene')
+            const folderPanels = gui.addFolder('camera');
+			folderPanels.add(camera.position, 'x').min(-10000).max(10000).step(0.01).name('x-camera')
+			folderPanels.add(camera.position, 'y').min(-10000).max(10000).step(0.01).name('y-camera')
+			folderPanels.add(camera.position, 'z').min(-10000).max(10000).step(0.01).name('z-camera')
+
+
+
 
 			window.addEventListener('resize', onWindowResize);
 
