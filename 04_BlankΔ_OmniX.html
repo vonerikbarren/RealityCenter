@@ -33,9 +33,9 @@
 
          <video id="none" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/PlexusAnimations/Animation_ParticlesWhite01.mp4" style="display: none" ></video>
 
-         <video id="openingVideo" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/TunnelAnimations/GalaxyTunnel01.mp4" style="display: none" ></video>
+         <video id="none" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/TunnelAnimations/GalaxyTunnel01.mp4" style="display: none" ></video>
 
-         <video id="none" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/SphereAnimations/Equations3.mp4" style="display: none" ></video>
+         <video id="openingVideo" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/SphereAnimations/Equations3.mp4" style="display: none" ></video>
 
          <video id="none" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/TunnelAnimations/TechTunnelA03.mp4" style="display: none" ></video>
 
@@ -346,14 +346,27 @@
                     let ΔaOmniX_TimeΔ_Skeleton_Platform_root
                     let ΔaOmniX_TimeΔ_Skeleton_Clocks_root
 
-                    // Natural Time Flow
+                    // Natural Time Flow - Cones
                     let ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_root
+
+                    let ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_root
 
                         let ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Forwards_root
                             let ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Forwards, mesh_ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Forwards
 
                         let ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Backwards_root
                             let ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Backwards, mesh_ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Backwards
+
+
+                    // Natural Time Flow - Tunnel
+                    let ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_InfiniteTunnel_root
+
+                        let ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_InfiniteTunnel_Primary_root
+                            let ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_Primary, mesh_ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_Primary
+
+                        let ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_InfiniteTunnel_Minute_root
+                            let ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_InfiniteTunnel_Minute, mesh_ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_InfiniteTunnel_Minute
+
 
                     // Controlled Time Flow
                     let ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_root
@@ -378,6 +391,8 @@
                     let ΔaOmniX_TimeΔ_Skeleton_Users_choices_root
                         let ΔaOmniX_TimeΔ_Skeleton_Users_choices, mesh_ΔaOmniX_TimeΔ_Skeleton_Users_choices
 
+
+
                     let ΔaOmniX_TimeΔ_Skeleton_Avatars_choices_root
                     let ΔaOmniX_TimeΔ_Skeleton_Spaces_root
                     let ΔaOmniX_TimeΔ_Skeleton_Events_root
@@ -390,6 +405,7 @@
                 let ΔaOmniX_TimeΔ_TimeTunnel_root_Random
                 let ΔaOmniX_TimeΔ_TimeTunnel_root_Skeleton
                 let ΔaOmniX_TimeΔ_TimeTunnel_root_Primaries
+                    let ΔaOmniX_TimeΔ_TimeTunnel_Minutes_root
                 let ΔaOmniX_TimeΔ_TimeTunnel_root_Secondaries
 
             let ΔaOmniX_Particles_Normal_root
@@ -409,6 +425,38 @@
                 let ΔaOmniX_LoopOrbit01, mesh_ΔaOmniX_LoopOrbit01
                 let ΔaOmniX_LoopOrbit02, mesh_ΔaOmniX_LoopOrbit02
                 let ΔaOmniX_LoopOrbit03, mesh_ΔaOmniX_LoopOrbit03
+
+
+            let ΔaOmniX_Technicalities_root
+                let ΔaOmniX_Technicalities_img_front_root
+                    let ΔaOmniX_Technicalities_img_front, mesh_ΔaOmniX_Technicalities_img_front
+
+                let ΔaOmniX_Technicalities_img_back_root
+                    let ΔaOmniX_Technicalities_img_back, mesh_ΔaOmniX_Technicalities_img_back
+
+                let ΔaOmniX_Technicalities_img_left_root
+                    let ΔaOmniX_Technicalities_img_left, mesh_ΔaOmniX_Technicalities_img_left
+
+                let ΔaOmniX_Technicalities_img_right_root
+                    let ΔaOmniX_Technicalities_img_right, mesh_ΔaOmniX_Technicalities_img_right
+
+                let ΔaOmniX_Technicalities_img_above_root
+                    let ΔaOmniX_Technicalities_img_above, mesh_ΔaOmniX_Technicalities_img_above
+
+                let ΔaOmniX_Technicalities_img_below_root
+                    let ΔaOmniX_Technicalities_img_below, mesh_ΔaOmniX_Technicalities_img_below
+
+
+
+        let ΔaOmniX_OmniShell_root
+            let ΔaOmniX_OmniShell_inner, mesh_ΔaOmniX_OmniShell_inner
+            let ΔaOmniX_OmniShell_outer, mesh_ΔaOmniX_OmniShell_outer
+            let ΔaOmniX_OmniShell_field01, mesh_ΔaOmniX_OmniShell_field01
+
+
+        let OmniScene_StarsLayer_root
+            let OmniScene_StarsLayer01, mesh_OmniScene_StarsLayer01
+                
 
 
         //....................................................................
@@ -546,6 +594,33 @@
         const liquidTex_GreyWhite = textureLoader.load('./assets/textures/liquidTextures/LiquidMarble_GreyWhite.jpg')
 
 
+        const RealityGridA = textureLoader.load('./assets/img/03-HudUI/PrimaryHud01_DrLight/A08_GeneralGrids_Square/formA/SquareGrid_White_formA.png')
+        const RealityGridB = textureLoader.load('./assets/img/03-HudUI/PrimaryHud01_DrLight/A08_GeneralGrids_Square/formB/SquareGrid_White_formB.png')
+        const RealityGridC = textureLoader.load('./assets/img/03-HudUI/PrimaryHud01_DrLight/A08_GeneralGrids_Square/formC/SquareGrid_White_formC.png')
+        const RealityGridD = textureLoader.load('./assets/img/03-HudUI/PrimaryHud01_DrLight/A08_GeneralGrids_Square/formD/SquareGrid_White_formD.png')
+        const RealityGridE = textureLoader.load('./assets/img/03-HudUI/PrimaryHud01_DrLight/A08_GeneralGrids_Square/formE/SquareGrid_White_formE.png')
+
+        const defaultGrid01 = textureLoader.load('./assets/img/05-Env/Panels/defaultPanel01.png')
+        const BasicHud03b = textureLoader.load('./assets/img/03-HudUI/BeginningHuds/BeginnerHud03b.png')
+
+
+        
+	    const PrimaryHudA01 = textureLoader.load('./assets/img/03-HudUI/HudWhiteGradient03.png')
+
+        const defaultPicture = textureLoader.load('./assets/icons/0-Official/Art/01-Art_and_Design/017-picture.png')
+        const img_testimg01 = textureLoader.load('./assets/icons/Websites01/002-globe_grid.png')
+        const img_testimg02 = textureLoader.load('./assets/icons/0-Official/Art/01-Art_and_Design/017-picture.png')
+        const img_testimg03 = textureLoader.load('./assets/icons/0-Official/Art/01-Art_and_Design/017-picture.png')
+
+
+        const starryNight01 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/starrySkyBlue01.jpg')
+        const starryNight02 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/astrologicalRoom01.jpg')
+        const starryNight03 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/GalaxyWallpaperPurple03.png')
+        const starryNight04 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/GalaxyWallpaperPurple02.png')
+
+        const dataCubesRoom01 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/RequipRoom/DataCubes01.jpg')
+
+
 		init();
 		animate();
 
@@ -634,12 +709,71 @@
 			// Search.Camera
 			camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 500000);
 			// camera.position.set(30, 6000, 24000); // previous
-            camera.position.set(0, 0, 500); // previous
+            camera.position.set(0, 0, 1500); // previous
 			camera.view = sun;
 
 
             const newLight = new THREE.AmbientLight(0x404040)
             scene.add(newLight)
+
+
+            let viewerAnimationLoop01 = () => {
+                // Create a timeline
+                // let tl = gsap.timeline({
+                //     delay: 0.5,
+                //     paused: true, // default is false
+                //     repeat: 2, // number of repeats (-1 for infinite)
+                //     repeatDelay: 1, // seconds between repeats
+                //     repeatRefresh: true, // invalidates on each repeat
+                //     yoyo: true, // if true > A-B-B-A, if false > A-B-A-B
+                //     defaults: {
+                //         // children inherit these defaults
+                //         duration: 1,
+                //         ease: 'none'
+                //     },
+                //     smoothChildTiming: true,
+                //     autoRemoveChildren: true,
+                //     onComplete: () => {
+                //         console.log("finished")
+                //     },
+                //     // other callbacks:
+                //     // onStart, onUpdate, onRepeat, onReverseComplete
+                // });
+
+                gsap.to(camera.position, {
+                    repeat: -1,
+                    duration: 15,
+                    ease: "none",
+                    yoyo: true,
+                    delay: 1,
+                    x: 1000,
+                
+
+                })
+
+                gsap.to(camera.position, {
+                    repeat: -1,
+                    duration: 15,
+                    ease: "none",
+                    yoyo: true,
+                    delay: 0,
+                    z: -800,
+                
+
+                })
+                
+            }
+
+            // viewerAnimationLoop01()
+
+
+            document.addEventListener("keydown", function(event) {
+                if (event.key === "j") {
+                    
+                    viewerAnimationLoop01()
+                    
+                }
+            })
 
 
 
@@ -707,8 +841,8 @@
 					// ObjectTestingGroup/SphereDimensions
 					sphereGeometryDimensions: {
 						radius: 15,
-						widthSegments: 32,
-						heightSegments: 16,
+						widthSegments: 64,
+						heightSegments: 64,
 						phiStart: 0,
 						phiLength: 6.2831,
 						thetaStart: 0,
@@ -2604,6 +2738,299 @@ let rotate_ΔaOmniX_CubeLoopStructure = () => {
 
 rotate_ΔaOmniX_CubeLoopStructure()
 
+
+
+
+
+
+//.............................................................................................
+//..TTTTTTTTT......................................SSSSSS......................................
+//.TTTTTTTTTTT..................tttt..hhh.........SSSSSSSS...tttt..............................
+//.TTTTTTTTTTT..................tttt..hhh........SSSSSSSSSS..tttt..............................
+//.TTTTTTTTTTT..................tttt..hhh........SSSSSSSSSS..tttt..............................
+//.....TTTT...rrrrrrruuu...uuu.uttttt.hhhhhhhh..hSSS...SSSSSSttttt..aaaaaaa..rrrrrr.ssssssss...
+//.....TTTT...rrrrrrruuu...uuu.uttttt.hhhhhhhhh.hSSSSS......Sttttt.aaaaaaaa..rrrrrr.ssssssss...
+//.....TTTT...rrrrrrruuu...uuu.uttttt.hhhhhhhhh..SSSSSSSSS..Sttttttaaaaaaaaa.rrrrrrrsssssssss..
+//.....TTTT...rrrr..ruuu...uuu..tttt..hhhh.hhhh..SSSSSSSSSS..tttt.taaa.aaaaa.rrrr..rsssssssss..
+//.....TTTT...rrr...ruuu...uuu..tttt..hhh...hhh....SSSSSSSSS.tttt..aaaaaaaaa.rrr....ssssssss...
+//.....TTTT...rrr...ruuu...uuu..tttt..hhh...hhh.hSSS..SSSSSS.tttt.taaaaaaaaa.rrr....ssssssss...
+//.....TTTT...rrr....uuu..uuuu..tttt..hhh...hhh.hSSS....SSSS.tttt.taaaa.aaaa.rrr...rsssssssss..
+//.....TTTT...rrr....uuuuuuuuu..tttt..hhh...hhh.hSSSSSSSSSSS.tttt.taaa.aaaaa.rrr...rssss.ssss..
+//.....TTTT...rrr....uuuuuuuuu..ttttt.hhh...hhh..SSSSSSSSSS..ttttttaaaaaaaaa.rrr...rsssssssss..
+//.....TTTT...rrr....uuuuuuuuu..ttttt.hhh...hhh...SSSSSSSSS..ttttttaaaaaaaaa.rrr....ssssssss...
+//.....................uuu........ttt..............SSSSSS......ttt..aaa..............ssssss....
+//.............................................................................................
+
+
+// // starPiece_dataObjectComponents
+// const starPieceGeometry = new THREE.ConeGeometry(5, 10, 4, 1, false, 0, 6.28)
+// const starPieceMaterial = new THREE.MeshBasicMaterial(
+//     {
+//         map: whitePureRoom,
+//         color: 0xffffff, 
+//         alphaMap: whitePureRoom,
+//         transparent: false,
+//     }
+// )
+
+// const starPieceAmount = 300;
+// const starPieceArr = []
+
+// // starPiece_dataObjects_init
+// for (let i = 0; i < starPieceAmount; i++) {
+//     const starPieceFragment = new THREE.Mesh(starPieceGeometry, starPieceMaterial );
+//     starPieceArr.push(starPieceFragment)
+// }
+
+// const starPieceRadius = 2000
+// for (let i = 0; i < starPieceAmount; i++) {
+//     const starPieces_phi = Math.acos(-1 + (2 * i) / starPieceAmount); // Latitude angle
+//     const starPieces_theta = Math.sqrt(starPieceAmount * Math.PI) * starPieces_phi; // Longitude angle
+
+//     const starPieces_x = starPieceRadius * Math.sin(starPieces_phi) * Math.cos(starPieces_theta)
+//     const starPieces_y = starPieceRadius * Math.sin(starPieces_phi) * Math.sin(starPieces_theta)
+//     const starPieces_z = starPieceRadius * Math.cos(starPieces_phi)
+
+//     starPieceArr[i].position.set(starPieces_x, starPieces_y, starPieces_z)
+//     starPieceArr[i].scale.set(10, 10, 10)
+//     ΔaOmniX_root.add(starPieceArr[i])
+
+//     starPieceArr[i].lookAt(camera.position)
+
+//     gsap.to(starPieceArr[i].position, {
+//         repeat: -1,
+//         duration: 0.75,
+//         // yoyo: true,
+//         // ease: "power1",
+//         // ease: "bounce.inOut",
+//         ease: "slow(0.1,2,false)",
+//         delay: 0,
+//         x: 0,
+//         y: 0,
+//         z: 0, 
+
+//     })
+// }
+
+    
+// // starPiece_dataObjectComponents
+// const starPieceGeometry = new THREE.ConeGeometry(5, 10, 4, 1, false, 0, 6.28);
+// const starPieceMaterial = new THREE.MeshBasicMaterial({
+//     map: whitePureRoom,
+//     color: 0xffffff,
+//     alphaMap: whitePureRoom,
+//     transparent: false,
+// });
+
+// const starPieceAmount = 300;
+// const starPieceArr = [];
+
+// // starPiece_dataObjects_init
+// for (let i = 0; i < starPieceAmount; i++) {
+//     const starPieceFragment = new THREE.Mesh(starPieceGeometry, starPieceMaterial);
+//     starPieceArr.push(starPieceFragment);
+// }
+
+// const starPieceRadius = 2000;
+// for (let i = 0; i < starPieceAmount; i++) {
+//     const starPieces_phi = Math.acos(-1 + (2 * i) / starPieceAmount); // Latitude angle
+//     const starPieces_theta = Math.sqrt(starPieceAmount * Math.PI) * starPieces_phi; // Longitude angle
+
+//     const starPieces_x = starPieceRadius * Math.sin(starPieces_phi) * Math.cos(starPieces_theta);
+//     const starPieces_y = starPieceRadius * Math.sin(starPieces_phi) * Math.sin(starPieces_theta);
+//     const starPieces_z = starPieceRadius * Math.cos(starPieces_phi);
+
+//     starPieceArr[i].position.set(starPieces_x, starPieces_y, starPieces_z);
+//     starPieceArr[i].scale.set(10, 10, 10);
+//     ΔaOmniX_root.add(starPieceArr[i]);
+
+//     starPieceArr[i].lookAt(camera.position);
+
+//     // Stagger the animations
+//     gsap.to(starPieceArr[i].position, {
+//         repeat: -1,
+//         duration: 0.75,
+//         ease: "slow(0.1,2,false)",
+//         delay: i * 0.1, // Delay each mesh by 0.1 seconds
+//         x: 0,
+//         y: 0,
+//         z: 0,
+//         onUpdate: () => {
+//             // Randomly change Y position
+//             starPieceArr[i].scale.y += Math.random() * 10 - 5; // Adjust the range as needed
+//         },
+//     });
+// }
+
+
+// // starPiece_dataObjectComponents
+// const starPieceGeometry = new THREE.ConeGeometry(5, 10, 4, 1, false, 0, 6.28);
+// const starPieceMaterial = new THREE.MeshBasicMaterial({
+//     map: whitePureRoom,
+//     color: 0xffffff,
+//     alphaMap: whitePureRoom,
+//     transparent: false,
+// });
+
+// const starPieceAmount = 300;
+// const starPieceArr = [];
+
+// // starPiece_dataObjects_init
+// for (let i = 0; i < starPieceAmount; i++) {
+//     const starPieceFragment = new THREE.Mesh(starPieceGeometry, starPieceMaterial);
+//     starPieceArr.push(starPieceFragment);
+// }
+
+// const starPieceRadius = 2000;
+// for (let i = 0; i < starPieceAmount; i++) {
+//     const starPieces_phi = Math.acos(-1 + (2 * i) / starPieceAmount); // Latitude angle
+//     const starPieces_theta = Math.sqrt(starPieceAmount * Math.PI) * starPieces_phi; // Longitude angle
+
+//     const starPieces_x = 0; // Start from the origin (X position)
+//     const starPieces_y = 0; // Start from the origin (Y position)
+//     const starPieces_z = 0; // Start from the origin (Z position)
+
+//     // Calculate the final position
+//     const final_x = starPieceRadius * Math.sin(starPieces_phi) * Math.cos(starPieces_theta);
+//     const final_y = starPieceRadius * Math.sin(starPieces_phi) * Math.sin(starPieces_theta);
+//     const final_z = starPieceRadius * Math.cos(starPieces_phi);
+
+//     starPieceArr[i].position.set(starPieces_x, starPieces_y, starPieces_z);
+//     starPieceArr[i].scale.set(10, 10, 10);
+//     ΔaOmniX_root.add(starPieceArr[i]);
+
+//     starPieceArr[i].lookAt(camera.position);
+
+//     // Animate towards the final position
+//     gsap.to(starPieceArr[i].position, {
+//         repeat: -1,
+//         duration: 0.75,
+//         ease: "slow(0.1,2,false)",
+//         delay: i * 0.1,
+//         x: final_x,
+//         y: final_y,
+//         z: final_z,
+//     });
+// }
+
+
+
+// // starPiece_dataObjectComponents
+// const starPieceGeometry = new THREE.ConeGeometry(5, 10, 4, 1, false, 0, 6.28);
+// const starPieceMaterial = new THREE.MeshBasicMaterial({
+//     map: whitePureRoom,
+//     color: 0xffffff,
+//     alphaMap: whitePureRoom,
+//     transparent: false,
+// });
+
+// const starPieceAmount = 300;
+// const starPieceArr = [];
+
+// // starPiece_dataObjects_init
+// for (let i = 0; i < starPieceAmount; i++) {
+//     const starPieceFragment = new THREE.Mesh(starPieceGeometry, starPieceMaterial);
+//     starPieceArr.push(starPieceFragment);
+// }
+
+// const starPieceRadius = 2000;
+// for (let i = 0; i < starPieceAmount; i++) {
+//     const starPieces_phi = Math.acos(-1 + (2 * i) / starPieceAmount); // Latitude angle
+//     const starPieces_theta = Math.sqrt(starPieceAmount * Math.PI) * starPieces_phi; // Longitude angle
+
+//     const starPieces_x = 0; // Start from the origin (X position)
+//     const starPieces_y = 0; // Start from the origin (Y position)
+//     const starPieces_z = 0; // Start from the origin (Z position)
+
+//     // Calculate the final position
+//     const final_x = starPieceRadius * Math.sin(starPieces_phi) * Math.cos(starPieces_theta);
+//     const final_y = starPieceRadius * Math.sin(starPieces_phi) * Math.sin(starPieces_theta);
+//     const final_z = starPieceRadius * Math.cos(starPieces_phi);
+
+//     starPieceArr[i].position.set(starPieces_x, starPieces_y, starPieces_z);
+//     starPieceArr[i].scale.set(1, 1, 1);
+//     ΔaOmniX_root.add(starPieceArr[i]);
+
+//     // Set initial rotation to face the direction of movement
+//     starPieceArr[i].lookAt(final_x, final_y, final_z);
+
+//     // Animate towards the final position
+//     gsap.to(starPieceArr[i].position, {
+//         repeat: -1,
+//         duration: 0.75,
+//         ease: "slow(0.1,2,false)",
+//         delay: i * 0.1,
+//         x: final_x,
+//         y: final_y,
+//         z: final_z,
+//         onUpdate: () => {
+//             // Randomly change Y position
+//             starPieceArr[i].scale.y = 10; // Adjust the range as needed
+//         },
+//     });
+// }
+
+
+
+
+// starPiece_dataObjectComponents
+const starPieceGeometry = new THREE.ConeGeometry(5, 10, 4, 1, false, 0, 6.28);
+const starPieceMaterial = new THREE.MeshBasicMaterial({
+    map: whitePureRoom,
+    color: 0xffffff,
+    alphaMap: whitePureRoom,
+    transparent: false,
+});
+
+const starPieceAmount = 300;
+const starPieceArr = [];
+
+// starPiece_dataObjects_init
+for (let i = 0; i < starPieceAmount; i++) {
+    const starPieceFragment = new THREE.Mesh(starPieceGeometry, starPieceMaterial);
+    starPieceArr.push(starPieceFragment);
+}
+
+const starPieceRadius = 2000;
+for (let i = 0; i < starPieceAmount; i++) {
+    const starPieces_phi = Math.acos(-1 + (2 * i) / starPieceAmount); // Latitude angle
+    const starPieces_theta = Math.sqrt(starPieceAmount * Math.PI) * starPieces_phi; // Longitude angle
+
+    const starPieces_x = 0; // Start from the origin (X position)
+    const starPieces_y = 0; // Start from the origin (Y position)
+    const starPieces_z = 0; // Start from the origin (Z position)
+
+    // Calculate the final position
+    const final_x = starPieceRadius * Math.sin(starPieces_phi) * Math.cos(starPieces_theta);
+    const final_y = starPieceRadius * Math.sin(starPieces_phi) * Math.sin(starPieces_theta);
+    const final_z = starPieceRadius * Math.cos(starPieces_phi);
+
+    starPieceArr[i].position.set(starPieces_x, starPieces_y, starPieces_z);
+    starPieceArr[i].scale.set(1, 1, 1);
+    ΔaOmniX_root.add(starPieceArr[i]);
+
+    // Set initial rotation to face the direction of movement
+    starPieceArr[i].lookAt(final_x, final_y, final_z);
+
+    // Animate towards a random position
+    const randomDuration = Math.random() * 2 + 1; // Random duration between 1 and 3 seconds
+    gsap.to(starPieceArr[i].position, {
+        repeat: -1,
+        duration: randomDuration,
+        ease: "slow(0.1,2,false)",
+        delay: i * 0.1,
+        x: Math.random() * 2000 - 1000, // Random X position
+        y: Math.random() * 2000 - 1000, // Random Y position
+        z: Math.random() * 2000 - 1000, // Random Z position
+        // onUpdate: () => {
+        //     // Randomly change Y position
+        //     starPieceArr[i].scale.set(10, 20, 10); // Adjust the range as needed
+        // },
+    });
+}
+
+
+
 //........................................................
 //.....OOOOOO.......................iii...................
 //....OOOOOOOOO.........rbbb........iii..tttt.............
@@ -3090,17 +3517,25 @@ const geo_CylinderOpen_03 = new THREE.CylinderGeometry(
     ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_root.scale.set(1, 1, 1)
     ΔaOmniX_TimeΔ_Skeleton_root.add(ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_root)
 
+
+    ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_root = new THREE.Group()
+    ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_root.position.set(0, 0, 0)
+    ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_root.rotation.set(0, 0, 0)
+    ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_root.scale.set(1, 1, 1)
+    ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_root.add(ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_root)
+
+
         ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Forwards_root = new THREE.Group()
         ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Forwards_root.position.set(0, 0, 0)
         ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Forwards_root.rotation.set(0, 0, 0)
         ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Forwards_root.scale.set(1, 1, 1)
-        ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_root.add(ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Forwards_root)
+        ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_root.add(ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Forwards_root)
 
             ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Forwards = new THREE.Group()
             ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Forwards.position.set(0, 125, 0)
             ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Forwards.rotation.set(0, 0, 0)
             ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Forwards.scale.set(1, 1, 1)
-            ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_root.add(ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Forwards)
+            ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Forwards_root.add(ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Forwards)
 
                 const mat_ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Forwards = new THREE.MeshBasicMaterial({ map: SceneWallpaper_03, side: THREE.DoubleSide });
                 mesh_ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Forwards = new THREE.Mesh(geo_Cones_01, mat_ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Forwards);
@@ -3122,13 +3557,13 @@ const geo_CylinderOpen_03 = new THREE.CylinderGeometry(
         ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Backwards_root.position.set(0, 0, 0)
         ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Backwards_root.rotation.set(0, 0, 0)
         ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Backwards_root.scale.set(1, 1, 1)
-        ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_root.add(ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Backwards_root)
+        ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_root.add(ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Backwards_root)
 
             ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Backwards = new THREE.Group()
             ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Backwards.position.set(0, -125, 0)
             ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Backwards.rotation.set(0, 0, 0)
             ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Backwards.scale.set(1, 1, 1)
-            ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_root.add(ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Backwards)
+            ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Backwards_root.add(ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Backwards)
 
                 const mat_ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Backwards = new THREE.MeshBasicMaterial({ map: SceneWallpaper_03, side: THREE.DoubleSide });
                 mesh_ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Backwards = new THREE.Mesh(geo_Cones_01, mat_ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Backwards);
@@ -3150,7 +3585,7 @@ const geo_CylinderOpen_03 = new THREE.CylinderGeometry(
     ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_root.position.set(0, 0, 0)
     ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_root.rotation.set(0, 0, 0)
     ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_root.scale.set(1, 1, 1)
-    ΔaOmniX_TimeΔ_Skeleton_root.add(ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_root)
+    ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_root.add(ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_root)
 
         ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_Left_root = new THREE.Group()
         ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_Left_root.position.set(0, 0, 0)
@@ -3184,7 +3619,7 @@ const geo_CylinderOpen_03 = new THREE.CylinderGeometry(
         ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_Right_root.position.set(0, 0, 0)
         ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_Right_root.rotation.set(0, 0, 0)
         ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_Right_root.scale.set(1, 1, 1)
-        ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_root.add(ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_Right_root)
+        ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_root.add(ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_Right_root)
 
             ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_Right = new THREE.Group()
             ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_Right.position.set(125, 0, 0)
@@ -3213,7 +3648,7 @@ const geo_CylinderOpen_03 = new THREE.CylinderGeometry(
     ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_root.position.set(0, 0, 0)
     ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_root.rotation.set(0, 0, 0)
     ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_root.scale.set(1, 1, 1)
-    ΔaOmniX_TimeΔ_Skeleton_root.add(ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_root)
+    ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_root.add(ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_root)
 
         ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_MovingForward_root = new THREE.Group()
         ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_MovingForward_root.position.set(0, 0, 0)
@@ -3247,7 +3682,7 @@ const geo_CylinderOpen_03 = new THREE.CylinderGeometry(
         ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_MovingBackwards_root.position.set(0, 0, 0)
         ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_MovingBackwards_root.rotation.set(0, 0, 0)
         ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_MovingBackwards_root.scale.set(1, 1, 1)
-        ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_root.add(ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_MovingBackwards_root)
+        ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_root.add(ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_MovingBackwards_root)
 
             ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_MovingBackwards = new THREE.Group()
             ΔaOmniX_TimeΔ_Skeleton_DecisionsTimeFlow_MovingBackwards.position.set(0, 0, 125)
@@ -3337,7 +3772,7 @@ const geo_CylinderOpen_03 = new THREE.CylinderGeometry(
 
 
     let spin_timeΔ = () => {
-        gsap.to(ΔaOmniX_TimeΔ_Skeleton_root.rotation, {
+        gsap.to(ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_root.rotation, {
             repeat: -1,
             duration: 10,
             ease: "none",
@@ -3348,7 +3783,7 @@ const geo_CylinderOpen_03 = new THREE.CylinderGeometry(
 
         })
 
-        gsap.to(ΔaOmniX_TimeΔ_Skeleton_root.scale, {
+        gsap.to(ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_root.scale, {
             repeat: -1,
             duration: 1,
             ease: "none",
@@ -3360,17 +3795,17 @@ const geo_CylinderOpen_03 = new THREE.CylinderGeometry(
 
         })
 
-        gsap.to(ΔaOmniX_TimeΔ_Skeleton_root.scale, {
-            repeat: -1,
-            duration: 1,
-            ease: "none",
-            delay: 5,
-            x: 1,
-            y: 1,
-            z: 1,
+        // gsap.to(ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_root.scale, {
+        //     repeat: -1,
+        //     duration: 1,
+        //     ease: "none",
+        //     delay: 5,
+        //     x: 1,
+        //     y: 1,
+        //     z: 1,
             
 
-        })
+        // })
     }
        
     // spin_timeΔ()
@@ -3390,10 +3825,11 @@ const geo_CylinderOpen_03 = new THREE.CylinderGeometry(
             ΔaOmniX_TimeΔ_Skeleton_User_choices.scale.set(1, 1, 1)
             ΔaOmniX_TimeΔ_Skeleton_User_choices_root.add(ΔaOmniX_TimeΔ_Skeleton_User_choices)
 
-                const mat_ΔaOmniX_TimeΔ_Skeleton_User_choices = new THREE.MeshBasicMaterial({ map: SceneWallpaper_03, side: THREE.DoubleSide });
+                const mat_ΔaOmniX_TimeΔ_Skeleton_User_choices = new THREE.MeshBasicMaterial({ map: BasicHud03b, side: THREE.DoubleSide });
                 mesh_ΔaOmniX_TimeΔ_Skeleton_User_choices = new THREE.Mesh(geo_CylinderClosed_01, mat_ΔaOmniX_TimeΔ_Skeleton_User_choices);
+                mat_ΔaOmniX_TimeΔ_Skeleton_User_choices.wireframe = false
                 mat_ΔaOmniX_TimeΔ_Skeleton_User_choices.transparent = true;
-                mat_ΔaOmniX_TimeΔ_Skeleton_User_choices.alphaMap = whitePureRoom;
+                mat_ΔaOmniX_TimeΔ_Skeleton_User_choices.alphaMap = BasicHud03b;
                 mesh_ΔaOmniX_TimeΔ_Skeleton_User_choices.position.set(0, 0, 0);
                 // mesh_ΔaOmniX_TimeΔ_Skeleton_User_choices.position.set(-15000, 0, 0);
                 mesh_ΔaOmniX_TimeΔ_Skeleton_User_choices.scale.set(20, 150, 20);
@@ -3445,10 +3881,11 @@ const geo_CylinderOpen_03 = new THREE.CylinderGeometry(
             ΔaOmniX_TimeΔ_Skeleton_Users_choices.scale.set(1, 1, 1)
             ΔaOmniX_TimeΔ_Skeleton_Users_choices_root.add(ΔaOmniX_TimeΔ_Skeleton_Users_choices)
 
-                const mat_ΔaOmniX_TimeΔ_Skeleton_Users_choices = new THREE.MeshBasicMaterial({ map: SceneWallpaper_03, side: THREE.DoubleSide });
+                const mat_ΔaOmniX_TimeΔ_Skeleton_Users_choices = new THREE.MeshBasicMaterial({ map: BasicHud03b, side: THREE.DoubleSide });
                 mesh_ΔaOmniX_TimeΔ_Skeleton_Users_choices = new THREE.Mesh(geo_CylinderClosed_01, mat_ΔaOmniX_TimeΔ_Skeleton_Users_choices);
+                mat_ΔaOmniX_TimeΔ_Skeleton_Users_choices.wireframe = false
                 mat_ΔaOmniX_TimeΔ_Skeleton_Users_choices.transparent = true;
-                mat_ΔaOmniX_TimeΔ_Skeleton_Users_choices.alphaMap = whitePureRoom;
+                mat_ΔaOmniX_TimeΔ_Skeleton_Users_choices.alphaMap = BasicHud03b;
                 mesh_ΔaOmniX_TimeΔ_Skeleton_Users_choices.position.set(0, 0, 0);
                 // mesh_ΔaOmniX_TimeΔ_Skeleton_Users_choices.position.set(-15000, 0, 0);
                 mesh_ΔaOmniX_TimeΔ_Skeleton_Users_choices.scale.set(15, 150, 15);
@@ -3484,9 +3921,732 @@ const geo_CylinderOpen_03 = new THREE.CylinderGeometry(
 
         usersChoices_animation()
 
+        ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_InfiniteTunnel_Primary_root = new THREE.Group()
+        ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_InfiniteTunnel_Primary_root.position.set(0, 0, 0)
+        ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_InfiniteTunnel_Primary_root.rotation.set(0, 0, 0)
+        ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_InfiniteTunnel_Primary_root.scale.set(1, 1, 1)
+        ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_root.add(ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_InfiniteTunnel_Primary_root)
+
+            ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_Primary = new THREE.Group()
+            ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_Primary.position.set(0, 0, 0)
+            ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_Primary.rotation.set(0, 0, 0)
+            ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_Primary.scale.set(1, 1, 1)
+            ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_InfiniteTunnel_Primary_root.add(ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_Primary)
+
+                const mat_ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_Primary = new THREE.MeshBasicMaterial({ map: BasicHud03b, side: THREE.DoubleSide });
+                mesh_ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_Primary = new THREE.Mesh(geo_CylinderClosed_01, mat_ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_Primary);
+                mat_ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_Primary.transparent = true;
+                mat_ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_Primary.alphaMap = BasicHud03b;
+                // mat_ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_Primary.color = new THREE.Color('#1ed9d0') // neonGreenBlue
+                mesh_ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_Primary.position.set(0, 0, 0);
+                // mesh_ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_Primary.position.set(-15000, 0, 0);
+                mesh_ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_Primary.scale.set(15, 1000, 15);
+                mesh_ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_Primary.rotation.set(0, 0, 0)
+                // mesh_ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_Primary.rotateX( - Math.PI / 2 );
+                // mesh_ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_Primary.rotateY( - Math.PI / 2 );
+
+                // ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_Primary.lookAt(camera)
+                
+                ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_Primary.add(mesh_ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_Primary)
+
+
+        let naturalTimeFlow_animation = () => {
+            let tl = gsap.timeline({
+                delay: 0.5,
+                paused: true, // default is false
+                repeat: 2, // number of repeats (-1 for infinite)
+                repeatDelay: 1, // seconds between repeats
+                repeatRefresh: true, // invalidates on each repeat
+                yoyo: true, // if true > A-B-B-A, if false > A-B-A-B
+                defaults: {
+                    // children inherit these defaults
+                    duration: 1,
+                    ease: 'none'
+                },
+                smoothChildTiming: true,
+                autoRemoveChildren: true,
+                onComplete: () => {
+                    console.log("finished")
+                },
+                // other callbacks:
+                // onStart, onUpdate, onRepeat, onReverseComplete
+            });
+
+            gsap.from(mesh_ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_Primary.position, {
+                repeat: -1,
+                duration: 7.5,
+                ease: "none",
+                delay: 0,
+                y: 10000,
+            
+
+            })
+
+            gsap.to(mesh_ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_Primary.position, {
+                repeat: -1,
+                duration: 10,
+                ease: "none",
+                delay: 5,
+                y: -10000,
+            
+
+            })
+
+            gsap.to(mesh_ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_Primary.scale, {
+                repeat: -1,
+                duration: 10,
+                yoyo: true,
+                ease: "none",
+                delay: 5,
+                x: 1500,
+                y: -2500,
+                z: 1500,
+            
+
+            })
+        }
+
+        naturalTimeFlow_animation()
+
+
+        ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_InfiniteTunnel_Minute_root = new THREE.Group()
+        ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_InfiniteTunnel_Minute_root.position.set(0, 0, 0)
+        ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_InfiniteTunnel_Minute_root.rotation.set(0, 0, 0)
+        ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_InfiniteTunnel_Minute_root.scale.set(1, 1, 1)
+        ΔaOmniX_TimeΔ_Skeleton_ControlledTimeFlow_root.add(ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_InfiniteTunnel_Minute_root)
+
+            ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_InfiniteTunnel_Minute = new THREE.Group()
+            ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_InfiniteTunnel_Minute.position.set(0, 0, 0)
+            ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_InfiniteTunnel_Minute.rotation.set(0, 0, 0)
+            ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_InfiniteTunnel_Minute.scale.set(1, 1, 1)
+            ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_InfiniteTunnel_Minute_root.add(ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_InfiniteTunnel_Minute)
+
+                const mat_ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_InfiniteTunnel_Minute = new THREE.MeshBasicMaterial({ map: BasicHud03b, side: THREE.DoubleSide });
+                mesh_ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_InfiniteTunnel_Minute = new THREE.Mesh(geo_CylinderClosed_01, mat_ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_InfiniteTunnel_Minute);
+                mat_ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_InfiniteTunnel_Minute.transparent = true;
+                mat_ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_InfiniteTunnel_Minute.alphaMap = BasicHud03b;
+                mat_ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_InfiniteTunnel_Minute.color = new THREE.Color('#1ed9d0') // neonGreenBlue
+                mesh_ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_InfiniteTunnel_Minute.position.set(0, 0, 0);
+                // mesh_ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_InfiniteTunnel_Minute.position.set(-15000, 0, 0);
+                mesh_ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_InfiniteTunnel_Minute.scale.set(125, 1000, 125);
+                mesh_ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_InfiniteTunnel_Minute.rotation.set(0, 0, 0)
+                // mesh_ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_InfiniteTunnel_Minute.rotateX( - Math.PI / 2 );
+                // mesh_ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_InfiniteTunnel_Minute.rotateY( - Math.PI / 2 );
+
+                // ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_InfiniteTunnel_Minute.lookAt(camera)
+                
+                ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_InfiniteTunnel_Minute.add(mesh_ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_InfiniteTunnel_Minute)
+
+
+        let naturalTimeFlow_min_animation = () => {
+            let tl = gsap.timeline({
+                delay: 0.5,
+                paused: true, // default is false
+                repeat: 2, // number of repeats (-1 for infinite)
+                repeatDelay: 1, // seconds between repeats
+                repeatRefresh: true, // invalidates on each repeat
+                yoyo: true, // if true > A-B-B-A, if false > A-B-A-B
+                defaults: {
+                    // children inherit these defaults
+                    duration: 1,
+                    ease: 'none'
+                },
+                smoothChildTiming: true,
+                autoRemoveChildren: true,
+                onComplete: () => {
+                    console.log("finished")
+                },
+                // other callbacks:
+                // onStart, onUpdate, onRepeat, onReverseComplete
+            });
+
+            gsap.to(mesh_ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_InfiniteTunnel_Minute.position, {
+                repeat: -1,
+                duration: 2,
+                ease: "bounce",
+                delay: 0,
+                y: -9500,
+            
+
+            })
+
+            
+        }
+
+        naturalTimeFlow_min_animation()
 
 
 
+
+//........................................................................................................................
+//..TTTTTTTTT..........................................nnii......................al..llii.......ttii......................
+//.TTTTTTTTTTT...................cchh..................nnii.....................aall.llii..itt..ttii......................
+//.TTTTTTTTTTT...................cchh..................nnii.....................aall.llii..itt..ttii......................
+//.TTTTTTTTTTT...................cchh..................nnii.....................aall.llii..itt..ttii......................
+//.....TTTT...eeeeeee....cccccc..cchhhhhhh..hhnnnnnnn..nnii...cccccc...caaaaaa..aall.lliiiiittttttii..ieeeeee...essssss...
+//.....TTTT...eeeeeeee..eccccccc.cchhhhhhhh.hhnnnnnnnn.nnii..iccccccc.ccaaaaaaa.aall.lliiiiittttttii..ieeeeeee.eesssssss..
+//.....TTTT..Teeeeeeee.eecccccccccchhhhhhhh.hhnnnnnnnn.nnii.iiccccccccccaaaaaaa.aall.lliiiiittttttii.iieeeeeee.eesssssss..
+//.....TTTT..Teee..eeeeeecc..cccccchh..hhhh.hhnnn.nnnn.nnii.iicc..ccccccaaaaaaa.aall.llii..itt..ttii.iiee..eeeeeesssssss..
+//.....TTTT..Teeeeeeeeeeecc......cchh..hhhh.hhnn..nnnn.nnii.iicc.......caaaaaaa.aall.llii..itt..ttii.iieeeeeeeeeesssssss..
+//.....TTTT..Teeeeeeeeeeecc......cchh..hhhh.hhnn..nnnn.nnii.iicc......ccaaaaaaa.aall.llii..itt..ttii.iieeeeeeee.esssssss..
+//.....TTTT..Teee......eecc..cccccchh..hhhh.hhnn..nnnn.nnii.iicc..ccccccaaaaaaa.aall.llii..itt..ttii.iiee......eesssssss..
+//.....TTTT..Teeeeeeeeeeecccccccccchh..hhhh.hhnn..nnnn.nnii.iiccccccccccaaaaaaa.aall.llii..ittt.ttii.iieeeeeeeeeesss.sss..
+//.....TTTT..Teeeeeeee.eeccccccc.cchh..hhhh.hhnn..nnnn.nnii.iiccccccc.ccaaaaaaa.aall.llii..ittttttii.iieeeeeee.eesssssss..
+//.....TTTT...eeeeeeee..eccccccc.cchh..hhhh.hhnn..nnnn.nnii..iccccccc.ccaaaaaaaaaall.llii..ittttttii..ieeeeeee..esssssss..
+//..............eeee......cccc.................................cccc.....aaa.................tttt........eeee.....sssss....
+//........................................................................................................................
+
+ΔaOmniX_Technicalities_root = new THREE.Group()
+ΔaOmniX_Technicalities_root.position.set(0, 0, 0)
+ΔaOmniX_Technicalities_root.rotation.set(0, 0, 0)
+ΔaOmniX_Technicalities_root.scale.set(1, 1, 1)
+ΔaOmniX_TimeΔ_Skeleton_root.add(ΔaOmniX_Technicalities_root)
+
+    ΔaOmniX_Technicalities_img_front_root = new THREE.Group()
+    ΔaOmniX_Technicalities_img_front_root.position.set(0, 0, 0)
+    ΔaOmniX_Technicalities_img_front_root.rotation.set(0, 0, 0)
+    ΔaOmniX_Technicalities_img_front_root.scale.set(1, 1, 1)
+    ΔaOmniX_TimeΔ_Skeleton_root.add(ΔaOmniX_Technicalities_img_front_root)
+
+        ΔaOmniX_Technicalities_img_front = new THREE.Group()
+        ΔaOmniX_Technicalities_img_front.position.set(0, 0, 0)
+        ΔaOmniX_Technicalities_img_front.rotation.set(0, 0, 0)
+        ΔaOmniX_Technicalities_img_front.scale.set(1, 1, 1)
+        ΔaOmniX_Technicalities_img_front_root.add(ΔaOmniX_Technicalities_img_front)
+
+            const mat_ΔaOmniX_Technicalities_img_front = new THREE.MeshBasicMaterial({ map: ΔIconConainer_complexDesignWhite01, side: THREE.DoubleSide });
+            mesh_ΔaOmniX_Technicalities_img_front = new THREE.Mesh(geo_objT_BoxA0, mat_ΔaOmniX_Technicalities_img_front);
+            mat_ΔaOmniX_Technicalities_img_front.transparent = true;
+            mat_ΔaOmniX_Technicalities_img_front.alphaMap = ΔIconConainer_complexDesignWhite01;
+            // mat_ΔaOmniX_Technicalities_img_front.color = new THREE.Color('#1ed9d0') // neonGreenBlue
+            mesh_ΔaOmniX_Technicalities_img_front.position.set(0, 0, 350);
+            mesh_ΔaOmniX_Technicalities_img_front.scale.set(5.5, 5.5, 5.5);
+            mesh_ΔaOmniX_Technicalities_img_front.rotation.set(0, 0, 0)
+
+            // mesh_ΔaOmniX_Technicalities_img_front.position.set(-15000, 0, 0);
+            // mesh_ΔaOmniX_Technicalities_img_front.rotateX( - Math.PI / 2 );
+            // mesh_ΔaOmniX_Technicalities_img_front.rotateY( - Math.PI / 2 );
+
+            // ΔaOmniX_Technicalities_img_front.lookAt(camera)
+            
+            ΔaOmniX_Technicalities_img_front.add(mesh_ΔaOmniX_Technicalities_img_front)
+
+
+            // "./assets/icons/00-Official/Hobbies/data-science-system.svg"
+            // "./assets/icons/0-Official/Art/01-Art_and_Design/017-picture.png"
+            // "./assets/icons/00-Official/UI/Isometric/Tools/folder01.svg"
+            // "./assets/icons/00-Official/UI/Isometric/Tools/home-folder.svg"
+            // "./assets/icons/Websites01/002-globe_grid.png"
+
+
+            // ΔaOmniX_Technicalities_img_front.add(
+            //     new hoverObject(
+            //         'img',
+            //         0, 0, 50,
+            //         0, 0, 0,
+            //         0.1, 0.1, 0.1,
+            //         "Testing234", "TestingClass234",
+            //         "./assets/icons/Websites01/002-globe_grid.png", "",
+            //         "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+            //     )
+            // )
+
+
+        let technicalityFront_Open = () => {
+            gsap.to(ΔaOmniX_Technicalities_img_front.position, {
+                repeat: -1,
+                duration: 1,
+                ease: "bounce",
+                delay: 0,
+                z: 1,
+            
+
+            })
+
+            gsap.to(ΔaOmniX_Technicalities_img_front.scale, {
+                repeat: -1,
+                duration: 1.5,
+                ease: "bounce",
+                delay: 1,
+                x: 1.5,
+                y: 1.5,
+                z: 1.5,
+            
+
+            })
+
+            gsap.to(ΔaOmniX_Technicalities_img_front.position, {
+                repeat: -1,
+                duration: 1,
+                ease: "bounce",
+                delay: 2,
+                y: 10,
+            
+
+            })
+
+            gsap.to(ΔaOmniX_Technicalities_img_front.position, {
+                repeat: -1,
+                duration: 1,
+                ease: "bounce",
+                delay: 3,
+                y: 0,
+            
+
+            })
+        }
+
+        technicalityFront_Open()
+
+
+    ΔaOmniX_Technicalities_img_back_root = new THREE.Group()
+    ΔaOmniX_Technicalities_img_back_root.position.set(0, 0, 0)
+    ΔaOmniX_Technicalities_img_back_root.rotation.set(0, 0, 0)
+    ΔaOmniX_Technicalities_img_back_root.scale.set(1, 1, 1)
+    ΔaOmniX_TimeΔ_Skeleton_root.add(ΔaOmniX_Technicalities_img_back_root)
+
+        ΔaOmniX_Technicalities_img_back = new THREE.Group()
+        ΔaOmniX_Technicalities_img_back.position.set(0, 0, 0)
+        ΔaOmniX_Technicalities_img_back.rotation.set(0, 0, 0)
+        ΔaOmniX_Technicalities_img_back.scale.set(1, 1, 1)
+        ΔaOmniX_Technicalities_img_back_root.add(ΔaOmniX_Technicalities_img_back)
+
+            const mat_ΔaOmniX_Technicalities_img_back = new THREE.MeshBasicMaterial({ map: ΔIconConainer_complexDesignWhite01, side: THREE.DoubleSide });
+            mesh_ΔaOmniX_Technicalities_img_back = new THREE.Mesh(geo_objT_BoxA0, mat_ΔaOmniX_Technicalities_img_back);
+            mat_ΔaOmniX_Technicalities_img_back.transparent = true;
+            mat_ΔaOmniX_Technicalities_img_back.alphaMap = ΔIconConainer_complexDesignWhite01;
+            // mat_ΔaOmniX_Technicalities_img_back.color = new THREE.Color('#1ed9d0') // neonGreenBlue
+            mesh_ΔaOmniX_Technicalities_img_back.position.set(0, 0, -350);
+            mesh_ΔaOmniX_Technicalities_img_back.scale.set(5.5, 5.5, 5.5);
+            mesh_ΔaOmniX_Technicalities_img_back.rotation.set(0, 0, 0)
+
+            // mesh_ΔaOmniX_Technicalities_img_back.position.set(-15000, 0, 0);
+            // mesh_ΔaOmniX_Technicalities_img_back.rotateX( - Math.PI / 2 );
+            // mesh_ΔaOmniX_Technicalities_img_back.rotateY( - Math.PI / 2 );
+
+            // ΔaOmniX_Technicalities_img_back.lookAt(camera)
+            
+            ΔaOmniX_Technicalities_img_back.add(mesh_ΔaOmniX_Technicalities_img_back)
+
+            let technicalityback_Open = () => {
+            gsap.to(ΔaOmniX_Technicalities_img_back.position, {
+                repeat: -1,
+                duration: 1,
+                ease: "bounce",
+                delay: 0,
+                z: -1,
+            
+
+            })
+
+            gsap.to(ΔaOmniX_Technicalities_img_back.scale, {
+                repeat: -1,
+                duration: 2.5,
+                ease: "bounce",
+                delay: 1,
+                x: 1.5,
+                y: 1.5,
+                z: 1.5,
+            
+
+            })
+
+            gsap.to(ΔaOmniX_Technicalities_img_back.position, {
+                repeat: -1,
+                duration: 1,
+                ease: "bounce",
+                delay: 2,
+                y: 10,
+            
+
+            })
+
+            gsap.to(ΔaOmniX_Technicalities_img_back.position, {
+                repeat: -1,
+                duration: 1,
+                ease: "bounce",
+                delay: 3,
+                y: 0,
+            
+
+            })
+        }
+
+        technicalityback_Open()
+
+
+    ΔaOmniX_Technicalities_img_left_root = new THREE.Group()
+    ΔaOmniX_Technicalities_img_left_root.position.set(0, 0, 0)
+    ΔaOmniX_Technicalities_img_left_root.rotation.set(0, 0, 0)
+    ΔaOmniX_Technicalities_img_left_root.scale.set(1, 1, 1)
+    ΔaOmniX_TimeΔ_Skeleton_root.add(ΔaOmniX_Technicalities_img_left_root)
+
+        ΔaOmniX_Technicalities_img_left = new THREE.Group()
+        ΔaOmniX_Technicalities_img_left.position.set(0, 0, 0)
+        ΔaOmniX_Technicalities_img_left.rotation.set(0, 0, 0)
+        ΔaOmniX_Technicalities_img_left.scale.set(1, 1, 1)
+        ΔaOmniX_Technicalities_img_left_root.add(ΔaOmniX_Technicalities_img_left)
+
+            const mat_ΔaOmniX_Technicalities_img_left = new THREE.MeshBasicMaterial({ map: ΔIconConainer_complexDesignWhite01, side: THREE.DoubleSide });
+            mesh_ΔaOmniX_Technicalities_img_left = new THREE.Mesh(geo_objT_BoxA0, mat_ΔaOmniX_Technicalities_img_left);
+            mat_ΔaOmniX_Technicalities_img_left.transparent = true;
+            mat_ΔaOmniX_Technicalities_img_left.alphaMap = ΔIconConainer_complexDesignWhite01;
+            // mat_ΔaOmniX_Technicalities_img_left.color = new THREE.Color('#1ed9d0') // neonGreenBlue
+            mesh_ΔaOmniX_Technicalities_img_left.position.set(-350, 0, 0);
+            mesh_ΔaOmniX_Technicalities_img_left.scale.set(5.5, 5.5, 5.5);
+            mesh_ΔaOmniX_Technicalities_img_left.rotation.set(0, 0, 0)
+
+            // mesh_ΔaOmniX_Technicalities_img_left.position.set(-15000, 0, 0);
+            // mesh_ΔaOmniX_Technicalities_img_left.rotateX( - Math.PI / 2 );
+            mesh_ΔaOmniX_Technicalities_img_left.rotateY( - Math.PI / 2 );
+
+            // ΔaOmniX_Technicalities_img_left.lookAt(camera)
+            
+            ΔaOmniX_Technicalities_img_left.add(mesh_ΔaOmniX_Technicalities_img_left)
+
+            let technicalityLeft_Open = () => {
+            gsap.to(ΔaOmniX_Technicalities_img_left.position, {
+                repeat: -1,
+                duration: 1,
+                ease: "bounce",
+                delay: 0,
+                x: -1,
+            
+
+            })
+
+            gsap.to(ΔaOmniX_Technicalities_img_left.scale, {
+                repeat: -1,
+                duration: 3.5,
+                ease: "bounce",
+                stagger: 0.1,
+                delay: 1,
+                x: 1.5,
+                y: 1.5,
+                z: 1.5,
+            
+
+            })
+
+            gsap.to(ΔaOmniX_Technicalities_img_left.position, {
+                repeat: -1,
+                duration: 1,
+                ease: "bounce",
+                delay: 2,
+                y: 10,
+            
+
+            })
+
+            gsap.to(ΔaOmniX_Technicalities_img_left.position, {
+                repeat: -1,
+                duration: 1,
+                ease: "bounce",
+                delay: 3,
+                y: 0,
+            
+
+            })
+        }
+
+        technicalityLeft_Open()
+
+
+    ΔaOmniX_Technicalities_img_right_root = new THREE.Group()
+    ΔaOmniX_Technicalities_img_right_root.position.set(0, 0, 0)
+    ΔaOmniX_Technicalities_img_right_root.rotation.set(0, 0, 0)
+    ΔaOmniX_Technicalities_img_right_root.scale.set(1, 1, 1)
+    ΔaOmniX_TimeΔ_Skeleton_root.add(ΔaOmniX_Technicalities_img_right_root)
+
+        ΔaOmniX_Technicalities_img_right = new THREE.Group()
+        ΔaOmniX_Technicalities_img_right.position.set(0, 0, 0)
+        ΔaOmniX_Technicalities_img_right.rotation.set(0, 0, 0)
+        ΔaOmniX_Technicalities_img_right.scale.set(1, 1, 1)
+        ΔaOmniX_Technicalities_img_right_root.add(ΔaOmniX_Technicalities_img_right)
+
+            const mat_ΔaOmniX_Technicalities_img_right = new THREE.MeshBasicMaterial({ map: ΔIconConainer_complexDesignWhite01, side: THREE.DoubleSide });
+            mesh_ΔaOmniX_Technicalities_img_right = new THREE.Mesh(geo_objT_BoxA0, mat_ΔaOmniX_Technicalities_img_right);
+            mat_ΔaOmniX_Technicalities_img_right.transparent = true;
+            mat_ΔaOmniX_Technicalities_img_right.alphaMap = ΔIconConainer_complexDesignWhite01;
+            // mat_ΔaOmniX_Technicalities_img_right.color = new THREE.Color('#1ed9d0') // neonGreenBlue
+            mesh_ΔaOmniX_Technicalities_img_right.position.set(350, 0, 0);
+            mesh_ΔaOmniX_Technicalities_img_right.scale.set(5.5, 5.5, 5.5);
+            mesh_ΔaOmniX_Technicalities_img_right.rotation.set(0, 0, 0)
+
+            // mesh_ΔaOmniX_Technicalities_img_right.position.set(-15000, 0, 0);
+            // mesh_ΔaOmniX_Technicalities_img_right.rotateX( - Math.PI / 2 );
+            mesh_ΔaOmniX_Technicalities_img_right.rotateY( - Math.PI / 2 );
+
+            // ΔaOmniX_Technicalities_img_right.lookAt(camera)
+            
+            ΔaOmniX_Technicalities_img_right.add(mesh_ΔaOmniX_Technicalities_img_right)
+
+            let technicalityRight_Open = () => {
+            gsap.to(ΔaOmniX_Technicalities_img_right.position, {
+                repeat: -1,
+                duration: 1,
+                ease: "bounce",
+                delay: 0,
+                x: 1,
+            
+
+            })
+
+            gsap.to(ΔaOmniX_Technicalities_img_right.scale, {
+                repeat: -1,
+                duration: 4.5,
+                ease: "bounce",
+                delay: 1,
+                x: 1.5,
+                y: 1.5,
+                z: 1.5,
+            
+
+            })
+
+
+            gsap.to(ΔaOmniX_Technicalities_img_right.position, {
+                repeat: -1,
+                duration: 1,
+                ease: "bounce",
+                delay: 2,
+                y: 10,
+            
+
+            })
+
+            gsap.to(ΔaOmniX_Technicalities_img_right.position, {
+                repeat: -1,
+                duration: 1,
+                ease: "bounce",
+                delay: 3,
+                y: 0,
+            
+
+            })
+
+
+        }
+
+        technicalityRight_Open()
+
+//...........................................................................................
+//.....OOOOOO................................iii....SSSSSS..........................l....l...
+//....OOOOOOOOO..............................iii...SSSSSSSS...hhh..................lll..lll..
+//...OOOOOOOOOO..............................iii..SSSSSSSSSS..hhh..................lll..lll..
+//..OOOOOOOOOOOO.............................iii..SSSSSSSSSS..hhh..................lll..lll..
+//..OOOO....OOOO..mmmmmmmmmmmmm...nnnnnnnnn..iii.iSSS...SSSSS.hhhhhhhh....eeeeee...lll..lll..
+//..OOOO....OOOOO.mmmmmmmmmmmmmm..nnnnnnnnn..iii.iSSSSS.......hhhhhhhhh..eeeeeeee..lll..lll..
+//.OOOO......OOOO.mmmmmmmmmmmmmm..nnnnnnnnn..iii..SSSSSSSSS...hhhhhhhhh.heeeeeeeee.lll..lll..
+//.OOOO......OOOO.mmmm.mmmm..mmm..nnnn.nnnn..iii..SSSSSSSSSS..hhhh.hhhh.heee..eeee.lll..lll..
+//.OOOO......OOOO.mmm..mmmm..mmm..nnn...nnn..iii....SSSSSSSSS.hhh...hhh.heeeeeeeee.lll..lll..
+//..OOOO....OOOOO.mmm..mmmm..mmm..nnn...nnn..iii.iSSS..SSSSSS.hhh...hhh.heeeeeeeee.lll..lll..
+//..OOOO....OOOO..mmm..mmmm..mmm..nnn...nnn..iii.iSSS....SSSS.hhh...hhh.heee.......lll..lll..
+//..OOOOOOOOOOOO..mmm..mmmm..mmm..nnn...nnn..iii.iSSSSSSSSSSS.hhh...hhh.heeeeeeeee.lll..lll..
+//...OOOOOOOOOO...mmm..mmmm..mmm..nnn...nnn..iii..SSSSSSSSSS..hhh...hhh.heeeeeeee..lll..lll..
+//....OOOOOOOOO...mmm..mmmm..mmm..nnn...nnn..iii...SSSSSSSSS..hhh...hhh..eeeeeeee..lll..lll..
+//.....OOOOOO.......................................SSSSSS.................eeee..............
+//...........................................................................................
+
+ΔaOmniX_OmniShell_root = new THREE.Group()
+ΔaOmniX_OmniShell_root.position.set(0, 0, 0)
+ΔaOmniX_OmniShell_root.rotation.set(0, 0, 0)
+ΔaOmniX_OmniShell_root.scale.set(1, 1, 1)
+ΔaOmniX_TimeΔ_Skeleton_root.add(ΔaOmniX_OmniShell_root)
+
+    ΔaOmniX_OmniShell_outer = new THREE.Group()
+    ΔaOmniX_OmniShell_outer.position.set(0, 0, 0)
+    ΔaOmniX_OmniShell_outer.rotation.set(0, 0, 0)
+    ΔaOmniX_OmniShell_outer.scale.set(1, 1, 1)
+    ΔaOmniX_OmniShell_root.add(ΔaOmniX_OmniShell_outer)
+
+        const mat_ΔaOmniX_OmniShell_outer = new THREE.MeshBasicMaterial({ map: BasicHud03b, side: THREE.DoubleSide });
+        mesh_ΔaOmniX_OmniShell_outer = new THREE.Mesh(geo_objT_DiamondA0, mat_ΔaOmniX_OmniShell_outer);
+        mat_ΔaOmniX_OmniShell_outer.wireframe = false
+        mat_ΔaOmniX_OmniShell_outer.transparent = false;
+        mat_ΔaOmniX_OmniShell_outer.alphaMap = whitePureRoom;
+        mat_ΔaOmniX_OmniShell_outer.blending = THREE.AdditiveBlending
+        // mat_ΔaOmniX_OmniShell_outer.color = new THREE.Color('#1ed9d0') // neonGreenBlue
+        // mat_ΔaOmniX_OmniShell_outer.color = new THREE.Color('#7851A9') // IntensePurple
+        mesh_ΔaOmniX_OmniShell_outer.position.set(0, 0, 0);
+        mesh_ΔaOmniX_OmniShell_outer.scale.set(3.5, 4.5, 3.5);
+        mesh_ΔaOmniX_OmniShell_outer.rotation.set(0, 0, 0)
+
+        // mesh_ΔaOmniX_OmniShell_outer.position.set(-15000, 0, 0);
+        // mesh_ΔaOmniX_OmniShell_outer.rotateX( - Math.PI / 2 );
+        mesh_ΔaOmniX_OmniShell_outer.rotateY( - Math.PI / 2 );
+
+        // ΔaOmniX_OmniShell_outer.lookAt(camera)
+        
+        ΔaOmniX_OmniShell_outer.add(mesh_ΔaOmniX_OmniShell_outer)
+
+
+    ΔaOmniX_OmniShell_inner = new THREE.Group()
+    ΔaOmniX_OmniShell_inner.position.set(0, 0, 0)
+    ΔaOmniX_OmniShell_inner.rotation.set(0, 0, 0)
+    ΔaOmniX_OmniShell_inner.scale.set(1, 1, 1)
+    ΔaOmniX_OmniShell_root.add(ΔaOmniX_OmniShell_inner)
+
+        const mat_ΔaOmniX_OmniShell_inner = new THREE.MeshBasicMaterial({ map: whitePureRoom, side: THREE.DoubleSide });
+        mesh_ΔaOmniX_OmniShell_inner = new THREE.Mesh(geo_objT_DiamondA0, mat_ΔaOmniX_OmniShell_inner);
+        mat_ΔaOmniX_OmniShell_inner.wireframe = false
+        mat_ΔaOmniX_OmniShell_inner.transparent = false;
+        mat_ΔaOmniX_OmniShell_inner.alphaMap = whitePureRoom;
+        mat_ΔaOmniX_OmniShell_inner.blending = THREE.AdditiveBlending
+        // mat_ΔaOmniX_OmniShell_inner.color = new THREE.Color('#1ed9d0') // neonGreenBlue
+        // mat_ΔaOmniX_OmniShell_inner.color = new THREE.Color('#7851A9') // IntensePurple
+        mesh_ΔaOmniX_OmniShell_inner.position.set(0, 0, 0);
+        mesh_ΔaOmniX_OmniShell_inner.scale.set(3.6, 4.6, 3.6);
+        mesh_ΔaOmniX_OmniShell_inner.rotation.set(0, 0, 0)
+
+        // mesh_ΔaOmniX_OmniShell_inner.position.set(-15000, 0, 0);
+        // mesh_ΔaOmniX_OmniShell_inner.rotateX( - Math.PI / 2 );
+        mesh_ΔaOmniX_OmniShell_inner.rotateY( - Math.PI / 2 );
+
+        // ΔaOmniX_OmniShell_inner.lookAt(camera)
+        
+        ΔaOmniX_OmniShell_inner.add(mesh_ΔaOmniX_OmniShell_inner)
+
+
+
+    ΔaOmniX_OmniShell_field01 = new THREE.Group()
+    ΔaOmniX_OmniShell_field01.position.set(0, 0, 0)
+    ΔaOmniX_OmniShell_field01.rotation.set(0, 0, 0)
+    ΔaOmniX_OmniShell_field01.scale.set(1, 1, 1)
+    ΔaOmniX_OmniShell_root.add(ΔaOmniX_OmniShell_field01)
+
+        const mat_ΔaOmniX_OmniShell_field01 = new THREE.MeshBasicMaterial({ map: whitePureRoom, side: THREE.DoubleSide });
+        mesh_ΔaOmniX_OmniShell_field01 = new THREE.Mesh(geo_objT_DiamondA0, mat_ΔaOmniX_OmniShell_field01);
+        mat_ΔaOmniX_OmniShell_field01.wireframe = false
+        mat_ΔaOmniX_OmniShell_field01.transparent = false;
+        mat_ΔaOmniX_OmniShell_field01.alphaMap = whitePureRoom;
+        mat_ΔaOmniX_OmniShell_field01.blending = THREE.AdditiveBlending
+        // mat_ΔaOmniX_OmniShell_field01.color = new THREE.Color('#1ed9d0') // neonGreenBlue
+        // mat_ΔaOmniX_OmniShell_field01.color = new THREE.Color('#7851A9') // IntensePurple
+        mesh_ΔaOmniX_OmniShell_field01.position.set(0, 0, 0);
+        mesh_ΔaOmniX_OmniShell_field01.scale.set(4.6, 5.6, 4.6);
+        mesh_ΔaOmniX_OmniShell_field01.rotation.set(0, 0, 0)
+
+        // mesh_ΔaOmniX_OmniShell_field01.position.set(-15000, 0, 0);
+        // mesh_ΔaOmniX_OmniShell_field01.rotateX( - Math.PI / 2 );
+        mesh_ΔaOmniX_OmniShell_field01.rotateY( - Math.PI / 2 );
+
+        // ΔaOmniX_OmniShell_field01.lookAt(camera)
+        
+        ΔaOmniX_OmniShell_field01.add(mesh_ΔaOmniX_OmniShell_field01)
+
+        let spin_OmniShell_outer = () => {
+            gsap.to(ΔaOmniX_OmniShell_outer.rotation, {
+                repeat: -1,
+                duration: 1,
+                ease: "none",
+                delay: 0,
+                y: 3.14,
+            
+
+            })
+
+            gsap.to(ΔaOmniX_OmniShell_outer.scale, {
+                repeat: 0,
+                duration: 2.5,
+                ease: "none",
+                // yoyo: true,
+                delay: 1,
+                x: 7.6,
+                y: 8.5,
+                z: 7.6,
+            
+
+            })
+
+
+
+        }
+
+
+        let spin_OmniShell_inner = () => {
+            gsap.to(ΔaOmniX_OmniShell_inner.rotation, {
+                repeat: -1,
+                duration: 1,
+                ease: "none",
+                delay: 0,
+                y: -3.14,
+            
+
+            })
+
+            gsap.to(ΔaOmniX_OmniShell_inner.scale, {
+                repeat: 0,
+                duration: 2.5,
+                ease: "none",
+                // yoyo: true,
+                delay: 1,
+                x: 6.5,
+                y: 7.5,
+                z: 6.5,
+            
+
+            })
+        }
+
+
+        let spin_OmniShell_field01 = () => {
+            gsap.to(ΔaOmniX_OmniShell_field01.rotation, {
+                repeat: -1,
+                duration: 0.5,
+                ease: "none",
+                delay: 0,
+                // x: 1.575,
+                y: -3.14,
+                // z: 1.575
+            
+
+            })
+
+            gsap.to(ΔaOmniX_OmniShell_field01.scale, {
+                repeat: -1,
+                duration: 2.5,
+                ease: "none",
+                yoyo: true,
+                delay: 1,
+                x: 6.5,
+                y: 7.5,
+                z: 6.5,
+            
+
+            })
+
+            gsap.to(ΔaOmniX_OmniShell_field01.scale, {
+                repeat: -1,
+                duration: 2.5,
+                ease: "none",
+                yoyo: true,
+                delay: 2.5,
+                x:19.5,
+                y:20.5,
+                z:19.5,
+            
+
+            })
+
+            gsap.to(ΔaOmniX_OmniShell_field01.scale, {
+                repeat: -1,
+                duration: 2.5,
+                ease: "none",
+                yoyo: true,
+                delay: 3.5,
+                x: 4.6,
+                y: 5.6,
+                z: 4.6,
+            
+
+            })
+        }
+
+
+        spin_OmniShell_outer()
+        spin_OmniShell_inner()
+        spin_OmniShell_field01()
 
 
 //...................................................................................................
@@ -3707,6 +4867,62 @@ const geo_CylinderOpen_03 = new THREE.CylinderGeometry(
             aOmniScene.scale.set(0.00001, 0.00001, 0.00001)
             ΔaOmniX_root.add(aOmniScene)
 
+
+            OmniScene_StarsLayer_root = new THREE.Group()
+            OmniScene_StarsLayer_root.position.set(0, 0, 0)
+            OmniScene_StarsLayer_root.rotation.set(0, 0, 0)
+            OmniScene_StarsLayer_root.scale.set(1, 1, 1)
+            ΔaOmniX_root.add(OmniScene_StarsLayer_root)
+
+
+                OmniScene_StarsLayer01 = new THREE.Group()
+                OmniScene_StarsLayer01.position.set(0, 0, 0)
+                OmniScene_StarsLayer01.rotation.set(0, 0, 0)
+                OmniScene_StarsLayer01.scale.set(1, 1, 1)
+                OmniScene_StarsLayer_root.add(OmniScene_StarsLayer01)
+
+                    const mat_OmniScene_StarsLayer01 = new THREE.MeshBasicMaterial({ map: starryNight03, side: THREE.DoubleSide });
+                    mesh_OmniScene_StarsLayer01 = new THREE.Mesh(geo_objT_SphereA0, mat_OmniScene_StarsLayer01);
+                    mat_OmniScene_StarsLayer01.wireframe = false
+                    mat_OmniScene_StarsLayer01.transparent = true;
+                    mat_OmniScene_StarsLayer01.alphaMap = starryNight03;
+                    mat_OmniScene_StarsLayer01.blending = THREE.AdditiveBlending
+                    // mat_OmniScene_StarsLayer01.color = new THREE.Color('#1ed9d0') // neonGreenBlue
+                    // mat_OmniScene_StarsLayer01.color = new THREE.Color('#7851A9') // IntensePurple
+                    mesh_OmniScene_StarsLayer01.position.set(0, 0, 0);
+                    mesh_OmniScene_StarsLayer01.scale.set(1000, 1000, 1000);
+                    mesh_OmniScene_StarsLayer01.rotation.set(0, 0, 0)
+
+                    // mesh_OmniScene_StarsLayer01.position.set(-15000, 0, 0);
+                    // mesh_OmniScene_StarsLayer01.rotateX( - Math.PI / 2 );
+                    mesh_OmniScene_StarsLayer01.rotateY( - Math.PI / 2 );
+
+                    // OmniScene_StarsLayer01.lookAt(camera)
+                    
+                    OmniScene_StarsLayer01.add(mesh_OmniScene_StarsLayer01)
+
+                    let spin_OmniScene_StarsLayer_root = () => {
+                        gsap.to(OmniScene_StarsLayer01.rotation, {
+                            repeat: -1,
+                            duration: 1,
+                            ease: "none",
+                            delay: 0,
+                            x: 3.14,
+                        
+
+                        })
+
+                        
+                        
+
+                    }
+
+                    spin_OmniScene_StarsLayer_root()
+                
+
+
+
+
             
 
 			sun = new THREE.Vector3();
@@ -3836,9 +5052,39 @@ const geo_CylinderOpen_03 = new THREE.CylinderGeometry(
                     // ease: "bounce.inOut",
                     // ease: "slow(0.1,2,false)",
                     delay: 22,
-                    y: -20000,
+                    y: -90000,
                     
                 })
+
+                gsap.to(aOmniScene.scale, {
+
+                    repeat: 0,
+                    duration: 0.75,
+                    // yoyo: true,
+                    ease: "power1",
+                    // ease: "bounce.inOut",
+                    // ease: "slow(0.1,2,false)",
+                    delay: 20,
+                    x:1,
+                    y:1,
+                    z:1, 
+
+                })
+
+                gsap.to(water.position, {
+
+                    repeat: 0,
+                    duration: 1,
+                    // yoyo: true,
+                    ease: "power1",
+                    // ease: "bounce.inOut",
+                    // ease: "slow(0.1,2,false)",
+                    delay: 22,
+                    y: -500,
+                    
+                })
+
+                water.size = 0.1
                 
             }
 
@@ -4588,7 +5834,7 @@ let particlesToCoreFunction = () => {
 
                 UserContainer_root = new THREE.Group()
                 // UserContainer_root.position.set(30, 5990, 23950);
-                UserContainer_root.position.set(0, 45, 330);
+                UserContainer_root.position.set(0, 45, 1400);
                 UserContainer_root.rotation.set(0, 0, 0)
                 UserContainer_root.scale.set(10, 10, 10)
                 scene.add(UserContainer_root)
