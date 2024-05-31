@@ -4984,7 +4984,94 @@ const geo_CylinderOpen_03 = new THREE.CylinderGeometry(
 
 
 
+//........................................
+//....SSSSSS..............iii.............
+//...SSSSSSSS...kkk.......iii.............
+//..SSSSSSSSSS..kkk.......iii.............
+//..SSSSSSSSSS..kkk.......iii.............
+//.SSSS...SSSSS.kkk..kkkk.iii..nnnnnnnnn..
+//.SSSSSS.......kkk.kkkkk.iii..nnnnnnnnn..
+//..SSSSSSSSS...kkkkkkkk..iii..nnnnnnnnn..
+//..SSSSSSSSSS..kkkkkkk...iii..nnnn.nnnn..
+//....SSSSSSSSS.kkkkkkk...iii..nnn...nnn..
+//.SSSS..SSSSSS.kkkkkkk...iii..nnn...nnn..
+//.SSSS....SSSS.kkkkkkkk..iii..nnn...nnn..
+//.SSSSSSSSSSSS.kkk.kkkk..iii..nnn...nnn..
+//..SSSSSSSSSS..kkk.kkkkk.iii..nnn...nnn..
+//...SSSSSSSSS..kkk..kkkkkiii..nnn...nnn..
+//....SSSSSS..............................
+//........................................
 
+//................................................................................................................
+//......CCC.......................................................................................................
+//....CCCCCCCC....................................................................................tttt............
+//...CCCCCCCCCC...................................................................................tttt............
+//..CCCCCCCCCCC...................................................................................tttt............
+//..CCCC...CCCCC..ooooooo...mmmmmmmmmmmmm..ppppppppp....ooooooo...nnnnnnnnn...eeeeee...nnnnnnnnn.tttttt.ssssssss..
+//.CCCCC....CCCC.ooooooooo..mmmmmmmmmmmmmm.pppppppppp..ooooooooo..nnnnnnnnn..eeeeeeee..nnnnnnnnn.tttttt.ssssssss..
+//.CCCC.........ooooooooooo.mmmmmmmmmmmmmm.pppppppppppooooooooooo.nnnnnnnnn.eeeeeeeeee.nnnnnnnnn.ttttttsssssssss..
+//.CCCC.........oooo...oooo.mmmm.mmmm..mmm.ppppp.pppppoooo...oooo.nnnn.nnnn.eeee..eeee.nnnn.nnnn..tttt.sssssssss..
+//.CCCC.........oooo...oooo.mmm..mmmm..mmm.pppp...ppppoooo...oooo.nnn...nnn.eeeeeeeeee.nnn...nnn..tttt..ssssssss..
+//.CCCCC....CCCCoooo...oooo.mmm..mmmm..mmm.pppp...ppppoooo...oooo.nnn...nnn.eeeeeeeeee.nnn...nnn..tttt..ssssssss..
+//..CCCC...CCCCCoooo...oooo.mmm..mmmm..mmm.pppp...ppppoooo...oooo.nnn...nnn.eeee.......nnn...nnn..tttt.sssssssss..
+//..CCCCCCCCCCC.ooooooooooo.mmm..mmmm..mmm.pppppppppppooooooooooo.nnn...nnn.eeeeeeeeee.nnn...nnn..tttt.sssss.sss..
+//...CCCCCCCCCC..ooooooooo..mmm..mmmm..mmm.pppppppppp..ooooooooo..nnn...nnn.eeeeeeeee..nnn...nnn..tttttsssssssss..
+//....CCCCCCCC....ooooooo...mmm..mmmm..mmm.pppppppppp...ooooooo...nnn...nnn..eeeeeeee..nnn...nnn..ttttt.ssssssss..
+//.....CCCCC.......ooooo...................pppp.ppp......ooooo.................eeee.................ttt..ssssss...
+//.........................................pppp...................................................................
+//.........................................pppp...................................................................
+//.........................................pppp...................................................................
+//................................................................................................................
+
+
+const sphereSpace_Geometry = new THREE.SphereGeometry(15, 64, 64, 0, 6.2831, 0, Math.PI)
+const sphereSpace_Material = new THREE.MeshBasicMaterial(
+    {
+        map: SceneWallpaper_01,
+        side: THREE.DoubleSide,
+        color: 0xffffff, 
+        alphaMap: whitePureRoom,
+        transparent: false,
+        blending: THREE.AdditiveBlending
+    }
+)
+
+const numSpaceSpheres = 7
+
+const SpaceSpheresArr = []
+for (let i = 0; i < numSpaceSpheres; i++) {
+    const SpaceSphere = new THREE.Mesh(sphereSpace_Geometry, sphereSpace_Material)
+    SpaceSpheresArr.push(SpaceSphere)
+}
+
+for (let i = 0; i < numSpaceSpheres; i++) {
+    SpaceSpheresArr[i].scale.set(25, 25, 25)
+    SpaceSpheresArr[6].scale.set(100, 100, 100)
+
+    SpaceSpheresArr[0].position.set(0, 0, 2000)
+    SpaceSpheresArr[1].position.set(0, 0, -2000)
+    SpaceSpheresArr[2].position.set(-2000, 0, 0)
+    SpaceSpheresArr[3].position.set(2000, 0, 0)
+    SpaceSpheresArr[4].position.set(0, 2000, 0)
+    SpaceSpheresArr[5].position.set(0, -2000, 0)
+    SpaceSpheresArr[6].position.set(0, 0, 0)
+
+    ΔaOmniX_root.add(SpaceSpheresArr[i]);
+
+    gsap.to(SpaceSpheresArr[i].rotation, {
+        repeat: -1,
+        duration: 10,
+        // yoyo: true,
+        // ease: "power1",
+        // ease: "bounce.inOut",
+        ease: "none",
+        delay: 0,
+        // x: 0,
+        y: 3.14,
+        // z: 0, 
+
+    })
+}
 
 
 
