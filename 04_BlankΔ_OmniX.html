@@ -456,6 +456,11 @@
 
         let OmniScene_StarsLayer_root
             let OmniScene_StarsLayer01, mesh_OmniScene_StarsLayer01
+
+
+        let ΔaOmniX_MainContainer_root
+            let ΔaOmniX_MainContainer_Primary, mesh_ΔaOmniX_MainContainer_Primary
+            let ΔaOmniX_MainContainer_Layer01, mesh_ΔaOmniX_MainContainer_Layer01
                 
 
 
@@ -616,9 +621,13 @@
         const starryNight01 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/starrySkyBlue01.jpg')
         const starryNight02 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/astrologicalRoom01.jpg')
         const starryNight03 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/GalaxyWallpaperPurple03.png')
-        const starryNight04 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/GalaxyWallpaperPurple02.png')
+        const starryNight04 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/GalaxyWallpaperPurple02.jpeg')
+
+        const cyberRoomWhite01 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/cyberRoomWhite.jpg')
 
         const dataCubesRoom01 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/RequipRoom/DataCubes01.jpg')
+
+        const aOmniX_Container01 = textureLoader.load('./assets/img/10-ObjectUI/02-TechTiles/version07/C00_TechTileContainer.png')
 
 
 		init();
@@ -2743,6 +2752,19 @@ rotate_ΔaOmniX_CubeLoopStructure()
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 //.............................................................................................
 //..TTTTTTTTT......................................SSSSSS......................................
 //.TTTTTTTTTTT..................tttt..hhh.........SSSSSSSS...tttt..............................
@@ -2761,214 +2783,28 @@ rotate_ΔaOmniX_CubeLoopStructure()
 //.....................uuu........ttt..............SSSSSS......ttt..aaa..............ssssss....
 //.............................................................................................
 
-
-// // starPiece_dataObjectComponents
-// const starPieceGeometry = new THREE.ConeGeometry(5, 10, 4, 1, false, 0, 6.28)
-// const starPieceMaterial = new THREE.MeshBasicMaterial(
-//     {
-//         map: whitePureRoom,
-//         color: 0xffffff, 
-//         alphaMap: whitePureRoom,
-//         transparent: false,
-//     }
-// )
-
-// const starPieceAmount = 300;
-// const starPieceArr = []
-
-// // starPiece_dataObjects_init
-// for (let i = 0; i < starPieceAmount; i++) {
-//     const starPieceFragment = new THREE.Mesh(starPieceGeometry, starPieceMaterial );
-//     starPieceArr.push(starPieceFragment)
-// }
-
-// const starPieceRadius = 2000
-// for (let i = 0; i < starPieceAmount; i++) {
-//     const starPieces_phi = Math.acos(-1 + (2 * i) / starPieceAmount); // Latitude angle
-//     const starPieces_theta = Math.sqrt(starPieceAmount * Math.PI) * starPieces_phi; // Longitude angle
-
-//     const starPieces_x = starPieceRadius * Math.sin(starPieces_phi) * Math.cos(starPieces_theta)
-//     const starPieces_y = starPieceRadius * Math.sin(starPieces_phi) * Math.sin(starPieces_theta)
-//     const starPieces_z = starPieceRadius * Math.cos(starPieces_phi)
-
-//     starPieceArr[i].position.set(starPieces_x, starPieces_y, starPieces_z)
-//     starPieceArr[i].scale.set(10, 10, 10)
-//     ΔaOmniX_root.add(starPieceArr[i])
-
-//     starPieceArr[i].lookAt(camera.position)
-
-//     gsap.to(starPieceArr[i].position, {
-//         repeat: -1,
-//         duration: 0.75,
-//         // yoyo: true,
-//         // ease: "power1",
-//         // ease: "bounce.inOut",
-//         ease: "slow(0.1,2,false)",
-//         delay: 0,
-//         x: 0,
-//         y: 0,
-//         z: 0, 
-
-//     })
-// }
-
-    
-// // starPiece_dataObjectComponents
-// const starPieceGeometry = new THREE.ConeGeometry(5, 10, 4, 1, false, 0, 6.28);
-// const starPieceMaterial = new THREE.MeshBasicMaterial({
-//     map: whitePureRoom,
-//     color: 0xffffff,
-//     alphaMap: whitePureRoom,
-//     transparent: false,
-// });
-
-// const starPieceAmount = 300;
-// const starPieceArr = [];
-
-// // starPiece_dataObjects_init
-// for (let i = 0; i < starPieceAmount; i++) {
-//     const starPieceFragment = new THREE.Mesh(starPieceGeometry, starPieceMaterial);
-//     starPieceArr.push(starPieceFragment);
-// }
-
-// const starPieceRadius = 2000;
-// for (let i = 0; i < starPieceAmount; i++) {
-//     const starPieces_phi = Math.acos(-1 + (2 * i) / starPieceAmount); // Latitude angle
-//     const starPieces_theta = Math.sqrt(starPieceAmount * Math.PI) * starPieces_phi; // Longitude angle
-
-//     const starPieces_x = starPieceRadius * Math.sin(starPieces_phi) * Math.cos(starPieces_theta);
-//     const starPieces_y = starPieceRadius * Math.sin(starPieces_phi) * Math.sin(starPieces_theta);
-//     const starPieces_z = starPieceRadius * Math.cos(starPieces_phi);
-
-//     starPieceArr[i].position.set(starPieces_x, starPieces_y, starPieces_z);
-//     starPieceArr[i].scale.set(10, 10, 10);
-//     ΔaOmniX_root.add(starPieceArr[i]);
-
-//     starPieceArr[i].lookAt(camera.position);
-
-//     // Stagger the animations
-//     gsap.to(starPieceArr[i].position, {
-//         repeat: -1,
-//         duration: 0.75,
-//         ease: "slow(0.1,2,false)",
-//         delay: i * 0.1, // Delay each mesh by 0.1 seconds
-//         x: 0,
-//         y: 0,
-//         z: 0,
-//         onUpdate: () => {
-//             // Randomly change Y position
-//             starPieceArr[i].scale.y += Math.random() * 10 - 5; // Adjust the range as needed
-//         },
-//     });
-// }
+//.............................................
+//..LL.........................................
+//.LLLL........................................
+//.LLLL........................................
+//.LLLL........................................
+//.LLLL........ooooooo....ooooooo..opppppppp...
+//.LLLL.......ooooooooo..ooooooooo.oppppppppp..
+//.LLLL......Looooooooooooooooooooooppppppppp..
+//.LLLL......Looo...oooooooo...ooooopppp.pppp..
+//.LLLL......Looo...oooooooo...oooooppp...ppp..
+//.LLLL......Looo...oooooooo...oooooppp...ppp..
+//.LLLL......Looo...oooooooo...oooooppp...ppp..
+//.LLLLLLLLLLLooooooooooooooooooooooppppppppp..
+//.LLLLLLLLLL.ooooooooo..ooooooooo.oppppppppp..
+//.LLLLLLLLLL..ooooooo....ooooooo..oppppppppp..
+//..............ooooo......ooooo...oppp.ppp....
+//.................................oppp........
+//.................................oppp........
+//.................................oppp........
+//.............................................
 
 
-// // starPiece_dataObjectComponents
-// const starPieceGeometry = new THREE.ConeGeometry(5, 10, 4, 1, false, 0, 6.28);
-// const starPieceMaterial = new THREE.MeshBasicMaterial({
-//     map: whitePureRoom,
-//     color: 0xffffff,
-//     alphaMap: whitePureRoom,
-//     transparent: false,
-// });
-
-// const starPieceAmount = 300;
-// const starPieceArr = [];
-
-// // starPiece_dataObjects_init
-// for (let i = 0; i < starPieceAmount; i++) {
-//     const starPieceFragment = new THREE.Mesh(starPieceGeometry, starPieceMaterial);
-//     starPieceArr.push(starPieceFragment);
-// }
-
-// const starPieceRadius = 2000;
-// for (let i = 0; i < starPieceAmount; i++) {
-//     const starPieces_phi = Math.acos(-1 + (2 * i) / starPieceAmount); // Latitude angle
-//     const starPieces_theta = Math.sqrt(starPieceAmount * Math.PI) * starPieces_phi; // Longitude angle
-
-//     const starPieces_x = 0; // Start from the origin (X position)
-//     const starPieces_y = 0; // Start from the origin (Y position)
-//     const starPieces_z = 0; // Start from the origin (Z position)
-
-//     // Calculate the final position
-//     const final_x = starPieceRadius * Math.sin(starPieces_phi) * Math.cos(starPieces_theta);
-//     const final_y = starPieceRadius * Math.sin(starPieces_phi) * Math.sin(starPieces_theta);
-//     const final_z = starPieceRadius * Math.cos(starPieces_phi);
-
-//     starPieceArr[i].position.set(starPieces_x, starPieces_y, starPieces_z);
-//     starPieceArr[i].scale.set(10, 10, 10);
-//     ΔaOmniX_root.add(starPieceArr[i]);
-
-//     starPieceArr[i].lookAt(camera.position);
-
-//     // Animate towards the final position
-//     gsap.to(starPieceArr[i].position, {
-//         repeat: -1,
-//         duration: 0.75,
-//         ease: "slow(0.1,2,false)",
-//         delay: i * 0.1,
-//         x: final_x,
-//         y: final_y,
-//         z: final_z,
-//     });
-// }
-
-
-
-// // starPiece_dataObjectComponents
-// const starPieceGeometry = new THREE.ConeGeometry(5, 10, 4, 1, false, 0, 6.28);
-// const starPieceMaterial = new THREE.MeshBasicMaterial({
-//     map: whitePureRoom,
-//     color: 0xffffff,
-//     alphaMap: whitePureRoom,
-//     transparent: false,
-// });
-
-// const starPieceAmount = 300;
-// const starPieceArr = [];
-
-// // starPiece_dataObjects_init
-// for (let i = 0; i < starPieceAmount; i++) {
-//     const starPieceFragment = new THREE.Mesh(starPieceGeometry, starPieceMaterial);
-//     starPieceArr.push(starPieceFragment);
-// }
-
-// const starPieceRadius = 2000;
-// for (let i = 0; i < starPieceAmount; i++) {
-//     const starPieces_phi = Math.acos(-1 + (2 * i) / starPieceAmount); // Latitude angle
-//     const starPieces_theta = Math.sqrt(starPieceAmount * Math.PI) * starPieces_phi; // Longitude angle
-
-//     const starPieces_x = 0; // Start from the origin (X position)
-//     const starPieces_y = 0; // Start from the origin (Y position)
-//     const starPieces_z = 0; // Start from the origin (Z position)
-
-//     // Calculate the final position
-//     const final_x = starPieceRadius * Math.sin(starPieces_phi) * Math.cos(starPieces_theta);
-//     const final_y = starPieceRadius * Math.sin(starPieces_phi) * Math.sin(starPieces_theta);
-//     const final_z = starPieceRadius * Math.cos(starPieces_phi);
-
-//     starPieceArr[i].position.set(starPieces_x, starPieces_y, starPieces_z);
-//     starPieceArr[i].scale.set(1, 1, 1);
-//     ΔaOmniX_root.add(starPieceArr[i]);
-
-//     // Set initial rotation to face the direction of movement
-//     starPieceArr[i].lookAt(final_x, final_y, final_z);
-
-//     // Animate towards the final position
-//     gsap.to(starPieceArr[i].position, {
-//         repeat: -1,
-//         duration: 0.75,
-//         ease: "slow(0.1,2,false)",
-//         delay: i * 0.1,
-//         x: final_x,
-//         y: final_y,
-//         z: final_z,
-//         onUpdate: () => {
-//             // Randomly change Y position
-//             starPieceArr[i].scale.y = 10; // Adjust the range as needed
-//         },
-//     });
-// }
 
 
 
@@ -2980,6 +2816,8 @@ const starPieceMaterial = new THREE.MeshBasicMaterial({
     color: 0xffffff,
     alphaMap: whitePureRoom,
     transparent: false,
+    blending: THREE.AdditiveBlending
+
 });
 
 const starPieceAmount = 300;
@@ -3013,12 +2851,12 @@ for (let i = 0; i < starPieceAmount; i++) {
     starPieceArr[i].lookAt(final_x, final_y, final_z);
 
     // Animate towards a random position
-    const randomDuration = Math.random() * 2 + 1; // Random duration between 1 and 3 seconds
+    const randomDuration = Math.random() * 1 + 1; // Random duration between 1 and 3 seconds
     gsap.to(starPieceArr[i].position, {
         repeat: -1,
         duration: randomDuration,
         ease: "slow(0.1,2,false)",
-        delay: i * 0.1,
+        delay: i * 0.001,
         x: Math.random() * 2000 - 1000, // Random X position
         y: Math.random() * 2000 - 1000, // Random Y position
         z: Math.random() * 2000 - 1000, // Random Z position
@@ -4881,16 +4719,16 @@ const geo_CylinderOpen_03 = new THREE.CylinderGeometry(
                 OmniScene_StarsLayer01.scale.set(1, 1, 1)
                 OmniScene_StarsLayer_root.add(OmniScene_StarsLayer01)
 
-                    const mat_OmniScene_StarsLayer01 = new THREE.MeshBasicMaterial({ map: starryNight03, side: THREE.DoubleSide });
+                    const mat_OmniScene_StarsLayer01 = new THREE.MeshBasicMaterial({ map: starryNight04, side: THREE.DoubleSide });
                     mesh_OmniScene_StarsLayer01 = new THREE.Mesh(geo_objT_SphereA0, mat_OmniScene_StarsLayer01);
                     mat_OmniScene_StarsLayer01.wireframe = false
                     mat_OmniScene_StarsLayer01.transparent = true;
-                    mat_OmniScene_StarsLayer01.alphaMap = starryNight03;
+                    mat_OmniScene_StarsLayer01.alphaMap = starryNight04;
                     mat_OmniScene_StarsLayer01.blending = THREE.AdditiveBlending
                     // mat_OmniScene_StarsLayer01.color = new THREE.Color('#1ed9d0') // neonGreenBlue
                     // mat_OmniScene_StarsLayer01.color = new THREE.Color('#7851A9') // IntensePurple
                     mesh_OmniScene_StarsLayer01.position.set(0, 0, 0);
-                    mesh_OmniScene_StarsLayer01.scale.set(1000, 1000, 1000);
+                    mesh_OmniScene_StarsLayer01.scale.set(500, 500, 500);
                     mesh_OmniScene_StarsLayer01.rotation.set(0, 0, 0)
 
                     // mesh_OmniScene_StarsLayer01.position.set(-15000, 0, 0);
@@ -4920,16 +4758,70 @@ const geo_CylinderOpen_03 = new THREE.CylinderGeometry(
                     spin_OmniScene_StarsLayer_root()
                 
 
+            ΔaOmniX_MainContainer_root = new THREE.Group()
+            ΔaOmniX_MainContainer_root.position.set(0, 0, 0)
+            ΔaOmniX_MainContainer_root.rotation.set(0, 0, 0)
+            ΔaOmniX_MainContainer_root.scale.set(1, 1, 1)
+            ΔaOmniX_root.add(ΔaOmniX_MainContainer_root)
+
+                ΔaOmniX_MainContainer_Primary = new THREE.Group()
+                ΔaOmniX_MainContainer_Primary.position.set(0, 0, 0)
+                ΔaOmniX_MainContainer_Primary.rotation.set(0, 0, 0)
+                ΔaOmniX_MainContainer_Primary.scale.set(1, 1, 1)
+                ΔaOmniX_MainContainer_root.add(ΔaOmniX_MainContainer_Primary)
+
+                    const mat_ΔaOmniX_MainContainer_Primary = new THREE.MeshBasicMaterial({ map: cyberRoomWhite01, side: THREE.DoubleSide });
+                    mesh_ΔaOmniX_MainContainer_Primary = new THREE.Mesh(geo_objT_BoxA0, mat_ΔaOmniX_MainContainer_Primary);
+                    mat_ΔaOmniX_MainContainer_Primary.wireframe = false
+                    mat_ΔaOmniX_MainContainer_Primary.transparent = false;
+                    mat_ΔaOmniX_MainContainer_Primary.alphaMap = cyberRoomWhite01;
+                    // mat_ΔaOmniX_MainContainer_Primary.blending = THREE.AdditiveBlending
+                    // mat_ΔaOmniX_MainContainer_Primary.color = new THREE.Color('#1ed9d0') // neonGreenBlue
+                    // mat_ΔaOmniX_MainContainer_Primary.color = new THREE.Color('#7851A9') // IntensePurple
+                    mesh_ΔaOmniX_MainContainer_Primary.position.set(0, 0, 0);
+                    mesh_ΔaOmniX_MainContainer_Primary.scale.set(1000, 1000, 1000);
+                    mesh_ΔaOmniX_MainContainer_Primary.rotation.set(0, 0, 0)
+
+                    // mesh_ΔaOmniX_MainContainer_Primary.position.set(-15000, 0, 0);
+                    // mesh_ΔaOmniX_MainContainer_Primary.rotateX( - Math.PI / 2 );
+                    // mesh_ΔaOmniX_MainContainer_Primary.rotateY( - Math.PI / 2 );
+
+                    // ΔaOmniX_MainContainer_Primary.lookAt(camera)
+                    
+                    ΔaOmniX_MainContainer_Primary.add(mesh_ΔaOmniX_MainContainer_Primary)
 
 
+                ΔaOmniX_MainContainer_Layer01 = new THREE.Group()
+                ΔaOmniX_MainContainer_Layer01.position.set(0, 0, 0)
+                ΔaOmniX_MainContainer_Layer01.rotation.set(0, 0, 0)
+                ΔaOmniX_MainContainer_Layer01.scale.set(1, 1, 1)
+                ΔaOmniX_MainContainer_root.add(ΔaOmniX_MainContainer_Layer01)
 
-            
+                    const mat_ΔaOmniX_MainContainer_Layer01 = new THREE.MeshBasicMaterial({ map: aOmniX_Container01, side: THREE.DoubleSide });
+                    mesh_ΔaOmniX_MainContainer_Layer01 = new THREE.Mesh(geo_objT_BoxA0, mat_ΔaOmniX_MainContainer_Layer01);
+                    mat_ΔaOmniX_MainContainer_Layer01.wireframe = false
+                    mat_ΔaOmniX_MainContainer_Layer01.transparent = true;
+                    mat_ΔaOmniX_MainContainer_Layer01.alphaMap = aOmniX_Container01;
+                    mat_ΔaOmniX_MainContainer_Layer01.blending = THREE.AdditiveBlending
+                    // mat_ΔaOmniX_MainContainer_Layer01.color = new THREE.Color('#1ed9d0') // neonGreenBlue
+                    // mat_ΔaOmniX_MainContainer_Layer01.color = new THREE.Color('#7851A9') // IntensePurple
+                    mesh_ΔaOmniX_MainContainer_Layer01.position.set(0, 0, 0);
+                    mesh_ΔaOmniX_MainContainer_Layer01.scale.set(1200, 1200, 1200);
+                    mesh_ΔaOmniX_MainContainer_Layer01.rotation.set(0, 0, 0)
+
+                    // mesh_ΔaOmniX_MainContainer_Layer01.position.set(-15000, 0, 0);
+                    // mesh_ΔaOmniX_MainContainer_Layer01.rotateX( - Math.PI / 2 );
+                    // mesh_ΔaOmniX_MainContainer_Layer01.rotateY( - Math.PI / 2 );
+
+                    // ΔaOmniX_MainContainer_Layer01.lookAt(camera)
+                    
+                    ΔaOmniX_MainContainer_Layer01.add(mesh_ΔaOmniX_MainContainer_Layer01)
 
 			sun = new THREE.Vector3();
 
 			// Water
 
-			const waterGeometry = new THREE.PlaneGeometry(500000, 500000);
+			const waterGeometry = new THREE.PlaneGeometry(50000, 50000);
 
 			water = new Water(
 				waterGeometry,
@@ -5052,7 +4944,7 @@ const geo_CylinderOpen_03 = new THREE.CylinderGeometry(
                     // ease: "bounce.inOut",
                     // ease: "slow(0.1,2,false)",
                     delay: 22,
-                    y: -90000,
+                    y: -9000,
                     
                 })
 
@@ -5084,7 +4976,7 @@ const geo_CylinderOpen_03 = new THREE.CylinderGeometry(
                     
                 })
 
-                water.size = 0.1
+                water.size = 0.05
                 
             }
 
@@ -5834,7 +5726,7 @@ let particlesToCoreFunction = () => {
 
                 UserContainer_root = new THREE.Group()
                 // UserContainer_root.position.set(30, 5990, 23950);
-                UserContainer_root.position.set(0, 45, 1400);
+                UserContainer_root.position.set(0, 55, 1400);
                 UserContainer_root.rotation.set(0, 0, 0)
                 UserContainer_root.scale.set(10, 10, 10)
                 scene.add(UserContainer_root)
@@ -6034,6 +5926,21 @@ let particlesToCoreFunction = () => {
                             }
 
                             spinPersonalSpaceOnly()
+
+                            let openPersonalSpace = () => {
+                                gsap.to(mesh_UserContainer_PersonalSpace_Space.scale, {
+                                    repeat: 0,
+                                    duration: 30,
+                                    ease: "none",
+                                    delay: 2.5,
+                                    x: 75,
+                                    y: 75,
+                                    z: 75,
+                            
+                                })
+                            }
+
+                            openPersonalSpace()
 
 
                     UserContainer_MediaContainer_baseD = new THREE.Group()
@@ -6487,15 +6394,20 @@ let particlesToCoreFunction = () => {
 			folderButton.add(camera.position, 'z').min(-3.14).max(3.14).step(0.001).name('z-camera')
 
 
-            const folderOrbits = gui.addFolder('mesh_ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Forwards');
-			folderOrbits.add(mesh_ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Backwards.rotation, 'x').min(-3.14).max(3.14).step(0.001).name('x-TimeCone')
-			folderOrbits.add(mesh_ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Backwards.rotation, 'y').min(-3.14).max(3.14).step(0.001).name('y-TimeCone')
-			folderOrbits.add(mesh_ΔaOmniX_TimeΔ_Skeleton_NaturalTimeFlow_TimeCone_Backwards.rotation, 'z').min(-3.14).max(3.14).step(0.001).name('z-TimeCone')
+            const folderOrbits = gui.addFolder('ΔaOmniX_root');
+			folderOrbits.add(ΔaOmniX_root.rotation, 'x').min(-3.14).max(3.14).step(0.001).name('x-ΔaOmniX_root')
+			folderOrbits.add(ΔaOmniX_root.rotation, 'y').min(-3.14).max(3.14).step(0.001).name('y-ΔaOmniX_root')
+			folderOrbits.add(ΔaOmniX_root.rotation, 'z').min(-3.14).max(3.14).step(0.001).name('z-ΔaOmniX_root')
 
-            const folderPanels = gui.addFolder('aOmniScene');
-			folderPanels.add(aOmniScene.position, 'x').min(-1000).max(1000).step(1).name('x-aOmniScene')
-			folderPanels.add(aOmniScene.position, 'y').min(-1000).max(1000).step(1).name('y-aOmniScene')
-			folderPanels.add(aOmniScene.position, 'z').min(-1000).max(1000).step(1).name('z-aOmniScene')
+            const folderPanels = gui.addFolder('ΔaOmniX_root');
+			folderPanels.add(ΔaOmniX_root.position, 'x').min(-10000).max(10000).step(1).name('x-ΔaOmniX_root')
+			folderPanels.add(ΔaOmniX_root.position, 'y').min(-10000).max(10000).step(1).name('y-ΔaOmniX_root')
+			folderPanels.add(ΔaOmniX_root.position, 'z').min(-10000).max(10000).step(1).name('z-ΔaOmniX_root')
+
+            const folder01 = gui.addFolder('ΔaOmniX_root');
+			folder01.add(ΔaOmniX_root.scale, 'x').min(-10000).max(10000).step(1).name('x-ΔaOmniX_root')
+			folder01.add(ΔaOmniX_root.scale, 'y').min(-10000).max(10000).step(1).name('y-ΔaOmniX_root')
+			folder01.add(ΔaOmniX_root.scale, 'z').min(-10000).max(10000).step(1).name('z-ΔaOmniX_root')
 
 			window.addEventListener('resize', onWindowResize);
 
