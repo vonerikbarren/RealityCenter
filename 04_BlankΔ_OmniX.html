@@ -39,7 +39,7 @@
 
          <video id="none" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/TunnelAnimations/TechTunnelA03.mp4" style="display: none" ></video>
 
-         <video id="userVideo" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/PersonalAnimations/ΔExplanationA01.mp4" style="display: none" ></video>
+         <video id="userVideo" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/PersonalAnimations/ExplainA01__What_is_a_Reality.mp4" style="display: none" ></video>
 	</div>
 
     <!-- ./assets/video/SphereAnimations/Equations3.mp4 -->
@@ -718,7 +718,7 @@
 			// Search.Camera
 			camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 500000);
 			// camera.position.set(30, 6000, 24000); // previous
-            camera.position.set(0, 0, 1500); // previous
+            camera.position.set(25, 0, 1500); // previous
 			camera.view = sun;
 
 
@@ -2851,7 +2851,7 @@ for (let i = 0; i < starPieceAmount; i++) {
     starPieceArr[i].lookAt(final_x, final_y, final_z);
 
     // Animate towards a random position
-    const randomDuration = Math.random() * 1 + 1; // Random duration between 1 and 3 seconds
+    const randomDuration = Math.random() * 0.25 + 0.1; // Random duration between 1 and 3 seconds
     gsap.to(starPieceArr[i].position, {
         repeat: -1,
         duration: randomDuration,
@@ -5025,7 +5025,7 @@ const geo_CylinderOpen_03 = new THREE.CylinderGeometry(
 
 
 const sphereSpace_Geometry = new THREE.SphereGeometry(15, 64, 64, 0, 6.2831, 0, Math.PI)
-const sphereSpace_Material = new THREE.MeshBasicMaterial(
+const sphereSpace_MaterialPureWhite = new THREE.MeshBasicMaterial(
     {
         map: SceneWallpaper_01,
         side: THREE.DoubleSide,
@@ -5040,20 +5040,20 @@ const numSpaceSpheres = 7
 
 const SpaceSpheresArr = []
 for (let i = 0; i < numSpaceSpheres; i++) {
-    const SpaceSphere = new THREE.Mesh(sphereSpace_Geometry, sphereSpace_Material)
+    const SpaceSphere = new THREE.Mesh(sphereSpace_Geometry, sphereSpace_MaterialPureWhite)
     SpaceSpheresArr.push(SpaceSphere)
 }
 
 for (let i = 0; i < numSpaceSpheres; i++) {
     SpaceSpheresArr[i].scale.set(25, 25, 25)
-    SpaceSpheresArr[6].scale.set(100, 100, 100)
+    SpaceSpheresArr[6].scale.set(200, 200, 200)
 
-    SpaceSpheresArr[0].position.set(0, 0, 2000)
-    SpaceSpheresArr[1].position.set(0, 0, -2000)
-    SpaceSpheresArr[2].position.set(-2000, 0, 0)
-    SpaceSpheresArr[3].position.set(2000, 0, 0)
-    SpaceSpheresArr[4].position.set(0, 2000, 0)
-    SpaceSpheresArr[5].position.set(0, -2000, 0)
+    SpaceSpheresArr[0].position.set(0, 0, 3000)
+    SpaceSpheresArr[1].position.set(0, 0, -3000)
+    SpaceSpheresArr[2].position.set(-3000, 0, 0)
+    SpaceSpheresArr[3].position.set(3000, 0, 0)
+    SpaceSpheresArr[4].position.set(0, 3000, 0)
+    SpaceSpheresArr[5].position.set(0, -3000, 0)
     SpaceSpheresArr[6].position.set(0, 0, 0)
 
     ΔaOmniX_root.add(SpaceSpheresArr[i]);
@@ -6017,12 +6017,12 @@ let particlesToCoreFunction = () => {
                             let openPersonalSpace = () => {
                                 gsap.to(mesh_UserContainer_PersonalSpace_Space.scale, {
                                     repeat: 0,
-                                    duration: 30,
+                                    duration: 60,
                                     ease: "none",
                                     delay: 2.5,
-                                    x: 75,
-                                    y: 75,
-                                    z: 75,
+                                    x: 1,
+                                    y: 1,
+                                    z: 1,
                             
                                 })
                             }
