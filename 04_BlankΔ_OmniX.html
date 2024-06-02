@@ -458,6 +458,13 @@
             let OmniScene_StarsLayer01, mesh_OmniScene_StarsLayer01
 
 
+        let ΔaOmniX_OmniBox_root
+        let ΔaOmniX_OmniBox_Iterations_root
+        let ΔaOmniX_OmniBox_Shell_root
+            let ΔaOmniX_OmniBox_Shell_Skeleton_root
+            let ΔaOmniX_OmniBox_Shell_Skin_root
+
+
         let ΔaOmniX_MainContainer_root
             let ΔaOmniX_MainContainer_Primary, mesh_ΔaOmniX_MainContainer_Primary
             let ΔaOmniX_MainContainer_Layer01, mesh_ΔaOmniX_MainContainer_Layer01
@@ -4487,6 +4494,9 @@ const geo_CylinderOpen_03 = new THREE.CylinderGeometry(
         spin_OmniShell_field01()
 
 
+
+
+
 //...................................................................................................
 //.....OOOOOO.......................................VV......VV.Viii..................................
 //....OOOOOOOOO..............tttt..................rVVV....VVVVViii.......dddd.......................
@@ -5872,6 +5882,31 @@ let particlesToCoreFunction = () => {
                             "Testing234", "TestingClass234",
                             "./assets/icons/Websites01/002-globe_grid.png", "",
                             "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+                            () => {
+                                gsap.to(camera.position, {
+                                    repeat: 0,
+                                    duration: 1.5,
+                                    ease: "none",
+                                    delay: 1,
+                                    // x: 0.001,
+                                    // y: 0.001,
+                                    z: 17000,
+                                
+
+                                })
+
+                                gsap.to(camera.position, {
+                                    repeat: 0,
+                                    duration: 1.5,
+                                    ease: "none",
+                                    delay: 5,
+                                    // x: 0.001,
+                                    y: 0,
+                                    z: 1500,
+                                
+
+                                })
+                            }, "#fff"
                         )
                     )
 
