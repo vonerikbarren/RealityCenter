@@ -5856,6 +5856,26 @@ let particlesToCoreFunction = () => {
                         mesh_UserContainer_MediaContainer_Media.scale.set(0.1, 0.09, 0.1)
                         UserContainer_MediaContainer_Media.add(mesh_UserContainer_MediaContainer_Media)
 
+
+                    const UserΔ_ButtonPrimary = new THREE.Group()
+                    UserΔ_ButtonPrimary.position.set(-0.5, 1.5, 0)
+                    UserΔ_ButtonPrimary.rotation.set(0, 0, 0)
+                    UserΔ_ButtonPrimary.scale.set(0.005, 0.005, 0.005 )
+                    UserContainer_root.add(UserΔ_ButtonPrimary)
+
+                    UserΔ_ButtonPrimary.add(
+                        new hoverObject(
+                            'img',
+                            0, 0, 0,
+                            0, 0, 0,
+                            0.1, 0.1, 0.1,
+                            "Testing234", "TestingClass234",
+                            "./assets/icons/Websites01/002-globe_grid.png", "",
+                            "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+                        )
+                    )
+
+
                     
                     UserContainer_MediaContainer_baseB = new THREE.Group()
                     UserContainer_MediaContainer_baseB.position.set(0, 0, -0.1)
