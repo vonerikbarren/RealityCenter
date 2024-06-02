@@ -5875,6 +5875,38 @@ let particlesToCoreFunction = () => {
                         )
                     )
 
+                    
+
+                    let animateOpeningButton = () => {
+
+                        gsap.from(UserΔ_ButtonPrimary.scale, {
+                            repeat: 1,
+                            duration: 1,
+                            ease: "none",
+                            delay: 1.2,
+                            x: 0.001,
+                            y: 0.001,
+                            z: 0.001,
+                        
+
+                        })
+
+                        gsap.from(UserΔ_ButtonPrimary.position, {
+                            repeat: 1,
+                            duration: 1,
+                            ease: "none",
+                            delay: 1.2,
+                            x: 0,
+                            y: 1.6,
+                        
+
+                        })
+                    }
+
+                    animateOpeningButton()
+
+                    
+
 
                     
                     UserContainer_MediaContainer_baseB = new THREE.Group()
