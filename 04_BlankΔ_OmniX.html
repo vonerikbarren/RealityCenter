@@ -459,10 +459,26 @@
 
 
         let ΔaOmniX_OmniBox_root
-        let ΔaOmniX_OmniBox_Iterations_root
-        let ΔaOmniX_OmniBox_Shell_root
-            let ΔaOmniX_OmniBox_Shell_Skeleton_root
-            let ΔaOmniX_OmniBox_Shell_Skin_root
+            let ΔaOmniX_OmniBox_Iterations_root
+                let ΔaOmniX_OmniBox_Iteration01, mesh_ΔaOmniX_OmniBox_Iteration01
+                let ΔaOmniX_OmniBox_Iteration02, mesh_ΔaOmniX_OmniBox_Iteration02
+                let ΔaOmniX_OmniBox_Iteration03, mesh_ΔaOmniX_OmniBox_Iteration03
+                let ΔaOmniX_OmniBox_Iteration04, mesh_ΔaOmniX_OmniBox_Iteration04
+                let ΔaOmniX_OmniBox_Iteration05, mesh_ΔaOmniX_OmniBox_Iteration05
+                let ΔaOmniX_OmniBox_Iteration06, mesh_ΔaOmniX_OmniBox_Iteration06
+                let ΔaOmniX_OmniBox_Iteration07, mesh_ΔaOmniX_OmniBox_Iteration07
+                let ΔaOmniX_OmniBox_Iteration08, mesh_ΔaOmniX_OmniBox_Iteration08
+                let ΔaOmniX_OmniBox_Iteration09, mesh_ΔaOmniX_OmniBox_Iteration09
+                let ΔaOmniX_OmniBox_Iteration10, mesh_ΔaOmniX_OmniBox_Iteration10
+            let ΔaOmniX_OmniBox_Shell_root
+                let ΔaOmniX_OmniBox_Shell_Skeleton_root
+                    let ΔaOmniX_OmniBox_Shell_Skeleton01, mesh_ΔaOmniX_OmniBox_Shell_Skeleton01
+                    let ΔaOmniX_OmniBox_Shell_Skeleton02, mesh_ΔaOmniX_OmniBox_Shell_Skeleton02
+                    let ΔaOmniX_OmniBox_Shell_Skeleton03, mesh_ΔaOmniX_OmniBox_Shell_Skeleton03
+                let ΔaOmniX_OmniBox_Shell_Skin_root
+                    let ΔaOmniX_OmniBox_Shell_Skin01, mesh_ΔaOmniX_OmniBox_Shell_Skin01
+                    let ΔaOmniX_OmniBox_Shell_Skin02, mesh_ΔaOmniX_OmniBox_Shell_Skin02
+                    let ΔaOmniX_OmniBox_Shell_Skin03, mesh_ΔaOmniX_OmniBox_Shell_Skin03
 
 
         let ΔaOmniX_MainContainer_root
@@ -523,6 +539,8 @@
         //.III..IMM.MMMMM.MMM.MAAA.....AAAA...GGGGGGGGGG..EEEEEEEEEEE..SSSSSSSSS...
         //.....................................GGGG.....................SSSSSS.....
         //.........................................................................
+
+        
 
 		const textureLoader = new THREE.TextureLoader();
 		// const testImg01 = textureLoader.load('./assets/img/Purple_Tech01.jpeg')
@@ -635,6 +653,8 @@
         const dataCubesRoom01 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/RequipRoom/DataCubes01.jpg')
 
         const aOmniX_Container01 = textureLoader.load('./assets/img/10-ObjectUI/02-TechTiles/version07/C00_TechTileContainer.png')
+        const aOmniX_Container02 = textureLoader.load('./assets/img/10-ObjectUI/02-TechTiles/version02/TechTileBase01sm.png')
+        const aOmniX_Container03 = textureLoader.load('./assets/img/10-ObjectUI/02-TechTiles/version07/A00_TechTileContainer.png')
 
 
 		init();
@@ -4493,6 +4513,290 @@ const geo_CylinderOpen_03 = new THREE.CylinderGeometry(
         spin_OmniShell_inner()
         spin_OmniShell_field01()
 
+//...................................................................................
+//.....OOOOOO................................iii...BBBBB.............................
+//....OOOOOOOOO..............................iii..BBBBBBBBBB.........................
+//...OOOOOOOOOO..............................iii..BBBBBBBBBBB........................
+//..OOOOOOOOOOOO.............................iii..BBBBBBBBBBB........................
+//..OOOO....OOOO..mmmmmmmmmmmmm...nnnnnnnnn..iii..BBBB...BBBB...ooooooo..xxxx..xxxx..
+//..OOOO....OOOOO.mmmmmmmmmmmmmm..nnnnnnnnn..iii..BBBB..BBBBB..ooooooooo.xxxxxxxxxx..
+//.OOOO......OOOO.mmmmmmmmmmmmmm..nnnnnnnnn..iii..BBBBBBBBBBB.Boooooooooo.xxxxxxxx...
+//.OOOO......OOOO.mmmm.mmmm..mmm..nnnn.nnnn..iii..BBBBBBBBBBB.Booo...oooo.xxxxxxx....
+//.OOOO......OOOO.mmm..mmmm..mmm..nnn...nnn..iii..BBBBBBBBBBB.Booo...oooo..xxxxxx....
+//..OOOO....OOOOO.mmm..mmmm..mmm..nnn...nnn..iii..BBBB....BBBBBooo...oooo..xxxxxx....
+//..OOOO....OOOO..mmm..mmmm..mmm..nnn...nnn..iii..BBBB...BBBBBBooo...oooo..xxxxxx....
+//..OOOOOOOOOOOO..mmm..mmmm..mmm..nnn...nnn..iii..BBBBBBBBBBB.Boooooooooo.xxxxxxxx...
+//...OOOOOOOOOO...mmm..mmmm..mmm..nnn...nnn..iii..BBBBBBBBBBB..ooooooooo.xxxxxxxxxx..
+//....OOOOOOOOO...mmm..mmmm..mmm..nnn...nnn..iii..BBBBBBBBBB....ooooooo..xxxx.xxxxx..
+//.....OOOOOO....................................................ooooo...............
+//...................................................................................
+
+ΔaOmniX_OmniBox_root = new THREE.Group()
+ΔaOmniX_OmniBox_root.position.set(0, 0, 0)
+ΔaOmniX_OmniBox_root.rotation.set(0, 0, 0)
+ΔaOmniX_OmniBox_root.scale.set(1, 1, 1)
+ΔaOmniX_TimeΔ_Skeleton_root.add(ΔaOmniX_OmniBox_root)
+
+    ΔaOmniX_OmniBox_Iterations_root = new THREE.Group()
+    ΔaOmniX_OmniBox_Iterations_root.position.set(0, 0, 0)
+    ΔaOmniX_OmniBox_Iterations_root.rotation.set(0, 0, 0)
+    ΔaOmniX_OmniBox_Iterations_root.scale.set(1, 1, 1)
+    ΔaOmniX_OmniBox_root.add(ΔaOmniX_OmniBox_Iterations_root)
+
+    ΔaOmniX_OmniBox_Shell_root = new THREE.Group()
+    ΔaOmniX_OmniBox_Shell_root.position.set(0, 0, 0)
+    ΔaOmniX_OmniBox_Shell_root.rotation.set(0, 0, 0)
+    ΔaOmniX_OmniBox_Shell_root.scale.set(1, 1, 1)
+    ΔaOmniX_OmniBox_root.add(ΔaOmniX_OmniBox_Shell_root)
+
+        ΔaOmniX_OmniBox_Shell_Skeleton01 = new THREE.Group()
+        ΔaOmniX_OmniBox_Shell_Skeleton01.position.set(0, 0, 0)
+        ΔaOmniX_OmniBox_Shell_Skeleton01.rotation.set(0, 0, 0)
+        ΔaOmniX_OmniBox_Shell_Skeleton01.scale.set(1, 1, 1)
+        ΔaOmniX_OmniBox_Shell_root.add(ΔaOmniX_OmniBox_Shell_Skeleton01)
+
+            const mat_ΔaOmniX_OmniBox_Shell_Skeleton01 = new THREE.MeshBasicMaterial({ map: ΔIconConainer_complexDesignBlack01, side: THREE.DoubleSide });
+            mesh_ΔaOmniX_OmniBox_Shell_Skeleton01 = new THREE.Mesh(geo_objT_BoxA0, mat_ΔaOmniX_OmniBox_Shell_Skeleton01);
+            mat_ΔaOmniX_OmniBox_Shell_Skeleton01.wireframe = false
+            mat_ΔaOmniX_OmniBox_Shell_Skeleton01.transparent = true;
+            mat_ΔaOmniX_OmniBox_Shell_Skeleton01.alphaMap = ΔIconConainer_complexDesignBlack01;
+            // mat_ΔaOmniX_OmniBox_Shell_Skeleton01.blending = THREE.AdditiveBlending
+            // mat_ΔaOmniX_OmniBox_Shell_Skeleton01.color = new THREE.Color('#1ed9d0') // neonGreenBlue
+            // mat_ΔaOmniX_OmniBox_Shell_Skeleton01.color = new THREE.Color('#7851A9') // IntensePurple
+            mesh_ΔaOmniX_OmniBox_Shell_Skeleton01.position.set(0, 0, 0);
+            mesh_ΔaOmniX_OmniBox_Shell_Skeleton01.scale.set(100, 100, 100);
+            mesh_ΔaOmniX_OmniBox_Shell_Skeleton01.rotation.set(0, 0, 0)
+
+            // mesh_ΔaOmniX_OmniBox_Shell_Skeleton01.position.set(-15000, 0, 0);
+            // mesh_ΔaOmniX_OmniBox_Shell_Skeleton01.rotateX( - Math.PI / 2 );
+            mesh_ΔaOmniX_OmniBox_Shell_Skeleton01.rotateY( - Math.PI / 2 );
+
+            // ΔaOmniX_OmniBox_Shell_Skeleton01.lookAt(camera)
+            
+            ΔaOmniX_OmniBox_Shell_Skeleton01.add(mesh_ΔaOmniX_OmniBox_Shell_Skeleton01)
+
+        ΔaOmniX_OmniBox_Shell_Skeleton02 = new THREE.Group()
+        ΔaOmniX_OmniBox_Shell_Skeleton02.position.set(0, 0, 0)
+        ΔaOmniX_OmniBox_Shell_Skeleton02.rotation.set(0, 0, 0)
+        ΔaOmniX_OmniBox_Shell_Skeleton02.scale.set(1, 1, 1)
+        ΔaOmniX_OmniBox_Shell_root.add(ΔaOmniX_OmniBox_Shell_Skeleton02)
+
+            const mat_ΔaOmniX_OmniBox_Shell_Skeleton02 = new THREE.MeshBasicMaterial({ map: aOmniX_Container02, side: THREE.DoubleSide });
+            mesh_ΔaOmniX_OmniBox_Shell_Skeleton02 = new THREE.Mesh(geo_objT_BoxA0, mat_ΔaOmniX_OmniBox_Shell_Skeleton02);
+            mat_ΔaOmniX_OmniBox_Shell_Skeleton02.wireframe = false
+            mat_ΔaOmniX_OmniBox_Shell_Skeleton02.transparent = true;
+            mat_ΔaOmniX_OmniBox_Shell_Skeleton02.alphaMap = aOmniX_Container02;
+            mat_ΔaOmniX_OmniBox_Shell_Skeleton02.blending = THREE.AdditiveBlending
+            // mat_ΔaOmniX_OmniBox_Shell_Skeleton02.color = new THREE.Color('#1ed9d0') // neonGreenBlue
+            // mat_ΔaOmniX_OmniBox_Shell_Skeleton02.color = new THREE.Color('#7851A9') // IntensePurple
+            mesh_ΔaOmniX_OmniBox_Shell_Skeleton02.position.set(0, 0, 0);
+            mesh_ΔaOmniX_OmniBox_Shell_Skeleton02.scale.set(90, 90, 90);
+            mesh_ΔaOmniX_OmniBox_Shell_Skeleton02.rotation.set(0, 0, 0)
+
+            // mesh_ΔaOmniX_OmniBox_Shell_Skeleton02.position.set(-15000, 0, 0);
+            // mesh_ΔaOmniX_OmniBox_Shell_Skeleton02.rotateX( - Math.PI / 2 );
+            mesh_ΔaOmniX_OmniBox_Shell_Skeleton02.rotateY( - Math.PI / 2 );
+
+            // ΔaOmniX_OmniBox_Shell_Skeleton02.lookAt(camera)
+            
+            ΔaOmniX_OmniBox_Shell_Skeleton02.add(mesh_ΔaOmniX_OmniBox_Shell_Skeleton02)
+
+
+    const OmniCube_Geo = new THREE.BoxGeometry(15, 15, 15)
+    const OmniCube_Mat = new THREE.MeshBasicMaterial(
+        {
+            map: SceneWallpaper_01,
+            color: 0xffffff,
+            alphaMap: SceneWallpaper_01,
+            transparent: false,
+            // blending: THREE.AdditiveBlending,
+            side: THREE.DoubleSide,
+        }
+    )
+
+    const numOmniCubes = 6
+    const OmniCubeArr = []
+
+    for (let i = 0; i < numOmniCubes; i++ ) {
+        const OmniCube = new THREE.Mesh(OmniCube_Geo, OmniCube_Mat)
+        OmniCubeArr.push(OmniCube)
+    }
+
+    for (let i = 0; i < numOmniCubes; i++) {
+        let position01 = {
+            x: 1000,
+            y: 0,
+            z: 0,
+        }
+
+        let speedSettings = {
+            slow: 15,
+            fast: 2.5,
+            reallyFast: 0.55
+        }
+
+        OmniCubeArr[i].position.set(position01.x * 0, 0, position01.y, position01.z)
+        OmniCubeArr[i].scale.set(100, 100, 100)
+        ΔaOmniX_root.add(OmniCubeArr[i])
+
+        gsap.to(OmniCubeArr[0].scale, {
+            repeat: -1,
+            duration: 2.5,
+            // yoyo: true,
+            // ease: "power1",
+            // ease: "bounce.inOut",
+            ease: "slow(1,0.1,false)",
+            stagger: 5 * OmniCubeArr[1], // Stagger the start time for each cube
+            delay: 1,
+            x: 1,
+            y: 1,
+            z: 1, 
+            onComplete: () => {
+            // Reverse the second half of the animation
+                gsap.to(OmniCube.scale, {
+                    duration: 0.55,
+                    ease: "slow(1,0.1,false)",
+                    stagger: 5 * i, // Stagger the start time for each cube
+                    x: 100,
+                    y: 100,
+                    z: 100,
+                });
+            },
+
+        })
+
+        gsap.to(OmniCubeArr[1].scale, {
+            repeat: -1,
+            duration: 3.5,
+            // yoyo: true,
+            // ease: "power1",
+            // ease: "bounce.inOut",
+            ease: "slow(1,0.1,false)",
+            stagger: 5 * OmniCubeArr[1], // Stagger the start time for each cube
+            delay: 1,
+            x: 1,
+            y: 1,
+            z: 1, 
+            onComplete: () => {
+            // Reverse the second half of the animation
+                gsap.to(OmniCube.scale, {
+                    duration: 0.55,
+                    ease: "slow(1,0.1,false)",
+                    stagger: 5 * i, // Stagger the start time for each cube
+                    x: 100,
+                    y: 100,
+                    z: 100,
+                });
+            },
+
+        })
+
+        gsap.to(OmniCubeArr[2].scale, {
+            repeat: -1,
+            duration: 4.5,
+            // yoyo: true,
+            // ease: "power1",
+            // ease: "bounce.inOut",
+            ease: "slow(1,0.1,false)",
+            stagger: 5 * OmniCubeArr[1], // Stagger the start time for each cube
+            delay: 1,
+            x: 1,
+            y: 1,
+            z: 1, 
+            onComplete: () => {
+            // Reverse the second half of the animation
+                gsap.to(OmniCube.scale, {
+                    duration: 0.55,
+                    ease: "slow(1,0.1,false)",
+                    stagger: 5 * i, // Stagger the start time for each cube
+                    x: 100,
+                    y: 100,
+                    z: 100,
+                });
+            },
+
+        })
+
+        gsap.to(OmniCubeArr[3].scale, {
+            repeat: -1,
+            duration: 5.5,
+            // yoyo: true,
+            // ease: "power1",
+            // ease: "bounce.inOut",
+            ease: "slow(1,0.1,false)",
+            stagger: 5 * OmniCubeArr[1], // Stagger the start time for each cube
+            delay: 1,
+            x: 1,
+            y: 1,
+            z: 1, 
+            onComplete: () => {
+            // Reverse the second half of the animation
+                gsap.to(OmniCube.scale, {
+                    duration: 0.55,
+                    ease: "slow(1,0.1,false)",
+                    stagger: 5 * i, // Stagger the start time for each cube
+                    x: 100,
+                    y: 100,
+                    z: 100,
+                });
+            },
+
+        })
+
+        gsap.to(OmniCubeArr[4].scale, {
+            repeat: -1,
+            duration: 6.5,
+            // yoyo: true,
+            // ease: "power1",
+            // ease: "bounce.inOut",
+            ease: "slow(1,0.1,false)",
+            stagger: 5 * OmniCubeArr[1], // Stagger the start time for each cube
+            delay: 1,
+            x: 1,
+            y: 1,
+            z: 1, 
+            onComplete: () => {
+            // Reverse the second half of the animation
+                gsap.to(OmniCube.scale, {
+                    duration: 0.55,
+                    ease: "slow(1,0.1,false)",
+                    stagger: 5 * i, // Stagger the start time for each cube
+                    x: 100,
+                    y: 100,
+                    z: 100,
+                });
+            },
+
+        })
+
+        gsap.to(OmniCubeArr[5].scale, {
+            repeat: -1,
+            duration: 7.5,
+            // yoyo: true,
+            // ease: "power1",
+            // ease: "bounce.inOut",
+            ease: "slow(1,0.1,false)",
+            stagger: 5 * OmniCubeArr[1], // Stagger the start time for each cube
+            delay: 1,
+            x: 1,
+            y: 1,
+            z: 1, 
+            onComplete: () => {
+            // Reverse the second half of the animation
+                gsap.to(OmniCube.scale, {
+                    duration: 0.55,
+                    ease: "slow(1,0.1,false)",
+                    stagger: 5 * i, // Stagger the start time for each cube
+                    x: 100,
+                    y: 100,
+                    z: 100,
+                });
+            },
+
+        })
+    }
+
+
 
 
 
@@ -5453,21 +5757,21 @@ let particlesToCoreFunction = () => {
 
 
 
-            // let activeFirstPersonControls = () => {
-            //     controls = new FirstPersonControls(camera, renderer.domElement);
+            let activeFirstPersonControls = () => {
+                controls = new FirstPersonControls(camera, renderer.domElement);
 
-            //     controls.movementSpeed = 10;
-            //     controls.lookSpeed = 0.035
-            //     controls.noFly = true;
-            //     controls.lookVertical = true;
-            //     controls.mouseDragOn = false;
-            //     controls.verticalMax = 0
-            //     controls.verticalMin = 0
-            //     controls.heightMax = 0
-            //     controls.heightMin = 0
-            //     controls.update();
+                controls.movementSpeed = 10;
+                controls.lookSpeed = 0.035
+                controls.noFly = true;
+                controls.lookVertical = true;
+                controls.mouseDragOn = false;
+                controls.verticalMax = 0
+                controls.verticalMin = 0
+                controls.heightMax = 0
+                controls.heightMin = 0
+                controls.update();
 
-            // }
+            }
 
 
 			// controls = new FirstPersonControls(camera, renderer.domElement);
@@ -5499,6 +5803,18 @@ let particlesToCoreFunction = () => {
             //         activeFirstPersonControls()
             //     }
             // })
+
+
+            // Event listener for key press
+            window.addEventListener('keydown', (event) => {
+                if (event.key === 'c') {
+                    orbitControls.enabled = !orbitControls.enabled; // Toggle OrbitControls
+                    firstPersonControls.enabled = false; // Disable FirstPersonControls
+                } else if (event.key === 'v') {
+                    firstPersonControls.enabled = !firstPersonControls.enabled; // Toggle FirstPersonControls
+                    orbitControls.enabled = false; // Disable OrbitControls
+                }
+            });
 
 //..........................................................................................................
 //......CCC......TTTTTTTTT...LL.........RRRRR.........................UU.....UU....NN......N.......CCC......
@@ -5883,11 +6199,40 @@ let particlesToCoreFunction = () => {
                             "./assets/icons/Websites01/002-globe_grid.png", "",
                             "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
                             () => {
-                                gsap.to(camera.position, {
+
+                                gsap.to(UserΔ_ButtonPrimary.scale, {
                                     repeat: 0,
                                     duration: 1.5,
                                     ease: "none",
                                     delay: 1,
+                                    // x: 0.001,
+                                    // y: 0.001,
+                                    x: 0.010,
+                                    y: 0.010,
+                                    z: 0.010,
+                                
+
+                                })
+
+                                gsap.to(UserΔ_ButtonPrimary.scale, {
+                                    repeat: 0,
+                                    duration: 1.5,
+                                    ease: "none",
+                                    delay: 2,
+                                    // x: 0.001,
+                                    // y: 0.001,
+                                    x: 0.005,
+                                    y: 0.005,
+                                    z: 0.005,
+                                
+
+                                })
+
+                                gsap.to(camera.position, {
+                                    repeat: 0,
+                                    duration: 1.5,
+                                    ease: "none",
+                                    delay: 3,
                                     // x: 0.001,
                                     // y: 0.001,
                                     z: 17000,
@@ -5899,7 +6244,7 @@ let particlesToCoreFunction = () => {
                                     repeat: 0,
                                     duration: 1.5,
                                     ease: "none",
-                                    delay: 5,
+                                    delay: 7,
                                     // x: 0.001,
                                     y: 0,
                                     z: 1500,
@@ -6591,7 +6936,7 @@ let particlesToCoreFunction = () => {
 
 			camera.aspect = window.innerWidth / window.innerHeight;
 			camera.updateProjectionMatrix();
-			camera.lookAt()
+			camera.lookAt(0, 100, 0)
 
 			renderer.setSize(window.innerWidth, window.innerHeight);
             cssrenderer.setSize(window.innerWidth, window.innerHeight);

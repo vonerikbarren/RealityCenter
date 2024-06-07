@@ -2951,6 +2951,214 @@ let particlesToCoreFunction = () => {
 
 
 
+ // // starPiece_dataObjectComponents
+            // const starPieceGeometry = new THREE.ConeGeometry(5, 10, 4, 1, false, 0, 6.28)
+            // const starPieceMaterial = new THREE.MeshBasicMaterial(
+            //     {
+            //         map: whitePureRoom,
+            //         color: 0xffffff, 
+            //         alphaMap: whitePureRoom,
+            //         transparent: false,
+            //     }
+            // )
+
+            // const starPieceAmount = 300;
+            // const starPieceArr = []
+
+            // // starPiece_dataObjects_init
+            // for (let i = 0; i < starPieceAmount; i++) {
+            //     const starPieceFragment = new THREE.Mesh(starPieceGeometry, starPieceMaterial );
+            //     starPieceArr.push(starPieceFragment)
+            // }
+
+            // const starPieceRadius = 2000
+            // for (let i = 0; i < starPieceAmount; i++) {
+            //     const starPieces_phi = Math.acos(-1 + (2 * i) / starPieceAmount); // Latitude angle
+            //     const starPieces_theta = Math.sqrt(starPieceAmount * Math.PI) * starPieces_phi; // Longitude angle
+
+            //     const starPieces_x = starPieceRadius * Math.sin(starPieces_phi) * Math.cos(starPieces_theta)
+            //     const starPieces_y = starPieceRadius * Math.sin(starPieces_phi) * Math.sin(starPieces_theta)
+            //     const starPieces_z = starPieceRadius * Math.cos(starPieces_phi)
+
+            //     starPieceArr[i].position.set(starPieces_x, starPieces_y, starPieces_z)
+            //     starPieceArr[i].scale.set(10, 10, 10)
+            //     ΔaOmniX_root.add(starPieceArr[i])
+
+            //     starPieceArr[i].lookAt(camera.position)
+
+            //     gsap.to(starPieceArr[i].position, {
+            //         repeat: -1,
+            //         duration: 0.75,
+            //         // yoyo: true,
+            //         // ease: "power1",
+            //         // ease: "bounce.inOut",
+            //         ease: "slow(0.1,2,false)",
+            //         delay: 0,
+            //         x: 0,
+            //         y: 0,
+            //         z: 0, 
+
+            //     })
+            // }
+
+                
+            // // starPiece_dataObjectComponents
+            // const starPieceGeometry = new THREE.ConeGeometry(5, 10, 4, 1, false, 0, 6.28);
+            // const starPieceMaterial = new THREE.MeshBasicMaterial({
+            //     map: whitePureRoom,
+            //     color: 0xffffff,
+            //     alphaMap: whitePureRoom,
+            //     transparent: false,
+            // });
+
+            // const starPieceAmount = 300;
+            // const starPieceArr = [];
+
+            // // starPiece_dataObjects_init
+            // for (let i = 0; i < starPieceAmount; i++) {
+            //     const starPieceFragment = new THREE.Mesh(starPieceGeometry, starPieceMaterial);
+            //     starPieceArr.push(starPieceFragment);
+            // }
+
+            // const starPieceRadius = 2000;
+            // for (let i = 0; i < starPieceAmount; i++) {
+            //     const starPieces_phi = Math.acos(-1 + (2 * i) / starPieceAmount); // Latitude angle
+            //     const starPieces_theta = Math.sqrt(starPieceAmount * Math.PI) * starPieces_phi; // Longitude angle
+
+            //     const starPieces_x = starPieceRadius * Math.sin(starPieces_phi) * Math.cos(starPieces_theta);
+            //     const starPieces_y = starPieceRadius * Math.sin(starPieces_phi) * Math.sin(starPieces_theta);
+            //     const starPieces_z = starPieceRadius * Math.cos(starPieces_phi);
+
+            //     starPieceArr[i].position.set(starPieces_x, starPieces_y, starPieces_z);
+            //     starPieceArr[i].scale.set(10, 10, 10);
+            //     ΔaOmniX_root.add(starPieceArr[i]);
+
+            //     starPieceArr[i].lookAt(camera.position);
+
+            //     // Stagger the animations
+            //     gsap.to(starPieceArr[i].position, {
+            //         repeat: -1,
+            //         duration: 0.75,
+            //         ease: "slow(0.1,2,false)",
+            //         delay: i * 0.1, // Delay each mesh by 0.1 seconds
+            //         x: 0,
+            //         y: 0,
+            //         z: 0,
+            //         onUpdate: () => {
+            //             // Randomly change Y position
+            //             starPieceArr[i].scale.y += Math.random() * 10 - 5; // Adjust the range as needed
+            //         },
+            //     });
+            // }
+
+
+            // // starPiece_dataObjectComponents
+            // const starPieceGeometry = new THREE.ConeGeometry(5, 10, 4, 1, false, 0, 6.28);
+            // const starPieceMaterial = new THREE.MeshBasicMaterial({
+            //     map: whitePureRoom,
+            //     color: 0xffffff,
+            //     alphaMap: whitePureRoom,
+            //     transparent: false,
+            // });
+
+            // const starPieceAmount = 300;
+            // const starPieceArr = [];
+
+            // // starPiece_dataObjects_init
+            // for (let i = 0; i < starPieceAmount; i++) {
+            //     const starPieceFragment = new THREE.Mesh(starPieceGeometry, starPieceMaterial);
+            //     starPieceArr.push(starPieceFragment);
+            // }
+
+            // const starPieceRadius = 2000;
+            // for (let i = 0; i < starPieceAmount; i++) {
+            //     const starPieces_phi = Math.acos(-1 + (2 * i) / starPieceAmount); // Latitude angle
+            //     const starPieces_theta = Math.sqrt(starPieceAmount * Math.PI) * starPieces_phi; // Longitude angle
+
+            //     const starPieces_x = 0; // Start from the origin (X position)
+            //     const starPieces_y = 0; // Start from the origin (Y position)
+            //     const starPieces_z = 0; // Start from the origin (Z position)
+
+            //     // Calculate the final position
+            //     const final_x = starPieceRadius * Math.sin(starPieces_phi) * Math.cos(starPieces_theta);
+            //     const final_y = starPieceRadius * Math.sin(starPieces_phi) * Math.sin(starPieces_theta);
+            //     const final_z = starPieceRadius * Math.cos(starPieces_phi);
+
+            //     starPieceArr[i].position.set(starPieces_x, starPieces_y, starPieces_z);
+            //     starPieceArr[i].scale.set(10, 10, 10);
+            //     ΔaOmniX_root.add(starPieceArr[i]);
+
+            //     starPieceArr[i].lookAt(camera.position);
+
+            //     // Animate towards the final position
+            //     gsap.to(starPieceArr[i].position, {
+            //         repeat: -1,
+            //         duration: 0.75,
+            //         ease: "slow(0.1,2,false)",
+            //         delay: i * 0.1,
+            //         x: final_x,
+            //         y: final_y,
+            //         z: final_z,
+            //     });
+            // }
+
+
+
+            // // starPiece_dataObjectComponents
+            // const starPieceGeometry = new THREE.ConeGeometry(5, 10, 4, 1, false, 0, 6.28);
+            // const starPieceMaterial = new THREE.MeshBasicMaterial({
+            //     map: whitePureRoom,
+            //     color: 0xffffff,
+            //     alphaMap: whitePureRoom,
+            //     transparent: false,
+            // });
+
+            // const starPieceAmount = 300;
+            // const starPieceArr = [];
+
+            // // starPiece_dataObjects_init
+            // for (let i = 0; i < starPieceAmount; i++) {
+            //     const starPieceFragment = new THREE.Mesh(starPieceGeometry, starPieceMaterial);
+            //     starPieceArr.push(starPieceFragment);
+            // }
+
+            // const starPieceRadius = 2000;
+            // for (let i = 0; i < starPieceAmount; i++) {
+            //     const starPieces_phi = Math.acos(-1 + (2 * i) / starPieceAmount); // Latitude angle
+            //     const starPieces_theta = Math.sqrt(starPieceAmount * Math.PI) * starPieces_phi; // Longitude angle
+
+            //     const starPieces_x = 0; // Start from the origin (X position)
+            //     const starPieces_y = 0; // Start from the origin (Y position)
+            //     const starPieces_z = 0; // Start from the origin (Z position)
+
+            //     // Calculate the final position
+            //     const final_x = starPieceRadius * Math.sin(starPieces_phi) * Math.cos(starPieces_theta);
+            //     const final_y = starPieceRadius * Math.sin(starPieces_phi) * Math.sin(starPieces_theta);
+            //     const final_z = starPieceRadius * Math.cos(starPieces_phi);
+
+            //     starPieceArr[i].position.set(starPieces_x, starPieces_y, starPieces_z);
+            //     starPieceArr[i].scale.set(1, 1, 1);
+            //     ΔaOmniX_root.add(starPieceArr[i]);
+
+            //     // Set initial rotation to face the direction of movement
+            //     starPieceArr[i].lookAt(final_x, final_y, final_z);
+
+            //     // Animate towards the final position
+            //     gsap.to(starPieceArr[i].position, {
+            //         repeat: -1,
+            //         duration: 0.75,
+            //         ease: "slow(0.1,2,false)",
+            //         delay: i * 0.1,
+            //         x: final_x,
+            //         y: final_y,
+            //         z: final_z,
+            //         onUpdate: () => {
+            //             // Randomly change Y position
+            //             starPieceArr[i].scale.y = 10; // Adjust the range as needed
+            //         },
+            //     });
+            // }
+
 
 
 
@@ -3230,6 +3438,23 @@ let particlesToCoreFunction = () => {
             //     }
             // })
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+           
 //..........................................................................................................
 //......CCC......TTTTTTTTT...LL.........RRRRR.........................UU.....UU....NN......N.......CCC......
 //....CCCCCCCC..TTTTTTTTTTT.LLLL.......RRRRRRRRRR.........FFFFFFFFFF.UUUU...UUUU..NNNN....NNN....CCCCCCCC...
