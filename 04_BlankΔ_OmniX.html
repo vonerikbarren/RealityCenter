@@ -31,13 +31,23 @@
          <!-- VideoDomain02: Search_html_video01 -->
          <video id="none" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/TunnelAnimations/GalaxyTunnel01.mp4" style="display: none" ></video>
 
-         <video id="none" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/PlexusAnimations/Animation_ParticlesWhite01.mp4" style="display: none" ></video>
+         <video id="TechTileDemo01" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/TimeLapseAnimations/Hyperlapse_ForestFall01.mp4" style="display: none" ></video>
+
+         <video id="TechTileDemo02" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/TimeLapseAnimations/Hyperlapse_CrosswalkIntersection01.mp4" style="display: none" ></video>
+
+         <video id="TechTileDemo03" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/SphereAnimations/AbstractPatterns01_Triangles.mp4" style="display: none" ></video>
+
+         <video id="TechTileDemo04" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/GridsAnimations/GridRoom_RetroPurple_WithCenterLight.mp4" style="display: none" ></video>
+
+         <video id="TechTileDemo05" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/GridsAnimations//GridRoom_TopPurple_BottomGold.mp4" style="display: none" ></video>
+
+         <video id="TechTileDemo06" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/SphereAnimations/CyberSpace01.mp4" style="display: none" ></video>
 
          <video id="none" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/TunnelAnimations/GalaxyTunnel01.mp4" style="display: none" ></video>
 
          <video id="openingVideo" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/SphereAnimations/Equations3.mp4" style="display: none" ></video>
 
-         <video id="none" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/TunnelAnimations/TechTunnelA03.mp4" style="display: none" ></video>
+         <video id="Tunnel01" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/TunnelAnimations/TechTunnelA03.mp4" style="display: none" ></video>
 
          <video id="userVideo" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/PersonalAnimations/ExplainA01__What_is_a_Reality.mp4" style="display: none" ></video>
 	</div>
@@ -103,7 +113,7 @@
 		let container, stats;
 		let camera, scene, renderer;
         let cssrenderer
-		let controls, water, sun, mesh, ΔΦ, ΔΩ;
+		let orbitControls, firstPersonControls, water, sun, mesh, ΔΦ, ΔΩ;
 		let Φ, MeshHDC_01, meshA1, goldenGearTest, goldenGearTest2;
 		let neoncircle;
 		let timeSphere, mesh_timeSphere_L0, mesh_Reality_A0, mesh_timeSphere_L1, mesh_lightContainer_A0;
@@ -484,6 +494,37 @@
         let ΔaOmniX_MainContainer_root
             let ΔaOmniX_MainContainer_Primary, mesh_ΔaOmniX_MainContainer_Primary
             let ΔaOmniX_MainContainer_Layer01, mesh_ΔaOmniX_MainContainer_Layer01
+
+        let videoPlane_00_root
+            let videoPlane_00_Base
+            let videoPlane_00_Test, mesh_videoPlane_00_Test
+
+        let Omnix_Master_Wallpaper_root
+            let Omnix_Master_Wallpaper00, mesh_Omnix_Master_Wallpaper00
+            let Omnix_Master_Wallpaper01, mesh_Omnix_Master_Wallpaper01
+            let Omnix_Master_Wallpaper02, mesh_Omnix_Master_Wallpaper02
+
+        let OmniX_Master_VideoWallpaper_root
+            
+            let Omnix_Master_VideoWallpaper00
+            let var_Omnix_Master_VideoWallpaper00, tex_Omnix_Master_VideoWallpaper00
+            let mesh_Omnix_Master_VideoWallpaper00
+
+
+
+        // 
+
+        let OmniX_CubeExternalApps_root
+            let OmniX_CubeExternalApps_front
+                let OmniX_CubeExternalApps_front_TimeTime_ExternalClock
+                let OmniX_CubeExternalApps_front_TimeTime_ExternalClock_Skin
+                let OmniX_CubeExternalApps_front_TimeTime_Button
+            let OmniX_CubeExternalApps_back
+            let OmniX_CubeExternalApps_up
+            let OmniX_CubeExternalApps_down
+            let OmniX_CubeExternalApps_left
+            let OmniX_CubeExternalApps_right
+            
                 
 
 
@@ -745,7 +786,7 @@
 			// Search.Camera
 			camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 500000);
 			// camera.position.set(30, 6000, 24000); // previous
-            camera.position.set(25, 0, 1500); // previous
+            camera.position.set(25, 70, 1440); // previousc
 			camera.view = sun;
 
 
@@ -1491,6 +1532,45 @@
 					return panelData
 				}
 
+                // ----------------------------------------------------------------------------------------------------
+				// \- [OOASA6PE01_A7_07__CS3dObj_makePDF_ViewerCircle] \- 
+                // ----------------------------------------------------------------------------------------------------
+				function makePDF_ViewerCircle(
+					px, py, pz, 
+					rx, ry, rz,
+					sx, sy, sz,
+					pdfID,
+					fileRef,
+					fileWidth, fileHeight,
+					
+
+				){
+					// |- # Create Root Div
+					const pdfDiv = document.createElement("div");
+					pdfDiv.id = pdfID
+					pdfDiv.width = fileWidth
+					pdfDiv.height = fileHeight
+
+					// |- ## Create Component
+					const pdfComponent = document.createElement("embed")
+					pdfComponent.setAttribute("src", fileRef)
+					pdfComponent.setAttribute("width", fileWidth)
+					pdfComponent.setAttribute("height", fileHeight)
+					pdfComponent.style.display = "default"
+					// pdfComponent.style.border = "3px solid rgba(0, 255, 208, 0.75)"
+					pdfComponent.style.border = "3px solid rgba(255, 255, 255, 0.75)"
+					pdfComponent.style.borderRadius = "150px"
+					pdfDiv.appendChild(pdfComponent)			
+
+					// Pushing Function Out
+					const pdfComponentData = new CSS3DObject(pdfDiv)
+					pdfComponentData.position.set(px, py, pz)
+					pdfComponentData.rotation.set(rx, ry, rz)
+					pdfComponentData.scale.set(sx, sy, sz)
+
+					return pdfComponentData
+				}
+
 
             //.............................................................................................
             //....SSSSSS.....EEEEEEEEE..TTTTTTTTT..TTTTTTTTT...I....NN......N.......GGGGG.......SSSSSS.....
@@ -1712,6 +1792,39 @@
 						})
 					}
 				})
+            
+            // ###########################################################
+            //  User Key Controls for Omni-X
+            // ###########################################################
+
+
+                document.addEventListener("keydown", function(event) {
+					if (event.key === "X") {
+						// camera.position.y += 10000
+
+						gsap.to(camera.position, {
+                            repeat: 0,
+                            duration: 1.5,
+                            ease: "none",
+                            delay: 0.25,
+                            // x: 0.001,
+                            // y: 0.001,
+                            z: 17000,
+                        
+
+                        })
+
+                        // gsap.to(water.position, {
+                        //     duration: 7,
+                        //     delay: 0,
+                        //     x: 0,
+                        //     y: -10000,
+                        //     z: 0,
+
+                        // })
+                    }
+				})
+
 
 
 
@@ -1969,28 +2082,30 @@ scene.add( helper );
 
 
 ΔaOmniX_root = new THREE.Group()
-ΔaOmniX_root.position.set(0, 45, 0)
+ΔaOmniX_root.position.set(0, 10000, 0)
 ΔaOmniX_root.rotation.set(0, 0, 0)
-ΔaOmniX_root.scale.set(1, 1, 1)
+ΔaOmniX_root.scale.set(0.75, 0.75, 0.75)
 scene.add(ΔaOmniX_root)
 
 
 let ΔOmniX_bounceLevetation = () => {
     gsap.to(ΔaOmniX_root.position, {
             repeat: -1,
+            yoyo: true,
             duration: 10,
             ease: "bounce",
             delay: 0,
-            y: 45,
+            y: 900,
 
         })
 
     gsap.to(ΔaOmniX_root.position, {
         repeat: -1,
+        yoyo: true,
         duration: 5,
         ease: "bounce",
         delay: 10,
-        y: 47,
+        y: 850,
     })
 }
 ΔOmniX_bounceLevetation()
@@ -4605,11 +4720,11 @@ const geo_CylinderOpen_03 = new THREE.CylinderGeometry(
     const OmniCube_Geo = new THREE.BoxGeometry(15, 15, 15)
     const OmniCube_Mat = new THREE.MeshBasicMaterial(
         {
-            map: SceneWallpaper_01,
+            map: SceneWallpaper_02,
             color: 0xffffff,
-            alphaMap: SceneWallpaper_01,
+            alphaMap: SceneWallpaper_02,
             transparent: false,
-            // blending: THREE.AdditiveBlending,
+            blending: THREE.AdditiveBlending,
             side: THREE.DoubleSide,
         }
     )
@@ -4635,165 +4750,143 @@ const geo_CylinderOpen_03 = new THREE.CylinderGeometry(
             reallyFast: 0.55
         }
 
+        let tl = gsap.timeline(
+            {
+                duration: 1,
+                delay: 0.5,
+                repeat: -1,
+                defaults: {
+                    duration: 2.575,
+                    delay: -0.5,
+                    onComplete: () => {
+                        OmniCubeArr[i].rotation.set(0, 0, 0)
+                    }
+                }
+            }
+        )
+
         OmniCubeArr[i].position.set(position01.x * 0, 0, position01.y, position01.z)
-        OmniCubeArr[i].scale.set(100, 100, 100)
-        ΔaOmniX_root.add(OmniCubeArr[i])
 
-        gsap.to(OmniCubeArr[0].scale, {
-            repeat: -1,
-            duration: 2.5,
-            // yoyo: true,
-            // ease: "power1",
-            // ease: "bounce.inOut",
-            ease: "slow(1,0.1,false)",
-            stagger: 5 * OmniCubeArr[1], // Stagger the start time for each cube
+        OmniCubeArr[5].scale.set(75, 75, 75)
+        OmniCubeArr[4].scale.set(70, 70, 70)
+        OmniCubeArr[3].scale.set(65, 65, 65)
+        OmniCubeArr[2].scale.set(60, 60, 60)
+        OmniCubeArr[1].scale.set(60, 60, 60)
+
+
+
+        ΔaOmniX_root.add(OmniCubeArr[5])
+        ΔaOmniX_root.add(OmniCubeArr[4])
+        ΔaOmniX_root.add(OmniCubeArr[3])
+        ΔaOmniX_root.add(OmniCubeArr[2])
+
+        OmniCubeArr[i].rotation.set(0, 0, 0)
+
+        //
+
+        tl.to(OmniCubeArr[5].rotation, {
             delay: 1,
+            // ease: "slow(1,0.1,false)",
+            x: 1,
+            y: 3.14,
+            z: 1, 
+            onComplete: () => {
+                OmniCubeArr[i].rotation.set(0, 0, 0)
+
+            }
+            
+        })
+
+        tl.to(OmniCubeArr[5].scale, {
+            delay: -2.575,
+            // ease: "slow(1,0.1,false)",
             x: 1,
             y: 1,
             z: 1, 
-            onComplete: () => {
-            // Reverse the second half of the animation
-                gsap.to(OmniCube.scale, {
-                    duration: 0.55,
-                    ease: "slow(1,0.1,false)",
-                    stagger: 5 * i, // Stagger the start time for each cube
-                    x: 100,
-                    y: 100,
-                    z: 100,
-                });
-            },
-
+            
         })
 
-        gsap.to(OmniCubeArr[1].scale, {
-            repeat: -1,
-            duration: 3.5,
-            // yoyo: true,
-            // ease: "power1",
-            // ease: "bounce.inOut",
-            ease: "slow(1,0.1,false)",
-            stagger: 5 * OmniCubeArr[1], // Stagger the start time for each cube
+        //
+
+        tl.to(OmniCubeArr[4].rotation, {
             delay: 1,
+            // ease: "slow(1,0.1,false)",
+            x: 1,
+            y: 3.14,
+            z: 1, 
+            onComplete: () => {
+                OmniCubeArr[i].rotation.set(0, 0, 0)
+
+            }
+            
+        })
+
+        tl.to(OmniCubeArr[4].scale, {
+            delay: -2.575,
+            // ease: "slow(1,0.1,false)",
             x: 1,
             y: 1,
             z: 1, 
-            onComplete: () => {
-            // Reverse the second half of the animation
-                gsap.to(OmniCube.scale, {
-                    duration: 0.55,
-                    ease: "slow(1,0.1,false)",
-                    stagger: 5 * i, // Stagger the start time for each cube
-                    x: 100,
-                    y: 100,
-                    z: 100,
-                });
-            },
-
+            
         })
 
-        gsap.to(OmniCubeArr[2].scale, {
-            repeat: -1,
-            duration: 4.5,
-            // yoyo: true,
-            // ease: "power1",
-            // ease: "bounce.inOut",
-            ease: "slow(1,0.1,false)",
-            stagger: 5 * OmniCubeArr[1], // Stagger the start time for each cube
-            delay: 1,
+        // 
+
+        tl.to(OmniCubeArr[3].rotation, {
+            delay:  1,
+            // ease: "slow(1,0.1,false)",
+            x: 1,
+            y: 3.14,
+            z: 1, 
+
+            onComplete: () => {
+                OmniCubeArr[i].rotation.set(0, 0, 0)
+
+            }
+            
+        })
+
+        tl.to(OmniCubeArr[3].scale, {
+            delay: -2.575,
+            // ease: "slow(1,0.1,false)",
             x: 1,
             y: 1,
             z: 1, 
-            onComplete: () => {
-            // Reverse the second half of the animation
-                gsap.to(OmniCube.scale, {
-                    duration: 0.55,
-                    ease: "slow(1,0.1,false)",
-                    stagger: 5 * i, // Stagger the start time for each cube
-                    x: 100,
-                    y: 100,
-                    z: 100,
-                });
-            },
-
+            
         })
 
-        gsap.to(OmniCubeArr[3].scale, {
-            repeat: -1,
-            duration: 5.5,
-            // yoyo: true,
-            // ease: "power1",
-            // ease: "bounce.inOut",
-            ease: "slow(1,0.1,false)",
-            stagger: 5 * OmniCubeArr[1], // Stagger the start time for each cube
+        //
+
+        tl.to(OmniCubeArr[2].rotation, {
             delay: 1,
+            // ease: "slow(1,0.1,false)",
+            x: 1,
+            y: 3.13,
+            z: 1, 
+            onComplete: () => {
+                OmniCubeArr[i].rotation.set(0, 0, 0)
+
+            }
+            
+        })
+
+        tl.to(OmniCubeArr[2].scale, {
+            delay: -2.575,
+            // ease: "slow(1,0.1,false)",
             x: 1,
             y: 1,
             z: 1, 
-            onComplete: () => {
-            // Reverse the second half of the animation
-                gsap.to(OmniCube.scale, {
-                    duration: 0.55,
-                    ease: "slow(1,0.1,false)",
-                    stagger: 5 * i, // Stagger the start time for each cube
-                    x: 100,
-                    y: 100,
-                    z: 100,
-                });
-            },
-
+            
         })
 
-        gsap.to(OmniCubeArr[4].scale, {
-            repeat: -1,
-            duration: 6.5,
-            // yoyo: true,
-            // ease: "power1",
-            // ease: "bounce.inOut",
-            ease: "slow(1,0.1,false)",
-            stagger: 5 * OmniCubeArr[1], // Stagger the start time for each cube
-            delay: 1,
-            x: 1,
-            y: 1,
-            z: 1, 
-            onComplete: () => {
-            // Reverse the second half of the animation
-                gsap.to(OmniCube.scale, {
-                    duration: 0.55,
-                    ease: "slow(1,0.1,false)",
-                    stagger: 5 * i, // Stagger the start time for each cube
-                    x: 100,
-                    y: 100,
-                    z: 100,
-                });
-            },
+        //
 
-        })
+        
 
-        gsap.to(OmniCubeArr[5].scale, {
-            repeat: -1,
-            duration: 7.5,
-            // yoyo: true,
-            // ease: "power1",
-            // ease: "bounce.inOut",
-            ease: "slow(1,0.1,false)",
-            stagger: 5 * OmniCubeArr[1], // Stagger the start time for each cube
-            delay: 1,
-            x: 1,
-            y: 1,
-            z: 1, 
-            onComplete: () => {
-            // Reverse the second half of the animation
-                gsap.to(OmniCube.scale, {
-                    duration: 0.55,
-                    ease: "slow(1,0.1,false)",
-                    stagger: 5 * i, // Stagger the start time for each cube
-                    x: 100,
-                    y: 100,
-                    z: 100,
-                });
-            },
+        
 
-        })
+
+        
     }
 
 
@@ -5020,6 +5113,63 @@ const geo_CylinderOpen_03 = new THREE.CylinderGeometry(
             ΔaOmniX_root.add(aOmniScene)
 
 
+            Omnix_Master_Wallpaper_root = new THREE.Group()
+            Omnix_Master_Wallpaper_root.position.set(0, 0, 0)
+            Omnix_Master_Wallpaper_root.rotation.set(0, 0, 0)
+            Omnix_Master_Wallpaper_root.scale.set(1, 1, 1)
+            ΔaOmniX_root.add(Omnix_Master_Wallpaper_root)
+
+
+                Omnix_Master_Wallpaper00 = new THREE.Group()
+                Omnix_Master_Wallpaper00.position.set(0, 0, 0)
+                Omnix_Master_Wallpaper00.rotation.set(0, 0, 0)
+                Omnix_Master_Wallpaper00.scale.set(1, 1, 1)
+                Omnix_Master_Wallpaper_root.add(Omnix_Master_Wallpaper00)
+
+                    const mat_Omnix_Master_Wallpaper00 = new THREE.MeshBasicMaterial({ map: starryNight04, side: THREE.DoubleSide });
+                    mesh_Omnix_Master_Wallpaper00 = new THREE.Mesh(geo_objT_SphereA0, mat_Omnix_Master_Wallpaper00);
+                    mat_Omnix_Master_Wallpaper00.wireframe = false
+                    mat_Omnix_Master_Wallpaper00.transparent = true;
+                    mat_Omnix_Master_Wallpaper00.alphaMap = starryNight04;
+                    mat_Omnix_Master_Wallpaper00.blending = THREE.AdditiveBlending
+                    // mat_Omnix_Master_Wallpaper00.color = new THREE.Color('#1ed9d0') // neonGreenBlue
+                    // mat_Omnix_Master_Wallpaper00.color = new THREE.Color('#7851A9') // IntensePurple
+                    mesh_Omnix_Master_Wallpaper00.position.set(0, 0, 0);
+                    mesh_Omnix_Master_Wallpaper00.scale.set(5000, 5000, 5000);
+                    mesh_Omnix_Master_Wallpaper00.rotation.set(0, 0, 0)
+
+                    // mesh_Omnix_Master_Wallpaper00.position.set(-15000, 0, 0);
+                    // mesh_Omnix_Master_Wallpaper00.rotateX( - Math.PI / 2 );
+                    // mesh_Omnix_Master_Wallpaper00.rotateY( - Math.PI / 2 );
+
+                    // Omnix_Master_Wallpaper00.lookAt(camera)
+                    
+                    Omnix_Master_Wallpaper00.add(mesh_Omnix_Master_Wallpaper00)
+
+
+                    let spin_Omnix_Master_Wallpaper_root = () => {
+                        gsap.to(mesh_Omnix_Master_Wallpaper00.rotation, {
+                            repeat: -1,
+                            repeatRefresh: false,
+                            duration: 1.55,
+                            yoyoEase: true,
+                            ease: "none",
+                            delay: 0,
+                            x: 3.14,
+                            y: 3.14,
+                            z: 3.14,
+                        
+
+                        })
+
+                        
+                        
+
+                    }
+
+                    spin_Omnix_Master_Wallpaper_root()
+
+
             OmniScene_StarsLayer_root = new THREE.Group()
             OmniScene_StarsLayer_root.position.set(0, 0, 0)
             OmniScene_StarsLayer_root.rotation.set(0, 0, 0)
@@ -5084,11 +5234,12 @@ const geo_CylinderOpen_03 = new THREE.CylinderGeometry(
                 ΔaOmniX_MainContainer_Primary.scale.set(1, 1, 1)
                 ΔaOmniX_MainContainer_root.add(ΔaOmniX_MainContainer_Primary)
 
-                    const mat_ΔaOmniX_MainContainer_Primary = new THREE.MeshBasicMaterial({ map: cyberRoomWhite01, side: THREE.DoubleSide });
+                    const mat_ΔaOmniX_MainContainer_Primary = new THREE.MeshBasicMaterial({ map: aOmniX_Container02, side: THREE.DoubleSide });
                     mesh_ΔaOmniX_MainContainer_Primary = new THREE.Mesh(geo_objT_BoxA0, mat_ΔaOmniX_MainContainer_Primary);
                     mat_ΔaOmniX_MainContainer_Primary.wireframe = false
-                    mat_ΔaOmniX_MainContainer_Primary.transparent = false;
-                    mat_ΔaOmniX_MainContainer_Primary.alphaMap = cyberRoomWhite01;
+                    mat_ΔaOmniX_MainContainer_Primary.transparent = true;
+                    mat_ΔaOmniX_MainContainer_Primary.alphaMap = aOmniX_Container02;
+                    mat_ΔaOmniX_MainContainer_Primary.blending = THREE.AdditiveBlending
                     // mat_ΔaOmniX_MainContainer_Primary.blending = THREE.AdditiveBlending
                     // mat_ΔaOmniX_MainContainer_Primary.color = new THREE.Color('#1ed9d0') // neonGreenBlue
                     // mat_ΔaOmniX_MainContainer_Primary.color = new THREE.Color('#7851A9') // IntensePurple
@@ -5131,11 +5282,207 @@ const geo_CylinderOpen_03 = new THREE.CylinderGeometry(
                     
                     ΔaOmniX_MainContainer_Layer01.add(mesh_ΔaOmniX_MainContainer_Layer01)
 
+                
+            OmniX_Master_VideoWallpaper_root = new THREE.Group()
+            OmniX_Master_VideoWallpaper_root.position.set(0, 0, 0)
+            OmniX_Master_VideoWallpaper_root.rotation.set(0, 0, 0)
+            OmniX_Master_VideoWallpaper_root.scale.set(1, 1, 1)
+            ΔaOmniX_root.add(OmniX_Master_VideoWallpaper_root)
+
+
+                Omnix_Master_VideoWallpaper00 = new THREE.Group()
+                Omnix_Master_VideoWallpaper00.position.set(0, 0, 0)
+                Omnix_Master_VideoWallpaper00.rotation.set(0, 0, 0)
+                Omnix_Master_VideoWallpaper00.scale.set(1, 1, 1)
+                OmniScene_StarsLayer_root.add(Omnix_Master_VideoWallpaper00)
+
+
+                const var_Omnix_Master_VideoWallpaper00 = document.getElementById('openingVideo') // TechTileDemo06
+				const tex_Omnix_Master_VideoWallpaper00 = new THREE.VideoTexture(var_Omnix_Master_VideoWallpaper00)
+                tex_Omnix_Master_VideoWallpaper00.format = THREE.RGBAFormat
+                const mat_Omnix_Master_VideoWallpaper00 = new THREE.MeshBasicMaterial(
+					{
+						map: tex_Omnix_Master_VideoWallpaper00,
+                        alphaMap: tex_Omnix_Master_VideoWallpaper00, // SceneWallpaper_01
+						side: THREE.DoubleSide,
+						toneMapped: false,
+                        transparent: true,
+                        blending: THREE.AdditiveBlending
+					}
+				)
+
+                mesh_Omnix_Master_VideoWallpaper00 = new THREE.Mesh(
+					geo_objT_BoxA0, 
+					mat_Omnix_Master_VideoWallpaper00
+				)
+
+                mesh_Omnix_Master_VideoWallpaper00.position.set(0, 0, 0)
+				mesh_Omnix_Master_VideoWallpaper00.rotation.set(0, 0, 0)
+				// mesh_Omnix_Master_VideoWallpaper00.scale.set(10000, 10000, 10000)
+                mesh_Omnix_Master_VideoWallpaper00.scale.set(1200, 1200, 1200)
+				OmniX_Master_VideoWallpaper_root.add(mesh_Omnix_Master_VideoWallpaper00)
+
+
+
+
+                    
+
+                    // const mat_Omnix_Master_VideoWallpaper00 = new THREE.MeshBasicMaterial({ map: starryNight04, side: THREE.DoubleSide });
+                    // mesh_Omnix_Master_VideoWallpaper00 = new THREE.Mesh(geo_objT_SphereA0, mat_Omnix_Master_VideoWallpaper00);
+                    // mat_Omnix_Master_VideoWallpaper00.wireframe = false
+                    // mat_Omnix_Master_VideoWallpaper00.transparent = true;
+                    // mat_Omnix_Master_VideoWallpaper00.alphaMap = starryNight04;
+                    // mat_Omnix_Master_VideoWallpaper00.blending = THREE.AdditiveBlending
+                    // // mat_Omnix_Master_VideoWallpaper00.color = new THREE.Color('#1ed9d0') // neonGreenBlue
+                    // // mat_Omnix_Master_VideoWallpaper00.color = new THREE.Color('#7851A9') // IntensePurple
+                    // mesh_Omnix_Master_VideoWallpaper00.position.set(0, 0, 0);
+                    // mesh_Omnix_Master_VideoWallpaper00.scale.set(500, 500, 500);
+                    // mesh_Omnix_Master_VideoWallpaper00.rotation.set(0, 0, 0)
+
+                    // // mesh_Omnix_Master_VideoWallpaper00.position.set(-15000, 0, 0);
+                    // // mesh_Omnix_Master_VideoWallpaper00.rotateX( - Math.PI / 2 );
+                    // mesh_Omnix_Master_VideoWallpaper00.rotateY( - Math.PI / 2 );
+
+                    // // Omnix_Master_VideoWallpaper00.lookAt(camera)
+                    
+                    // Omnix_Master_VideoWallpaper00.add(mesh_Omnix_Master_VideoWallpaper00)
+
+
+
+
+
+//..............................
+//..EEEEEEEEE...................
+//.EEEEEEEEEEE...........xttt...
+//.EEEEEEEEEEE...........xttt...
+//.EEEEEEEEEEE...........xttt...
+//.EEEE.......EExx..xxxxxxtttt..
+//.EEEEEEEEEE.EExxxxxxxxxxtttt..
+//.EEEEEEEEEE..Exxxxxxx.xxtttt..
+//.EEEEEEEEEE..Exxxxxx...xttt...
+//.EEEEEEEEEE...xxxxxx...xttt...
+//.EEEE.........xxxxxx...xttt...
+//.EEEE.........xxxxxx...xttt...
+//.EEEEEEEEEEE.Exxxxxxx..xttt...
+//.EEEEEEEEEEEEExxxxxxxx.xtttt..
+//.EEEEEEEEEEEEExx.xxxxx.xtttt..
+//.........................ttt..
+//..............................
+
+
+//................................................
+//......AAA.......................................
+//.....AAAAA......................................
+//.....AAAAA......................................
+//....AAAAAAA.....................................
+//....AAAAAAA...ppppppppp..ppppppppp...ssssssss...
+//....AAAAAAA...pppppppppp.pppppppppp..ssssssss...
+//...AAAAAAAAA..ppppppppppppppppppppppssssssssss..
+//...AAAA.AAAA..ppppp.pppppppppp.pppppssssssssss..
+//...AAAAAAAAAA.pppp...pppppppp...pppp.ssssssss...
+//..AAAAAAAAAAA.pppp...pppppppp...pppp.ssssssss...
+//..AAAAAAAAAAA.pppp...pppppppp...ppppssssssssss..
+//..AAAAAAAAAAAAppppppppppppppppppppppsssss.ssss..
+//.AAAAA....AAAApppppppppp.pppppppppp.ssssssssss..
+//.AAAA.....AAAApppppppppp.pppppppppp..ssssssss...
+//..............pppp.ppp...pppp.ppp.....ssssss....
+//..............pppp.......pppp...................
+//..............pppp.......pppp...................
+//..............pppp.......pppp...................
+//................................................
+
+
+
+OmniX_CubeExternalApps_root = new THREE.Group()
+OmniX_CubeExternalApps_root.position.set(0, 0, 0)
+OmniX_CubeExternalApps_root.rotation.set(0, 0, 0)
+OmniX_CubeExternalApps_root.scale.set(1, 1, 1)
+ΔaOmniX_root.add(OmniX_CubeExternalApps_root)
+
+
+
+
+
+
+//............................................................................................
+//...................................................AAA......................................
+//.FFFFFFFFFF..............................tttt.....AAAAA.....................................
+//.FFFFFFFFFF..............................tttt.....AAAAA.....................................
+//.FFFFFFFFFF..............................tttt....AAAAAAA....................................
+//.FFFF.......rrrrrr..ooooooo...nnnnnnnnn.nttttt...AAAAAAA...Apppppppp..ppppppppp...ssssssss..
+//.FFFF.......rrrrrr.ooooooooo..nnnnnnnnn.nttttt...AAAAAAA...Appppppppp.pppppppppp..ssssssss..
+//.FFFFFFFFF..rrrrrrroooooooooo.nnnnnnnnn.nttttt..AAAAAAAAA..Appppppppppppppppppppppssssssss..
+//.FFFFFFFFF..rrrr..rooo...oooo.nnnn.nnnn..tttt...AAAA.AAAA..Apppp.pppppppppp.ppppppssssssss..
+//.FFFFFFFFF..rrr...rooo...oooo.nnn...nnn..tttt...AAAAAAAAAA.Appp...pppppppp...pppp.ssssssss..
+//.FFFF.......rrr...rooo...oooo.nnn...nnn..tttt..AAAAAAAAAAA.Appp...pppppppp...pppp.ssssssss..
+//.FFFF.......rrr...rooo...oooo.nnn...nnn..tttt..AAAAAAAAAAA.Appp...pppppppp...pppppssssssss..
+//.FFFF.......rrr...roooooooooo.nnn...nnn..tttt..AAAAAAAAAAAAAppppppppppppppppppppppssss.sss..
+//.FFFF.......rrr....ooooooooo..nnn...nnn..ttttttAAAA....AAAAAppppppppp.pppppppppp.pssssssss..
+//.FFFF.......rrr.....ooooooo...nnn...nnn..ttttttAAA.....AAAAAppppppppp.pppppppppp..ssssssss..
+//.....................ooooo.................ttt.............Appp.ppp...pppp.ppp.....ssssss...
+//...........................................................Appp.......pppp..................
+//...........................................................Appp.......pppp..................
+//...........................................................Appp.......pppp..................
+//............................................................................................
+
+
+
+    OmniX_CubeExternalApps_front = new THREE.Group()
+    OmniX_CubeExternalApps_front.position.set(0, 0, 9250)
+    OmniX_CubeExternalApps_front.rotation.set(0, 0, 0)
+    OmniX_CubeExternalApps_front.scale.set(1, 1, 1)
+    OmniX_CubeExternalApps_root.add(OmniX_CubeExternalApps_front)
+
+        OmniX_CubeExternalApps_front_TimeTime_ExternalClock = new THREE.Group()
+        OmniX_CubeExternalApps_front_TimeTime_ExternalClock.position.set(0, 0, 0)
+        OmniX_CubeExternalApps_front_TimeTime_ExternalClock.rotation.set(0, 0, 0)
+        OmniX_CubeExternalApps_front_TimeTime_ExternalClock.scale.set(50, 50, 50)
+        OmniX_CubeExternalApps_front.add(OmniX_CubeExternalApps_front_TimeTime_ExternalClock)
+
+        OmniX_CubeExternalApps_front_TimeTime_ExternalClock.add(
+            new makePDF_ViewerCircle(
+                0, 0, 0,
+                0, 0, 0,
+                0.1, 0.1, 0.1,
+                "hoverClockA1",
+                "./pages/Applications/01-TimeClock/TimeClock.html",
+                "1200px", "1200px"
+            )
+        )
+
+
+        OmniX_CubeExternalApps_front_TimeTime_ExternalClock_Skin = new THREE.Group()
+        OmniX_CubeExternalApps_front_TimeTime_ExternalClock_Skin.position.set(0, 0, 0)
+        OmniX_CubeExternalApps_front_TimeTime_ExternalClock_Skin.rotation.set(0, 0, 0)
+        OmniX_CubeExternalApps_front_TimeTime_ExternalClock_Skin.scale.set(20, 20, 20)
+        OmniX_CubeExternalApps_front.add(OmniX_CubeExternalApps_front_TimeTime_ExternalClock_Skin)
+
+        OmniX_CubeExternalApps_front_TimeTime_ExternalClock_Skin.add(
+            new hoverObject(
+                'img',
+                0, 2, 29,
+                0, 0, 0,
+                0.1, 0.1, 0.1,
+                "Testing234", "TestingClass234",
+                "./assets/img/05-Env/Clocks/Clock03_A1.png", "",
+                "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+            )
+        )
+
+
+
+
+
+
+
+
+
+
 			sun = new THREE.Vector3();
 
 			// Water
 
-			const waterGeometry = new THREE.PlaneGeometry(50000, 50000);
+			const waterGeometry = new THREE.PlaneGeometry(500000, 500000);
 
 			water = new Water(
 				waterGeometry,
@@ -5151,6 +5498,7 @@ const geo_CylinderOpen_03 = new THREE.CylinderGeometry(
 					sunColor: 0xffffff,
 					waterColor: 0x001e0f,
 					distortionScale: 3.7,
+                    // side: THREE.DoubleSide,
 					fog: aOmniScene.fog !== undefined
 				}
 			);
@@ -5175,8 +5523,8 @@ const geo_CylinderOpen_03 = new THREE.CylinderGeometry(
 			skyUniforms['mieDirectionalG'].value = 0.8;
 
 			const parameters = {
-				elevation: 2,
-				azimuth: 180
+				elevation: 1.25,
+				azimuth: 122.5
 			};
 
 			sky.rotation.x = Math.PI / 2;
@@ -5244,7 +5592,7 @@ const geo_CylinderOpen_03 = new THREE.CylinderGeometry(
                     // ease: "bounce.inOut",
                     // ease: "slow(0.1,2,false)",
                     delay: 20,
-                    y: -10,
+                    y: 0,
                     
 
                 })
@@ -5271,9 +5619,9 @@ const geo_CylinderOpen_03 = new THREE.CylinderGeometry(
                     // ease: "bounce.inOut",
                     // ease: "slow(0.1,2,false)",
                     delay: 20,
-                    x:1,
-                    y:1,
-                    z:1, 
+                    x:10,
+                    y:10,
+                    z:10, 
 
                 })
 
@@ -5286,11 +5634,11 @@ const geo_CylinderOpen_03 = new THREE.CylinderGeometry(
                     // ease: "bounce.inOut",
                     // ease: "slow(0.1,2,false)",
                     delay: 22,
-                    y: -500,
+                    y: -1500,
                     
                 })
 
-                water.size = 0.05
+                water.size = 0.01
                 
             }
 
@@ -5344,9 +5692,9 @@ const sphereSpace_MaterialPureWhite = new THREE.MeshBasicMaterial(
         map: SceneWallpaper_01,
         side: THREE.DoubleSide,
         color: 0xffffff, 
-        alphaMap: whitePureRoom,
+        alphaMap: SceneWallpaper_01,
         transparent: false,
-        blending: THREE.AdditiveBlending
+        // blending: THREE.AdditiveBlending
     }
 )
 
@@ -5362,12 +5710,12 @@ for (let i = 0; i < numSpaceSpheres; i++) {
     SpaceSpheresArr[i].scale.set(25, 25, 25)
     SpaceSpheresArr[6].scale.set(200, 200, 200)
 
-    SpaceSpheresArr[0].position.set(0, 0, 3000)
-    SpaceSpheresArr[1].position.set(0, 0, -3000)
-    SpaceSpheresArr[2].position.set(-3000, 0, 0)
-    SpaceSpheresArr[3].position.set(3000, 0, 0)
-    SpaceSpheresArr[4].position.set(0, 3000, 0)
-    SpaceSpheresArr[5].position.set(0, -3000, 0)
+    SpaceSpheresArr[0].position.set(0, 0, 5000)
+    SpaceSpheresArr[1].position.set(0, 0, -5000)
+    SpaceSpheresArr[2].position.set(-5000, 0, 0)
+    SpaceSpheresArr[3].position.set(5000, 0, 0)
+    SpaceSpheresArr[4].position.set(0, 5000, 0)
+    SpaceSpheresArr[5].position.set(0, -5000, 0)
     SpaceSpheresArr[6].position.set(0, 0, 0)
 
     ΔaOmniX_root.add(SpaceSpheresArr[i]);
@@ -5719,19 +6067,21 @@ let particlesToCoreFunction = () => {
 			scene.add(directionalLight)
 
 
-            controls = new OrbitControls( camera, cssrenderer.domElement );
-            controls.maxPolarAngle = Math.PI * 0.495;
-            // controls.minPolarAngle = Math.PI * 0.495;
-            controls.maxAzimuthAngle = Math.PI * 0.495;
-            controls.target.set( 0, 55, 0 );
-            controls.minDistance = 100.0;
-            controls.maxDistance = 70000.0;
-            controls.screenSpacePanning = true
-            controls.enablePan = false
-            controls.rotateSpeed = 0.025
-            controls.zoomSpeed = 0.1
-            controls.movementSpeed = 10000;
-            controls.update();
+            orbitControls = new OrbitControls( camera, cssrenderer.domElement );
+            orbitControls.maxPolarAngle = Math.PI  * 2
+            // orbitControls.minPolarAngle = Math.PI * 0.495;
+            orbitControls.maxAzimuthAngle = Math.PI * 2
+            orbitControls.target.set( 0, 55, 0 );
+            orbitControls.minDistance = 1;
+            orbitControls.maxDistance = 70000.0;
+            orbitControls.screenSpacePanning = true
+            orbitControls.enablePan = true
+            
+            orbitControls.rotateSpeed = 0.025
+            orbitControls.zoomSpeed = 1
+            orbitControls.movementSpeed = 10000;
+            orbitControls.enabled = false; // Start with FirstPersonControls disabled
+            orbitControls.update();
             
 
 
@@ -5754,24 +6104,27 @@ let particlesToCoreFunction = () => {
 
 
             
+            firstPersonControls = new FirstPersonControls(camera, cssrenderer.domElement);
+
+            
+            firstPersonControls.lookSpeed = 0.035
+            firstPersonControls.noFly = false;
+            firstPersonControls.lookVertical = true;
+            firstPersonControls.mouseDragOn = false;
+            firstPersonControls.verticalMax = 0
+            firstPersonControls.verticalMin = 0
+            firstPersonControls.heightMax = 0
+            firstPersonControls.heightMin = 0
+
+            firstPersonControls.movementSpeed = 225;
+            firstPersonControls.enabled = false; // Start with FirstPersonControls disabled
+            firstPersonControls.update();
 
 
+            // let activeFirstPersonControls = () => {
+                
 
-            let activeFirstPersonControls = () => {
-                controls = new FirstPersonControls(camera, renderer.domElement);
-
-                controls.movementSpeed = 10;
-                controls.lookSpeed = 0.035
-                controls.noFly = true;
-                controls.lookVertical = true;
-                controls.mouseDragOn = false;
-                controls.verticalMax = 0
-                controls.verticalMin = 0
-                controls.heightMax = 0
-                controls.heightMin = 0
-                controls.update();
-
-            }
+            // }
 
 
 			// controls = new FirstPersonControls(camera, renderer.domElement);
@@ -5806,13 +6159,17 @@ let particlesToCoreFunction = () => {
 
 
             // Event listener for key press
-            window.addEventListener('keydown', (event) => {
+            document.addEventListener('keydown', (event) => {
                 if (event.key === 'c') {
                     orbitControls.enabled = !orbitControls.enabled; // Toggle OrbitControls
                     firstPersonControls.enabled = false; // Disable FirstPersonControls
+                } else if (event.key === 'C') {
+                    orbitControls.enabled = false
                 } else if (event.key === 'v') {
                     firstPersonControls.enabled = !firstPersonControls.enabled; // Toggle FirstPersonControls
                     orbitControls.enabled = false; // Disable OrbitControls
+                } else if (event.key === 'C') {
+                    firstPersonControls.enabled = false
                 }
             });
 
@@ -6059,7 +6416,7 @@ let particlesToCoreFunction = () => {
                         duration: 7,
                         delay: 0,
                         x: 0,
-                        y: -500000,
+                        y: -10000,
                         z: 0,
 
                     })
@@ -6139,9 +6496,10 @@ let particlesToCoreFunction = () => {
 
                 UserContainer_root = new THREE.Group()
                 // UserContainer_root.position.set(30, 5990, 23950);
-                UserContainer_root.position.set(0, 55, 1400);
+                UserContainer_root.position.set(-1, 65, 1400);
                 UserContainer_root.rotation.set(0, 0, 0)
                 UserContainer_root.scale.set(10, 10, 10)
+                UserContainer_root.lookAt(camera.position)
                 scene.add(UserContainer_root)
 
                     UserContainer_MediaContainer_baseA = new THREE.Group()
@@ -6200,6 +6558,20 @@ let particlesToCoreFunction = () => {
                             "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
                             () => {
 
+                                gsap.to(UserΔ_ButtonPrimary.rotation, {
+                                    repeat: 0,
+                                    duration: 0.5,
+                                    ease: "none",
+                                    delay: 1,
+                                    // x: 0.001,
+                                    // y: 0.001,
+                                    // x: 0.010,
+                                    y: 3.14,
+                                    // z: 0.010,
+                                
+
+                                })
+
                                 gsap.to(UserΔ_ButtonPrimary.scale, {
                                     repeat: 0,
                                     duration: 1.5,
@@ -6245,9 +6617,9 @@ let particlesToCoreFunction = () => {
                                     duration: 1.5,
                                     ease: "none",
                                     delay: 7,
-                                    // x: 0.001,
-                                    y: 0,
-                                    z: 1500,
+                                    x: 25,
+                                    y: 70,
+                                    z: 1440,
                                 
 
                                 })
@@ -6890,7 +7262,7 @@ let particlesToCoreFunction = () => {
 			const folderWater = gui.addFolder('Water');
 			folderWater.add(waterUniforms.distortionScale, 'value', 0, 8, 0.1).name('distortionScale');
 			folderWater.add(waterUniforms.size, 'value', 0.1, 10, 0.1).name('size');
-			folderWater.open();
+			folderWater.close();
 
 			// const folderPositions = gui.addFolder('Positions')
 			// folderPositions.add(Φ.position, 'x').min(-200).max(200).step(0.001).name('x-position');
@@ -6961,7 +7333,8 @@ let particlesToCoreFunction = () => {
 
 			const time = performance.now() * 0.001;
 			const delta = clock.getDelta();
-			controls.update(delta);
+            orbitControls.update(delta);
+			firstPersonControls.update(delta);
 
 
            // FrameAnimations Below this line

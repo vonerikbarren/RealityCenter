@@ -1535,6 +1535,63 @@
 
 
 
+
+
+                document.addEventListener("keydown", function(event) {
+					if (event.key === "X") {
+						
+
+						gsap.to(camera.position, {
+                            repeat: 0,
+                            duration: 1.5,
+                            ease: "none",
+                            delay: 3,
+                            // x: 0.001,
+                            // y: 0.001,
+                            z: 17000,
+                        
+
+                        })
+
+                        orbitControls.rotateSpeed = 1000000
+                        orbitControls.update();
+                        firstPersonControls.movementSpeed = 225;
+                        firstPersonControls.update();
+
+					} 
+				})
+
+
+                document.addEventListener("keydown", function(event) {
+					if (event.key === "z") {
+
+                        camera.position.set(0, 0, 1440)
+						
+
+						gsap.to(camera.position, {
+                            repeat: 0,
+                            duration: 1.5,
+                            ease: "none",
+                            delay: 0,
+                            x: 25,
+                            y: 0,
+                            z: 0,
+                        
+
+                        })
+
+                        orbitControls.rotateSpeed = 1000000
+                        orbitControls.update();
+                        firstPersonControls.movementSpeed = 225;
+                        firstPersonControls.update();
+
+                        
+
+					} 
+				})
+
+
+
                
 
 
