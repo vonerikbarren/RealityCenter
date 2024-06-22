@@ -47,7 +47,13 @@
 
          <video id="openingVideo" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/SphereAnimations/Equations3.mp4" style="display: none" ></video>
 
-         <video id="Tunnel01" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/TunnelAnimations/TechTunnelA03.mp4" style="display: none" ></video>
+         <video id="Tunnel01" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/TunnelAnimations/TechTunnelA10.mp4" style="display: none" ></video>
+
+         <video id="Tunnel02" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/TunnelAnimations/TechTunnelA06.mp4" style="display: none" ></video>
+
+         <video id="Tunnel03" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/TunnelAnimations/TechTunnel00.mp4" style="display: none" ></video>
+
+         <video id="VideoAnimation01" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/SphereAnimations/ColorfulInfinity.mp4" style="display: none" ></video>
 
          <video id="userVideo" class="countDown" playsinline  autoplay width="320" height="240" src="./assets/video/PersonalAnimations/ExplainA01__What_is_a_Reality.mp4" style="display: none" ></video>
 	</div>
@@ -526,6 +532,15 @@
             let OmniX_CubeExternalApps_right
 
 
+        let OmniX_InternalApps_root
+            let OmniX_InternalApps_SideFront_root
+                let OmniX_InternalApps_App_Center_Home
+            let OmniX_InternalApps_SideBack_root
+            let OmniX_InternalApps_SideLeft_root
+            let OmniX_InternalApps_SideRight_root
+
+
+
         let HomeSpace_root
             let HomeSpace_userFirstPerson_root
                 let HomeSpace_UserFirstPerson_Domain00, mesh_HomeSpace_UserFirstPerson_Domain00
@@ -542,6 +557,7 @@
         
         let Hud_root
             let Hud_Settings_root
+                let Hud_View_Active
                 let Hud_Switcher_root
                 let Hud_Adjuster_root
                 let Hud_MobilePhone_root
@@ -551,7 +567,7 @@
             // let Hud_Types_root
             let Hud_Visors_root
                 let Hud_Visor00_Default
-                    let Hud_Visor00_OmniSpace_App_root
+                    let Hud_Visor00_OmniSpace_App_root, mesh_Hud_Visor00_OmniSpace_App_root
                         let Hud_Visor00_OmniSpace_App_Settings
                         let Hud_Visor00_OmniSpace_App_Options
                         let Hud_Visor00_OmniSpace_App_Spaces
@@ -575,6 +591,8 @@
                         let OmniBoolean_View_Truths_root
                         let OmniBoolean_View_Unknowns_root
                         let OmniBoolean_View_Falses_root
+
+        
 
 
             
@@ -747,7 +765,7 @@
         const dataCubesRoom01 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/RequipRoom/DataCubes01.jpg')
 
         const aOmniX_Container01 = textureLoader.load('./assets/img/10-ObjectUI/02-TechTiles/version07/C00_TechTileContainer.png')
-        const aOmniX_Container02 = textureLoader.load('./assets/img/10-ObjectUI/02-TechTiles/version02/TechTileBase01sm.png')
+        const aOmniX_Container02 = textureLoader.load('./assets/img/10-ObjectUI/02-TechTiles/version02/TechTileBase01.png')
         const aOmniX_Container03 = textureLoader.load('./assets/img/10-ObjectUI/02-TechTiles/version07/A00_TechTileContainer.png')
 
 
@@ -840,7 +858,7 @@
 			// Search.Camera
 			camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 500000);
 			// camera.position.set(30, 6000, 24000); // previous
-            camera.position.set(25, 70, 50050); // previousc
+            camera.position.set(0, 70, 50050); // previousc
 			camera.view = sun;
 
 
@@ -2095,6 +2113,7 @@ const divisions = 64;
 const helper = new THREE.PolarGridHelper( radius, sectors, rings, divisions );
 
 helper.position.set(0, 45, 0)
+helper.scale.set(10, 10, 10)
 scene.add( helper );
 
 //.....................................................................
@@ -4724,16 +4743,16 @@ const geo_CylinderOpen_03 = new THREE.CylinderGeometry(
         ΔaOmniX_OmniBox_Shell_Skeleton01.scale.set(1, 1, 1)
         ΔaOmniX_OmniBox_Shell_root.add(ΔaOmniX_OmniBox_Shell_Skeleton01)
 
-            const mat_ΔaOmniX_OmniBox_Shell_Skeleton01 = new THREE.MeshBasicMaterial({ map: ΔIconConainer_complexDesignBlack01, side: THREE.DoubleSide });
+            const mat_ΔaOmniX_OmniBox_Shell_Skeleton01 = new THREE.MeshBasicMaterial({ map: aOmniX_Container02, side: THREE.DoubleSide });
             mesh_ΔaOmniX_OmniBox_Shell_Skeleton01 = new THREE.Mesh(geo_objT_BoxA0, mat_ΔaOmniX_OmniBox_Shell_Skeleton01);
             mat_ΔaOmniX_OmniBox_Shell_Skeleton01.wireframe = false
             mat_ΔaOmniX_OmniBox_Shell_Skeleton01.transparent = true;
-            mat_ΔaOmniX_OmniBox_Shell_Skeleton01.alphaMap = ΔIconConainer_complexDesignBlack01;
+            mat_ΔaOmniX_OmniBox_Shell_Skeleton01.alphaMap = aOmniX_Container02;
             // mat_ΔaOmniX_OmniBox_Shell_Skeleton01.blending = THREE.AdditiveBlending
             // mat_ΔaOmniX_OmniBox_Shell_Skeleton01.color = new THREE.Color('#1ed9d0') // neonGreenBlue
             // mat_ΔaOmniX_OmniBox_Shell_Skeleton01.color = new THREE.Color('#7851A9') // IntensePurple
             mesh_ΔaOmniX_OmniBox_Shell_Skeleton01.position.set(0, 0, 0);
-            mesh_ΔaOmniX_OmniBox_Shell_Skeleton01.scale.set(100, 100, 100);
+            mesh_ΔaOmniX_OmniBox_Shell_Skeleton01.scale.set(111, 111, 111);
             mesh_ΔaOmniX_OmniBox_Shell_Skeleton01.rotation.set(0, 0, 0)
 
             // mesh_ΔaOmniX_OmniBox_Shell_Skeleton01.position.set(-15000, 0, 0);
@@ -4755,11 +4774,11 @@ const geo_CylinderOpen_03 = new THREE.CylinderGeometry(
             mat_ΔaOmniX_OmniBox_Shell_Skeleton02.wireframe = false
             mat_ΔaOmniX_OmniBox_Shell_Skeleton02.transparent = true;
             mat_ΔaOmniX_OmniBox_Shell_Skeleton02.alphaMap = aOmniX_Container02;
-            mat_ΔaOmniX_OmniBox_Shell_Skeleton02.blending = THREE.AdditiveBlending
+            // mat_ΔaOmniX_OmniBox_Shell_Skeleton02.blending = THREE.AdditiveBlending
             // mat_ΔaOmniX_OmniBox_Shell_Skeleton02.color = new THREE.Color('#1ed9d0') // neonGreenBlue
             // mat_ΔaOmniX_OmniBox_Shell_Skeleton02.color = new THREE.Color('#7851A9') // IntensePurple
             mesh_ΔaOmniX_OmniBox_Shell_Skeleton02.position.set(0, 0, 0);
-            mesh_ΔaOmniX_OmniBox_Shell_Skeleton02.scale.set(90, 90, 90);
+            mesh_ΔaOmniX_OmniBox_Shell_Skeleton02.scale.set(500, 500, 500);
             mesh_ΔaOmniX_OmniBox_Shell_Skeleton02.rotation.set(0, 0, 0)
 
             // mesh_ΔaOmniX_OmniBox_Shell_Skeleton02.position.set(-15000, 0, 0);
@@ -5086,7 +5105,7 @@ const geo_CylinderOpen_03 = new THREE.CylinderGeometry(
             let videoSphereDemo = () => {
 
                 gsap.to(mesh_CenterBrain_VideoSphere_Opening.scale, {
-                    repeat: -1,
+                    repeat: 0,
                     duration: 0.75,
                     // yoyo: true,
                     // ease: "power1",
@@ -5100,32 +5119,32 @@ const geo_CylinderOpen_03 = new THREE.CylinderGeometry(
                 })
 
                 gsap.to(mesh_CenterBrain_VideoSphere_Opening.scale, {
-                    repeat: -1,
+                    repeat: 0,
                     duration: 10,
                     // yoyo: true,
                     // ease: "power1",
                     // ease: "bounce.inOut",
                     ease: "slow(0.1,2,false)",
                     delay: 0,
-                    x: 100,
-                    y: 100,
-                    z: 100, 
+                    x: 499,
+                    y: 499,
+                    z: 499, 
 
                 })
 
-                gsap.to(mesh_CenterBrain_VideoSphere_Opening.scale, {
-                    repeat: -1,
-                    duration: 10,
-                    // yoyo: true,
-                    // ease: "power1",
-                    // ease: "bounce.inOut",
-                    ease: "slow(0.1,2,false)",
-                    delay: 10,
-                    x: 1,
-                    y: 1,
-                    z: 1, 
+                // gsap.to(mesh_CenterBrain_VideoSphere_Opening.scale, {
+                //     repeat: -1,
+                //     duration: 10,
+                //     // yoyo: true,
+                //     // ease: "power1",
+                //     // ease: "bounce.inOut",
+                //     ease: "slow(0.1,2,false)",
+                //     delay: 10,
+                //     x: 1,
+                //     y: 1,
+                //     z: 1, 
 
-                })
+                // })
             }
 
             videoSphereDemo()
@@ -5767,7 +5786,7 @@ for (let i = 0; i < numSpaceSpheres; i++) {
 
 for (let i = 0; i < numSpaceSpheres; i++) {
     SpaceSpheresArr[i].scale.set(25, 25, 25)
-    SpaceSpheresArr[6].scale.set(200, 200, 200)
+    SpaceSpheresArr[6].scale.set(501, 501, 501)
 
     SpaceSpheresArr[0].position.set(0, 0, 5000)
     SpaceSpheresArr[1].position.set(0, 0, -5000)
@@ -6471,12 +6490,22 @@ let particlesToCoreFunction = () => {
                 if (event.key === "0") {
                     
 
-                    gsap.to(water.position, {
+                    // gsap.to(water.position, {
+                    //     duration: 7,
+                    //     delay: 0,
+                    //     x: 0,
+                    //     y: -10000,
+                    //     z: 0,
+
+                    // })
+
+
+                    gsap.to(camera.position, {
                         duration: 7,
                         delay: 0,
                         x: 0,
-                        y: -10000,
-                        z: 0,
+                        y: 1000,
+                        z: 1000,
 
                     })
 
@@ -6503,6 +6532,63 @@ let particlesToCoreFunction = () => {
 
                 }
             })
+
+            document.addEventListener("keydown", function(event) {
+                if (event.key === "o") {
+
+
+                    gsap.to(camera.position, {
+                        duration: 7,
+                        delay: 0,
+                        x: -1000,
+                        y: 1000,
+                        z: 0,
+
+                    })
+
+                   
+
+                }
+            })
+
+
+            document.addEventListener("keydown", function(event) {
+                if (event.key === "p") {
+
+
+                    gsap.to(camera.position, {
+                        duration: 7,
+                        delay: 0,
+                        x: 1000,
+                        y: 1000,
+                        z: 0,
+
+                    })
+
+                   
+
+                }
+            })
+
+
+            document.addEventListener("keydown", function(event) {
+                if (event.key === "l") {
+
+
+                    gsap.to(camera.position, {
+                        duration: 7,
+                        delay: 0,
+                        x: 0,
+                        y: 1000,
+                        z: -1000,
+
+                    })
+
+                   
+
+                }
+            })
+
 
 
 
@@ -6555,7 +6641,7 @@ let particlesToCoreFunction = () => {
 
                 UserContainer_root = new THREE.Group()
                 // UserContainer_root.position.set(30, 5990, 23950);
-                UserContainer_root.position.set(-1, 65, 50000);
+                UserContainer_root.position.set(-25, 65, 50000);
                 UserContainer_root.rotation.set(0, 0, 0)
                 UserContainer_root.scale.set(10, 10, 10)
                 UserContainer_root.lookAt(camera.position)
@@ -7258,6 +7344,56 @@ let particlesToCoreFunction = () => {
 //....UUUUU................................UUUUU..................
 //................................................................
 
+Hud_root = new THREE.Group()
+Hud_root.position.set(0, 70, 50000)
+Hud_root.rotation.set(0, 0, 0)
+Hud_root.scale.set(1, 1, 1)
+scene.add(Hud_root)
+camera.attach(Hud_root)
+
+
+    Hud_View_Active = new THREE.Group()
+    Hud_View_Active.position.set(0, 0, 0)
+    Hud_View_Active.rotation.set(0, 0, 0)
+    Hud_View_Active.scale.set(1, 1, 1)
+    Hud_root.add(Hud_View_Active)
+
+        Hud_Visors_root = new THREE.Group()
+        Hud_Visors_root.position.set(0, 0, 0)
+        Hud_Visors_root.rotation.set(0, 0, 0)
+        Hud_Visors_root.scale.set(1, 1, 1)
+        Hud_View_Active.add(Hud_Visors_root)
+
+            Hud_Visor00_Default = new THREE.Group()
+            Hud_Visor00_Default.position.set(0, 0, 0)
+            Hud_Visor00_Default.rotation.set(0, 0, 0)
+            Hud_Visor00_Default.scale.set(1, 1, 1)
+            Hud_Visors_root.add(Hud_Visor00_Default)
+
+                Hud_Visor00_OmniSpace_App_root = new THREE.Group()
+                Hud_Visor00_OmniSpace_App_root.position.set(0, 0, -10)
+                Hud_Visor00_OmniSpace_App_root.rotation.set(0, 0, 0)
+                Hud_Visor00_OmniSpace_App_root.scale.set(1, 1, 1)
+                scene.add(Hud_Visor00_OmniSpace_App_root)
+                camera.attach(Hud_Visor00_OmniSpace_App_root)
+
+                const mat_Hud_Visor00_OmniSpace_App_root = new THREE.MeshBasicMaterial({ map: SceneWallpaper_01, side: THREE.DoubleSide });
+                mesh_Hud_Visor00_OmniSpace_App_root = new THREE.Mesh(geo_objT_PlaneA1, mat_Hud_Visor00_OmniSpace_App_root);
+                mat_Hud_Visor00_OmniSpace_App_root.transparent = false;
+                mat_Hud_Visor00_OmniSpace_App_root.alphaMap = SceneWallpaper_01;
+                mat_Hud_Visor00_OmniSpace_App_root.color = new THREE.Color('#fff') // neonGreenBlue
+                // mat_Hud_Visor00_OmniSpace_App_root.blending = THREE.AdditiveBlending
+                mesh_Hud_Visor00_OmniSpace_App_root.position.set(0, 0, 0);
+                mesh_Hud_Visor00_OmniSpace_App_root.scale.set(1, 1, 1);
+                mesh_Hud_Visor00_OmniSpace_App_root.rotation.set(0, 0, 0)
+                // mesh_Hud_Visor00_OmniSpace_App_root.rotateX( - Math.PI / 2 );
+
+                // Hud_Visor00_OmniSpace_App_root.lookAt(camera)
+
+                Hud_Visor00_OmniSpace_App_root.add(mesh_Hud_Visor00_OmniSpace_App_root)
+
+                console.log(Hud_Visor00_OmniSpace_App_root.position)
+
 
 
 
@@ -7281,6 +7417,52 @@ let particlesToCoreFunction = () => {
 //..UUUUUUUUU...IIIII/.....UUUUUUUUU..UXXXX..XXXXX..
 //....UUUUU..................UUUUU..................
 //..................................................
+
+
+OmniX_InternalApps_root = new THREE.Group()
+OmniX_InternalApps_root.position.set(0, 0, 0)
+OmniX_InternalApps_root.rotation.set(0, 0, 0)
+OmniX_InternalApps_root.scale.set(1, 1, 1)
+ΔaOmniX_root.add(OmniX_InternalApps_root)
+
+    OmniX_InternalApps_SideFront_root = new THREE.Group()
+    OmniX_InternalApps_SideFront_root.position.set(0, 0, 900)
+    OmniX_InternalApps_SideFront_root.rotation.set(0, 0, 0)
+    OmniX_InternalApps_SideFront_root.scale.set(1, 1, 1)
+    OmniX_InternalApps_root.add(OmniX_InternalApps_SideFront_root)
+
+        OmniX_InternalApps_App_Center_Home = new THREE.Group()
+        OmniX_InternalApps_App_Center_Home.position.set(0, 0, 0)
+        OmniX_InternalApps_App_Center_Home.rotation.set(0, 0, 0)
+        OmniX_InternalApps_App_Center_Home.scale.set(1, 1, 1)
+        OmniX_InternalApps_SideFront_root.add(OmniX_InternalApps_App_Center_Home)
+
+        OmniX_InternalApps_App_Center_Home.add(
+            new hoverObject(
+                'img',
+                0, 0, 0,
+                0, 0, 0,
+                0.1, 0.1, 0.1,
+                "Testing234", "TestingClass234",
+                "./assets/icons/00_OfficialUX/home.svg", "",
+                "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+                () => {
+                    gsap.to(camera.position, {
+                        repeat: 0,
+                        duration: 1.5,
+                        ease: "none",
+                        delay: 0.25,
+                        x: 0,
+                        y: -1450,
+                        z: 2000,
+                    
+                    }) 
+                }, "",
+            )
+        )
+
+
+
 
 
 
@@ -7319,6 +7501,17 @@ scene.add(HomeSpace_root)
     HomeSpace_userFirstPerson_root.scale.set(1, 1, 1)
     HomeSpace_root.add(HomeSpace_userFirstPerson_root)
 
+
+const VideoTunnel = document.getElementById('Tunnel02')
+const VideoTunnel_Tex = new THREE.VideoTexture(VideoTunnel)
+VideoTunnel_Tex.format = THREE.RGBAFormat
+
+    HomeSpace_userFirstPerson_root = new THREE.Group()
+    HomeSpace_userFirstPerson_root.position.set(0, 0, 0)
+    HomeSpace_userFirstPerson_root.rotation.set(0, 0, 0)
+    HomeSpace_userFirstPerson_root.scale.set(1, 1, 1)
+    HomeSpace_root.add(HomeSpace_userFirstPerson_root)
+
         HomeSpace_UserFirstPerson_Domain00 = new THREE.Group()
         HomeSpace_UserFirstPerson_Domain00.position.set(0, 0, 0)
         HomeSpace_UserFirstPerson_Domain00.rotation.set(0, 0, 0)
@@ -7332,7 +7525,7 @@ scene.add(HomeSpace_root)
         mat_HomeSpace_UserFirstPerson_Domain00.color = new THREE.Color('#fff') // neonGreenBlue
         // mat_HomeSpace_UserFirstPerson_Domain00.blending = THREE.AdditiveBlending
         mesh_HomeSpace_UserFirstPerson_Domain00.position.set(0, 0, 0);
-        mesh_HomeSpace_UserFirstPerson_Domain00.scale.set(25, 25, 25);
+        mesh_HomeSpace_UserFirstPerson_Domain00.scale.set(99, 99, 99);
         mesh_HomeSpace_UserFirstPerson_Domain00.rotation.set(0, 0, 0)
         // mesh_HomeSpace_UserFirstPerson_Domain00.rotateX( - Math.PI / 2 );
 
@@ -7342,11 +7535,211 @@ scene.add(HomeSpace_root)
 
 
 
+        HomeSpace_UserFirstPerson_Domain01 = new THREE.Group()
+        HomeSpace_UserFirstPerson_Domain01.position.set(0, 0, 0)
+        HomeSpace_UserFirstPerson_Domain01.rotation.set(0, 0, 0)
+        HomeSpace_UserFirstPerson_Domain01.scale.set(1, 1, 1)
+        HomeSpace_userFirstPerson_root.add(HomeSpace_UserFirstPerson_Domain01)
 
-// const TravelTunnelGeo = new THREE.CylinderGeometry(5, 5, 10, 24, 1, true, 0, 6.28318)
-// const TravelTunnelMat = new THREE.MeshBasicMaterial({
-//     map: 
-// })
+        const mat_HomeSpace_UserFirstPerson_Domain01 = new THREE.MeshBasicMaterial({ map: VideoTunnel_Tex, side: THREE.DoubleSide });
+        mesh_HomeSpace_UserFirstPerson_Domain01 = new THREE.Mesh(geo_objT_SphereA0, mat_HomeSpace_UserFirstPerson_Domain01);
+        mat_HomeSpace_UserFirstPerson_Domain01.transparent = false;
+        mat_HomeSpace_UserFirstPerson_Domain01.alphaMap = VideoTunnel_Tex;
+        mat_HomeSpace_UserFirstPerson_Domain01.color = new THREE.Color('#fff') // neonGreenBlue
+        mat_HomeSpace_UserFirstPerson_Domain01.blending = THREE.AdditiveBlending
+        mesh_HomeSpace_UserFirstPerson_Domain01.position.set(0, 0, 0);
+        mesh_HomeSpace_UserFirstPerson_Domain01.scale.set(100, 100, 100);
+        mesh_HomeSpace_UserFirstPerson_Domain01.rotation.set(0, 1.519, 0)
+        // mesh_HomeSpace_UserFirstPerson_Domain01.rotateX( - Math.PI / 2 );
+
+        // HomeSpace_UserFirstPerson_Domain01.lookAt(camera)
+
+        HomeSpace_UserFirstPerson_Domain01.add(mesh_HomeSpace_UserFirstPerson_Domain01)
+
+
+
+
+
+
+
+const TravelTunnelGeo = new THREE.CylinderGeometry(5, 5, 10, 64, 1, true, 0, 6.28318)
+const TravelTunnelMat = new THREE.MeshBasicMaterial({
+    map: BasicHud03b,
+    color: 0xffffff,
+    alphaMap: BasicHud03b,
+    transparent: true,
+    // blending: THREE.AdditiveBlending,
+    side: THREE.DoubleSide,
+})
+
+const CylinderAmt = 50
+const CylinderArr = []
+
+for (let i = 0; i < CylinderAmt; i++) {
+    const CylinderTunnel = new THREE.Mesh(TravelTunnelGeo, TravelTunnelMat)
+    CylinderArr.push(CylinderTunnel)
+
+    // Position each cylinder along the z-axis
+    CylinderArr[i].position.set(25, 75, 50050 - i * 1000) // Adjust the spacing (1000 units in this example)
+
+    CylinderArr[i].rotation.set(1.575, 0, 0)
+    CylinderArr[i].scale.set(100, 90, 100)
+    scene.add(CylinderArr[i])
+}
+
+let openingSpace00_rotateY = () => {
+    gsap.to(mesh_HomeSpace_UserFirstPerson_Domain00.rotation, {
+        repeat: 0,
+        duration: 25,
+        ease: "none",
+        yoyo: true,
+        delay: 0,
+        y: '+= 3.14',
+    
+
+    })
+}
+
+openingSpace00_rotateY()
+
+
+let openingTunnelTraversal = () => {
+
+    firstPersonControls.enabled = true
+
+    gsap.to(HomeSpace_root.position, {
+        repeat: 0,
+        duration: 25,
+        ease: "none",
+        yoyo: true,
+        delay: 0,
+        z: 0,
+        y: 50
+    
+
+    })
+
+    gsap.to(mesh_HomeSpace_UserFirstPerson_Domain00.scale, {
+        repeat: 0,
+        duration: 1,
+        stagger: true,
+        ease: "none",
+        yoyo: true,
+        delay: 0,
+        z: 0.1,
+        y: 0.1,
+        x: 0.1,
+    
+
+    })
+
+    
+    gsap.to(mesh_HomeSpace_UserFirstPerson_Domain01.scale, {
+        repeat: 0,
+        duration: 1,
+        ease: "none",
+        yoyo: true,
+        delay: 25,
+        z: 0.01,
+        y: 0.01,
+        x: 0.01,
+    
+
+    })
+    
+
+    gsap.to(UserContainer_root.position, {
+        repeat: 0,
+        duration: 25,
+        ease: "none",
+        yoyo: true,
+        delay: 0,
+        z: 0,
+        y: 50
+    
+
+    })
+
+    gsap.to(UserContainer_root.position, {
+        repeat: 0,
+        duration: 1,
+        ease: "none",
+        yoyo: true,
+        delay: 25,
+        z: 0,
+        y: 1000
+    
+
+    })
+
+    gsap.to(UserContainer_root.position, {
+        repeat: 0,
+        duration: 1,
+        ease: "none",
+        yoyo: true,
+        delay: 25,
+        z: 1350,
+        y: 1000,
+        x: -450,
+    
+
+    })
+
+    // camera.attach(UserContainer_root)
+
+    gsap.to(camera.position, {
+        repeat: 0,
+        duration: 25,
+        ease: "none",
+        yoyo: true,
+        delay: 0,
+        z: `+= -50000`,
+    
+
+    })
+
+    gsap.to(camera.position, {
+        repeat: 0,
+        duration: 1,
+        ease: "none",
+        yoyo: true,
+        delay: 25,
+        y: 1000
+    
+
+    })
+
+    gsap.to(camera.position, {
+        repeat: 0,
+        duration: 1,
+        ease: "none",
+        yoyo: true,
+        delay: 26,
+        z: 1400,
+        y: 1000,
+        x: -400,
+    
+
+    })
+    
+    camera.lookAt(0, 0, 0)
+
+    UserContainer_root.lookAt(camera.position)
+}
+
+document.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+
+        // camera.attach(UserContainer_root)
+        // UserContainer_root.position.set(-1, 65, -50000)
+        
+        openingTunnelTraversal()
+
+        console.log(camera.position)
+        
+    }
+})
+
 
 
 
@@ -7456,20 +7849,25 @@ scene.add(HomeSpace_root)
 			folderButton.add(camera.position, 'z').min(-3.14).max(3.14).step(0.001).name('z-camera')
 
 
-            const folderOrbits = gui.addFolder('ΔaOmniX_root');
-			folderOrbits.add(ΔaOmniX_root.rotation, 'x').min(-3.14).max(3.14).step(0.001).name('x-ΔaOmniX_root')
-			folderOrbits.add(ΔaOmniX_root.rotation, 'y').min(-3.14).max(3.14).step(0.001).name('y-ΔaOmniX_root')
-			folderOrbits.add(ΔaOmniX_root.rotation, 'z').min(-3.14).max(3.14).step(0.001).name('z-ΔaOmniX_root')
+            const folderOrbits = gui.addFolder('mesh_HomeSpace_UserFirstPerson_Domain01');
+			folderOrbits.add(mesh_HomeSpace_UserFirstPerson_Domain01.rotation, 'x').min(-3.14).max(3.14).step(0.001).name('x-domain')
+			folderOrbits.add(mesh_HomeSpace_UserFirstPerson_Domain01.rotation, 'y').min(-3.14).max(3.14).step(0.001).name('y-domain')
+			folderOrbits.add(mesh_HomeSpace_UserFirstPerson_Domain01.rotation, 'z').min(-3.14).max(3.14).step(0.001).name('z-domain')
 
-            const folderPanels = gui.addFolder('ΔaOmniX_root');
-			folderPanels.add(ΔaOmniX_root.position, 'x').min(-10000).max(10000).step(1).name('x-ΔaOmniX_root')
-			folderPanels.add(ΔaOmniX_root.position, 'y').min(-10000).max(10000).step(1).name('y-ΔaOmniX_root')
-			folderPanels.add(ΔaOmniX_root.position, 'z').min(-10000).max(10000).step(1).name('z-ΔaOmniX_root')
+            const folderPanels = gui.addFolder('Hud_root');
+			folderPanels.add(Hud_root.position, 'x').min(-10000).max(10000).step(1).name('x-Hud_root')
+			folderPanels.add(Hud_root.position, 'y').min(-10000).max(10000).step(1).name('y-Hud_root')
+			folderPanels.add(Hud_root.position, 'z').min(-10000).max(10000).step(1).name('z-Hud_root')
 
             const folder01 = gui.addFolder('ΔaOmniX_root');
 			folder01.add(ΔaOmniX_root.scale, 'x').min(-10000).max(10000).step(1).name('x-ΔaOmniX_root')
 			folder01.add(ΔaOmniX_root.scale, 'y').min(-10000).max(10000).step(1).name('y-ΔaOmniX_root')
 			folder01.add(ΔaOmniX_root.scale, 'z').min(-10000).max(10000).step(1).name('z-ΔaOmniX_root')
+
+            const folderIcons = gui.addFolder('FolderFrontIcons');
+			folderIcons.add(OmniX_InternalApps_App_Center_Home.position, 'x').min(-10000).max(10000).step(1).name('xIcon_Home')
+			folderIcons.add(OmniX_InternalApps_App_Center_Home.position, 'y').min(-10000).max(10000).step(1).name('yIcon_Home')
+			folderIcons.add(OmniX_InternalApps_App_Center_Home.position, 'z').min(-10000).max(10000).step(1).name('zIcon_Home')
 
 			window.addEventListener('resize', onWindowResize);
 

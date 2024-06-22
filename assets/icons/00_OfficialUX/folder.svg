@@ -1,0 +1,3 @@
+<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 512 512" viewBox="0 0 512 512" id="Folder"><linearGradient id="a" x1="0" x2="512" y1="255" y2="255" gradientTransform="matrix(1 0 0 -1 0 511)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ffffff" class="stopColore3e4e6 svgShape"></stop><stop offset="1" stop-color="#9b9b9b" class="stopColor7f8eb8 svgShape"></stop></linearGradient><path fill="url(#a)" d="M221.072,108.55l-15.478-46.434c-3.872-11.615-14.741-19.45-26.985-19.45H56.889
+		C25.47,42.667,0,68.137,0,99.556V128v256v28.444c0,31.419,25.47,56.889,56.889,56.889h398.222c31.419,0,56.889-25.47,56.889-56.889
+		V184.889C512,153.47,486.53,128,455.111,128H248.057C235.814,128,224.944,120.166,221.072,108.55z"></path></svg>
