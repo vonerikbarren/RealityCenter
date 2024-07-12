@@ -6,7 +6,13 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 	<link type="text/css" rel="stylesheet" href="./assets/css/main.css">
+    <link type="text/css" rel="stylesheet" href="./assets/css/techTile.css">
     <link type="text/css" rel="stylesheet" href="./assets/css/CSS3D_Assets/01-Tech_Icons/TechIcons.css">
+    <link type="text/css" rel="stylesheet" href="./assets/css/CSS3D_Assets/01-Tech_Icons/TechIcons.css">
+    <link type="text/css" rel="stylesheet" href="./assets/css/TechTiles/TechTileEntrance/TechTileEntrance.css">
+    <link type="text/css" rel="stylesheet" href="./assets/css/01-dat.gui/dat.gui.css">
+    <link type="text/css" rel="stylesheet" href="./assets/css/04-basicElements/basicDiv.css">
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -56,6 +62,8 @@
          <video id="VideoAnimation01" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/SphereAnimations/ColorfulInfinity.mp4" style="display: none" ></video>
 
          <video id="userVideo" class="countDown" playsinline  autoplay width="320" height="240" src="./assets/video/PersonalAnimations/ExplainA01__What_is_a_Reality.mp4" style="display: none" ></video>
+
+         <video id="OpeningTunnelVideo" class="countDown" playsinline loop autoplay width="320" height="240" src="./assets/video/TunnelAnimations/TechTunnelA03.mp4" style="display: none" ></video>
 	</div>
 
     <!-- ./assets/video/SphereAnimations/Equations3.mp4 -->
@@ -128,6 +136,10 @@
         let newSpeedStrengthParams
         let Control_newSpeedStrengthParams
         let particles
+
+
+        let camera_obj_root
+
         
 
 
@@ -556,6 +568,8 @@
         
         
         let Hud_root
+            let Hud_StartMenu_root
+                let Hud_StartMenu_Base, mesh_Hud_StartMenu_Base
             let Hud_Settings_root
                 let Hud_View_Active
                 let Hud_Switcher_root
@@ -768,6 +782,10 @@
         const aOmniX_Container02 = textureLoader.load('./assets/img/10-ObjectUI/02-TechTiles/version02/TechTileBase01.png')
         const aOmniX_Container03 = textureLoader.load('./assets/img/10-ObjectUI/02-TechTiles/version07/A00_TechTileContainer.png')
 
+        const OmniHud_DefaultFrame01 = textureLoader.load('./assets/img/03-HudUI/PrimaryHud02_OmniV1/HudV1.png')
+
+        const OmniTime_Tunnel_testGrid = textureLoader.load('./assets/img/11_RealityItems/02_Grids/1x/OmniTime_Grid01.png')
+
 
 		init();
 		animate();
@@ -830,17 +848,18 @@
 
 			renderer = new THREE.WebGLRenderer(
                 {
-                    alpha: true,
-                    antialias: true,
+                    alpha: false,
+                    antialias: false,
                 }
             );
 			renderer.setPixelRatio(window.devicePixelRatio);
 			renderer.setSize(window.innerWidth, window.innerHeight);
-            // renderer.domElement.style.position = 'absolute'
             renderer.domElement.style.zindex = '-100'
-            // renderer.domElement.style.top = 0
 			renderer.toneMapping = THREE.ACESFilmicToneMapping;
 			container.appendChild(renderer.domElement);
+            
+            // renderer.domElement.style.top = 0
+            // renderer.domElement.style.position = 'absolute'
 
 
             // const light = new THREE.AmbientLight( 0x404040 ); // soft white light
@@ -848,22 +867,38 @@
             // scene.add(light);
 
             
+            
 
 
 			// camera = 1440
             // userΔ = 1400
 
 			scene = new THREE.Scene();
+            
 
 			// Search.Camera
 			camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 500000);
 			// camera.position.set(30, 6000, 24000); // previous
             camera.position.set(0, 70, 50050); // previousc
-			camera.view = sun;
+            // camera.position.set(0, 70, 1000); // previousc
+            // camera.position.set(0, 0, 500); // previousc
+            camera.rotation.set(0, 0, 0)
+			// camera.view = sun;
+            scene.add(camera)
+
+            camera_obj_root = new THREE.Group()
+            camera_obj_root.position.set(0, 70, 50050)
+            camera_obj_root.rotation.set(-0.11455952677394438, 0, 0)
+            camera_obj_root.scale.set(1, 1, 1)
+            scene.add(camera_obj_root)
+            // camera_obj_root.add(camera)
 
 
             const newLight = new THREE.AmbientLight(0x404040)
             scene.add(newLight)
+            // scene.add(camera)
+
+            // scene.background = new THREE.Color( 0xffffff );
 
 
             let viewerAnimationLoop01 = () => {
@@ -1667,6 +1702,7 @@
             // ###########################################################
             // Movement Settings
             // ###########################################################
+
                 document.addEventListener("keydown", function(event) {
 					if (event.key === "w") {
 						
@@ -1680,6 +1716,9 @@
 						})
 					}
 				})
+
+
+                
 
                 document.addEventListener("keydown", function(event) {
 					if (event.ctrlKey && event.key === "w") {
@@ -1789,13 +1828,30 @@
 					if (event.key === "g") {
 						
 
-						gsap.to(camera.position, {
+						gsap.to(ΔaOmniX_root.scale, {
 							duration: .25,
 							delay: 0,
                             ease: "none",
-                            z: 23000,
-							y: 6000,
-                            x: 30,
+                            z: 0.01,
+							y: 0.01,
+                            x: 0.01,
+
+						})
+					}
+				})
+
+
+                document.addEventListener("keydown", function(event) {
+					if (event.ctrlKey && event.key === "g") {
+						
+
+						gsap.to(ΔaOmniX_root.scale, {
+							duration: .25,
+							delay: 0,
+                            ease: "none",
+                            z: 0.75,
+							y: 0.75,
+                            x: 0.75,
 
 						})
 					}
@@ -5577,7 +5633,7 @@ OmniX_CubeExternalApps_root.scale.set(1, 1, 1)
 					waterColor: 0x001e0f,
 					distortionScale: 3.7,
                     // side: THREE.DoubleSide,
-					fog: aOmniScene.fog !== undefined
+					fog: aOmniScene.fog === false
 				}
 			);
 
@@ -6185,7 +6241,8 @@ let particlesToCoreFunction = () => {
             firstPersonControls = new FirstPersonControls(camera, cssrenderer.domElement);
 
             
-            firstPersonControls.lookSpeed = 0.035
+            // firstPersonControls.lookSpeed = 0.035
+            firstPersonControls.lookSpeed = 0.1
             firstPersonControls.noFly = false;
             firstPersonControls.lookVertical = true;
             firstPersonControls.mouseDragOn = false;
@@ -6428,66 +6485,66 @@ let particlesToCoreFunction = () => {
             })
 
 
-            document.addEventListener("keydown", function(event) {
-                if (event.key === "'") {
+            // document.addEventListener("keydown", function(event) {
+            //     if (event.key === "'") {
                     
 
-                    gsap.to(camera.position, {
-                        duration: 1,
-                        delay: 0,
-                        y: 0,
+            //         gsap.to(camera.position, {
+            //             duration: 1,
+            //             delay: 0,
+            //             y: 0,
 
-                    })
-
-
-                    gsap.to(camera.position, {
-                        duration: 15,
-                        delay: 1,
-                        z: 50000,
-
-                    })
+            //         })
 
 
-                    gsap.to(camera.position, {
-                        duration: 15.5,
-                        delay: 15,
-                        z: -150000,
-                        onComplete: rotateCameraAroundCenterPointClockwise()
-                    })
+            //         gsap.to(camera.position, {
+            //             duration: 15,
+            //             delay: 1,
+            //             z: 50000,
+
+            //         })
 
 
-
-                    // gsap.to(camera.position, {
-                    //     duration: 15.5,
-                    //     delay: 15.5,
-                    //     y: 6000,
-                    //     onComplete: rotateCameraAroundCenterPointCounterClockwise()
-                    // })
-
-
-                    // gsap.to(camera.position, {
-                    //     duration: 30,
-                    //     delay: 30,
-                    //     y: 100000,
-
-                    // })
+            //         gsap.to(camera.position, {
+            //             duration: 15.5,
+            //             delay: 15,
+            //             z: -150000,
+            //             onComplete: rotateCameraAroundCenterPointClockwise()
+            //         })
 
 
 
+            //         // gsap.to(camera.position, {
+            //         //     duration: 15.5,
+            //         //     delay: 15.5,
+            //         //     y: 6000,
+            //         //     onComplete: rotateCameraAroundCenterPointCounterClockwise()
+            //         // })
 
 
-                    
+            //         // gsap.to(camera.position, {
+            //         //     duration: 30,
+            //         //     delay: 30,
+            //         //     y: 100000,
+
+            //         // })
+
+
+
 
 
                     
 
-                }
-            })
+
+                    
+
+            //     }
+            // })
 
 
             // Raise and Lower Water
             document.addEventListener("keydown", function(event) {
-                if (event.key === "0") {
+                if (event.key === "=") {
                     
 
                     // gsap.to(water.position, {
@@ -6519,12 +6576,12 @@ let particlesToCoreFunction = () => {
                 if (event.ctrlKey && event.key === "0") {
                     
 
-                    gsap.to(water.position, {
+                    gsap.to(camera.position, {
                         duration: 7,
                         delay: 0,
                         x: 0,
-                        y: 0,
-                        z: 0,
+                        y: 1000,
+                        z: 10000,
 
                     })
 
@@ -6534,7 +6591,7 @@ let particlesToCoreFunction = () => {
             })
 
             document.addEventListener("keydown", function(event) {
-                if (event.key === "o") {
+                if (event.key === "[") {
 
 
                     gsap.to(camera.position, {
@@ -6553,7 +6610,26 @@ let particlesToCoreFunction = () => {
 
 
             document.addEventListener("keydown", function(event) {
-                if (event.key === "p") {
+                if (event.ctrlKey && event.key === "[") {
+
+
+                    gsap.to(camera.position, {
+                        duration: 7,
+                        delay: 0,
+                        x: -10000,
+                        y: 1000,
+                        z: 0,
+
+                    })
+
+                   
+
+                }
+            })
+
+
+            document.addEventListener("keydown", function(event) {
+                if (event.key === "]") {
 
 
                     gsap.to(camera.position, {
@@ -6570,9 +6646,28 @@ let particlesToCoreFunction = () => {
                 }
             })
 
+            document.addEventListener("keydown", function(event) {
+                if (event.ctrlKey && event.key === "]") {
+
+
+                    gsap.to(camera.position, {
+                        duration: 7,
+                        delay: 0,
+                        x: 10000,
+                        y: 1000,
+                        z: 0,
+
+                    })
+
+                   
+
+                }
+            })
+
+            // 
 
             document.addEventListener("keydown", function(event) {
-                if (event.key === "l") {
+                if (event.key === "'") {
 
 
                     gsap.to(camera.position, {
@@ -6583,6 +6678,49 @@ let particlesToCoreFunction = () => {
                         z: -1000,
 
                     })
+
+                   
+
+                }
+            })
+
+
+            document.addEventListener("keydown", function(event) {
+                if (event.ctrlKey && event.key === "'") {
+
+
+                    gsap.to(camera.position, {
+                        duration: 7,
+                        delay: 0,
+                        x: 0,
+                        y: 1000,
+                        z: -10000,
+
+                    })
+
+                   
+
+                }
+            })
+
+
+            document.addEventListener("keydown", function(event) {
+                if (event.ctrlKey && event.key === "O") {
+
+
+                    camera.lookAt(ΔaOmniX_root.position)
+                    // camera.updateProjectionMatrix()
+
+                    gsap.to(camera.position, {
+                        duration: 7,
+                        delay: 0,
+                        x: 0,
+                        y: 1000,
+                        z: 500,
+
+                    })
+
+                    
 
                    
 
@@ -7345,11 +7483,83 @@ let particlesToCoreFunction = () => {
 //................................................................
 
 Hud_root = new THREE.Group()
-Hud_root.position.set(0, 70, 50000)
+Hud_root.position.set(0, 70, 49985)
 Hud_root.rotation.set(0, 0, 0)
 Hud_root.scale.set(1, 1, 1)
 scene.add(Hud_root)
 camera.attach(Hud_root)
+
+    Hud_StartMenu_root = new THREE.Group()
+    Hud_StartMenu_root.position.set(0, 0, 0)
+    Hud_StartMenu_root.rotation.set(0, 0, 0)
+    Hud_StartMenu_root.scale.set(1, 1, 1)
+    Hud_root.add(Hud_StartMenu_root)
+
+
+        Hud_StartMenu_Base = new THREE.Group()
+        Hud_StartMenu_Base.position.set(0, 0, 0)
+        Hud_StartMenu_Base.rotation.set(0, 0, 0)
+        Hud_StartMenu_Base.scale.set(1, 1, 1)
+        Hud_StartMenu_root.add(Hud_StartMenu_Base)
+
+            // const mat_Hud_StartMenu_Base = new THREE.MeshBasicMaterial({ map: SceneWallpaper_01, side: THREE.DoubleSide });
+            // mesh_Hud_StartMenu_Base = new THREE.Mesh(geo_objT_PlaneA1, mat_Hud_StartMenu_Base);
+            // mat_Hud_StartMenu_Base.transparent = false;
+            // mat_Hud_StartMenu_Base.alphaMap = SceneWallpaper_01;
+            // mat_Hud_StartMenu_Base.color = new THREE.Color('#fff') // neonGreenBlue
+            // // mat_Hud_StartMenu_Base.blending = THREE.AdditiveBlending
+            // mesh_Hud_StartMenu_Base.position.set(0, 0, 0);
+            // mesh_Hud_StartMenu_Base.scale.set(15, 10, 10);
+            // mesh_Hud_StartMenu_Base.rotation.set(0, 0, 0)
+            // // mesh_Hud_StartMenu_Base.rotateX( - Math.PI / 2 );
+
+            // // Hud_StartMenu_Base.lookAt(camera)
+
+            // Hud_StartMenu_Base.add(mesh_Hud_StartMenu_Base)
+
+            // console.log(Hud_StartMenu_Base.position)
+
+            Hud_StartMenu_Base.add(
+                new hoverObject(
+                    'img',
+                    0, 0, -130,
+                    0, 0, 0,
+                    0.11, 0.1, 0.1,
+                    "Testing234", "TestingClass234",
+                    "./assets/img/00-WallpaperUX/Covers/whiteCover01.jpg", "",
+                    "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+                )
+            )
+
+            document.addEventListener("keydown", function(event) {
+                    if (event.key === "q") {
+
+                        gsap.to(Hud_StartMenu_Base.position, {
+                            repeat: 0,
+                            duration: 1,
+                            ease: "none",
+                            yoyo: true,
+                            delay: 0,
+                            z: 200,
+                        })
+
+                    } else if (event.key === "Q") {
+                        
+                        gsap.to(Hud_StartMenu_Base.position, {
+                            repeat: 0,
+                            duration: 1,
+                            ease: "none",
+                            yoyo: true,
+                            delay: 0,
+                            z: 0,
+                        })
+                    }
+                            
+                            
+                        
+                })
+
+    
 
 
     Hud_View_Active = new THREE.Group()
@@ -7365,38 +7575,104 @@ camera.attach(Hud_root)
         Hud_View_Active.add(Hud_Visors_root)
 
             Hud_Visor00_Default = new THREE.Group()
-            Hud_Visor00_Default.position.set(0, 0, 0)
+            Hud_Visor00_Default.position.set(0, 0, -10)
             Hud_Visor00_Default.rotation.set(0, 0, 0)
-            Hud_Visor00_Default.scale.set(1, 1, 1)
+            Hud_Visor00_Default.scale.set(1.1, 1.2, 1)
             Hud_Visors_root.add(Hud_Visor00_Default)
 
                 Hud_Visor00_OmniSpace_App_root = new THREE.Group()
-                Hud_Visor00_OmniSpace_App_root.position.set(0, 0, -10)
+                // Hud_Visor00_OmniSpace_App_root.position.set(0, 70, 49980) // scene
+                // Hud_Visor00_OmniSpace_App_root.position.set(0, 70, 49985) // camera
+                Hud_Visor00_OmniSpace_App_root.position.set(0, 0, 0) // camera
                 Hud_Visor00_OmniSpace_App_root.rotation.set(0, 0, 0)
                 Hud_Visor00_OmniSpace_App_root.scale.set(1, 1, 1)
-                scene.add(Hud_Visor00_OmniSpace_App_root)
-                camera.attach(Hud_Visor00_OmniSpace_App_root)
-
-                const mat_Hud_Visor00_OmniSpace_App_root = new THREE.MeshBasicMaterial({ map: SceneWallpaper_01, side: THREE.DoubleSide });
-                mesh_Hud_Visor00_OmniSpace_App_root = new THREE.Mesh(geo_objT_PlaneA1, mat_Hud_Visor00_OmniSpace_App_root);
-                mat_Hud_Visor00_OmniSpace_App_root.transparent = false;
-                mat_Hud_Visor00_OmniSpace_App_root.alphaMap = SceneWallpaper_01;
-                mat_Hud_Visor00_OmniSpace_App_root.color = new THREE.Color('#fff') // neonGreenBlue
-                // mat_Hud_Visor00_OmniSpace_App_root.blending = THREE.AdditiveBlending
-                mesh_Hud_Visor00_OmniSpace_App_root.position.set(0, 0, 0);
-                mesh_Hud_Visor00_OmniSpace_App_root.scale.set(1, 1, 1);
-                mesh_Hud_Visor00_OmniSpace_App_root.rotation.set(0, 0, 0)
-                // mesh_Hud_Visor00_OmniSpace_App_root.rotateX( - Math.PI / 2 );
-
-                // Hud_Visor00_OmniSpace_App_root.lookAt(camera)
-
-                Hud_Visor00_OmniSpace_App_root.add(mesh_Hud_Visor00_OmniSpace_App_root)
-
-                console.log(Hud_Visor00_OmniSpace_App_root.position)
+                Hud_Visor00_Default.add(Hud_Visor00_OmniSpace_App_root)
+                // camera.add(Hud_Visor00_OmniSpace_App_root)
+                // camera.attach(Hud_Visor00_OmniSpace_App_root)
 
 
+                // let fix_Hud_root = () => {
+                //     camera.position.set(0, 0, 500)
+                //     Hud_Visor00_OmniSpace_App_root.position.set(0, 0, 450) // camera
+                // }
+
+                // fix_Hud_root()
 
 
+                Hud_Visor00_OmniSpace_App_root.add(
+                    new hoverObject(
+                        'img',
+                        0, 0, 0,
+                        0, 0, 0,
+                        0.1, 0.1, 0.1,
+                        "Testing234", "TestingClass234",
+                        "./assets/img/03-HudUI/PrimaryHud02_OmniV1/HudV1.svg", "",
+                        "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+                    )
+                )
+
+                // ./assets/img/03-HudUI/PrimaryHud02_OmniV1/HudV1.png
+                // ./assets/img/05-Env/Clocks/Clock03_A1.png
+
+                // Hud_Visor00_OmniSpace_App_root.add(
+                //     new makePDF_ViewerCircle(
+                //         0, -2, 10,
+                //         0, 0, 0,
+                //         0.1, 0.1, 0.1,
+                //         "hoverClockA1",
+                //         "./pages/Applications/01-TimeClock/TimeClock.html",
+                //         "1200px", "1200px"
+                //     )
+                // )
+
+                
+
+                // const mat_Hud_Visor00_OmniSpace_App_root = new THREE.MeshBasicMaterial({ map: SceneWallpaper_02, side: THREE.DoubleSide });
+                // mesh_Hud_Visor00_OmniSpace_App_root = new THREE.Mesh(geo_objT_PlaneA1, mat_Hud_Visor00_OmniSpace_App_root);
+                // mat_Hud_Visor00_OmniSpace_App_root.transparent = false;
+                // mat_Hud_Visor00_OmniSpace_App_root.alphaMap = SceneWallpaper_02;
+                // mat_Hud_Visor00_OmniSpace_App_root.color = new THREE.Color('#fff') // neonGreenBlue
+                // // mat_Hud_Visor00_OmniSpace_App_root.blending = THREE.AdditiveBlending
+                // mesh_Hud_Visor00_OmniSpace_App_root.position.set(0, 0, 0);
+                // mesh_Hud_Visor00_OmniSpace_App_root.scale.set(15, 10, 10);
+                // mesh_Hud_Visor00_OmniSpace_App_root.rotation.set(0, 0, 0)
+                // // mesh_Hud_Visor00_OmniSpace_App_root.rotateX( - Math.PI / 2 );
+
+                // // Hud_Visor00_OmniSpace_App_root.lookAt(camera)
+
+                // Hud_Visor00_OmniSpace_App_root.add(mesh_Hud_Visor00_OmniSpace_App_root)
+
+                // console.log(Hud_Visor00_OmniSpace_App_root.position)
+
+
+
+                document.addEventListener("keydown", function(event) {
+                    if (event.key === "h") {
+
+                        gsap.to(Hud_Visor00_Default.position, {
+                            repeat: 0,
+                            duration: 1,
+                            ease: "none",
+                            yoyo: true,
+                            delay: 0,
+                            y: 200,
+                        })
+
+                    } else if (event.key === "H") {
+
+                        gsap.to(Hud_Visor00_Default.position, {
+                            repeat: 0,
+                            duration: 1,
+                            ease: "none",
+                            yoyo: true,
+                            delay: 0,
+                            y: 0,
+                        })
+                    }
+                            
+                            
+                        
+                })
 
 
 
@@ -7502,7 +7778,7 @@ scene.add(HomeSpace_root)
     HomeSpace_root.add(HomeSpace_userFirstPerson_root)
 
 
-const VideoTunnel = document.getElementById('Tunnel02')
+const VideoTunnel = document.getElementById('OpeningTunnelVideo')
 const VideoTunnel_Tex = new THREE.VideoTexture(VideoTunnel)
 VideoTunnel_Tex.format = THREE.RGBAFormat
 
@@ -7525,7 +7801,7 @@ VideoTunnel_Tex.format = THREE.RGBAFormat
         mat_HomeSpace_UserFirstPerson_Domain00.color = new THREE.Color('#fff') // neonGreenBlue
         // mat_HomeSpace_UserFirstPerson_Domain00.blending = THREE.AdditiveBlending
         mesh_HomeSpace_UserFirstPerson_Domain00.position.set(0, 0, 0);
-        mesh_HomeSpace_UserFirstPerson_Domain00.scale.set(99, 99, 99);
+        mesh_HomeSpace_UserFirstPerson_Domain00.scale.set(399, 399, 399);
         mesh_HomeSpace_UserFirstPerson_Domain00.rotation.set(0, 0, 0)
         // mesh_HomeSpace_UserFirstPerson_Domain00.rotateX( - Math.PI / 2 );
 
@@ -7548,7 +7824,7 @@ VideoTunnel_Tex.format = THREE.RGBAFormat
         mat_HomeSpace_UserFirstPerson_Domain01.color = new THREE.Color('#fff') // neonGreenBlue
         mat_HomeSpace_UserFirstPerson_Domain01.blending = THREE.AdditiveBlending
         mesh_HomeSpace_UserFirstPerson_Domain01.position.set(0, 0, 0);
-        mesh_HomeSpace_UserFirstPerson_Domain01.scale.set(100, 100, 100);
+        mesh_HomeSpace_UserFirstPerson_Domain01.scale.set(400, 400, 400);
         mesh_HomeSpace_UserFirstPerson_Domain01.rotation.set(0, 1.519, 0)
         // mesh_HomeSpace_UserFirstPerson_Domain01.rotateX( - Math.PI / 2 );
 
@@ -7564,13 +7840,15 @@ VideoTunnel_Tex.format = THREE.RGBAFormat
 
 const TravelTunnelGeo = new THREE.CylinderGeometry(5, 5, 10, 64, 1, true, 0, 6.28318)
 const TravelTunnelMat = new THREE.MeshBasicMaterial({
-    map: BasicHud03b,
+    map: OmniTime_Tunnel_testGrid,
     color: 0xffffff,
-    alphaMap: BasicHud03b,
+    alphaMap: OmniTime_Tunnel_testGrid,
     transparent: true,
-    // blending: THREE.AdditiveBlending,
+    blending: THREE.AdditiveBlending,
     side: THREE.DoubleSide,
 })
+
+// map: BasicHud03b
 
 const CylinderAmt = 50
 const CylinderArr = []
@@ -7585,6 +7863,18 @@ for (let i = 0; i < CylinderAmt; i++) {
     CylinderArr[i].rotation.set(1.575, 0, 0)
     CylinderArr[i].scale.set(100, 90, 100)
     scene.add(CylinderArr[i])
+
+    // gsap.to(CylinderArr[i].rotation, {
+    //     repeat: 5000,
+    //     duration: 2,
+    //     ease: "none",
+    //     yoyo: false,
+    //     delay: 0,
+    //     y: '+= 37.68',
+    
+
+    // })
+
 }
 
 let openingSpace00_rotateY = () => {
@@ -7813,13 +8103,14 @@ document.addEventListener("keydown", function(event) {
             
 
 			const gui = new GUI();
-            gui.close()
+            gui.domElement.id = 'gui';
+            // gui.close()
             // gui.hide()
 
 			const folderSky = gui.addFolder('Sky');
 			folderSky.add(parameters, 'elevation', 0, 90, 0.1).onChange(updateSun);
 			folderSky.add(parameters, 'azimuth', - 180, 180, 0.1).onChange(updateSun);
-			folderSky.open();
+			folderSky.close();
 
 			const waterUniforms = water.material.uniforms;
 
@@ -7849,15 +8140,15 @@ document.addEventListener("keydown", function(event) {
 			folderButton.add(camera.position, 'z').min(-3.14).max(3.14).step(0.001).name('z-camera')
 
 
-            const folderOrbits = gui.addFolder('mesh_HomeSpace_UserFirstPerson_Domain01');
-			folderOrbits.add(mesh_HomeSpace_UserFirstPerson_Domain01.rotation, 'x').min(-3.14).max(3.14).step(0.001).name('x-domain')
-			folderOrbits.add(mesh_HomeSpace_UserFirstPerson_Domain01.rotation, 'y').min(-3.14).max(3.14).step(0.001).name('y-domain')
-			folderOrbits.add(mesh_HomeSpace_UserFirstPerson_Domain01.rotation, 'z').min(-3.14).max(3.14).step(0.001).name('z-domain')
+            const folderOrbits = gui.addFolder('Hud_Visor00_OmniSpace_App_root');
+			folderOrbits.add(Hud_Visor00_OmniSpace_App_root.rotation, 'x').min(-3.14).max(3.14).step(0.001).name('x-domain')
+			folderOrbits.add(Hud_Visor00_OmniSpace_App_root.rotation, 'y').min(-3.14).max(3.14).step(0.001).name('y-domain')
+			folderOrbits.add(Hud_Visor00_OmniSpace_App_root.rotation, 'z').min(-3.14).max(3.14).step(0.001).name('z-domain')
 
-            const folderPanels = gui.addFolder('Hud_root');
-			folderPanels.add(Hud_root.position, 'x').min(-10000).max(10000).step(1).name('x-Hud_root')
-			folderPanels.add(Hud_root.position, 'y').min(-10000).max(10000).step(1).name('y-Hud_root')
-			folderPanels.add(Hud_root.position, 'z').min(-10000).max(10000).step(1).name('z-Hud_root')
+            const folderPanels = gui.addFolder('Hud_Visor00_OmniSpace_App_root');
+			folderPanels.add(Hud_Visor00_OmniSpace_App_root.position, 'x').min(-1000).max(1000).step(1).name('x-Hud')
+			folderPanels.add(Hud_Visor00_OmniSpace_App_root.position, 'y').min(-1000).max(1000).step(1).name('y-Hud')
+			folderPanels.add(Hud_Visor00_OmniSpace_App_root.position, 'z').min(-1000).max(1000).step(1).name('z-Hud')
 
             const folder01 = gui.addFolder('ΔaOmniX_root');
 			folder01.add(ΔaOmniX_root.scale, 'x').min(-10000).max(10000).step(1).name('x-ΔaOmniX_root')
@@ -7876,8 +8167,9 @@ document.addEventListener("keydown", function(event) {
 		function onWindowResize() {
 
 			camera.aspect = window.innerWidth / window.innerHeight;
-			camera.updateProjectionMatrix();
-			camera.lookAt(0, 100, 0)
+			
+			// camera.lookAt(0, 0, 0)
+            camera.updateProjectionMatrix();
 
 			renderer.setSize(window.innerWidth, window.innerHeight);
             cssrenderer.setSize(window.innerWidth, window.innerHeight);
