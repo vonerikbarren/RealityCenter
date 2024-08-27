@@ -103,6 +103,15 @@
 		import { DRACOLoader } from './libraries/loaders/DRACOLoader.js'
         import { CSS2DRenderer, CSS2DObject } from './libraries/renderers/CSS2DRenderer.js';
         import { CSS3DRenderer, CSS3DObject } from './libraries/renderers/CSS3DRenderer.js';
+
+        import makePDF_Viewer from './components/functions_test/makePDF.mjs'
+        import hoverObject from './components/functions_test/hoverObject.mjs'
+
+
+       
+        
+
+        
 		const clock = new THREE.Clock();
 
 
@@ -147,38 +156,39 @@
         
         // Test Object Group
         let objectTestingGroup
-            let objT_CircleA1
-			let mesh_objT_CircleA1
+        let objT_CircleA1
+        let mesh_objT_CircleA1
 
-			let objT_PlaneA1
-			let mesh_objT_PlaneA1
+        let objT_PlaneA1
+        let mesh_objT_PlaneA1
 
-			let objT_RingA0
-			let mesh_objT_RingA0
+        let objT_RingA0
+        let mesh_objT_RingA0
 
-			let objT_SphereA0
-			let mesh_objT_SphereA0
+        let objT_SphereA0
+        let mesh_objT_SphereA0
 
-			let objT_BoxA0
-			let mesh_objT_BoxA0
+        let objT_BoxA0
+        let mesh_objT_BoxA0
 
-			let objT_ConeA0
-			let mesh_objT_ConeA0
+        let objT_ConeA0
+        let mesh_objT_ConeA0
 
-			let objT_PyramidA0
-			let mesh_objT_PyramidA0
+        let objT_PyramidA0
+        let mesh_objT_PyramidA0
 
-			let objT_DiamondA0
-			let mesh_objT_DiamondA0
+        let objT_DiamondA0
+        let mesh_objT_DiamondA0
 
-			let objT_TorusA0
-			let mesh_objT_TorusA0
+        let objT_TorusA0
+        let mesh_objT_TorusA0
 
-			let objT_CylinderClosedA0
-			let mesh_objT_CylinderClosedA0
+        let objT_CylinderClosedA0
+        let mesh_objT_CylinderClosedA0
 
-			let objT_CylinderOpenedA0
-			let mesh_objT_CylinderOpenedA0
+        let objT_CylinderOpenedA0
+        let mesh_objT_CylinderOpenedA0
+        
 
         // Opening Video
 			let CenterBrain_VideoSphere_Opening
@@ -866,8 +876,8 @@
             // light.position.set(0, 0, 0)
             // scene.add(light);
 
-            
-            
+           
+        
 
 
 			// camera = 1440
@@ -1106,6 +1116,8 @@
 					},
 
 				}
+
+
 
 
 				// Object-Circle
@@ -1487,49 +1499,26 @@
 				objectTestingGroup.add(objT_CylinderOpenedA0)
 
 
+//..........................................................
+//.....ΔΔΔΔΔ.....FFFFFFFFFF.................................
+//.....ΔΔΔΔΔ.....FFFFFFFFFF.................................
+//.....ΔΔΔΔΔ.....FFFFFFFFFF.................................
+//....ΔΔΔΔΔΔΔ....FFFF......uuuu...uuu..nnnnnnnnn...ccccccc..
+//....ΔΔΔΔΔΔΔ....FFFF......uuuu...uuu..nnnnnnnnn..cccccccc..
+//...ΔΔΔΔ.ΔΔΔΔ...FFFFFFFFF.uuuu...uuu..nnnnnnnnn.ccccccccc..
+//...ΔΔΔΔ.ΔΔΔΔ...FFFFFFFFF.uuuu...uuu..nnnn.nnnn.cccc..ccc..
+//...ΔΔΔ..ΔΔΔΔ...FFFFFFFFF.uuuu...uuu..nnn...nnn.cccc.......
+//..ΔΔΔΔ...ΔΔΔΔ..FFFF......uuuu...uuu..nnn...nnn.cccc.......
+//..ΔΔΔΔ...ΔΔΔΔ..FFFF.......uuu..uuuu..nnn...nnn.cccc..ccc..
+//.ΔΔΔΔΔΔΔΔΔΔΔΔΔ.FFFF.......uuuuuuuuu..nnn...nnn.ccccccccc..
+//.ΔΔΔΔΔΔΔΔΔΔΔΔΔ.FFFF.......uuuuuuuuu..nnn...nnn..cccccccc..
+//.ΔΔΔΔΔΔΔΔΔΔΔΔΔ.FFFF.......uuuuuuuuu..nnn...nnn..cccccccc..
+//............................uuu...................cccc....
+//..........................................................
+
+
             
-            // ----------------------------------------------------------------------------------------------------
-            // \- [OOASA6PE01_A7_06__CS3dObj_makePDF_Viewer] \- 
-            // ----------------------------------------------------------------------------------------------------
-            function makePDF_Viewer(
-                px, py, pz, 
-                rx, ry, rz,
-                sx, sy, sz,
-                pdfID,
-                fileRef,
-                fileWidth, fileHeight,
-                
-
-            ){
-                // |- # Create Root Div
-                const pdfDiv = document.createElement("div");
-                pdfDiv.id = pdfID
-                pdfDiv.width = fileWidth
-                pdfDiv.height = fileHeight
-
-                // |- ## Create Component
-                const pdfComponent = document.createElement("embed")
-                pdfComponent.setAttribute("src", fileRef)
-                pdfComponent.setAttribute("width", fileWidth)
-                pdfComponent.setAttribute("height", fileHeight)
-                pdfComponent.style.display = "default"
-                pdfComponent.style.border = "3px dotted rgba(255, 255, 255, 0.75)"
-                pdfComponent.style.borderWidth = "15px"
-                pdfComponent.style.borderRadius = "10px"
-                pdfComponent.style.borderStyle = "double",
-                pdfComponent.style.borderStyle = "double",
-                pdfComponent.style.boxShadow = "2px 2px 5px, 2px 2px 2px white"
-                
-                pdfDiv.appendChild(pdfComponent)			
-
-                // Pushing Function Out
-                const pdfComponentData = new CSS3DObject(pdfDiv)
-                pdfComponentData.position.set(px, py, pz)
-                pdfComponentData.rotation.set(rx, ry, rz)
-                pdfComponentData.scale.set(sx, sy, sz)
-
-                return pdfComponentData
-            }
+            
 
 
             // ----------------------------------------------------------------------------------------------------
@@ -1594,51 +1583,7 @@
             // ----------------------------------------------------------------------------------------------------
             // \- [OOASA6PE01_A7_08__CS3dObj_makePDF_hoverObject] \- 
             // ----------------------------------------------------------------------------------------------------
-				function hoverObject (
-					objectType, 
-					tx, ty, tz,
-					rx, ry, rz,
-					sx, sy, sz,
-					theID, theClassName, 
-					srcLink, hrefLink,
-					HeaderID, HeaderClassName, HeaderName, message,
-					action, bgColor
-				) {
-
-					// Building the root Div
-					const panelroot = document.createElement(objectType)
-					panelroot.id = theID
-					panelroot.className = theClassName
-					panelroot.src = srcLink
-					panelroot.href = hrefLink
-					panelroot.backgroundColor = bgColor
-					panelroot.addEventListener('pointerdown', action)
-                    panelroot.addEventListener('touchdown', action)
-					panelroot.textContent = message
-					panelroot.style.alignText = "center"
-                    panelroot.style.position = 'absolute'
-					
-					
-					// const panelHeader = document.createElement('h2')
-					// panelHeader.id = HeaderID
-					// panelHeader.className = HeaderClassName
-					// panelHeader.style.textContent = HeaderName
-					// panelHeader.style.textContent = message
-					// panelHeader.style.background = "rgba(0, 255, 255)"
-					// panelHeader.style.textSize = "120px"
-					
-					// panelroot.appendChild(panelHeader)
-
-
-					// Build the object for pushing and placing
-					const panelData = new CSS3DObject(panelroot)
-					panelData.position.set(tx, ty, tz)
-					panelData.rotation.set(rx, ry, rz)
-					panelData.scale.set(sx, sy, sz)
-
-					return panelData
-				}
-
+				
                 // ----------------------------------------------------------------------------------------------------
 				// \- [OOASA6PE01_A7_07__CS3dObj_makePDF_ViewerCircle] \- 
                 // ----------------------------------------------------------------------------------------------------
