@@ -1,0 +1,11 @@
+Model Information:
+* title:	Small Scene
+* source:	https://sketchfab.com/3d-models/small-scene-2efd162a656648f4b7f295b9bef74835
+* author:	Ankledot (https://sketchfab.com/Ankledot)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Small Scene" (https://sketchfab.com/3d-models/small-scene-2efd162a656648f4b7f295b9bef74835) by Ankledot (https://sketchfab.com/Ankledot) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

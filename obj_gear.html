@@ -1875,12 +1875,12 @@ gearCore.add(Teeth)
 const teethGeometry = new THREE.BoxGeometry(2, 1, 6);
 const teethMaterial = new THREE.MeshStandardMaterial({ map: SceneWallpaper_03, color: 0xffffff, metalness: 0.8, roughness: 0.4 });
 
-for (let i = 0; i < 16; i++) {
+for (let i = 0; i < 32; i++) {
     const tooth = new THREE.Mesh(teethGeometry, teethMaterial);
-    const angle = (i / 16) * Math.PI * 2;
+    const angle = (i / 32) * Math.PI * 2;
     tooth.position.set(Math.cos(angle) * 11, Math.sin(angle) * 11, 0);
     tooth.rotation.z = angle;
-    tooth.scale.set(1, 1, 0.5)
+    tooth.scale.set(1, 0.5, 0.5)
     Teeth.add(tooth);
 }
 

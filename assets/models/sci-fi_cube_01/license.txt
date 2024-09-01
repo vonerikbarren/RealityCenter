@@ -1,0 +1,11 @@
+Model Information:
+* title:	Sci-Fi Cube 01
+* source:	https://sketchfab.com/3d-models/sci-fi-cube-01-bb70561ab6d44540a55c0752fa5e0857
+* author:	Giimann (https://sketchfab.com/giimann)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Sci-Fi Cube 01" (https://sketchfab.com/3d-models/sci-fi-cube-01-bb70561ab6d44540a55c0752fa5e0857) by Giimann (https://sketchfab.com/giimann) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

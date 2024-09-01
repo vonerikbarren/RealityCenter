@@ -1,0 +1,11 @@
+Model Information:
+* title:	Tron inspired VR playground
+* source:	https://sketchfab.com/3d-models/tron-inspired-vr-playground-1f0d2bb4ec7c43c9a956b23e87b8ca1f
+* author:	Alex Fillion (https://sketchfab.com/dougitougi123)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Tron inspired VR playground" (https://sketchfab.com/3d-models/tron-inspired-vr-playground-1f0d2bb4ec7c43c9a956b23e87b8ca1f) by Alex Fillion (https://sketchfab.com/dougitougi123) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

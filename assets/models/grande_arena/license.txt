@@ -1,0 +1,11 @@
+Model Information:
+* title:	Grande Arena
+* source:	https://sketchfab.com/3d-models/grande-arena-9483831a03e7485b9dd83837c46f0721
+* author:	Adriano.Fontoura.Fraga (https://sketchfab.com/Adriano.Fontoura.Fraga)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Grande Arena" (https://sketchfab.com/3d-models/grande-arena-9483831a03e7485b9dd83837c46f0721) by Adriano.Fontoura.Fraga (https://sketchfab.com/Adriano.Fontoura.Fraga) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
