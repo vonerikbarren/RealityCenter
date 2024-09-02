@@ -276,6 +276,7 @@
         let Scene_icicilion
         let Scene_Gloves
         let Scene_Prismatrix
+        let Scene_StromingSun
 
 
 
@@ -1853,21 +1854,48 @@
 
 
 
-Scene_Prismatrix = new THREE.Group()
-Scene_Prismatrix.position.set(0, -5, 150)
-Scene_Prismatrix.rotation.set(0, 0, 0)
-Scene_Prismatrix.scale.set(1, 1, 1)
+// Scene_Prismatrix = new THREE.Group()
+// Scene_Prismatrix.position.set(0, -5, 150)
+// Scene_Prismatrix.rotation.set(0, 0, 0)
+// Scene_Prismatrix.scale.set(1, 1, 1)
 
-scene.add(Scene_Prismatrix)
+// scene.add(Scene_Prismatrix)
 
-const gltfLoader = new GLTFLoader().setPath( 'assets/models/prismatrix/' );
+// const gltfLoader = new GLTFLoader().setPath( 'assets/models/prismatrix/' );
+//     gltfLoader.load( 'scene.gltf', function ( gltf ) {
+
+//         Scene_Prismatrix.add( gltf.scene );
+
+//         render();
+
+//     } );
+
+
+
+Scene_StromingSun = new THREE.Group()
+Scene_StromingSun.position.set(0, -5, 150)
+Scene_StromingSun.rotation.set(0, 0, 0)
+Scene_StromingSun.scale.set(1, 1, 1)
+
+scene.add(Scene_StromingSun)
+
+const gltfLoader = new GLTFLoader().setPath( 'assets/models/crystal_orb/' );
     gltfLoader.load( 'scene.gltf', function ( gltf ) {
 
-        Scene_Prismatrix.add( gltf.scene );
+        Scene_StromingSun.add( gltf.scene );
 
         render();
 
     } );
+
+
+    // DRACOLoader.load( 'scene.gltf', function ( gltf ) {
+
+    //     Scene_StromingSun.add( gltf.scene );
+
+    //     render();
+
+    // } );
 
 
 
@@ -2735,15 +2763,21 @@ const gltfLoader = new GLTFLoader().setPath( 'assets/models/prismatrix/' );
 			folderButton.add(camera.position, 'z').min(-3.14).max(3.14).step(0.001).name('z-camera')
 
 
-            const folderOrbits = gui.addFolder('Scene_Prismatrix');
-			folderOrbits.add(Scene_Prismatrix.rotation, 'x').min(-3.14).max(3.14).step(0.001).name('x-Scene_Prismatrix')
-			folderOrbits.add(Scene_Prismatrix.rotation, 'y').min(-3.14).max(3.14).step(0.001).name('y-Scene_Prismatrix')
-			folderOrbits.add(Scene_Prismatrix.rotation, 'z').min(-3.14).max(3.14).step(0.001).name('z-Scene_Prismatrix')
+            const folderOrbits = gui.addFolder('Scene_StromingSun');
+			folderOrbits.add(Scene_StromingSun.rotation, 'x').min(-3.14).max(3.14).step(0.001).name('x-Scene_StromingSun')
+			folderOrbits.add(Scene_StromingSun.rotation, 'y').min(-3.14).max(3.14).step(0.001).name('y-Scene_StromingSun')
+			folderOrbits.add(Scene_StromingSun.rotation, 'z').min(-3.14).max(3.14).step(0.001).name('z-Scene_StromingSun')
 
-            const folderPanels = gui.addFolder('Scene_Prismatrix');
-			folderPanels.add(Scene_Prismatrix.position, 'x').min(-10000).max(10000).step(0.01).name('x-Scene_Prismatrix')
-			folderPanels.add(Scene_Prismatrix.position, 'y').min(-10000).max(10000).step(0.01).name('y-Scene_Prismatrix')
-			folderPanels.add(Scene_Prismatrix.position, 'z').min(-10000).max(10000).step(0.01).name('z-Scene_Prismatrix')
+            const folderPanels = gui.addFolder('Scene_StromingSun');
+			folderPanels.add(Scene_StromingSun.position, 'x').min(-10000).max(10000).step(0.01).name('x-Scene_StromingSun')
+			folderPanels.add(Scene_StromingSun.position, 'y').min(-10000).max(10000).step(0.01).name('y-Scene_StromingSun')
+			folderPanels.add(Scene_StromingSun.position, 'z').min(-10000).max(10000).step(0.01).name('z-Scene_StromingSun')
+
+
+            const folderPanels01 = gui.addFolder('Scene_StromingSun');
+			folderPanels01.add(Scene_StromingSun.scale, 'x').min(-10000).max(10000).step(0.01).name('x-Scene_StromingSun')
+			folderPanels01.add(Scene_StromingSun.scale, 'y').min(-10000).max(10000).step(0.01).name('y-Scene_StromingSun')
+			folderPanels01.add(Scene_StromingSun.scale, 'z').min(-10000).max(10000).step(0.01).name('z-Scene_StromingSun')
 
 
 
@@ -2776,7 +2810,7 @@ const gltfLoader = new GLTFLoader().setPath( 'assets/models/prismatrix/' );
             // arenaTest01.rotation.y += 0.01
             // Scene_TechCube01.rotation.y += 0.01
             // Scene_Tree01.rotation.y += 0.01
-            Scene_Prismatrix.rotation.y += 0.01
+            // Scene_Prismatrix.rotation.y += 0.01
 
 			render();
 			stats.update();
