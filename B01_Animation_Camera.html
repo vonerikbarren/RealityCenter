@@ -79,7 +79,13 @@
 		import { DRACOLoader } from './libraries/loaders/DRACOLoader.js'
         import { CSS2DRenderer, CSS2DObject } from './libraries/renderers/CSS2DRenderer.js';
         import { CSS3DRenderer, CSS3DObject } from './libraries/renderers/CSS3DRenderer.js';
+
+        // Animation Imports
+        
 		const clock = new THREE.Clock();
+        // import  { Spacial_Movement_Function_Basic01 } from './animations/01_Basics/Spacial_Movement_Function_Basic01';
+        // import OrbitCamera from './animations/01_Basics/OrbitCamera';
+
 
 
         //........................................................
@@ -277,6 +283,7 @@
         let Scene_Gloves
         let Scene_Prismatrix
         let Scene_StromingSun
+        let Scene_CrystalOrb
 
 
 
@@ -1817,21 +1824,176 @@
 
 
 
-Scene_StromingSun = new THREE.Group()
-Scene_StromingSun.position.set(0, -5, 150)
-Scene_StromingSun.rotation.set(0, 0, 0)
-Scene_StromingSun.scale.set(1, 1, 1)
+Scene_CrystalOrb = new THREE.Group()
+Scene_CrystalOrb.position.set(0, -5, 150)
+Scene_CrystalOrb.rotation.set(0, 0, 0)
+Scene_CrystalOrb.scale.set(1, 1, 1)
 
-scene.add(Scene_StromingSun)
+scene.add(Scene_CrystalOrb)
 
 const gltfLoader = new GLTFLoader().setPath( 'assets/models/crystal_orb/' );
     gltfLoader.load( 'scene.gltf', function ( gltf ) {
 
-        Scene_StromingSun.add( gltf.scene );
+        Scene_CrystalOrb.add( gltf.scene );
 
         render();
 
     } );
+
+let Spacial_Movement_Function_Basic01 = (
+    timeline,
+    object,
+    position,
+    scale,
+    crystalOrb_sca,
+    durationData,
+    delayData,
+    easeData,
+    opacityData
+) => {
+    timeline.to(object.position, {
+        duration: durationData,
+        delay: delayData,
+        opacity: opacityData,
+        ease: easeData,
+        x: position.x,
+        y: position.y,
+        z: position.z,
+    });
+
+    timeline.to(object.rotation, {
+        duration: durationData,
+        delay: delayData,
+        opacity: opacityData,
+        ease: easeData,
+        x: rotation.x,
+        y: rotation.y,
+        z: rotation.z,
+    });
+
+    timeline.to(object.scale, {
+        duration: durationData,
+        delay: delayData,
+        opacity: opacityData,
+        ease: easeData,
+        x: scale.x,
+        y: scale.y,
+        z: scale.z,
+    });
+}
+
+
+
+
+
+
+
+document.addEventListener("keydown", function(event) {
+    if (event.key === "j") {
+        // camera.position.y += 10000
+
+        camera.lookAt(UserContainer_root)
+
+        // Spacial_Movement_Function_Basic01()
+
+        // ================================================
+        // # Timeline01
+        // ================================================
+        let tl01 = gsap.timeline(
+            {
+                repeat: 2,
+                repeatDelay: 1,
+                delay:  0.01
+            }
+        )
+
+
+        // ================================================
+        // # Timeline02
+        // ================================================
+
+        let tl02 = gsap.timeline(
+            {
+                repeat: 2,
+                repeatDelay: 1,
+            }
+        )
+
+
+        // let crystalOrb_pos = new THREE.Vector3(100, 0, -100);
+        // let crystalOrb_rot = new THREE.Vector3(0, 1.575, 0);
+        // let crystalOrb_sca = new THREE.Vector3(5, 5, 5);
+        // let crystalOrb_durationData = 10;
+        // let crystalOrb_delayData = 0;
+        // let crystalOrb_easeData = "none";
+        // let crystalOrb_opacityData = 0.1;
+
+        // let crystalOrb_AnimationData = {
+        //     pos: crystalOrb_pos,
+        //     rot: crystalOrb_rot,
+        //     sca: crystalOrb_sca,
+        //     dur: crystalOrb_durationData,
+        //     del: crystalOrb_delayData,
+        //     eas: crystalOrb_easeData,
+        //     opa: crystalOrb_opacityData
+        // };
+
+        let crystalOrb_AnimationData = {
+            tlx: tl01,
+            obj: Scene_CrystalOrb,
+            pos: new THREE.Vector3(100, 0, -100),
+            rot: new THREE.Vector3(0, 1.575, 0),
+            sca: new THREE.Vector3(5, 5, 5),
+            dur: 10,
+            del: 0,
+            eas: "none",
+            opa: 0.1
+        };
+
+        let UserΔ_AnimationData = {
+            tlx: tl02,
+            obj: Scene_CrystalOrb,
+            pos: new THREE.Vector3(100, 0, -100),
+            rot: new THREE.Vector3(0, 1.575, 0),
+            sca: new THREE.Vector3(5, 5, 5),
+            dur: 10,
+            del: 0,
+            eas: "none",
+            opa: 0.1
+        }
+
+        Spacial_Movement_Function_Basic01(
+            crystalOrb_AnimationData.tlx,
+            crystalOrb_AnimationData.obj,
+            crystalOrb_AnimationData.pos,
+            crystalOrb_AnimationData.rot,
+            crystalOrb_AnimationData.sca,
+            crystalOrb_AnimationData.dur,
+            crystalOrb_AnimationData.del,
+            crystalOrb_AnimationData.eas,
+            crystalOrb_AnimationData.opa
+        );
+
+
+
+        // Spacial_Movement_Function_Basic01(tl01, Scene_CrystalOrb, crystalOrb_pos, crystalOrb_rot, crystalOrb_sca, crystalOrb_durationData, crystalOrb_delayData, crystalOrb_easeData, crystalOrb_opacityData);
+
+
+
+
+
+        
+        
+        console.log('button pressed')
+    }
+})
+
+
+
+
+
+
+
 
 
 
@@ -2973,6 +3135,45 @@ UserContainer_root = new THREE.Group()
                                     UserContainer_Δ04.add(mesh_UserContainer_Δ04)
 
 
+//..........................................................................................
+//......AAA.................iii..................................iii........................
+//.....AAAAA................iii............................tttt..iii........................
+//.....AAAAA................iii............................tttt..iii........................
+//....AAAAAAA...............iii............................tttt..iii........................
+//....AAAAAAA....nnnnnnnnn..iii..mmmmmmmmmmmmm....aaaaaaa.attttt.iii...ooooooo...nnnnnnnnn..
+//....AAAAAAA....nnnnnnnnn..iii..mmmmmmmmmmmmmm..aaaaaaaa.attttt.iii..ooooooooo..nnnnnnnnn..
+//...AAAAAAAAA...nnnnnnnnn..iii..mmmmmmmmmmmmmm.aaaaaaaaaaattttt.iii.ioooooooooo.nnnnnnnnn..
+//...AAAA.AAAA...nnnn.nnnn..iii..mmmm.mmmm..mmm.aaaa.aaaaa.tttt..iii.iooo...oooo.nnnn.nnnn..
+//...AAAAAAAAAA..nnn...nnn..iii..mmm..mmmm..mmm..aaaaaaaaa.tttt..iii.iooo...oooo.nnn...nnn..
+//..AAAAAAAAAAA..nnn...nnn..iii..mmm..mmmm..mmm.aaaaaaaaaa.tttt..iii.iooo...oooo.nnn...nnn..
+//..AAAAAAAAAAA..nnn...nnn..iii..mmm..mmmm..mmm.aaaaa.aaaa.tttt..iii.iooo...oooo.nnn...nnn..
+//..AAAAAAAAAAAA.nnn...nnn..iii..mmm..mmmm..mmm.aaaa.aaaaa.tttt..iii.ioooooooooo.nnn...nnn..
+//.AAAAA....AAAA.nnn...nnn..iii..mmm..mmmm..mmm.aaaaaaaaaa.ttttt.iii..ooooooooo..nnn...nnn..
+//.AAAA.....AAAA.nnn...nnn..iii..mmm..mmmm..mmm.aaaaaaaaaa.ttttt.iii...ooooooo...nnn...nnn..
+//................................................aaa........ttt........ooooo...............
+//..........................................................................................
+                
+
+
+//.......................................................................
+//......CCC.......l......................................................
+//....CCCCCCCC...lll.....................................................
+//...CCCCCCCCCC..lll.....................................................
+//..CCCCCCCCCCC..lll.....................................................
+//..CCCC...CCCCC.lll...aaaaaaa..ssssssss..ssssssss...eeeeee...ssssssss...
+//.CCCCC....CCCC.lll..aaaaaaaa..ssssssss..ssssssss..eeeeeeee..ssssssss...
+//.CCCC..........lll.aaaaaaaaaaasssssssssssssssssssseeeeeeeeeesssssssss..
+//.CCCC..........lll.aaaa.aaaaaasssssssssssssssssssseee..eeeeesssssssss..
+//.CCCC..........lll..aaaaaaaaa.ssssssss..ssssssss.seeeeeeeee.ssssssss...
+//.CCCCC....CCCC.lll.aaaaaaaaaa.ssssssss..ssssssss.seeeeeeeee.ssssssss...
+//..CCCC...CCCCC.lll.aaaaa.aaaaasssssssssssssssssssseee......esssssssss..
+//..CCCCCCCCCCC..lll.aaaa.aaaaaassss.sssssssss.ssssseeeeeeeeeessss.ssss..
+//...CCCCCCCCCC..lll.aaaaaaaaaaasssssssssssssssssssseeeeeeee.esssssssss..
+//....CCCCCCCC...lll.aaaaaaaaaa.ssssssss..ssssssss..eeeeeeee..ssssssss...
+//.....CCCCC...........aaa.......ssssss....ssssss.....eeee.....ssssss....
+//.......................................................................
+
+
 
                
 //...................................................................................
@@ -3219,21 +3420,21 @@ UserContainer_root = new THREE.Group()
 			folderButton.add(camera.position, 'z').min(-3.14).max(3.14).step(0.001).name('z-camera')
 
 
-            const folderOrbits = gui.addFolder('Scene_StromingSun');
-			folderOrbits.add(Scene_StromingSun.rotation, 'x').min(-3.14).max(3.14).step(0.001).name('x-Scene_StromingSun')
-			folderOrbits.add(Scene_StromingSun.rotation, 'y').min(-3.14).max(3.14).step(0.001).name('y-Scene_StromingSun')
-			folderOrbits.add(Scene_StromingSun.rotation, 'z').min(-3.14).max(3.14).step(0.001).name('z-Scene_StromingSun')
+            const folderOrbits = gui.addFolder('Scene_CrystalOrb');
+			folderOrbits.add(Scene_CrystalOrb.rotation, 'x').min(-3.14).max(3.14).step(0.001).name('x-Scene_CrystalOrb')
+			folderOrbits.add(Scene_CrystalOrb.rotation, 'y').min(-3.14).max(3.14).step(0.001).name('y-Scene_CrystalOrb')
+			folderOrbits.add(Scene_CrystalOrb.rotation, 'z').min(-3.14).max(3.14).step(0.001).name('z-Scene_CrystalOrb')
 
-            const folderPanels = gui.addFolder('Scene_StromingSun');
-			folderPanels.add(Scene_StromingSun.position, 'x').min(-10000).max(10000).step(0.01).name('x-Scene_StromingSun')
-			folderPanels.add(Scene_StromingSun.position, 'y').min(-10000).max(10000).step(0.01).name('y-Scene_StromingSun')
-			folderPanels.add(Scene_StromingSun.position, 'z').min(-10000).max(10000).step(0.01).name('z-Scene_StromingSun')
+            const folderPanels = gui.addFolder('Scene_CrystalOrb');
+			folderPanels.add(Scene_CrystalOrb.position, 'x').min(-10000).max(10000).step(0.01).name('x-Scene_CrystalOrb')
+			folderPanels.add(Scene_CrystalOrb.position, 'y').min(-10000).max(10000).step(0.01).name('y-Scene_CrystalOrb')
+			folderPanels.add(Scene_CrystalOrb.position, 'z').min(-10000).max(10000).step(0.01).name('z-Scene_CrystalOrb')
 
 
-            const folderPanels01 = gui.addFolder('Scene_StromingSun');
-			folderPanels01.add(Scene_StromingSun.scale, 'x').min(-10000).max(10000).step(0.01).name('x-Scene_StromingSun')
-			folderPanels01.add(Scene_StromingSun.scale, 'y').min(-10000).max(10000).step(0.01).name('y-Scene_StromingSun')
-			folderPanels01.add(Scene_StromingSun.scale, 'z').min(-10000).max(10000).step(0.01).name('z-Scene_StromingSun')
+            const folderPanels01 = gui.addFolder('Scene_CrystalOrb');
+			folderPanels01.add(Scene_CrystalOrb.scale, 'x').min(-10000).max(10000).step(0.01).name('x-Scene_CrystalOrb')
+			folderPanels01.add(Scene_CrystalOrb.scale, 'y').min(-10000).max(10000).step(0.01).name('y-Scene_CrystalOrb')
+			folderPanels01.add(Scene_CrystalOrb.scale, 'z').min(-10000).max(10000).step(0.01).name('z-Scene_CrystalOrb')
 
 
 
