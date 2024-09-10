@@ -33,7 +33,7 @@
 
          <video id="none" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/PlexusAnimations/Animation_ParticlesWhite01.mp4" style="display: none" ></video>
 
-         <video id="openingVideo" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/SphereAnimations/Animation_Tetras.mp4" style="display: none" ></video>
+         <video id="openingVideo" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/SphereAnimations/Equations3.mp4" style="display: none" ></video>
 
          <video id="none" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/SphereAnimations/Equations3.mp4" style="display: none" ></video>
 
@@ -284,6 +284,18 @@
         let Scene_Prismatrix
         let Scene_StromingSun
         let Scene_CrystalOrb
+
+        let Carousel_root
+            let Carousel_BackCenter_root
+            let Carousel_BackLeft_root
+            let Carousel_BackRight_root
+            
+            let Carousel_Left_root
+            let Carousel_Right_root
+
+            let Carousel_FrontCenter_root
+            let Carousel_FrontLeft_root
+            let Carousel_FrontRight_root
 
 
 
@@ -1422,7 +1434,7 @@
             // // Proper Movement Settings
             // // ###########################################################
 
-            // Assuming you have a camera and a scene already set up
+            
                 const cameraDirection = new THREE.Vector3();
                 const moveSpeed = 10; // Adjust the speed as needed
 
@@ -1734,17 +1746,25 @@
 				// Particle Geometry - Defined @ beginnning of init()
 				// ******************************************************
 
+                // particlesMaterial.color = new THREE.Color('#FFD700') // Gold
+				// particlesMaterial.color = new THREE.Color('#323232') // Black
+				// particlesMaterial.color = new THREE.Color('#a9a9a9') // Black
+                // particlesMaterial.color = new THREE.Color('#1ADBCB') // neonBlueGreen
+				// particlesMaterial.color = new THREE.Color('#00ffb3') // neonBlueGreen
+                // particlesMaterial.alphaMap = ContainerHolderWhiteA1
+                // particlesMaterial.size = 10 // for ContainerHolderTex
+
 
 
 				const particlesGeometry = new THREE.BufferGeometry();
-				const count = 10000
+				const count = 1500
 				const positions = new Float32Array(count * 3);
 				const colors = new Float32Array(count * 3);
             
 
 				// Large Number here = The box dimensions all at the same time. 
 				for (let i = 0; i < count * 3; i++) {
-					positions[i] = (Math.random() - 0.5) * 100000
+					positions[i] = (Math.random() - 0.5) * 1500
 					colors[i] = Math.random()
 				}
 
@@ -1753,25 +1773,19 @@
 
 				// Particle Material init()
 				const particlesMaterial = new THREE.PointsMaterial()
-				// particlesMaterial.size = 10 // for ContainerHolderTex
-				particlesMaterial.size = 75
+				
+				particlesMaterial.size = 25
 				particlesMaterial.sizeAttenuation = true;
-				// particlesMaterial.color = new THREE.Color('#1ADBCB') // neonBlueGreen
-				// particlesMaterial.color = new THREE.Color('#00ffb3') // neonBlueGreen
 				particlesMaterial.color = new THREE.Color('#1ed9d0') // neonGreenBlue
-				// particlesMaterial.color = new THREE.Color('#FFD700') // Gold
-				// particlesMaterial.color = new THREE.Color('#323232') // Black
-				// particlesMaterial.color = new THREE.Color('#a9a9a9') // Black
-				particlesMaterial.transparent = false;
-				// particlesMaterial.alphaMap = ContainerHolderWhiteA1
+				particlesMaterial.transparent = true;
 				particlesMaterial.alphaMap = particleTexture02
-				particlesMaterial.depthWrite = false
+				particlesMaterial.depthWrite = true
 				particlesMaterial.blending = THREE.AdditiveBlending
 				particlesMaterial.vertextColors = true
 
 				particles = new THREE.Points(particlesGeometry, particlesMaterial)
-				particles.position.set(0, 6000, 0)
-				// particles.position.set(0, 0, 0)
+				particles.position.set(0, 0, 0)
+                particles.scale.set(10, 10, 10)
 				scene.add(particles);
 
 
@@ -1821,71 +1835,6 @@
 //...SSSSSSSSS....CCCCCCCC...EEEEEEEEEEE.NNN....NNNN..EEEEEEEEEEE..
 //....SSSSSS.......CCCCC...........................................
 //.................................................................
-
-
-
-let OmniDataFragment_root
-    let OmniData_
-        let OmniData_Fragment
-            let OmniData_core
-                    let OmniData_core_status
-                        let OmniData_core_status_heartbeat
-                            let OmniData_core_status_logicCycle
-                                let OmniData_core_status_logicCycle_
-                        let OmniData_core_status_flows
-                            let OmniData_core_status_flows_manager
-                            let OmniData_core_Status_flows_systemDefaults
-                            let OmniData_core_Status_flows_systemsCustomizations
-                        let OmniData_core_status_states
-                            let OmniData_core_status_states_info
-                                let OmniData_core_status_state_defaults
-                                let OmniData_core_status_state_primarys
-                                let OmniData_core_status_state_secondaries
-                                let OmniData_core_status_state_terceries
-                                let OmniData_core_Status_state_successes
-                                let OmniData_core_status_state_warnings
-                                let OmniData_core_Status_state_dangers
-                                let OmniData_core_Status_state_undefineds
-                                let OmniData_core_status_state_infos
-                                let OmniData_core_status_state_truths
-                                let OmniData_core_status_state_falses
-                            let OmniData_core_status_states_feelings
-                                let OmniData_core_status_states_feelings_happy
-                                let OmniData_core_status_states_feelings_sad
-                                let OmniData_core_status_states_feelings_angry
-                                let OmniData_core_status_states_feelings_disgust
-                                let OmniData_core_status_states_feelings_fear
-
-    let OmniDataObject_root
-        let OmniData_predecessor
-        let OmniData_ancestor
-        let OmniData_current
-        let OmniData_successor
-        let OmniData_descendant
-        let OmniData_valueData
-            let OmniData_valueData_relativePerspective
-            let OmniData_valueData_times
-            let OmniData_valueData_spaces
-                let OmniData_valueData_spaceData_external
-                let OmniData_valueData_spaceData_internal
-            let OmniData_valueData_containers
-            let OmniData_valueData_properties
-            let OmniData_valueData_gravitas
-            let OmniData_valueData_hieararchies
-            let OmniData_valueData_spectrums
-            let OmniData_valueData_revelations
-            let OmniData_valueData_complexities
-            let OmniData_valueData_radiations
-            let OmniData_valueData_motions
-            let OmniData_valueData_
-
-    let OmniVon_root
-        let OmniVon_forms
-        let OmniVon_contexts
-        let OmniVon_expressions
-        let OmniVon_domains
-        let OmniVon_perspectives
-
 
 
 
@@ -2054,6 +2003,107 @@ document.addEventListener("keydown", function(event) {
 })
 
 
+
+Carousel_root = new THREE.Group()
+    Carousel_root.position.set(0, 0, 0)
+    Carousel_root.rotation.set(0, 0, 0)
+    Carousel_root.scale.set(1, 1, 1)
+        scene.add(Carousel_root)
+
+// "./docs/02-Math/AlgebraReview.pdf",
+// https://www.calculator.net/
+
+    Carousel_BackCenter_root = new THREE.Group()
+        Carousel_BackCenter_root.position.set(0, 0, -50)
+        Carousel_BackCenter_root.rotation.set(0, 0, 0)
+        Carousel_BackCenter_root.scale.set(1, 1, 1)
+            Carousel_root.add(Carousel_BackCenter_root)
+
+            Carousel_BackCenter_root.add(
+					new hoverObject(
+						'img',
+						0, 0, 0,
+						0, 0, 0,
+						0.01, 0.01, 0.01,
+						"Testing234", "TestingClass234",
+						"./assets/img/10-ObjectUI/02-TechTiles/Version04/TechTileBase01.svg", "",
+						"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Love each other...correctly.",
+						
+					)
+				)
+
+            Carousel_BackCenter_root.add(
+                new makePDF_Viewer(
+                    0, 0, 0,
+                    0, 0, 0,
+                    0.1, 0.1, 0.1,
+                    "hoverClockA1",
+                    "./assets/docs/02-PDFs/MyPersonalLibrary/02-Math/AlgebraReview.pdf",
+                    "1280", "720"
+                )
+            )
+
+
+    Carousel_BackLeft_root = new THREE.Group()
+        Carousel_BackLeft_root.position.set(-150, 0, 0)
+        Carousel_BackLeft_root.rotation.set(0, 0.691, 0)
+        Carousel_BackLeft_root.scale.set(1, 1, 1)
+            Carousel_root.add(Carousel_BackLeft_root)
+
+            Carousel_BackLeft_root.add(
+					new hoverObject(
+						'img',
+						0, 0, 0,
+						0, 0, 0,
+						0.01, 0.01, 0.01,
+						"Testing234", "TestingClass234",
+						"./assets/img/10-ObjectUI/02-TechTiles/Version04/TechTileBase01.svg", "",
+						"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Love each other...correctly.",
+						
+					)
+				)
+
+            Carousel_BackLeft_root.add(
+                new makePDF_Viewer(
+                    0, 0, 0,
+                    0, 0, 0,
+                    0.1, 0.1, 0.1,
+                    "hoverClockA1",
+                    "./assets/docs/02-PDFs/MyPersonalLibrary/02-Math/AlgebraReview.pdf",
+                    "1280", "720"
+                )
+            )
+
+
+    Carousel_BackRight_root = new THREE.Group()
+        Carousel_BackRight_root.position.set(150, 0, 0)
+        Carousel_BackRight_root.rotation.set(0, -0.691, 0)
+        Carousel_BackRight_root.scale.set(1, 1, 1)
+            Carousel_root.add(Carousel_BackRight_root)
+
+            Carousel_BackRight_root.add(
+					new hoverObject(
+						'img',
+						0, 0, 0,
+						0, 0, 0,
+						0.01, 0.01, 0.01,
+						"Testing234", "TestingClass234",
+						"./assets/img/10-ObjectUI/02-TechTiles/Version04/TechTileBase01.svg", "",
+						"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Love each other...correctly.",
+						
+					)
+				)
+
+            Carousel_BackRight_root.add(
+                new makePDF_Viewer(
+                    0, 0, 0,
+                    0, 0, 0,
+                    0.1, 0.1, 0.1,
+                    "hoverClockA1",
+                    "./assets/docs/02-PDFs/MyPersonalLibrary/02-Math/AlgebraReview.pdf",
+                    "1280", "720"
+                )
+            )            
 
 
 
@@ -2710,7 +2760,7 @@ document.addEventListener("keydown", function(event) {
 
 UserContainer_root = new THREE.Group()
                 // UserContainer_root.position.set(30, 5990, 23950);
-                UserContainer_root.position.set(0, 5, 0);
+                UserContainer_root.position.set(0, 55, 0);
                 UserContainer_root.rotation.set(0, 0, 0)
                 UserContainer_root.scale.set(10, 10, 10)
                 UserContainer_root.lookAt(camera.position)
@@ -3485,21 +3535,21 @@ UserContainer_root = new THREE.Group()
 			folderButton.add(camera.position, 'z').min(-3.14).max(3.14).step(0.001).name('z-camera')
 
 
-            const folderOrbits = gui.addFolder('Scene_CrystalOrb');
-			folderOrbits.add(Scene_CrystalOrb.rotation, 'x').min(-3.14).max(3.14).step(0.001).name('x-Scene_CrystalOrb')
-			folderOrbits.add(Scene_CrystalOrb.rotation, 'y').min(-3.14).max(3.14).step(0.001).name('y-Scene_CrystalOrb')
-			folderOrbits.add(Scene_CrystalOrb.rotation, 'z').min(-3.14).max(3.14).step(0.001).name('z-Scene_CrystalOrb')
+            const folderOrbits = gui.addFolder('Carousel_BackLeft_root');
+			folderOrbits.add(Carousel_BackLeft_root.rotation, 'x').min(-3.14).max(3.14).step(0.001).name('x-Carousel_BackLeft_root')
+			folderOrbits.add(Carousel_BackLeft_root.rotation, 'y').min(-3.14).max(3.14).step(0.001).name('y-Carousel_BackLeft_root')
+			folderOrbits.add(Carousel_BackLeft_root.rotation, 'z').min(-3.14).max(3.14).step(0.001).name('z-Carousel_BackLeft_root')
 
-            const folderPanels = gui.addFolder('Scene_CrystalOrb');
-			folderPanels.add(Scene_CrystalOrb.position, 'x').min(-10000).max(10000).step(0.01).name('x-Scene_CrystalOrb')
-			folderPanels.add(Scene_CrystalOrb.position, 'y').min(-10000).max(10000).step(0.01).name('y-Scene_CrystalOrb')
-			folderPanels.add(Scene_CrystalOrb.position, 'z').min(-10000).max(10000).step(0.01).name('z-Scene_CrystalOrb')
+            const folderPanels = gui.addFolder('Carousel_BackLeft_root');
+			folderPanels.add(Carousel_BackLeft_root.position, 'x').min(-10000).max(10000).step(0.01).name('x-Carousel_BackLeft_root')
+			folderPanels.add(Carousel_BackLeft_root.position, 'y').min(-10000).max(10000).step(0.01).name('y-Carousel_BackLeft_root')
+			folderPanels.add(Carousel_BackLeft_root.position, 'z').min(-10000).max(10000).step(0.01).name('z-Carousel_BackLeft_root')
 
 
-            const folderPanels01 = gui.addFolder('Scene_CrystalOrb');
-			folderPanels01.add(Scene_CrystalOrb.scale, 'x').min(-10000).max(10000).step(0.01).name('x-Scene_CrystalOrb')
-			folderPanels01.add(Scene_CrystalOrb.scale, 'y').min(-10000).max(10000).step(0.01).name('y-Scene_CrystalOrb')
-			folderPanels01.add(Scene_CrystalOrb.scale, 'z').min(-10000).max(10000).step(0.01).name('z-Scene_CrystalOrb')
+            const folderPanels01 = gui.addFolder('Carousel_BackLeft_root');
+			folderPanels01.add(Carousel_BackLeft_root.scale, 'x').min(-10000).max(10000).step(0.01).name('x-Carousel_BackLeft_root')
+			folderPanels01.add(Carousel_BackLeft_root.scale, 'y').min(-10000).max(10000).step(0.01).name('y-Carousel_BackLeft_root')
+			folderPanels01.add(Carousel_BackLeft_root.scale, 'z').min(-10000).max(10000).step(0.01).name('z-Carousel_BackLeft_root')
 
 
 
