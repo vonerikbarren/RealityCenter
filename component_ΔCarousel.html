@@ -1463,10 +1463,81 @@
                         x: targetPosition.x,
                         y: targetPosition.y,
                         z: targetPosition.z,
-                        duration: 1, // Adjust the duration for smoother or faster movement
+                        duration: 0.8, // Adjust the duration for smoother or faster movement
                         ease: "power2.out" // You can change the easing function as needed
                     });
                 });
+
+
+                document.addEventListener('keydown', (event) => {
+                    if (event.key === 'z') {
+                        gsap.to(camera.position, {
+                            duration: 1,
+                            x: 0,
+                            y: 1,
+                            z: 5,
+                            onUpdate: () => {
+                                camera.lookAt(new THREE.Vector3(0, 0, 0));
+                            },
+                            ease: "power2.inOut"
+                        });
+                    }
+                });
+
+        //    // Initialize Raycaster and Mouse Vector
+        //     const ZTargetRaycaster = new THREE.Raycaster();
+        //     const ZTargetMouse = new THREE.Vector2();
+
+        //     // Update Mouse Coordinates
+        //     document.addEventListener('mousemove', (event) => {
+        //         ZTargetMouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+        //         ZTargetMouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+        //     });
+
+        //     // Z-Targeting on ZTargetMouse Click
+        //     document.addEventListener('click', () => {
+        //         ZTargetRaycaster.setFromCamera(ZTargetMouse, camera);
+        //         const intersects = ZTargetRaycaster.intersectObjects(scene.children);
+
+        //         if (intersects.length > 0) {
+        //             const target = intersects[0].point;
+        //             gsap.to(camera.position, {
+        //                 duration: 1,
+        //                 x: target.x,
+        //                 y: target.y,
+        //                 z: target.z + 5, // Adjust this offset as needed
+        //                 onUpdate: () => {
+        //                     camera.lookAt(target);
+        //                 },
+        //                 ease: "power2.inOut"
+        //             });
+        //         }
+        //     });
+
+
+            // Initialize Raycaster and Mouse Vector
+            const ZTargetRaycaster = new THREE.Raycaster();
+            const ZTargetMouse = new THREE.Vector2();
+
+            // Update Mouse Coordinates
+            document.addEventListener('mousemove', (event) => {
+                ZTargetMouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+                ZTargetMouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+            });
+
+            // Z-Targeting on 'z' Key Press
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'z') {
+                    ZTargetRaycaster.setFromCamera(ZTargetMouse, camera);
+                    const intersects = ZTargetRaycaster.intersectObjects(scene.children);
+
+                    if (intersects.length > 0) {
+                        const target = intersects[0].point;
+                        camera.lookAt(target);
+                    }
+                }
+            });
+
 
 
 
@@ -1484,7 +1555,7 @@
 							duration: .5,
 							delay: 0,
                             ease: "none",
-							y: "+= 200",
+							y: "+= 10",
 
 						})
 					}
@@ -1499,7 +1570,7 @@
 							duration: .5,
 							delay: 0,
                             ease: "none",
-							y: "+= 10000",
+							y: "+= 100",
 
 						})
 					}
@@ -1513,7 +1584,7 @@
 							duration: .5,
 							delay: 0,
                             ease: "none",
-							y: "-= 200",
+							y: "-= 20",
 
 						})
 					}
@@ -1528,7 +1599,7 @@
 							duration: .5,
 							delay: 0,
                             ease: "none",
-							y: "-= 10000",
+							y: "-= 100",
 
 						})
 					}
@@ -2016,7 +2087,7 @@ Carousel_root = new THREE.Group()
     Carousel_BackCenter_root = new THREE.Group()
         Carousel_BackCenter_root.position.set(0, 0, -50)
         Carousel_BackCenter_root.rotation.set(0, 0, 0)
-        Carousel_BackCenter_root.scale.set(1, 1, 1)
+        Carousel_BackCenter_root.scale.set(0.5, 0.5, 0.5)
             Carousel_root.add(Carousel_BackCenter_root)
 
             Carousel_BackCenter_root.add(
@@ -2047,7 +2118,7 @@ Carousel_root = new THREE.Group()
     Carousel_BackLeft_root = new THREE.Group()
         Carousel_BackLeft_root.position.set(-150, 0, 0)
         Carousel_BackLeft_root.rotation.set(0, 0.691, 0)
-        Carousel_BackLeft_root.scale.set(1, 1, 1)
+        Carousel_BackLeft_root.scale.set(0.5, 0.5, 0.5)
             Carousel_root.add(Carousel_BackLeft_root)
 
             Carousel_BackLeft_root.add(
@@ -2078,7 +2149,7 @@ Carousel_root = new THREE.Group()
     Carousel_BackRight_root = new THREE.Group()
         Carousel_BackRight_root.position.set(150, 0, 0)
         Carousel_BackRight_root.rotation.set(0, -0.691, 0)
-        Carousel_BackRight_root.scale.set(1, 1, 1)
+        Carousel_BackRight_root.scale.set(0.5, 0.5, 0.5)
             Carousel_root.add(Carousel_BackRight_root)
 
             Carousel_BackRight_root.add(
@@ -2103,7 +2174,69 @@ Carousel_root = new THREE.Group()
                     "./assets/docs/02-PDFs/MyPersonalLibrary/02-Math/AlgebraReview.pdf",
                     "1280", "720"
                 )
-            )            
+            )     
+            
+            
+    Carousel_Left_root = new THREE.Group()
+        Carousel_Left_root.position.set(-200, 0, 100)
+        Carousel_Left_root.rotation.set(0, 1.575, 0)
+        Carousel_Left_root.scale.set(0.5, 0.5, 0.5)
+            Carousel_root.add(Carousel_Left_root)
+
+            Carousel_Left_root.add(
+					new hoverObject(
+						'img',
+						0, 0, 0,
+						0, 0, 0,
+						0.01, 0.01, 0.01,
+						"Testing234", "TestingClass234",
+						"./assets/img/10-ObjectUI/02-TechTiles/Version04/TechTileBase01.svg", "",
+						"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Love each other...correctly.",
+						
+					)
+				)
+
+            Carousel_Left_root.add(
+                new makePDF_Viewer(
+                    0, 0, 0,
+                    0, 0, 0,
+                    0.1, 0.1, 0.1,
+                    "hoverClockA1",
+                    "./assets/docs/02-PDFs/MyPersonalLibrary/02-Math/AlgebraReview.pdf",
+                    "1280", "720"
+                )
+            )    
+            
+    Carousel_Right_root = new THREE.Group()
+        Carousel_Right_root.position.set(200, 0, 100)
+        Carousel_Right_root.rotation.set(0, 1.575, 0)
+        Carousel_Right_root.scale.set(0.5, 0.5, 0.5)
+            Carousel_root.add(Carousel_Right_root)
+
+            Carousel_Right_root.add(
+					new hoverObject(
+						'img',
+						0, 0, 0,
+						0, 0, 0,
+						0.01, 0.01, 0.01,
+						"Testing234", "TestingClass234",
+						"./assets/img/10-ObjectUI/02-TechTiles/Version04/TechTileBase01.svg", "",
+						"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Love each other...correctly.",
+						
+					)
+				)
+
+            Carousel_Right_root.add(
+                new makePDF_Viewer(
+                    0, 0, 0,
+                    0, 0, 0,
+                    0.1, 0.1, 0.1,
+                    "hoverClockA1",
+                    "./assets/docs/02-PDFs/MyPersonalLibrary/02-Math/AlgebraReview.pdf",
+                    "1280", "720"
+                )
+            )   
+    
 
 
 
@@ -2359,7 +2492,7 @@ Carousel_root = new THREE.Group()
             firstPersonControls.heightMax = 0
             firstPersonControls.heightMin = 0
 
-            firstPersonControls.movementSpeed = 225;
+            firstPersonControls.movementSpeed = moveSpeed;
             firstPersonControls.enabled = false; // Start with FirstPersonControls disabled
             firstPersonControls.update();
 

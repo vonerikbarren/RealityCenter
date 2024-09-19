@@ -40,6 +40,24 @@
 \- setUp_datGui
 \- setUp_LoopedAnimations
 
+//........................................................................................
+//....SSSSSS.....HH......H....RRRRR.......TTTTTTTTT......CCC.......UU.....UU...TTTTTTTTT..
+//...SSSSSSSS...HHHH...HHHH..RRRRRRRRRR..RTTTTTTTTTT...CCCCCCCC...UUUU...UUUU.TTTTTTTTTT..
+//..SSSSSSSSSS..HHHH...HHHH..RRRRRRRRRRR.RTTTTTTTTTT..CCCCCCCCCC..UUUU...UUUU.TTTTTTTTTT..
+//..SSSSSSSSSS..HHHH...HHHH..RRRRRRRRRRR.RTTTTTTTTTT.CCCCCCCCCCC..UUUU...UUUU.TTTTTTTTTT..
+//.SSSS...SSSSS.HHHH...HHHH..RRRR...RRRRR....TTTT....CCCC...CCCCC.UUUU...UUUU.....TTTT....
+//.SSSSSS.......HHHHHHHHHHH..RRRR...RRRRR....TTTT...CCCCC....CCCC.UUUU...UUUU.....TTTT....
+//..SSSSSSSSS...HHHHHHHHHHH..RRRRRRRRRRR.....TTTT...CCCC..........UUUU...UUUU.....TTTT....
+//..SSSSSSSSSS..HHHHHHHHHHH..RRRRRRRRRRR.....TTTT...CCCC..........UUUU...UUUU.....TTTT....
+//....SSSSSSSSS.HHHHHHHHHHH..RRRRRRRRRRR.....TTTT...CCCC..........UUUU...UUUU.....TTTT....
+//.SSSS..SSSSSS.HHHH...HHHH..RRRR..RRRRR.....TTTT...CCCCC....CCCC.UUUU...UUUU.....TTTT....
+//.SSSS....SSSS.HHHH...HHHH..RRRR...RRRR.....TTTT....CCCC...CCCCC.UUUU...UUUU.....TTTT....
+//.SSSSSSSSSSSS.HHHH...HHHH..RRRR...RRRR.....TTTT....CCCCCCCCCCC..UUUUUUUUUUU.....TTTT....
+//..SSSSSSSSSS..HHHH...HHHH..RRRR...RRRR.....TTTT.....CCCCCCCCCC..UUUUUUUUUUU.....TTTT....
+//...SSSSSSSSS..HHHH...HHHH..RRRR...RRRRR....TTTT......CCCCCCCC....UUUUUUUUU......TTTT....
+//....SSSSSS............................................CCCCC........UUUUU................
+//........................................................................................
+
 
 ## makePDF_/_iFrameLinks
 \- https://docs.google.com/spreadsheets/d/1Wbvxc0_2UIZs79aPBVMYO3XTSueMot07YaZ-DlnXNiA/edit#gid=0
@@ -281,7 +299,11 @@ HomeScreenSaver.add(
 //......................................................
 ## GSAP / Animation Functions
 
+
+
+
 ### Basic Animation Function
+// ------------------------------------------------------------
 ``` js
 
 gsap.to(camera.position, {
@@ -313,6 +335,81 @@ gsap.to(camera.position, {
     x: 0,
     // y: 0,
 })
+
+
+```
+
+
+### Timeline -> gsap.timeline
+// ------------------------------------------------------------
+
+``` js
+
+let tl = gsap.timeline({
+    delay: 0,
+    paused: false,
+    repeat: -1,
+    repeatDelay: 0,
+    repeatRefresh: false,
+    yoyo: false,
+    defaults: {
+        duration: 1,
+        ease: "none".
+    },
+    smoothChildTiming: true,
+    autoRemoveChildren: false,
+    onComplete: myFunc()
+})
+
+
+tl.to(camera.position, {
+    duration: 5,
+    delay: 15,
+    z: 5,
+    x: 0,
+    // y: 0,
+})
+
+
+tl.to(camera.position, {
+    duration: 5,
+    delay: 15,
+    z: 5,
+    x: 0,
+    // y: 0,
+})
+
+
+
+
+
+```
+
+
+
+### Timeline -> gsap.timeline
+// -----------------------------------------------------------------
+
+``` js
+
+function scene1() {
+  let tl = gsap.timeline();
+  tl.to(...).to(...); // build scene 1
+  return tl;
+}
+
+function scene2() {
+  let tl = gsap.timeline();
+  tl.to(...).to(...); // build scene 2
+  return tl;
+}
+
+let master = gsap.timeline()
+  .add(scene1())
+  .add(scene2(), "-=0.5") // overlap slightly
+
+
+
 
 
 ```

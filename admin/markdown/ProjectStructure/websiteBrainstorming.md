@@ -97,7 +97,9 @@ Calendar
     [] - D33. obj/ Δ / ConsolidationΔ
     [] - D34. obj/ Δ / ConcentrationΔ
     [] - D35. obj/ Δ / DirectionΔ
-    [] - D36. obj/ Δ / EndΔ
+    [] - D36. obj/ Δ / Blessing
+    [] - D37. obj/ Δ / Curse
+    [] - D38. obj/ Δ / EndΔ
 
 
 \- ComponentsNeededForRealityPortfolio
