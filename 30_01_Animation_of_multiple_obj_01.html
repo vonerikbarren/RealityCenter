@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three.js and GSAP Animation</title>
+    <style>
+        body { margin: 0; }
+        canvas { display: block; }
+    </style>
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://threejs.org/examples/js/controls/FirstPersonControls.js"></script>
+    <script>
+        // Scene setup
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        // First-person controls
+        const controls = new THREE.FirstPersonControls(camera, renderer.domElement);
+        controls.movementSpeed = 10;
+        controls.lookSpeed = 0.1;
+
+        // Green plane
+        const planeGeometry = new THREE.PlaneGeometry(10, 10, 10, 10);
+        const planeMaterial = new THREE.MeshBasicMaterial({ color: 0x00ff00, wireframe: true });
+        const plane = new THREE.Mesh(planeGeometry, planeMaterial);
+        plane.rotation.x = -Math.PI / 2;
+        scene.add(plane);
+
+        // Animate plane from small squares to large plane
+        gsap.to(plane.scale, { duration: 2, x: 1, y: 1, z: 1 });
+
+        // Purple wireframe cubes
+        const cubeGeometry = new THREE.BoxGeometry(1, 1, 1);
+        const cubeMaterial = new THREE.MeshBasicMaterial({ color: 0x800080, wireframe: true });
+        const cubes = [];
+        for (let i = 0; i < 4; i++) {
+            const cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
+            cube.position.set(i * 2 - 3, 0.5, 0);
+            scene.add(cube);
+            cubes.push(cube);
+        }
+
+        // Animate cubes upwards
+        cubes.forEach(cube => {
+            gsap.to(cube.position, { duration: 2, y: 2 });
+        });
+
+        // Boundary cube
+        const boundaryGeometry = new THREE.BoxGeometry(20, 20, 20);
+        const boundaryMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff, wireframe: false });
+        const boundary = new THREE.Mesh(boundaryGeometry, boundaryMaterial);
+        boundary.position.set(0, 10, 0);
+        scene.add(boundary);
+
+        // Buildings
+        const buildingGeometry = new THREE.BoxGeometry(1, 5, 1);
+        const buildingMaterial = new THREE.MeshBasicMaterial({ color: 0x808080 });
+        for (let i = -5; i <= 5; i += 2) {
+            for (let j = -5; j <= 5; j += 2) {
+                const building = new THREE.Mesh(buildingGeometry, buildingMaterial);
+                building.position.set(i, 2.5, j);
+                scene.add(building);
+            }
+        }
+
+        // Camera position
+        camera.position.set(0, 5, 10);
+
+        // Animation loop
+        function animate() {
+            requestAnimationFrame(animate);
+            controls.update(1);
+            renderer.render(scene, camera);
+        }
+        animate();
+    </script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spiraling Galaxy with Controls</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/FirstPersonControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/PointerLockControls.js"></script>
+</head>
+<body>
+    <script>
+        // Create the scene, camera, and renderer
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        // Create the galaxy
+        const galaxyGeometry = new THREE.BufferGeometry();
+        const galaxyMaterial = new THREE.PointsMaterial({ color: 0xffffff, size: 0.1 });
+
+        const numStars = 1000;
+        const spiralFactor = 0.1;
+        const positions = new Float32Array(numStars * 3);
+
+        for (let i = 0; i < numStars; i++) {
+            const angle = i * spiralFactor;
+            const distance = Math.sqrt(i) * 0.5;
+            const x = distance * Math.cos(angle);
+            const y = distance * Math.sin(angle);
+            const z = Math.random() * 2 - 1;
+
+            positions[i * 3] = x;
+            positions[i * 3 + 1] = y;
+            positions[i * 3 + 2] = z;
+        }
+
+        galaxyGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+
+        const galaxy = new THREE.Points(galaxyGeometry, galaxyMaterial);
+        galaxy.position.set(0, -10, 0)
+        galaxy.rotation.set(1.575, 0, 1.575)
+        scene.add(galaxy);
+
+        // Set the camera position
+        camera.position.z = 5;
+
+        // Controls
+        const orbitControls = new THREE.OrbitControls(camera, renderer.domElement);
+        const firstPersonControls = new THREE.FirstPersonControls(camera, renderer.domElement);
+        firstPersonControls.lookSpeed = 0.1;
+        firstPersonControls.movementSpeed = 5;
+
+        const pointerLockControls = new THREE.PointerLockControls(camera, renderer.domElement);
+        document.addEventListener('click', () => {
+            pointerLockControls.lock();
+        });
+
+        let currentControls = orbitControls;
+
+        // Switch controls based on key press
+        document.addEventListener('keydown', (event) => {
+            switch (event.key) {
+                case 'x':
+                    currentControls = orbitControls;
+                    break;
+                case 'c':
+                    currentControls = firstPersonControls;
+                    break;
+                case 'v':
+                    currentControls = pointerLockControls;
+                    break;
+            }
+        });
+
+        // Animation loop
+        function animate() {
+            requestAnimationFrame(animate);
+
+            // Rotate the galaxy
+            galaxy.rotation.y += 0.001;
+
+            // Update controls
+            currentControls.update();
+
+            renderer.render(scene, camera);
+        }
+
+        animate();
+
+        // GSAP animation for spiraling effect
+        gsap.to(galaxy.rotation, {
+            z: "+=6.28", // 2 * Math.PI for a full rotation
+            duration: 1,
+            repeat: -1,
+            ease: "linear"
+        });
+    </script>
+</body>
+</html>
