@@ -33,7 +33,7 @@
 
          <video id="none" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/PlexusAnimations/Animation_ParticlesWhite01.mp4" style="display: none" ></video>
 
-         <video id="openingVideo" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/SphereAnimations/whiteBg_polygons.mp4" style="display: none" ></video>
+         <video id="openingVideo" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/SphereAnimations/whiteBg_waveBreakAnimation.mp4" style="display: none" ></video>
 
          <video id="none" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/SphereAnimations/Equations3.mp4" style="display: none" ></video>
 
@@ -1872,30 +1872,55 @@
 
 
 
-Scene_StromingSun = new THREE.Group()
-Scene_StromingSun.position.set(0, -5, 150)
-Scene_StromingSun.rotation.set(0, 0, 0)
-Scene_StromingSun.scale.set(1, 1, 1)
+// Scene_StromingSun = new THREE.Group()
+// Scene_StromingSun.position.set(0, -5, 150)
+// Scene_StromingSun.rotation.set(0, 0, 0)
+// Scene_StromingSun.scale.set(1, 1, 1)
 
-scene.add(Scene_StromingSun)
+// scene.add(Scene_StromingSun)
 
-const gltfLoader = new GLTFLoader().setPath( 'assets/models/crystal_orb/' );
-    gltfLoader.load( 'scene.gltf', function ( gltf ) {
+// const gltfLoader = new GLTFLoader().setPath( 'assets/models/crystal_orb/' );
+//     gltfLoader.load( 'scene.gltf', function ( gltf ) {
 
-        Scene_StromingSun.add( gltf.scene );
+//         Scene_StromingSun.add( gltf.scene );
 
-        render();
+//         render();
 
-    } );
+//     } );
 
 
-    // DRACOLoader.load( 'scene.gltf', function ( gltf ) {
+//     // DRACOLoader.load( 'scene.gltf', function ( gltf ) {
 
-    //     Scene_StromingSun.add( gltf.scene );
+//     //     Scene_StromingSun.add( gltf.scene );
 
-    //     render();
+//     //     render();
 
-    // } );
+//     // } );
+
+// Group
+let keyboard_piano = new THREE.Group()
+keyboard_piano.position.set(0, 0, 0)
+scene.add(keyboard_piano)
+
+
+// Keyboard keys
+const keys = [];
+    const keyWidth = 1;
+    const keyHeight = 2;
+    const keyDepth = 0.5;
+    const keyGeometry = new THREE.BoxGeometry(keyWidth, keyHeight, keyDepth);
+    const keyMaterial = new THREE.MeshBasicMaterial({ color: 0xFFFFFF });
+
+    for (let i = 0; i < 88; i++) {
+        const key = new THREE.Mesh(keyGeometry, keyMaterial);
+        key.position.x = i * (keyWidth + 0.1) - (88 * (keyWidth + 0.1)) / 2;
+        key.userData = { index: i };
+        keys.push(key);
+        keyboard_piano.add(key);
+    }
+
+
+
 
 
 
@@ -2763,21 +2788,21 @@ const gltfLoader = new GLTFLoader().setPath( 'assets/models/crystal_orb/' );
 			folderButton.add(camera.position, 'z').min(-3.14).max(3.14).step(0.001).name('z-camera')
 
 
-            const folderOrbits = gui.addFolder('Scene_StromingSun');
-			folderOrbits.add(Scene_StromingSun.rotation, 'x').min(-3.14).max(3.14).step(0.001).name('x-Scene_StromingSun')
-			folderOrbits.add(Scene_StromingSun.rotation, 'y').min(-3.14).max(3.14).step(0.001).name('y-Scene_StromingSun')
-			folderOrbits.add(Scene_StromingSun.rotation, 'z').min(-3.14).max(3.14).step(0.001).name('z-Scene_StromingSun')
+            const folderOrbits = gui.addFolder('keyboard_piano');
+			folderOrbits.add(keyboard_piano.rotation, 'x').min(-3.14).max(3.14).step(0.001).name('x-keyboard_piano')
+			folderOrbits.add(keyboard_piano.rotation, 'y').min(-3.14).max(3.14).step(0.001).name('y-keyboard_piano')
+			folderOrbits.add(keyboard_piano.rotation, 'z').min(-3.14).max(3.14).step(0.001).name('z-keyboard_piano')
 
-            const folderPanels = gui.addFolder('Scene_StromingSun');
-			folderPanels.add(Scene_StromingSun.position, 'x').min(-10000).max(10000).step(0.01).name('x-Scene_StromingSun')
-			folderPanels.add(Scene_StromingSun.position, 'y').min(-10000).max(10000).step(0.01).name('y-Scene_StromingSun')
-			folderPanels.add(Scene_StromingSun.position, 'z').min(-10000).max(10000).step(0.01).name('z-Scene_StromingSun')
+            const folderPanels = gui.addFolder('keyboard_piano');
+			folderPanels.add(keyboard_piano.position, 'x').min(-10000).max(10000).step(0.01).name('x-keyboard_piano')
+			folderPanels.add(keyboard_piano.position, 'y').min(-10000).max(10000).step(0.01).name('y-keyboard_piano')
+			folderPanels.add(keyboard_piano.position, 'z').min(-10000).max(10000).step(0.01).name('z-keyboard_piano')
 
 
-            const folderPanels01 = gui.addFolder('Scene_StromingSun');
-			folderPanels01.add(Scene_StromingSun.scale, 'x').min(-10000).max(10000).step(0.01).name('x-Scene_StromingSun')
-			folderPanels01.add(Scene_StromingSun.scale, 'y').min(-10000).max(10000).step(0.01).name('y-Scene_StromingSun')
-			folderPanels01.add(Scene_StromingSun.scale, 'z').min(-10000).max(10000).step(0.01).name('z-Scene_StromingSun')
+            const folderPanels01 = gui.addFolder('keyboard_piano');
+			folderPanels01.add(keyboard_piano.scale, 'x').min(-10000).max(10000).step(0.01).name('x-keyboard_piano')
+			folderPanels01.add(keyboard_piano.scale, 'y').min(-10000).max(10000).step(0.01).name('y-keyboard_piano')
+			folderPanels01.add(keyboard_piano.scale, 'z').min(-10000).max(10000).step(0.01).name('z-keyboard_piano')
 
 
 

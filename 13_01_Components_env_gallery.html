@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three.js Sphere of Planes</title>
+    <style>
+        body { margin: 0; }
+        canvas { display: block; }
+    </style>
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/examples/js/controls/OrbitControls.js"></script>
+    <script>
+        // Create the scene, camera, and renderer
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        // Add orbit controls
+        const controls = new THREE.OrbitControls(camera, renderer.domElement);
+
+        // Create a texture loader
+        const textureLoader = new THREE.TextureLoader();
+
+        // Function to create a plane with a texture
+        function createTexturedPlane(texture) {
+            const geometry = new THREE.PlaneGeometry(1, 1);
+            const material = new THREE.MeshBasicMaterial({ map: texture });
+            return new THREE.Mesh(geometry, material);
+        }
+
+        // Function to create a sphere of planes
+        function createSphereOfPlanes(textures) {
+            const radius = 5;
+            const planes = [];
+            const phiSegments = 8;
+            const thetaSegments = 8;
+
+            for (let phi = 0; phi < phiSegments; phi++) {
+                for (let theta = 0; theta < thetaSegments; theta++) {
+                    const texture = textures[(phi * thetaSegments + theta) % textures.length];
+                    const plane = createTexturedPlane(texture);
+
+                    const phiAngle = (phi / phiSegments) * Math.PI;
+                    const thetaAngle = (theta / thetaSegments) * 2 * Math.PI;
+
+                    plane.position.set(
+                        radius * Math.sin(phiAngle) * Math.cos(thetaAngle),
+                        radius * Math.cos(phiAngle),
+                        radius * Math.sin(phiAngle) * Math.sin(thetaAngle)
+                    );
+
+                    planes.push(plane);
+                    scene.add(plane);
+                }
+            }
+        }
+
+        // Load dummy textures and create the sphere of planes
+        const textures = [];
+        for (let i = 0; i < 64; i++) {
+            textures.push(textureLoader.load('https://via.placeholder.com/150'));
+        }
+
+        createSphereOfPlanes(textures);
+
+        // Set camera position
+        camera.position.z = 10;
+
+        // Animation loop
+        function animate() {
+            requestAnimationFrame(animate);
+            controls.update();
+            renderer.render(scene, camera);
+        }
+        animate();
+    </script>
+</body>
+</html>

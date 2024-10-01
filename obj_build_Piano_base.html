@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Keyboard</title>
+    <style>
+        body { margin: 0; }
+        canvas { display: block; }
+    </style>
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/examples/js/controls/OrbitControls.js"></script>
+    <script>
+        // Scene setup
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        // OrbitControls
+        const controls = new THREE.OrbitControls(camera, renderer.domElement);
+
+        // White sphere perimeter
+        const sphereGeometry = new THREE.SphereGeometry(50, 32, 32);
+        const sphereMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff, wireframe: true });
+        const sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
+        scene.add(sphere);
+
+        // Keyboard keys
+        const keys = [];
+        const keyWidth = 1;
+        const keyHeight = 2;
+        const keyDepth = 0.5;
+        const keyGeometry = new THREE.BoxGeometry(keyWidth, keyHeight, keyDepth);
+        const keyMaterial = new THREE.MeshBasicMaterial({ color: 0x000000 });
+
+        for (let i = 0; i < 88; i++) {
+            const key = new THREE.Mesh(keyGeometry, keyMaterial);
+            key.position.x = i * (keyWidth + 0.1) - (88 * (keyWidth + 0.1)) / 2;
+            key.userData = { index: i };
+            keys.push(key);
+            scene.add(key);
+        }
+
+        // Camera position
+        camera.position.z = 100;
+
+        // Animation loop
+        function animate() {
+            requestAnimationFrame(animate);
+            controls.update();
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        // Click event
+        window.addEventListener('click', (event) => {
+            const mouse = new THREE.Vector2();
+            mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+            mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+            const raycaster = new THREE.Raycaster();
+            raycaster.setFromCamera(mouse, camera);
+
+            const intersects = raycaster.intersectObjects(keys);
+            if (intersects.length > 0) {
+                const key = intersects[0].object;
+                gsap.to(key.position, { y: key.position.y + 1, duration: 0.2, yoyo: true, repeat: 1 });
+
+                // Add your sound function here
+                // playSound(key.userData.index);
+            }
+        });
+    </script>
+</body>
+</html>
