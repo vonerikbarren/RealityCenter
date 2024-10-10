@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>THREE.js and GSAP Mobile GUI</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+    }
+
+    #scene-container {
+      width: 100vw;
+      height: 100vh;
+    }
+
+    .button {
+      position: absolute;
+      visibility: 50%;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      z-index: 1;
+    }
+
+    .menu {
+      top: 10px;
+      left: 10px;
+    }
+
+    .control {
+      bottom: 50px;
+    }
+
+    .left {
+      left: 10px;
+      bottom: 70px;
+    }
+
+    .right {
+      left: 130px;
+      bottom: 70px;
+    }
+
+    .forward {
+      left: 70px;
+      bottom: 130px;
+    }
+
+    .backward {
+      left: 70px;
+      bottom: 10px;
+    }
+
+    .up {
+      left: 180px;
+      bottom: 130px;
+    }
+
+    .down {
+      left: 180px;
+      bottom: 10px;
+    }
+
+    .panel-menu {
+      top: 10px;
+      right: 10px;
+    }
+
+    .right-button {
+      bottom: 10px;
+      right: 10px;
+    }
+
+    .right-button-2 {
+      bottom: 50px;
+      right: 10px;
+    }
+
+    .right-button-3 {
+      bottom: 90px;
+      right: 10px;
+    }
+
+    .right-button-4 {
+      bottom: 130px;
+      right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div id="scene-container"></div>
+  
+  <button class="button menu" onclick="toggleMenu()">☰ Menu</button>
+  
+  <button class="button control forward" onclick="move('forward')">Forward</button>
+  <button class="button control backward" onclick="move('backward')">Backward</button>
+  <button class="button control left" onclick="move('left')">Left</button>
+  <button class="button control right" onclick="move('right')">Right</button>
+  <button class="button control up" onclick="move('up')">Up</button>
+  <button class="button control down" onclick="move('down')">Down</button>
+
+  <button class="button right-button">A</button>
+  <button class="button right-button-2">B</button>
+  <button class="button right-button-3">C</button>
+  <button class="button right-button-4">D</button>
+  
+  <button class="button panel-menu" onclick="togglePanel()">☰ Panel</button>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+  <script>
+    // THREE.js scene setup
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.getElementById('scene-container').appendChild(renderer.domElement);
+
+    // Example object
+    const geometry = new THREE.BoxGeometry();
+    const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+    const cube = new THREE.Mesh(geometry, material);
+    scene.add(cube);
+
+    camera.position.z = 5;
+
+    function animate() {
+      requestAnimationFrame(animate);
+      renderer.render(scene, camera);
+    }
+
+    animate();
+
+    // GSAP animations
+    function move(direction) {
+      const distance = 1;
+      switch (direction) {
+        case 'forward':
+          gsap.to(cube.position, { z: cube.position.z - distance, duration: 1 });
+          break;
+        case 'backward':
+          gsap.to(cube.position, { z: cube.position.z + distance, duration: 1 });
+          break;
+        case 'left':
+          gsap.to(cube.position, { x: cube.position.x - distance, duration: 1 });
+          break;
+        case 'right':
+          gsap.to(cube.position, { x: cube.position.x + distance, duration: 1 });
+          break;
+        case 'up':
+          gsap.to(cube.position, { y: cube.position.y + distance, duration: 1 });
+          break;
+        case 'down':
+          gsap.to(cube.position, { y: cube.position.y - distance, duration: 1 });
+          break;
+      }
+    }
+
+    function toggleMenu() {
+      alert("Menu button clicked!");
+    }
+
+    function togglePanel() {
+      alert("Panel button clicked!");
+    }
+
+    // Responsive for mobile and folding screens
+    window.addEventListener('resize', () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+
+    // Model pop-up function
+    function addModel() {
+      const modelGeometry = new THREE.SphereGeometry(1, 32, 32);
+      const modelMaterial = new THREE.MeshBasicMaterial({ color: 0xff0000 });
+      const model = new THREE.Mesh(modelGeometry, modelMaterial);
+      scene.add(model);
+      model.position.set(2, 2, 2);
+    }
+
+    document.querySelector('.right-button').addEventListener('click', addModel);
+  </script>
+</body>
+</html>

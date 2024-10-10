@@ -33,7 +33,7 @@
 
          <video id="none" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/PlexusAnimations/Animation_ParticlesWhite01.mp4" style="display: none" ></video>
 
-         <video id="openingVideo" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/TunnelAnimations/GalaxyTunnel01.mp4" style="display: none" ></video>
+         <video id="openingVideo" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/SphereAnimations/Animation_Tetras.mp4" style="display: none" ></video>
 
          <video id="none" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/SphereAnimations/Equations3.mp4" style="display: none" ></video>
 
@@ -79,7 +79,13 @@
 		import { DRACOLoader } from './libraries/loaders/DRACOLoader.js'
         import { CSS2DRenderer, CSS2DObject } from './libraries/renderers/CSS2DRenderer.js';
         import { CSS3DRenderer, CSS3DObject } from './libraries/renderers/CSS3DRenderer.js';
+
+        // Animation Imports
+        
 		const clock = new THREE.Clock();
+        // import  { Spacial_Movement_Function_Basic01 } from './animations/01_Basics/Spacial_Movement_Function_Basic01';
+        // import OrbitCamera from './animations/01_Basics/OrbitCamera';
+
 
 
         //........................................................
@@ -103,7 +109,7 @@
 		let container, stats;
 		let camera, scene, renderer;
         let cssrenderer
-		let controls, water, sun, mesh, ΔΦ, ΔΩ;
+		let orbitControls, firstPersonControls, water, sun, mesh, ΔΦ, ΔΩ;
 		let Φ, MeshHDC_01, meshA1, goldenGearTest, goldenGearTest2;
 		let neoncircle;
 		let timeSphere, mesh_timeSphere_L0, mesh_Reality_A0, mesh_timeSphere_L1, mesh_lightContainer_A0;
@@ -263,10 +269,26 @@
 
         let Hud_root
             let Hud_Menubar
-        let Hud_
+            let Hud_
+
 
         let gear
         let gearCore
+
+
+        // GLTF Tests
+        
+        let Scene_SphericalBall01
+        let Scene_icicilion
+        let Scene_Gloves
+        let Scene_Prismatrix
+        let Scene_StromingSun
+        let Scene_CrystalOrb
+
+
+
+
+
 
         //....................................................................
         //.............DDDDD................OOOOOO......BBBBB............JJ...
@@ -1258,125 +1280,125 @@
 
 
 
-            // ###########################################################
-            // Movement Settings
-            // ###########################################################
-                document.addEventListener("keydown", function(event) {
-					if (event.key === "w") {
+            // // ###########################################################
+            // // Movement Settings
+            // // ###########################################################
+            //     document.addEventListener("keydown", function(event) {
+			// 		if (event.key === "w") {
 						
 
-						gsap.to(camera.position, {
-							duration: .25,
-							delay: 0,
-                            ease: "none",
-							z: `-= ${newSpeedStrengthParams.forwards}`,
+			// 			gsap.to(camera.position, {
+			// 				duration: .25,
+			// 				delay: 0,
+            //                 ease: "none",
+			// 				z: `-= ${newSpeedStrengthParams.forwards}`,
 
-						})
-					}
-				})
+			// 			})
+			// 		}
+			// 	})
 
-                document.addEventListener("keydown", function(event) {
-					if (event.ctrlKey && event.key === "w") {
+            //     document.addEventListener("keydown", function(event) {
+			// 		if (event.ctrlKey && event.key === "w") {
 						
 
-						gsap.to(camera.position, {
-							duration: .25,
-							delay: 0,
-                            ease: "none",
-							z: `-= ${Control_newSpeedStrengthParams.forwards}`,
+			// 			gsap.to(camera.position, {
+			// 				duration: .25,
+			// 				delay: 0,
+            //                 ease: "none",
+			// 				z: `-= ${Control_newSpeedStrengthParams.forwards}`,
 
-						})
-					}
-				})
+			// 			})
+			// 		}
+			// 	})
 
 
-				document.addEventListener("keydown", function(event) {
-					if (event.key === "s") {
+			// 	document.addEventListener("keydown", function(event) {
+			// 		if (event.key === "s") {
 						
 
-						gsap.to(camera.position, {
-							duration: .25,
-							delay: 0,
-                            ease: "none",
-							z: `+= ${newSpeedStrengthParams.backwards}`,
+			// 			gsap.to(camera.position, {
+			// 				duration: .25,
+			// 				delay: 0,
+            //                 ease: "none",
+			// 				z: `+= ${newSpeedStrengthParams.backwards}`,
 
-						})
-					}
-				})
+			// 			})
+			// 		}
+			// 	})
 
-                document.addEventListener("keydown", function(event) {
-					if (event.ctrlKey && event.key === "s") {
+            //     document.addEventListener("keydown", function(event) {
+			// 		if (event.ctrlKey && event.key === "s") {
 						
 
-						gsap.to(camera.position, {
-							duration: .25,
-							delay: 0,
-                            ease: "none",
-							z: `+= ${Control_newSpeedStrengthParams.forwards}`,
+			// 			gsap.to(camera.position, {
+			// 				duration: .25,
+			// 				delay: 0,
+            //                 ease: "none",
+			// 				z: `+= ${Control_newSpeedStrengthParams.forwards}`,
 
-						})
-					}
-				})
+			// 			})
+			// 		}
+			// 	})
 
 
-				document.addEventListener("keydown", function(event) {
-					if (event.key === "a") {
+			// 	document.addEventListener("keydown", function(event) {
+			// 		if (event.key === "a") {
 						
 
-						gsap.to(camera.position, {
-							duration: .25,
-							delay: 0,
-                            ease: "none",
-							x: `-= ${newSpeedStrengthParams.left}`,
+			// 			gsap.to(camera.position, {
+			// 				duration: .25,
+			// 				delay: 0,
+            //                 ease: "none",
+			// 				x: `-= ${newSpeedStrengthParams.left}`,
 
-						})
+			// 			})
 
-					}
-				})
+			// 		}
+			// 	})
 
 
-                document.addEventListener("keydown", function(event) {
-					if (event.ctrlKey && event.key === "a") {
+            //     document.addEventListener("keydown", function(event) {
+			// 		if (event.ctrlKey && event.key === "a") {
 						
 
-						gsap.to(camera.position, {
-							duration: .25,
-							delay: 0,
-                            ease: "none",
-							x: `-= ${Control_newSpeedStrengthParams.forwards}`,
+			// 			gsap.to(camera.position, {
+			// 				duration: .25,
+			// 				delay: 0,
+            //                 ease: "none",
+			// 				x: `-= ${Control_newSpeedStrengthParams.forwards}`,
 
-						})
-					}
-				})
+			// 			})
+			// 		}
+			// 	})
 
 
-				document.addEventListener("keydown", function(event) {
-					if (event.key === "d") {
+			// 	document.addEventListener("keydown", function(event) {
+			// 		if (event.key === "d") {
 						
 
-						gsap.to(camera.position, {
-							duration: .25,
-							delay: 0,
-                            ease: "none",
-							x: `+= ${newSpeedStrengthParams.right}`,
+			// 			gsap.to(camera.position, {
+			// 				duration: .25,
+			// 				delay: 0,
+            //                 ease: "none",
+			// 				x: `+= ${newSpeedStrengthParams.right}`,
 
-						})
-					}
-				})
+			// 			})
+			// 		}
+			// 	})
 
-                document.addEventListener("keydown", function(event) {
-					if (event.ctrlKey && event.key === "d") {
+            //     document.addEventListener("keydown", function(event) {
+			// 		if (event.ctrlKey && event.key === "d") {
 						
 
-						gsap.to(camera.position, {
-							duration: .25,
-							delay: 0,
-                            ease: "none",
-							x: `+= ${Control_newSpeedStrengthParams.forwards}`,
+			// 			gsap.to(camera.position, {
+			// 				duration: .25,
+			// 				delay: 0,
+            //                 ease: "none",
+			// 				x: `+= ${Control_newSpeedStrengthParams.forwards}`,
 
-						})
-					}
-				})
+			// 			})
+			// 		}
+			// 	})
 
 
                 document.addEventListener("keydown", function(event) {
@@ -1394,6 +1416,47 @@
 						})
 					}
 				})
+
+
+            // // ###########################################################
+            // // Proper Movement Settings
+            // // ###########################################################
+
+            // Assuming you have a camera and a scene already set up
+                const cameraDirection = new THREE.Vector3();
+                const moveSpeed = 10; // Adjust the speed as needed
+
+                document.addEventListener('keydown', (event) => {
+                    camera.getWorldDirection(cameraDirection);
+
+                    let targetPosition = camera.position.clone();
+
+                    switch (event.key) {
+                        case 'w':
+                            targetPosition.add(cameraDirection.clone().multiplyScalar(moveSpeed));
+                            break;
+                        case 's':
+                            targetPosition.add(cameraDirection.clone().multiplyScalar(-moveSpeed));
+                            break;
+                        case 'a':
+                            targetPosition.add(cameraDirection.clone().cross(camera.up).normalize().multiplyScalar(-moveSpeed));
+                            break;
+                        case 'd':
+                            targetPosition.add(cameraDirection.clone().cross(camera.up).normalize().multiplyScalar(moveSpeed));
+                            break;
+                    }
+
+                    // Use GSAP to animate the camera position
+                    gsap.to(camera.position, {
+                        x: targetPosition.x,
+                        y: targetPosition.y,
+                        z: targetPosition.z,
+                        duration: 1, // Adjust the duration for smoother or faster movement
+                        ease: "power2.out" // You can change the easing function as needed
+                    });
+                });
+
+
 
 
             // ###########################################################
@@ -1760,114 +1823,344 @@
 //.................................................................
 
 
-                
-gearCore = new THREE.Group()
-gearCore.rotation.set(1.575, 0, 0)
-gearCore.position.set(0, 55, 130)
-gearCore.scale.set(3, 3, 3)
-scene.add(gearCore)
+
+let OmniDataFragment_root
+    let OmniData_
+        let OmniData_Fragment
+            let OmniData_core
+                    let OmniData_core_status
+                        let OmniData_core_status_heartbeat
+                            let OmniData_core_status_logicCycle
+                                let OmniData_core_status_logicCycle_
+                        let OmniData_core_status_flows
+                            let OmniData_core_status_flows_manager
+                            let OmniData_core_Status_flows_systemDefaults
+                            let OmniData_core_Status_flows_systemsCustomizations
+                        let OmniData_core_status_states
+                            let OmniData_core_status_states_info
+                                let OmniData_core_status_state_defaults
+                                let OmniData_core_status_state_primarys
+                                let OmniData_core_status_state_secondaries
+                                let OmniData_core_status_state_terceries
+                                let OmniData_core_Status_state_successes
+                                let OmniData_core_status_state_warnings
+                                let OmniData_core_Status_state_dangers
+                                let OmniData_core_Status_state_undefineds
+                                let OmniData_core_status_state_infos
+                                let OmniData_core_status_state_truths
+                                let OmniData_core_status_state_falses
+                            let OmniData_core_status_states_feelings
+                                let OmniData_core_status_states_feelings_happy
+                                let OmniData_core_status_states_feelings_sad
+                                let OmniData_core_status_states_feelings_angry
+                                let OmniData_core_status_states_feelings_disgust
+                                let OmniData_core_status_states_feelings_fear
+
+    let OmniDataObject_root
+        let OmniData_predecessor
+        let OmniData_ancestor
+        let OmniData_current
+        let OmniData_successor
+        let OmniData_descendant
+        let OmniData_valueData
+            let OmniData_valueData_relativePerspective
+            let OmniData_valueData_times
+            let OmniData_valueData_spaces
+                let OmniData_valueData_spaceData_external
+                let OmniData_valueData_spaceData_internal
+            let OmniData_valueData_containers
+            let OmniData_valueData_properties
+            let OmniData_valueData_gravitas
+            let OmniData_valueData_hieararchies
+            let OmniData_valueData_spectrums
+            let OmniData_valueData_revelations
+            let OmniData_valueData_complexities
+            let OmniData_valueData_radiations
+            let OmniData_valueData_motions
+            let OmniData_valueData_
+
+    let OmniVon_root
+        let OmniVon_forms
+        let OmniVon_contexts
+        let OmniVon_expressions
+        let OmniVon_domains
+        let OmniVon_perspectives
 
 
-// Create the gear geometry
-const gearGeometry = new THREE.CylinderGeometry(10, 10, 5.5, 128, 10, true, 0, Math.PI * 2);
-const gearMaterial = new THREE.MeshPhysicalMaterial(
-    { 
-        side: THREE.DoubleSide,
-        map: whitePureRoom, 
-        color: 0xffffff, 
-        metalness: 0.9, 
-        roughness: 0, 
-        ior: 2.333,
-        fog: true,
-        sheenColor: 0xffffff,
-        reflectivity: 1,
-        iridescence: 1,
-        iridescenceIOR: 1.3,
-        depthWrite: true,
-        depthTest: true,
-
-    }
-);
-const gear = new THREE.Mesh(gearGeometry, gearMaterial);
-// gear.rotation.x = 1.575; // Rotate the center cylinder by 1.575 radians on the x-axis
-scene.add(gear);
-gear.position.set(0, 0, 0)
-gear.scale.set(1, 0.5, 1)
 
 
-gearCore.add(gear)
+Scene_CrystalOrb = new THREE.Group()
+Scene_CrystalOrb.position.set(0, -5, 150)
+Scene_CrystalOrb.rotation.set(0, 0, 0)
+Scene_CrystalOrb.scale.set(1, 1, 1)
 
+scene.add(Scene_CrystalOrb)
 
-const Teeth = new THREE.Group()
-Teeth.rotation.set(1.575, 0, 0)
-gearCore.add(Teeth)
+const gltfLoader = new GLTFLoader().setPath( 'assets/models/crystal_orb/' );
+    gltfLoader.load( 'scene.gltf', function ( gltf ) {
 
-// Create the teeth
-const teethGeometry = new THREE.BoxGeometry(2, 0.5, 7);
-const teethMaterial = new THREE.MeshPhysicalMaterial(
-    { 
-        side: THREE.DoubleSide,
-        map: whitePureRoom, 
-        color: 0xffffff, 
-        metalness: 0.8, 
-        roughness: 0,
-        ior: 2.333,
-        fog: true,
-        sheenColor: 0xffffff,
-        reflectivity: 1,
-        iridescence: 1,
-        iridescenceIOR: 1.3,
-        depthWrite: true,
-        depthTest: true,
-    }
-);
+        Scene_CrystalOrb.add( gltf.scene );
 
-for (let i = 0; i < 32; i++) {
-    const tooth = new THREE.Mesh(teethGeometry, teethMaterial);
-    const angle = (i / 32) * Math.PI * 2;
-    tooth.position.set(Math.cos(angle) * 11, Math.sin(angle) * 11, 0);
-    tooth.rotation.z = angle;
-    tooth.scale.set(1, 0.5, 0.5)
-    Teeth.add(tooth);
+        render();
+
+    } );
+
+let Spacial_Movement_Function_Basic01 = (
+    timeline,
+    object,
+    position,
+    scale,
+    crystalOrb_sca,
+    durationData,
+    delayData,
+    easeData,
+    opacityData
+) => {
+    timeline.to(object.position, {
+        duration: durationData,
+        delay: delayData,
+        opacity: opacityData,
+        ease: easeData,
+        x: position.x,
+        y: position.y,
+        z: position.z,
+    });
+
+    timeline.to(object.rotation, {
+        duration: durationData,
+        delay: delayData,
+        opacity: opacityData,
+        ease: easeData,
+        x: rotation.x,
+        y: rotation.y,
+        z: rotation.z,
+    });
+
+    timeline.to(object.scale, {
+        duration: durationData,
+        delay: delayData,
+        opacity: opacityData,
+        ease: easeData,
+        x: scale.x,
+        y: scale.y,
+        z: scale.z,
+    });
 }
 
-const Bolts = new THREE.Group()
-Bolts.rotation.set(1.575, 0, 0)
-Bolts.scale.set(1.6, 1.6, 1.6)
-gearCore.add(Bolts)
-
-// Add some decorative elements for a steampunk look
-const boltGeometry = new THREE.CylinderGeometry(0.5, 0.5, 2, 32, 1, false);
-const boltMaterial = new THREE.MeshPhysicalMaterial({ color: 0x333333, metalness: 0.9, roughness: 0.3 });
 
 
 
-// boltMaterial.color = "ffffff"
-// boltMaterial.emissive = "222020"
-boltMaterial.roughness = 0
-boltMaterial.mealness = 0.988
-boltMaterial.ior = 2.333
-boltMaterial.reflectivity = 1
-boltMaterial.iridescence = 1
-boltMaterial.iridescenceIOR = 1.3
-boltMaterial.fog = true
 
-for (let i = 0; i < 8; i++) {
-    const bolt = new THREE.Mesh(boltGeometry, boltMaterial);
-    const angle = (i / 8) * Math.PI * 2;
-    bolt.position.set(Math.cos(angle) * 7, Math.sin(angle) * 7, 0);
-    bolt.rotation.z = angle;
-    Bolts.add(bolt);
+// 010101010101010101010101010101010101010101
+// ΔTest code
+// 010101010101010101010101010101010101010101
+
+const testShape01_sphereGeometry = new THREE.SphereGeometry(1, 32, 32);
+
+
+
+// Create material and geometry as before
+const material = new THREE.MeshPhysicalMaterial({ color: 0x00ff00 });
+const sphereGeometry = new THREE.SphereGeometry(1, 32, 32);
+
+// Create and position spheres
+const test_spheres = [];
+for (let i = -105; i <= 105; i++) {
+  const test_sphere = new THREE.Mesh(sphereGeometry, material);
+  test_sphere.position.x = i * 50;
+//   test_sphere.position.y = i * 25;
+//   test_sphere.position.z = i * 50;
+  scene.add(test_sphere);
+  test_spheres.push(test_sphere);
+
+//   gsap.to(test_sphere.scale, {
+//     x: "10", 
+//     y: "10",
+//     z: "10",
+//     duration: 0.5,
+//     repeat: -1,
+//     yoyo: true,
+//     delay: -100 * 0.005
+//   });
+
+    let tl01 = gsap.timeline(
+        {
+            delay: 0.5,
+            // duration: 5,
+            paused: false, // default is false
+            repeat: 2, // number of repeats (-1 for infinite)
+        }
+    )
+
+  
+
+  tl01.to(test_sphere.position, {
+    x: "100", 
+    duration: 2,
+    repeat: -1,
+    delay: 5
+  });
+
+  tl01.to(test_sphere.position, {
+    y: "100", 
+    duration: 2,
+    repeat: -1,
+    delay: 10
+  });
+
+  tl01.to(test_sphere.position, {
+    x: "-100", 
+    duration: 2,
+    repeat: -1,
+    delay: 15
+  });
+
+  tl01.to(test_sphere.position, {
+    y: "-100", 
+    duration: 2,
+    repeat: -1,
+    delay: 20
+  });
 }
 
-// Add lighting
-const ambientLight = new THREE.AmbientLight(0x404040);
-ambientLight.position.set(0, 50, 150)
-scene.add(ambientLight);
+// Animate test_spheres using GSAP
+// test_spheres.forEach((test_sphere, index) => {
+//   gsap.to(test_sphere.position, {
+//     x: "10", 
+//     y: "10",
+//     duration: 0.05,
+//     repeat: -1,
+//     yoyo: true,
+//     delay: index * 0.5 
+//   });
+// });
 
-const pointLight = new THREE.PointLight(0xffffff, 1, 100);
-pointLight.position.set(0, 50, 150)
-scene.add(pointLight);
+// Render loop
+function animate() {
+  requestAnimationFrame(animate);
+  renderer.render(scene, camera);
+}
+animate();
+
+
+
+
+
+
+
+document.addEventListener("keydown", function(event) {
+    if (event.key === "j") {
+        // camera.position.y += 10000
+
+        camera.lookAt(UserContainer_root)
+
+        // Spacial_Movement_Function_Basic01()
+
+        // ================================================
+        // # Timeline01
+        // ================================================
+        let tl01 = gsap.timeline(
+            {
+                repeat: 2,
+                repeatDelay: 1,
+                delay:  0.01
+            }
+        )
+
+
+        // ================================================
+        // # Timeline02
+        // ================================================
+
+        let tl02 = gsap.timeline(
+            {
+                repeat: 2,
+                repeatDelay: 1,
+            }
+        )
+
+
+        // let crystalOrb_pos = new THREE.Vector3(100, 0, -100);
+        // let crystalOrb_rot = new THREE.Vector3(0, 1.575, 0);
+        // let crystalOrb_sca = new THREE.Vector3(5, 5, 5);
+        // let crystalOrb_durationData = 10;
+        // let crystalOrb_delayData = 0;
+        // let crystalOrb_easeData = "none";
+        // let crystalOrb_opacityData = 0.1;
+
+        // let crystalOrb_AnimationData = {
+        //     pos: crystalOrb_pos,
+        //     rot: crystalOrb_rot,
+        //     sca: crystalOrb_sca,
+        //     dur: crystalOrb_durationData,
+        //     del: crystalOrb_delayData,
+        //     eas: crystalOrb_easeData,
+        //     opa: crystalOrb_opacityData
+        // };
+
+        let crystalOrb_AnimationData = {
+            tlx: tl01,
+            obj: Scene_CrystalOrb,
+            pos: new THREE.Vector3(100, 0, -100),
+            rot: new THREE.Vector3(0, 1.575, 0),
+            sca: new THREE.Vector3(5, 5, 5),
+            dur: 10,
+            del: 0,
+            eas: "none",
+            opa: 0.1
+        };
+
+        let UserΔ_AnimationData = {
+            tlx: tl02,
+            obj: Scene_CrystalOrb,
+            pos: new THREE.Vector3(100, 0, -100),
+            rot: new THREE.Vector3(0, 1.575, 0),
+            sca: new THREE.Vector3(5, 5, 5),
+            dur: 10,
+            del: 0,
+            eas: "none",
+            opa: 0.1
+        }
+
+        Spacial_Movement_Function_Basic01(
+            crystalOrb_AnimationData.tlx,
+            crystalOrb_AnimationData.obj,
+            crystalOrb_AnimationData.pos,
+            crystalOrb_AnimationData.rot,
+            crystalOrb_AnimationData.sca,
+            crystalOrb_AnimationData.dur,
+            crystalOrb_AnimationData.del,
+            crystalOrb_AnimationData.eas,
+            crystalOrb_AnimationData.opa
+        );
+
+
+
+        // Spacial_Movement_Function_Basic01(tl01, Scene_CrystalOrb, crystalOrb_pos, crystalOrb_rot, crystalOrb_sca, crystalOrb_durationData, crystalOrb_delayData, crystalOrb_easeData, crystalOrb_opacityData);
+
+
+
+
+
+        
+        
+        console.log('button pressed')
+    }
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2060,19 +2353,22 @@ scene.add(pointLight);
 			scene.add(directionalLight)
 
 
-            controls = new OrbitControls( camera, cssrenderer.domElement );
-            controls.maxPolarAngle = Math.PI * 0.495;
-            // controls.minPolarAngle = Math.PI * 0.495;
-            controls.maxAzimuthAngle = Math.PI * 0.495;
-            controls.target.set( 0, 55, 0 );
-            controls.minDistance = 100.0;
-            controls.maxDistance = 70000.0;
-            controls.screenSpacePanning = true
-            controls.enablePan = false
-            controls.rotateSpeed = 0.025
-            controls.zoomSpeed = 0.1
-            controls.movementSpeed = 10000;
-            controls.update();
+       
+            orbitControls = new OrbitControls( camera, cssrenderer.domElement );
+            orbitControls.maxPolarAngle = Math.PI  * 2
+            // orbitControls.minPolarAngle = Math.PI * 0.495;
+            orbitControls.maxAzimuthAngle = Math.PI * 2
+            orbitControls.target.set( 0, 55, 0 );
+            orbitControls.minDistance = 1;
+            orbitControls.maxDistance = 70000.0;
+            orbitControls.screenSpacePanning = true
+            orbitControls.enablePan = true
+            
+            orbitControls.rotateSpeed = 0.025
+            orbitControls.zoomSpeed = 1
+            orbitControls.movementSpeed = 10000;
+            orbitControls.enabled = false; // Start with FirstPersonControls disabled
+            orbitControls.update();
             
 
 
@@ -2095,22 +2391,26 @@ scene.add(pointLight);
 
 
             
+            firstPersonControls = new FirstPersonControls(camera, cssrenderer.domElement);
 
+            
+            // firstPersonControls.lookSpeed = 0.035
+            firstPersonControls.lookSpeed = 0.1
+            firstPersonControls.noFly = false;
+            firstPersonControls.lookVertical = true;
+            firstPersonControls.mouseDragOn = false;
+            firstPersonControls.verticalMax = 0
+            firstPersonControls.verticalMin = 0
+            firstPersonControls.heightMax = 0
+            firstPersonControls.heightMin = 0
+
+            firstPersonControls.movementSpeed = 225;
+            firstPersonControls.enabled = false; // Start with FirstPersonControls disabled
+            firstPersonControls.update();
 
 
             // let activeFirstPersonControls = () => {
-            //     controls = new FirstPersonControls(camera, renderer.domElement);
-
-            //     controls.movementSpeed = 10;
-            //     controls.lookSpeed = 0.035
-            //     controls.noFly = true;
-            //     controls.lookVertical = true;
-            //     controls.mouseDragOn = false;
-            //     controls.verticalMax = 0
-            //     controls.verticalMin = 0
-            //     controls.heightMax = 0
-            //     controls.heightMin = 0
-            //     controls.update();
+                
 
             // }
 
@@ -2144,6 +2444,22 @@ scene.add(pointLight);
             //         activeFirstPersonControls()
             //     }
             // })
+
+
+            // Event listener for key press
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'c') {
+                    orbitControls.enabled = !orbitControls.enabled; // Toggle OrbitControls
+                    firstPersonControls.enabled = false; // Disable FirstPersonControls
+                } else if (event.key === 'C') {
+                    orbitControls.enabled = false
+                } else if (event.key === 'v') {
+                    firstPersonControls.enabled = !firstPersonControls.enabled; // Toggle FirstPersonControls
+                    orbitControls.enabled = false; // Disable OrbitControls
+                } else if (event.key === 'C') {
+                    firstPersonControls.enabled = false
+                }
+            });
 
 //..........................................................................................................
 //......CCC......TTTTTTTTT...LL.........RRRRR.........................UU.....UU....NN......N.......CCC......
@@ -2466,11 +2782,33 @@ scene.add(pointLight);
 //.................................................................
 
 
-                UserContainer_root = new THREE.Group()
+
+
+//.................................................................
+//..UU.....UU.....SSSSSS.....EEEEEEEEE...RRRRR.....................
+//.UUUU...UUUU...SSSSSSSS...SEEEEEEEEEE.ERRRRRRRRR......ΔΔΔΔΔ......
+//.UUUU...UUUU..SSSSSSSSSS..SEEEEEEEEEE.ERRRRRRRRRR.....ΔΔΔΔΔ......
+//.UUUU...UUUU..SSSSSSSSSS..SEEEEEEEEEE.ERRRRRRRRRR.....ΔΔΔΔΔ......
+//.UUUU...UUUU.USSS...SSSSS.SEEE........ERRR...RRRRR...ΔΔΔΔΔΔΔ.....
+//.UUUU...UUUU.USSSSS.......SEEEEEEEEE..ERRR...RRRRR...ΔΔΔΔΔΔΔ.....
+//.UUUU...UUUU..SSSSSSSSS...SEEEEEEEEE..ERRRRRRRRRR...ΔΔΔΔ.ΔΔΔΔ....
+//.UUUU...UUUU..SSSSSSSSSS..SEEEEEEEEE..ERRRRRRRRRR...ΔΔΔΔ.ΔΔΔΔ....
+//.UUUU...UUUU....SSSSSSSSS.SEEEEEEEEE..ERRRRRRRRRR...ΔΔΔ..ΔΔΔΔ....
+//.UUUU...UUUU.USSS..SSSSSS.SEEE........ERRR..RRRRR..RΔΔΔ...ΔΔΔΔ...
+//.UUUU...UUUU.USSS....SSSS.SEEE........ERRR...RRRR..RΔΔΔ...ΔΔΔΔ...
+//.UUUUUUUUUUU.USSSSSSSSSSS.SEEEEEEEEEE.ERRR...RRRR.RRΔΔΔΔΔΔΔΔΔΔΔ..
+//.UUUUUUUUUUU..SSSSSSSSSS..SEEEEEEEEEE.ERRR...RRRR.RRΔΔΔΔΔΔΔΔΔΔΔ..
+//..UUUUUUUUU....SSSSSSSSS..SEEEEEEEEEE.ERRR...RRRRRRRΔΔΔΔΔΔΔΔΔΔΔ..
+//....UUUUU.......SSSSSS...........................................
+//.................................................................
+
+
+UserContainer_root = new THREE.Group()
                 // UserContainer_root.position.set(30, 5990, 23950);
-                UserContainer_root.position.set(0, 45, 130);
+                UserContainer_root.position.set(0, 5, 0);
                 UserContainer_root.rotation.set(0, 0, 0)
                 UserContainer_root.scale.set(10, 10, 10)
+                UserContainer_root.lookAt(camera.position)
                 scene.add(UserContainer_root)
 
                     UserContainer_MediaContainer_baseA = new THREE.Group()
@@ -2510,6 +2848,126 @@ scene.add(pointLight);
                         mesh_UserContainer_MediaContainer_Media.rotation.set(0, 0, 0)
                         mesh_UserContainer_MediaContainer_Media.scale.set(0.1, 0.09, 0.1)
                         UserContainer_MediaContainer_Media.add(mesh_UserContainer_MediaContainer_Media)
+
+
+                    const UserΔ_ButtonPrimary = new THREE.Group()
+                    UserΔ_ButtonPrimary.position.set(-0.5, 1.5, 0)
+                    UserΔ_ButtonPrimary.rotation.set(0, 0, 0)
+                    UserΔ_ButtonPrimary.scale.set(0.005, 0.005, 0.005 )
+                    UserContainer_root.add(UserΔ_ButtonPrimary)
+
+                    UserΔ_ButtonPrimary.add(
+                        new hoverObject(
+                            'img',
+                            0, 0, 0,
+                            0, 0, 0,
+                            0.1, 0.1, 0.1,
+                            "Testing234", "TestingClass234",
+                            "./assets/icons/Websites01/002-globe_grid.png", "",
+                            "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+                            () => {
+
+                                gsap.to(UserΔ_ButtonPrimary.rotation, {
+                                    repeat: 0,
+                                    duration: 0.5,
+                                    ease: "none",
+                                    delay: 1,
+                                    // x: 0.001,
+                                    // y: 0.001,
+                                    // x: 0.010,
+                                    y: 3.14,
+                                    // z: 0.010,
+                                
+
+                                })
+
+                                gsap.to(UserΔ_ButtonPrimary.scale, {
+                                    repeat: 0,
+                                    duration: 1.5,
+                                    ease: "none",
+                                    delay: 1,
+                                    // x: 0.001,
+                                    // y: 0.001,
+                                    x: 0.010,
+                                    y: 0.010,
+                                    z: 0.010,
+                                
+
+                                })
+
+                                gsap.to(UserΔ_ButtonPrimary.scale, {
+                                    repeat: 0,
+                                    duration: 1.5,
+                                    ease: "none",
+                                    delay: 2,
+                                    // x: 0.001,
+                                    // y: 0.001,
+                                    x: 0.005,
+                                    y: 0.005,
+                                    z: 0.005,
+                                
+
+                                })
+
+                                gsap.to(camera.position, {
+                                    repeat: 0,
+                                    duration: 1.5,
+                                    ease: "none",
+                                    delay: 3,
+                                    // x: 0.001,
+                                    // y: 0.001,
+                                    z: 17000,
+                                
+
+                                })
+
+                                gsap.to(camera.position, {
+                                    repeat: 0,
+                                    duration: 1.5,
+                                    ease: "none",
+                                    delay: 7,
+                                    x: 25,
+                                    y: 70,
+                                    z: 1440,
+                                
+
+                                })
+                            }, "#fff"
+                        )
+                    )
+
+                    
+
+                    let animateOpeningButton = () => {
+
+                        gsap.from(UserΔ_ButtonPrimary.scale, {
+                            repeat: 1,
+                            duration: 1,
+                            ease: "none",
+                            delay: 1.2,
+                            x: 0.001,
+                            y: 0.001,
+                            z: 0.001,
+                        
+
+                        })
+
+                        gsap.from(UserΔ_ButtonPrimary.position, {
+                            repeat: 1,
+                            duration: 1,
+                            ease: "none",
+                            delay: 1.2,
+                            x: 0,
+                            y: 1.6,
+                        
+
+                        })
+                    }
+
+                    animateOpeningButton()
+
+                    
+
 
                     
                     UserContainer_MediaContainer_baseB = new THREE.Group()
@@ -2669,6 +3127,21 @@ scene.add(pointLight);
 
                             spinPersonalSpaceOnly()
 
+                            let openPersonalSpace = () => {
+                                gsap.to(mesh_UserContainer_PersonalSpace_Space.scale, {
+                                    repeat: 0,
+                                    duration: 60,
+                                    ease: "none",
+                                    delay: 2.5,
+                                    x: 1,
+                                    y: 1,
+                                    z: 1,
+                            
+                                })
+                            }
+
+                            openPersonalSpace()
+
 
                     UserContainer_MediaContainer_baseD = new THREE.Group()
                     UserContainer_MediaContainer_baseD.position.set(0, 0, 0)
@@ -2710,7 +3183,7 @@ scene.add(pointLight);
                             const mat_UserContainer_Orbit01_TheOrbit01 = new THREE.MeshBasicMaterial({ map: SceneWallpaper_01, side: THREE.DoubleSide });
                             mesh_UserContainer_Orbit01_TheOrbit01 = new THREE.Mesh(geo_objT_Orbit, mat_UserContainer_Orbit01_TheOrbit01);
 
-                                mat_UserContainer_Orbit01_TheOrbit01.transparent = false;
+                                mat_UserContainer_Orbit01_TheOrbit01.transparent = true;
                                 mat_UserContainer_Orbit01_TheOrbit01.wireframe = false;
                                 mat_UserContainer_Orbit01_TheOrbit01.alphaMap = SceneWallpaper_01;
 
@@ -2735,7 +3208,7 @@ scene.add(pointLight);
                                     const mat_UserContainer_Δ01 = new THREE.MeshBasicMaterial({ map: ΔIconConainer_complexDesignBlack02, side: THREE.DoubleSide });
                                     mesh_UserContainer_Δ01 = new THREE.Mesh(geo_objT_BoxA0, mat_UserContainer_Δ01);
 
-                                        mat_UserContainer_Δ01.transparent = false;
+                                        mat_UserContainer_Δ01.transparent = true;
                                         mat_UserContainer_Δ01.wireframe = false;
                                         mat_UserContainer_Δ01.alphaMap = ΔIconConainer_complexDesignBlack02;
 
@@ -2759,7 +3232,7 @@ scene.add(pointLight);
                                     const mat_UserContainer_Δ02 = new THREE.MeshBasicMaterial({ map: ΔIconConainer_complexDesignBlack02, side: THREE.DoubleSide });
                                     mesh_UserContainer_Δ02 = new THREE.Mesh(geo_objT_BoxA0, mat_UserContainer_Δ02);
 
-                                        mat_UserContainer_Δ02.transparent = false;
+                                        mat_UserContainer_Δ02.transparent = true;
                                         mat_UserContainer_Δ02.wireframe = false;
                                         mat_UserContainer_Δ02.alphaMap = ΔIconConainer_complexDesignBlack02;
 
@@ -2784,7 +3257,7 @@ scene.add(pointLight);
                                     const mat_UserContainer_Δ03 = new THREE.MeshBasicMaterial({ map: ΔIconConainer_complexDesignBlack02, side: THREE.DoubleSide });
                                     mesh_UserContainer_Δ03 = new THREE.Mesh(geo_objT_BoxA0, mat_UserContainer_Δ03);
 
-                                        mat_UserContainer_Δ03.transparent = false;
+                                        mat_UserContainer_Δ03.transparent = true;
                                         mat_UserContainer_Δ03.wireframe = false;
                                         mat_UserContainer_Δ03.alphaMap = ΔIconConainer_complexDesignBlack02;
 
@@ -2808,7 +3281,7 @@ scene.add(pointLight);
                                     const mat_UserContainer_Δ04 = new THREE.MeshBasicMaterial({ map: ΔIconConainer_complexDesignBlack02, side: THREE.DoubleSide });
                                     mesh_UserContainer_Δ04 = new THREE.Mesh(geo_objT_BoxA0, mat_UserContainer_Δ04);
 
-                                        mat_UserContainer_Δ04.transparent = false;
+                                        mat_UserContainer_Δ04.transparent = true;
                                         mat_UserContainer_Δ04.wireframe = false;
                                         mat_UserContainer_Δ04.alphaMap = ΔIconConainer_complexDesignBlack02;
 
@@ -2822,63 +3295,47 @@ scene.add(pointLight);
                                     UserContainer_Δ04.add(mesh_UserContainer_Δ04)
 
 
-                            // FUNCTION: SpinOrbit01_Δs
-                            let SpinOrbit01_Δs = () => {
-                                gsap.to(mesh_UserContainer_Δ01.rotation, {
-                                    repeat: -1,
-                                    duration: 5,
-                                    ease: "none",
-                                    delay: 0,
-                                    z: 3.14,
-						
-					             })
+//..........................................................................................
+//......AAA.................iii..................................iii........................
+//.....AAAAA................iii............................tttt..iii........................
+//.....AAAAA................iii............................tttt..iii........................
+//....AAAAAAA...............iii............................tttt..iii........................
+//....AAAAAAA....nnnnnnnnn..iii..mmmmmmmmmmmmm....aaaaaaa.attttt.iii...ooooooo...nnnnnnnnn..
+//....AAAAAAA....nnnnnnnnn..iii..mmmmmmmmmmmmmm..aaaaaaaa.attttt.iii..ooooooooo..nnnnnnnnn..
+//...AAAAAAAAA...nnnnnnnnn..iii..mmmmmmmmmmmmmm.aaaaaaaaaaattttt.iii.ioooooooooo.nnnnnnnnn..
+//...AAAA.AAAA...nnnn.nnnn..iii..mmmm.mmmm..mmm.aaaa.aaaaa.tttt..iii.iooo...oooo.nnnn.nnnn..
+//...AAAAAAAAAA..nnn...nnn..iii..mmm..mmmm..mmm..aaaaaaaaa.tttt..iii.iooo...oooo.nnn...nnn..
+//..AAAAAAAAAAA..nnn...nnn..iii..mmm..mmmm..mmm.aaaaaaaaaa.tttt..iii.iooo...oooo.nnn...nnn..
+//..AAAAAAAAAAA..nnn...nnn..iii..mmm..mmmm..mmm.aaaaa.aaaa.tttt..iii.iooo...oooo.nnn...nnn..
+//..AAAAAAAAAAAA.nnn...nnn..iii..mmm..mmmm..mmm.aaaa.aaaaa.tttt..iii.ioooooooooo.nnn...nnn..
+//.AAAAA....AAAA.nnn...nnn..iii..mmm..mmmm..mmm.aaaaaaaaaa.ttttt.iii..ooooooooo..nnn...nnn..
+//.AAAA.....AAAA.nnn...nnn..iii..mmm..mmmm..mmm.aaaaaaaaaa.ttttt.iii...ooooooo...nnn...nnn..
+//................................................aaa........ttt........ooooo...............
+//..........................................................................................
+                
 
-                                gsap.to(mesh_UserContainer_Δ02.rotation, {
-                                    repeat: -1,
-                                    duration: 5,
-                                    ease: "none",
-                                    delay: 0,
-                                    z: 3.14,
-                            
-                                })
 
-                                gsap.to(mesh_UserContainer_Δ03.rotation, {
-                                    repeat: -1,
-                                    duration: 5,
-                                    ease: "none",
-                                    delay: 0,
-                                    z: 3.14,
-                            
-                                })
+//.......................................................................
+//......CCC.......l......................................................
+//....CCCCCCCC...lll.....................................................
+//...CCCCCCCCCC..lll.....................................................
+//..CCCCCCCCCCC..lll.....................................................
+//..CCCC...CCCCC.lll...aaaaaaa..ssssssss..ssssssss...eeeeee...ssssssss...
+//.CCCCC....CCCC.lll..aaaaaaaa..ssssssss..ssssssss..eeeeeeee..ssssssss...
+//.CCCC..........lll.aaaaaaaaaaasssssssssssssssssssseeeeeeeeeesssssssss..
+//.CCCC..........lll.aaaa.aaaaaasssssssssssssssssssseee..eeeeesssssssss..
+//.CCCC..........lll..aaaaaaaaa.ssssssss..ssssssss.seeeeeeeee.ssssssss...
+//.CCCCC....CCCC.lll.aaaaaaaaaa.ssssssss..ssssssss.seeeeeeeee.ssssssss...
+//..CCCC...CCCCC.lll.aaaaa.aaaaasssssssssssssssssssseee......esssssssss..
+//..CCCCCCCCCCC..lll.aaaa.aaaaaassss.sssssssss.ssssseeeeeeeeeessss.ssss..
+//...CCCCCCCCCC..lll.aaaaaaaaaaasssssssssssssssssssseeeeeeee.esssssssss..
+//....CCCCCCCC...lll.aaaaaaaaaa.ssssssss..ssssssss..eeeeeeee..ssssssss...
+//.....CCCCC...........aaa.......ssssss....ssssss.....eeee.....ssssss....
+//.......................................................................
 
-                                gsap.to(mesh_UserContainer_Δ04.rotation, {
-                                    repeat: -1,
-                                    duration: 5,
-                                    ease: "none",
-                                    delay: 0,
-                                    z: 3.14,
-                            
-                                })
-                            }
 
-                            // SpinOrbit01_Δs()
 
-                            
-                            // SpinOrbit01
-                            let SpinOrbit01 = () => {
-
-                                gsap.to(UserContainer_Orbit01_TheOrbit01.rotation, {
-                                    repeat: -1,
-                                    duration: 5,
-                                    ease: "none",
-                                    delay: 0,
-                                    z: 3.14,
-						
-					             })
-
-                            }
-
-                            SpinOrbit01()
+               
 //...................................................................................
 //......AAA.......NN......N....I....MMM.....MMM.......AAA....ATTTTTTTTT...EEEEEEEE...
 //.....AAAAA.....NNNN....NNN..III..MMMMM...MMMMM.....AAAAA..AATTTTTTTTTT.EEEEEEEEEE..
@@ -3123,15 +3580,21 @@ scene.add(pointLight);
 			folderButton.add(camera.position, 'z').min(-3.14).max(3.14).step(0.001).name('z-camera')
 
 
-            const folderOrbits = gui.addFolder('camera');
-			folderOrbits.add(camera.rotation, 'x').min(-3.14).max(3.14).step(0.001).name('x-camera')
-			folderOrbits.add(camera.rotation, 'y').min(-3.14).max(3.14).step(0.001).name('y-camera')
-			folderOrbits.add(camera.rotation, 'z').min(-3.14).max(3.14).step(0.001).name('z-camera')
+            const folderOrbits = gui.addFolder('Scene_CrystalOrb');
+			folderOrbits.add(Scene_CrystalOrb.rotation, 'x').min(-3.14).max(3.14).step(0.001).name('x-Scene_CrystalOrb')
+			folderOrbits.add(Scene_CrystalOrb.rotation, 'y').min(-3.14).max(3.14).step(0.001).name('y-Scene_CrystalOrb')
+			folderOrbits.add(Scene_CrystalOrb.rotation, 'z').min(-3.14).max(3.14).step(0.001).name('z-Scene_CrystalOrb')
 
-            const folderPanels = gui.addFolder('camera');
-			folderPanels.add(camera.position, 'x').min(-10000).max(10000).step(0.01).name('x-camera')
-			folderPanels.add(camera.position, 'y').min(-10000).max(10000).step(0.01).name('y-camera')
-			folderPanels.add(camera.position, 'z').min(-10000).max(10000).step(0.01).name('z-camera')
+            const folderPanels = gui.addFolder('Scene_CrystalOrb');
+			folderPanels.add(Scene_CrystalOrb.position, 'x').min(-10000).max(10000).step(0.01).name('x-Scene_CrystalOrb')
+			folderPanels.add(Scene_CrystalOrb.position, 'y').min(-10000).max(10000).step(0.01).name('y-Scene_CrystalOrb')
+			folderPanels.add(Scene_CrystalOrb.position, 'z').min(-10000).max(10000).step(0.01).name('z-Scene_CrystalOrb')
+
+
+            const folderPanels01 = gui.addFolder('Scene_CrystalOrb');
+			folderPanels01.add(Scene_CrystalOrb.scale, 'x').min(-10000).max(10000).step(0.01).name('x-Scene_CrystalOrb')
+			folderPanels01.add(Scene_CrystalOrb.scale, 'y').min(-10000).max(10000).step(0.01).name('y-Scene_CrystalOrb')
+			folderPanels01.add(Scene_CrystalOrb.scale, 'z').min(-10000).max(10000).step(0.01).name('z-Scene_CrystalOrb')
 
 
 
@@ -3160,6 +3623,12 @@ scene.add(pointLight);
 		function animate() {
 
 			requestAnimationFrame(animate);
+
+            // arenaTest01.rotation.y += 0.01
+            // Scene_TechCube01.rotation.y += 0.01
+            // Scene_Tree01.rotation.y += 0.01
+            // Scene_Prismatrix.rotation.y += 0.01
+
 			render();
 			stats.update();
 
@@ -3169,13 +3638,14 @@ scene.add(pointLight);
 
 			const time = performance.now() * 0.001;
 			const delta = clock.getDelta();
-			controls.update(delta);
+			orbitControls.update(delta);
+			firstPersonControls.update(delta);
 
 
            // FrameAnimations Below this line
            // -----------------------------------------------------------
             
-           gearCore.rotation.y += 0.05
+
 
            // -----------------------------------------------------------
            // FrameAnimations Above this line
