@@ -105,6 +105,165 @@ anyGeometryName.add(mesh_anyGeometryName)
 
 ```
 
+
+//..................................................................
+//..LL..............................................................
+//.LLLL........................................................ddd..
+//.LLLL........................................................ddd..
+//.LLLL........................................................ddd..
+//.LLLL........ooooooo....ooooooo..opppppppp....eeeeee....dddddddd..
+//.LLLL.......ooooooooo..ooooooooo.oppppppppp..eeeeeeee..ddddddddd..
+//.LLLL......Loooooooooooooooooooooopppppppppppeeeeeeeeeeddddddddd..
+//.LLLL......Looo...oooooooo...ooooopppp.ppppppeee..eeeeeddd..dddd..
+//.LLLL......Looo...oooooooo...oooooppp...pppppeeeeeeeeeeddd...ddd..
+//.LLLL......Looo...oooooooo...oooooppp...pppppeeeeeeeeeeddd...ddd..
+//.LLLL......Looo...oooooooo...oooooppp...pppppeee......eddd..dddd..
+//.LLLLLLLLLLLoooooooooooooooooooooopppppppppppeeeeeeeeeeddddddddd..
+//.LLLLLLLLLL.ooooooooo..ooooooooo.oppppppppp.peeeeeeee..ddddddddd..
+//.LLLLLLLLLL..ooooooo....ooooooo..oppppppppp..eeeeeeee..ddddddddd..
+//..............ooooo......ooooo...oppp.ppp......eeee......ddd......
+//.................................oppp.............................
+//.................................oppp.............................
+//.................................oppp.............................
+//..................................................................
+
+
+//................................
+//.....OOOOOO................jjj..
+//....OOOOOOOOO..Obbb........jjj..
+//...OOOOOOOOOO..Obbb........jjj..
+//..OOOOOOOOOOOO.Obbb........jjj..
+//..OOOO....OOOO.Obbbbbbbb...jjj..
+//..OOOO....OOOOOObbbbbbbbb..jjj..
+//.OOOO......OOOOObbbbbbbbbb.jjj..
+//.OOOO......OOOOObbbb.bbbbb.jjj..
+//.OOOO......OOOOObbb...bbbb.jjj..
+//..OOOO....OOOOOObbb...bbbb.jjj..
+//..OOOO....OOOO.Obbbb..bbbb.jjj..
+//..OOOOOOOOOOOO.Obbbbbbbbbb.jjj..
+//...OOOOOOOOOO..Obbbbbbbbb..jjj..
+//....OOOOOOOOO..Obbbbbbbbb..jjj..
+//.....OOOOOO.........bbb....jjj..
+//.........................bjjjj..
+//.........................bjjjj..
+//.........................bjjjj..
+//................................
+
+
+``` js
+
+gearCore = new THREE.Group()
+gearCore.rotation.set(1.575, 0, 0)
+gearCore.position.set(0, 75, 150)
+gearCore.scale.set(1, 1, 1)
+scene.add(gearCore)
+
+
+// Create the gear geometry
+const gearGeometry = new THREE.CylinderGeometry(10, 10, 5.5, 128, 10, true, 0, Math.PI * 2);
+const gearMaterial = new THREE.MeshPhysicalMaterial(
+    { 
+        side: THREE.DoubleSide,
+        map: whitePureRoom, 
+        color: 0xffffff, 
+        metalness: 0.9, 
+        roughness: 0, 
+        ior: 2.333,
+        fog: true,
+        sheenColor: 0xffffff,
+        reflectivity: 1,
+        iridescence: 1,
+        iridescenceIOR: 1.3,
+        depthWrite: true,
+        depthTest: true,
+
+    }
+);
+const gear = new THREE.Mesh(gearGeometry, gearMaterial);
+// gear.rotation.x = 1.575; // Rotate the center cylinder by 1.575 radians on the x-axis
+scene.add(gear);
+gear.position.set(0, 0, 0)
+gear.scale.set(1, 0.5, 1)
+
+
+gearCore.add(gear)
+
+
+const Teeth = new THREE.Group()
+Teeth.rotation.set(1.575, 0, 0)
+gearCore.add(Teeth)
+
+// Create the teeth
+const teethGeometry = new THREE.BoxGeometry(2, 0.5, 7);
+const teethMaterial = new THREE.MeshPhysicalMaterial(
+    { 
+        side: THREE.DoubleSide,
+        map: whitePureRoom, 
+        color: 0xffffff, 
+        metalness: 0.8, 
+        roughness: 0,
+        ior: 2.333,
+        fog: true,
+        sheenColor: 0xffffff,
+        reflectivity: 1,
+        iridescence: 1,
+        iridescenceIOR: 1.3,
+        depthWrite: true,
+        depthTest: true,
+    }
+);
+
+for (let i = 0; i < 32; i++) {
+    const tooth = new THREE.Mesh(teethGeometry, teethMaterial);
+    const angle = (i / 32) * Math.PI * 2;
+    tooth.position.set(Math.cos(angle) * 11, Math.sin(angle) * 11, 0);
+    tooth.rotation.z = angle;
+    tooth.scale.set(1, 0.5, 0.5)
+    Teeth.add(tooth);
+}
+
+const Bolts = new THREE.Group()
+Bolts.rotation.set(1.575, 0, 0)
+Bolts.scale.set(1.6, 1.6, 1.6)
+gearCore.add(Bolts)
+
+// Add some decorative elements for a steampunk look
+const boltGeometry = new THREE.CylinderGeometry(0.5, 0.5, 2, 32, 1, false);
+const boltMaterial = new THREE.MeshPhysicalMaterial({ color: 0x333333, metalness: 0.9, roughness: 0.3 });
+
+
+
+// boltMaterial.color = "ffffff"
+// boltMaterial.emissive = "222020"
+boltMaterial.roughness = 0
+boltMaterial.mealness = 0.988
+boltMaterial.ior = 2.333
+boltMaterial.reflectivity = 1
+boltMaterial.iridescence = 1
+boltMaterial.iridescenceIOR = 1.3
+boltMaterial.fog = true
+
+for (let i = 0; i < 8; i++) {
+    const bolt = new THREE.Mesh(boltGeometry, boltMaterial);
+    const angle = (i / 8) * Math.PI * 2;
+    bolt.position.set(Math.cos(angle) * 7, Math.sin(angle) * 7, 0);
+    bolt.rotation.z = angle;
+    Bolts.add(bolt);
+}
+
+// Add lighting
+const ambientLight = new THREE.AmbientLight(0x404040);
+ambientLight.position.set(0, 50, 150)
+scene.add(ambientLight);
+
+const pointLight = new THREE.PointLight(0xffffff, 1, 100);
+pointLight.position.set(0, 50, 150)
+scene.add(pointLight);
+
+
+
+```
+
 //.................................................................................
 //......GGGGG......EEEEEEEEE.....OOOOOO......MMM.....MMM....EEEEEEEEE..TTTTTTTTT...
 //....GGGGGGGGG...EEEEEEEEEEE...OOOOOOOOO...MMMMM...MMMMM..EEEEEEEEEEEETTTTTTTTTT..
@@ -299,6 +458,46 @@ HomeScreenSaver.add(
 //......................................................
 ## GSAP / Animation Functions
 
+
+# GSAP Timeline
+// ------------------------------------------------------------
+
+``` js 
+
+// Create a timeline
+let tl01 = gsap.timeline({
+    delay: 0.5,
+    paused: true, // default is false
+    repeat: 2, // number of repeats (-1 for infinite)
+    repeatDelay: 1, // seconds between repeats
+    repeatRefresh: true, // invalidates on each repeat
+    yoyo: true, // if true > A-B-B-A, if false > A-B-A-B
+    defaults: {
+        // children inherit these defaults
+        duration: 1,
+        ease: 'none'
+    },
+    smoothChildTiming: true,
+    autoRemoveChildren: true,
+    onComplete: () => {
+        console.log("finished")
+    },
+    // other callbacks:
+    // onStart, onUpdate, onRepeat, onReverseComplete
+});
+
+
+tl.to(camera.position, {
+    duration: 5,
+    delay: 0,
+    x: 5,
+    // y: 0,
+})
+
+
+```
+
+// ------------------------------------------------------------
 
 
 

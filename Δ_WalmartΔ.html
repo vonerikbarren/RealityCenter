@@ -729,8 +729,15 @@
                 let Walmart_Perspective_Employee_StockAssociate01_root
                     let Walmart_Perspective_Employee_FYI_root
                         let Walmart_Perspective_Employee_FYI_LeadershipTeam_root
-                        let Walmart_Perspective_Employee_FYI_NewAssociateWelcomeSummary_June2024
+                        let Walmart_Perspective_Employee_FYI_Doc01_NewAssociateWelcomeSummary_June2024
                     let Walmart_Perspective_Employee_StockAssociate01_Orientation
+                        let Orientation_root
+                            let Orientation_SOP_Modules_root
+                                let Module01_root
+                                let Module01_object, Module01_mesh
+
+                                let Module02_root
+                                let Module02_object, Module02_mesh
                     
 
 
@@ -2803,8 +2810,90 @@ document.addEventListener("keydown", function(event) {
 WalmartΔ = new THREE.Group()
 WalmartΔ.position.set(0, 0, 0)
 WalmartΔ.rotation.set(0, 0, 0)
-WalmartΔ.scale.set(10, 10, 10)
+WalmartΔ.scale.set(1, 1, 1)
 scene.add(WalmartΔ)
+
+// ---
+        WalmartΔ_root_master = new THREE.Group()
+        WalmartΔ_root_master.position.set(0, 0, 0)
+        WalmartΔ_root_master.rotation.set(0, 0, 0)
+        WalmartΔ_root_master.scale.set(1, 1, 1)
+        WalmartΔ.add(WalmartΔ_root_master)
+
+        // --- 
+                Walmart_Perspective_Customer_root = new THREE.Group()
+                Walmart_Perspective_Customer_root.position.set(0, 0, 0)
+                Walmart_Perspective_Customer_root.rotation.set(0, 0, 0)
+                Walmart_Perspective_Customer_root.scale.set(1, 1, 1)
+                WalmartΔ_root_master.add(Walmart_Perspective_Customer_root)
+
+        // --- 
+                Walmart_Perspective_Employee_root = new THREE.Group()
+                Walmart_Perspective_Employee_root.position.set(0, 0, 0)
+                Walmart_Perspective_Employee_root.rotation.set(0, 0, 0)
+                Walmart_Perspective_Employee_root.scale.set(1, 1, 1)
+                WalmartΔ_root_master.add(Walmart_Perspective_Employee_root)
+
+                // --- 
+                        Walmart_Perspective_Employee_StockAssociate01_root = new THREE.Group()
+                        Walmart_Perspective_Employee_StockAssociate01_root.position.set(0, 0, 0)
+                        Walmart_Perspective_Employee_StockAssociate01_root.rotation.set(0, 0, 0)
+                        Walmart_Perspective_Employee_StockAssociate01_root.scale.set(1, 1, 1)
+                        Walmart_Perspective_Employee_root.add(Walmart_Perspective_Employee_StockAssociate01_root)
+
+                        // --- 
+                                Walmart_Perspective_Employee_FYI_root = new THREE.Group()
+                                Walmart_Perspective_Employee_FYI_root.position.set(0, 0, 0)
+                                Walmart_Perspective_Employee_FYI_root.rotation.set(0, 0, 0)
+                                Walmart_Perspective_Employee_FYI_root.scale.set(1, 1, 1)
+                                Walmart_Perspective_Employee_StockAssociate01_root.add(Walmart_Perspective_Employee_FYI_root)
+
+                                // --- 
+                                        Walmart_Perspective_Employee_FYI_LeadershipTeam_root = new THREE.Group()
+                                        Walmart_Perspective_Employee_FYI_LeadershipTeam_root.position.set(0, 0, 0)
+                                        Walmart_Perspective_Employee_FYI_LeadershipTeam_root.rotation.set(0, 0, 0)
+                                        Walmart_Perspective_Employee_FYI_LeadershipTeam_root.scale.set(1, 1, 1)
+                                        Walmart_Perspective_Employee_FYI_root.add(Walmart_Perspective_Employee_FYI_LeadershipTeam_root)
+
+
+                                // --- 
+                                        Walmart_Perspective_Employee_FYI_Doc01_NewAssociateWelcomeSummary_June2024 = new THREE.Group()
+                                        Walmart_Perspective_Employee_FYI_Doc01_NewAssociateWelcomeSummary_June2024.position.set(0, 0, 0)
+                                        Walmart_Perspective_Employee_FYI_Doc01_NewAssociateWelcomeSummary_June2024.rotation.set(0, 0, 0)
+                                        Walmart_Perspective_Employee_FYI_Doc01_NewAssociateWelcomeSummary_June2024.scale.set(1, 1, 1)
+                                        Walmart_Perspective_Employee_FYI_root.add(Walmart_Perspective_Employee_FYI_Doc01_NewAssociateWelcomeSummary_June2024)          
+                                        
+                        // --- 
+                                Walmart_Perspective_Employee_StockAssociate01_Orientation = new THREE.Group()
+                                Walmart_Perspective_Employee_StockAssociate01_Orientation.position.set(0, 0, 0)
+                                Walmart_Perspective_Employee_StockAssociate01_Orientation.rotation.set(0, 0, 0)
+                                Walmart_Perspective_Employee_StockAssociate01_Orientation.scale.set(1, 1, 1)
+                                Walmart_Perspective_Employee_StockAssociate01_root.add(Walmart_Perspective_Employee_StockAssociate01_Orientation)     
+
+// *--- 
+        Orientation_root = new THREE.Group()
+        Orientation_root.position.set(0, 10, 0)
+        Orientation_root.rotation.set(0, 0, 0)
+        Orientation_root.scale.set(1, 1, 1)
+        Walmart_Perspective_Employee_StockAssociate01_Orientation.add(Orientation_root) 
+
+        Orientation_root.add(
+            new hoverObject(
+                'img',
+                0, 0, 0,
+                0, 0, 0,
+                0.1, 0.1, 0.1,
+                "Testing234", "TestingClass234",
+                "./assets/img/03-HudUI/RegPanels/ClearPanelHorizontal.svg", "",
+                "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+            )
+        )
+                
+        
+
+
+        
+
 
 
 

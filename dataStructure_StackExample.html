@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Stack Visualization</title>
+    <style>
+        body { margin: 0; overflow: hidden; }
+        canvas { display: block; }
+        #controls {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            z-index: 100;
+        }
+        button {
+            margin: 5px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="controls">
+        <button onclick="pushElement()">Push</button>
+        <button onclick="popElement()">Pop</button>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Scene setup
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            document.body.appendChild(renderer.domElement);
+
+            // Stack data structure
+            let stack = [];
+            const stackHeight = 1.2; // Height between stack elements
+
+            // Helper function to create a cube
+            const createCube = (value) => {
+                const geometry = new THREE.BoxGeometry();
+                const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+                const cube = new THREE.Mesh(geometry, material);
+                cube.userData.value = value;
+                return cube;
+            };
+
+            // Push operation
+            window.pushElement = () => {
+                const value = stack.length + 1; // Sample value
+                const cube = createCube(value);
+                stack.push(cube);
+                cube.position.set(0, -stackHeight * (stack.length - 1), 0);
+                scene.add(cube);
+                gsap.fromTo(cube.position, { y: cube.position.y + 5 }, { y: cube.position.y, duration: 1 });
+            };
+
+            // Pop operation
+            window.popElement = () => {
+                if (stack.length === 0) return;
+                const cube = stack.pop();
+                gsap.to(cube.position, { y: cube.position.y + 5, duration: 1, onComplete: () => scene.remove(cube) });
+            };
+
+            camera.position.z = 10;
+
+            // Animation loop
+            const animate = () => {
+                requestAnimationFrame(animate);
+                renderer.render(scene, camera);
+            };
+
+            animate();
+        });
+    </script>
+</body>
+</html>

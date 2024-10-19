@@ -327,6 +327,9 @@
   <button class="button panel-menu" onclick="togglePanel()">☰ Panel</button>
 
 
+  <div id="circle"></div>
+
+
   <input type="text" id="output" placeholder="Type here...">
     <div id="keyboard">
         <!-- Row01 -->
@@ -506,6 +509,7 @@
 		import { GUI } from './libraries/config/lil-gui.module.min.js';
 		import { OrbitControls } from './libraries/controllers/OrbitControls.js';
 		import { FirstPersonControls } from './libraries/controllers/FirstPersonControls.js';
+        import { PointerLockControls } from './libraries/controllers/PointerLockControls.js';
 		import { Water } from './assets/objects/Water.js';
 		import { Sky } from './assets/objects/Sky.js';
 		import { GLTFLoader } from './libraries/loaders/GLTFLoader.js';
@@ -2781,7 +2785,12 @@ document.addEventListener("keydown", function(event) {
 
 
 
-
+// Example object to interact with
+    const geometry = new THREE.BoxGeometry();
+    const material_plc = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+    const cube_plc = new THREE.Mesh(geometry, material_plc);
+    scene.add(cube_plc);
+    cube_plc.position.set(0, 0, 500);
 
 
 
@@ -3057,19 +3066,52 @@ document.addEventListener("keydown", function(event) {
 			
 			// camera.lookAt(0, 55, 0)
 
+            // Pointer Lock Controls
+            const pointerLockControls = new PointerLockControls(camera, document.body);
+
+            pointerLockControls.addEventListener('lock', () => {
+                console.log('Pointer Locked');
+            });
+
+            pointerLockControls.addEventListener('unlock', () => {
+                console.log('Pointer Unlocked');
+            });
+
+            // Raycaster
+            const raycaster_plc = new THREE.Raycaster();
+            const mouse_plc = new THREE.Vector2();
+
+            const circle = document.getElementById('circle');
+            circle.addEventListener('click', () => {
+                circle.style.borderColor = 'cyan';
+                circle.style.boxShadow = '0 0 10px cyan';
+
+                raycaster_plc.setFromCamera(mouse_plc, camera);
+
+                const intersects = raycaster_plc.intersectObjects(scene.children);
+
+                if (intersects.length > 0) {
+                    alert('Object clicked!');
+                }
+            });
+
+            
 
 
-            // document.addEventListener("keydown", function(event) {
-            //     if (event.key === "z") {
-            //         activateOrbitControls()
+            // // Event listener for key press
+            // document.addEventListener('keydown', (event) => {
+            //     if (event.key === 'c') {
+            //         orbitControls.enabled = !orbitControls.enabled; // Toggle OrbitControls
+            //         firstPersonControls.enabled = false; // Disable FirstPersonControls
+            //     } else if (event.key === 'C') {
+            //         orbitControls.enabled = false
+            //     } else if (event.key === 'v') {
+            //         firstPersonControls.enabled = !firstPersonControls.enabled; // Toggle FirstPersonControls
+            //         orbitControls.enabled = false; // Disable OrbitControls
+            //     } else if (event.key === 'C') {
+            //         firstPersonControls.enabled = false
             //     }
-            // })
-
-            // document.addEventListener("keydown", function(event) {
-            //     if (event.key === "x") {
-            //         activeFirstPersonControls()
-            //     }
-            // })
+            // });
 
 
             // Event listener for key press
@@ -3078,15 +3120,18 @@ document.addEventListener("keydown", function(event) {
                     orbitControls.enabled = !orbitControls.enabled; // Toggle OrbitControls
                     firstPersonControls.enabled = false; // Disable FirstPersonControls
                 } else if (event.key === 'C') {
-                    orbitControls.enabled = false
+                    orbitControls.enabled = false;
                 } else if (event.key === 'v') {
                     firstPersonControls.enabled = !firstPersonControls.enabled; // Toggle FirstPersonControls
                     orbitControls.enabled = false; // Disable OrbitControls
-                } else if (event.key === 'C') {
-                    firstPersonControls.enabled = false
+                } else if (event.key === 'V') {
+                    firstPersonControls.enabled = false;
+                } else if (event.key === 'b') {
+                    pointerLockControls.lock(); // Activate Pointer Lock Controls
+                } else if (event.key === 'B') {
+                    pointerLockControls.unlock(); // Deactivate Pointer Lock Controls
                 }
             });
-
 //..........................................................................................................
 //......CCC......TTTTTTTTT...LL.........RRRRR.........................UU.....UU....NN......N.......CCC......
 //....CCCCCCCC..TTTTTTTTTTT.LLLL.......RRRRRRRRRR.........FFFFFFFFFF.UUUU...UUUU..NNNN....NNN....CCCCCCCC...
@@ -4245,6 +4290,11 @@ UserContainer_root = new THREE.Group()
             mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
             mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
         }
+
+        document.addEventListener('mousemove', (event) => {
+            mouse_plc.x = (event.clientX / window.innerWidth) * 2 - 1;
+            mouse_plc.y = -(event.clientY / window.innerHeight) * 2 + 1;
+        });
 
 		function animate() {
 
