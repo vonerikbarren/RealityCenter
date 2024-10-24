@@ -106,6 +106,195 @@ anyGeometryName.add(mesh_anyGeometryName)
 ```
 
 
+
+//................................
+//.....OOOOOO................jjj..
+//....OOOOOOOOO..Obbb........jjj..
+//...OOOOOOOOOO..Obbb........jjj..
+//..OOOOOOOOOOOO.Obbb........jjj..
+//..OOOO....OOOO.Obbbbbbbb...jjj..
+//..OOOO....OOOOOObbbbbbbbb..jjj..
+//.OOOO......OOOOObbbbbbbbbb.jjj..
+//.OOOO......OOOOObbbb.bbbbb.jjj..
+//.OOOO......OOOOObbb...bbbb.jjj..
+//..OOOO....OOOOOObbb...bbbb.jjj..
+//..OOOO....OOOO.Obbbb..bbbb.jjj..
+//..OOOOOOOOOOOO.Obbbbbbbbbb.jjj..
+//...OOOOOOOOOO..Obbbbbbbbb..jjj..
+//....OOOOOOOOO..Obbbbbbbbb..jjj..
+//.....OOOOOO.........bbb....jjj..
+//.........................bjjjj..
+//.........................bjjjj..
+//.........................bjjjj..
+//................................
+
+
+//..............................................
+//..DDDDD.......................................
+//.DDDDDDDDD....................................
+//.DDDDDDDDDDD..................................
+//.DDDDDDDDDDD..................................
+//.DDDD...DDDDD.rrrrrr..aaaaaaa.aaww.wwww.wwww..
+//.DDDD....DDDD.rrrrrr.raaaaaaa.aaww.wwww.wwww..
+//.DDDD....DDDD.rrrrrrrraaaaaaaaaaww.wwww.wwww..
+//.DDDD....DDDD.rrrr..rraa.aaaaaaawwwwwwwwwwww..
+//.DDDD....DDDD.rrr....raaaaaaaa.awwwwwwwwwww...
+//.DDDD...DDDDD.rrr...rraaaaaaaa.awwwwwwwwwww...
+//.DDDD...DDDD..rrr...rraaa.aaaa.awwwwwwwwwww...
+//.DDDDDDDDDDD..rrr...rraa.aaaaa.awwwwwwwwww....
+//.DDDDDDDDDD...rrr...rraaaaaaaa..wwww.wwwww....
+//.DDDDDDDDD....rrr...rraaaaaaaa..wwww..wwww....
+//......................aaa.....................
+//..............................................
+
+
+//...............
+//....&&&&&&.....
+//...&&&&&&&&....
+//...&&&&&&&&....
+//...&&&&&&&&....
+//...&&&&&&&.....
+//....&&&&&&.....
+//...&&&&&&.&&&..
+//..&&&&&&&&&&&..
+//..&&&&&&&&&&&..
+//.&&&&..&&&&&&..
+//.&&&&&&&&&&&&..
+//..&&&&&&&&&&&..
+//..&&&&&&&&&&&..
+//....&&&&.......
+//...............
+
+
+//..........................................................................
+//......AAA.................iii.............................................
+//.....AAAAA................iii............................tttt.............
+//.....AAAAA................iii............................tttt.............
+//....AAAAAAA...............iii............................tttt.............
+//....AAAAAAA....nnnnnnnnn..iii..mmmmmmmmmmmmm....aaaaaaa.attttt..eeeeee....
+//....AAAAAAA....nnnnnnnnn..iii..mmmmmmmmmmmmmm..aaaaaaaa.attttt.eeeeeeee...
+//...AAAAAAAAA...nnnnnnnnn..iii..mmmmmmmmmmmmmm.aaaaaaaaaaatttttteeeeeeeee..
+//...AAAA.AAAA...nnnn.nnnn..iii..mmmm.mmmm..mmm.aaaa.aaaaa.tttt.teee..eeee..
+//...AAAAAAAAAA..nnn...nnn..iii..mmm..mmmm..mmm..aaaaaaaaa.tttt.teeeeeeeee..
+//..AAAAAAAAAAA..nnn...nnn..iii..mmm..mmmm..mmm.aaaaaaaaaa.tttt.teeeeeeeee..
+//..AAAAAAAAAAA..nnn...nnn..iii..mmm..mmmm..mmm.aaaaa.aaaa.tttt.teee........
+//..AAAAAAAAAAAA.nnn...nnn..iii..mmm..mmmm..mmm.aaaa.aaaaa.tttt.teeeeeeeee..
+//.AAAAA....AAAA.nnn...nnn..iii..mmm..mmmm..mmm.aaaaaaaaaa.tttttteeeeeeee...
+//.AAAA.....AAAA.nnn...nnn..iii..mmm..mmmm..mmm.aaaaaaaaaa.ttttt.eeeeeeee...
+//................................................aaa........ttt...eeee.....
+//..........................................................................
+
+
+
+
+``` js
+
+document.addEventListener("keydown", function(event) {
+    if (event.key === "j") {
+        // camera.position.y += 10000
+
+        camera.lookAt(UserContainer_root)
+
+        // Spacial_Movement_Function_Basic01()
+
+        // ================================================
+        // # Timeline01
+        // ================================================
+        let tl01 = gsap.timeline(
+            {
+                repeat: 2,
+                repeatDelay: 1,
+                delay:  0.01
+            }
+        )
+
+
+        // ================================================
+        // # Timeline02
+        // ================================================
+
+        let tl02 = gsap.timeline(
+            {
+                repeat: 2,
+                repeatDelay: 1,
+            }
+        )
+
+
+        // let crystalOrb_pos = new THREE.Vector3(100, 0, -100);
+        // let crystalOrb_rot = new THREE.Vector3(0, 1.575, 0);
+        // let crystalOrb_sca = new THREE.Vector3(5, 5, 5);
+        // let crystalOrb_durationData = 10;
+        // let crystalOrb_delayData = 0;
+        // let crystalOrb_easeData = "none";
+        // let crystalOrb_opacityData = 0.1;
+
+        // let crystalOrb_AnimationData = {
+        //     pos: crystalOrb_pos,
+        //     rot: crystalOrb_rot,
+        //     sca: crystalOrb_sca,
+        //     dur: crystalOrb_durationData,
+        //     del: crystalOrb_delayData,
+        //     eas: crystalOrb_easeData,
+        //     opa: crystalOrb_opacityData
+        // };
+
+        let crystalOrb_AnimationData = {
+            tlx: tl01,
+            obj: Scene_CrystalOrb,
+            pos: new THREE.Vector3(100, 0, -100),
+            rot: new THREE.Vector3(0, 1.575, 0),
+            sca: new THREE.Vector3(5, 5, 5),
+            dur: 10,
+            del: 0,
+            eas: "none",
+            opa: 0.1
+        };
+
+        let UserΔ_AnimationData = {
+            tlx: tl02,
+            obj: Scene_CrystalOrb,
+            pos: new THREE.Vector3(100, 0, -100),
+            rot: new THREE.Vector3(0, 1.575, 0),
+            sca: new THREE.Vector3(5, 5, 5),
+            dur: 10,
+            del: 0,
+            eas: "none",
+            opa: 0.1
+        }
+
+        Spacial_Movement_Function_Basic01(
+            crystalOrb_AnimationData.tlx,
+            crystalOrb_AnimationData.obj,
+            crystalOrb_AnimationData.pos,
+            crystalOrb_AnimationData.rot,
+            crystalOrb_AnimationData.sca,
+            crystalOrb_AnimationData.dur,
+            crystalOrb_AnimationData.del,
+            crystalOrb_AnimationData.eas,
+            crystalOrb_AnimationData.opa
+        );
+
+
+
+        // Spacial_Movement_Function_Basic01(tl01, Scene_CrystalOrb, crystalOrb_pos, crystalOrb_rot, crystalOrb_sca, crystalOrb_durationData, crystalOrb_delayData, crystalOrb_easeData, crystalOrb_opacityData);
+
+
+
+
+
+        
+        
+        console.log('button pressed')
+    }
+})
+
+
+```
+
+
+
+
 //..................................................................
 //..LL..............................................................
 //.LLLL........................................................ddd..
