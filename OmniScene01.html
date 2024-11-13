@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THREE.js and GSAP Player Interface</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1f1c2c, #928dab);
+            color: white;
+        }
+        #container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        #controls {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+        }
+        .button {
+            background-color: #444;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            margin: 0 5px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #666;
+        }
+        #timeline {
+            width: 100%;
+            margin: 0 10px;
+        }
+        input[type="range"] {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+    <div id="controls">
+        <button class="button" id="playPause">Play</button>
+        <button class="button" id="stop">Stop</button>
+        <button class="button" id="slowDown">Slow Down</button>
+        <button class="button" id="speedUp">Speed Up</button>
+        <input type="range" id="timeline" min="0" max="100" value="0">
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
+    <script>
+        // Set up the scene, camera, and renderer
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ antialias: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.getElementById('container').appendChild(renderer.domElement);
+
+        // Create a cube
+        const geometry = new THREE.BoxGeometry();
+        const material = new THREE.MeshStandardMaterial({ color: 0x00ff00 });
+        const cube = new THREE.Mesh(geometry, material);
+        scene.add(cube);
+
+        // Add lighting
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+        scene.add(ambientLight);
+        const pointLight = new THREE.PointLight(0xffffff, 1);
+        pointLight.position.set(5, 5, 5);
+        scene.add(pointLight);
+
+        // Position the camera
+        camera.position.z = 5;
+
+        // GSAP timeline animation
+        const timeline = gsap.timeline({ paused: true });
+        timeline.to(cube.rotation, { duration: 10, x: Math.PI * 2, ease: "none" });
+        timeline.to(cube.position, { duration: 10, x: 2, ease: "none" }, 0);
+
+        // Play/Pause button
+        const playPauseButton = document.getElementById('playPause');
+        playPauseButton.addEventListener('click', () => {
+            if (timeline.isActive()) {
+                timeline.pause();
+                playPauseButton.textContent = 'Play';
+            } else {
+                timeline.play();
+                playPauseButton.textContent = 'Pause';
+            }
+        });
+
+        // Stop button
+        const stopButton = document.getElementById('stop');
+        stopButton.addEventListener('click', () => {
+            timeline.pause(0);
+            playPauseButton.textContent = 'Play';
+        });
+
+        // Slow Down button
+        const slowDownButton = document.getElementById('slowDown');
+        slowDownButton.addEventListener('click', () => {
+            timeline.timeScale(timeline.timeScale() * 0.5);
+        });
+
+        // Speed Up button
+        const speedUpButton = document.getElementById('speedUp');
+        speedUpButton.addEventListener('click', () => {
+            timeline.timeScale(timeline.timeScale() * 2);
+        });
+
+        // Timeline slider
+        const timelineSlider = document.getElementById('timeline');
+        timelineSlider.addEventListener('input', (e) => {
+            const progress = e.target.value / 100;
+            timeline.progress(progress).pause();
+            playPauseButton.textContent = 'Play';
+        });
+
+        // Update slider as timeline progresses
+        timeline.eventCallback("onUpdate", () => {
+            timelineSlider.value = timeline.progress() * 100;
+        });
+
+        // Render loop
+        function animate() {
+            requestAnimationFrame(animate);
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+    </script>
+</body>
+</html>

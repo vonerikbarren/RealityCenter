@@ -578,8 +578,59 @@ CenterVirtualDesk_Tray01.add(
 )
 
 
+
+
+
+
 ```
 
+
+## Multiple HoverObjects()
+
+``` js
+
+function createTray(url, position = { x: 0, y: -144, z: 0 }, rotation = { x: 1.2, y: 0, z: 0 }, scale = { x: 1.5, y: 1.4, z: 1.2 }) {
+    const tray = new THREE.Group();
+    tray.position.set(position.x, position.y, position.z);
+    tray.rotation.set(rotation.x, rotation.y, rotation.z);
+    tray.scale.set(scale.x, scale.y, scale.z);
+
+    tray.add(
+        new hoverObject(
+            'img',
+            0, 2, 30,
+            0, 0, 0,
+            0.1, 0.1, 0.1,
+            "Testing234", "TestingClass234",
+            url, "",
+            "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World"
+        )
+    );
+
+    return tray;
+}
+
+function addMultipleTrays(root, urls) {
+    urls.forEach(url => {
+        const tray = createTray(url);
+        root.add(tray);
+    });
+}
+
+// Example usage:
+const CenterVirtualDesk_root = new THREE.Group(); // Assuming this is your root group
+const urls = [
+    "./assets/img/03-HudUI/RegPanels/ClearPanelHorizontal.svg",
+    "./assets/img/03-HudUI/RegPanels/AnotherImage.svg",
+    // Add more URLs as needed
+];
+
+addMultipleTrays(CenterVirtualDesk_root, urls);
+
+
+
+
+```
 
 //................................................
 //..PPPPP.......DDDDD.............................
@@ -835,6 +886,116 @@ document.addEventListener("keydown", function(event) {
         })
     }
 })
+
+
+```
+
+
+
+# OmniScene / Scene of Reality
+
+``` html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scene Example</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .component { margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Scene Overview</h1>
+    <div id="scene-overview"></div>
+    <h2>Components</h2>
+    <div id="scene-components"></div>
+
+    <script>
+        class Scene {
+            constructor(overview, camera, sounds, sfxs, music, lyrics, stage, targets, objects, narrator, actors, directions, script, lighting, costumes, props, makeup, blocking, setDesign, vfx, continuity, storyboard) {
+                this.overview = overview;
+                this.camera = camera;
+                this.sounds = sounds;
+                this.sfxs = sfxs;
+                this.music = music;
+                this.lyrics = lyrics;
+                this.stage = stage;
+                this.targets = targets;
+                this.objects = objects;
+                this.narrator = narrator;
+                this.actors = actors;
+                this.directions = directions;
+                this.script = script;
+                this.lighting = lighting;
+                this.costumes = costumes;
+                this.props = props;
+                this.makeup = makeup;
+                this.blocking = blocking;
+                this.setDesign = setDesign;
+                this.vfx = vfx;
+                this.continuity = continuity;
+                this.storyboard = storyboard;
+            }
+
+            addComponent(type, component) {
+                if (this[type]) {
+                    this[type].push(component);
+                } else {
+                    console.error(`Component type ${type} does not exist.`);
+                }
+            }
+        }
+
+        // Create a new scene
+        const scene = new Scene(
+            "A dramatic confrontation between the hero and the villain in an abandoned warehouse.",
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            []
+        );
+
+        // Adding components
+        scene.addComponent('camera', { shot: "wide", description: "Establishing shot of the warehouse exterior.", timeline: { start: 0, end: 5 } });
+        scene.addComponent('music', { track: "tense_theme", description: "Tense background music to build suspense.", timeline: { start: 0, end: 30 } });
+        scene.addComponent('script', { actor: "Hero", line: "It's over. Surrender now.", timeline: { start: 15, end: 17 } });
+
+        // Display the scene overview
+        document.getElementById('scene-overview').innerText = scene.overview;
+
+        // Display the scene components
+        const componentsDiv = document.getElementById('scene-components');
+        for (const [key, value] of Object.entries(scene)) {
+            if (Array.isArray(value) && value.length > 0) {
+                const componentDiv = document.createElement('div');
+                componentDiv.classList.add('component');
+                componentDiv.innerHTML = `<strong>${key}:</strong> ${JSON.stringify(value, null, 2)}`;
+                componentsDiv.appendChild(componentDiv);
+            }
+        }
+    </script>
+</body>
+</html>
+
 
 
 ```
