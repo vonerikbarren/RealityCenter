@@ -92,8 +92,11 @@
 
         // GSAP timeline animation
         const timeline = gsap.timeline({ paused: true });
-        timeline.to(cube.rotation, { duration: 10, x: Math.PI * 2, ease: "none" });
-        timeline.to(cube.position, { duration: 10, x: 2, ease: "none" }, 0);
+        timeline.to(cube.rotation, { duration: 500, x: Math.PI * 2, ease: "none" });
+        timeline.to(cube.position, { duration: 500, x: 2, ease: "none" }, 0);
+        timeline.to(cube.scale, { duration: 250, x: 2, ease: "none" }, 0);
+        timeline.to(cube.scale, { duration: 250, y: 2, ease: "none" }, 0);
+        
 
         // Play/Pause button
         const playPauseButton = document.getElementById('playPause');

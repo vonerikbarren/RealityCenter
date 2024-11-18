@@ -330,8 +330,8 @@
   <div id="circle"></div>
 
 
-  <input type="text" id="output" placeholder="Type here...">
-    <div id="keyboard">
+  <!-- <input type="text" id="output" placeholder="Type here..."> -->
+    <!-- <div id="keyboard">
         <!-- Row01 -->
         <button class="key">esc</button>
         <button class="key">F1</button>
@@ -470,7 +470,7 @@
          <button class="key">ΔΩ</button> -->
         
         <!-- Add more keys as needed -->
-    </div>
+    </div> -->
 
     <!-- ./assets/video/SphereAnimations/Equations3.mp4 -->
 
@@ -1928,88 +1928,88 @@
                 });
 
 
-                document.addEventListener("DOMContentLoaded", () => {
-                    const output = document.getElementById("output");
-                    const keys = document.querySelectorAll(".key");
+                // document.addEventListener("DOMContentLoaded", () => {
+                //     const output = document.getElementById("output");
+                //     const keys = document.querySelectorAll(".key");
 
-                    keys.forEach(key => {
-                        key.addEventListener("click", () => {
-                            output.value += key.textContent;
-                        });
-                    });
+                //     keys.forEach(key => {
+                //         key.addEventListener("click", () => {
+                //             output.value += key.textContent;
+                //         });
+                //     });
 
-                    const keyboard = document.getElementById("keyboard");
-                    keyboard.addEventListener("mousedown", (e) => {
-                        let shiftX = e.clientX - keyboard.getBoundingClientRect().left;
-                        let shiftY = e.clientY - keyboard.getBoundingClientRect().top;
+                //     const keyboard = document.getElementById("keyboard");
+                //     keyboard.addEventListener("mousedown", (e) => {
+                //         let shiftX = e.clientX - keyboard.getBoundingClientRect().left;
+                //         let shiftY = e.clientY - keyboard.getBoundingClientRect().top;
 
-                        const moveAt = (pageX, pageY) => {
-                            keyboard.style.left = pageX - shiftX + 'px';
-                            keyboard.style.top = pageY - shiftY + 'px';
-                        }
+                //         const moveAt = (pageX, pageY) => {
+                //             keyboard.style.left = pageX - shiftX + 'px';
+                //             keyboard.style.top = pageY - shiftY + 'px';
+                //         }
 
-                        const onMouseMove = (event) => {
-                            moveAt(event.pageX, event.pageY);
-                        }
+                //         const onMouseMove = (event) => {
+                //             moveAt(event.pageX, event.pageY);
+                //         }
 
-                        document.addEventListener('mousemove', onMouseMove);
+                //         document.addEventListener('mousemove', onMouseMove);
 
-                        document.addEventListener('mouseup', () => {
-                            document.removeEventListener('mousemove', onMouseMove);
-                        }, {once: true});
-                    });
+                //         document.addEventListener('mouseup', () => {
+                //             document.removeEventListener('mousemove', onMouseMove);
+                //         }, {once: true});
+                //     });
 
-                    keyboard.ondragstart = () => false;
-                });
+                //     keyboard.ondragstart = () => false;
+                // });
 
 
-                document.addEventListener("DOMContentLoaded", () => {
-                    const output = document.getElementById("output");
-                    const keys = document.querySelectorAll(".key");
-                    let activeDiv = null;
+                // document.addEventListener("DOMContentLoaded", () => {
+                //     const output = document.getElementById("output");
+                //     const keys = document.querySelectorAll(".key");
+                //     let activeDiv = null;
 
-                    keys.forEach(key => {
-                        key.addEventListener("click", () => {
-                            if (activeDiv) {
-                                activeDiv.textContent += key.textContent;
-                            }
-                        });
-                    });
+                //     keys.forEach(key => {
+                //         key.addEventListener("click", () => {
+                //             if (activeDiv) {
+                //                 activeDiv.textContent += key.textContent;
+                //             }
+                //         });
+                //     });
 
-                    const divs = document.querySelectorAll(".css3d-item");
+                //     const divs = document.querySelectorAll(".css3d-item");
 
-                    divs.forEach(div => {
-                        div.addEventListener("click", () => {
-                            if (activeDiv) {
-                                activeDiv.classList.remove("active");
-                            }
-                            activeDiv = div;
-                            activeDiv.classList.add("active");
-                        });
-                    });
+                //     divs.forEach(div => {
+                //         div.addEventListener("click", () => {
+                //             if (activeDiv) {
+                //                 activeDiv.classList.remove("active");
+                //             }
+                //             activeDiv = div;
+                //             activeDiv.classList.add("active");
+                //         });
+                //     });
 
-                    // THREE.js and CSS3DRenderer setup
+                //     // THREE.js and CSS3DRenderer setup
                    
                     
 
-                    const renderer = new CSS3DRenderer();
-                    renderer.setSize(window.innerWidth, window.innerHeight);
-                    document.getElementById('3d-container').appendChild(renderer.domElement);
+                //     const renderer = new CSS3DRenderer();
+                //     renderer.setSize(window.innerWidth, window.innerHeight);
+                //     document.getElementById('3d-container').appendChild(renderer.domElement);
 
-                    divs.forEach((div, i) => {
-                        const object = new CSS3DObject(div);
-                        object.position.set((i - 1) * 200, 10, 0); // Spread out the divs in the scene
-                        object.scale.set(10, 10, 10)
-                        scene.add(object);
-                    });
+                //     divs.forEach((div, i) => {
+                //         const object = new CSS3DObject(div);
+                //         object.position.set((i - 1) * 200, 10, 0); // Spread out the divs in the scene
+                //         object.scale.set(10, 10, 10)
+                //         scene.add(object);
+                //     });
 
-                    const animate = () => {
-                        requestAnimationFrame(animate);
-                        renderer.render(scene, camera);
-                    };
+                //     const animate = () => {
+                //         requestAnimationFrame(animate);
+                //         renderer.render(scene, camera);
+                //     };
 
-                    animate();
-                });
+                //     animate();
+                // });
 
                 // // GSAP animations
                 // function move(direction) {

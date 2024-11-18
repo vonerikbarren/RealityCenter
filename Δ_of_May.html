@@ -33,7 +33,7 @@
 
          <video id="none" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/PlexusAnimations/Animation_ParticlesWhite01.mp4" style="display: none" ></video>
 
-         <video id="openingVideo" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/SphereAnimations/whiteBg_polygons.mp4" style="display: none" ></video>
+         <video id="openingVideo" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/SphereAnimations/WhiteCircutBoard.mp4" style="display: none" ></video>
 
          <video id="none" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/SphereAnimations/Equations3.mp4" style="display: none" ></video>
 
@@ -2030,6 +2030,26 @@ active_tile_tile03.add(
         "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
     )
 )
+
+
+active_tile_tile04 = new THREE.Group()
+active_tile_tile04.position.set(0, 100, -30)
+active_tile_tile04.rotation.set(0, 3.14, 0)
+active_tile_tile04.scale.set(0.1, 0.1, 0.1)
+active_tile_root.add(active_tile_tile04)
+
+active_tile_tile04.add(
+    new hoverObject(
+        'img',
+        0, 0, 0,
+        0, 0, 0,
+        0.1, 0.1, 0.1,
+        "Testing234", "TestingClass234",
+        "./assets/img/12_People/May/sunflower01/sunflower01.jpg", "",
+        "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+    )
+)
+
 
 
 

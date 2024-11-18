@@ -101,3 +101,43 @@ Look up book: The Giver
     [] - D7. env/digitalPaths_automaticMovement
     [] - D8. env/digitalPaths_restricted
     [] - D9. env/digitalPaths_shortcuts
+
+
+    
+    DimensionalBook
+
+    Volumes of hyper Infintesimal dimensions
+
+    VOHID
+
+    DOHIV
+
+    OmniVon
+
+    Tunnels represent states of continuations / ( frames )
+
+
+    // SiteMap
+
+    Home
+    About Me
+    Education
+    Portfolio
+    Services
+    Contact
+    Support
+    
+    \- WebSite
+        \- Scene.Opening
+        \- Scene.HyperTunnel
+        \- Scene.
+
+
+ 
+The Main Objectives are as follows:
+\- [ _ ] - Getting Planning information from AI and parsing it into player program.
+\- [ _ ] - Parsing video footage and separating clips and renaming them.
+\- [ _ ] - Finishing Designs for HUD.Default
+\- [ _ ] - Move Logic Files to their Lyrical Root Node in the temp/[tree]
+\- [ _ ] - Create New Song: LogicCycle
+\- [ _ ] - Create ΔProgram SoundFX Logic File
