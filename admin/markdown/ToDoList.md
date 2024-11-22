@@ -140,4 +140,4 @@ The Main Objectives are as follows:
 \- [ _ ] - Finishing Designs for HUD.Default
 \- [ _ ] - Move Logic Files to their Lyrical Root Node in the temp/[tree]
 \- [ _ ] - Create New Song: LogicCycle
-\- [ _ ] - Create ΔProgram SoundFX Logic File
+\- [ _ ] - Create ΔProgram SoundFX Logic **File**
