@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THREE.js Raycaster Example</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <style>
+        body { margin: 0; overflow: hidden; }
+        #menu {
+            display: none;
+            position: absolute;
+            background-color: white;
+            border: 1px solid black;
+            padding: 10px;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+    <div id="menu">
+        <p>Mini Menu</p>
+        <button onclick="alert('Option 1')">Option 1</button>
+        <button onclick="alert('Option 2')">Option 2</button>
+    </div>
+    <script>
+        let scene, camera, renderer, raycaster, mouse, selectedObject, isDragging = false, hoveredObject = null;
+
+        // Initialize the scene
+        function init() {
+            scene = new THREE.Scene();
+            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            camera.position.z = 5;
+
+            renderer = new THREE.WebGLRenderer();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            document.body.appendChild(renderer.domElement);
+
+            raycaster = new THREE.Raycaster();
+            mouse = new THREE.Vector2();
+
+            // Create a cube
+            const geometry = new THREE.BoxGeometry();
+            const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+            const cube = new THREE.Mesh(geometry, material);
+            scene.add(cube);
+
+            // Event listeners
+            window.addEventListener('mousemove', onMouseMove, false);
+            window.addEventListener('mousedown', onMouseDown, false);
+            window.addEventListener('mouseup', onMouseUp, false);
+            window.addEventListener('contextmenu', onRightClick, false);
+
+            animate();
+        }
+
+        // Animation loop
+        function animate() {
+            requestAnimationFrame(animate);
+            renderer.render(scene, camera);
+            raycaster.setFromCamera(mouse, camera);
+            const intersects = raycaster.intersectObjects(scene.children);
+
+            if (intersects.length > 0) {
+                if (hoveredObject !== intersects[0].object) {
+                    if (hoveredObject) hoveredObject.material.color.set(0x00ff00); // Reset previous hovered object color
+                    hoveredObject = intersects[0].object;
+                    hoveredObject.material.color.set(0x800080); // Set new hovered object color to purple
+                }
+            } else {
+                if (hoveredObject) hoveredObject.material.color.set(0x00ff00); // Reset previous hovered object color
+                hoveredObject = null;
+            }
+        }
+
+        // Mouse move event
+        function onMouseMove(event) {
+            event.preventDefault();
+            mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+            mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+            if (isDragging && selectedObject) {
+                raycaster.setFromCamera(mouse, camera);
+                const intersects = raycaster.intersectObject(selectedObject);
+                if (intersects.length > 0) {
+                    selectedObject.position.copy(intersects[0].point);
+                }
+            }
+        }
+
+        // Mouse down event
+        function onMouseDown(event) {
+            event.preventDefault();
+            raycaster.setFromCamera(mouse, camera);
+            const intersects = raycaster.intersectObjects(scene.children);
+
+            if (intersects.length > 0) {
+                selectedObject = intersects[0].object;
+                selectedObject.material.color.set(0xff0000); // Change color to red on click
+                isDragging = true;
+            }
+        }
+
+        // Mouse up event
+        function onMouseUp(event) {
+            event.preventDefault();
+            if (selectedObject) {
+                selectedObject.material.color.set(0x00ff00); // Change color back to green on release
+                selectedObject = null;
+                isDragging = false;
+            }
+        }
+
+        // Right click event
+        function onRightClick(event) {
+            event.preventDefault();
+            raycaster.setFromCamera(mouse, camera);
+            const intersects = raycaster.intersectObjects(scene.children);
+
+            if (intersects.length > 0) {
+                const menu = document.getElementById('menu');
+                menu.style.left = `${event.clientX}px`;
+                menu.style.top = `${event.clientY}px`;
+                menu.style.display = 'block';
+            }
+        }
+
+        // Hide menu on click outside
+        window.addEventListener('click', (event) => {
+            const menu = document.getElementById('menu');
+            if (menu.style.display === 'block') {
+                menu.style.display = 'none';
+            }
+        });
+
+        init();
+    </script>
+</body>
+</html>

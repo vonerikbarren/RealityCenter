@@ -293,6 +293,75 @@ document.addEventListener("keydown", function(event) {
 ```
 
 
+``` js
+
+
+
+ΔTemplate_object_00 = new THREE.Group()
+ΔTemplate_object_00.position.set(0, 0, 0)
+ΔTemplate_object_00.rotation.set(0, 0, 0)
+ΔTemplate_object_00.scale.set(2, 2, 2)
+ΔaOmniX_root.add(ΔTemplate_object_00)
+
+        const mat_ΔTemplate_object_00 = new THREE.MeshPhysicalMaterial(
+            { 
+                // material
+                map: whitePureRoom, 
+                side: THREE.DoubleSide,
+                opacity: 0,
+                depthTest: false,
+                depthWrite: false,
+                alphaTest: 0,
+                alphaHash: false,
+                visible: false,
+            });
+
+        mesh_ΔTemplate_object_00 = new THREE.Mesh(geo_objT_SphereA0, mat_ΔTemplate_object_00);
+
+        mat_ΔTemplate_object_00.transparent = false;
+        mat_ΔTemplate_object_00.alphaMap = SceneWallpaper_02;
+        mat_ΔTemplate_object_00.
+
+        mesh_ΔTemplate_object_00.position.set(0, 0, 0);
+        mesh_ΔTemplate_object_00.scale.set(1, 1, 1);
+        mesh_ΔTemplate_object_00.rotation.set(0, 0, 0)
+
+        // mesh_ΔTemplate_object_00.position.set(-15000, 0, 0);
+        // mesh_ΔTemplate_object_00.rotateX( - Math.PI / 2 );
+        // ΔTemplate_object_00.lookAt(camera)
+        
+        ΔTemplate_object_00.add(mesh_ΔTemplate_object_00)
+
+        let scale_ΔTemplate_object_00 = () => {
+
+            console.log("scale_ΔTemplate_object_00 created")
+            gsap.to(scale_ΔTemplate_object_00.scale, {
+                repeat: -1,
+                duration: 0.25,
+                ease: "none",
+                delay: 0,
+                x: 1.5,
+                y: 1.5,
+                z: 1.5,
+    
+            })
+
+            gsap.to(scale_ΔTemplate_object_00.scale, {
+                repeat: -1,
+                duration: 0.25,
+                ease: "none",
+                delay: 0.55,
+                x: 0.1,
+                y: 0.1,
+                z: 0.1,
+    
+            })
+        }
+
+
+```
+
+
 
 
 //..................................................................
