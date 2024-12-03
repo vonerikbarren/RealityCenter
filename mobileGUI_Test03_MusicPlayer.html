@@ -723,8 +723,1708 @@
         let Scene_CrystalOrb
 
 
+//.......................................................
+//..MMM.....MMM..........................................
+//.MMMMM...MMMMM.........................................
+//.MMMMM...MMMMM.........................................
+//.MMMMMM..MMMMM.........................................
+//.MMMMMM.MMMMMM...eeeeee...errrrr..gggggggg...eeeeee....
+//.MMMMMM.MMMMMM..eeeeeeee..errrrr.rgggggggg..geeeeeee...
+//.MMMMMM.MMMMMM.Meeeeeeeee.errrrrrrgggggggg.ggeeeeeeee..
+//.MMMMMM.MMMMMM.Meee..eeee.errr..rrgg..gggg.ggee..eeee..
+//.MMMMMMMMMMMMM.Meeeeeeeee.err...rrgg..gggg.ggeeeeeeee..
+//.MMM.MMMMMMMMM.Meeeeeeeee.err...rrgg...ggg.ggeeeeeeee..
+//.MMM.MMMMM.MMM.Meee.......err...rrgg..gggg.ggee........
+//.MMM.MMMMM.MMM.Meeeeeeeee.err...rrgggggggg.ggeeeeeeee..
+//.MMM.MMMMM.MMM.Meeeeeeee..err....rgggggggg.ggeeeeeee...
+//.MMM.MMMMM.MMM..eeeeeeee..err.....gggggggg..geeeeeee...
+//..................eeee..........rrggg.gggg....eeee.....
+//................................rrgggggggg.............
+//.................................rgggggggg.............
+//.................................rggggggg..............
+//.......................................................
+
+//..............................................................................................................
+//..DDDDD............................l....................................tii...................................
+//.DDDDDDDDD........................cll.............................attt..tii...................................
+//.DDDDDDDDDDD......................cll.............................attt..tii...................................
+//.DDDDDDDDDDD......................cll.............................attt..tii...................................
+//.DDDD...DDDDD..eeeeee....ccccccc..cll...aaaaaaa..arrrrr..aaaaaaa.aatttt.tii...ooooooo...onnnnnnnn..nsssssss...
+//.DDDD....DDDD.eeeeeeee..ecccccccc.cll..laaaaaaa..arrrrr.raaaaaaa.aatttt.tii..ioooooooo..onnnnnnnn..nsssssss...
+//.DDDD....DDDDDeeeeeeeeeeecccccccc.cll.llaaaaaaaa.arrrrrrraaaaaaaaaatttt.tii.iiooooooooo.onnnnnnnn.nnssssssss..
+//.DDDD....DDDDDeee..eeeeeecc..cccc.cll.llaa.aaaaa.arrr..rraa.aaaaa.attt..tii.iioo...oooo.onnn.nnnn.nnssssssss..
+//.DDDD....DDDDDeeeeeeeeeeecc.......cll..laaaaaaaa.arr....raaaaaaaa.attt..tii.iioo...oooo.onn...nnn..nsssssss...
+//.DDDD...DDDDDDeeeeeeeeeeecc.......cll.llaaaaaaaa.arr...rraaaaaaaa.attt..tii.iioo...oooo.onn...nnn..nsssssss...
+//.DDDD...DDDD.Deee......eecc..cccc.cll.llaaa.aaaa.arr...rraaa.aaaa.attt..tii.iioo...oooo.onn...nnn.nnssssssss..
+//.DDDDDDDDDDD.Deeeeeeeeeeecccccccc.cll.llaa.aaaaa.arr...rraa.aaaaa.attt..tii.iiooooooooo.onn...nnn.nnsss.ssss..
+//.DDDDDDDDDD..Deeeeeeee..eccccccc..cll.llaaaaaaaa.arr...rraaaaaaaa.atttt.tii..ioooooooo..onn...nnn.nnssssssss..
+//.DDDDDDDDD....eeeeeeee..eccccccc..cll.llaaaaaaaa.arr...rraaaaaaaa.atttt.tii...ooooooo...onn...nnn..nsssssss...
+//................eeee......cccc..........aaa..............aaa........ttt........ooooo................ssssss....
+//..............................................................................................................
 
 
+const targets = { table: [], sphere: [], helix: [], grid: [], table2: [] };
+
+
+
+let RequipRoom, mesh_RequipRoom
+let RequipRoomTunnelToWaitingRoom01, mesh_RequipRoomTunnelToWaitingRoom01
+let RequipRoomTunnelToWaitingRoom02, mesh_RequipRoomTunnelToWaitingRoom02
+let RequipRoom_SquareGrid, mesh_RequipRoom_SquareGrid
+let RequipRoom_SphereGrid, mesh_RequipRoom_SphereGrid
+let RequipRoom_CylinderGrid, mesh_RequipRoom_CylinderGrid
+let RequipRoom_RealityGrid, mesh_RequipRoom_RealityGrid
+let RequipRoom_FullRealityGrid, mesh_RequipRoom_FullRealityGrid
+
+let RequipRoom_LeftShelfA
+let RequipRoom_LeftShelfB
+let RequipRoom_LeftShelfC
+let RequipRoom_RightShelfA
+let RequipRoom_RightShelfB
+let RequipRoom_RightShelfC
+
+
+let whiteRoom, mesh_whiteRoom
+let whiteRoomInterior, mesh_whiteRoomInterior
+let r_whiteRoomToElevatorConnector, mesh_whiteRoomToElevatorConnector
+
+let r_TechTubeToCmdCenter, mesh_TechTubeToCmdCenter
+let r_TechTubeToCmdCenter2, mesh_TechTubeToCmdCenter2
+let r_TechTubeToCmdCenter3, mesh_TechTubeToCmdCenter3
+let r_TechTubeToCmdCenter4, mesh_TechTubeToCmdCenter4
+let r_TechTubeToCmdCenter5, mesh_TechTubeToCmdCenter5
+let r_TechTubeToCmdCenter6, mesh_TechTubeToCmdCenter6
+let r_TechTunnelToCmdCenter, mesh_TechTunnelToCmdCenter
+
+let r_TechPathToCmdCenter, mesh_TechPathToCmdCenter
+let r_TechPathToCmdCenterClear1, mesh_TechPathToCmdCenterClear1
+let r_TechPathToCmdCenterClear2, mesh_TechPathToCmdCenterClear2
+let r_TechArrows, mesh_TechArrows
+
+
+let r_PortfolioElevatorBeam, mesh_PortfolioElevatorBeam
+let r_PortfolioElevatorPlatform, mesh_PortfolioElevatorPlatform
+
+
+// ..:: ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ ::..
+// .................... :: Environment Items :: .....................................
+// ..:: ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ ::..
+
+// Floor 01 - About Me 
+let r_PortfolioFloor01, mesh_r_PortfolioFloor01
+let r_floor01_platformA, mesh_floor01_platformA
+let r_floor01_platformB, mesh_floor01_platformB
+let r_floor01_platformB1, mesh_r_floor01_platformB1
+let r_floor01_platformC, mesh_floor01_platformC
+let r_floor01_platformC1, mesh_floor01_platformC1
+
+let r_platformA_Δ, mesh_platformA_Δ
+let r_platformB_Δ, mesh_platformB_Δ
+let r_platformC_Δ, mesh_platformC_Δ
+
+let r_PlatformA_Controller, mesh_PlatformA_Controller
+let r_PlatformA_ControlWall_Aboutme, mesh_PlatformA_ControlWall_Aboutme
+
+// Floor 02 - Portfolio - Basic Websites & Components
+let r_PortfolioFloor02, mesh_r_PortfolioFloor02
+let r_floor02_platformA, mesh_floor02_platformA
+let r_floor02_platformB, mesh_floor02_platformB
+let r_floor02_platformC, mesh_floor02_platformC
+
+// Floor 03 - Portfolio - Industry Focused Projects
+let r_PortfolioFloor03, mesh_r_PortfolioFloor03
+let r_floor03_platformA, mesh_floor03_platformA
+let r_floor03_platformB, mesh_floor03_platformB
+let r_floor03_platformC, mesh_floor03_platformC 
+
+
+// Floor 04 - Portfolio - InfinityTech - Δ
+let r_PortfolioFloor04, mesh_r_PortfolioFloor04
+let r_floor04_platformA, mesh_floor04_platformA
+let r_floor04_platformB, mesh_floor04_platformB
+let r_floor04_platformC, mesh_floor04_platformC 
+
+
+// Floor 05 - Portfolio - First Application - ΔΝ
+// |- Command Center 
+let r_CommandCenter_PlatformA0, mesh_CommandCenter_PlatformA0
+let r_CommandCenter_PlatformA1, mesh_CommandCenter_PlatformA1
+let r_CommandCenter_PlatformA2, mesh_CommandCenter_PlatformA2
+let r_CommandCenter_PlatformA3, mesh_CommandCenter_PlatformA3
+
+// |- Left Brain Center
+let r_LeftBrain_PlatformA0, mesh_LeftBrain_PlatformA0
+let r_LeftBrain_PlatformA1, mesh_LeftBrain_PlatformA1
+let r_LeftBrain_PlatformA2, mesh_LeftBrain_PlatformA2
+let r_LeftBrain_PlatformA3, mesh_LeftBrain_PlatformA3
+
+// |- Right Brain Center
+let r_RightBrain_PlatformA0, mesh_RightBrain_PlatformA0
+let r_RightBrain_PlatformA1, mesh_RightBrain_PlatformA1
+let r_RightBrain_PlatformA2, mesh_RightBrain_PlatformA2
+let r_RightBrain_PlatformA3, mesh_RightBrain_PlatformA3
+
+			
+let r_CmdCenter, mesh_CmdCenter_primary, mesh_CmdCenter_Secondary, mesh_CmdCenter_Tercery
+			
+let r_TechTubeToLeftBrain, mesh_TechTubeToLeftBrain, mesh_TechTunnelToLeftBrain, mesh_TechTunnelFloor_ToLeftBrain
+let r_TechTubeToRightBrain, mesh_TechTubeToRightBrain, mesh_TechTunnelToRightBrain, mesh_TechTunnelFloor_ToRightBrain
+let r_TechTubeToFrontBrain, mesh_TechTubeToFrontBrain, mesh_TechTunnelToFrontBrain, mesh_TechTunnelFloor_ToFrontBrain
+let r_TechTubeToBackBrain, mesh_TechTubeToBackBrain, mesh_TechTunnelToBackBrain, mesh_TechTunnelFloor_ToBackBrain
+let r_TechTubeToTopBrain, mesh_TechTubeToTopBrain, mesh_TechTunnelToTopBrain, mesh_TechTunnelFloor_ToTopBrain
+
+
+let r_LeftBrainMatrix01_
+let r_LeftBrainMatrix02_
+let r_LeftBrainMatrix03_
+
+let r_RightBrainMatrix01_
+let r_RightBrainMatrix02_
+let r_RightBrainMatrix03_
+
+// ..:: ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ ::..
+			// .................... :: UI Declarations :: .......................................
+			// ..:: ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ ::..
+
+			// HomeMenuUI
+			let HomeMenuUI, HomeMenuUI_params, mesh_HomeMenuUI
+			let HomeScreenSaver
+
+			// BaseUI
+	  		let BaseUI_Root
+			let BaseUI_Root_TopLeftComponent, mesh_BaseUI_Root_TopLeftComponent
+			let BaseUI_Root_TopRightComponent, mesh_BaseUI_Root_TopRightComponent
+			let BaseUI_Root_BottomLeftComponent, mesh_BaseUI_Root_BottomLeftComponent
+			let BaseUI_Root_BottomRightComponent, mesh_BaseUI_Root_BottomRightComponent
+
+			let BaseUI_Root_
+			
+			// BaseUI Beam Animations
+
+			let beam_TopMiddleLeft_NeonBlueGreen, mesh_beam_TopMiddleLeft_NeonBlueGreen
+			let beam_TopMiddleLeft_NeonWhite, mesh_beam_TopMiddleLeft_NeonWhite
+			let beam_TopMiddleRight_NoenBlueGreen, mesh_beam_TopMiddleRight_NoenBlueGreen
+			let beam_TopMiddleRight_NeonWhite, mesh_beam_TopMiddleRight_NeonWhite
+
+			let beam_TopLeftToRight_NeonBlueGreen, mesh_beam_TopLeftToRight_NeonBlueGreen
+			let beam_TopLeftToRight_white, mesh_beam_TopLeftToRight_white
+			let beam_TopRightToLeft_Blue, mesh_beam_TopRightToLeft_Blue
+	  		let beam_BottomLeftToRight_NeonBlueGreen, mesh_beam_BottomLeftToRight_NeonBlueGreen
+			let beam_BottomLeftToRight_white, mesh_beam_BottomLeftToRight_white
+			let beam_BottomRightToLeft_Blue, mesh_beam_BottomRightToLeft_Blue
+
+
+			// Layers
+			let mesh_BaseUI_Root_TopLeftLightComponentL1, mesh_BaseUI_Root_TopLeftLightComponentL2
+			let mesh_BaseUI_Root_TopRightLightComponentL1, mesh_BaseUI_Root_TopRightLightComponentL2
+			let mesh_BaseUI_Root_BottomLeftLightComponentL1, mesh_BaseUI_Root_BottomLeftLightComponentL2
+			let mesh_BaseUI_Root_BottomRightLightComponentL1, mesh_BaseUI_Root_BottomRightLightComponentL2
+
+			// UI_PrimaryHud
+	  		let UI_PrimaryHud_root, mesh_UI_PrimaryHud_root
+			
+			// UI_SecondaryHud
+			let UI_SecondaryHud, mesh_UI_SecondaryHud
+
+
+			// UI_BasicHuds
+			// ..:: ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ ::..
+			// ..:: ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ ::..
+
+			let r_UI_BasicHud01_OperationsHud, mesh_UI_BasicHud01_OperationsHud
+	  		let r_UI_BasicHud02_OperationsHud, mesh_UI_BasicHud02_OperationsHud
+			let r_UI_BasicHud03_OperationsHud, mesh_UI_BasicHud03_OperationsHud
+			let r_UI_BasicHud04_OperationsHud, mesh_UI_BasicHud04_OperationsHud
+
+			// ..:: ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ ::..
+			// ..:: ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ ::..
+
+
+			// UI_ContainerHolderWhiteA1
+			let UI_ContainerHolderWhiteA1, mesh_UI_ContainerHolderWhiteA1 // La Maison Du Vin....
+			let UI_ContainerHolderWhiteA2, mesh_UI_ContainerHolderWhiteA2 // Paypal
+			let UI_ContainerHolderWhiteA3, mesh_UI_ContainerHolderWhiteA3 // Apple
+			let UI_ContainerHolderWhiteA4, mesh_UI_ContainerHolderWhiteA4 // Architecture 
+			let UI_ContainerHolderWhiteA5, mesh_UI_ContainerHolderWhiteA5 // Undefined.
+
+			// ToolKit 01 Container Holders
+			let UI_ContainerHolderWhiteA6, mesh_UI_ContainerHolderWhiteA6 // iLanguages
+			let UI_ContainerHolderWhiteA7, mesh_UI_ContainerHolderWhiteA7 // 
+			let UI_ContainerHolderWhiteA8, mesh_UI_ContainerHolderWhiteA8
+			let UI_ContainerHolderWhiteA9, mesh_UI_ContainerHolderWhiteA9
+			
+
+
+			// UI_ContainerStreamA1
+			let UI_ContainerStreamA1, mesh_UI_ContainerStreamA1
+			let UI_ContainerStreamA2, mesh_UI_ContainerStreamA2
+			let UI_ContainerStreamA3, mesh_UI_ContainerStreamA3
+			let UI_ContainerStreamA4, mesh_UI_ContainerStreamA4
+			let UI_ContainerStreamA5, mesh_UI_ContainerStreamA5
+
+
+			// Declarations / CommunicationStreams
+			let CommunicationStreamA1_Params, geo_CommunicationStreamA1_Dimensions, mesh_CmStrm01_FinancialApps_CommunicationStream
+
+			// Declarations / CommunicationLights
+			let CommunicationStreamLight_Params, geo_CommunicationStreamLightDimensions, mesh_CommunicationStreamLight_Params
+
+			// Declarations / CommunicationElectricity
+			let CommunicationStreamElectricty_Params, geo_CommunicationStreamElectricty_Dimensions, mesh_CommunicationStreamElectricty
+
+			// Declarations / UI_CommunicationStreams / CmStrm01_BasicWebPages_root
+	  		let CmStrm01_FinancialApps_root
+			let CmStrm01_FinancialApps_CommunicationStream
+			let CmStrm01_FinancialApps_Light,CmStrm01_FinancialApps_Light_params 
+			let mesh_CmStrm01_FinancialApps_Light
+			let CmStrm01_FinancialApps_Electricity01, mesh_CmStrm01_FinancialApps_Electricity01
+			let CmStrm01_FinancialApps_LaMaisonDuVin, mesh_CmStrm01_FinancialApps_LaMaisonDuVin
+			let CmStrm01_FinancialApps_PayPalSite, mesh_CmStrm01_FinancialApps_PayPalSite
+			let CmStrm01_FinancialApps_AppleSite, mesh_CmStrm01_FinancialApps_AppleSite
+			let CmStrm01_FinancialApps_ArchitectureSite, mesh_CmStrm01_FinancialApps_ArchitectureSite
+
+
+
+			// Declarations / UI_CommunicationStreams / CmStrm01_Portfolios
+			let CmStrm01_Portfolios_root
+			let CmStrm01_Portfolios_CommunicationStream
+			let CmStrm01_Portfolios_Light, CmStrm01_Portfolios_Electricity01
+			let CmStrm01_Portfolios_ErikasPortfolio, mesh_CmStrm01_Portfolios_ErikasPortfolio
+
+
+
+			// Declarations / UI_CommunicationStreams / CmStrm03_FinancialApps_root
+			let CmStrm03_FinancialApps_root
+			let CmStrm03_FinancialApps_CommunicationStream
+			let CmStrm03_FinancialApps_Light, CmStrm03_FinancialApps_Electricity01
+			let CmStrm03_FinancialApp01_VoxlmartProject, mesh_CmStrm03_FinancialApp01_VoxlmartContainer
+			let CmStrm03_FinancialApp01_CryptoAnalysisA, mesh_CmStrm03_FinancialApp01_CryptoAnalysisA
+			let CmStrm03_FinancialApp02_CryptoAnalysisB, mesh_CmStrm03_FinancialApp02_CryptoAnalysisB
+			let CmStrm03_FinancialApp03_CryptoAnalysisC, mesh_CmStrm03_FinancialApp03_CryptoAnalysisC
+			let CmStrm03_FinancialApp04_CryptoAnalysisD, mesh_CmStrm03_FinancialApp04_CryptoAnalysisD
+
+
+			// Declarations / UI_CommunicationStreams / CmStrm04_Toolkit_General_root
+			let CmStrm04_Toolkit_General_root
+			let CmStrm04_Toolkit_General_CommunicationStream
+			let CmStrm04_Toolkit_General_Light, CmStrm04_Toolkit_General_Electricity01
+			let CmStrm04_Toolkit_General_App01_OnlineTimer, mesh_CmStrm04_Toolkit_General_App01_OnlineTimer
+			let CmStrm04_Toolkit_General_App02_Dogpile, mesh_CmStrm04_Toolkit_General_App02_Dogpile
+			let CmStrm04_Toolkit_General_App03_Wikipedia, mesh_CmStrm04_Toolkit_General_App03_Wikipedia
+			let CmStrm04_Toolkit_General_App04_GifApp, mesh_CmStrm04_Toolkit_General_App04_GifApp
+
+
+
+
+
+			// UI_PortfolioHud
+			let UI_PortfolioHud_Root, Portfolio_RegSites_Root, Portfolio_FinancialApps_Root
+			let UI_PortfolioHud, mesh_UI_PortfolioHud
+
+
+			// UI_ToolHudMaster
+			let UI_ToolHudMaster
+
+			// |- UI_ExcelHud
+			let UI_ExcelHudA00, UI_ExcelStreamA00, mesh_UI_ExcelStreamA00
+
+
+			// |- # Logo & NavBar
+
+			let Navbar_root
+
+			let r_PrimaryLogo
+			let PrimaryLogo
+			let PrimaryLogo_b1, PrimaryLogo_b2, PrimaryLogo_b3, PrimaryLogo_b4, PrimaryLogo_b5
+			let PrimaryNavBar, mesh_PrimaryNavBar
+			let SecondaryNavBar, mesh_SecondaryNavBar
+			let SecondaryNavBarIcons
+
+
+			// ProductionLogo
+			let r_PrimaryMainLogo
+
+			let PrimaryLogo_RealitySkin, mesh_PrimaryLogo_RealitySkin
+			let PrimaryLogo_Gear3
+			let PrimaryLogo_Gear2
+			let PrimaryLogo_Gear1
+			let PrimaryLogo_TimeRing02
+			let PrimaryLogo_TimeRing01
+			let PrimaryLogo_Frames
+			let PrimaryLogo_Core
+			let PrimaryLogo_ElectricSpinner01
+			let PrimaryLogo_WhiteClearShield
+			let PrimaryLogo_Tree
+			let PrimaryLogo_Bolt
+
+
+
+			// Previous Location Panel
+			let PreviousLocation_Panel_root
+			let PreviousLocation_Panel_Gear01
+			let PreviousLocation_CenterPanel
+			let PreviousLocation_Panel_Default
+
+			// List of Previous Locations
+			let PrevLoc_LoadingRoom
+			let PrevLoc_CenterBrain
+
+			// Current Location Panel
+			let CurrentLocation_Panel_root 
+			let CurrentLocation_Panel_Gear01
+			let CurrentLocation_CenterPanel
+			let CurrentLocationPanel_Default
+
+			// List of Current Locations
+			let CurLoc_LoadingRoom
+			let CurLoc_CenterBrain
+			let CurLoc_LeftBrain
+			let CurLoc_RightBrain
+			let CurLoc_RearBrain
+			let CurLoc_FrontBrain
+
+			// List of CenterBrain Locations
+			let ArtikaReality
+			let PortfolioReality
+			
+
+			
+			let CurrentLocation_UpperLeftPanel
+			let CurrentLocation_UpperRightPanel
+			let CurrentLocation_LowerLeftPanel
+			let CurrentLocation_LowerRightPanel
+			
+
+			// r_CurrentLocationPanel
+			
+
+
+
+			// |- # Modals
+			// Center Header
+			let centerHeader_root
+
+			let centerHeader_Tester_Panel
+			let centerHeader_Tester_DefaultButton
+			let centerHeader_Tester_PrimaryButton
+			let centerHeader_Tester_SuccessButton
+			let centerHeader_Tester_SecondaryButton
+			let centerHeader_Tester_WarningButton
+			let centerHeader_Tester_DangerButton
+			let centerHeader_Tester_InfoButton1
+			let centerHeader_Tester_InfoButton2
+
+
+			let centerHeader_Modal_Primary
+			let centerHeader_Modal_Secondary
+			let centerHeader_Modal_Default
+			let centerHeader_Modal_Success
+			let centerHeader_Model_Warning
+			let centerHeader_Modal_Danger
+			let centerHeader_model_Info1
+			let centerHeader_model_Info2
+			let centerHeader_model_load
+
+
+
+			// ################################################################
+	  		// \- Current Location Alert System
+			// ################################################################
+
+			let r_CurrentSpaceAlerts
+
+			let CurrentSpace_Alert_Default
+			let CurrentSpace_Alert_Primary
+			let CurrentSpace_Alert_Secondary
+			
+			let CurrentSpace_Alert_Success
+			let CurrentSpace_Alert_Warning
+			let CurrentSpace_Alert_Danger
+			let CurrentSpace_Alert_Info1
+			let CurrentSpace_Alert_Info2
+			let CurrentSpace_Alert_Load
+
+
+			// ----------------------------------------------------------------
+	  		// ...Travel to Brain(s) Alerts
+			// ----------------------------------------------------------------
+
+			let alert_Travel_To_LeftBrain
+			let alert_Travel_To_RightBrain
+			let alert_Travel_To_RearBrain
+			let alert_Travel_To_FrontBrain
+			let alert_Travel_To_CenterBrain
+
+
+
+			// ################################################################
+	  		// \- Other Space Alert System
+			// ################################################################
+
+			let r_OtherSpaces_Alerts
+
+			let OtherSpaces_Alert_Default
+			let OtherSpaces_Alert_Primary
+			let OtherSpaces_Alert_Secondary
+			
+			let OtherSpaces_Alert_Success
+			let OtherSpaces_Alert_Warning
+			let OtherSpaces_Alert_Danger
+			let OtherSpaces_Alert_Info1
+			let OtherSpaces_Alert_Info2
+			let OtherSpaces_Alert_Load
+
+
+			// |- # CenterVirtualDesk Footer
+			let CenterVirtualDesk_root
+			let CenterVirtualDesk_Tray01
+			let CenterVirtualDesk_Tray02
+			let CenterVirtualDesk_Tray03
+			let centerVirtualDesk_programMonitor01
+			let centerVirtualDesk_programMonitor02
+			let centerVirtualDesk_programMonitor03
+			let centerVirtualDesk_programMonitor04
+			let centerVirtualDesk_programMonitor05
+			let centerVirtualDesk_programMonitor06
+			let centerVirtualDesk_programMonitor07
+			let centerVirtualDesk_programMonitor08
+			let centerVirtualDesk_programMonitor09
+			let centerVirtualDesk_programMonitor10
+
+
+			// |- # Left View
+			let CameraLeftView_root
+			let cameraLeftView_program01
+			let cameraLeftView_program02
+			let cameraLeftView_program03
+			let cameraLeftView_program04
+			let cameraLeftView_program05
+			let cameraLeftView_program06
+			let cameraLeftView_program07
+			let cameraLeftView_program08
+			let cameraLeftView_program09
+			let cameraLeftView_program10
+
+	  		// |- # Right View
+			let CameraRightView_root
+			let cameraRightView_program01
+			let cameraRightView_program02
+			let cameraRightView_program03
+			let cameraRightView_program04
+			let cameraRightView_program05
+			let cameraRightView_program06
+			let cameraRightView_program07
+			let cameraRightView_program08
+			let cameraRightView_program09
+			let cameraRightView_program10
+
+
+
+			// Logo Icons
+			let icon_navbar_cmdcenter
+			let icon_navbar_resume
+			let icon_navbar_portfolio
+			let icon_navbar_services
+			let icon_navbar_research
+			let icon_navbar_Δs
+
+			let icon_navbar_github
+			let icon_navbar_linkedin
+			let icon_navbar_soundcloud
+			let icon_navbar_dribble
+			let icon_navbar_twitter
+			let icon_navbar_linktree
+
+
+// POPOPOPOPOPOPOPOPOPOPOPOPOP
+
+			// **************************************************
+			// Brain Panels Applications
+			// **************************************************
+
+			let r_CenterBrain_Panel
+			let r_LeftBrain_Panel
+			let r_RightBrain_Panel
+			let r_RearBrain_Panel
+			let r_FrontBrain_Panel
+
+
+			// r_CenterBrain_Panel
+	  		let r_CenterBrain_Panel_Portfolio
+			let r_CenterBrain_ButtonRoot
+
+			// Portfolio Standing Locations
+			let PortfolioStandingLocations
+			let Portfolio_RegWebsites_StandingLocation
+			let Portfolio_FeaturedWebSites_StandingLocation
+			let Portfolio_WebApps_StandingLocation
+			let Portfolio_FinancialApps_StandingLocation
+			let Portfolio_WebSpaces_StandingLocation
+			let Portfolio_WebComponents_StandingLocation
+			let Portfolio_WebSpaceAnimations_StandingLocations
+
+			// For Each Standing Location, we will have
+			// circlePlane, and an icoshedron beneath it. 
+
+			let Portfolio_Circle_RegWebsites
+			let mesh_Portfolio_Circle_RegWebsites
+			let Portfolio_Circle_Δ01
+			let mesh_Portfolio_Circle_Δ01
+
+			let Portfolio_Circle_FeatWebsites
+			let mesh_Portfolio_Circle_FeatWebsites
+			let Portfolio_Circle_Δ02
+			let mesh_Portfolio_Circle_Δ02
+
+			let Portfolio_Circle_WebApps
+			let mesh_Portfolio_Circle_WebApps
+			let Porfolio_Circle_Δ03
+			let mesh_Porfolio_Circle_Δ03
+
+			let Portfolio_Circle_FinancialApps
+			let mesh_Portfolio_Circle_FinancialApps
+			let Portfolio_Circle_FinancialProjects
+			let mesh_Portfolio_Circle_FinancialProjects
+			let Portfolio_Circle_Δ04
+			let mesh_Portfolio_Circle_Δ04
+			let Portfolio_Circle_Δ05
+			let mesh_Portfolio_Circle_Δ05
+
+			let Portfolio_Circle_WebSpaces
+			let mesh_Portfolio_Circle_WebSpaces
+			let Portfolio_Circle_Δ06
+	  		let mesh_Portfolio_Circle_Δ06
+
+			let Portfolio_Circle_WebComponents
+			let mesh_Portfolio_Circle_WebComponents
+			let Portfolio_Circle_Δ07
+			let mesh_Portfolio_Circle_Δ07
+
+	  		let Portfolio_Circle_WebSpaceAnimations
+			let mesh_Portfolio_Circle_WebSpaceAnimations
+			let Portfolio_Circle_Δ08
+			let mesh_Portfolio_Circle_Δ08
+
+
+			// \\-- r_CenterBrain_Panel_Portfolio Buttons
+			let r_PortfolioPanel_WebAppsGames
+			let r_PortfolioPanel_Financial_Apps
+	  		let r_PortfolioPanel_Financial_Apps_Scroll_Up
+			let r_PortfolioPanel_RegularWebsites
+			let r_PortfolioPanel_FeaturedWebsites
+			let r_PortfolioPanel_WebSpaces
+			let r_PortfolioPanel_WebSpaceComponents
+			let r_Portfoliopanel_Animations
+
+
+			// Portfolio_Panel_SubButtons
+			// General = TakeMeTo:, Scroll Up, Scroll Down
+
+			// \- Regular Websites
+			let PortfolioPanel_RegWebsites_TakeMeThereButton
+			let PortfolioPanel_RegWebsites_ScrollUp
+			let PortfolioPanel_RegWebsites_ScrollDown
+
+			// \- Featured Websites
+			let PortfolioPanel_FeatWebsites_TakeMeThereButton
+			let PortfolioPanel_FeatWebsites_ScrollUp
+			let PortfolioPanel_FeatWebsites_ScrollDown
+
+			// \- WebApps_and_Games
+			let PortfolioPanel_WebAppsGames_TakeMeThereButton
+			let PortfolioPanel_WebAppsGames_ScrollUp
+			let PortfolioPanel_WebAppsGames_ScrollDown
+
+			// \-Financial_Apps
+			let PortfolioPanel_FinancialApps_TakeMeThereButton
+			let PortfolioPanel_FinancialApps_ScrollUp
+			let PortfolioPanel_FinancialApps_ScrollDown
+
+
+			// \- WebSpaces_Apps
+			let PortfolioPanel_WebSpaces_TakeMeThereButton
+			let PortfolioPanel_WebSpaces_ScrollUp
+			let PortfolioPanel_WebSpaces_ScrollDown
+
+
+			// \- WebSpace_Components_Apps
+			let PortfolioPanel_WebSpace_Components_TakeMeThereButton
+			let PortfolioPanel_WebSpace_Components_ScrollUp
+			let PortfolioPanel_WebSpace_Components_ScrollDown
+
+
+			// \- WebSpace_Components_Apps
+			let PortfolioPanel_WebSpace_Animations_TakeMeThereButton
+			let PortfolioPanel_WebSpace_Animations_ScrollUp
+			let PortfolioPanel_WebSpace_Animations_ScrollDown
+
+
+
+
+			
+			// CenterBrainButtons
+			let Button_EnterCenterBrain
+			
+
+
+			// r_LeftBrain_Panel
+	  		let Button_EnterLeftBrain
+
+			// r_RightBrain_Panel
+			let Button_EnterRightBrain
+
+
+			// r_RearBrain_Panel
+			let Button_EnterRearBrain
+
+
+			// r_FrontBrain_Panel
+			let Button_EnterFrontBrain
+
+
+			// Panel Applications
+
+			let r_GoToLeftBrain
+			let r_GoToRightBrain
+			let r_GoToRearBrain
+			let r_GoToFrontBrain
+
+
+
+
+	  		// **************************************************
+			// Logo Applications
+			// **************************************************
+
+			// 	\- About Me App Components
+			// --------------------------------------------------
+			let r_App_AboutMe
+			let resume_page01, mesh_resume_page01
+			let resume_page02, mesh_resume_page02
+			let education_page01, mesh_education_page01
+			let education_page02, mesh_education_page02
+			let places2Visit_page01, mesh_places2Visit_page01
+			let places2Visit_page02, mesh_places2Visit_page02
+			let professionalWork_page01, mesh_professionalWork_page01
+			let professionalWork_page02, mesh_professionalWork_page02
+			let hobbies_page01, mesh_hobbies_page01
+			let hobbies_page02, mesh_hobbies_page02
+
+
+			// About Me Icons
+			
+	  		// \- Education
+			let IconGrid_AboutMe_Edu
+			let EducationIcon_Harvard
+			let EducationIcon_SAU
+			let EducationIcon_BHCC
+			let EdcuationIcon_FreeCodeCamp
+			let EducationIcon_Udemy
+			let EducationIcon_SkillShare
+			let EducationIcon_LinkedInLearning
+			let EducationIcon_LeetCode
+
+
+			// \- Places
+			let IconGrid_AboutMe_Places
+			let IconGrid_Schools_Edu
+			let IconGrid_Industries
+	  		let IconGrid_Hobbies
+
+			let IconGrid_HeaderColumnA
+			let IconGrid_HeaderColumnB
+			let IconGrid_HeaderColumnC
+			let IconGrid_HeaderRow001
+			let IconGrid_HeaderRow002
+			let IconGrid_HeaderRow003
+			let IconGrid_Cell_A1
+			let IconGrid_Cell_A2
+			let IconGrid_Cell_A3
+			let IconGrid_Cell_B1
+			let IconGrid_Cell_B2
+			let IconGrid_Cell_B3
+			let IconGrid_Cell_C1
+			let IconGrid_Cell_C2
+			let IconGrid_Cell_C3
+		
+			
+			
+			let PlacesIcon_Spain
+			let PlacesMesh_Spain, mesh_PlacesMesh_Spain
+			let PlacesIcon_India
+			let PlacesIcon_SouthAfrica
+			let PlacesIcon_Egypt
+			let PlacesIcon_China
+			let PlacesIcon_England
+			let PlacesIcon_Brazil
+			let PlacesIcon_Greece
+			let PlacesIcon_Japan
+			let PlacesIcon_Rwanda
+			let PlacesIcon_Sweden
+			let PlacesIcon_Morrocco
+			let PlacesIcon_Ireland
+			let PlacesIcon_Israel
+			let PlacesIcon_Angola
+			let PlacesIcon_Anartica
+			let PlacesIcon_Australia
+			let PlacesIcon_Norway
+			let PlacesIcon_Russia
+			let PlacesIcon_SriLanka
+
+
+			// \- Industries
+			let IconGrid_AboutMe_Industries
+			let IndustriesIcon_Consulting
+			let IndustriesIcon_Security
+			let IndustriesIcon_Technology
+			let IndustriesIcon_Marketing
+			let IndustriesIcon_Sales
+			let IndustriesIcon_Strategy
+			let IndustriesIcon_Retail
+			let IndustriesIcon_Entertainment
+			let IndustriesIcon_Education
+			let IndustriesIcon_NonProfit
+			let IndustriesIcon_Writing
+			let IndustriesIcon_FinancesAndContracts
+
+			// \- Hobbies
+			let IconGrid_AboutMe_Hobbies
+			let HobbiesIcon_Languages
+			let HobbiesIcon_Philosophy
+			let HobbiesIcon_Music
+			let HobbiesIcon_Arts
+			let HobbiesIcon_STEM
+			let HobbiesIcon_Rollerblading
+			let HobbiesIcon_Analyzing
+			let HobbiesIcon_Fitness
+
+
+
+
+			// \- Services App Components
+			// ---------------------------------------------------
+			let r_App_Services
+
+			// Services.SoftEng.Items
+			let IconGrid_SoftwareEngineering
+			let Services_SoftwareEngineering,  mesh_Services_SoftwareEngineering
+
+			let Icon_SoftEngFE_MoreInfo
+			let Icon_SoftEngFE_Pricing
+			let Icon_SoftEngFE_ContactMe
+
+			let Icon_SoftEngBE_MoreInfo
+			let Icon_SoftEngBE_Pricing
+			let Icon_SoftEngBE_ContactMe
+
+
+	  		// Services.PersonalDev.Items
+			let IconGrid_PersonalDev
+			let Services_PersonalDev, mesh_Services_PersonalDev
+
+			let Icon_PersDev_MoreInfo
+			let Icon_PersDev_Pricing
+			let Icon_PersDev_ContactMe
+
+			let Icon_StrategyTheory_MoreInfo
+			let Icon_StrategyTheory_Pricing
+			let Icon_StrategyTheory_ContactMe
+
+
+	  		// Services.STEMPAVI.Items
+			let IconGrid_STEMPAVI
+			let Services_STEMPAVI, mesh_Services_STEMPAVI
+
+			let Icon_STEM_MoreInfo
+			let Icon_STEM_Pricing
+			let Icon_STEM_ContactMe
+
+			let Icon_PAVI_MoreInfo
+			let Icon_PAVI_Pricing
+			let Icon_PAVI_ContactMe
+
+	  		// Music Production Items
+			let IconGrid_MusicProduction
+			let Services_MusicProduction, mesh_Services_MusicProduction
+
+			let Icon_MusProd_MoreInfo
+			let Icon_MusProd_Pricing
+			let Icon_MusProd_ContactMe
+
+			let Icon_MusProd_SongWriting
+			let Icon_MusProd_Arranging
+			let Icon_MusProd_EditingAndTracking
+			let Icon_MusProd_Producing
+			let Icon_MusProd_MixingAndMastering
+			let Icon_MusProd_RemixingAndMashups
+
+	  		let Icon_MusProd_DemoLoop01
+			let Icon_MusProd_DemoLoop02
+			let Icon_MusProd_DemoLoop03
+			let Icon_MusProd_DemoLoop04
+
+
+			// \- MusicPerformance Items
+			let IconGrid_MusicPerformance
+			let Services_MusicPerformance, mesh_Services_MusicPerformance
+
+			let Icon_MusPerf_MoreInfo
+			let Icon_MusPerf_Pricing
+			let Icon_MusPerf_ContactMe
+
+
+			let Icon_LivePerformanceDemo01
+			let Icon_LivePerformanceDemo02
+			let Icon_LivePerformanceDemo03
+			let Icon_LivePerformanceDemo04
+
+			let Icon_LiveSessionDemo01
+			let Icon_LiveSessionDemo02
+			let Icon_LiveSessionDemo03
+			let Icon_LiveSessionDemo04
+			let Icon_LiveSessionDemo05
+			let Icon_LiveSessionDemo06
+			let Icon_LiveSessionDemo07
+			let Icon_LiveSessionDemo08
+			let Icon_LiveSessionDemo09
+
+
+
+
+			// 	\- Portfolio App Components
+			// --------------------------------------------------
+			let webSpaces_page01, mesh_webSpaces_01
+			let webSpaces_page02, mesh_webSpaces_02
+			let webSpaceDesigns_page01, mesh_webSpaceDesigns_page01
+			let webSpaceDesigns_page02, mesh_webSpaceDesigns_page02
+			let webSpaceComponents_page01, mesh_webSpaceComponents_page01
+			let webSpaceComponents_page02, mesh_webSpaceComponents_page02
+			let webAnimations_page01, mesh_webAnimations_page01
+			let webAnimations_page02, mesh_webAnimations_page02
+			let webPortfolios_page01, mesh_webPortfolios_page01
+			let webPortfolios_page02, mesh_webPortfolios_page02
+			let webSitesGeneral_page01, mesh_webSitesGeneral_page01
+			let webSitesGeneral_page02, mesh_webSitesGeneral_page02
+			let webApplicationsGeneral_page01, mesh_webApplicationsGeneral_page01
+			let webApplicationsGeneral_page02, mesh_webApplicationsGeneral_page02
+			let webFinancialApps_page01, mesh_webFinancialApps_page01
+			let webFinancialApps_page02, mesh_webFinancialApps_page02
+			let webComponents_page01, mesh_webComponents_page01
+			let webComponents_page02, mesh_webComponents_page02
+
+
+
+			// 	\- Services App Components
+			// --------------------------------------------------
+	  		let services_softwareDevelopment_page01, mesh_services_softwareDevelopment_page01
+			let services_softwareDevelopment_page02, mesh_services_softwareDevelopment_page02
+
+			let services_uiuxDesign_page01, mesh_services_uiuxDesign_page01
+			let services_uiuxDesign_page02, mesh_services_uiuxDesign_page02
+
+			let services_sp_businessConsulting_page01, mesh_services_sp_businessConsulting_page01
+			let services_sp_businessConsulting_page02, mesh_services_sp_businessConsulting_page02
+
+			let services_STEM_tutoring_page01, mesh_services_STEM_tutoring_page01
+			let services_STEM_tutoring_page02, mesh_services_STEM_tutoring_page02
+
+			let services_music_production_page01, mesh_services_music_production_page01
+			let services_music_production_page02, mesh_services_music_production_page02
+
+	  		let services_musirc_performance_page01, mesh_services_music_services_page01
+	  		let services_musirc_performance_page02, mesh_services_musirc_performance_page02
+
+
+
+			// 	\- Writings, News, and Updates App Components
+			// --------------------------------------------------
+			let userCommunication_updates_page01, mesh_userCommmunication_updates_page01
+			let userCommunication_updates_page02, mesh_userCommmunication_updates_page02
+
+			let userCommunication_blog_page01, mesh_userCommunication_blog_page01
+			let userCommunication_blog_page02, mesh_userCommunication_blog_page02
+
+			let userCommunication_books_page01, mesh_userCommunication_books_page01
+			let userCommunication_books_page02, mesh_userCommunication_books_page02
+
+			let userCommunication_vlog_page01, mesh_userCommunication_vlog_page01
+			let userCommunication_vlog_page02, mesh_userCommunication_vlog_page02
+
+			let userCommunication_news_page01, mesh_userCommunication_news_page01
+			let userCommunication_news_page02, mesh_userCommunication_news_page02
+
+
+			// 	\- Realities Launch App Components
+			// --------------------------------------------------
+
+			let whatIsΔ, mesh_whatIsΔ
+			let whyIsΔ, mesh_whyIsΔ
+			let whenIsΔ, mesh_whenIsΔ
+			let whoIsΔfor, mesh_whoIsΔfor
+			let whereAreΔ, mesh_whereAreΔs
+
+
+
+
+			// MainHeaderController
+			let MainHeaderController
+			let MainHeaderController_MainMenu
+			let MainHeaderCOntroller_SubMenu
+
+
+			// Left HeaderBarController
+			let LeftHeaderBar_Controller
+			let LeftHeaderBar_MainMenu
+			let LeftHeaderBar_SubMenu
+			let LeftHeaderBar_ToolMenu
+			
+
+			// Right HeaderBarController
+			let RightHeaderBar_Controller
+			let RightHeaderBar_MainMenu
+			let RightHeaderBar_SubMenu
+			let RightHeaderBar_ToolMenu
+
+
+			
+
+
+
+
+			// UIPrimary_LeftHand
+			
+			let UIPrimary_LH_Root
+			let UIPrimary_LH_LifeBeam01, mesh_UIPrimary_LH_LifeBeam01
+			let UIPrimary_LH_LifeBeam02, mesh_UIPrimary_LH_LifeBeam02
+			let UIPrimary_LH_LifeBeam03, mesh_UIPrimary_LH_LifeBeam03
+			let UIPrimary_LH_Skeleton, mesh_UIPrimary_LH_Skeleton
+			let UIPrimary_LH_Skeleton1, mesh_UIPrimary_LH_Skeleton1
+			let UIPrimary_LH_Gear01, mesh_UIPrimary_LH_Gear01
+			let UIPrimary_LH_Gear02, mesh_UIPrimary_LH_Gear02
+			let UIPrimary_LH_Gear03, mesh_UIPrimary_LH_Gear03
+			let UIPrimary_LH_Gear04, mesh_UIPrimary_LH_Gear04
+			let UIPrimary_LH_Gear05, mesh_UIPrimary_LH_Gear05
+			let UIPrimary_LH_Gear06, mesh_UIPrimary_LH_Gear06
+			let UIPrimary_LH_AtPeace, mesh_UIPrimary_LH_AtPeace
+
+			// UIPrimary_LH_FlowThroughHand_Animations
+
+			let UIPrimary_LH_FlowThroughHand_Animations01
+			let UIPrimary_LH_FlowThroughHand_Animations02
+			let UIPrimary_LH_FlowThroughHand_Animations03
+
+			// LeftHandSkin
+			let UIPrimary_LH_TechCircle_Measurer01
+			let UIPrimary_LH_TechCircle_Measurer02
+			let UIPrimary_LH_TechCircle_MiniMeasure01
+			let UIPrimary_LH_TechCircle_MiniMeasure02
+			let UIPrimary_LH_PrimaryCircleWhite
+			let UIPrimary_LH_SecondaryCircleWhite
+			let UIPrimary_LH_TerceryCircleWhite
+			let UIPrimary_LH_Menu
+			let UIPrimary_LH_ToolMenu
+
+
+
+			let UIPrimary_LH_Menu_Primary, mesh_UIPrimary_LH_Menu_Primary
+			let UI_LH_HoldMenu, mesh_UI_LH_HoldMenu
+			let UI_LH_Brain
+			let UI_LH_Brain_GoToCenterBrain_Icon
+			let UI_LH_Brain_GoToLeftBrain_Icon
+			let UI_LH_Brain_GoToRightBrain_Icon
+			let UI_LH_Brain_GoToRearBrain_Icon
+			let UI_LH_Brain_GoToFrontBrain_Icon
+
+			// LH_Primary Menu Apps
+			let LH_PrimaryApp01_NavMenu
+			let LH_PrimaryApp02_LeftBrainApps
+			let LH_PrimaryApp03_MovementButtons
+			let LH_PrimaryApp04_DeskControl
+
+
+			// LH_Primary LeftBrain Menu Apps
+			//------------------------------------------------------------------------
+			let LH_ApplicationMenuPanel
+			let website_dogpile, windowApp_Dogpile
+			let website_wikipedia, windowApp_Wikipedia
+			let website_calculators, windowApp_CalculatorSite
+			let website_translator, windowApp_translator
+			let website_languages, windowApp_LanguageSite
+			let website_timers, windowApp_Timers
+			let website_musicCreation, windowApp_MusicCreation
+			let website_developerTools, windowApp_DeveloperTools
+
+			
+			let googleApp_sheets_General_Forum
+			let googleApp_slides_DocumentationA
+
+			// LH_Primary Menu Apps
+			//------------------------------------------------------------------------
+			let LH_Primary_Menu_Apps01_MovementOptions
+	  		let LH_Primary_Menu_Apps02_Calculator
+			let LH_Primary_Menu_Apps03_SpeechText
+			let LH_Primary_Menu_Apps04_ExpenseTracker
+			let LH_Primary_Menu_Apps05_ToDoList
+			let LH_Primary_Menu_Apps06_MemoryCards
+			let LH_Primary_Menu_Apps07_GithubProfiles
+
+			let LH_Primary_Menu_Apps08_HelpPresentation
+			let LH_Primary_Menu_Apps09_KeyboardShortcuts
+			let LH_Primary_Menu_Apps10_
+
+
+			// UI_LH_HoldMenu_Items
+			//------------------------------------------------------------------------
+
+
+			
+			let LH_HoldItem_DefaultControls
+			let LH_HoldItem_DefaultControls_NextShape
+			let LH_HoldItem_DefaultControls_PreviousShape
+
+			let HoldItem_DefaultGridSphere, mesh_HoldItem_DefaultGridSphere
+			let HoldItem_DefaultGridSphere_Controls
+			let HoldItem_DefaultGridSphere_Controls_Expand
+			let HoldItem_DefaultGridSphere_Controls_Contract
+			let HoldItem_DefaultGridSphere_Controls_Spin
+			let HoldItem_DefaultGridSphere_Controls_TransparentToggle
+			let HoldItem_DefaultGridSphere_Controls_AlphaNeonBlue
+			let HoldItem_DefaultGridSphere_Controls_AlphaNeonGreen
+
+
+
+
+
+
+			// LH_MovementButton
+			let LH_Secondary_Menu_App01_Up
+			let LH_Secondary_Menu_App01_Down
+			let LH_Secondary_Menu_App01_Left
+			let LH_Secondary_Menu_App01_Right
+
+
+			// RH Primary Menu Apps 
+	  		let RH_PrimaryApp01_
+
+
+			// RH Secondary Menu Apps
+			//------------------------------------------------------------------------
+			let RH_Secondary_Menu_App01_LanguageDataReturn
+			let RH_Secondary_Menu_App02_LanguageDataSphere
+			let RH_Secondary_Menu_App03_LanguageDataGrid
+			let RH_Secondary_Menu_App04_LanguageDataHelix
+			let RH_Secondary_Menu_App05_MusicPlayer
+			let RH_Secondary_Menu_App06_Soundboard
+			let RH_Secondary_Menu_App07_MealFinder
+			let RH_Secondary_Menu_App08_DrawingApp
+			let RH_Secondary_Menu_App09_PixelPainter
+			let RH_Secondary_Menu_App10_ImageCarousel
+
+
+			// UIPrimary_RightHand
+			let UIPrimary_RH_Root
+			let UIPrimary_RH_LifeBeam01, mesh_UIPrimary_RH_LifeBeam01
+			let UIPrimary_RH_LifeBeam02, mesh_UIPrimary_RH_LifeBeam02
+			let UIPrimary_RH_LifeBeam03, mesh_UIPrimary_RH_LifeBeam03
+			let UIPrimary_RH_Skeleton, mesh_UIPrimary_RH_Skeleton
+			let UIPrimary_RH_Skeleton1, mesh_UIPrimary_RH_Skeleton1
+			let UIPrimary_RH_Gear01, mesh_UIPrimary_RH_Gear01
+			let UIPrimary_RH_Gear02, mesh_UIPrimary_RH_Gear02
+			let UIPrimary_RH_Gear03, mesh_UIPrimary_RH_Gear03
+			let UIPrimary_RH_Gear04, mesh_UIPrimary_RH_Gear04
+			let UIPrimary_RH_Gear05, mesh_UIPrimary_RH_Gear05
+			let UIPrimary_RH_Gear06, mesh_UIPrimary_RH_Gear06
+			let UIPrimary_RH_AtPeace, mesh_UIPrimary_RH_AtPeace
+
+
+			// LeftHandSkin
+			let UIPrimary_RH_PrimaryCircleWhite
+			let UIPrimary_RH_SecondaryCircleWhite
+			let UIPrimary_RH_TerceryCircleWhite
+			let UIPrimary_RH_CreativeLifeEnergy
+			let UIPrimary_RH_CreativeLifeEnergy2
+			let UIPrimary_RH_CreativeLifeEnergy3
+			let UIPrimary_RH_CreativeLifeEnergy4
+			let UIPrimary_RH_CreativeLifeEnergy5
+			let UIPrimary_RH_CreativeToolKit
+			let UIPrimary_RH_Menu
+			let UIPrimary_RH_ToolMenu
+
+			let UI_RH_Brain
+			let UI_RH_IconGroup
+			let UI_RH_Brain_GoToCenterBrain_Icon
+			let UI_RH_Brain_GoToLeftBrain_Icon
+			let UI_RH_Brain_GoToRightBrain_Icon
+			let UI_RH_Brain_GoToRearBrain_Icon
+			let UI_RH_Brain_GoToFrontBrain_Icon
+
+			let UIPrimary_RH_Menu_Primary, mesh_UIPrimary_RH_Menu_Primary
+			let UIPrimary_RH_RB_Panel, mesh_UIPrimary_RH_RB_Panel
+			let UISecondary_RH_Menu_Secondary, mesh_UISecondary_RH_Menu_Secondary
+			let RH_Application_Menu, mesh_RH_Application_Menu
+			let RH_Discovery_menuPanel, mesh_RH_Discovery_menuPanel
+
+			let RH_PrimaryApp01_RightBrainApps
+			let RH_PrimaryApp02_Applications
+			let RH_PrimaryApp03_Folders
+			let RH_PrimaryApp04_MyPerspective
+
+
+			// ############################################################
+			// Right Hand Applications - Start
+			// ############################################################
+
+			// # First: Panels
+			
+			// ## Panels/Folders
+			let RH_Panel_MyTimeTunnel
+			let RH_Panel_MyMemories
+			let RH_Panel_MyObjects
+			let RH_Panel_MyWishes
+			let RH_Panel_MyFiles
+
+
+			// ## Panels/Applications
+
+			let RH_Panel_GeneralApps
+			let RH_Panel_Financial_Apps
+			let RH_Panel_MyMemoryCards
+			let RH_Panel_MyTodoLists
+	  		let RH_Panel_MyGames
+
+
+			// MemoryCards
+			let MemCards_WordsOfWisdom, window_WordsOfWisdom
+			let MemCards_RealityReminders, window_RealityReminders
+			let MemCards_Strategies
+
+
+			// Second: Apps for those Panels
+
+			// |- ## Panels/Folders/Apps
+	  		let RH_App_MyTimeTunnel_
+			let RH_App_MyMemories_
+			let RH_App_MyObjects_
+			let RH_App_MyWishes_
+			let RH_App_MyFiles
+
+			// RH_App_MyFiles
+			let MyFiles_MyDocs_Panel_page00
+			let MyFiles_MyMusic_Panel_page00
+			let MyFiles_MyMemories_Panel_page00
+			let MyFiles_MyBooks_Panel_page00
+			let MyFiles_MyPDFs_Panel_page00
+
+			// MyFiles_MyDocs
+			let My
+
+			// |- ## Panels/Applications/Apps
+
+			let RH_App_My
+
+
+			// Third: Meshes if Necessary
+
+			// Fourth: Functions (if you want)
+
+			
+
+
+
+			// RH Folders
+			let DiscoveryPanel_MyTimeline
+			let DiscoveryPanel_MyMemories
+			let DisoveryPanel_MyCategories
+			let DiscoveryPanel_MyWishes
+			let DiscoveryPanel_MyFiles
+			
+			// RH_Obj_Holder_01_Default
+			let RH_Obj_Holder_01_Default
+
+			// Object01_Default
+			let UIPrimary_RH_ParticlesCube_root
+			let UIPrimary_RH_ParticlesCube, mesh_UIPrimary_RH_ParticlesCube
+
+
+			let RH_obj_02_GalaxyGrid_Container_Purple01, mesh_RH_obj_02_GalaxyGrid_Container_Purple01
+	  		let Rh_obj_02_particles, mesh_Rh_obj_02_particles
+
+			let RH_obj_03_Hiearchary_Container_GoldGrid, mesh_RH_obj_03_Hiearchary_Container_GoldGrid
+			let RH_obj_03_particles, mesh_RH_obj_03_particles
+
+
+			// Files
+
+			// Excel Files
+			let googSheet_CommandCenter, window_CommandCenter
+			let googSheet_Finances, window_Finances
+	  		let googSheet_Profiler, window_Profiler
+			let googSheet_JobSearch, window_JobSearch
+			let googSheet_NetworkBuilder, window_NetworkBuilder
+			let googSheet_BusinessBuilder, window_BusinessBuilder
+
+			let googDoc_BookWriter01, window_BookWriter01
+			let googSheet_LanguageBuilder, window_LanguageBuilder
+			let googSlide_MathLearning, window_MathLearning
+			let googSheet_PersonalNotes, window_PersonalNotes
+			let googSheet_MainForum, window_MainForum
+
+
+			// Word Files
+			let googDoc_Book01
+			let googDoc_Book02
+
+
+
+			// Powerpoint Files
+	  		let googSlide_faq
+
+
+
+
+	  		
+
+
+			// |- Declarations / 3D Environment / Command_Center
+			// #################################################################
+			// #################################################################
+
+			// |- Declarations / 3D Environment / Command_Center /Command_Center_root
+			let Command_Center_Controller
+			let Command_Center_Root, mesh_Command_Center_Root
+			let Command_Center_TravelToCommandCenter, mesh_Command_Center_TravelToCommandCenter
+
+			// |- Declarations / 3D Environment / Command_Center / TravelTunnels
+	  		let Command_Center_TravelLoopOuter, mesh_Command_Center_TravelLoopOuter
+			let Command_Center_TravelLoopOuterFloor, mesh_Command_Center_TravelLoopOuterFloor
+
+
+	  		// Path to Left Brain
+			let Command_Center_TravelToLeftBrain, mesh_Command_Center_TravelToLeftBrain
+	  		let Command_Center_TravelToLeftBrainFloor, mesh_Command_Center_TravelToLeftBrainFloor
+
+	  		let Command_Center_TravelToLeftBrain2, mesh_Command_Center_TravelToLeftBrain2
+	  		let Command_Center_TravelToLeftBrain2Floor, mesh_Command_Center_TravelToLeftBrain2Floor
+
+	  		let Command_Center_TravelToLeftBrainTunnel01, mesh_Command_Center_TravelToLeftBrainTunnel01
+			let Command_Center_TravelToLeftBrainTunnel02, mesh_Command_Center_TravelToLeftBrainTunnel02
+
+	  		// Path to Right Brain
+			let Command_Center_TravelToRightBrain, mesh_Command_Center_TravelToRightBrain
+			let Command_Center_TravelToRightBrainFloor, mesh_Command_Center_TravelToRightBrainFloor
+
+			let Command_Center_TravelToRightBrain2, mesh_Command_Center_TravelToRightBrain2
+			let Command_Center_TravelToRightBrain2Floor, mesh_Command_Center_TravelToRightBrain2Floor
+
+			let Command_Center_TravelToRightBrainTunnel01, mesh_Command_Center_TravelToRightBrainTunnel01
+			let Command_Center_TravelToRightBrainTunnel02, mesh_Command_Center_TravelToRightBrainTunnel02
+
+			// Path to Front Brain
+			let Command_Center_TravelToFrontBrain, mesh_Command_Center_TravelToFrontBrain
+			let Command_Center_TravelToFrontBrainFloor, mesh_Command_Center_TravelToFrontBrainFloor
+
+			let Command_Center_TravelToFrontBrain2, mesh_Command_Center_TravelToFrontBrain2
+			let Command_Center_TravelToFrontBrain2Floor, mesh_Command_Center_TravelToFrontBrain2Floor
+
+			let Command_Center_TravelToFrontBrainTunnel01, mesh_Command_Center_TravelToFrontBrainTunnel01
+			let Command_Center_TravelToFrontBrainTunnel02, mesh_Command_Center_TravelToFrontBrainTunnel02
+
+			// Path to Rear Brain
+			let Command_Center_TravelToRearBrain, mesh_Command_Center_TravelToRearBrain
+			let Command_Center_TravelToRearBrainFloor, mesh_Command_Center_TravelToRearBrainFloor
+
+			let Command_Center_TravelToRearBrain2, mesh_Command_Center_TravelToRearBrain2
+			let Command_Center_TravelToRearBrain2Floor, mesh_Command_Center_TravelToRearBrain2Floor
+
+			let Command_Center_TravelToRearBrainTunnel01, mesh_Command_Center_TravelToRearBrainTunnel01
+			let Command_Center_TravelToRearBrainTunnel02, mesh_Command_Center_TravelToRearBrainTunnel02
+
+	  		// Path to Bottom Brain
+			let Command_Center_TravelToBottomBrain, mesh_Command_Center_TravelToBottomBrain
+			let Command_Center_TravelToTopBrain, mesh_Command_Center_TravelToTopBrain
+
+
+			// |- TimeImg
+			let CenterBrain_TimeImg, mesh_CenterBrain_TimeImg
+
+	  		// | - Orbit Ring ( For Free Thought )
+			let Command_Center_TravelViaOrbitRing, mesh_Command_Center_TravelViaOrbitRing
+			let Command_Center_TravelViaOrbitRing1, mesh_Command_Center_TravelViaOrbitRing1
+			let Command_Center_TravelViaOrbitRing2, mesh_Command_Center_TravelViaOrbitRing2
+
+
+			// |- Orbit Time Tunnels
+			let Command_Center_TimeTunnel_A, mesh_Command_Center_TimeTunnel_A
+			let Command_Center_TimeTunnel_B, mesh_Command_Center_TimeTunnel_B
+			let Command_Center_TimeTunnel_C, mesh_Command_Center_TimeTunnel_C
+			let Command_Center_TimeTunnel_D, mesh_Command_Center_TimeTunnel_D
+			let Command_Center_TimeTunnel_E, mesh_Command_Center_TimeTunnel_E
+
+			let r_CC_TimeTunnel_ExpA1, mesh_CC_TimeTunnel_ExpA1
+			let r_CC_TimeTunnel_ExpA2, mesh_CC_TimeTunnel_ExpA2
+			
+			let r_CC_TimeTunnel_ExpB1, mesh_CC_TimeTunnel_ExpB1
+
+
+			let r_CC_TimeTunnel_ExpE1, mesh_CC_TimeTunnel_ExpE1
+
+			// |- Declarations / 3D Environment / Command_Center / Aspects of Brain
+			let Command_Center_FrontBrain_root, mesh_Command_Center_FrontBrain_root
+			let Command_Center_LeftBrain_root, mesh_Command_Center_LeftBrain_root
+			let Command_Center_RightBrain_root, mesh_Command_Center_RightBrain_root
+			let Command_Center_RearBrain_root, mesh_Command_Center_RearBrain_root
+			let Command_Center_BottomBrain_root, mesh_Command_Center_BottomBrain_root
+			let Command_Center_TopBrain_root, mesh_Command_Center_TopBrain_root
+
+
+			// Parts of Brain Δs
+
+
+			// \- Left Brain
+			let LeftBrain_root_DefaultVideoWallpaper, mesh_LeftBrain_root_DefaultVideoWallpaper
+			let LeftBrain_root_Container, mesh_LeftBrain_root_Container
+			let LeftBrain_root_ContainerGrid, mesh_LeftBrain_root_ContainerGrid
+			let LeftBrain_root_FullΔ, mesh_LeftBrain_root_FullΔ
+			let LeftBrain_root_HalfΔ, mesh_LeftBrain_root_HalfΔ
+
+
+			// \- Right Brain
+			let RightBrain_root_DefaultVideoWallpaper, mesh_RightBrain_root_DefaultVideoWallpaper
+
+			// \- Rear Brain
+			let RearBrain_root_DefaultVideoWallpaper, mesh_RearBrain_root_DefaultVideoWallpaper
+
+			// \- Front Brain
+			let FrontBrain_root_DefaultVideoWallpaper, mesh_FrontBrain_root_DefaultVideoWallpaper
+
+			// \- Concious Brain
+
+
+			// \- Unconcious Brain
+
+
+
+
+			// Components for Applications
+			let TechContainer_Tester01, mesh_TechContainer_Tester01
+			let TechContainer_T1_Side_Fwd, mesh_TechContainer_T1_Side_Fwd
+			let TechContainer_T1_Side_Bck, mesh_TechContainer_T1_Side_Bck
+			let TechContainer_T1_Side_Left, mesh_TechContainer_T1_Side_Left
+			let TechContainer_T1_Side_Right, mesh_TechContainer_T1_Side_Right
+			let TechContainer_T1_Side_Top, mesh_TechContainer_T1_Side_Top
+			let TechContainer_T1_Side_Bottom, mesh_TechContainer_T1_Side_Bottom
+
+
+
+			// TechTileTest (Function + reg mesh)
+			let r_TechTileGroupTest
+			let TechTile_App01, mesh_TechTile_App01
+			let TechTile_App02, mesh_TechTile_App02
+			let TechTile_App03, mesh_TechTile_App03
+			let TechTile_App04, mesh_TechTile_App04
+			let TechTile_App05, mesh_TechTile_App05
+			let TechTile_App06, mesh_TechTile_App06
+
+
+			// // Opening Video
+			// let CenterBrain_VideoSphere_Opening
+			// let mesh_CenterBrain_VideoSphere_Opening
+			// let openingButtonIconGroup
+			// let OpeningMeshA
+			// let mesh_OpeningMeshA
+			// let UpdatedTechTileV3_Opening
+			// let openingTimeΔ
+			// let openingButtonIcon
+
+			// Opening Options
+			let OpeningButton_CenterBrain
+			let OpeningButton_AboutMe
+			let OpeningButton_Portfolio
+			let OpeningButton_Services
+			let OpeningButton_AnnouncementsAndNews
+			let OpeningButton_BusinessLaunch
+
+			let OpeningButton_LeftBrain
+			let OpeningButton_RightBrain
+			let OpeningButton_RearBrain
+			let OpeningButton_FrontBrain
+
+
+			// CmdCenterApplications
+			let r_CenterBrain_PrimarySphere, mesh_CenterBrain_PrimarySphere
+			let r_CenterBrain_PrimaryGrid, mesh_CenterBrain_PrimaryGrid
+	  		let r_CenterBrain_VideoSphere_Plexus, mesh_CenterBrain_VideoSphere_Plexus
+
+			// OpeningVideo
+			let OpeningVideo, mesh_OpeningVideo
+			let OpeningVideoGear, mesh_OpeningVideoGear
+
+
+			// \\-- CenterBrain_PortfolioBackground
+			let r_CenterBrain_PortfolioWallpaper
+	  		let r_CenterBrain_BackgroundColor_TechAqua01, mesh_CenterBrain_BackgroundColor_TechAqua01
+			let r_CenterBrain_BackgroundColor_TechAqua02, mesh_CenterBrain_BackgroundColor_TechAqua02
+	  		
+
+
+	  		let r_ArtikaDomain01, mesh_ArtikaDomain01
+			let r_ArtikaDomain02, mesh_ArtikaDomain02
+			let r_ArtikaDomain03, mesh_ArtikaDomain03
+
+			let r_PlatformC_clockButton, r_mainClock
+			let r_folderPlain, r_folderPlainBackground
+
+	  		// *****************************************************************
+			// Portfolio
+			// *****************************************************************
+
+			// Portfolio_Button
+			let r_Portfolio_MainButton_Beginning
+			let r_Portfolio_MainButton_Beginning_Background
+
+			// Portfolio_Button_PlatformC
+			let r_Portfolio_PlatformC_MainButton
+			let r_Portfolio_PlatformC_MainButton_Background
+
+			let r_PortfolioRealities
+			let	Portfolio_Button_PreviousΔ, Portfolio_Button_PreviousΔ_bg
+			let Portfolio_Button_PurposeΔ, Portfolio_Button_PurposeΔ_bg
+			let Portfolio_Button_ComplexityΔ, Portfolio_Button_ComplexityΔ_bg
+			let Portfolio_Button_NextΔ, Portfolio_Button_NextΔ_bg
+			let Portfolio_Button_NotificationΔ, Portfolio_Button_NotificationΔ_bg
+			let Portfolio_Button_TimeΔ, Portfolio_Button_TimeΔ_bg
+			let Portfolio_Button_DataΔ, Portfolio_Button_DataΔ_bg
+			let Portfolio_Button_SettingsΔ, Portfolio_Button_SettingsΔ_bg
+
+			
+			
+
+
+			// Portfolio Objects
+			// ##########################################################
+			// ##########################################################
+			// ##########################################################
+			let r_PortfolioCenter
+			let r_PortfolioVirtualDeskButtonGroup
+
+			let RegWebSiteControls
+			let FeaturedSiteControls
+			let FinancialAppsControls
+			let WebAppsAndGamesControls
+	  		let WebSpaceComponentControls
+
+			let GameApplications
+			
+
+			let WebSpaceAppControls
+
+			// Regular Websites
+			let r_Portfolio_RegWebsites
+	  		let r_Portfolio_DuVinSite, mesh_Portfolio_DuVinSite
+			let r_Portfolio_PaypalSite, mesh_Portfolio_PaypalSite
+			let r_Portfolio_ArchitectureSite, mesh_Portfolio_ArchitectureSite
+			let r_Portfolio_AppleSite, mesh_Portfolio_AppleSite
+			let r_WebSpace_TimeΔModel, mesh_WebSpace_TimeΔModel
+			let r_WebSpace_TransformControls, mesh_WebSpace_TransformControls
+			let r_WebSpace_VoxelPainter, mesh_WebSpace_VoxelPainter
+
+			// Websites_Featured
+			let r_FeaturedWebsites
+			let r_FeaturedWebsites_Artika, mesh_FeaturedWebsites_Artika
+	  		let r_ShowArtΔ_Button
+
+			let r_ArtikaArtRoom, mesh_ArtikaArtRoom
+			let r_ArtikaArtTunnel, mesh_ArtikaArtTunnel
+			let r_ArtikaArtRoom_ShowArtΔ_SpaceItems
+
+			let r_ArtPanels
+
+
+			let r_PortfolioV3, mesh_PortfolioV3
+
+
+			// Website_Components
+			let r_Portfolio_WebsiteComponents
+			let r_ToDoList, mesh_ToDoList
+			let r_MemoryCards, mesh_MemoryCards
+			let r_DrawingApp, mesh_DrawingApp
+			let r_GithubProfiles, mesh_GithubProfiles
+
+	  		// Website_Games_Puzzles
+			let r_Portfolio_WebsiteGamesAndPuzzles
+			let r_Speech_To_Text_Reader, mesh_Speech_To_Text_Reader
+			let r_TypingGame, mesh_TypingGame
+			let r_BreakoutGame, mesh_BreakoutGame
+			let r_Hangman, mesh_Hangman
+			let r_Pokedex, mesh_Pokedex
+			let r_InsectKillerGame, mesh_InsectKillerGame
+			let r_DadJokes, mesh_DadJokes
+			let r_Hoverboard, mesh_Hoverboard
+
+
+			// WebApps_FinancialComponents
+			let r_Portfolio_FinancialComponents
+			let r_ExpenseTracker, mesh_ExpenseTracker
+			let r_Exchange_Rate, mesh_Exchange_Rate
+			let r_D3_MatrixNodes, mesh_D3_MatrixNodes
+			let r_D3_Sunburst, mesh_D3_Sunburst
+			let r_D3_CirclePacking, mesh_D3_CirclePacking
+			let r_D3_Tree_Maps, mesh_D3_Tree_Maps
+
+
+			// WebApps_FinancialProjects
+			let r_Portfolio_FinancialProjects
+			let r_CryptoAnalysis_Project, mesh_CryptoAnalysis_Project
+			let r_Voxlmart_Project, mesh_Voxlmart_Project
+
+
+			// WebSpace_Projects
+			let r_WebSpace_Projects
+			let r_WebSpace_Project01_TimeΔDesignModel01, mesh_WebSpace_Project01_TimeΔDesignModel01
+			let r_WebSpace_Project02_TransformControlsTHREE, mesh_WebSpace_Project02_TransformControlsTHREE
+			let r_WebSpace_Project03_VoxelPainter, mesh_WebSpace_Project03_VoxelPainter
+			let r_WebSpace_Project04_css3D, mesh_WebSpace_Project04_css3D
+
+
+			// r_WebSpace_Components
+			
+			let r_WebSpace_Components
+
+			let r_WebSpace_Components_Panels, mesh_WebSpace_Components_Panels
+	  		let r_WebSpaceClearPanelA
+			let r_WebSpaceClearPanelB, panelbuton_changePanelLocationA
+			let r_WebSpaceClearPanelC, panelC_pdfTester01
+			let r_WebSpaceClearPanelD, panelD_pdfTester02
+	  		let r_WebSpaceClearPanelE, panelE_verticalPDF
+
+			let r_WebSpace_Components_VideoCirclularPanel, mesh_WebSpace_Components_VideoCirclularPanel
+			let r_WebSpace_Components_VideoCircularClearPanel
+			let r_WebSpace_Components_VideoCircularClearRing_Controller
+			let r_WebSpace_Components_VideoCircular_PDF_MathBook01
+			
+			
+			let r_WebSpace_Components_Web_Window
+			let r_WebSpace_Components_Website_Window
+			let r_WebSpace_Components_Img
+			let r_WebSpace_Music
+			let r_WebSpace_Video
+
+
+			// r_WebSpace_Animations
+			let r_WebSpace_Animations
+
+			// r_WebSpace_Animations / r_WebSpace_Basic_Animations
+			let r_WebSpace_Basic_Animations, mesh_WebSpace_Basic_Animations
+
+			let r_AnimateSphere_Basic, mesh_AnimateSphere_Basic
+			let r_AnimateSquare_Basic, mesh_AnimateSquare_Basic
+			let r_AnimateDiamond_Basic, mesh_AnimateDiamond_Basic
+
+	  		// r_WebSpace_Animations / r_WebSpace_Intermediate_Animations
+			let r_WebSpace_Intermediate_Animations
+
+	  		// r_WebSpace_Animations / r_WebSpace_Advanced_Animations
+			let r_WebSpace_Advanced_Animations
+
+
+	  		// Websites_3DComponents
+			let r_Portfolio_3DComponents
+			let Languages_Button_Home, mesh_Languages_Button_Home
+			let Languages_Button_Sphere, mesh_Languages_Button_Sphere
+			let Languages_Button_Grid, mesh_Languages_Button_Grid
+			let Languages_Button_Helix, mesh_Languages_Button_Helix
+			
+
+			// WebSpace_Components
+			let r_Portfolio_WebSpace_Components
+			let r_MainRealities_3D_Components, mesh_MainRealities_3D_Components
+			let r_SystemTreeMap, mesh_SystemTreeMap
+			let r_3D_Notifications, mesh_3D_Notifications
+
+
+
+			// WebSpace_Projects
+			let r_Portfolio_WebSpace_Projects
+			let r_TheDevelopersDream, mesh_TheDevelopersDream
+			let r_TheEnvironmentalTimeΔ, mesh_TheEnvironmentalTimeΔ
+			let r_TheΔ_οf_Maslows_Hiearchy_Of_Needs, mesh_TheΔ_οf_Maslows_Hiearchy_Of_Needs
+			let r_TheΔ_of_Laboure_College_Of_HealthCare, mesh_TheΔ_of_Laboure_College_Of_HealthCare
+			
+
+			
+
+			// Testing Functions
+			let HoverObjectTestGroup01
+			let HoverObjectTestGroup02
+			let HoverObjectTestGroup03
+			let HoverObjectTestGroup04
+			let HoverObjectTestGroup05, mesh_HoverObjectTestGroup05
+			let HoverObjectTestGroup06
+			let HoverObjectTestGroup07
+			let HoverObjectTestGroup08
+			let HoverObjectTestGroup09
+
+
+			// UpdatedContainerTile
+			let UpdatedTechTileV3
+			let UpdatedTechTileV4
+			let TechTileSphere01, mesh_TechTileSphere01
+			let TechTileCube01, mesh_TechTileCube01
+			let TechTile_Icon_Toggle
+			let TechTile_Icon_IncreaseSpeed
+
+
+
+
+
+
+			// VideoDomains
+			let videoDomainMatrix
+			let videoSubDomainMatrix
+			let video_intro, video_intro_params, mesh_video_intro
+			let video_whiteBackground01, video_whiteBackground01_dimensions, mesh_video_whiteBackground01
+			let video_Equations01, video_Equations01_dimensions, mesh_video_Equations01
+
+
+
+			// DrawRange_Test
+
+			let DrawRange01
+			let DrawRange01_particlesData = []
+	  		let DrawRange01_positions, DrawRange01_Colors
+			let DrawRange01_Particles
+			let DrawRange01_pointCloud
+			let DrawRange01_ParticlePositions
+			let DrawRange01_lineMesh
+
+			const DrawRange01_maxParticleCount = 1000
+			let DrawRange01_particleCount = 50
+			const r = 800
+			const rHalf = r / 2
+
+			const effectController = {
+				showDots: true,
+				showLines: true,
+				minDistance: 140,
+				limitConnections: false,
+				maxConnections: 150,
+				particleCount: 10
+			}
+
+			let DrawRange02
+
+
+			// videoAndΔComboTest01
+			let videoAndΔComboTest01
+			let floorDesign01_Grid, mesh_floorDesign01_Grid
+
+
+			// ExpressionVideo_MainComponents
+			let ExpressionVideo_MainScreen, mesh_ExpressionVideo_MainScreen
+			let ExpressionVideo_MainScreenFrame, mesh_ExpressionVideo_MainScreenFrame
+			let ExpressionVideo_MainScreenGear01
+			let ExpressionVideo_MainScreenGear02
+			let RealityToHold, mesh_RealityToHold, mesh_RealityToHoldGrid
 
 
         //....................................................................
@@ -855,6 +2555,361 @@
 
         // 
         const root_WebsitePanelImg01 = textureLoader.load('./assets/img/11_RealityItems/01_WebsitePanels/1x/Services.png')
+
+
+         // ----------------------------------------------------------------------------------------------------
+				// \-  OOASA6PE01_A5_01_TL__Skylines \- 
+                // ----------------------------------------------------------------------------------------------------
+				const SkylineChicago01 = textureLoader.load('./assets/img/00-WallpaperUX/Skylines/ChicagoSkyLineAtNight01.jpeg')
+				const SkylineChicago02 = textureLoader.load('./assets/img/00-WallpaperUX/Skylines/ChicagoSkyLineAtNight02.jpeg')
+				const SkylineChicago03 = textureLoader.load('./assets/img/00-WallpaperUX/Skylines/ChicagoSkyLineAtNight03.jpeg')
+				const SkylineNewYork01 = textureLoader.load('./assets/img/00-WallpaperUX/Skylines/NewYorkSkylineAtNight.jpeg')
+
+                // ----------------------------------------------------------------------------------------------------
+				// \- [OOASA6PE01_A5_02_TL__TechTileSkins] -\ 
+                // ----------------------------------------------------------------------------------------------------
+				const TechTileDesignV5 = textureLoader.load('./assets/img/10-ObjectUI/02-TechTiles/Version05/TechTile_BaseForm.png')
+
+
+                // ----------------------------------------------------------------------------------------------------
+				// \- [OOASA6PE01_A5_03_TL__Particle_Setup] -\ 
+                // ----------------------------------------------------------------------------------------------------
+				
+				
+
+                // ----------------------------------------------------------------------------------------------------
+				// \- [OOASA6PE01_A5_04_TL__SceneWallpaper] -\
+                // ----------------------------------------------------------------------------------------------------
+				
+				const SceneWallpaper_03_whiteRoom = textureLoader.load('./assets/img/00-WallpaperUX/Covers/pureWhiteWallpaper01.jpeg')
+				const CircleCalendar01 = textureLoader.load('./assets/img/00-WallpaperUX/Covers/TimeCircleΔ.png')
+				const CircleCalendar2022 = textureLoader.load('./assets/img/00-WallpaperUX/Covers/CircleCalendar_2022.png')
+				const CircleCalendar2022t = textureLoader.load('./assets/img/00-WallpaperUX/Covers/CircleCalendar_2022_transparent.png')
+				const GeometricDesign00 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/NeonBlueDesign00.jpeg')
+				const GeometricDesign01 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/NeonBlueDesign01.jpeg')
+				const GeometricDesign02 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/NeonBlueDesign02.jpeg')
+				const GeometricDesign03 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/NeonBlueDesign03.jpeg')
+				const GalaxyPurple01 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/GalaxyWallpaperPurple01.jpeg')
+				const GalaxyPurple02 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/GalaxyWallpaperPurple02.jpeg')
+				const GalaxyPurple03 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/GalaxyWallpaperPurple03.png')
+
+                // ----------------------------------------------------------------------------------------------------
+				// \- [OOASA6PE01_A5_05_TL__AppWallpapers] -\
+                // ----------------------------------------------------------------------------------------------------
+				const wpDataBytes = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/AppTextures/DataBytes.jpg')
+				const wpDataBytes01 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/AppTextures/DataBytes01.jpg')
+				const wpDataBytes02 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/AppTextures/DataBytes02.jpg')
+				const wpDataBytes03 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/AppTextures/DataBytes03.jpg')
+				const wpDataBytes04 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/AppTextures/DataBytes04.jpg')
+				const wpDataBytes05 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/AppTextures/DataBytes05.jpg')
+				const wpTex_MarbleGrid01 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/Textures/tex_marble_grid.jpg')
+				const wpDataConnections = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/WaitingRoom/FutureConnections.jpg')
+
+                // ----------------------------------------------------------------------------------------------------
+				// \- [OOASA6PE01_A5_06_TL__NeonAqua_Wallpapers] -\
+                // ----------------------------------------------------------------------------------------------------
+				const wpNeonAqua00 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/NeonAquaWallpapers/neonAquaWallpaper.jpeg')
+				const wpNeonAqua01 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/NeonAquaWallpapers/neonAquaWallpaper01.png')
+				const wpNeonAqua02 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/NeonAquaWallpapers/neonAquaWallpaper02.jpeg')
+				const wpNeonAqua04 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/NeonAquaWallpapers/neonAquaWallpaper04.jpeg')
+				const wpNeonAqua05 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/NeonAquaWallpapers/neonAquaWallpaper05.jpeg')
+				const wpNeonAqua06 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/NeonAquaWallpapers/neonAquaWallpaper06.jpeg')
+				const wpNeonAqua07 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/NeonAquaWallpapers/neonAquaWallpaper07.jpeg')
+				const wpNeonAqua08 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/NeonAquaWallpapers/neonAquaWallpaper08.jpeg')
+				const wpNeonAqua10 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/NeonAquaWallpapers/neonAquaWallpaper10.jpg')
+				const wpNeonAqua11 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/NeonAquaWallpapers/neonAquaWallpaper11.jpg')
+				const wpNeonAqua12 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/NeonAquaWallpapers/neonAquaWallpaper12.jpg')
+				const wpNeonAqua13 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/NeonAquaWallpapers/neonAquaWallpaper13.jpg')
+				const wpNeonAqua14 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/NeonAquaWallpapers/neonAquaWallpaper14.png')
+				const wpNeonAqua15 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/NeonAquaWallpapers/neonAquaWallpaper15.jpg')
+				const wpNeonAqua16 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/NeonAquaWallpapers/neonAquaWallpaper16.jpg')
+				const wpNeonAqua17 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/NeonAquaWallpapers/neonAquaWallpaper17.jpg')
+				const wpNeonAqua18 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/NeonAquaWallpapers/neonAquaWallpaper18.jpg')
+				const wpNeonAqua19 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/NeonAquaWallpapers/neonAquaWallpaper19.jpg')
+
+                // ----------------------------------------------------------------------------------------------------
+				// OOASA6PE01_A5_07_TL__Room_Wallpapers
+                // ----------------------------------------------------------------------------------------------------
+                //
+				// \\- WhiteRoom_BlackFloor
+				const wp360Room01 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/Rooms360/Room360_01.jpg')
+
+				// \\- WhiteRoom_PianoAndClockPanel
+				const wp360Room02 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/Rooms360/Room360_02.jpg')
+
+				// \\- Shelves@Store
+				const wp360Room03 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/Rooms360/Room360_03.jpg')
+
+				// \\- WhiteRoom_WithTwoPanels
+				const wp360Room04 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/Rooms360/Room360_04.jpg')
+
+				// \\- TreeConferenceRoom_ScreenFrontAndCenter01
+				const wp360Room05 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/Rooms360/Room360_05.jpg')
+
+				// \\- TreeConferenceRoom_ByWindow
+				const wp360Room06 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/Rooms360/Room360_06.jpg')
+
+				// \\- VacantRoom_ShinyFloors
+				const wp360Room07 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/Rooms360/Room360_07.jpg')
+
+				// \\- BrightRoom_BlackDoor
+				const wp360Room08 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/Rooms360/Room360_08.jpg')
+
+				// \\- LivingRoom_NiceCarpet
+				const wp360Room09 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/Rooms360/Room360_09.jpg')
+
+				// \\- MiniPlanet01_Unknown
+				const wp360Room10 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/Rooms360/Room360_10.jpg')
+
+				// \\- VacantRoom_ShinyFloors_Whitelights
+				const wp360Room11 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/Rooms360/Room360_11.jpg')
+
+				// \\- TreeConferenceRoom_CenterRoom
+				const wp360Room12 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/Rooms360/Room360_12.jpg')
+
+				// \\- TreeConferenceRoom_CenterRoom_WithScreen
+				const wp360Room13 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/Rooms360/Room360_13.jpg')
+
+				// \\- LuxuryBathroom
+				const wp360Room14 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/Rooms360/Room360_14.jpg')
+
+				// \\- AerobicRoom
+				const wp360Room15 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/Rooms360/Room360_15.jpg')
+
+				// \\- OutsideByLake
+				const wp360Room16 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/Rooms360/Room360_16.jpg')
+
+				// \\- NiceWoodenRoom
+				const wp360Room17 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/Rooms360/Room360_17.jpg')
+
+				// \\- OutsideOnRoof
+				const wp360Room18 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/Rooms360/Room360_18.jpg')
+
+				// \\- GameRoom?
+				const wp360Room19 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/Rooms360/Room360_19.jpg')
+
+                // ----------------------------------------------------------------------------------------------------
+				// \- [OOASA6PE01_A5_08_TL__MiniApp_AboutMe] \-
+                // ----------------------------------------------------------------------------------------------------
+
+				// \\-- Adventures
+				const AboutMe_Adventure = textureLoader.load('./assets/img/09-MainSpaces/AboutMe/AboutMe_Adventure.png')
+
+				// \\-- Education
+				const AboutMe_Education = textureLoader.load('./assets/img/09-MainSpaces/AboutMe/AboutMe_Education.png')
+
+				// \\-- Interests
+				const AboutMe_Interests = textureLoader.load('./assets/img/09-MainSpaces/AboutMe/AboutMe_Interests.png')
+
+				// \\-- Adventures
+				const AboutMe_ProfessionalJ = textureLoader.load('./assets/img/09-MainSpaces/AboutMe/AboutMe_ProfessionalJ.png')
+
+
+
+                // ----------------------------------------------------------------------------------------------------
+				// \- [OOASA6PE01_A5_09_TL__MiniApp_MyServices] \-
+                // ----------------------------------------------------------------------------------------------------
+
+				// \\-- MusicPerformance
+				const Services_MusicPerfInfo = textureLoader.load('./assets/img/09-MainSpaces/Services/MusicPerformance.png')
+
+				// \\-- MusicProduction
+				const Services_MusicProdInfo = textureLoader.load('./assets/img/09-MainSpaces/Services/MusicProduction.png')
+
+				// \\-- SoftwareEngineering
+				const Services_SoftwareEngineeringInfo = textureLoader.load('./assets/img/09-MainSpaces/Services/SoftwareEngineering.png')
+
+				// \\-- PersonalGrowthCoaching
+				const Services_PersonalGrowthInfo = textureLoader.load('./assets/img/09-MainSpaces/Services/PersonalGrowthCoaching.png')
+
+				// \\-- MusicProduction
+				const Services_STEMPAVI_Info = textureLoader.load('./assets/img/09-MainSpaces/Services/STEM-PAVI.png')
+
+				
+
+
+                // ----------------------------------------------------------------------------------------------------
+				// \- [OOASA6PE01_A5_10_TL__EnvTesting] \- 
+                // ----------------------------------------------------------------------------------------------------
+
+				const workSphereImg = textureLoader.load('./assets/img/admin/01-wallpapers/01-WorkSphere-GreyGradient.jpg')
+				const polygonTexBlack = textureLoader.load('./assets/img/admin/01-wallpapers/03-PolygonBlackWallpaper01.png')
+				const polygonTexBlueGreen = textureLoader.load('./assets/img/admin/01-wallpapers/04-PolygonBlueGreenWallpaper01.jpeg')
+				const gridF1_PureGreenOoze = textureLoader.load('./assets/img/05-Env/WallpaperUI/GridF1-PureGreenOoze.png')
+				const gridF2_PureGreenOoze = textureLoader.load('./assets/img/05-Env/WallpaperUI/GridF2-PureGreenOoze.png')
+				const gridG2_PureBlueGreenOoze = textureLoader.load('./assets/img/05-Env/WallpaperUI/GridG2-PureBlueGreenOoze.png')
+				const gridH2_PureBrightGreenOoze = textureLoader.load('./assets/img/05-Env/WallpaperUI/GridH2-PureBrightGreenOoze.png')
+				const PrimaryGrid01 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/Grid19.jpg')
+				const PrimaryGrid02 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/Grid19.jpg')
+
+
+
+
+
+				// ----------------------------------------------------------------------------------------------------
+				// \- [OOASA6PE01_A5_12_TL__Logo] \- 
+                // ----------------------------------------------------------------------------------------------------
+				const LogoRealityCover = textureLoader.load('./assets/img/02-UserUI/04-Logo/LogoRealityCover.png')
+
+
+				// ----------------------------------------------------------------------------------------------------
+				// \- [OOASA6PE01_A5_13_TL__BeamAnimations] \- 
+                // ----------------------------------------------------------------------------------------------------
+				const beamNeonBlue = textureLoader.load('./assets/img/08-ObjUI/beams/png/beam_neonGreen.png')
+				const beamWhite = textureLoader.load('./assets/img/08-ObjUI/beams/png/beam_white.png')
+				const beamBlue = textureLoader.load('./assets/img/08-ObjUI/beams/png/beam_blue.png')
+
+				// ----------------------------------------------------------------------------------------------------
+				// \- [OOASA6PE01_A5_14_TL__FlareAnimations] \- 
+                // ----------------------------------------------------------------------------------------------------
+				const flare01 = textureLoader.load('./assets/img/01-BaseUI/L02-Flares/png/Flare01.png')
+				const flare02 = textureLoader.load('./assets/img/01-BaseUI/L02-Flares/png/Flare02.png')
+				const flare03 = textureLoader.load('./assets/img/01-BaseUI/L02-Flares/png/Flare03.png')
+				const flare04 = textureLoader.load('./assets/img/01-BaseUI/L02-Flares/png/Flare04.png')
+				const flare05 = textureLoader.load('./assets/img/01-BaseUI/L02-Flares/png/Flare05.png')
+				const flare06 = textureLoader.load('./assets/img/01-BaseUI/L02-Flares/png/Flare06.png')
+				const flare07 = textureLoader.load('./assets/img/01-BaseUI/L02-Flares/png/Flare07.png')
+				const flare08 = textureLoader.load('./assets/img/01-BaseUI/L02-Flares/png/Flare08.png')
+
+				// ----------------------------------------------------------------------------------------------------
+				// \- [OOASA6PE01_A5_15_TL__HandTools] \- 
+                // ----------------------------------------------------------------------------------------------------
+				const HandUI_Skeleton = textureLoader.load('./assets/img/02-UserUI/01-UserLeftHandMenus/LH_00_MenuBase/LH_MenuBase_Skeleton.png')
+				const LeftHandUI_AtPeace = textureLoader.load('./assets/img/02-UserUI/hands/02-FinalWhite-Series/06-AtPeaceHands/AtPeaceLeftHand.png')
+				const RightHandUI_AtPeace = textureLoader.load('./assets/img/02-UserUI/hands/02-FinalWhite-Series/06-AtPeaceHands/AtPeaceRightHand.png')
+				const BothHandsUI_HoldContainer = textureLoader.load('./assets/img/02-UserUI/hands/02-FinalWhite-Series/03-HoldItems/HoldContainer01.png')
+				const HandHoldFromLeft = textureLoader.load('./assets/img/02-UserUI/hands/02-FinalWhite-Series/03-HoldItems/HoldItemFromTopLeft01.png')
+				const HandUI_PointDown = textureLoader.load('./assets/img/02-UserUI/hands/02-FinalWhite-Series/PointLeftHandFromMiddleTop.png')
+				const HandUI_PointForward = textureLoader.load('./assets/img/02-UserUI/hands/02-FinalWhite-Series/PointHandFromBottomLeft.png')
+
+				// ----------------------------------------------------------------------------------------------------
+				// \- [OOASA6PE01_A5_16_TL__PrimaryHud_Root] \- 
+                // ----------------------------------------------------------------------------------------------------
+				const PrimaryHudA01 = textureLoader.load('./assets/img/03-HudUI/HudWhiteGradient03.png')
+				const BasicHud01 = textureLoader.load('./assets/img/03-HudUI/BeginningHuds/BeginnerHud01.png')
+				const BasicHud02a = textureLoader.load('./assets/img/03-HudUI/BeginningHuds/BeginnerHud02a.png')
+				const BasicHud02b = textureLoader.load('./assets/img/03-HudUI/BeginningHuds/BeginnerHud02b.png')
+				const BasicHud03a = textureLoader.load('./assets/img/03-HudUI/BeginningHuds/BeginnerHud03a.png')
+				const BasicHud03b = textureLoader.load('./assets/img/03-HudUI/BeginningHuds/BeginnerHud03b.png')
+
+
+				
+                // ----------------------------------------------------------------------------------------------------
+				// \- [OOASA6PE01_A5_17_TL__UI_MiniPanels] \- 
+                // ----------------------------------------------------------------------------------------------------
+				const MiniPanel01 = textureLoader.load('./assets/img/03-HudUI/MiniPanels/MiniPanelWhite01.png')
+
+
+				
+                // ----------------------------------------------------------------------------------------------------
+				// \- [OOASA6PE01_A5_18_TL__UI_RegPanels] \- 
+                // ----------------------------------------------------------------------------------------------------
+				const RegPanelWhite01 = textureLoader.load('./assets/img/03-HudUI/RegPanels/DefaultPanelWhite01.png')
+
+
+				
+                // ----------------------------------------------------------------------------------------------------
+				// \- [OOASA6PE01_A5_19_TL__UI_LargePanels] \- 
+                // ----------------------------------------------------------------------------------------------------
+				const LargePanelWhite01 = textureLoader.load('./assets/img/03-HudUI/LargePanels/LongPanelWhite01.png')
+					
+
+				
+                // ----------------------------------------------------------------------------------------------------
+				// \- [OOASA6PE01_A5_20_TL__ElectricityStreams] \- 
+                // ----------------------------------------------------------------------------------------------------
+				const Electricity01 = textureLoader.load('./assets/img/04-CommunicationUI/04-Electricity/Electricity_Black01.png')
+
+			
+                // ----------------------------------------------------------------------------------------------------
+				// \- [OOASA6PE01_A5_21_TL__HandHoldObjects] \- 
+                // ----------------------------------------------------------------------------------------------------
+				const GridPaper01 = textureLoader.load('./assets/img/00-WallpaperUX/Grids/GraphGrid/GridPaper01.png')
+
+
+			
+                // ----------------------------------------------------------------------------------------------------
+				// \- [OOASA6PE01_A5_22_TL__ContainerHolders] \- 
+                // ----------------------------------------------------------------------------------------------------
+				
+				const ContainerHolderWhiteA2 = textureLoader.load('./assets/img/03-HudUI/HudWhiteGradient03.png')
+				const ContainerHolderWhiteA3 = textureLoader.load('./assets/img/03-HudUI/HudWhiteGradient03.png')
+				const ContainerHolderWhiteA4 = textureLoader.load('./assets/img/03-HudUI/HudWhiteGradient03.png')
+				const ContainerHolderWhiteA5 = textureLoader.load('./assets/img/03-HudUI/HudWhiteGradient03.png')
+				const ContainerHolderWhiteA6 = textureLoader.load('./assets/img/03-HudUI/HudWhiteGradient03.png')
+
+
+			
+                // ----------------------------------------------------------------------------------------------------
+				// \- [OOASA6PE01_A5_23_TL__ContainerStreams] \- 
+                // ----------------------------------------------------------------------------------------------------
+				const ContainerStreamA1 = textureLoader.load('./assets/img/04-CommunicationUI/02-ContainerStreams/WhiteModelA/ContainerStreamLv1.png')
+				const ContainerStreamA2 = textureLoader.load('./assets/img/04-CommunicationUI/02-ContainerStreams/WhiteModelB/ContainerStreamLv1.png')
+				const ContainerStreamA3 = textureLoader.load('./assets/img/03-HudUI/HudWhiteGradient03.png')
+				const ContainerStreamA4 = textureLoader.load('./assets/img/03-HudUI/HudWhiteGradient03.png')
+				const ContainerStreamA5 = textureLoader.load('./assets/img/03-HudUI/HudWhiteGradient03.png')
+				const ContainerStreamA6 = textureLoader.load('./assets/img/03-HudUI/HudWhiteGradient03.png')
+
+
+
+                // ----------------------------------------------------------------------------------------------------
+				// \- [OOASA6PE01_A5_24_TL__ContainerConnectors] \- 
+                // ----------------------------------------------------------------------------------------------------
+				const ContainerConnectorA1 = textureLoader.load('./assets/img/03-HudUI/HudWhiteGradient03.png')
+				const ContainerConnectorA2 = textureLoader.load('./assets/img/03-HudUI/HudWhiteGradient03.png')
+				const ContainerConnectorA3 = textureLoader.load('./assets/img/03-HudUI/HudWhiteGradient03.png')
+
+
+
+                // ----------------------------------------------------------------------------------------------------
+				// \- [OOASA6PE01_A5_24_TL__TechTileWallpapers] \- 
+                // ----------------------------------------------------------------------------------------------------
+				const TechTileWP_TechTileDesignV2_large = textureLoader.load('./assets/img/10-ObjectUI/Version02/TechTileBase01.png')
+
+				const TechTileWP_TechTileDesignV2_small = textureLoader.load('./assets/img/10-ObjectUI/Version02/TechTileBase01.png')
+
+
+				const TechTileWP_TechTileDesignV3_large = textureLoader.load('./assets/img/10-ObjectUI/Version03/TechTileBase.png')
+
+				const TechTileWP_TechTileDesignV3_small = textureLoader.load('./assets/img/10-ObjectUI/Version03/TechTileBase.png')
+
+
+	
+                // ----------------------------------------------------------------------------------------------------
+				// \- [OOASA6PE01_A5_25_TL__Portfolio_StaticSite_Screenshots] \- 
+                // ----------------------------------------------------------------------------------------------------
+				const staticPic_DuVinSite = textureLoader.load('./assets/img/06-WebsitePreviews/PortfolioSite01_LesVinsDuMonde.png')
+				const staticPic_PayPal = textureLoader.load('./assets/img/06-WebsitePreviews/PortfolioSite02_Paypal.png')
+				const staticPic_ArchitectureSite = textureLoader.load('./assets/img/06-WebsitePreviews/PortfolioSite03_ArchitectureSite.png')
+				const staticPic_AppleSite = textureLoader.load('./assets/img/06-WebsitePreviews/PortfolioSite04_AppleSite.png')
+				const staticPic_ArtikaSite = textureLoader.load('./assets/img/06-WebsitePreviews/FeaturedSite01_ArtikaSite.png')
+				const staticPic_PortfolioV3 = textureLoader.load('./assets/img/06-WebsitePreviews/FeaturedSite02_PortfolioV3.png')
+
+				const staticPic_TimeRealityModel = textureLoader.load('./assets/img/06-WebsitePreviews/WebspaceCovers/Portfolio_TimeRealityCover.png')
+				const staticPic_TimeRealityModel2 = textureLoader.load('./assets/img/06-WebsitePreviews/WebspaceCovers/Portfolio_TimeRealityCover2.png')
+				const staticPic_TransformControls = textureLoader.load('./assets/img/06-WebsitePreviews/WebspaceCovers/Portfolio_TransformControls_Cover.png')
+				const staticPic_VoxelPainter = textureLoader.load('./assets/img/06-WebsitePreviews/WebspaceCovers/Portfolio_VoxelPainter_Cover.png')
+				const staticPic_css3D = textureLoader.load('./assets/img/06-WebsitePreviews/WebspaceCovers/Portfolio_css3D_Cover.png')
+
+
+
+                // ----------------------------------------------------------------------------------------------------
+				// \- [OOASA6PE01_A5_26_TL__Tunnel_Wallpaper] \- 
+                // ----------------------------------------------------------------------------------------------------
+				const dataTravel01 = textureLoader.load('./assets/img/07-StaticImg/dataSquares.png')
+				const dataTravel02 = textureLoader.load('./assets/img/07-StaticImg/dataTransfer01.jpeg')
+				const dataTravel03 = textureLoader.load('./assets/img/07-StaticImg/dataTransfer02.jpeg')
+				const dataTravel04 = textureLoader.load('./assets/img/07-StaticImg/galaxyDefault04.jpeg')
+				const dataTravel05 = textureLoader.load('./assets/img/07-StaticImg/galaxyDefault02.jpeg')
+
+
+                // ----------------------------------------------------------------------------------------------------
+				// \- [OOASA6PE01_A5_27_TL__MiniApp_ExtraImports] \- 
+                // ----------------------------------------------------------------------------------------------------
+				const aboutMeDefault = textureLoader.load('./assets/img/07-StaticImg/portfolioHolder01.png')
+				const resumeImportPage01 = textureLoader.load('./assets/img/07-StaticImg/resumeP1.png')
+				const resumeImportPage02 = textureLoader.load('./assets/img/07-StaticImg/resumeP2.png')
+
 
 
 		init();
@@ -2018,6 +4073,74 @@
 //....................................................................
 
 
+// ----------------------------------------------------------------------------------------------------
+            // \- [OOASA6PE01_A8_EveA11__Manual_SoundEvents] \- 
+            // ----------------------------------------------------------------------------------------------------
+
+				// Sound Tests
+				const soundTest01 = () => {
+					const soundTest = document.getElementById("mfx_audio00_test")
+					soundTest.play()
+				}
+
+
+				// General Click sfx
+				const play_sfx_click_gen = () => {
+					const play_sfx_click_gen_item = document.getElementById("sfx_click_gen")
+					play_sfx_click_gen_item.play()
+					play_sfx_click_gen_item.volume = 0.3
+				}
+
+
+
+				// Show Data sfx
+				const play_sfx_show = () => {
+					let play_sfx_show_item = document.getElementById("sfx_click_show")
+					play_sfx_show_item.play()
+					play_sfx_show_item.volume = 0.3
+				}
+
+				// Hide Data sfx
+				const play_sfx_hide = () => {
+					const play_sfx_hide_item = document.getElementById("sfx_click_hide")
+					play_sfx_hide_item.play()
+					play_sfx_hide_item.volume = 0.3
+				}
+
+				// Show Panel sfx
+				const play_sfx_panel_show = () => {
+					const play_sfx_show_panel = document.getElementById("sfx_panel_show")
+					play_sfx_hide_item.play()
+					play_sfx_hide_item.volume = 0.3
+				}
+
+				// Hide Panel sfx
+				const play_sfx_panel_hide = () => {
+					const play_sfx_hide_panel = document.getElementById("sfx_panel_hide")
+					play_sfx_hide_panel.play()
+					play_sfx_hide_panel.volume = 0.3
+				}
+
+				// Show Panel sfx
+				const play_sfx_hand_show = () => {
+					const play_sfx_show_hand = document.getElementById("sfx_hand_show")
+					play_sfx_show_hand.play()
+					play_sfx_show_hand.volume = 0.3
+				}
+
+				// Hide Panel sfx
+				const play_sfx_hand_hide = () => {
+					const play_sfx_hide_hand = document.getElementById("sfx_hand_hide")
+					play_sfx_hide_hand.play()
+					play_sfx_hide_hand.volume = 0.3
+				}
+
+                // MANUAL COMMAND_ playSfx_clickGen_
+				const playSfx_clickGen = () => {
+					let file = new Audio("./assets/audio/ui_Sounds/SFX_Menu/sfx-click-gen.wav")
+
+					file.play()
+				}
 
 
            
@@ -2472,6 +4595,66 @@
 					}
 				})
 
+
+
+//.....................................................................................
+//..LL........................................TTTTTTTTT.Tiii..ll.......................
+//.LLLL......................................gTTTTTTTTTTTiii.illl......................
+//.LLLL......................................gTTTTTTTTTTTiii.illl......................
+//.LLLL......................................gTTTTTTTTTTTiii.illl......................
+//.LLLL........aaaaaaa..annnnnnnn...gggggggg.....TTTT...Tiii.illl..eeeeeee...essssss...
+//.LLLL.......aaaaaaaa..annnnnnnn..ngggggggg.....TTTT...Tiii.illl..eeeeeeee.eesssssss..
+//.LLLL......Laaaaaaaaa.annnnnnnn.nngggggggg.....TTTT...Tiii.illl.leeeeeeee.eesssssss..
+//.LLLL......Laaa.aaaaa.annn.nnnn.nngg..gggg.....TTTT...Tiii.illl.leee..eeeeeesssssss..
+//.LLLL.......aaaaaaaaa.ann...nnn.nngg..gggg.....TTTT...Tiii.illl.leeeeeeeeeeesssssss..
+//.LLLL......Laaaaaaaaa.ann...nnn.nngg...ggg.....TTTT...Tiii.illl.leeeeeeeee.esssssss..
+//.LLLL......Laaaa.aaaa.ann...nnn.nngg..gggg.....TTTT...Tiii.illl.leee......eesssssss..
+//.LLLLLLLLLLLaaa.aaaaa.ann...nnn.nngggggggg.....TTTT...Tiii.illl.leeeeeeeeeeesss.sss..
+//.LLLLLLLLLLLaaaaaaaaa.ann...nnn..ngggggggg.....TTTT...Tiii.illl.leeeeeeee.eesssssss..
+//.LLLLLLLLLLLaaaaaaaaa.ann...nnn...gggggggg.....TTTT...Tiii.illl..eeeeeeee..esssssss..
+//.............aaa................nnggg.gggg.........................eeee.....sssss....
+//................................nngggggggg...........................................
+//.................................ngggggggg...........................................
+//.................................nggggggg............................................
+//.....................................................................................             
+
+
+// ----------------------------------------------------------------------------------------------------
+            // \- [OOASA6PE01_A8_EveA10__Transform_LanguagePanels_Events] \- 
+            // ----------------------------------------------------------------------------------------------------
+
+            // const buttonTable = document.getElementById('table');
+			// 		buttonTable.addEventListener('click', function () {
+
+			// 			transform(targets.table, 2000);
+
+			// 	});
+
+			// 	const buttonSphere = document.getElementById('sphere');
+			// 	buttonSphere.addEventListener('click', function () {
+
+			// 			transform(targets.sphere, 2000);
+
+			// 	});
+
+			// 	const buttonHelix = document.getElementById('helix');
+			// 	buttonHelix.addEventListener('click', function () {
+
+			// 			transform(targets.helix, 2000);
+
+			// 	});
+
+			// 	const buttonGrid = document.getElementById('grid');
+			// 	buttonGrid.addEventListener('click', function () {
+
+			// 			transform(targets.grid, 2000);
+
+			// 	});
+
+			// 	// 
+			 
+			// 	transform(targets.table, 2000);
+				
 
 
                
