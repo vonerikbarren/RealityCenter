@@ -1566,6 +1566,207 @@
 //.......................................................................................
 
 
+// ----------------------------------------------------------------------------------------------------
+				// \- [OOASA6PE01_A7_18__CS3dObj_TechTile_Portfolio_DuVin] \- 
+                // ----------------------------------------------------------------------------------------------------
+
+
+                function TechTile_Portfolio_DuVin(
+					HeaderId, TechTileId,
+					baseId, centerTileRootId, 
+					centerTileId, centerTileClassName,
+					headerContent, title,
+					srcLink, hrefLink,
+					tx, ty, tz,
+					rx, ry, rz,
+					sx, sy, sz,
+					FunctionId, src00,
+					FxImg01, src01,
+					FxImg02, src02,
+					FxImg03, src03,
+					FxImg04, src04,
+					FxImg05, src05,
+					FxImg06, src06,
+					FxImg07, src07,
+				) {
+
+					
+					// |- # Base Square 
+					// ----------------------------------------------------------------------------------
+					const BaseTile = document.createElement('div')
+					BaseTile.id = baseId
+
+					// |- # Info Tile
+					// ----------------------------------------------------------------------------------
+					const HeaderTile = document.createElement('div')
+					HeaderTile.id = HeaderId
+					HeaderTile.textContent = headerContent
+					BaseTile.appendChild(HeaderTile)
+
+					// |- # TechTileVisualTitle
+					// ----------------------------------------------------------------------------------
+					const TechTileTitle = document.createElement('div')
+					TechTileTitle.id = TechTileId
+					TechTileTitle.textContent = title
+					BaseTile.appendChild(TechTileTitle)
+
+					// |- # Function Tile
+					// ----------------------------------------------------------------------------------
+					const FunctionTile = document.createElement('div')
+					FunctionTile.id = FunctionId
+					FunctionTile.src = src00
+					BaseTile.appendChild(FunctionTile)
+
+					const FunctionImg01 = document.createElement('img')
+					FunctionImg01.id = FxImg01
+					FunctionImg01.src = src01
+					FunctionImg01.addEventListener('click', uxMfx01_PortfolioElevatorUp)
+					FunctionTile.appendChild(FunctionImg01)
+
+					const FunctionImg02 = document.createElement('img')
+					FunctionImg02.id = FxImg02
+					FunctionImg02.src = src02
+					FunctionImg02.addEventListener('click', uxMfx02_PortfolioElevatorDown)
+					FunctionTile.appendChild(FunctionImg02)
+
+					const FunctionImg03 = document.createElement('img')
+					FunctionImg03.id = FxImg03
+					FunctionImg03.src = src03
+					FunctionImg03.addEventListener('click', uxMfx02_PortfolioElevatorDown)
+					FunctionTile.appendChild(FunctionImg03)
+
+					const FunctionImg04 = document.createElement('img')
+					FunctionImg04.id = FxImg04
+					FunctionImg04.src = src04
+					FunctionImg04.addEventListener('click', uxFx_MentalHookShot_ElevatorLevel1_a)
+					FunctionTile.appendChild(FunctionImg04)
+
+					const FunctionImg05 = document.createElement('img')
+					FunctionImg05.id = FxImg05
+					FunctionImg05.src = src05
+					FunctionImg04.addEventListener('click', uxMfx02_PortfolioElevatorDown)
+					FunctionTile.appendChild(FunctionImg05)
+
+					const FunctionImg06 = document.createElement('img')
+					FunctionImg06.id = FxImg06
+					FunctionImg06.src = src06
+					FunctionImg04.addEventListener('click', uxMfx02_PortfolioElevatorDown)
+					FunctionTile.appendChild(FunctionImg06)
+
+					const FunctionImg07 = document.createElement('img')
+					FunctionImg07.id = FxImg07
+					FunctionImg07.src = src07
+					FunctionImg04.addEventListener('click', uxMfx02_PortfolioElevatorDown)
+					FunctionTile.appendChild(FunctionImg07)
+
+					
+
+					// |- # CenterTile Root
+					// ----------------------------------------------------------------------------------
+					const centerTile_root = document.createElement('div')
+					centerTile_root.id = centerTileRootId
+					// centerTile_root.style.display = 'none'
+					BaseTile.appendChild(centerTile_root)
+
+					const centerTile = document.createElement('embed')
+					centerTile.id = centerTileId
+					centerTile.className = centerTileClassName
+					centerTile.src = srcLink
+					centerTile_root.appendChild(centerTile)
+
+					
+
+					const TileData = new CSS3DObject(BaseTile)
+					TileData.position.set(tx, ty, tz)
+					TileData.rotation.set(rx, ry, rz)
+					TileData.scale.set(sx, sy, sz)
+
+					return TileData
+				}
+
+
+
+// ----------------------------------------------------------------------------------------------------
+				// \- [OOASA6PE01_A7_09__CS3dObj_makePDF_makeButton] \- 
+                // ----------------------------------------------------------------------------------------------------
+				function makeButton(
+						id, buttonInfoId, imgID,
+						myClass,
+						srcLink,
+						width, height,
+						borderRadius,
+						px, py, pz,
+						rx, ry, rz,
+						sx, sy, sz,
+						buttonMessage,
+						alertMessage,
+						textSize,
+						hrefLink,
+						target,
+						myFunction,
+						TheButtonInfo
+				) {
+					
+					const buttonContainer = document.createElement('div')
+					buttonContainer.style.width = width + 'px';
+    				buttonContainer.style.height = height + 'px';
+    				buttonContainer.style.opacity = 0.999;
+    				buttonContainer.style.boxSizing = 'border-box'
+					buttonContainer.style.backgroundColor = 'rgb(255, 255, 255, 0.7)'
+					buttonContainer.style.zIndex = -1
+					buttonContainer.style.borderRadius = '10px';
+
+
+					const buttonInfo = document.createElement('div')
+					buttonInfo.id = buttonInfoId
+					buttonInfo.textContent = TheButtonInfo
+					buttonContainer.appendChild(buttonInfo)
+
+					const buttonImg = document.createElement('img')
+					buttonImg.id = imgID
+					buttonImg.src = srcLink
+					buttonImg.style.width = width + 'px';
+    				buttonImg.style.height = height + 'px';
+					buttonContainer.appendChild(buttonImg)
+
+
+					const buttonElement = document.createElement('button')
+					buttonElement.id = id
+					buttonElement.style.width = width + 'px';
+    				buttonElement.style.height = height + 'px';
+					// buttonElement.style.opacity = 0.5;
+    				// buttonElement.style.boxSizing = 'border-box'
+					// buttonElement.style.border = '1px outset rgba(255, 0, 255, 0.3)'
+					buttonElement.style.borderRadius = '10px';
+					buttonElement.style.fontSize = textSize + 'px';
+					// buttonElement.style.padding = '10px'
+					// buttonElement.style.background = 'lightgrey'
+					// buttonElement.style.lineHeight = 'normal'
+					// buttonElement.style.textAlign = 'center'
+					buttonElement.style.textContent = buttonMessage
+					buttonElement.style.color = "black"
+					buttonElement.addEventListener('click', myFunction)
+					// buttonElement.setAttribute(attribute, '')
+					buttonContainer.appendChild(buttonElement)
+
+
+					// const buttonAnchor = document.createElement('a')
+					// buttonAnchor.href = hrefLink
+					// buttonAnchor.target = target
+					// buttonAnchor.textContent = buttonMessage;
+					// buttonContainer.appendChild(buttonAnchor)
+
+					const buttonObject = new CSS3DObject(buttonContainer)
+					buttonObject.position.set(px, py, pz)
+					buttonObject.rotation.set(rx, ry, rz)
+
+					return buttonObject
+
+
+				}
+
+
+
  // ----------------------------------------------------------------------------------------------------
 				// \- [OOASA6PE01_A7_01__CS3dObj_VideoPlayer] \- 
                 // ----------------------------------------------------------------------------------------------------
