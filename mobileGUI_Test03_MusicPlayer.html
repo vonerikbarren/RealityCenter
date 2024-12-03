@@ -4054,6 +4054,92 @@ let r_RightBrainMatrix03_
 				}
 
 
+
+// // ----------------------------------------------------------------------------------------------------
+// 				// \- [OOASA6PE01_A7_21__CS3dObj_TransformLanguagePanels_sphereBeta] \- 
+//                 // ----------------------------------------------------------------------------------------------------
+
+//                 const vector = new THREE.Vector3();
+
+// for (let i = 0, l = objects.length; i < l; i++) {
+
+//     const phi = Math.acos(- 1 + (2 * i) / l);
+//     const theta = Math.sqrt(l * Math.PI) * phi;
+
+//     const object = new THREE.Object3D();
+
+//     // size of sphere here...
+//     object.position.setFromSphericalCoords(3000, phi, theta);
+//     object.translateY(4500)
+//     //  object.position.set(0, 1200, 0)
+
+//     vector.copy(object.position).multiplyScalar(2);
+
+//     object.lookAt(0, 5000, 0);
+    
+
+//     targets.sphere.push(object);
+
+
+// }
+
+
+
+
+
+// // ----------------------------------------------------------------------------------------------------
+// // \- [OOASA6PE01_A7_22__CS3dObj_TransformLanguagePanels_helixBeta] \- 
+// // ----------------------------------------------------------------------------------------------------
+
+// for (let i = 0, l = objects.length; i < l; i++) {
+
+//     // const theta = (i * 25) * 0.175 + ( Math.PI * 2 );
+//     // const y = - (i * 1000) + 12366.118;
+
+//     const theta = i * 2.975 + Math.PI;
+//     const y = - (i * 20) + 4000;
+
+//     const object = new THREE.Object3D();
+
+//     // Circumference Size Here...
+//     object.position.setFromCylindricalCoords(1000, theta, y);
+
+//     vector.x = object.position.x * 12;
+//     vector.y = object.position.y * 102;
+//     vector.z = object.position.z * 12;
+
+//     object.lookAt(0, 3000, 0);
+
+//     targets.helix.push(object);
+//     // object.position.set(0, 1000, 0)
+
+// }       
+
+
+
+// // ----------------------------------------------------------------------------------------------------
+// // \- [OOASA6PE01_A7_23__CS3dObj_TransformLanguagePanels_gridBeta] \- 
+// // ----------------------------------------------------------------------------------------------------
+
+// for (let i = 0; i < objects.length; i++) {
+
+//     const object = new THREE.Object3D();
+
+//     object.position.x = ((i % 5) * 400) + 1500;
+//     object.position.y = ((Math.floor(i / 5) % 5) * 400) + 2000;
+//     object.position.z = (Math.floor(i / 25)) * 1000 - 2000;
+
+
+//     object.rotation.y = -1.57;
+
+    
+
+//     targets.grid.push(object);
+
+
+
+// }
+
 //....................................................................
 //....SSSSSS..........................................................
 //...SSSSSSSS..........................................ddd............
@@ -5018,6 +5104,1490 @@ let OmniDataFragment_root
         let OmniVon_expressions
         let OmniVon_domains
         let OmniVon_perspectives
+
+
+
+
+
+//..............................................................
+//..BBBBB......................................UU.....UU....I...
+//.BBBBBBBBBB.................................eUUU...UUUU..UII..
+//.BBBBBBBBBBB................................eUUU...UUUU..UII..
+//.BBBBBBBBBBB................................eUUU...UUUU..UII..
+//.BBBB...BBBB...aaaaaaa..asssssss...eeeeee...eUUU...UUUU..UII..
+//.BBBB..BBBBB..aaaaaaaa..asssssss..seeeeeee..eUUU...UUUU..UII..
+//.BBBBBBBBBBB.Baaaaaaaaaaasssssssssseeeeeeee.eUUU...UUUU..UII..
+//.BBBBBBBBBBB.Baaa.aaaaaaassssssssssee..eeee.eUUU...UUUU..UII..
+//.BBBBBBBBBBB..aaaaaaaaa.asssssss.sseeeeeeee.eUUU...UUUU..UII..
+//.BBBB....BBBBBaaaaaaaaa.asssssss.sseeeeeeee.eUUU...UUUU..UII..
+//.BBBB...BBBBBBaaaa.aaaaaassssssssssee.......eUUU...UUUU..UII..
+//.BBBBBBBBBBB.Baaa.aaaaaaasss.sssssseeeeeeee.eUUUUUUUUUU..UII..
+//.BBBBBBBBBBB.Baaaaaaaaaaasssssssssseeeeeee..eUUUUUUUUUU..UII..
+//.BBBBBBBBBB..Baaaaaaaaa.asssssss..seeeeeee...UUUUUUUUU...UII..
+//...............aaa.......ssssss.....eeee.......UUUUU..........
+//..............................................................
+
+// BaseUI
+// =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+BaseUI_Root = new THREE.Group()
+BaseUI_Root.position.set(0, 0, 0)
+BaseUI_Root.scale.set(5, 5, 5)
+camera.add(BaseUI_Root)
+camera.attach(BaseUI_Root)
+
+const BaseUI_Component_Dimensions = {
+    radius: 10,
+    segments: 32,
+    thetaStart: 0,
+    thetaLength: 6.28
+}
+
+const BaseUI_ComponentL1_Dimensions = {
+    radius: 10,
+    segments: 32,
+    thetaStart: 0,
+    thetaLength: 6.28
+}
+
+
+const geo_BaseUI_Root_ComponentL0 = new THREE.CircleGeometry(
+
+    BaseUI_Component_Dimensions.radius,
+    BaseUI_Component_Dimensions.segments,
+    BaseUI_Component_Dimensions.thetaStart,
+    BaseUI_Component_Dimensions.thetaLength,
+
+)
+
+
+
+// BaseUI_Root_TopMiddleLeftComponent
+// =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+
+beam_TopMiddleLeft_NeonBlueGreen = new THREE.Group()
+beam_TopMiddleLeft_NeonBlueGreen.position.set(-3.61, 5.7, 43)
+beam_TopMiddleLeft_NeonBlueGreen.rotation.set(0, 0, 1.575)
+beam_TopMiddleLeft_NeonBlueGreen.scale.set(0.15, 0.005, 0.1) // For Beam
+BaseUI_Root.add(beam_TopMiddleLeft_NeonBlueGreen)
+
+
+const mat_beam_TopMiddleLeft_NeonBlueGreen = new THREE.MeshBasicMaterial({ map: beamNeonBlue, side: THREE.DoubleSide });
+mesh_beam_TopMiddleLeft_NeonBlueGreen = new THREE.Mesh(geo_objT_PlaneA1, mat_beam_TopMiddleLeft_NeonBlueGreen);
+mat_beam_TopMiddleLeft_NeonBlueGreen.transparent = true;
+mat_beam_TopMiddleLeft_NeonBlueGreen.alphaMap = beamNeonBlue
+// mat_beam_TopMiddleLeft_NeonBlueGreen.color = new THREE.Color('#1ed9d0') // neonGreenBlue;
+mat_beam_TopMiddleLeft_NeonBlueGreen.sizeAttenuation = true
+mesh_beam_TopMiddleLeft_NeonBlueGreen.position.set(0, 0, 0);
+// mesh_beam_TopMiddleLeft_NeonBlueGreen.position.set(-15000, 0, 0);
+mesh_beam_TopMiddleLeft_NeonBlueGreen.scale.set(1, 1, 1);
+mesh_beam_TopMiddleLeft_NeonBlueGreen.rotation.set(0, 0, 0)
+// mesh_beam_TopMiddleLeft_NeonBlueGreen.rotateX( - Math.PI / 2 );
+
+// beam_TopMiddleLeft_NeonBlueGreen.lookAt(camera)
+
+beam_TopMiddleLeft_NeonBlueGreen.add(mesh_beam_TopMiddleLeft_NeonBlueGreen)
+
+
+
+beam_TopMiddleLeft_NeonWhite = new THREE.Group()
+beam_TopMiddleLeft_NeonWhite.position.set(-3.61, 5.7, 43)
+beam_TopMiddleLeft_NeonWhite.rotation.set(0, 0, 1.575)
+beam_TopMiddleLeft_NeonWhite.scale.set(0.15, 0.005, 0.1) // For Beam
+BaseUI_Root.add(beam_TopMiddleLeft_NeonWhite)
+
+
+const mat_beam_TopMiddleLeft_NeonWhite = new THREE.MeshBasicMaterial({ map: beamWhite, side: THREE.DoubleSide });
+mesh_beam_TopMiddleLeft_NeonWhite = new THREE.Mesh(geo_objT_PlaneA1, mat_beam_TopMiddleLeft_NeonWhite);
+mat_beam_TopMiddleLeft_NeonWhite.transparent = true;
+mat_beam_TopMiddleLeft_NeonWhite.alphaMap = beamWhite
+// mat_beam_TopMiddleLeft_NeonWhite.color = new THREE.Color('#1ed9d0') // neonGreenBlue;
+mat_beam_TopMiddleLeft_NeonWhite.sizeAttenuation = true
+mesh_beam_TopMiddleLeft_NeonWhite.position.set(0, 0, 0);
+// mesh_beam_TopMiddleLeft_NeonWhite.position.set(-15000, 0, 0);
+mesh_beam_TopMiddleLeft_NeonWhite.scale.set(1, 1, 1);
+mesh_beam_TopMiddleLeft_NeonWhite.rotation.set(0, 0, 0)
+// mesh_beam_TopMiddleLeft_NeonWhite.rotateX( - Math.PI / 2 );
+
+// beam_TopMiddleLeft_NeonWhite.lookAt(camera)
+
+beam_TopMiddleLeft_NeonWhite.add(mesh_beam_TopMiddleLeft_NeonWhite)
+
+
+
+
+// BaseUI_Root_TopMiddleRightComponent
+// =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+
+beam_TopMiddleRight_NoenBlueGreen = new THREE.Group()
+beam_TopMiddleRight_NoenBlueGreen.position.set(3.61, 5.7, 43)
+beam_TopMiddleRight_NoenBlueGreen.rotation.set(0, 0, 1.575)
+beam_TopMiddleRight_NoenBlueGreen.scale.set(0.15, 0.005, 0.1) // For Beam
+BaseUI_Root.add(beam_TopMiddleRight_NoenBlueGreen)
+
+
+const mat_beam_TopMiddleRight_NoenBlueGreen = new THREE.MeshBasicMaterial({ map: beamNeonBlue, side: THREE.DoubleSide });
+mesh_beam_TopMiddleRight_NoenBlueGreen = new THREE.Mesh(geo_objT_PlaneA1, mat_beam_TopMiddleRight_NoenBlueGreen);
+mat_beam_TopMiddleRight_NoenBlueGreen.transparent = true;
+mat_beam_TopMiddleRight_NoenBlueGreen.alphaMap = beamNeonBlue
+// mat_beam_TopMiddleRight_NoenBlueGreen.color = new THREE.Color('#1ed9d0') // neonGreenBlue;
+mat_beam_TopMiddleRight_NoenBlueGreen.sizeAttenuation = true
+mesh_beam_TopMiddleRight_NoenBlueGreen.position.set(0, 0, 0);
+// mesh_beam_TopMiddleRight_NoenBlueGreen.position.set(-15000, 0, 0);
+mesh_beam_TopMiddleRight_NoenBlueGreen.scale.set(1, 1, 1);
+mesh_beam_TopMiddleRight_NoenBlueGreen.rotation.set(0, 0, 0)
+// mesh_beam_TopMiddleRight_NoenBlueGreen.rotateX( - Math.PI / 2 );
+
+// beam_TopMiddleRight_NoenBlueGreen.lookAt(camera)
+
+beam_TopMiddleRight_NoenBlueGreen.add(mesh_beam_TopMiddleRight_NoenBlueGreen)
+
+
+
+beam_TopMiddleRight_NeonWhite = new THREE.Group()
+beam_TopMiddleRight_NeonWhite.position.set(3.61, 5.7, 43)
+beam_TopMiddleRight_NeonWhite.rotation.set(0, 0, 1.575)
+beam_TopMiddleRight_NeonWhite.scale.set(0.15, 0.005, 0.1) // For Beam
+BaseUI_Root.add(beam_TopMiddleRight_NeonWhite)
+
+
+const mat_beam_TopMiddleRight_NeonWhite = new THREE.MeshBasicMaterial({ map: beamWhite, side: THREE.DoubleSide });
+mesh_beam_TopMiddleRight_NeonWhite = new THREE.Mesh(geo_objT_PlaneA1, mat_beam_TopMiddleRight_NeonWhite);
+mat_beam_TopMiddleRight_NeonWhite.transparent = true;
+mat_beam_TopMiddleRight_NeonWhite.alphaMap = beamWhite
+// mat_beam_TopMiddleRight_NeonWhite.color = new THREE.Color('#1ed9d0') // neonGreenBlue;
+mat_beam_TopMiddleRight_NeonWhite.sizeAttenuation = true
+mesh_beam_TopMiddleRight_NeonWhite.position.set(0, 0, 0);
+// mesh_beam_TopMiddleRight_NeonWhite.position.set(-15000, 0, 0);
+mesh_beam_TopMiddleRight_NeonWhite.scale.set(1, 1, 1);
+mesh_beam_TopMiddleRight_NeonWhite.rotation.set(0, 0, 0)
+// mesh_beam_TopMiddleRight_NeonWhite.rotateX( - Math.PI / 2 );
+
+// beam_TopMiddleRight_NeonWhite.lookAt(camera)
+
+beam_TopMiddleRight_NeonWhite.add(mesh_beam_TopMiddleRight_NeonWhite)
+
+
+
+// BaseUI_Root_TopLeftComponent
+// =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+BaseUI_Root_TopLeftComponent = new THREE.Group()
+BaseUI_Root_TopLeftComponent.position.set(0, 0, 0)
+BaseUI_Root.add(BaseUI_Root_TopLeftComponent)
+
+
+// beam_TopLeftToRight_NeonBlueGreen
+beam_TopLeftToRight_NeonBlueGreen = new THREE.Group()
+beam_TopLeftToRight_NeonBlueGreen.position.set(-8, 5.7, 43)
+beam_TopLeftToRight_NeonBlueGreen.rotation.set(0, 0, 0)
+beam_TopLeftToRight_NeonBlueGreen.scale.set(0.15, 0.005, 0.1) // For Beam
+// beam_TopLeftToRight_NeonBlueGreen.scale.set(0.05, 0.05, 0.05) // For flare
+BaseUI_Root_TopLeftComponent.add(beam_TopLeftToRight_NeonBlueGreen)
+
+
+const mat_beam_TopLeftToRight_NeonBlueGreen = new THREE.MeshBasicMaterial({ map: beamNeonBlue, side: THREE.DoubleSide });
+mesh_beam_TopLeftToRight_NeonBlueGreen = new THREE.Mesh(geo_objT_PlaneA1, mat_beam_TopLeftToRight_NeonBlueGreen);
+mat_beam_TopLeftToRight_NeonBlueGreen.transparent = true;
+mat_beam_TopLeftToRight_NeonBlueGreen.alphaMap = beamNeonBlue
+// mat_beam_TopLeftToRight_NeonBlueGreen.color = new THREE.Color('#1ed9d0') // neonGreenBlue;
+mat_beam_TopLeftToRight_NeonBlueGreen.sizeAttenuation = true
+mesh_beam_TopLeftToRight_NeonBlueGreen.position.set(0, 0, 0);
+// mesh_beam_TopLeftToRight_NeonBlueGreen.position.set(-15000, 0, 0);
+mesh_beam_TopLeftToRight_NeonBlueGreen.scale.set(1, 1, 1);
+mesh_beam_TopLeftToRight_NeonBlueGreen.rotation.set(0, 0, 0)
+// mesh_beam_TopLeftToRight_NeonBlueGreen.rotateX( - Math.PI / 2 );
+
+// beam_TopLeftToRight_NeonBlueGreen.lookAt(camera)
+
+beam_TopLeftToRight_NeonBlueGreen.add(mesh_beam_TopLeftToRight_NeonBlueGreen)
+
+
+
+// beam_TopLeftToRight_white
+beam_TopLeftToRight_white = new THREE.Group()
+beam_TopLeftToRight_white.position.set(-8, 5.7, 43)
+beam_TopLeftToRight_white.rotation.set(0, 0, 0)
+beam_TopLeftToRight_white.scale.set(0.15, 0.005, 0.1) // For Beam
+// beam_TopLeftToRight_white.scale.set(0.05, 0.05, 0.05) // For flare
+BaseUI_Root_TopLeftComponent.add(beam_TopLeftToRight_white)
+
+
+const mat_beam_TopLeftToRight_white = new THREE.MeshBasicMaterial({ map: beamWhite, side: THREE.DoubleSide });
+mesh_beam_TopLeftToRight_white = new THREE.Mesh(geo_objT_PlaneA1, mat_beam_TopLeftToRight_white);
+mat_beam_TopLeftToRight_white.transparent = true;
+mat_beam_TopLeftToRight_white.alphaMap = beamWhite
+// mat_beam_TopLeftToRight_white.color = new THREE.Color('#1ed9d0') // neonGreenBlue;
+mat_beam_TopLeftToRight_white.sizeAttenuation = true
+mesh_beam_TopLeftToRight_white.position.set(0, 0, 0);
+// mesh_beam_TopLeftToRight_white.position.set(-15000, 0, 0);
+mesh_beam_TopLeftToRight_white.scale.set(1, 1, 1);
+mesh_beam_TopLeftToRight_white.rotation.set(0, 0, 0)
+// mesh_beam_TopLeftToRight_white.rotateX( - Math.PI / 2 );
+
+// beam_TopLeftToRight_white.lookAt(camera)
+
+beam_TopLeftToRight_white.add(mesh_beam_TopLeftToRight_white)
+
+
+
+// beam_TopRightToLeft_Blue
+beam_TopRightToLeft_Blue = new THREE.Group()
+beam_TopRightToLeft_Blue.position.set(-8, 5.6, 43)
+beam_TopRightToLeft_Blue.rotation.set(0, 0, 0)
+beam_TopRightToLeft_Blue.scale.set(0.15, 0.005, 0.1)
+BaseUI_Root_TopLeftComponent.add(beam_TopRightToLeft_Blue)
+
+
+const mat_beam_TopRightToLeft_Blue = new THREE.MeshBasicMaterial({ map: beamNeonBlue, side: THREE.DoubleSide });
+mesh_beam_TopRightToLeft_Blue = new THREE.Mesh(geo_objT_PlaneA1, mat_beam_TopRightToLeft_Blue);
+mat_beam_TopRightToLeft_Blue.transparent = true;
+mat_beam_TopRightToLeft_Blue.alphaMap = beamNeonBlue;
+mat_beam_TopRightToLeft_Blue.color = new THREE.Color('#1ed9d0') // neonGreenBlue
+mesh_beam_TopRightToLeft_Blue.position.set(0, 0, 0);
+// mesh_beam_TopRightToLeft_Blue.position.set(-15000, 0, 0);
+mesh_beam_TopRightToLeft_Blue.scale.set(1, 1, 1);
+mesh_beam_TopRightToLeft_Blue.rotation.set(0, 0, 0)
+// mesh_beam_TopRightToLeft_Blue.rotateX( - Math.PI / 2 );
+
+// beam_TopRightToLeft_Blue.lookAt(camera)
+
+beam_TopRightToLeft_Blue.add(mesh_beam_TopRightToLeft_Blue)
+
+
+
+
+// beam_BottomLeftToRight_NeonBlueGreen
+beam_BottomLeftToRight_NeonBlueGreen = new THREE.Group()
+beam_BottomLeftToRight_NeonBlueGreen.position.set(-8, -5.6, 43)
+beam_BottomLeftToRight_NeonBlueGreen.rotation.set(0, 0, 0)
+beam_BottomLeftToRight_NeonBlueGreen.scale.set(0.15, 0.005, 0.1)
+BaseUI_Root_TopLeftComponent.add(beam_BottomLeftToRight_NeonBlueGreen)
+
+
+const mat_beam_BottomLeftToRight_NeonBlueGreen = new THREE.MeshBasicMaterial({ map: beamNeonBlue, side: THREE.DoubleSide });
+mesh_beam_BottomLeftToRight_NeonBlueGreen = new THREE.Mesh(geo_objT_PlaneA1, mat_beam_BottomLeftToRight_NeonBlueGreen);
+mat_beam_BottomLeftToRight_NeonBlueGreen.transparent = true;
+mat_beam_BottomLeftToRight_NeonBlueGreen.alphaMap = beamNeonBlue;
+// mat_beam_BottomLeftToRight_NeonBlueGreen.color = new THREE.Color('#1ed9d0') // neonGreenBlue
+mesh_beam_BottomLeftToRight_NeonBlueGreen.position.set(0, 0, 0);
+// mesh_beam_BottomLeftToRight_NeonBlueGreen.position.set(-15000, 0, 0);
+mesh_beam_BottomLeftToRight_NeonBlueGreen.scale.set(1, 1, 1);
+mesh_beam_BottomLeftToRight_NeonBlueGreen.rotation.set(0, 0, 0)
+// mesh_beam_BottomLeftToRight_NeonBlueGreen.rotateX( - Math.PI / 2 );
+
+// beam_BottomLeftToRight_NeonBlueGreen.lookAt(camera)
+
+beam_BottomLeftToRight_NeonBlueGreen.add(mesh_beam_BottomLeftToRight_NeonBlueGreen)
+
+
+
+
+// beam_BottomLeftToRight_white
+beam_BottomLeftToRight_white = new THREE.Group()
+beam_BottomLeftToRight_white.position.set(-8, -5.6, 43)
+beam_BottomLeftToRight_white.rotation.set(0, 0, 0)
+beam_BottomLeftToRight_white.scale.set(0.15, 0.005, 0.1)
+BaseUI_Root_TopLeftComponent.add(beam_BottomLeftToRight_white)
+
+
+const mat_beam_BottomLeftToRight_white = new THREE.MeshBasicMaterial({ map: beamWhite, side: THREE.DoubleSide });
+mesh_beam_BottomLeftToRight_white = new THREE.Mesh(geo_objT_PlaneA1, mat_beam_BottomLeftToRight_white);
+mat_beam_BottomLeftToRight_white.transparent = true;
+mat_beam_BottomLeftToRight_white.alphaMap = beamWhite;
+// mat_beam_BottomLeftToRight_white.color = new THREE.Color('#1ed9d0') // neonGreenBlue
+mesh_beam_BottomLeftToRight_white.position.set(0, 0, 0);
+// mesh_beam_BottomLeftToRight_white.position.set(-15000, 0, 0);
+mesh_beam_BottomLeftToRight_white.scale.set(1, 1, 1);
+mesh_beam_BottomLeftToRight_white.rotation.set(0, 0, 0)
+// mesh_beam_BottomLeftToRight_white.rotateX( - Math.PI / 2 );
+
+// beam_BottomLeftToRight_white.lookAt(camera)
+
+beam_BottomLeftToRight_white.add(mesh_beam_BottomLeftToRight_white)
+
+
+
+
+
+// beam_BottomRightToLeft_Blue
+beam_BottomRightToLeft_Blue = new THREE.Group()
+beam_BottomRightToLeft_Blue.position.set(-8, -5.6, 43)
+beam_BottomRightToLeft_Blue.rotation.set(0, 0, 0)
+beam_BottomRightToLeft_Blue.scale.set(0.15, 0.005, 0.1)
+BaseUI_Root_TopLeftComponent.add(beam_BottomRightToLeft_Blue)
+
+
+const mat_beam_BottomRightToLeft_Blue = new THREE.MeshBasicMaterial({ map: beamBlue, side: THREE.DoubleSide });
+mesh_beam_BottomRightToLeft_Blue = new THREE.Mesh(geo_objT_PlaneA1, mat_beam_BottomRightToLeft_Blue);
+mat_beam_BottomRightToLeft_Blue.transparent = true;
+mat_beam_BottomRightToLeft_Blue.alphaMap = beamBlue;
+mat_beam_BottomRightToLeft_Blue.color = new THREE.Color('#1ed9d0') // neonGreenBlue
+mesh_beam_BottomRightToLeft_Blue.position.set(0, 0, 0);
+// mesh_beam_BottomRightToLeft_Blue.position.set(-15000, 0, 0);
+mesh_beam_BottomRightToLeft_Blue.scale.set(1, 1, 1);
+mesh_beam_BottomRightToLeft_Blue.rotation.set(0, 0, 0)
+// mesh_beam_BottomRightToLeft_Blue.rotateX( - Math.PI / 2 );
+
+// beam_BottomRightToLeft_Blue.lookAt(camera)
+
+beam_BottomRightToLeft_Blue.add(mesh_beam_BottomRightToLeft_Blue)
+
+
+
+
+
+
+
+
+
+
+// |- mesh_BaseUI_Root_TopLeftComponent
+const mat_BaseUI_Root_TopLeftComponent = new THREE.MeshBasicMaterial({ map: BaseUI_Gear01, side: THREE.DoubleSide });
+mesh_BaseUI_Root_TopLeftComponent = new THREE.Mesh(geo_BaseUI_Root_ComponentL0, mat_BaseUI_Root_TopLeftComponent);
+mat_BaseUI_Root_TopLeftComponent.transparent = true;
+mat_BaseUI_Root_TopLeftComponent.alphaMap = BaseUI_Gear01;
+mesh_BaseUI_Root_TopLeftComponent.position.set(-68, 38, 0);
+// mesh_BaseUI_Root_TopLeftComponent.position.set(-15000, 0, 0);
+mesh_BaseUI_Root_TopLeftComponent.scale.set(.6, .6, .6);
+mesh_BaseUI_Root_TopLeftComponent.rotation.set(0, 0, 0)
+// mesh_BaseUI_Root_TopLeftComponent.rotateX( - Math.PI / 2 );
+
+// BaseUI_Root_TopLeftComponent.lookAt(camera)
+
+BaseUI_Root_TopLeftComponent.add(mesh_BaseUI_Root_TopLeftComponent)
+BaseUI_Root.add(BaseUI_Root_TopLeftComponent)
+
+
+// |- [ Component: TopLeftLightTechCircle = mesh_BaseUI_Root_TopLeftLightComponentL1 ] 
+const mat_BaseUI_Root_TopLeftLightComponentL1 = new THREE.MeshBasicMaterial({ map: BaseUI_LightTechCircle01, side: THREE.DoubleSide });
+mesh_BaseUI_Root_TopLeftLightComponentL1 = new THREE.Mesh(geo_BaseUI_Root_ComponentL0, mat_BaseUI_Root_TopLeftLightComponentL1);
+mat_BaseUI_Root_TopLeftLightComponentL1.transparent = true;
+mat_BaseUI_Root_TopLeftLightComponentL1.alphaMap = BaseUI_LightTechCircle01;
+mesh_BaseUI_Root_TopLeftLightComponentL1.position.set(-68, 38, 0.1);
+// mesh_BaseUI_Root_TopLeftLightComponentL1.position.set(-15000, 0, 0);
+mesh_BaseUI_Root_TopLeftLightComponentL1.scale.set(.5, .5, .5);
+mesh_BaseUI_Root_TopLeftLightComponentL1.rotation.set(0, 0, 0)
+// mesh_BaseUI_Root_TopLeftLightComponentL1.rotateX( - Math.PI / 2 );
+
+// BaseUI_Root_TopLeftLightComponentL1.lookAt(camera)
+
+BaseUI_Root_TopLeftComponent.add(mesh_BaseUI_Root_TopLeftLightComponentL1)
+
+
+
+
+// |- [ Component: TopLeftLightGear = mesh_BaseUI_Root_TopLeftLightComponentL2 ] 
+const mat_BaseUI_Root_TopLeftLightComponentL2 = new THREE.MeshBasicMaterial({ map: BaseUI_LightGear01, side: THREE.DoubleSide });
+mesh_BaseUI_Root_TopLeftLightComponentL2 = new THREE.Mesh(geo_BaseUI_Root_ComponentL0, mat_BaseUI_Root_TopLeftLightComponentL2);
+mat_BaseUI_Root_TopLeftLightComponentL2.transparent = true;
+mat_BaseUI_Root_TopLeftLightComponentL2.alphaMap = BaseUI_LightGear01;
+mesh_BaseUI_Root_TopLeftLightComponentL2.position.set(-68, 38, 0.2);
+// mesh_BaseUI_Root_TopLeftLightComponentL2.position.set(-15000, 0, 0);
+mesh_BaseUI_Root_TopLeftLightComponentL2.scale.set(.5, .5, .5);
+mesh_BaseUI_Root_TopLeftLightComponentL2.rotation.set(0, 0, 0)
+// mesh_BaseUI_Root_TopLeftLightComponentL2.rotateX( - Math.PI / 2 );
+
+// BaseUI_Root_TopLeftLightComponentL2.lookAt(camera)
+
+BaseUI_Root_TopLeftComponent.add(mesh_BaseUI_Root_TopLeftLightComponentL2)
+
+
+
+
+// BaseUI_Root_TopRightComponent
+// =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+BaseUI_Root_TopRightComponent = new THREE.Group()
+BaseUI_Root_TopRightComponent.position.set(0, 0, 0)
+BaseUI_Root.add(BaseUI_Root_TopRightComponent)
+
+
+
+const mat_BaseUI_Root_TopRightComponent = new THREE.MeshBasicMaterial({ map: BaseUI_Gear01, side: THREE.DoubleSide });
+mesh_BaseUI_Root_TopRightComponent = new THREE.Mesh(geo_BaseUI_Root_ComponentL0, mat_BaseUI_Root_TopRightComponent);
+mat_BaseUI_Root_TopRightComponent.transparent = true;
+mat_BaseUI_Root_TopRightComponent.alphaMap = BaseUI_Gear01;
+mesh_BaseUI_Root_TopRightComponent.position.set(68, 38, 0);
+// mesh_BaseUI_Root_TopRightComponent.position.set(-15000, 0, 0);
+mesh_BaseUI_Root_TopRightComponent.scale.set(.6, .6, .6);
+mesh_BaseUI_Root_TopRightComponent.rotation.set(0, 0, 0)
+// mesh_BaseUI_Root_TopRightComponent.rotateX( - Math.PI / 2 );
+
+// BaseUI_Root_TopRightComponent.lookAt(camera)
+
+BaseUI_Root_TopRightComponent.add(mesh_BaseUI_Root_TopRightComponent)
+BaseUI_Root.add(BaseUI_Root_TopRightComponent)
+
+
+// |-
+// |- [ Component: TopRightLightTechCircle = mesh_BaseUI_Root_TopRightLightComponentL1 ] 
+const mat_BaseUI_Root_TopRightLightComponentL1 = new THREE.MeshBasicMaterial({ map: BaseUI_LightTechCircle01, side: THREE.DoubleSide });
+mesh_BaseUI_Root_TopRightLightComponentL1 = new THREE.Mesh(geo_BaseUI_Root_ComponentL0, mat_BaseUI_Root_TopRightLightComponentL1);
+mat_BaseUI_Root_TopRightLightComponentL1.transparent = true;
+mat_BaseUI_Root_TopRightLightComponentL1.alphaMap = BaseUI_LightTechCircle01;
+mesh_BaseUI_Root_TopRightLightComponentL1.position.set(68, 38, 0.1);
+// mesh_BaseUI_Root_TopRightLightComponentL1.position.set(-15000, 0, 0);
+mesh_BaseUI_Root_TopRightLightComponentL1.scale.set(.5, .5, .5);
+mesh_BaseUI_Root_TopRightLightComponentL1.rotation.set(0, 0, 0)
+// mesh_BaseUI_Root_TopRightLightComponentL1.rotateX( - Math.PI / 2 );
+
+// BaseUI_Root_TopRightLightComponentL1.lookAt(camera)
+
+BaseUI_Root_TopLeftComponent.add(mesh_BaseUI_Root_TopRightLightComponentL1)
+
+
+
+
+// |- [ Component: TopRightLightGear = mesh_BaseUI_Root_TopRightLightComponentL2 ] 
+const mat_BaseUI_Root_TopRightLightComponentL2 = new THREE.MeshBasicMaterial({ map: BaseUI_LightGear01, side: THREE.DoubleSide });
+mesh_BaseUI_Root_TopRightLightComponentL2 = new THREE.Mesh(geo_BaseUI_Root_ComponentL0, mat_BaseUI_Root_TopRightLightComponentL2);
+mat_BaseUI_Root_TopRightLightComponentL2.transparent = true;
+mat_BaseUI_Root_TopRightLightComponentL2.alphaMap = BaseUI_LightGear01;
+mesh_BaseUI_Root_TopRightLightComponentL2.position.set(68, 38, 0.2);
+// mesh_BaseUI_Root_TopRightLightComponentL2.position.set(-15000, 0, 0);
+mesh_BaseUI_Root_TopRightLightComponentL2.scale.set(.5, .5, .5);
+mesh_BaseUI_Root_TopRightLightComponentL2.rotation.set(0, 0, 0)
+// mesh_BaseUI_Root_TopRightLightComponentL2.rotateX( - Math.PI / 2 );
+
+// BaseUI_Root_TopRightLightComponentL2.lookAt(camera)
+
+BaseUI_Root_TopLeftComponent.add(mesh_BaseUI_Root_TopRightLightComponentL2)
+
+
+
+
+// BaseUI_Root_TopRightComponent
+// =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+BaseUI_Root_BottomLeftComponent = new THREE.Group()
+BaseUI_Root_BottomLeftComponent.position.set(0, 0, 0)
+BaseUI_Root.add(BaseUI_Root_BottomLeftComponent)
+
+
+
+const mat_BaseUI_Root_BottomLeftComponent = new THREE.MeshBasicMaterial({ map: BaseUI_Gear01, side: THREE.DoubleSide });
+mesh_BaseUI_Root_BottomLeftComponent = new THREE.Mesh(geo_BaseUI_Root_ComponentL0, mat_BaseUI_Root_BottomLeftComponent);
+mat_BaseUI_Root_BottomLeftComponent.transparent = true;
+mat_BaseUI_Root_BottomLeftComponent.alphaMap = BaseUI_Gear01;
+mesh_BaseUI_Root_BottomLeftComponent.position.set(-68, -38, 0);
+// mesh_BaseUI_Root_BottomLeftComponent.position.set(-15000, 0, 0);
+mesh_BaseUI_Root_BottomLeftComponent.scale.set(.6, .6, .6);
+mesh_BaseUI_Root_BottomLeftComponent.rotation.set(0, 0, 0)
+// mesh_BaseUI_Root_BottomLeftComponent.rotateX( - Math.PI / 2 );
+
+// BaseUI_Root_BottomLeftComponent.lookAt(camera)
+
+BaseUI_Root_BottomLeftComponent.add(mesh_BaseUI_Root_BottomLeftComponent)
+BaseUI_Root.add(BaseUI_Root_BottomLeftComponent)
+
+
+
+
+// |- [ Component: BottomLeftLightTechCircle = mesh_BaseUI_Root_BottomLeftLightComponentL1 ] 
+const mat_BaseUI_Root_BottomLeftLightComponentL1 = new THREE.MeshBasicMaterial({ map: BaseUI_LightTechCircle01, side: THREE.DoubleSide });
+mesh_BaseUI_Root_BottomLeftLightComponentL1 = new THREE.Mesh(geo_BaseUI_Root_ComponentL0, mat_BaseUI_Root_BottomLeftLightComponentL1);
+mat_BaseUI_Root_BottomLeftLightComponentL1.transparent = true;
+mat_BaseUI_Root_BottomLeftLightComponentL1.alphaMap = BaseUI_LightTechCircle01;
+mesh_BaseUI_Root_BottomLeftLightComponentL1.position.set(-68, -38, 0.1);
+// mesh_BaseUI_Root_BottomLeftLightComponentL1.position.set(-15000, 0, 0);
+mesh_BaseUI_Root_BottomLeftLightComponentL1.scale.set(.5, .5, .5);
+mesh_BaseUI_Root_BottomLeftLightComponentL1.rotation.set(0, 0, 0)
+// mesh_BaseUI_Root_BottomLeftLightComponentL1.rotateX( - Math.PI / 2 );
+
+// BaseUI_Root_BottomLeftLightComponentL1.lookAt(camera)
+
+BaseUI_Root_BottomLeftComponent.add(mesh_BaseUI_Root_BottomLeftLightComponentL1)
+
+
+
+
+// |- [ Component: BottomLeftLightGear = mesh_BaseUI_Root_BottomLeftLightComponentL2 ] 
+const mat_BaseUI_Root_BottomLeftLightComponentL2 = new THREE.MeshBasicMaterial({ map: BaseUI_LightGear01, side: THREE.DoubleSide });
+mesh_BaseUI_Root_BottomLeftLightComponentL2 = new THREE.Mesh(geo_BaseUI_Root_ComponentL0, mat_BaseUI_Root_BottomLeftLightComponentL2);
+mat_BaseUI_Root_BottomLeftLightComponentL2.transparent = true;
+mat_BaseUI_Root_BottomLeftLightComponentL2.alphaMap = BaseUI_LightGear01;
+mesh_BaseUI_Root_BottomLeftLightComponentL2.position.set(-68, -38, 0.2);
+// mesh_BaseUI_Root_BottomLeftLightComponentL2.position.set(-15000, 0, 0);
+mesh_BaseUI_Root_BottomLeftLightComponentL2.scale.set(.5, .5, .5);
+mesh_BaseUI_Root_BottomLeftLightComponentL2.rotation.set(0, 0, 0)
+// mesh_BaseUI_Root_BottomLeftLightComponentL2.rotateX( - Math.PI / 2 );
+
+// BaseUI_Root_BottomLeftLightComponentL2.lookAt(camera)
+
+BaseUI_Root_BottomLeftComponent.add(mesh_BaseUI_Root_BottomLeftLightComponentL2)
+
+
+
+
+// BaseUI_Root_BottomRightComponent
+// =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+BaseUI_Root_BottomRightComponent = new THREE.Group()
+BaseUI_Root_BottomRightComponent.position.set(0, 0, 0)
+BaseUI_Root.add(BaseUI_Root_BottomRightComponent)
+
+
+
+const mat_BaseUI_Root_BottomRightComponent = new THREE.MeshBasicMaterial({ map: BaseUI_Gear01, side: THREE.DoubleSide });
+mesh_BaseUI_Root_BottomRightComponent = new THREE.Mesh(geo_BaseUI_Root_ComponentL0, mat_BaseUI_Root_BottomRightComponent);
+mat_BaseUI_Root_BottomRightComponent.transparent = true;
+mat_BaseUI_Root_BottomRightComponent.alphaMap = BaseUI_Gear01;
+mesh_BaseUI_Root_BottomRightComponent.position.set(68, -38, 0);
+// mesh_BaseUI_Root_BottomRightComponent.position.set(-15000, 0, 0);
+mesh_BaseUI_Root_BottomRightComponent.scale.set(.6, .6, .6);
+mesh_BaseUI_Root_BottomRightComponent.rotation.set(0, 0, 0)
+// mesh_BaseUI_Root_BottomRightComponent.rotateX( - Math.PI / 2 );
+
+// BaseUI_Root_BottomRightComponent.lookAt(camera)
+
+BaseUI_Root_BottomRightComponent.add(mesh_BaseUI_Root_BottomRightComponent)
+BaseUI_Root.add(BaseUI_Root_BottomRightComponent)
+
+
+// |- [ Component: BottomRightLightTechCircle = mesh_BaseUI_Root_BottomRightLightComponentL1 ] 
+const mat_BaseUI_Root_BottomRightLightComponentL1 = new THREE.MeshBasicMaterial({ map: BaseUI_LightTechCircle01, side: THREE.DoubleSide });
+mesh_BaseUI_Root_BottomRightLightComponentL1 = new THREE.Mesh(geo_BaseUI_Root_ComponentL0, mat_BaseUI_Root_BottomRightLightComponentL1);
+mat_BaseUI_Root_BottomRightLightComponentL1.transparent = true;
+mat_BaseUI_Root_BottomRightLightComponentL1.alphaMap = BaseUI_LightTechCircle01;
+mesh_BaseUI_Root_BottomRightLightComponentL1.position.set(68, -38, 0.1);
+// mesh_BaseUI_Root_BottomRightLightComponentL1.position.set(-15000, 0, 0);
+mesh_BaseUI_Root_BottomRightLightComponentL1.scale.set(.5, .5, .5);
+mesh_BaseUI_Root_BottomRightLightComponentL1.rotation.set(0, 0, 0)
+// mesh_BaseUI_Root_BottomRightLightComponentL1.rotateX( - Math.PI / 2 );
+
+// BaseUI_Root_BottomRightLightComponentL1.lookAt(camera)
+
+BaseUI_Root_TopLeftComponent.add(mesh_BaseUI_Root_BottomRightLightComponentL1)
+
+
+
+
+// |- [ Component: BottomRightLightGear = mesh_BaseUI_Root_BottomRightLightComponentL2 ] 
+const mat_BaseUI_Root_BottomRightLightComponentL2 = new THREE.MeshBasicMaterial({ map: BaseUI_LightGear01, side: THREE.DoubleSide });
+mesh_BaseUI_Root_BottomRightLightComponentL2 = new THREE.Mesh(geo_BaseUI_Root_ComponentL0, mat_BaseUI_Root_BottomRightLightComponentL2);
+mat_BaseUI_Root_BottomRightLightComponentL2.transparent = true;
+mat_BaseUI_Root_BottomRightLightComponentL2.alphaMap = BaseUI_LightGear01;
+mesh_BaseUI_Root_BottomRightLightComponentL2.position.set(68, -38, 0.2);
+// mesh_BaseUI_Root_BottomRightLightComponentL2.position.set(-15000, 0, 0);
+mesh_BaseUI_Root_BottomRightLightComponentL2.scale.set(.5, .5, .5);
+mesh_BaseUI_Root_BottomRightLightComponentL2.rotation.set(0, 0, 0)
+// mesh_BaseUI_Root_BottomRightLightComponentL2.rotateX( - Math.PI / 2 );
+
+// BaseUI_Root_BottomRightLightComponentL2.lookAt(camera)
+
+BaseUI_Root_TopLeftComponent.add(mesh_BaseUI_Root_BottomRightLightComponentL2)
+
+
+
+
+// ..:: ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ ::..
+// ..:: ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ ::..
+
+r_UI_BasicHud01_OperationsHud = new THREE.Group()
+r_UI_BasicHud01_OperationsHud.position.set(2000, 0, 140)
+scene.add(r_UI_BasicHud01_OperationsHud)
+camera.attach(r_UI_BasicHud01_OperationsHud)
+
+const mat_UI_BasicHud01_OperationsHud = new THREE.MeshBasicMaterial({ map: BasicHud02b, side: THREE.DoubleSide });
+mesh_UI_BasicHud01_OperationsHud = new THREE.Mesh(geo_objT_PlaneA1, mat_UI_BasicHud01_OperationsHud);
+mat_UI_BasicHud01_OperationsHud.transparent = true;
+mat_UI_BasicHud01_OperationsHud.alphaMap = BasicHud02b;
+// mat_UI_BasicHud01_OperationsHud.color = new THREE.Color("#FFFFFF")
+mat_UI_BasicHud01_OperationsHud.color = new THREE.Color("#00ffb3")
+mat_UI_BasicHud01_OperationsHud.blending = THREE.AdditiveBlending
+mesh_UI_BasicHud01_OperationsHud.position.set(0, 0, 0);
+// mesh_UI_BasicHud01_OperationsHud.position.set(-15000, 0, 0);
+mesh_UI_BasicHud01_OperationsHud.scale.set(2.5, 1.5, 1);
+mesh_UI_BasicHud01_OperationsHud.rotation.set(0, 0, 0)
+// mesh_UI_BasicHud01_OperationsHud.rotateX( - Math.PI / 2 );
+
+// UI_BasicHud01_OperationsHud.lookAt(camera)
+
+r_UI_BasicHud01_OperationsHud.add(mesh_UI_BasicHud01_OperationsHud)
+
+
+r_UI_BasicHud02_OperationsHud = new THREE.Group()
+r_UI_BasicHud02_OperationsHud.position.set(-2000, 0, 140)
+scene.add(r_UI_BasicHud02_OperationsHud)
+camera.attach(r_UI_BasicHud02_OperationsHud)
+
+const mat_UI_BasicHud02_OperationsHud = new THREE.MeshBasicMaterial({ map: BasicHud03b, side: THREE.DoubleSide });
+mesh_UI_BasicHud02_OperationsHud = new THREE.Mesh(geo_objT_PlaneA1, mat_UI_BasicHud02_OperationsHud);
+mat_UI_BasicHud02_OperationsHud.transparent = true;
+mat_UI_BasicHud02_OperationsHud.alphaMap = BasicHud03b;
+mat_UI_BasicHud02_OperationsHud.color = new THREE.Color("#FFFFFF")
+// mat_UI_BasicHud02_OperationsHud.color = new THREE.Color("#00ffb3")
+mat_UI_BasicHud02_OperationsHud.blending = THREE.AdditiveBlending
+mesh_UI_BasicHud02_OperationsHud.position.set(0, 0, 0);
+// mesh_UI_BasicHud02_OperationsHud.position.set(-15000, 0, 0);
+mesh_UI_BasicHud02_OperationsHud.scale.set(2.5, 1.5, 1);
+mesh_UI_BasicHud02_OperationsHud.rotation.set(0, 3.14, 0)
+// mesh_UI_BasicHud02_OperationsHud.rotateX( - Math.PI / 2 );
+
+// UI_BasicHud02_OperationsHud.lookAt(camera)
+
+r_UI_BasicHud02_OperationsHud.add(mesh_UI_BasicHud02_OperationsHud)
+
+
+
+// |- # Hud 03 - Half Cylinder A
+r_UI_BasicHud03_OperationsHud = new THREE.Group()
+r_UI_BasicHud03_OperationsHud.position.set(-2000, 0, 145)
+scene.add(r_UI_BasicHud03_OperationsHud)
+camera.attach(r_UI_BasicHud03_OperationsHud)
+
+const mat_UI_BasicHud03_OperationsHud = new THREE.MeshBasicMaterial({ map: BasicHud02b, side: THREE.DoubleSide });
+mesh_UI_BasicHud03_OperationsHud = new THREE.Mesh(geo_objT_CylinderOpenedA0, mat_UI_BasicHud03_OperationsHud);
+mat_UI_BasicHud03_OperationsHud.transparent = true;
+mat_UI_BasicHud03_OperationsHud.alphaMap = BasicHud02b;
+mat_UI_BasicHud03_OperationsHud.color = new THREE.Color("#FFFFFF")
+// mat_UI_BasicHud03_OperationsHud.color = new THREE.Color("#00ffb3")
+mat_UI_BasicHud03_OperationsHud.blending = THREE.AdditiveBlending
+mesh_UI_BasicHud03_OperationsHud.position.set(0, 0, 0);
+// mesh_UI_BasicHud03_OperationsHud.position.set(-15000, 0, 0);
+mesh_UI_BasicHud03_OperationsHud.scale.set(4, 4, 4);
+mesh_UI_BasicHud03_OperationsHud.rotation.set(0, 1.959, 0)
+// mesh_UI_BasicHud03_OperationsHud.rotateX( - Math.PI / 2 );
+
+// UI_BasicHud03_OperationsHud.lookAt(camera)
+
+r_UI_BasicHud03_OperationsHud.add(mesh_UI_BasicHud03_OperationsHud)
+
+
+
+
+// #################################################################################
+// #################################################################################
+// #################################################################################
+// UI - Logo
+// #################################################################################
+
+
+r_PrimaryMainLogo = new THREE.Group()
+// r_PrimaryMainLogo.position.set(-119, 66, 50) // on the left hand side
+r_PrimaryMainLogo.position.set(0, 66, 200)
+r_PrimaryMainLogo.rotation.set(0, 0, 0)
+r_PrimaryMainLogo.scale.set(0.175, 0.175, 0.175)
+scene.add(r_PrimaryMainLogo)
+camera.attach(r_PrimaryMainLogo)
+
+
+PrimaryLogo_RealitySkin = new THREE.Group()
+PrimaryLogo_RealitySkin.position.set(0, 0, 0)
+PrimaryLogo_RealitySkin.rotation.set(0.614, 0, 0)
+PrimaryLogo_RealitySkin.scale.set(8, 8, 8)
+r_PrimaryMainLogo.add(PrimaryLogo_RealitySkin)
+
+
+const mat_PrimaryLogo_RealitySkin = new THREE.MeshBasicMaterial({ map: gridF2_PureGreenOoze, side: THREE.DoubleSide });
+mesh_PrimaryLogo_RealitySkin = new THREE.Mesh(geo_objT_DiamondA0, mat_PrimaryLogo_RealitySkin);
+mat_PrimaryLogo_RealitySkin.transparent = false;
+mat_PrimaryLogo_RealitySkin.wireframe = true
+mat_PrimaryLogo_RealitySkin.alphaMap = gridF2_PureGreenOoze;
+mesh_PrimaryLogo_RealitySkin.position.set(0, 0, 0);
+// mesh_PrimaryLogo_RealitySkin.position.set(-15000, 0, 0);
+mesh_PrimaryLogo_RealitySkin.scale.set(1, 1, 1);
+mesh_PrimaryLogo_RealitySkin.rotation.set(0, 0, 0)
+// mesh_PrimaryLogo_RealitySkin.rotateX( - Math.PI / 2 );
+
+// PrimaryLogo_RealitySkin.lookAt(camera)
+PrimaryLogo_RealitySkin.add(mesh_PrimaryLogo_RealitySkin)
+
+
+
+
+// (Back-to-Front)
+// Primary Logo / Gear 3
+PrimaryLogo_Gear3 = new THREE.Group()
+PrimaryLogo_Gear3.scale.set(0.45, 0.45, 0.45)
+r_PrimaryMainLogo.add(PrimaryLogo_Gear3)
+
+PrimaryLogo_Gear3.add(
+    
+    new hoverObject(
+        'img',
+        -1.2, 2.5, -5,
+        0, 0, 0,
+        0.45, 0.45, 0.45,
+        "Testing234", "TestingClass234",
+        "./assets/img/02-UserUI/04-Logo/WhiteGear01.svg", "",
+        "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Love each other...correctly.",
+        // uxFx_Navbar_Toggle
+    )
+
+)
+
+
+// Primary Logo / Gear 2
+PrimaryLogo_Gear2 = new THREE.Group()
+PrimaryLogo_Gear2.position.set(0, 0, 0.1)
+PrimaryLogo_Gear2.scale.set(0.2, 0.2, 0.2)
+r_PrimaryMainLogo.add(PrimaryLogo_Gear2)
+
+
+PrimaryLogo_Gear2.add(
+    
+    new hoverObject(
+        'img',
+        -1.2, 2.5, -5,
+        0, 0, 0,
+        0.45, 0.45, 0.45,
+        "Testing234", "TestingClass234",
+        "./assets/img/02-UserUI/04-Logo/WhiteLogoBackground01.svg", "",
+        "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Love each other...correctly.",
+        // uxFx_Navbar_Toggle
+    )
+
+)
+
+
+
+// Primary Logo / Frames
+PrimaryLogo_Frames = new THREE.Group()
+PrimaryLogo_Frames.position.set(0, 0, 0.2)
+PrimaryLogo_Frames.scale.set(0.15, 0.15, 0.15)
+r_PrimaryMainLogo.add(PrimaryLogo_Frames)
+
+PrimaryLogo_Frames.add(
+    
+    new hoverObject(
+        'img',
+        -1.2, 2.5, -5,
+        0, 0, 0,
+        0.45, 0.45, 0.45,
+        "Testing234", "TestingClass234",
+        "./assets/img/02-UserUI/04-Logo/WhiteGear01.svg", "",
+        "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Love each other...correctly.",
+        // uxFx_Navbar_Toggle
+    )
+
+)
+
+// Primary Logo / PrimaryLogo_Core
+PrimaryLogo_Core = new THREE.Group()
+PrimaryLogo_Core.position.set(0, 0, 0.3)
+PrimaryLogo_Core.scale.set(0.25, 0.25, 0.25)
+r_PrimaryMainLogo.add(PrimaryLogo_Core)
+
+PrimaryLogo_Core.add(
+    
+    new hoverObject(
+        'img',
+        -1.2, 2.5, -5,
+        0, 0, 0,
+        0.45, 0.45, 0.45,
+        "Testing234", "TestingClass234",
+        "./assets/img/02-UserUI/04-Logo/Core.svg", "",
+        "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Love each other...correctly.",
+        // uxFx_Navbar_Toggle
+    )
+
+)
+
+
+// Primary Logo / TimeRing01
+PrimaryLogo_TimeRing01 = new THREE.Group()
+PrimaryLogo_TimeRing01.position.set(4, -5, 7)
+PrimaryLogo_TimeRing01.scale.set(0.25, 0.25, 0.25)
+r_PrimaryMainLogo.add(PrimaryLogo_TimeRing01)
+
+PrimaryLogo_TimeRing01.add(
+    
+    new hoverObject(
+        'img',
+        -1.2, 2.5, -5,
+        0, 0, 0,
+        0.45, 0.45, 0.45,
+        "Testing234", "TestingClass234",
+        "./assets/img/02-UserUI/04-Logo/WhiteGear01.svg", "",
+        "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Love each other...correctly.",
+        
+    )
+
+)
+
+// Primary Logo / ElectricSpinner01
+PrimaryLogo_ElectricSpinner01 = new THREE.Group()
+r_PrimaryMainLogo.add(PrimaryLogo_ElectricSpinner01)
+
+
+// Primary Logo / WhiteClearShield
+PrimaryLogo_WhiteClearShield = new THREE.Group()
+r_PrimaryMainLogo.add(PrimaryLogo_WhiteClearShield)
+
+
+// Primary Logo / Tree
+PrimaryLogo_Tree = new THREE.Group()
+PrimaryLogo_Tree.position.set(0, -6, 10)
+PrimaryLogo_Tree.scale.set(0.095, 0.095, 0.095)
+r_PrimaryMainLogo.add(PrimaryLogo_Tree)
+
+PrimaryLogo_Tree.add(
+    
+    new hoverObject(
+        'img',
+        -1.2, 2.5, -5,
+        0, 0, 0,
+        0.45, 0.45, 0.45,
+        "Testing234", "TestingClass234",
+        "./assets/img/02-UserUI/04-Logo/Logo_Tree.png", "",
+        "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Love each other...correctly.",
+        // uxFx_Navbar_Toggle
+    )
+
+)
+
+
+// Primary Logo / Bolt
+PrimaryLogo_Bolt = new THREE.Group()
+PrimaryLogo_Bolt.position.set(6, -3, 12)
+PrimaryLogo_Bolt.scale.set(2.5, 2.5, 2.5)
+PrimaryLogo_Tree.add(PrimaryLogo_Bolt)
+
+
+PrimaryLogo_Bolt.add(
+    
+    new hoverObject(
+        'img',
+        -1.2, 2.5, -5,
+        0, 0, 0,
+        0.45, 0.45, 0.45,
+        "Testing234", "TestingClass234",
+        "./assets/img/02-UserUI/04-Logo/Bolt.svg", "",
+        "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Love each other...correctly.",
+        // uxFx_Navbar_Toggle
+    )
+
+)
+
+
+
+
+
+// #####################################################
+				// Primary Menu 
+				// #####################################################
+
+				UIPrimary_LH_Menu_Primary = new THREE.Group()
+				UIPrimary_LH_Menu_Primary.position.set(-294, 28, 50)
+				UIPrimary_LH_Menu_Primary.rotation.set(0, 0, 0)
+				UIPrimary_LH_Menu_Primary.scale.set(0.35, 0.35, 0.35)
+				scene.add(UIPrimary_LH_Menu_Primary)
+				camera.attach(UIPrimary_LH_Menu_Primary)
+				// UIPrimary_LH_Root.add(UIPrimary_LH_Menu_Primary)
+
+
+				UIPrimary_LH_Menu_Primary.add(
+					new hoverObject(
+						'img',
+						0, 2, 30,
+						0, 0, 0,
+						0.1, 0.1, 0.1,
+						"Testing234", "TestingClass234",
+						"./assets/img/03-HudUI/RegPanels/ClearPanelHorizontal.svg", "",
+						"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+						uxFx_MentalHookShot_ElevatorLevel1_a
+					)
+				)
+
+
+				// GithubProfiles App
+				LH_Primary_Menu_Apps07_GithubProfiles = new THREE.Group()
+				LH_Primary_Menu_Apps07_GithubProfiles.position.set(91, 32, 31)
+				LH_Primary_Menu_Apps07_GithubProfiles.rotation.set(0, 0, 0)
+				LH_Primary_Menu_Apps07_GithubProfiles.scale.set(.45, .45, .45)
+				UIPrimary_LH_Menu_Primary.add(LH_Primary_Menu_Apps07_GithubProfiles)
+
+				
+				LH_Primary_Menu_Apps07_GithubProfiles.add(
+					new TechIcon(
+						0, 0, 0,
+						0, 0, 0,
+						1, 1, 1,
+						'DefaultTechIconId', 'DefaultTechIconClassName',
+						'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+						'DefaultImgId', 'DefaultImgClassName',
+						'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+						"./assets/icons/00-Official/UI/Isometric/Tools/0-Utilities/Default/web-account.svg", "",
+						uxFx_BringGithubProfilesAppToMe_Toggle, 
+						"LH Realities Functions Section",
+						"Search Github Profiles here"
+					)
+				)
+				
+
+
+
+				
+
+
+				
+
+
+				
+
+
+
+				
+
+
+
+				
+
+
+				
+
+
+				
+
+
+
+
+
+
+
+				
+
+
+				
+				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				// #####################################################
+				// Secondary Menu 
+				// #####################################################
+
+				UI_LH_HoldMenu = new THREE.Group()
+				UI_LH_HoldMenu.position.set(-313, -13, 50)
+				UI_LH_HoldMenu.rotation.set(0, 3.14, 3.14)
+				UI_LH_HoldMenu.scale.set(0.55, 0.55, 0.55)
+				scene.add(UI_LH_HoldMenu)
+				camera.attach(UI_LH_HoldMenu)
+				// UIPrimary_LH_Root.add(UI_LH_HoldMenu)
+
+
+				UI_LH_HoldMenu.add(
+					new hoverObject(
+						'img',
+						0, 2, 30,
+						0, 3.14, 0,
+						0.1, 0.1, 0.1,
+						"Testing234", "TestingClass234",
+						"./assets/img/03-HudUI/RegPanels/ClearPanelHorizontal.svg", "",
+						"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+						uxFx_MentalHookShot_ElevatorLevel1_a
+					)
+				)
+
+				UI_LH_Brain = new THREE.Group()
+				UI_LH_Brain.position.set(-60, -6, 30)
+				UI_LH_Brain.rotation.set(0, 0, 0)
+				UI_LH_Brain.scale.set(0.7, 0.7, 0.7)
+				UI_LH_HoldMenu.add(UI_LH_Brain)
+
+
+				UI_LH_Brain.add(
+					new hoverObject(
+						'img',
+						0, 0, 0,
+						0, 3.14, 3.14,
+						0.045, 0.045, 0.045,
+						"Testing234", "TestingClass234",
+						"./assets/img/02-UserUI/05-AssistImgs/Brain.svg", "",
+						"TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+						uxFx_MentalHookShot_ElevatorLevel1_a
+					)
+				)
+
+
+				// UI_LH_Brain_GoToCenterBrain_Icon
+				UI_LH_Brain_GoToCenterBrain_Icon = new THREE.Group()
+				UI_LH_Brain_GoToCenterBrain_Icon.position.set(23.5, 0, -0.05)
+				UI_LH_Brain_GoToCenterBrain_Icon.rotation.set(0, 0, 0)
+				UI_LH_Brain_GoToCenterBrain_Icon.scale.set(0.4, 0.4, 0.4)
+				UI_LH_Brain.add(UI_LH_Brain_GoToCenterBrain_Icon)
+
+
+				UI_LH_Brain_GoToCenterBrain_Icon.add(
+					new TechIcon(
+						0, 0, -50,
+						0, 3.14, 3.14,
+						1, 1, 1,
+						'DefaultTechIconId', 'DefaultTechIconClassName',
+						'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+						'DefaultImgId', 'DefaultImgClassName',
+						'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+						"./assets/icons/00-Official/UI/Isometric/Tools/global-location01.svg", "",
+						uxFx_GoToPortfolioProper, 
+						"Send to Center Brain",
+						"Send the structure to the center brain"
+					)
+				)
+
+
+
+
+				// UI_LH_Brain_GoToLeftBrain_Icon
+				UI_LH_Brain_GoToLeftBrain_Icon = new THREE.Group()
+				UI_LH_Brain_GoToLeftBrain_Icon.position.set(-16.5, 0, 0.01)
+				UI_LH_Brain_GoToLeftBrain_Icon.rotation.set(0, 0, 0)
+				UI_LH_Brain_GoToLeftBrain_Icon.scale.set(0.4, 0.4, 0.4)
+				UI_LH_Brain.add(UI_LH_Brain_GoToLeftBrain_Icon)
+
+
+				UI_LH_Brain_GoToLeftBrain_Icon.add(
+					new TechIcon(
+						0, 0, -50,
+						0, 3.14, 3.14,
+						1, 1, 1,
+						'DefaultTechIconId', 'DefaultTechIconClassName',
+						'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+						'DefaultImgId', 'DefaultImgClassName',
+						'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+						"./assets/icons/00-Official/UI/Isometric/Tools/global-location01.svg", "",
+						uxFx_GoToPortfolioProper, 
+						"Send to Left Brain",
+						"Send the structure to the left brain"
+					)
+				)
+
+
+
+
+
+				// UI_LH_Brain_GoToRightBrain_Icon
+				UI_LH_Brain_GoToRightBrain_Icon = new THREE.Group()
+				UI_LH_Brain_GoToRightBrain_Icon.position.set(63.5, 0, 0.01)
+				UI_LH_Brain_GoToRightBrain_Icon.rotation.set(0, 0, 0)
+				UI_LH_Brain_GoToRightBrain_Icon.scale.set(0.4, 0.4, 0.4)
+				UI_LH_Brain.add(UI_LH_Brain_GoToRightBrain_Icon)
+
+
+				UI_LH_Brain_GoToRightBrain_Icon.add(
+					new TechIcon(
+						0, 0, -50,
+						0, 3.14, 3.14,
+						1, 1, 1,
+						'DefaultTechIconId', 'DefaultTechIconClassName',
+						'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+						'DefaultImgId', 'DefaultImgClassName',
+						'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+						"./assets/icons/00-Official/UI/Isometric/Tools/global-location01.svg", "",
+						uxFx_GoToPortfolioProper, 
+						"Send to Right Brain",
+						"Send the structure to the right brain"
+					)
+				)
+
+
+
+
+				// UI_LH_Brain_GoToRearBrain_Icon
+				UI_LH_Brain_GoToRearBrain_Icon = new THREE.Group()
+				UI_LH_Brain_GoToRearBrain_Icon.position.set(23.5, 40, 0)
+				UI_LH_Brain_GoToRearBrain_Icon.rotation.set(0, 0, 0)
+				UI_LH_Brain_GoToRearBrain_Icon.scale.set(0.4, 0.4, 0.4)
+				UI_LH_Brain.add(UI_LH_Brain_GoToRearBrain_Icon)
+
+
+				UI_LH_Brain_GoToRearBrain_Icon.add(
+					new TechIcon(
+						0, 0, -50,
+						0, 3.14, 3.14,
+						1, 1, 1,
+						'DefaultTechIconId', 'DefaultTechIconClassName',
+						'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+						'DefaultImgId', 'DefaultImgClassName',
+						'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+						"./assets/icons/00-Official/UI/Isometric/Tools/global-location01.svg", "",
+						uxFx_GoToPortfolioProper, 
+						"Send to Rear Brain",
+						"Send the structure to the rear brain"
+					)
+				)
+
+
+
+
+
+				// UI_LH_Brain_GoToFrontBrain_Icon
+				UI_LH_Brain_GoToFrontBrain_Icon = new THREE.Group()
+				UI_LH_Brain_GoToFrontBrain_Icon.position.set(23.5, -40, -0.02)
+				UI_LH_Brain_GoToFrontBrain_Icon.rotation.set(0, 0, 0)
+				UI_LH_Brain_GoToFrontBrain_Icon.scale.set(0.4, 0.4, 0.4)
+				UI_LH_Brain.add(UI_LH_Brain_GoToFrontBrain_Icon)
+
+
+				UI_LH_Brain_GoToFrontBrain_Icon.add(
+					new TechIcon(
+						0, 0, -50,
+						0, 3.14, 3.14,
+						1, 1, 1,
+						'DefaultTechIconId', 'DefaultTechIconClassName',
+						'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+						'DefaultImgId', 'DefaultImgClassName',
+						'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+						"./assets/icons/00-Official/UI/Isometric/Tools/global-location01.svg", "",
+						uxFx_GoToPortfolioProper, 
+						"Send to Front Brain",
+						"Send the structure to the front brain"
+					)
+				)
+
+
+
+
+				
+
+
+
+
+
+				// const mat_UI_LH_HoldMenu = new THREE.MeshBasicMaterial({ map: ContainerConnectorA1, side: THREE.DoubleSide });
+				// mesh_UI_LH_HoldMenu = new THREE.Mesh(geo_objT_CylinderClosedA0, mat_UI_LH_HoldMenu);
+				// mat_UI_LH_HoldMenu.transparent = true;
+				// mat_UI_LH_HoldMenu.alphaMap = ContainerConnectorA1;
+				// mesh_UI_LH_HoldMenu.position.set(0, 0, 0);
+				// // mesh_UI_LH_HoldMenu.position.set(-15000, 0, 0);
+				// mesh_UI_LH_HoldMenu.scale.set(12.5, 52.5, 12.5);
+				// mesh_UI_LH_HoldMenu.rotation.set(0, 1.575, 0)
+				// mesh_UI_LH_HoldMenu.rotateX( - Math.PI / 2 );
+
+				// // UI_LH_HoldMenu.lookAt(camera)
+				
+				// UI_LH_HoldMenu.add(mesh_UI_LH_HoldMenu)
+
+
+
+				HoldItem_DefaultGridSphere = new THREE.Group()
+				HoldItem_DefaultGridSphere.position.set(95, -16, 0)
+				HoldItem_DefaultGridSphere.rotation.set(0, 3.14, 0)
+				HoldItem_DefaultGridSphere.scale.set(1.5, 1.5, 1.5)
+				UI_LH_HoldMenu.add(HoldItem_DefaultGridSphere)
+
+
+				function regenerateLeftSphereMatrixGeometriesA01() {
+					let radius = handSphereMatrixParams.radius
+					let scaleRadius = radius * 0.1
+					let newGeometry = new THREE.SphereGeometry(
+
+						handSphereMatrixParams.radius,
+						handSphereMatrixParams.widthSegments,
+						handSphereMatrixParams.heightSegments,
+						handSphereMatrixParams.phiStart,
+						handSphereMatrixParams.phiLength,
+						handSphereMatrixParams.thetaStart,
+						handSphereMatrixParams.thetaLength,
+					)
+					mesh_leftHandSphereA01.scale.x = scaleRadius
+					mesh_leftHandSphereA01.scale.y = scaleRadius
+					mesh_leftHandSphereA01.scale.z = scaleRadius
+				}
+
+				const mat_HoldItem_DefaultGridSphere = new THREE.MeshBasicMaterial({ map: SceneWallpaper_01, side: THREE.DoubleSide });
+				mesh_HoldItem_DefaultGridSphere = new THREE.Mesh(geo_objT_SphereA0, mat_HoldItem_DefaultGridSphere);
+				mat_HoldItem_DefaultGridSphere.transparent = true;
+				mat_HoldItem_DefaultGridSphere.wireframe = true
+				mat_HoldItem_DefaultGridSphere.alphaMap = SceneWallpaper_01;
+				mesh_HoldItem_DefaultGridSphere.position.set(0, 0, 0);
+				// mesh_HoldItem_DefaultGridSphere.position.set(-15000, 0, 0);
+				mesh_HoldItem_DefaultGridSphere.scale.set(1, 1, 1);
+				mesh_HoldItem_DefaultGridSphere.rotation.set(0, 0, 0)
+				// mesh_HoldItem_DefaultGridSphere.rotateX( - Math.PI / 2 );
+
+				// HoldItem_DefaultGridSphere.lookAt(camera)
+				
+				HoldItem_DefaultGridSphere.add(mesh_HoldItem_DefaultGridSphere)
+
+
+
+
+
+				
+
+
+
+
+
+				// HoldItem_DefaultGridSphere_Controls
+				HoldItem_DefaultGridSphere_Controls = new THREE.Group()
+				HoldItem_DefaultGridSphere_Controls.position.set(-217, -19, 100)
+				HoldItem_DefaultGridSphere_Controls.rotation.set(0, 0, 0)
+				HoldItem_DefaultGridSphere_Controls.scale.set(0.4, 0.4, 0.4)
+				scene.add(HoldItem_DefaultGridSphere_Controls)
+				camera.attach(HoldItem_DefaultGridSphere_Controls)
+
+
+
+				// Grid Sphere Controls Expand Button
+				HoldItem_DefaultGridSphere_Controls_Expand = new THREE.Group()
+				HoldItem_DefaultGridSphere_Controls_Expand.position.set(-17, 15, .1)
+				HoldItem_DefaultGridSphere_Controls_Expand.rotation.set(0, 3.14, 0)
+				HoldItem_DefaultGridSphere_Controls_Expand.scale.set(0.15, 0.15, 0.15)
+				HoldItem_DefaultGridSphere_Controls.add(HoldItem_DefaultGridSphere_Controls_Expand)
+
+				HoldItem_DefaultGridSphere_Controls_Expand.add(
+					new TechIcon(
+						0, 0, 0,
+						0, 3.14, 0,
+						1, 1, 1,
+						'DefaultTechIconId', 'DefaultTechIconClassName',
+						'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+						'DefaultImgId', 'DefaultImgClassName',
+						'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+						"./assets/icons/00-Official/UI/Isometric/Tools/3-EssentialUI/enlarge-arrows.svg", "",
+						uxFx_ExpandDefaultGrid, 
+						"Expand the Grid Sphere",
+						"Click to 'maximize' the Grid Sphere"
+					)
+				)
+
+
+				// Grid Sphere Controls Contract Button
+				HoldItem_DefaultGridSphere_Controls_Contract = new THREE.Group()
+				HoldItem_DefaultGridSphere_Controls_Contract.position.set(-17, 28, .2)
+				HoldItem_DefaultGridSphere_Controls_Contract.rotation.set(0, 3.14, 0)
+				HoldItem_DefaultGridSphere_Controls_Contract.scale.set(0.15, 0.15, 0.15)
+				HoldItem_DefaultGridSphere_Controls.add(HoldItem_DefaultGridSphere_Controls_Contract)
+
+				HoldItem_DefaultGridSphere_Controls_Contract.add(
+					new TechIcon(
+						0, 0, 0,
+						0, 3.14, 0,
+						1, 1, 1,
+						'DefaultTechIconId', 'DefaultTechIconClassName',
+						'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+						'DefaultImgId', 'DefaultImgClassName',
+						'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+						"./assets/icons/00-Official/UI/Isometric/Tools/3-EssentialUI/inward-arrows.svg", "",
+						uxFx_ExpandDefaultGrid, 
+						"Contract Sphere",
+						"Click to 'minimize' the Grid Sphere"
+					)
+				)
+
+
+
+				LH_HoldItem_DefaultControls = new THREE.Group()
+				LH_HoldItem_DefaultControls.position.set(-17, 40, .3)
+				LH_HoldItem_DefaultControls.rotation.set(0, 3.14, 0)
+				LH_HoldItem_DefaultControls.scale.set(0.15, 0.15, 0.15)
+				HoldItem_DefaultGridSphere_Controls.add(LH_HoldItem_DefaultControls)
+
+
+				// LH Default Grid Sphere / Next Shape
+				LH_HoldItem_DefaultControls_NextShape = new THREE.Group()
+				LH_HoldItem_DefaultControls_NextShape.position.set(0, 0, 0)
+				LH_HoldItem_DefaultControls_NextShape.rotation.set(0, 0, 0)
+				LH_HoldItem_DefaultControls_NextShape.scale.set(1, 1, 1)
+				LH_HoldItem_DefaultControls.add(LH_HoldItem_DefaultControls_NextShape)
+
+				LH_HoldItem_DefaultControls_NextShape.add(
+					new TechIcon(
+						0, 0, 0,
+						0, 3.14, 0,
+						1, 1, 1,
+						'DefaultTechIconId', 'DefaultTechIconClassName',
+						'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+						'DefaultImgId', 'DefaultImgClassName',
+						'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+						"./assets/icons/00-Official/UI/Isometric/Tools/3-EssentialUI/down-arrow.svg", "",
+						uxFx_LeftBrainAppDrawer, 
+						"Contract Sphere",
+						"Click to 'minimize' the Grid Sphere"
+					)
+				)
+
+
+
+				// LH Default Grid Sphere / Previous Shape
+				LH_HoldItem_DefaultControls_PreviousShape = new THREE.Group()
+				LH_HoldItem_DefaultControls_PreviousShape.position.set(0, 83, 0)
+				LH_HoldItem_DefaultControls_PreviousShape.rotation.set(0, 0, 0)
+				LH_HoldItem_DefaultControls_PreviousShape.scale.set(1, 1, 1)
+				LH_HoldItem_DefaultControls.add(LH_HoldItem_DefaultControls_PreviousShape)
+
+				LH_HoldItem_DefaultControls_PreviousShape.add(
+					new TechIcon(
+						0, 0, 0,
+						0, 3.14, 0,
+						1, 1, 1,
+						'DefaultTechIconId', 'DefaultTechIconClassName',
+						'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+						'DefaultImgId', 'DefaultImgClassName',
+						'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+						"./assets/icons/00-Official/UI/Isometric/Tools/3-EssentialUI/up-arrow.svg", "",
+						uxFx_LeftBrainAppDrawer, 
+						"Contract Sphere",
+						"Click to 'minimize' the Grid Sphere"
+					)
+				)
+
+
+
+
+
+				// LH Default Grid Sphere / Spin
+				HoldItem_DefaultGridSphere_Controls_Spin = new THREE.Group()
+				HoldItem_DefaultGridSphere_Controls_Spin.position.set(100, 83, 0)
+				HoldItem_DefaultGridSphere_Controls_Spin.rotation.set(0, 0, 0)
+				HoldItem_DefaultGridSphere_Controls_Spin.scale.set(1, 1, 1)
+				LH_HoldItem_DefaultControls.add(HoldItem_DefaultGridSphere_Controls_Spin)
+
+				HoldItem_DefaultGridSphere_Controls_Spin.add(
+					new TechIcon(
+						0, 0, 0,
+						0, 3.14, 0,
+						1, 1, 1,
+						'DefaultTechIconId', 'DefaultTechIconClassName',
+						'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+						'DefaultImgId', 'DefaultImgClassName',
+						'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+						"./assets/icons/00-Official/UI/Isometric/Tools/3-EssentialUI/360-degree.svg", "",
+						uxFx_SpinningDefaultGrid, 
+						"Contract Sphere",
+						"Click to 'minimize' the Grid Sphere"
+					)
+				)
+
+
+
+				// LH Default Grid Sphere / Transparent Toggle
+				HoldItem_DefaultGridSphere_Controls_TransparentToggle = new THREE.Group()
+				HoldItem_DefaultGridSphere_Controls_TransparentToggle.position.set(100, 0, 0.4)
+				HoldItem_DefaultGridSphere_Controls_TransparentToggle.rotation.set(0, 0, 0)
+				HoldItem_DefaultGridSphere_Controls_TransparentToggle.scale.set(1, 1, 1)
+				LH_HoldItem_DefaultControls.add(HoldItem_DefaultGridSphere_Controls_TransparentToggle)
+
+				HoldItem_DefaultGridSphere_Controls_TransparentToggle.add(
+					new TechIcon(
+						0, 0, 0,
+						0, 3.14, 0,
+						1, 1, 1,
+						'DefaultTechIconId', 'DefaultTechIconClassName',
+						'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+						'DefaultImgId', 'DefaultImgClassName',
+						'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+						"./assets/icons/00-Official/UI/Isometric/Tools/3-EssentialUI/transparentToggle.svg", "",
+						uxFx_DefaultGrid_TransparentToggle, 
+						"Transparent/Show",
+						"Click to 'toggle' the transparency"
+					)
+				)
+
+
+
+				// LH Default Grid Sphere / Change Color = NeonGreen
+				HoldItem_DefaultGridSphere_Controls_AlphaNeonGreen = new THREE.Group()
+				HoldItem_DefaultGridSphere_Controls_AlphaNeonGreen.position.set(100, -83, 0.3)
+				HoldItem_DefaultGridSphere_Controls_AlphaNeonGreen.rotation.set(0, 0, 0)
+				HoldItem_DefaultGridSphere_Controls_AlphaNeonGreen.scale.set(1, 1, 1)
+				LH_HoldItem_DefaultControls.add(HoldItem_DefaultGridSphere_Controls_AlphaNeonGreen)
+
+				HoldItem_DefaultGridSphere_Controls_AlphaNeonGreen.add(
+					new TechIcon(
+						0, 0, 0,
+						0, 3.14, 0,
+						1, 1, 1,
+						'DefaultTechIconId', 'DefaultTechIconClassName',
+						'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+						'DefaultImgId', 'DefaultImgClassName',
+						'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+						"./assets/icons/00-Official/UI/Isometric/Tools/3-EssentialUI/tabs.svg", "",
+						uxFx_DefaultGrid_ChangeColor_neonGreen, 
+						"Wallpaper to NeonGreen",
+						"Click to 'toggle' between Colors"
+					)
+				)
+
+
+
+				// LH Default Grid Sphere / Change Color = NeonBlue
+				HoldItem_DefaultGridSphere_Controls_AlphaNeonBlue = new THREE.Group()
+				HoldItem_DefaultGridSphere_Controls_AlphaNeonBlue.position.set(100, -166, 0.2)
+				HoldItem_DefaultGridSphere_Controls_AlphaNeonBlue.rotation.set(0, 0, 0)
+				HoldItem_DefaultGridSphere_Controls_AlphaNeonBlue.scale.set(1, 1, 1)
+				LH_HoldItem_DefaultControls.add(HoldItem_DefaultGridSphere_Controls_AlphaNeonBlue)
+
+				HoldItem_DefaultGridSphere_Controls_AlphaNeonBlue.add(
+					new TechIcon(
+						0, 0, 0,
+						0, 3.14, 0,
+						1, 1, 1,
+						'DefaultTechIconId', 'DefaultTechIconClassName',
+						'DefaultHeaderInfoId', 'DefaultHeaderInfoClassName',
+						'DefaultImgId', 'DefaultImgClassName',
+						'DefaultTechIconInfoPanelId', 'DefaultTechIconInfoPanelClassName',
+						"./assets/icons/00-Official/UI/Isometric/Tools/3-EssentialUI/tabs.svg", "",
+						uxFx_DefaultGrid_ChangeColor_neonBlue, 
+						"Wallpaper to NeonYellow",
+						"Click to 'toggle' between Colors"
+					)
+				)
+
+
+				
+
+
+
+				
+
+				
+
+
+				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6875,7 +8445,20 @@ UserContainer_root = new THREE.Group()
            // FrameAnimations Below this line
            // -----------------------------------------------------------
             
+            // beamAnimations
+				// \- Horizontal beam animations
+				beam_TopLeftToRight_NeonBlueGreen.position.x = Math.cos(time * 0.00075) * 15 + 1
+				beam_TopLeftToRight_white.position.x = Math.cos(time * 0.00095) * 15 + 1
+				beam_TopRightToLeft_Blue.position.x = Math.cos(time * -0.0012) * 15 + 1
+				beam_BottomLeftToRight_NeonBlueGreen.position.x = Math.cos(time * 0.001) * 15 + 1
+				beam_BottomLeftToRight_white.position.x = Math.cos(time * 0.00075) * 15 + 1
+				beam_BottomRightToLeft_Blue.position.x = Math.cos(time * -0.0015) * 15 + 1
 
+				// \- Vertical beam Animations
+				beam_TopMiddleRight_NoenBlueGreen.position.y = Math.cos(time * -0.0025) * 15 + 1
+				beam_TopMiddleLeft_NeonBlueGreen.position.y = Math.cos(time * -0.0015) * 15 + 1
+				beam_TopMiddleLeft_NeonWhite.position.y = Math.cos(time * -0.00095) * 15 + 1
+				beam_TopMiddleRight_NeonWhite.position.y = Math.cos(time * -0.0011) * 15 + 1
 
            // -----------------------------------------------------------
            // FrameAnimations Above this line
