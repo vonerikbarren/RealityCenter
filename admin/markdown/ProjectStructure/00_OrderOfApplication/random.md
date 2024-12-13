@@ -253,6 +253,8 @@ console.log("##################################################")
 console.log(scene);
 console.log("##################################################")
 
+console.log("change is here. Make the most of it! Like you never have before")
+
 
 
 ```
