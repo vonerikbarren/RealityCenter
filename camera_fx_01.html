@@ -10,10 +10,26 @@
     </style>
 </head>
 <body>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-    <script src="https://threejs.org/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://threejs.org/examples/js/controls/OrbitControls.js"></script> -->
     <script>
+
+        import * as THREE from './libraries/modules/three.module.js';
+
+		import Stats from './libraries/modules/stats.module.js';
+
+		import { GUI } from './libraries/config/lil-gui.module.min.js';
+		import { OrbitControls } from './libraries/controllers/OrbitControls.js';
+		import { FirstPersonControls } from './libraries/controllers/FirstPersonControls.js';
+		import { Water } from './assets/objects/Water.js';
+		import { Sky } from './assets/objects/Sky.js';
+		import { GLTFLoader } from './libraries/loaders/GLTFLoader.js';
+		import { DRACOLoader } from './libraries/loaders/DRACOLoader.js'
+        import { CSS2DRenderer, CSS2DObject } from './libraries/renderers/CSS2DRenderer.js';
+        import { CSS3DRenderer, CSS3DObject } from './libraries/renderers/CSS3DRenderer.js';
+
+        
         // Scene setup
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
