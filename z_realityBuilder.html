@@ -518,8 +518,27 @@
         import { CSS3DRenderer, CSS3DObject } from './libraries/renderers/CSS3DRenderer.js';
 
         // Animation Imports
+
+        let moveForward = false;
+        let moveBackward = false;
+        let moveLeft = false;
+        let moveRight = false;
+        let canJump = false;
+        let canDrop = false;
+        let canMoveVerticallyUp = false;
+        let canMoveVerticallyDown = false;
+
+        let mouseX = 0, mouseY = 0;
+        let targetX = 0, targetY = 0;
+        let mouseFollowEnabled = false;
+
         
 		const clock = new THREE.Clock();
+        let prevTime = performance.now();
+        const velocity = new THREE.Vector3();
+        const direction = new THREE.Vector3();
+        const vertex = new THREE.Vector3();
+        const color = new THREE.Color();
         // import  { Spacial_Movement_Function_Basic01 } from './animations/01_Basics/Spacial_Movement_Function_Basic01';
         // import OrbitCamera from './animations/01_Basics/OrbitCamera';
 
@@ -546,7 +565,8 @@
 		let container, stats;
 		let camera, scene, renderer;
         let cssrenderer
-		let orbitControls, firstPersonControls, water, sun, mesh, ΔΦ, ΔΩ;
+		let orbitControls, firstPersonControls, pointerLockControls
+        let water, sun, mesh, ΔΦ, ΔΩ;
 		let Φ, MeshHDC_01, meshA1, goldenGearTest, goldenGearTest2;
 		let neoncircle;
 		let timeSphere, mesh_timeSphere_L0, mesh_Reality_A0, mesh_timeSphere_L1, mesh_lightContainer_A0;
@@ -555,7 +575,10 @@
         let newSpeedStrengthParams
         let Control_newSpeedStrengthParams
         let particles
+        const raycaster_plc = new THREE.Raycaster();
         const mouse_plc = new THREE.Vector2();
+        const objects = [];
+        // const pointerLockControls = new PointerLockControls(camera, document.body);
         
 
 
@@ -760,10 +783,10 @@
 
 		let mixer = null
 
-		gltfLoader.load('./assets/models/PanelTest.glb', (gltf) => {
-			scene.add(gltf.scene)
+		// gltfLoader.load('./assets/models/PanelTest.glb', (gltf) => {
+		// 	scene.add(gltf.scene)
 
-		})
+		// })
 
 
         //.........................................................................
@@ -788,9 +811,9 @@
 		// const testImg01 = textureLoader.load('./assets/img/Purple_Tech01.jpeg')
 
 		// |- Glitter_Pixels.jpeg
-		const testImg01 = textureLoader.load('./assets/img/backgrounds/grid_01.jpg')
+		// const testImg01 = textureLoader.load('./assets/img/backgrounds/grid_01.jpg')
 
-		const testImg02 = textureLoader.load('./assets/img/backgrounds/01_Purple_Galaxy.jpeg')
+		// const testImg02 = textureLoader.load('./assets/img/backgrounds/01_Purple_Galaxy.jpeg')
 
 		const clockPNG = textureLoader.load('./assets/img/05-Env/Clocks/Clock03_A1.png')
 
@@ -800,7 +823,7 @@
 		// const neoncircle01 = textureLoader.load('./assets/img/gears/neoncircle.png')
 
 		// Test ui_Folder_01
-		const neoncircle01 = textureLoader.load('./assets/img/backgrounds/InfiniteContainer.jpg')
+		// const neoncircle01 = textureLoader.load('./assets/img/backgrounds/InfiniteContainer.jpg')
 
         // ParticleTextures
         const particleTexture01 = textureLoader.load('./assets/textures/textures_lib/particles-A1/1.png')
@@ -952,7 +975,7 @@
 			camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 500000);
 			// camera.position.set(30, 6000, 24000); // previous
             camera.position.set(0, 0, 160); // previous
-			camera.view = sun;
+			// camera.view = sun;
 
 
             const newLight = new THREE.AmbientLight(0x404040)
@@ -3121,19 +3144,19 @@ document.addEventListener("keydown", function(event) {
                 // websiteTemplateC01.scale.set(1.2, 1, 1)
                 // websiteGroup01_root.add(websiteTemplateC01)
 
-                //     const mat_websiteTemplateC01 = new THREE.MeshBasicMaterial({ map: img_websiteTemplateC01, side: THREE.DoubleSide });
-                //     mesh_websiteTemplateC01 = new THREE.Mesh(geo_objT_PlaneA1, mat_websiteTemplateC01);
-                //     mat_websiteTemplateC01.transparent = true;
-                //     mat_websiteTemplateC01.alphaMap = img_websiteTemplateC01;
-                //     mesh_websiteTemplateC01.position.set(0, 0, 0);
-                //     // mesh_websiteTemplateC01.position.set(-15000, 0, 0);
-                //     mesh_websiteTemplateC01.scale.set(1, 1, 1);
-                //     mesh_websiteTemplateC01.rotation.set(0, 0, 0)
-                //     // mesh_websiteTemplateC01.rotateX( - Math.PI / 2 );
+                    // const mat_websiteTemplateC01 = new THREE.MeshBasicMaterial({ map: img_websiteTemplateC01, side: THREE.DoubleSide });
+                    // mesh_websiteTemplateC01 = new THREE.Mesh(geo_objT_PlaneA1, mat_websiteTemplateC01);
+                    // mat_websiteTemplateC01.transparent = true;
+                    // mat_websiteTemplateC01.alphaMap = img_websiteTemplateC01;
+                    // mesh_websiteTemplateC01.position.set(0, 0, 0);
+                    // // mesh_websiteTemplateC01.position.set(-15000, 0, 0);
+                    // mesh_websiteTemplateC01.scale.set(1, 1, 1);
+                    // mesh_websiteTemplateC01.rotation.set(0, 0, 0)
+                    // // mesh_websiteTemplateC01.rotateX( - Math.PI / 2 );
 
-                //     // websiteTemplateC01.lookAt(camera)
+                    // // websiteTemplateC01.lookAt(camera)
                     
-                //     websiteTemplateC01.add(mesh_websiteTemplateC01)
+                    // websiteTemplateC01.add(mesh_websiteTemplateC01)
 
                 // websiteTemplateC02 = new THREE.Group()
                 // websiteTemplateC02.position.set(0, -10, 0)
@@ -3358,7 +3381,10 @@ document.addEventListener("keydown", function(event) {
 			// camera.lookAt(0, 55, 0)
 
             // Pointer Lock Controls
-            const pointerLockControls = new PointerLockControls(camera, document.body);
+            // scene.add( pointerLockControls.getObject() );
+            pointerLockControls = new PointerLockControls(camera, renderer.domElement);
+            pointerLockControls.addEventListener('change', renderer.domElement);
+            
 
             pointerLockControls.addEventListener('lock', () => {
                 console.log('Pointer Locked');
@@ -3369,8 +3395,54 @@ document.addEventListener("keydown", function(event) {
             });
 
             // Raycaster
-            const raycaster_plc = new THREE.Raycaster();
             
+            
+
+            // scene.add(pointerLockControls.getObject());
+            
+
+
+            // Add event listeners for mouse movements
+            document.addEventListener('mousemove', (event) => {
+                if (mouseFollowEnabled) {
+                    mouseX = (event.clientX / window.innerWidth) * 2 - 1;
+                    mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
+                }
+            });
+            
+
+
+            // Event listener for key press
+            document.addEventListener('keydown', (event) => {
+                // Disable all controls initially
+                orbitControls.enabled = false;
+                firstPersonControls.enabled = false;
+                mouseFollowEnabled = false;
+                // pointerLockControls.unlock();
+
+                
+
+                if (event.key === 'c') {
+                    orbitControls.enabled = true; // Enable OrbitControls
+                    firstPersonControls.enabled = false;
+                    pointerLockControls.unlock();
+                    console.log(`OrbitControls: ${orbitControls.enabled}, FirstPersonControls: ${firstPersonControls.enabled}, PointerLockControls: ${pointerLockControls.isLocked}`);
+                } else if (event.key === 'v') {
+                    firstPersonControls.enabled = true; // Enable FirstPersonControls
+                    orbitControls.enabled = false;
+                    pointerLockControls.unlock();
+                    console.log(`FirstPersonControls: ${firstPersonControls.enabled}, OrbitControls: ${orbitControls.enabled}, PointerLockControls: ${pointerLockControls.isLocked}`);
+                } else if (event.key === 'b') {
+                    mouseFollowEnabled = true; // Enable mouse following // Activate Pointer Lock Controls
+                    orbitControls.enabled = false;
+                    firstPersonControls.enabled = false;
+                    console.log(`MouseFollow: ${mouseFollowEnabled}, OrbitControls: ${orbitControls.enabled}, FirstPersonControls: ${firstPersonControls.enabled}`);
+                    // pointerLockControls.lock(); // Activate Pointer Lock Controls
+                }
+            });
+
+
+         
 
             const circle = document.getElementById('circle');
             circle.addEventListener('click', () => {
@@ -3386,43 +3458,6 @@ document.addEventListener("keydown", function(event) {
                 }
             });
 
-            
-
-
-            // // Event listener for key press
-            // document.addEventListener('keydown', (event) => {
-            //     if (event.key === 'c') {
-            //         orbitControls.enabled = !orbitControls.enabled; // Toggle OrbitControls
-            //         firstPersonControls.enabled = false; // Disable FirstPersonControls
-            //     } else if (event.key === 'C') {
-            //         orbitControls.enabled = false
-            //     } else if (event.key === 'v') {
-            //         firstPersonControls.enabled = !firstPersonControls.enabled; // Toggle FirstPersonControls
-            //         orbitControls.enabled = false; // Disable OrbitControls
-            //     } else if (event.key === 'C') {
-            //         firstPersonControls.enabled = false
-            //     }
-            // });
-
-
-            // Event listener for key press
-            document.addEventListener('keydown', (event) => {
-                if (event.key === 'c') {
-                    orbitControls.enabled = !orbitControls.enabled; // Toggle OrbitControls
-                    firstPersonControls.enabled = false; // Disable FirstPersonControls
-                } else if (event.key === 'C') {
-                    orbitControls.enabled = false;
-                } else if (event.key === 'v') {
-                    firstPersonControls.enabled = !firstPersonControls.enabled; // Toggle FirstPersonControls
-                    orbitControls.enabled = false; // Disable OrbitControls
-                } else if (event.key === 'V') {
-                    firstPersonControls.enabled = false;
-                } else if (event.key === 'b') {
-                    pointerLockControls.lock(); // Activate Pointer Lock Controls
-                } else if (event.key === 'B') {
-                    pointerLockControls.unlock(); // Deactivate Pointer Lock Controls
-                }
-            });
 //..........................................................................................................
 //......CCC......TTTTTTTTT...LL.........RRRRR.........................UU.....UU....NN......N.......CCC......
 //....CCCCCCCC..TTTTTTTTTTT.LLLL.......RRRRRRRRRR.........FFFFFFFFFF.UUUU...UUUU..NNNN....NNN....CCCCCCCC...
@@ -3797,7 +3832,7 @@ UserContainer_root = new THREE.Group()
                         )
 
                         userContainerMedia.load()
-                        userContainerMedia.play()
+                        // userContainerMedia.play()
                         // userContainerMedia_Mat.alphaMap = userContainerMedia_Tex
                         userContainerMedia_Mat.transparent = true
 
@@ -4456,6 +4491,62 @@ UserContainer_root = new THREE.Group()
 //....UUUUU................................UUUUU..................
 //................................................................
 
+let UI_FirstPersonCameraView_root = new THREE.Group()
+UI_FirstPersonCameraView_root.position.set(0, 0, -100)
+UI_FirstPersonCameraView_root.rotation.set(0, 0, 0)
+UI_FirstPersonCameraView_root.scale.set(1, 1, 1)
+scene.add(UI_FirstPersonCameraView_root)
+camera.attach(UI_FirstPersonCameraView_root)
+
+    let UI_FirstPersonCameraView_PerspectiveDefault_root = new THREE.Group()
+    UI_FirstPersonCameraView_root.add(UI_FirstPersonCameraView_PerspectiveDefault_root)
+
+        let UI_FPCV_PD_root = new THREE.Group()
+        UI_FirstPersonCameraView_PerspectiveDefault_root.add(UI_FPCV_PD_root)
+
+
+            let UI_FPCV_PD_Frame_root = new THREE.Group()
+            UI_FPCV_PD_root.add(UI_FPCV_PD_Frame_root)
+
+            let UI_FPCV_PD_Frame_LeftTopGear = new THREE.Group()
+            UI_FPCV_PD_Frame_LeftTopGear.position.set(0, 0, 0)
+            UI_FPCV_PD_Frame_LeftTopGear.rotation.set(0, 0, 0)
+            UI_FPCV_PD_Frame_LeftTopGear.scale.set(1, 1, 1)
+            UI_FPCV_PD_Frame_root.add(UI_FPCV_PD_Frame_LeftTopGear)
+
+            let mesh_UI_FPCV_PD_Frame_LeftTopGear
+
+                const mat_UI_FPCV_PD_Frame_LeftTopGear = new THREE.MeshBasicMaterial(
+                    { 
+                        map: geo_objT_SphereA0, 
+                        side: THREE.DoubleSide, 
+                    });
+
+                mesh_UI_FPCV_PD_Frame_LeftTopGear = new THREE.Mesh(geo_objT_PlaneA1, mat_UI_FPCV_PD_Frame_LeftTopGear);
+                mat_UI_FPCV_PD_Frame_LeftTopGear.transparent = false;
+                mat_UI_FPCV_PD_Frame_LeftTopGear.alphaMap = geo_objT_SphereA0;
+                mesh_UI_FPCV_PD_Frame_LeftTopGear.position.set(0, 0, 0);
+                // mesh_UI_FPCV_PD_Frame_LeftTopGear.position.set(-15000, 0, 0);
+                mesh_UI_FPCV_PD_Frame_LeftTopGear.scale.set(1, 1, 1);
+                mesh_UI_FPCV_PD_Frame_LeftTopGear.rotation.set(0, 0, 0)
+                // mesh_UI_FPCV_PD_Frame_LeftTopGear.rotateX( - Math.PI / 2 );
+
+                // UI_FPCV_PD_Frame_LeftTopGear.lookAt(camera)
+                
+                UI_FPCV_PD_Frame_LeftTopGear.add(mesh_UI_FPCV_PD_Frame_LeftTopGear)
+
+
+            let UI_FPCV_PD_Frame_RightTopGear = new THREE.Group()
+            let UI_FPCV_PD_Frame_LeftBottomGear = new THREE.Group()
+            let UI_FPCV_PD_Frame_RightBottomGear = new THREE.Group()
+
+
+        let UI_FPCV_PD_Base = new THREE.Group()
+        
+
+let UI_ThirdPersonCameraView_root
+    let UI_ThirdPersonCameraView_PerspectiveDefault_root
+
 
 
 
@@ -4591,10 +4682,108 @@ UserContainer_root = new THREE.Group()
 
 			requestAnimationFrame(animate);
 
+            // Update camera rotation based on mouse movements if mouse follow is enabled
+            if (mouseFollowEnabled) {
+                targetX = mouseX * 0.05;
+                targetY = mouseY * 0.05;
+
+                camera.rotation.y += (targetX - camera.rotation.y) * 0.1;
+                camera.rotation.x += (targetY - camera.rotation.x) * 0.1;
+            }
+
+            
+
+            const time = performance.now();
+
             // arenaTest01.rotation.y += 0.01
             // Scene_TechCube01.rotation.y += 0.01
             // Scene_Tree01.rotation.y += 0.01
             // Scene_Prismatrix.rotation.y += 0.01
+
+
+
+            if ( pointerLockControls.isLocked === true ) {
+
+					raycaster_plc.ray.origin.copy( pointerLockControls.getObject().position );
+					raycaster_plc.ray.origin.y -= 300; // Camera's Height when landed
+
+					const intersections = raycaster_plc.intersectObjects( objects, true );
+
+					// For Stationary Flight Mode
+					const onObject = intersections.length < 0.1;
+
+					// For Jetpack Mode
+					// const onObject = intersections.length > 0.1;
+
+					const delta = ( time - prevTime ) / 1000;
+
+					velocity.x -= velocity.x * 1.0 * delta;
+					velocity.z -= velocity.z * 1.0 * delta;
+
+          		// Gravity Strength
+					velocity.y -= 9.8 * 100.0 * delta; // 100.0 = mass
+
+					direction.z = Number( moveForward ) - Number( moveBackward );
+					direction.x = Number( moveRight ) - Number( moveLeft );
+					direction.y = Number( canMoveVerticallyUp ) - Number( canMoveVerticallyDown );
+					direction.normalize(); // this ensures consistent movements in all directions
+
+
+
+					
+
+					function changeXspeed(speedStrengthsParams) {
+						let spdXstrength = speedStrengthsParams.x
+						let changeXStrength = spdXstrength * 0.1
+
+						speedStrengthsParams.x = changeXStrength
+					}
+
+					function changeYspeed() {
+						let spdYstrength = speedStrengthsParams.y
+						let changeYStrength = spdXstrength * 0.1
+
+						return changeYStrength
+					}
+
+					
+
+          		// Speed Strength
+
+
+					if ( moveForward || moveBackward ) velocity.z -= direction.z * speedStrengthsParams.x * delta;
+					if ( moveLeft || moveRight ) velocity.x -= direction.x * speedStrengthsParams.x * delta;
+					if ( canMoveVerticallyUp || canMoveVerticallyDown ) velocity.y -= direction.y * speedStrengthsParams.y * delta;
+
+					if ( onObject === true ) {
+
+						velocity.y = Math.max( 0, velocity.y );
+						canJump = true;
+
+					}
+
+					pointerLockControls.moveRight( - velocity.x * delta );
+					pointerLockControls.moveForward( - velocity.z * delta );
+					// pointerLockControls.canMoveVerticallyUp( - velocity.y * delta);
+
+					pointerLockControls.getObject().position.y += ( velocity.y * delta ); // new behavior
+
+					if ( pointerLockControls.getObject().position.y < 10 ) {
+
+						velocity.y = 0;
+						pointerLockControls.getObject().position.y = 1;
+
+						canJump = true;
+
+					}
+
+					
+
+				}
+
+
+
+
 
 			render();
 			stats.update();
@@ -4607,6 +4796,7 @@ UserContainer_root = new THREE.Group()
 			const delta = clock.getDelta();
 			orbitControls.update(delta);
 			firstPersonControls.update(delta);
+            // pointerLockControls.update(delta);
 
 
            // FrameAnimations Below this line
@@ -4619,7 +4809,7 @@ UserContainer_root = new THREE.Group()
 
 			water.material.uniforms['time'].value += 1.0 / 60.0;
             
-
+            prevTime = time;
 			renderer.render(scene, camera);
             cssrenderer.render( scene, camera);
 
