@@ -300,7 +300,7 @@
 
          <video id="none" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/PlexusAnimations/Animation_ParticlesWhite01.mp4" style="display: none" ></video>
 
-         <video id="openingVideo" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/SphereAnimations/Animation_Tetras.mp4" style="display: none" ></video>
+         <video id="openingVideo" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/SphereAnimations/Equations3.mp4" style="display: none" ></video>
 
          <video id="none" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/SphereAnimations/Equations3.mp4" style="display: none" ></video>
 
@@ -333,7 +333,7 @@
   <!-- <input type="text" id="output" placeholder="Type here..."> -->
     <!-- <div id="keyboard">
         <!-- Row01 -->
-        <button class="key">esc</button>
+        <!-- <button class="key">esc</button>
         <button class="key">F1</button>
         <button class="key">F2</button>
         <button class="key">F3</button>
@@ -348,10 +348,10 @@
         <button class="key">F12</button>
         <button class="key">F13</button>
         <button class="key">F14</button>
-        <button class="key">F15</button>
+        <button class="key">F15</button> -->
 
         <!-- Row02 -->
-        <button class="key">`</button>
+        <!-- <button class="key">`</button>
         <button class="key">01</button>
         <button class="key">02</button>
         <button class="key">03</button>
@@ -366,10 +366,10 @@
         <button class="key">12</button>
         <button class="key">13</button>
         <button class="key">14</button>
-        <button class="key">15</button>
+        <button class="key">15</button> -->
 
         <!-- row03 -->
-        <button class="key">tab</button>
+        <!-- <button class="key">tab</button>
         <button class="key">Q</button>
         <button class="key">W</button>
         <button class="key">E</button>
@@ -384,10 +384,10 @@
         <button class="key">]</button>
         <button class="key">{</button>
         <button class="key">}</button>
-        <button class="key">\</button>
+        <button class="key">\</button> -->
 
         <!-- row04 -->
-        <button class="key">caps</button>
+        <!-- <button class="key">caps</button>
         <button class="key">A</button>
         <button class="key">S</button>
         <button class="key">D</button>
@@ -402,10 +402,10 @@
         <button class="key">Δ</button>
         <button class="key">ΔΘ</button>
         <button class="key">Δτ</button>
-        <button class="key">ΔΞ</button>
+        <button class="key">ΔΞ</button> -->
 
          <!-- row04 -->
-         <button class="key">ShL</button>
+         <!-- <button class="key">ShL</button>
          <button class="key">Z</button>
          <button class="key">X</button>
          <button class="key">C</button>
@@ -420,11 +420,11 @@
          <button class="key">ΔΠ</button>
          <button class="key">ΔΦ</button>
          <button class="key">ΔΣ</button>
-         <button class="key">ShR</button>
+         <button class="key">ShR</button> -->
 
 
          <!-- row05 -->
-         <button class="key">fn</button>
+         <!-- <button class="key">fn</button>
          <button class="key">ctrl</button>
          <button class="key">opt</button>
          <button class="key">loop</button>
@@ -439,11 +439,11 @@
          <button class="key">Δ&#9826;</button>
          <button class="key">Δ&#9835;</button>
          <button class="key">Δ&#10023;</button>
-         <button class="key">Δ&#9965;</button>
+         <button class="key">Δ&#9965;</button> -->
 
 
          <!-- row06 -->
-         <button class="key">&#9888;</button>
+         <!-- <button class="key">&#9888;</button>
          <button class="key">&#9889;</button>
          <button class="key">&#9854;</button>
          <button class="key">&#9858;</button>
@@ -460,7 +460,7 @@
          <button class="key">Δ⤿</button>
          <button class="key">Δ⤼</button>
          <button class="key">Δ⤽</button>
-         
+          -->
          <!-- &#9965; -->
 
          <!-- <button class="key">p10</button>
@@ -857,8 +857,8 @@
 
 		// TimeSphereImgs
 		const timeSphereImg_01 = textureLoader.load('./assets/img/00-WallpaperUX/Specials/T01-TimeTravel.png')
-		const realitySphereImg_01 = textureLoader.load('./assets/img/backgrounds/TimeTravel.png')
-		const realitySphereImg_02 = textureLoader.load('./assets/img/backgrounds/marbleWhite.jpg')
+		// const realitySphereImg_01 = textureLoader.load('./assets/img/backgrounds/TimeTravel.png')
+		// const realitySphereImg_02 = textureLoader.load('./assets/img/backgrounds/marbleWhite.jpg')
 		const realitySphereImg_03 = textureLoader.load('./assets/img/00-WallpaperUX/Specials/T01-TimeTravel.png')
 		const realitySphereImg_04 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/Grid19.jpg')
 
@@ -1911,6 +1911,25 @@
 				})
 
 
+                // Center User
+
+                document.addEventListener("keydown", function(event) {
+					if (event.key === "o") {
+						// camera.position.y += 10000
+
+						gsap.to(camera.position, {
+							duration: 1.5,
+							delay: 0,
+                            ease: "none",
+							y: 0,
+                            x: 0,
+                            z: 0,
+
+						})
+					}
+				})
+
+
 
                 // document.addEventListener("DOMContentLoaded", function(event) {
 				// 	const Button_forward = document.getElementById("button_forward")
@@ -2102,25 +2121,33 @@
 
             // Assuming you have a camera and a scene already set up
                 const cameraDirection = new THREE.Vector3();
-                const moveSpeed = 10; // Adjust the speed as needed
+                const moveSpeed = 200; // Adjust the speed as needed
+                const fastMoveSpeed = 20000; // Fast move speed when Control key is pressed
 
                 document.addEventListener('keydown', (event) => {
                     camera.getWorldDirection(cameraDirection);
 
                     let targetPosition = camera.position.clone();
+                    let speed = event.ctrlKey ? fastMoveSpeed : moveSpeed;
 
                     switch (event.key) {
                         case 'w':
-                            targetPosition.add(cameraDirection.clone().multiplyScalar(moveSpeed));
+                            targetPosition.add(cameraDirection.clone().multiplyScalar(speed));
                             break;
                         case 's':
-                            targetPosition.add(cameraDirection.clone().multiplyScalar(-moveSpeed));
+                            targetPosition.add(cameraDirection.clone().multiplyScalar(-speed));
                             break;
                         case 'a':
-                            targetPosition.add(cameraDirection.clone().cross(camera.up).normalize().multiplyScalar(-moveSpeed));
+                            targetPosition.add(cameraDirection.clone().cross(camera.up).normalize().multiplyScalar(-speed));
                             break;
                         case 'd':
-                            targetPosition.add(cameraDirection.clone().cross(camera.up).normalize().multiplyScalar(moveSpeed));
+                            targetPosition.add(cameraDirection.clone().cross(camera.up).normalize().multiplyScalar(speed));
+                            break;
+                        case 'r': // Move up
+                            targetPosition.add(camera.up.clone().multiplyScalar(speed));
+                            break;
+                        case 'f': // Move down
+                            targetPosition.add(camera.up.clone().multiplyScalar(-speed));
                             break;
                     }
 
@@ -2740,6 +2767,7 @@ let Spacial_Movement_Function_Basic01 = (
     timeline,
     object,
     position,
+    rotation,
     scale,
     crystalOrb_sca,
     durationData,
@@ -2934,7 +2962,8 @@ document.addEventListener("keydown", function(event) {
             obj: Scene_CrystalOrb,
             pos: new THREE.Vector3(100, 0, -100),
             rot: new THREE.Vector3(0, 1.575, 0),
-            sca: new THREE.Vector3(5, 5, 5),
+            sca: new THREE.Vector3(50, 50, 50),
+            osc: new THREE.Vector3(50, 50, 50),
             dur: 10,
             del: 0,
             eas: "none",
@@ -2959,6 +2988,7 @@ document.addEventListener("keydown", function(event) {
             crystalOrb_AnimationData.pos,
             crystalOrb_AnimationData.rot,
             crystalOrb_AnimationData.sca,
+            crystalOrb_AnimationData.osc,
             crystalOrb_AnimationData.dur,
             crystalOrb_AnimationData.del,
             crystalOrb_AnimationData.eas,
@@ -3309,7 +3339,7 @@ document.addEventListener("keydown", function(event) {
             orbitControls.maxAzimuthAngle = Math.PI * 2
             orbitControls.target.set( 0, 55, 0 );
             orbitControls.minDistance = 1;
-            orbitControls.maxDistance = 70000.0;
+            orbitControls.maxDistance = 700000000.0;
             orbitControls.screenSpacePanning = true
             orbitControls.enablePan = true
             
@@ -4660,7 +4690,7 @@ let UI_ThirdPersonCameraView_root
 
 			camera.aspect = window.innerWidth / window.innerHeight;
 			camera.updateProjectionMatrix();
-			camera.lookAt()
+			// camera.lookAt()
 
 			renderer.setSize(window.innerWidth, window.innerHeight);
             cssrenderer.setSize(window.innerWidth, window.innerHeight);
@@ -4693,7 +4723,7 @@ let UI_ThirdPersonCameraView_root
 
             
 
-            const time = performance.now();
+            // const time = performance.now();
 
             // arenaTest01.rotation.y += 0.01
             // Scene_TechCube01.rotation.y += 0.01
@@ -4809,7 +4839,7 @@ let UI_ThirdPersonCameraView_root
 
 			water.material.uniforms['time'].value += 1.0 / 60.0;
             
-            prevTime = time;
+            // prevTime = time;
 			renderer.render(scene, camera);
             cssrenderer.render( scene, camera);
 
