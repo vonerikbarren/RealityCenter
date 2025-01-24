@@ -755,6 +755,26 @@
 // THIS APPS SUBAPPS - START
 // ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~
 
+let subApp00_DynamicWebsite_core
+let subApp00_DynamicWebsite_root
+let subApp00_DynamicWebsite_container
+let subApp00_DynamicWebsite_data
+let subApp00_DynamicWebsite_settings
+let subApp00_DynamicWebsite_presentation
+let subApp00_DynamicWebsite_hud
+
+
+let subApp00_DynamicWebsite_obj = {
+    core: subApp00_DynamicWebsite_core,
+    root: subApp00_DynamicWebsite_root,
+    container: subApp00_DynamicWebsite_container,
+    data: subApp00_DynamicWebsite_data,
+    settings: subApp00_DynamicWebsite_settings,
+    presentation: subApp00_DynamicWebsite_presentation,
+    hud: subApp00_DynamicWebsite_hud,
+}
+
+
 let subApp00_RealityPlayer
     let subApp00_RealityPlayer_OmniCore
     let subApp00_RealityPlayer_OmniContainer
@@ -2194,7 +2214,7 @@ let subApp01_MusicPlayerApp_obj = {
                         x: targetPosition.x,
                         y: targetPosition.y,
                         z: targetPosition.z,
-                        duration: 1, // Adjust the duration for smoother or faster movement
+                        duration: 0.75, // Adjust the duration for smoother or faster movement
                         ease: "power2.out" // You can change the easing function as needed
                     });
                 });
@@ -3447,13 +3467,13 @@ document.addEventListener("keydown", function(event) {
 // THIS APPS SUBAPPS - START
 // ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~
 
-subApp01_MusicPlayerApp_obj.root = new THREE.Group()
-subApp01_MusicPlayerApp_obj.root.position.set(15, 25, 0)
-subApp01_MusicPlayerApp_obj.root.rotation.set(0, 0, 0)
-subApp01_MusicPlayerApp_obj.root.scale.set(1, 1, 1)
-scene.add(subApp01_MusicPlayerApp_obj.root)
+subApp00_DynamicWebsite_obj.root = new THREE.Group()
+subApp00_DynamicWebsite_obj.root.position.set(15, 25, 0)
+subApp00_DynamicWebsite_obj.root.rotation.set(0, 0, 0)
+subApp00_DynamicWebsite_obj.root.scale.set(1, 1, 1)
+scene.add(subApp00_DynamicWebsite_obj.root)
 
-subApp01_MusicPlayerApp_obj.root.add(
+subApp00_DynamicWebsite_obj.root.add(
     // new hoverObject(
     //     'img',
     //     0, 0, 0,
@@ -3474,6 +3494,44 @@ subApp01_MusicPlayerApp_obj.root.add(
         
     
 )
+
+subApp01_MusicPlayerApp_obj.root = new THREE.Group()
+subApp01_MusicPlayerApp_obj.root.position.set(0, 0, 120)
+subApp01_MusicPlayerApp_obj.root.rotation.set(0, 0, 0)
+subApp01_MusicPlayerApp_obj.root.scale.set(0.1, 0.1, 0.1)
+
+    scene.add(subApp01_MusicPlayerApp_obj.root)
+    // camera.add(subApp01_MusicPlayerApp_obj.root)
+
+subApp01_MusicPlayerApp_obj.root.lookAt(camera.position)
+
+subApp01_MusicPlayerApp_obj.root.add(
+    
+    new makePDF_Viewer(
+        0, 0, 0,
+        0, 0, 0,
+        0.1, 0.1, 0.1,
+        "hoverClockA1",
+        "./pages/Applications/03-TodoList/index.html",
+        "1920px", "1200"
+    )
+        
+    
+)
+
+console.log(camera.position)
+console.log(subApp01_MusicPlayerApp_obj.root.position)
+
+
+// new hoverObject(
+    //     'img',
+    //     0, 0, 0,
+    //     0, 0, 0,
+    //     0.1, 0.1, 0.1,
+    //     "Testing234", "TestingClass234",
+    //     "./assets/img/03-HudUI/RegPanels/ClearPanelHorizontal.svg", "",
+    //     "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+    // )    
 
 
 
@@ -3673,23 +3731,40 @@ subApp01_MusicPlayerApp_obj.root.add(
 			scene.add(directionalLight)
 
 
+            let enableOrbitControls = () => {
+                
+                orbitControls = new OrbitControls( camera, cssrenderer.domElement );
+                orbitControls.maxPolarAngle = Math.PI  * 2
+                // orbitControls.minPolarAngle = Math.PI * 0.495;
+                orbitControls.maxAzimuthAngle = Math.PI * 2
+                orbitControls.target.set( 0, 0, 0 );
+                orbitControls.minDistance = 1;
+                orbitControls.maxDistance = 700000000.0;
+                orbitControls.screenSpacePanning = true
+                orbitControls.enablePan = true
+                
+                orbitControls.rotateSpeed = 0.025
+                orbitControls.zoomSpeed = 1
+                orbitControls.movementSpeed = 10000;
+                orbitControls.enabled = false; // Start with FirstPersonControls disabled
+                orbitControls.update();
+                // disableFirstPersonControls()
+
+            }
+
        
-            orbitControls = new OrbitControls( camera, cssrenderer.domElement );
-            orbitControls.maxPolarAngle = Math.PI  * 2
-            // orbitControls.minPolarAngle = Math.PI * 0.495;
-            orbitControls.maxAzimuthAngle = Math.PI * 2
-            orbitControls.target.set( 0, 55, 0 );
-            orbitControls.minDistance = 1;
-            orbitControls.maxDistance = 700000000.0;
-            orbitControls.screenSpacePanning = true
-            orbitControls.enablePan = true
+
+            // Function to disable OrbitControls
+                function disableOrbitControls() {
+                    if (orbitControls) {
+                        orbitControls.dispose(); // Dispose of the controls to remove event listeners
+                        orbitControls = null; // Set the controls to null to ensure they are fully removed
+                    }
+                }
             
-            orbitControls.rotateSpeed = 0.025
-            orbitControls.zoomSpeed = 1
-            orbitControls.movementSpeed = 10000;
-            orbitControls.enabled = false; // Start with FirstPersonControls disabled
-            orbitControls.update();
-            
+
+               
+                    
 
 
             // let activateOrbitControls = () => {
@@ -3710,46 +3785,49 @@ subApp01_MusicPlayerApp_obj.root.add(
             // }
 
 
-            
-            firstPersonControls = new FirstPersonControls(camera, cssrenderer.domElement);
+            let enableFirstPersonControls = () => {
+                firstPersonControls = new FirstPersonControls(camera, cssrenderer.domElement);
+                firstPersonControls.lookSpeed = 0.035
+                firstPersonControls.noFly = false;
+                firstPersonControls.lookVertical = true;
+                firstPersonControls.mouseDragOn = true;
+                firstPersonControls.verticalMax = 0
+                firstPersonControls.verticalMin = 0
+                firstPersonControls.heightMax = 0
+                firstPersonControls.heightMin = 0
+                firstPersonControls.movementSpeed = 10;
+                firstPersonControls.enabled = false; // Start with FirstPersonControls disabled
+                firstPersonControls.update();
+            }
+
+             // Function to disable FirstPersonControls
+            let disableFirstPersonControls = () => {
+                    if (FirstPersonControls) {
+                        FirstPersonControls.dispose(); // Dispose of the controls to remove event listeners
+                        FirstPersonControls = null; // Set the controls to null to ensure they are fully removed
+                    }
+            }
 
             
-            // firstPersonControls.lookSpeed = 0.035
-            firstPersonControls.lookSpeed = 0.1
-            firstPersonControls.noFly = false;
-            firstPersonControls.lookVertical = true;
-            firstPersonControls.mouseDragOn = false;
-            firstPersonControls.verticalMax = 0
-            firstPersonControls.verticalMin = 0
-            firstPersonControls.heightMax = 0
-            firstPersonControls.heightMin = 0
+            // firstPersonControls = new FirstPersonControls(camera, cssrenderer.domElement);
 
-            firstPersonControls.movementSpeed = 225;
-            firstPersonControls.enabled = false; // Start with FirstPersonControls disabled
-            firstPersonControls.update();
+            
+            // // firstPersonControls.lookSpeed = 0.035
+            // firstPersonControls.lookSpeed = 0.1
+            // firstPersonControls.noFly = false;
+            // firstPersonControls.lookVertical = true;
+            // firstPersonControls.mouseDragOn = false;
+            // firstPersonControls.verticalMax = 0
+            // firstPersonControls.verticalMin = 0
+            // firstPersonControls.heightMax = 0
+            // firstPersonControls.heightMin = 0
 
-
-            // let activeFirstPersonControls = () => {
-                
-
-            // }
+            // firstPersonControls.movementSpeed = 225;
+            // firstPersonControls.enabled = false; // Start with FirstPersonControls disabled
+            // firstPersonControls.update();
 
 
-			// controls = new FirstPersonControls(camera, renderer.domElement);
-
-			// controls.movementSpeed = 10;
-			// controls.lookSpeed = 0.035
-			// controls.noFly = true;
-			// controls.lookVertical = true;
-			// controls.mouseDragOn = true;
-            // controls.verticalMax = 0
-            // controls.verticalMin = 0
-            // controls.heightMax = 0
-            // controls.heightMin = 0
-			// // controls.update();
-
-			
-			// camera.lookAt(0, 55, 0)
+           
 
             // Pointer Lock Controls
             // scene.add( pointerLockControls.getObject() );
@@ -3780,11 +3858,17 @@ subApp01_MusicPlayerApp_obj.root.add(
                     mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
                 }
             });
+
+
+            enableOrbitControls(); // Disable OrbitControls initially
+            enableFirstPersonControls();
             
 
 
             // Event listener for key press
             document.addEventListener('keydown', (event) => {
+                enableOrbitControls(); // Enable OrbitControls when 'c' key is pressed
+                enableFirstPersonControls();
                 // Disable all controls initially
                 orbitControls.enabled = false;
                 firstPersonControls.enabled = false;
@@ -3794,21 +3878,26 @@ subApp01_MusicPlayerApp_obj.root.add(
                 
 
                 if (event.key === 'c') {
+                    
                     orbitControls.enabled = true; // Enable OrbitControls
                     firstPersonControls.enabled = false;
                     pointerLockControls.unlock();
                     console.log(`OrbitControls: ${orbitControls.enabled}, FirstPersonControls: ${firstPersonControls.enabled}, PointerLockControls: ${pointerLockControls.isLocked}`);
                 } else if (event.key === 'v') {
+                    disableOrbitControls(); // Disable OrbitControls when 'p' key is pressed
+                    
                     firstPersonControls.enabled = true; // Enable FirstPersonControls
                     orbitControls.enabled = false;
                     pointerLockControls.unlock();
                     console.log(`FirstPersonControls: ${firstPersonControls.enabled}, OrbitControls: ${orbitControls.enabled}, PointerLockControls: ${pointerLockControls.isLocked}`);
                 } else if (event.key === 'b') {
+                    disableOrbitControls(); // Disable OrbitControls when 'p' key is pressed
                     mouseFollowEnabled = true; // Enable mouse following // Activate Pointer Lock Controls
                     orbitControls.enabled = false;
                     firstPersonControls.enabled = false;
                     console.log(`MouseFollow: ${mouseFollowEnabled}, OrbitControls: ${orbitControls.enabled}, FirstPersonControls: ${firstPersonControls.enabled}`);
                     // pointerLockControls.lock(); // Activate Pointer Lock Controls
+
                 }
             });
 
@@ -5021,21 +5110,21 @@ let UI_ThirdPersonCameraView_root
 			folderButton.add(camera.position, 'z').min(-3.14).max(3.14).step(0.001).name('z-camera')
 
 
-            const folderOrbits = gui.addFolder('Scene_CrystalOrb');
-			folderOrbits.add(Scene_CrystalOrb.rotation, 'x').min(-3.14).max(3.14).step(0.001).name('x-Scene_CrystalOrb')
-			folderOrbits.add(Scene_CrystalOrb.rotation, 'y').min(-3.14).max(3.14).step(0.001).name('y-Scene_CrystalOrb')
-			folderOrbits.add(Scene_CrystalOrb.rotation, 'z').min(-3.14).max(3.14).step(0.001).name('z-Scene_CrystalOrb')
+            const folderOrbits = gui.addFolder('subApp01_MusicPlayerApp_obj.root');
+			folderOrbits.add(subApp01_MusicPlayerApp_obj.root.rotation, 'x').min(-3.14).max(3.14).step(0.001).name('x-subApp01_MusicPlayerApp_obj.root')
+			folderOrbits.add(subApp01_MusicPlayerApp_obj.root.rotation, 'y').min(-3.14).max(3.14).step(0.001).name('y-subApp01_MusicPlayerApp_obj.root')
+			folderOrbits.add(subApp01_MusicPlayerApp_obj.root.rotation, 'z').min(-3.14).max(3.14).step(0.001).name('z-subApp01_MusicPlayerApp_obj.root')
 
-            const folderPanels = gui.addFolder('Scene_CrystalOrb');
-			folderPanels.add(Scene_CrystalOrb.position, 'x').min(-10000).max(10000).step(0.01).name('x-Scene_CrystalOrb')
-			folderPanels.add(Scene_CrystalOrb.position, 'y').min(-10000).max(10000).step(0.01).name('y-Scene_CrystalOrb')
-			folderPanels.add(Scene_CrystalOrb.position, 'z').min(-10000).max(10000).step(0.01).name('z-Scene_CrystalOrb')
+            const folderPanels = gui.addFolder('subApp01_MusicPlayerApp_obj.root');
+			folderPanels.add(subApp01_MusicPlayerApp_obj.root.position, 'x').min(-10000).max(10000).step(0.01).name('x-subApp01_MusicPlayerApp_obj.root')
+			folderPanels.add(subApp01_MusicPlayerApp_obj.root.position, 'y').min(-10000).max(10000).step(0.01).name('y-subApp01_MusicPlayerApp_obj.root')
+			folderPanels.add(subApp01_MusicPlayerApp_obj.root.position, 'z').min(-10000).max(10000).step(0.01).name('z-subApp01_MusicPlayerApp_obj.root')
 
 
-            const folderPanels01 = gui.addFolder('Scene_CrystalOrb');
-			folderPanels01.add(Scene_CrystalOrb.scale, 'x').min(-10000).max(10000).step(0.01).name('x-Scene_CrystalOrb')
-			folderPanels01.add(Scene_CrystalOrb.scale, 'y').min(-10000).max(10000).step(0.01).name('y-Scene_CrystalOrb')
-			folderPanels01.add(Scene_CrystalOrb.scale, 'z').min(-10000).max(10000).step(0.01).name('z-Scene_CrystalOrb')
+            const folderPanels01 = gui.addFolder('subApp01_MusicPlayerApp_obj.root');
+			folderPanels01.add(subApp01_MusicPlayerApp_obj.root.scale, 'x').min(-10000).max(10000).step(0.01).name('x-subApp01_MusicPlayerApp_obj.root')
+			folderPanels01.add(subApp01_MusicPlayerApp_obj.root.scale, 'y').min(-10000).max(10000).step(0.01).name('y-subApp01_MusicPlayerApp_obj.root')
+			folderPanels01.add(subApp01_MusicPlayerApp_obj.root.scale, 'z').min(-10000).max(10000).step(0.01).name('z-subApp01_MusicPlayerApp_obj.root')
 
 
 
@@ -5185,6 +5274,11 @@ let UI_ThirdPersonCameraView_root
 			orbitControls.update(delta);
 			firstPersonControls.update(delta);
             // pointerLockControls.update(delta);
+
+            // requestAnimationFrame(animate);
+            // if (orbitControls) {
+            //     orbitControls.update(delta);
+            // }
 
 
            // FrameAnimations Below this line
