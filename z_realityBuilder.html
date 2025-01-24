@@ -975,7 +975,8 @@
 			camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 500000);
 			// camera.position.set(30, 6000, 24000); // previous
             camera.position.set(0, 0, 160); // previous
-			// camera.view = sun;
+            camera.scale.set(10, 10, 10)
+			camera.view = sun;
 
 
             const newLight = new THREE.AmbientLight(0x404040)
@@ -1941,7 +1942,7 @@
                 // 010101010101010101010101010101010100101010101010101010
 
 
-                const distance = 10;
+                const distance = 100;
 
                 const Button_forward = document.getElementById('button_forward');
                 Button_forward.addEventListener('click', function move(direction) {
@@ -2121,7 +2122,7 @@
 
             // Assuming you have a camera and a scene already set up
                 const cameraDirection = new THREE.Vector3();
-                const moveSpeed = 200; // Adjust the speed as needed
+                const moveSpeed = distance; // Adjust the speed as needed
                 const fastMoveSpeed = 20000; // Fast move speed when Control key is pressed
 
                 document.addEventListener('keydown', (event) => {
@@ -2818,19 +2819,61 @@ const testShape01_sphereGeometry = new THREE.SphereGeometry(1, 32, 32);
 
 
 
-// Create material and geometry as before
-const material = new THREE.MeshPhysicalMaterial({ color: 0x00ff00 });
-const sphereGeometry = new THREE.SphereGeometry(1, 32, 32);
+// // Create material and geometry as before
+// const material = new THREE.MeshPhysicalMaterial({ color: 0x000000 });
+// const sphereGeometry = new THREE.SphereGeometry(1, 32, 32);
 
-// Create and position spheres
-const test_spheres = [];
-for (let i = -105; i <= 105; i++) {
-  const test_sphere = new THREE.Mesh(sphereGeometry, material);
-  test_sphere.position.x = i * 50;
-//   test_sphere.position.y = i * 25;
-//   test_sphere.position.z = i * 50;
-  scene.add(test_sphere);
-  test_spheres.push(test_sphere);
+// // Create and position spheres
+// const test_spheres = [];
+// for (let i = -105; i <= 105; i++) {
+//   const test_sphere = new THREE.Mesh(sphereGeometry, material);
+//   test_sphere.position.x = i * 50;
+// //   test_sphere.position.y = i * 25;
+// //   test_sphere.position.z = i * 50;
+//   scene.add(test_sphere);
+//   test_spheres.push(test_sphere);
+
+
+
+//     let tl01 = gsap.timeline(
+//         {
+//             delay: 0.5,
+//             // duration: 5,
+//             paused: false, // default is false
+//             repeat: 2, // number of repeats (-1 for infinite)
+//         }
+//     )
+
+  
+
+//   tl01.to(test_sphere.position, {
+//     x: "100", 
+//     duration: 2,
+//     repeat: -1,
+//     delay: 5
+//   });
+
+//   tl01.to(test_sphere.position, {
+//     y: "100", 
+//     duration: 2,
+//     repeat: -1,
+//     delay: 10
+//   });
+
+//   tl01.to(test_sphere.position, {
+//     x: "-100", 
+//     duration: 2,
+//     repeat: -1,
+//     delay: 15
+//   });
+
+//   tl01.to(test_sphere.position, {
+//     y: "-100", 
+//     duration: 2,
+//     repeat: -1,
+//     delay: 20
+//   });
+// }
 
 //   gsap.to(test_sphere.scale, {
 //     x: "10", 
@@ -2841,46 +2884,6 @@ for (let i = -105; i <= 105; i++) {
 //     yoyo: true,
 //     delay: -100 * 0.005
 //   });
-
-    let tl01 = gsap.timeline(
-        {
-            delay: 0.5,
-            // duration: 5,
-            paused: false, // default is false
-            repeat: 2, // number of repeats (-1 for infinite)
-        }
-    )
-
-  
-
-  tl01.to(test_sphere.position, {
-    x: "100", 
-    duration: 2,
-    repeat: -1,
-    delay: 5
-  });
-
-  tl01.to(test_sphere.position, {
-    y: "100", 
-    duration: 2,
-    repeat: -1,
-    delay: 10
-  });
-
-  tl01.to(test_sphere.position, {
-    x: "-100", 
-    duration: 2,
-    repeat: -1,
-    delay: 15
-  });
-
-  tl01.to(test_sphere.position, {
-    y: "-100", 
-    duration: 2,
-    repeat: -1,
-    delay: 20
-  });
-}
 
 // Animate test_spheres using GSAP
 // test_spheres.forEach((test_sphere, index) => {
@@ -2893,6 +2896,268 @@ for (let i = -105; i <= 105; i++) {
 //     delay: index * 0.5 
 //   });
 // });
+
+// ΔParticles ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~
+// Create material and geometry as before
+// Random Location with Color Skin
+// ΔParticles ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~
+
+    // const material = new THREE.MeshPhysicalMaterial({ color: 0xFFFFFF });
+    // const sphereGeometry = new THREE.SphereGeometry(1, 32, 32);
+
+    // // Create and position spheres
+    // const test_spheres = [];
+    // for (let i = -105; i <= 105; i++) {
+    //     const test_sphere = new THREE.Mesh(geo_objT_DiamondA0, material);
+    //     test_sphere.position.x = i * 50;
+    //     test_sphere.scale.x = i * 0.001;
+    //     test_sphere.scale.y = i * 0.001;
+    //     test_sphere.scale.z = i * 0.001;
+    //     scene.add(test_sphere);
+    //     test_spheres.push(test_sphere);
+
+    //     // Function to move the sphere in a random direction
+    //     function moveSphere() {
+    //         const randomX = (Math.random() - 0.5) * 200; // Random value between -100 and 100
+    //         const randomY = (Math.random() - 0.5) * 200; // Random value between -100 and 100
+    //         const randomZ = (Math.random() - 0.5) * 200; // Random value between -100 and 100
+
+    //         gsap.to(test_sphere.position, {
+    //             x: randomX,
+    //             y: randomY,
+    //             z: randomZ,
+    //             duration: 2,
+    //             onComplete: () => {
+    //                 // Pause for 2.5 seconds before moving again
+    //                 setTimeout(moveSphere, 2500);
+    //             }
+    //         });
+    //     }
+
+    //     // Start the initial movement
+    //     moveSphere();
+    // }
+
+
+// ΔParticles ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~
+// Create material and geometry as before
+// Random Location with Prism Skin
+// ΔParticles ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~
+
+
+    // Create a prism-like material
+    const material = new THREE.MeshPhysicalMaterial({
+        color: 0xffffff,
+        metalness: 0.0,
+        roughness: 0.1,
+        transmission: 1.0, // Make the material transparent
+        thickness: 1.0, // Add thickness to the material
+        clearcoat: 1.0, // Add clearcoat for a glossy finish
+        clearcoatRoughness: 0.1,
+        reflectivity: 1.0,
+        ior: 1.5, // Index of refraction (glass-like)
+        envMapIntensity: 1.0,
+    });
+
+    const sphereGeometry = new THREE.SphereGeometry(1, 32, 32);
+
+    // Create and position spheres
+    const test_spheres = [];
+    for (let i = -500; i <= 500; i++) {
+        const test_sphere = new THREE.Mesh(geo_objT_DiamondA0, material);
+        test_sphere.position.x = i * 50;
+        test_sphere.scale.x = i * 0.001;
+        test_sphere.scale.y = i * 0.001;
+        test_sphere.scale.z = i * 0.001;
+        scene.add(test_sphere);
+        test_spheres.push(test_sphere);
+
+        // Function to move the sphere in a random direction
+        function moveSphere() {
+            const randomX = (Math.random() - 0.5) * 2500; // Random value between -100 and 100
+            const randomY = (Math.random() - 0.5) * 2500; // Random value between -100 and 100
+            const randomZ = (Math.random() - 0.5) * 2500; // Random value between -100 and 100
+
+            gsap.to(test_sphere.position, {
+                x: randomX,
+                y: randomY,
+                z: randomZ,
+                duration: 2,
+                onComplete: () => {
+                    // Pause for 2.5 seconds before moving again
+                    setTimeout(moveSphere, 2500);
+                }
+            });
+        }
+
+        // Start the initial movement
+        moveSphere();
+    }
+
+
+
+    // Animation loop
+    function animate() {
+        requestAnimationFrame(animate);
+        renderer.render(scene, camera);
+    }
+
+    animate();
+
+// ΔParticles ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~
+// Different Particles Moving
+// ΔParticles ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~
+
+
+// ΔParticles ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~
+// Create QuestionMark() and ExclamationMark()
+// ΔParticles ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~
+
+        // const test_spheres = [];
+        // const material = new THREE.MeshPhysicalMaterial({ color: 0x000000 });
+        // const sphereGeometry = new THREE.SphereGeometry(1, 32, 32);
+
+        // // Create and position spheres
+        // for (let i = 0; i < 50; i++) {
+        //     const test_sphere = new THREE.Mesh(sphereGeometry, material);
+        //     scene.add(test_sphere);
+        //     test_spheres.push(test_sphere);
+        // }
+
+        // // Define positions for exclamation mark
+        // const exclamationPositions = [
+        //     { x: 0, y: 50, z: 0 },
+        //     { x: 0, y: 40, z: 0 },
+        //     { x: 0, y: 30, z: 0 },
+        //     { x: 0, y: 20, z: 0 },
+        //     { x: 0, y: 10, z: 0 },
+        //     { x: 0, y: 0, z: 0 },
+        //     { x: 0, y: -10, z: 0 },
+        //     { x: 0, y: -20, z: 0 },
+        //     { x: 0, y: -30, z: 0 },
+        //     { x: 0, y: -40, z: 0 },
+        //     { x: 0, y: -50, z: 0 },
+        //     { x: 0, y: -60, z: 0 },
+        //     { x: 0, y: -70, z: 0 },
+        //     { x: 0, y: -80, z: 0 },
+        //     { x: 0, y: -90, z: 0 },
+        //     { x: 0, y: -100, z: 0 },
+        //     { x: 0, y: -110, z: 0 },
+        //     { x: 0, y: -120, z: 0 },
+        //     { x: 0, y: -130, z: 0 },
+        //     { x: 0, y: -140, z: 0 },
+        //     { x: 0, y: -150, z: 0 },
+        //     { x: 0, y: -160, z: 0 },
+        //     { x: 0, y: -170, z: 0 },
+        //     { x: 0, y: -180, z: 0 },
+        //     { x: 0, y: -190, z: 0 },
+        //     { x: 0, y: -200, z: 0 },
+        //     { x: 0, y: -210, z: 0 },
+        //     { x: 0, y: -220, z: 0 },
+        //     { x: 0, y: -230, z: 0 },
+        //     { x: 0, y: -240, z: 0 },
+        //     { x: 0, y: -250, z: 0 },
+        //     { x: 0, y: -260, z: 0 },
+        //     { x: 0, y: -270, z: 0 },
+        //     { x: 0, y: -280, z: 0 },
+        //     { x: 0, y: -290, z: 0 },
+        //     { x: 0, y: -300, z: 0 },
+        //     { x: 0, y: -310, z: 0 },
+        //     { x: 0, y: -320, z: 0 },
+        //     { x: 0, y: -330, z: 0 },
+        //     { x: 0, y: -340, z: 0 },
+        //     { x: 0, y: -350, z: 0 },
+        //     { x: 0, y: -360, z: 0 },
+        //     { x: 0, y: -370, z: 0 },
+        //     { x: 0, y: -380, z: 0 },
+        //     { x: 0, y: -390, z: 0 },
+        //     { x: 0, y: -400, z: 0 },
+        //     { x: 0, y: -410, z: 0 },
+        //     { x: 0, y: -420, z: 0 },
+        // ];
+
+        // // Define positions for question mark
+        // const questionPositions = [
+        //     { x: 0, y: 50, z: 0 },
+        //     { x: 10, y: 40, z: 0 },
+        //     { x: 20, y: 30, z: 0 },
+        //     { x: 30, y: 20, z: 0 },
+        //     { x: 40, y: 10, z: 0 },
+        //     { x: 50, y: 0, z: 0 },
+        //     { x: 40, y: -10, z: 0 },
+        //     { x: 30, y: -20, z: 0 },
+        //     { x: 20, y: -30, z: 0 },
+        //     { x: 10, y: -40, z: 0 },
+        //     { x: 0, y: -50, z: 0 },
+        //     { x: 0, y: -60, z: 0 },
+        //     { x: 0, y: -70, z: 0 },
+        //     { x: 0, y: -80, z: 0 },
+        //     { x: 0, y: -90, z: 0 },
+        //     { x: 0, y: -100, z: 0 },
+        //     { x: 0, y: -110, z: 0 },
+        //     { x: 0, y: -120, z: 0 },
+        //     { x: 0, y: -130, z: 0 },
+        //     { x: 0, y: -140, z: 0 },
+        //     { x: 0, y: -150, z: 0 },
+        //     { x: 0, y: -160, z: 0 },
+        //     { x: 0, y: -170, z: 0 },
+        //     { x: 0, y: -180, z: 0 },
+        //     { x: 0, y: -190, z: 0 },
+        //     { x: 0, y: -200, z: 0 },
+        //     { x: 0, y: -210, z: 0 },
+        //     { x: 0, y: -220, z: 0 },
+        //     { x: 0, y: -230, z: 0 },
+        //     { x: 0, y: -240, z: 0 },
+        //     { x: 0, y: -250, z: 0 },
+        //     { x: 0, y: -260, z: 0 },
+        //     { x: 0, y: -270, z: 0 },
+        //     { x: 0, y: -280, z: 0 },
+        //     { x: 0, y: -290, z: 0 },
+        //     { x: 0, y: -300, z: 0 },
+        //     { x: 0, y: -310, z: 0 },
+        //     { x: 0, y: -320, z: 0 },
+        //     { x: 0, y: -330, z: 0 },
+        //     { x: 0, y: -340, z: 0 },
+        //     { x: 0, y: -350, z: 0 },
+        //     { x: 0, y: -360, z: 0 },
+        //     { x: 0, y: -370, z: 0 },
+        //     { x: 0, y: -380, z: 0 },
+        //     { x: 0, y: -390, z: 0 },
+        //     { x: 0, y: -400, z: 0 },
+        //     { x: 0, y: -410, z: 0 },
+        //     { x: 0, y: -420, z: 0 },
+        // ];
+
+        // // Function to move spheres to specified positions
+        // function moveSpheresToPositions(positions) {
+        //     test_spheres.forEach((sphere, index) => {
+        //         if (positions[index]) {
+        //             gsap.to(sphere.position, {
+        //                 x: positions[index].x,
+        //                 y: positions[index].y,
+        //                 z: positions[index].z,
+        //                 duration: 2,
+        //                 onComplete: () => {
+        //                     // Pause for 2.5 seconds before moving again
+        //                     setTimeout(() => {
+        //                         // Move to the next set of positions
+        //                         moveSpheresToPositions(positions === exclamationPositions ? questionPositions : exclamationPositions);
+        //                     }, 2500);
+        //                 }
+        //             });
+        //         }
+        //     });
+        // }
+
+        // // Start the initial movement to exclamation mark positions
+        // moveSpheresToPositions(exclamationPositions);
+
+
+
+
+
+
+
 
 // Render loop
 function animate() {
@@ -3051,17 +3316,17 @@ document.addEventListener("keydown", function(event) {
             realityCore_form_ΔOpportunityAndAbundance.scale.set(1, 1, 1)
             scene.add(realityCore_form_ΔOpportunityAndAbundance)
 
-        let realitycore_form_ΔContainer_Internal = new THREE.Group()
-            realitycore_form_ΔContainer_Internal.position.set(0, 0, 0)
-            realitycore_form_ΔContainer_Internal.rotation.set(0, 0, 0)
-            realitycore_form_ΔContainer_Internal.scale.set(1, 1, 1)
-            scene.add(realitycore_form_ΔContainer_Internal)
+        let realityCore_form_ΔContainer_Internal = new THREE.Group()
+            realityCore_form_ΔContainer_Internal.position.set(0, 0, 0)
+            realityCore_form_ΔContainer_Internal.rotation.set(0, 0, 0)
+            realityCore_form_ΔContainer_Internal.scale.set(1, 1, 1)
+            scene.add(realityCore_form_ΔContainer_Internal)
 
-        let realitycore_form_ΔTheInfin8te_And_the_Infinity = new THREE.Group()
-            realitycore_form_ΔTheInfin8te_And_the_Infinity.position.set(0, 0, 0)
-            realitycore_form_ΔTheInfin8te_And_the_Infinity.rotation.set(0, 0, 0)
-            realitycore_form_ΔTheInfin8te_And_the_Infinity.scale.set(1, 1, 1)
-            scene.add(realitycore_form_ΔTheInfin8te_And_the_Infinity)
+        let realityCore_form_ΔTheInfin8te_And_the_Infinity = new THREE.Group()
+            realityCore_form_ΔTheInfin8te_And_the_Infinity.position.set(0, 0, 0)
+            realityCore_form_ΔTheInfin8te_And_the_Infinity.rotation.set(0, 0, 0)
+            realityCore_form_ΔTheInfin8te_And_the_Infinity.scale.set(1, 1, 1)
+            scene.add(realityCore_form_ΔTheInfin8te_And_the_Infinity)
 
         let realityCore_form_ΔTheDefin8te_And_The_Definity = new THREE.Group()
             realityCore_form_ΔTheDefin8te_And_The_Definity.position.set(0, 0, 0)
@@ -3081,23 +3346,23 @@ document.addEventListener("keydown", function(event) {
             realityCore_form_ΔAttractionAndGravity.scale.set(1, 1, 1)
             scene.add(realityCore_form_ΔAttractionAndGravity)
         
-        let realitycore_form_ΔRadiation_and_Presence = new THREE.Group()
-            realitycore_form_ΔRadiation_and_Presence.position.set(0, 0, 0)
-            realitycore_form_ΔRadiation_and_Presence.rotation.set(0, 0, 0)
-            realitycore_form_ΔRadiation_and_Presence.scale.set(1, 1, 1)
-            scene.add(realitycore_form_ΔRadiation_and_Presence)
+        let realityCore_form_ΔRadiation_and_Presence = new THREE.Group()
+            realityCore_form_ΔRadiation_and_Presence.position.set(0, 0, 0)
+            realityCore_form_ΔRadiation_and_Presence.rotation.set(0, 0, 0)
+            realityCore_form_ΔRadiation_and_Presence.scale.set(1, 1, 1)
+            scene.add(realityCore_form_ΔRadiation_and_Presence)
         
-        let realitycore_form_ThePrimaryForce = new THREE.Group()
-            realitycore_form_ThePrimaryForce.position.set(0, 0, 0)
-            realitycore_form_ThePrimaryForce.rotation.set(0, 0, 0)
-            realitycore_form_ThePrimaryForce.scale.set(1, 1, 1)
-            scene.add(realitycore_form_ThePrimaryForce)
+        let realityCore_form_ThePrimaryForce = new THREE.Group()
+            realityCore_form_ThePrimaryForce.position.set(0, 0, 0)
+            realityCore_form_ThePrimaryForce.rotation.set(0, 0, 0)
+            realityCore_form_ThePrimaryForce.scale.set(1, 1, 1)
+            scene.add(realityCore_form_ThePrimaryForce)
         
-        let realitycore_of_DominantForces = new THREE.Group()
-            realitycore_of_DominantForces.position.set(0, 0, 0)
-            realitycore_of_DominantForces.rotation.set(0, 0, 0)
-            realitycore_of_DominantForces.scale.set(1, 1, 1)
-            scene.add(realitycore_of_DominantForces)
+        let realityCore_of_DominantForces = new THREE.Group()
+            realityCore_of_DominantForces.position.set(0, 0, 0)
+            realityCore_of_DominantForces.rotation.set(0, 0, 0)
+            realityCore_of_DominantForces.scale.set(1, 1, 1)
+            scene.add(realityCore_of_DominantForces)
 
         
 
@@ -3125,11 +3390,11 @@ document.addEventListener("keydown", function(event) {
             realityCore_form_ΔPerspective_External.scale.set(1, 1, 1)
             scene.add(realityCore_form_ΔPerspective_External)
 
-        let realitycore_form_ΔMind = new THREE.Group()
-            realitycore_form_ΔMind.position.set(0, 0, 0)
-            realitycore_form_ΔMind.rotation.set(0, 0, 0)
-            realitycore_form_ΔMind.scale.set(1, 1, 1)
-            scene.add(realitycore_form_ΔMind)
+        let realityCore_form_ΔMind = new THREE.Group()
+            realityCore_form_ΔMind.position.set(0, 0, 0)
+            realityCore_form_ΔMind.rotation.set(0, 0, 0)
+            realityCore_form_ΔMind.scale.set(1, 1, 1)
+            scene.add(realityCore_form_ΔMind)
 
         let realityCore_form_ΔEnd_root = new THREE.Group()
             realityCore_form_ΔEnd_root.position.set(0, 0, 0)
@@ -3830,7 +4095,7 @@ document.addEventListener("keydown", function(event) {
 //.................................................................
 
 
-UserContainer_root = new THREE.Group()
+            UserContainer_root = new THREE.Group()
                 // UserContainer_root.position.set(30, 5990, 23950);
                 UserContainer_root.position.set(0, 5, 0);
                 UserContainer_root.rotation.set(0, 0, 0)
@@ -4157,12 +4422,12 @@ UserContainer_root = new THREE.Group()
                             let openPersonalSpace = () => {
                                 gsap.to(mesh_UserContainer_PersonalSpace_Space.scale, {
                                     repeat: 0,
-                                    duration: 60,
+                                    duration: 30,
                                     ease: "none",
                                     delay: 2.5,
-                                    x: 1,
-                                    y: 1,
-                                    z: 1,
+                                    x: 5,
+                                    y: 5,
+                                    z: 5,
                             
                                 })
                             }
@@ -4339,6 +4604,20 @@ UserContainer_root = new THREE.Group()
 //.AAAA.....AAAA.nnn...nnn..iii..mmm..mmmm..mmm.aaaaaaaaaa.ttttt.iii...ooooooo...nnn...nnn..
 //................................................aaa........ttt........ooooo...............
 //..........................................................................................
+
+                            let rotateOrbit_clockwise = () => {
+                                gsap.to(UserContainer_Orbit01_TheOrbit01.rotation, {
+                                    repeat: -1,
+                                    duration: 5,
+                                    ease: "none",
+                                    delay: 0,
+                                    z: 1,
+                                   
+                            
+                                })
+                            }
+
+                            rotateOrbit_clockwise()
                 
 
 
