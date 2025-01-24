@@ -749,6 +749,43 @@
         let Scene_StromingSun
         let Scene_CrystalOrb
 
+// THIS APPS SUBAPPS - START
+// ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~
+
+// THIS APPS SUBAPPS - START
+// ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~
+
+let subApp00_RealityPlayer
+    let subApp00_RealityPlayer_OmniCore
+    let subApp00_RealityPlayer_OmniContainer
+    let subApp00_RealityPlayer_OmniData
+
+
+let subApp01_MusicPlayerApp_obj = {
+    root: subApp00_RealityPlayer_OmniCore,
+    container: subApp00_RealityPlayer_OmniContainer,
+    data: subApp00_RealityPlayer_OmniData,
+
+
+}
+
+
+
+
+
+
+
+
+
+
+// THIS APPS SUBAPPS - END
+// ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~
+
+// THIS APPS SUBAPPS - END
+// ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~
+
+
+
 
 
 
@@ -1942,7 +1979,7 @@
                 // 010101010101010101010101010101010100101010101010101010
 
 
-                const distance = 100;
+                const distance = 10;
 
                 const Button_forward = document.getElementById('button_forward');
                 Button_forward.addEventListener('click', function move(direction) {
@@ -2178,7 +2215,7 @@
 							duration: .5,
 							delay: 0,
                             ease: "none",
-							y: "+= 200",
+							y: `+= ${distance}`,
 
 						})
 					}
@@ -2193,7 +2230,7 @@
 							duration: .5,
 							delay: 0,
                             ease: "none",
-							y: "+= 10000",
+							y: `+= ${distance} * 2`,
 
 						})
 					}
@@ -2207,7 +2244,7 @@
 							duration: .5,
 							delay: 0,
                             ease: "none",
-							y: "-= 200",
+							y: `-= ${distance}`,
 
 						})
 					}
@@ -2222,7 +2259,7 @@
 							duration: .5,
 							delay: 0,
                             ease: "none",
-							y: "-= 10000",
+							y: `-= ${distance} * 2`,
 
 						})
 					}
@@ -3005,7 +3042,7 @@ const testShape01_sphereGeometry = new THREE.SphereGeometry(1, 32, 32);
     animate();
 
 // ΔParticles ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~
-// Different Particles Moving
+// Different Particles Moving Than the ones above (cube with Icon)
 // ΔParticles ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~
 
 
@@ -3404,10 +3441,49 @@ document.addEventListener("keydown", function(event) {
 
 
 
+// THIS APPS SUBAPPS - START
+// ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~
+
+// THIS APPS SUBAPPS - START
+// ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~
+
+subApp01_MusicPlayerApp_obj.root = new THREE.Group()
+subApp01_MusicPlayerApp_obj.root.position.set(15, 25, 0)
+subApp01_MusicPlayerApp_obj.root.rotation.set(0, 0, 0)
+subApp01_MusicPlayerApp_obj.root.scale.set(1, 1, 1)
+scene.add(subApp01_MusicPlayerApp_obj.root)
+
+subApp01_MusicPlayerApp_obj.root.add(
+    // new hoverObject(
+    //     'img',
+    //     0, 0, 0,
+    //     0, 0, 0,
+    //     0.1, 0.1, 0.1,
+    //     "Testing234", "TestingClass234",
+    //     "./assets/img/03-HudUI/RegPanels/ClearPanelHorizontal.svg", "",
+    //     "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+    // )    
+    new makePDF_Viewer(
+        0, 0, 0,
+        0, 0, 0,
+        0.01, 0.01, 0.01,
+        "hoverClockA1",
+        "https://vonerikbarren.github.io/Portfolio--V3/#",
+        "1920px", "1200"
+    )
+        
+    
+)
 
 
 
 
+
+// THIS APPS SUBAPPS - END
+// ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~
+
+// THIS APPS SUBAPPS - END
+// ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~
 //.....................................................................................
 //..WW....WWW....WW...EEEEEEEEE...BBBBB.........SSSSSS.....I...TTTTTTTTT...EEEEEEEEE...
 //.WWWW..WWWWW..WWWW.EEEEEEEEEEE.BBBBBBBBBB....SSSSSSSS...III.ITTTTTTTTTT.EEEEEEEEEEE..
@@ -4886,17 +4962,17 @@ let UI_ThirdPersonCameraView_root
 			container.appendChild(stats.dom);
 
             newSpeedStrengthParams = {
-					left: 200,
-					right: 200,
-					forwards: 200,
-					backwards: 200, 
+					left: distance,
+					right: distance,
+					forwards: distance,
+					backwards: distance, 
 				}
 
                 Control_newSpeedStrengthParams = {
-					left: 2200,
-					right: 2200,
-					forwards: 2200,
-					backwards: 2200, 
+					left: distance * 2,
+					right: distance * 2,
+					forwards: distance * 2,
+					backwards: distance * 2, 
 				}
 
             // Update the raycaster
@@ -4908,6 +4984,9 @@ let UI_ThirdPersonCameraView_root
 			const gui = new GUI();
             gui.close()
             // gui.hide()
+
+            const folderUserSystemControls = gui.addFolder('⚙️ My Experience System Controls')
+            folderUserSystemControls.add(newSpeedStrengthParams, 'left').min(1).max(500000).step(100).name('|- A2. [ ~*~ [ User Height Scale ] ~*~ ] ')
 
 			const folderSky = gui.addFolder('Sky');
 			folderSky.add(parameters, 'elevation', 0, 90, 0.1).onChange(updateSun);
