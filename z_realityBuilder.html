@@ -1999,7 +1999,7 @@ let subApp01_MusicPlayerApp_obj = {
                 // 010101010101010101010101010101010100101010101010101010
 
 
-                const distance = 10;
+                const distance = 5;
 
                 const Button_forward = document.getElementById('button_forward');
                 Button_forward.addEventListener('click', function move(direction) {
@@ -2399,12 +2399,15 @@ function dollyZoom() {
         function trackingShot() {
             gsap.to(camera.position, {
                 duration: 3,
-                x: 5,
+                x: 10000,
+                delay: 2,
                 onUpdate: function() {
                     camera.lookAt(UserContainer_root.position);
                 }
             });
         }
+
+        // trackingShot()
 
         // Key press event listener
         document.addEventListener('keydown', (event) => {
@@ -3512,12 +3515,15 @@ subApp01_MusicPlayerApp_obj.root.add(
         0, 0, 0,
         0.1, 0.1, 0.1,
         "hoverClockA1",
-        "./pages/Applications/03-TodoList/index.html",
+        "https://vonerikbarren.github.io/Portfolio--V3/#",
         "1920px", "1200"
     )
         
     
 )
+
+//./pages/Applications/02-MusicPlayer00/index.html
+
 
 console.log(camera.position)
 console.log(subApp01_MusicPlayerApp_obj.root.position)
@@ -3735,7 +3741,6 @@ console.log(subApp01_MusicPlayerApp_obj.root.position)
                 
                 orbitControls = new OrbitControls( camera, cssrenderer.domElement );
                 orbitControls.maxPolarAngle = Math.PI  * 2
-                // orbitControls.minPolarAngle = Math.PI * 0.495;
                 orbitControls.maxAzimuthAngle = Math.PI * 2
                 orbitControls.target.set( 0, 0, 0 );
                 orbitControls.minDistance = 1;
@@ -3748,8 +3753,29 @@ console.log(subApp01_MusicPlayerApp_obj.root.position)
                 orbitControls.movementSpeed = 10000;
                 orbitControls.enabled = false; // Start with FirstPersonControls disabled
                 orbitControls.update();
+                // orbitControls.minPolarAngle = Math.PI * 0.495;
                 // disableFirstPersonControls()
 
+            }
+
+
+            let enableOrbitCenterControls = () => {
+                orbitControls = new OrbitControls( camera, cssrenderer.domElement );
+                orbitControls.maxPolarAngle = Math.PI  * 2
+                orbitControls.maxAzimuthAngle = Math.PI * 2
+                orbitControls.target.set( 0, 0, 0 );
+                orbitControls.minDistance = 1;
+                orbitControls.maxDistance = 700000000.0;
+                orbitControls.screenSpacePanning = true
+                orbitControls.enablePan = true
+                
+                orbitControls.rotateSpeed = 0.025
+                orbitControls.zoomSpeed = 1
+                orbitControls.movementSpeed = 10000;
+                orbitControls.enabled = false; // Start with FirstPersonControls disabled
+                orbitControls.update();
+                // orbitControls.minPolarAngle = Math.PI * 0.495;
+                // disableFirstPersonControls()
             }
 
        
@@ -3762,7 +3788,7 @@ console.log(subApp01_MusicPlayerApp_obj.root.position)
                     }
                 }
             
-
+                disableOrbitControls()
                
                     
 
@@ -3795,18 +3821,26 @@ console.log(subApp01_MusicPlayerApp_obj.root.position)
                 firstPersonControls.verticalMin = 0
                 firstPersonControls.heightMax = 0
                 firstPersonControls.heightMin = 0
-                firstPersonControls.movementSpeed = 10;
+                firstPersonControls.movementSpeed = 50;
                 firstPersonControls.enabled = false; // Start with FirstPersonControls disabled
                 firstPersonControls.update();
             }
 
-             // Function to disable FirstPersonControls
-            let disableFirstPersonControls = () => {
-                    if (FirstPersonControls) {
-                        FirstPersonControls.dispose(); // Dispose of the controls to remove event listeners
-                        FirstPersonControls = null; // Set the controls to null to ensure they are fully removed
-                    }
+            // Function to disable FirstPersonControls
+            function disableFirstPersonControls() {
+                if (firstPersonControls) {
+                    firstPersonControls.dispose();
+                    firstPersonControls = null;
+                }
             }
+
+            //  // Function to disable FirstPersonControls
+            // let disableFirstPersonControls = () => {
+            //         if (FirstPersonControls) {
+            //             FirstPersonControls.dispose(); // Dispose of the controls to remove event listeners
+            //             FirstPersonControls = null; // Set the controls to null to ensure they are fully removed
+            //         }
+            // }
 
             
             // firstPersonControls = new FirstPersonControls(camera, cssrenderer.domElement);
@@ -3854,50 +3888,89 @@ console.log(subApp01_MusicPlayerApp_obj.root.position)
             // Add event listeners for mouse movements
             document.addEventListener('mousemove', (event) => {
                 if (mouseFollowEnabled) {
-                    mouseX = (event.clientX / window.innerWidth) * 2 - 1;
-                    mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
+                    mouseX = (event.clientX / window.innerWidth) * 2 + 1;
+                    mouseY = -(event.clientY / window.innerHeight) * 2 - 1;
                 }
             });
 
+            mouseFollowEnabled = true; // Enable mouse following // Activate Pointer Lock Controls
+            camera.lookAt(0, 0, 0)
+            
+            // disableOrbitControls()
+            enableOrbitCenterControls()
+            mouseFollowEnabled = true; // Enable mouse following // Activate Pointer Lock Controls
+            // // enableOrbitControls(); // Disable OrbitControls initially
+            // enableFirstPersonControls();
 
-            enableOrbitControls(); // Disable OrbitControls initially
-            enableFirstPersonControls();
+            gsap.from(camera.position, {
+                duration: 16,
+                delay: 0,
+                x: 0,
+                y: 2500,
+                z: 160,
+                onUpdate: () => {
+                    camera.lookAt(0, 0, 0);
+                    UserContainer_root.lookAt(camera.position)
+                }
+            })
             
 
 
             // Event listener for key press
             document.addEventListener('keydown', (event) => {
-                enableOrbitControls(); // Enable OrbitControls when 'c' key is pressed
-                enableFirstPersonControls();
-                // Disable all controls initially
-                orbitControls.enabled = false;
-                firstPersonControls.enabled = false;
-                mouseFollowEnabled = false;
-                // pointerLockControls.unlock();
+                // enableOrbitControls(); // Enable OrbitControls when 'c' key is pressed
+                // enableFirstPersonControls();
+                // // Disable all controls initially
+                // orbitControls.enabled = false;
+                // firstPersonControls.enabled = false;
+                // mouseFollowEnabled = false;
+                // // pointerLockControls.unlock();
+
+
+                
 
                 
 
                 if (event.key === 'c') {
-                    
-                    orbitControls.enabled = true; // Enable OrbitControls
-                    firstPersonControls.enabled = false;
-                    pointerLockControls.unlock();
-                    console.log(`OrbitControls: ${orbitControls.enabled}, FirstPersonControls: ${firstPersonControls.enabled}, PointerLockControls: ${pointerLockControls.isLocked}`);
+                    enableOrbitCenterControls()
+                    disableOrbitControls(); // Disable OrbitControls when 'p' key is pressed
+                    disableFirstPersonControls()
+                    // orbitControls.enabled = true; // Enable OrbitControls
+                    // firstPersonControls.enabled = false;
+                    // pointerLockControls.unlock();
+                    // console.log(`OrbitControls: ${orbitControls.enabled}, FirstPersonControls: ${firstPersonControls.enabled}, PointerLockControls: ${pointerLockControls.isLocked}`);
+                    mouseFollowEnabled = true; // Enable mouse following // Activate Pointer Lock Controls
+                    gsap.to(camera.position, {
+                        duration: 1,
+                        delay: 0,
+                        x: 0,
+                        y: 0,
+                        z: 160,
+                        onUpdate: () => {
+                            camera.lookAt(0, 0, 0);
+                        }
+                    })
+
                 } else if (event.key === 'v') {
                     disableOrbitControls(); // Disable OrbitControls when 'p' key is pressed
-                    
-                    firstPersonControls.enabled = true; // Enable FirstPersonControls
-                    orbitControls.enabled = false;
-                    pointerLockControls.unlock();
-                    console.log(`FirstPersonControls: ${firstPersonControls.enabled}, OrbitControls: ${orbitControls.enabled}, PointerLockControls: ${pointerLockControls.isLocked}`);
-                } else if (event.key === 'b') {
-                    disableOrbitControls(); // Disable OrbitControls when 'p' key is pressed
-                    mouseFollowEnabled = true; // Enable mouse following // Activate Pointer Lock Controls
-                    orbitControls.enabled = false;
-                    firstPersonControls.enabled = false;
-                    console.log(`MouseFollow: ${mouseFollowEnabled}, OrbitControls: ${orbitControls.enabled}, FirstPersonControls: ${firstPersonControls.enabled}`);
-                    // pointerLockControls.lock(); // Activate Pointer Lock Controls
+                    enableFirstPersonControls()
+                    mouseFollowEnabled = false; // Enable mouse following // Activate Pointer Lock Controls
+                    // PointerLockControls: ${pointerLockControls.isLocked}`);
 
+
+                } else if (event.key === 'b') {
+                    camera.lookAt(0, 0, 0)
+                    disableOrbitControls(); // Disable OrbitControls when 'b' key is pressed
+                    disableFirstPersonControls()
+                    mouseFollowEnabled = true; // Enable mouse following // Activate Pointer Lock Controls
+                    
+
+                } else if (event.key === 'n') {
+                    // camera.lookAt(0, 0, 0)
+                    enableOrbitControls(); // Disable OrbitControls when 'b' key is pressed
+                    disableFirstPersonControls()
+                    mouseFollowEnabled = false; // Enable mouse following // Activate Pointer Lock Controls
+                    // PointerLockControls: ${pointerLockControls.isLocked}`);
                 }
             });
 
@@ -5157,32 +5230,55 @@ let UI_ThirdPersonCameraView_root
 
 		function animate() {
 
+
+
+
+
+
 			requestAnimationFrame(animate);
+
+            const delta = clock.getDelta();
+
+            // orbitControls.update(delta);
+            if (orbitControls) {
+                orbitControls.update(delta);
+            }
+
+            if (firstPersonControls) {
+                firstPersonControls.update(delta);
+            }
+
 
             // Update camera rotation based on mouse movements if mouse follow is enabled
             if (mouseFollowEnabled) {
-                targetX = mouseX * 0.05;
-                targetY = mouseY * 0.05;
+                
+                targetX = mouseX * -Math.abs(0.1);
+                targetY = mouseY * 0.1;
+                onUpdate: () => {
+                            camera.lookAt(0, 0, 0);
+                        }
 
+                setTimeout(() => {
+                    // camera.lookAt(0, 100, 0)
+                    targetX = mouseX * -Math.abs(1.05);;
+                    targetY = mouseX * Math.abs(1.05);;
+                }, 3000);
+
+                
                 camera.rotation.y += (targetX - camera.rotation.y) * 0.1;
                 camera.rotation.x += (targetY - camera.rotation.x) * 0.1;
+                // disableOrbitControls()
             }
 
             
 
-            // const time = performance.now();
-
-            // arenaTest01.rotation.y += 0.01
-            // Scene_TechCube01.rotation.y += 0.01
-            // Scene_Tree01.rotation.y += 0.01
-            // Scene_Prismatrix.rotation.y += 0.01
-
+            
 
 
             if ( pointerLockControls.isLocked === true ) {
 
 					raycaster_plc.ray.origin.copy( pointerLockControls.getObject().position );
-					raycaster_plc.ray.origin.y -= 300; // Camera's Height when landed
+					raycaster_plc.ray.origin.y -= 0; // Camera's Height when landed
 
 					const intersections = raycaster_plc.intersectObjects( objects, true );
 
@@ -5271,8 +5367,9 @@ let UI_ThirdPersonCameraView_root
 
 			const time = performance.now() * 0.001;
 			const delta = clock.getDelta();
-			orbitControls.update(delta);
-			firstPersonControls.update(delta);
+			
+
+			// firstPersonControls.update(delta);
             // pointerLockControls.update(delta);
 
             // requestAnimationFrame(animate);
