@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- <script src="js/cubeModule.js"></script>
+    <script src="js/interactions.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/EasePack.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/CustomEase.min.js"></script>
@@ -470,14 +472,118 @@
          <button class="key">ΔΩ</button> -->
         
         <!-- Add more keys as needed -->
-    </div> -->
+    <!-- </div> --> -->
 
     <!-- ./assets/video/SphereAnimations/Equations3.mp4 -->
 
-    <script>
-        
 
-    </script>
+<script>
+    // function byeVideo() {
+    //     let videoElement01 = document.getElementById("video")
+    //     let videoElement02 = document.getElementById("video02")
+    //     let videoElement03 = document.getElementById("video03")
+    //     let videoElement04 = document.getElementById("video04")
+    //     let videoElement05 = document.getElementById("video05")
+    //     let videoElement06 = document.getElementById("video06")
+    //     let videoElement07 = document.getElementById("video07")
+    //     let videoOpeningElement01 = document.getElementById("openingVideo")
+    //     let ExpressionVideoMain = document.getElementById("ExpressionMainVideo00")
+
+
+    //     videoElement01.classList.toggle("myVideo01")
+    //     videoElement02.classList.toggle("myVideo02")
+    //     videoElement03.classList.toggle("myVideo03")
+    //     videoElement04.classList.toggle("myVideo04")
+    //     videoElement05.classList.toggle("myVideo05")
+    //     videoElement06.classList.toggle("myVideo06")
+    //     videoElement07.classList.toggle("myVideo07")
+    //     videoOpeningElement01.classList.toggle("countDown")
+    //     ExpressionVideoMain.classList.toggle("ExpressionVideoMainClass01")
+    // }
+
+
+    // function byeAudio() {
+    // 	let audioElement01 = document.getElementById('')
+    // }
+
+    function openNav() {
+        play_sfx_show()
+        document.getElementById("mySidenav").style.width = "450px";
+        document.getElementById("main").style.marginLeft = "450px";
+    }
+
+    function closeNav() {
+        play_sfx_hide()
+        document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("main").style.marginLeft= "0";
+    }
+
+
+    function openNavRight() {
+        play_sfx_show()
+        document.getElementById("mySidenavRight").style.width = "450px";
+        document.getElementById("mainRight").style.marginRight = "450px";
+    }
+
+    function closeNavRight() {
+        play_sfx_hide()
+        document.getElementById("mySidenavRight").style.width = "0";
+        document.getElementById("mainRight").style.marginRight = "0";
+    }
+
+
+    // audio mfx
+    // Sound Tests
+    const soundTest01 = () => {
+        const soundTest = document.getElementById("sfx_click_gen")
+        soundTest.play()
+    }
+
+    // General Click sfx
+    const play_sfx_click_gen = () => {
+        const play_sfx_click_gen_item = document.getElementById("sfx_click_gen")
+        play_sfx_click_gen_item.play()
+        play_sfx_click_gen_item.volume = 0.3
+    }
+
+    // Show Data sfx
+    const play_sfx_show = () => {
+        let play_sfx_show_item = document.getElementById("sfx_click_show")
+        play_sfx_show_item.play()
+        play_sfx_show_item.volume = 0.3
+    }
+
+    // Hide Data sfx
+    const play_sfx_hide = () => {
+        const play_sfx_hide_item = document.getElementById("sfx_click_hide")
+        play_sfx_hide_item.play()
+        play_sfx_hide_item.volume = 0.3
+    }
+
+
+
+    // Music Tracks
+    // LightSteam Data sfx
+    // const play_LightSteam_sfx = () => {
+    // 	const play_LightSteam_sfx = document.getElementById("sfx_LightSteam_Workshop")
+    // 	play_LightSteam_sfx.play()
+    // 	play_LightSteam_sfx.volume = 0.2
+    // }
+
+
+    // RealityOfTheNet Data mfx
+    const play_RealityOfTheNet_mfx = () => {
+        const play_RealityOfTheNet_mfx = document.getElementById("mfx_RealityOfTheNet")
+        play_RealityOfTheNet_mfx.play()
+        play_RealityOfTheNet_mfx.volume = 0.55
+    }
+
+    // play_LightSteam_sfx()
+    // play_RealityOfTheNet_mfx()
+
+
+    
+</script>
 
 	<!-- <script src="./THREE_Scene.js"></script> -->
 
@@ -518,8 +624,8 @@
         import { CSS3DRenderer, CSS3DObject } from './libraries/renderers/CSS3DRenderer.js';
 
 
-        import { createCustomCubes } from './components/objects/cubeModule.js';
-        import { handleInteractions } from './components/interactions/interactions.js';
+        // import { createCustomCubes } from './components/objects/cubeModule.js';
+        // import { handleInteractions } from './components/interactions/interactions.js';
 
         // Animation Imports
 
@@ -1882,6 +1988,109 @@ let OpeningTunnel_obj = {
 					return panelData
 				}
 
+
+
+//..........................................................
+//....SSSSSS................................................
+//...SSSSSSSS..........................................ddd..
+//..SSSSSSSSSS.........................................ddd..
+//..SSSSSSSSSS.........................................ddd..
+//.SSSS...SSSSS..ooooooo..ouuu...uuu..nnnnnnnnn...dddddddd..
+//.SSSSSS.......ooooooooo.ouuu...uuu..nnnnnnnnn..ddddddddd..
+//..SSSSSSSSS..Sooooooooooouuu...uuu..nnnnnnnnn.dddddddddd..
+//..SSSSSSSSSS.Sooo...ooooouuu...uuu..nnnn.nnnn.dddd..dddd..
+//....SSSSSSSSSSooo...ooooouuu...uuu..nnn...nnn.dddd...ddd..
+//.SSSS..SSSSSSSooo...ooooouuu...uuu..nnn...nnn.dddd...ddd..
+//.SSSS....SSSSSooo...oooo.uuu..uuuu..nnn...nnn.dddd..dddd..
+//.SSSSSSSSSSSSSoooooooooo.uuuuuuuuu..nnn...nnn.dddddddddd..
+//..SSSSSSSSSS..ooooooooo..uuuuuuuuu..nnn...nnn..ddddddddd..
+//...SSSSSSSSS...ooooooo...uuuuuuuuu..nnn...nnn..ddddddddd..
+//....SSSSSS......ooooo......uuu...................ddd......
+//..........................................................
+
+//.........................
+//............XX......XX...
+//.FFFFFFFFFFFXXXX..XXXXX..
+//.FFFFFFFFFFFXXXX..XXXXX..
+//.FFFFFFFFFF.XXXXXXXXXX...
+//.FFFF........XXXXXXXX....
+//.FFFF........XXXXXXXX....
+//.FFFFFFFFF....XXXXXX.....
+//.FFFFFFFFF....XXXXXX.....
+//.FFFFFFFFF....XXXXXX.....
+//.FFFF........XXXXXXXX....
+//.FFFF........XXXXXXXXX...
+//.FFFF.......XXXXXXXXXX...
+//.FFFF......FXXXX..XXXXX..
+//.FFFF......FXXXX..XXXXX..
+//.........................
+
+
+        // Sound Tests
+				const soundTest01 = () => {
+					const soundTest = document.getElementById("mfx_audio00_test")
+					soundTest.play()
+				}
+
+
+				// General Click sfx
+				const play_sfx_click_gen = () => {
+					const play_sfx_click_gen_item = document.getElementById("sfx_click_gen")
+					play_sfx_click_gen_item.play()
+					play_sfx_click_gen_item.volume = 0.3
+				}
+
+
+
+				// Show Data sfx
+				const play_sfx_show = () => {
+					let play_sfx_show_item = document.getElementById("sfx_click_show")
+					play_sfx_show_item.play()
+					play_sfx_show_item.volume = 0.3
+				}
+
+				// Hide Data sfx
+				const play_sfx_hide = () => {
+					const play_sfx_hide_item = document.getElementById("sfx_click_hide")
+					play_sfx_hide_item.play()
+					play_sfx_hide_item.volume = 0.3
+				}
+
+				// Show Panel sfx
+				const play_sfx_panel_show = () => {
+					const play_sfx_show_panel = document.getElementById("sfx_panel_show")
+					play_sfx_hide_item.play()
+					play_sfx_hide_item.volume = 0.3
+				}
+
+				// Hide Panel sfx
+				const play_sfx_panel_hide = () => {
+					const play_sfx_hide_panel = document.getElementById("sfx_panel_hide")
+					play_sfx_hide_panel.play()
+					play_sfx_hide_panel.volume = 0.3
+				}
+
+				// Show Panel sfx
+				const play_sfx_hand_show = () => {
+					const play_sfx_show_hand = document.getElementById("sfx_hand_show")
+					play_sfx_show_hand.play()
+					play_sfx_show_hand.volume = 0.3
+				}
+
+				// Hide Panel sfx
+				const play_sfx_hand_hide = () => {
+					const play_sfx_hide_hand = document.getElementById("sfx_hand_hide")
+					play_sfx_hide_hand.play()
+					play_sfx_hide_hand.volume = 0.3
+				}
+
+                // MANUAL COMMAND_ playSfx_clickGen_
+				const playSfx_clickGen = () => {
+					let file = new Audio("./assets/audio/ui_Sounds/SFX_Menu/sfx-click-gen.wav")
+
+					file.play()
+				}
+
            
 
 
@@ -1902,6 +2111,8 @@ let OpeningTunnel_obj = {
             //...SSSSSSSSS..EEEEEEEEEEE....TTTT.......TTTT....III..NNN....NNNN....GGGGGGGGGG...SSSSSSSSS...
             //....SSSSSS...........................................................GGGG.........SSSSSS.....
             //.............................................................................................
+
+
 
 
 
@@ -2080,8 +2291,9 @@ let OpeningTunnel_obj = {
                 const Button_forward = document.getElementById('button_forward');
                 Button_forward.addEventListener('click', function move(direction) {
 
-                    
+                    play_sfx_click_gen()
                     gsap.to(camera.position, { z: camera.position.z - distance, duration: 1 });
+                    
                     
                 });
 
@@ -2089,7 +2301,7 @@ let OpeningTunnel_obj = {
                 const Button_backward = document.getElementById('button_backward');
                 Button_backward.addEventListener('click', function move(direction) {
 
-                    
+                    play_sfx_click_gen()
                     gsap.to(camera.position, { z: camera.position.z + distance, duration: 1 });
                     
                 });
@@ -2098,7 +2310,7 @@ let OpeningTunnel_obj = {
                 const Button_left = document.getElementById('button_left');
                 Button_left.addEventListener('click', function move(direction) {
 
-                    
+                    play_sfx_click_gen()
                     gsap.to(camera.position, { x: camera.position.x - distance, duration: 1 });
                     
                 });
@@ -2106,7 +2318,7 @@ let OpeningTunnel_obj = {
                 const Button_right = document.getElementById('button_right');
                 Button_right.addEventListener('click', function move(direction) {
 
-                    
+                    play_sfx_click_gen()
                     gsap.to(camera.position, { x: camera.position.x + distance, duration: 1 });
                     
                 });
@@ -2115,7 +2327,7 @@ let OpeningTunnel_obj = {
                 const Button_up = document.getElementById('button_up');
                 Button_up.addEventListener('click', function move(direction) {
 
-                    
+                    play_sfx_click_gen()
                     gsap.to(camera.position, { y: camera.position.y + distance, duration: 1 });
                     
                 });
@@ -2123,7 +2335,7 @@ let OpeningTunnel_obj = {
                 const Button_down = document.getElementById('button_down');
                 Button_down.addEventListener('click', function move(direction) {
 
-                    
+                    play_sfx_click_gen()
                     gsap.to(camera.position, { y: camera.position.y - distance, duration: 1 });
                     
                 });
@@ -3760,6 +3972,240 @@ console.log(subApp01_MusicPlayerApp_obj.root.position)
 
 
 
+function createCustomCubes(scene, imageTextures, clickableSides, numCubes, positions, rotations, scales, spinningConfigs) {
+    const textureLoader = new THREE.TextureLoader();
+    const cubes = [];
+    const initialPositions = new Map();
+
+    for (let i = 0; i < numCubes; i++) {
+        const cubeGroup = new THREE.Group();
+
+        // Create six planes for the cube
+        const planes = [];
+        for (let j = 0; j < 6; j++) {
+            const texture = textureLoader.load(imageTextures[j]);
+            const geometry = new THREE.PlaneGeometry(1, 1);
+            const material = new THREE.MeshBasicMaterial({ map: texture, side: THREE.DoubleSide });
+            const plane = new THREE.Mesh(geometry, material);
+
+            // Set plane positions and rotations to form a cube
+            switch (j) {
+                case 0: plane.position.set(0, 0, 0.5); break; // Front
+                case 1: plane.position.set(0, 0, -0.5); plane.rotation.y = Math.PI; break; // Back
+                case 2: plane.position.set(0, 0.5, 0); plane.rotation.x = -Math.PI / 2; break; // Top
+                case 3: plane.position.set(0, -0.5, 0); plane.rotation.x = Math.PI / 2; break; // Bottom
+                case 4: plane.position.set(0.5, 0, 0); plane.rotation.y = -Math.PI / 2; break; // Right
+                case 5: plane.position.set(-0.5, 0, 0); plane.rotation.y = Math.PI / 2; break; // Left
+            }
+
+            // Make the plane clickable if specified
+            if (clickableSides[j]) {
+                plane.userData.clickable = true;
+                plane.userData.index = i;
+                plane.userData.side = j;
+            }
+
+            cubeGroup.add(plane);
+            planes.push(plane);
+        }
+
+        // Set cube position, rotation, and scale
+        if (positions[i]) {
+            cubeGroup.position.set(positions[i][0], positions[i][1], positions[i][2]);
+        }
+        if (rotations[i]) {
+            cubeGroup.rotation.set(rotations[i][0], rotations[i][1], rotations[i][2]);
+        }
+        if (scales[i]) {
+            cubeGroup.scale.set(scales[i][0], scales[i][1], scales[i][2]);
+        }
+
+        // Store initial position
+        initialPositions.set(cubeGroup, cubeGroup.position.clone());
+
+        // Add spinning animation if specified
+        if (spinningConfigs[i] && spinningConfigs[i].spinning) {
+            gsap.to(cubeGroup.rotation, {
+                y: "+=" + Math.PI * 2,
+                duration: spinningConfigs[i].speed || 1,
+                repeat: -1,
+                ease: "linear"
+            });
+        }
+
+        scene.add(cubeGroup);
+        cubes.push(cubeGroup); // Store reference to the cube group
+    }
+
+    return { cubes, initialPositions };
+}
+
+
+
+function handleInteractions(scene, camera, cubes, initialPositions) {
+    const raycaster = new THREE.Raycaster();
+    const mouse = new THREE.Vector2();
+    let selectedCube = null;
+    let holdTimeout = null;
+
+    window.addEventListener('mousemove', onMouseMove, false);
+    window.addEventListener('mousedown', onMouseDown, false);
+    window.addEventListener('mouseup', onMouseUp, false);
+    window.addEventListener('contextmenu', onRightClick, false);
+    window.addEventListener('dblclick', onDoubleClick, false);
+    window.addEventListener('touchstart', onTouchStart, false);
+    window.addEventListener('touchend', onTouchEnd, false);
+
+    function onMouseMove(event) {
+        event.preventDefault();
+        mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+        mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+        raycaster.setFromCamera(mouse, camera);
+        const intersects = raycaster.intersectObjects(scene.children, true);
+
+        for (let i = 0; i < intersects.length; i++) {
+            const intersect = intersects[i];
+            if (intersect.object.userData.clickable) {
+            //     gsap.to(intersect.object.scale, { duration: 0.2, x: 10, y: 10, z: 10 });
+            }
+        }
+    }
+
+    function onMouseDown(event) {
+        event.preventDefault();
+        mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+        mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+        raycaster.setFromCamera(mouse, camera);
+        const intersects = raycaster.intersectObjects(scene.children, true);
+
+        for (let i = 0; i < intersects.length; i++) {
+            const intersect = intersects[i];
+            if (intersect.object.userData.clickable) {
+                selectedCube = intersect.object.parent;
+                holdTimeout = setTimeout(() => {
+                    gsap.to(selectedCube.scale, { 
+                        duration: 0.2, 
+                        x: 10, 
+                        y: 10, 
+                        z: 10 });
+                }, 500); // Hold for 500ms to trigger the hold action
+            }
+        }
+    }
+
+    function onMouseUp(event) {
+        event.preventDefault();
+        if (holdTimeout) {
+            clearTimeout(holdTimeout);
+            holdTimeout = null;
+        }
+        if (selectedCube) {
+            const initialPosition = initialPositions.get(selectedCube);
+            gsap.to(selectedCube.position, { duration: 0.5, x: initialPosition.x, y: initialPosition.y, z: initialPosition.z });
+            gsap.to(selectedCube.scale, { duration: 0.5, x: 10, y: 10, z: 10 });
+            selectedCube = null;
+        }
+    }
+
+    function onRightClick(event) {
+        event.preventDefault();
+        mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+        mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+        raycaster.setFromCamera(mouse, camera);
+        const intersects = raycaster.intersectObjects(scene.children, true);
+
+        for (let i = 0; i < intersects.length; i++) {
+            const intersect = intersects[i];
+            if (intersect.object.userData.clickable) {
+                // Show a small menu with options (undefined for now)
+                console.log('Right-clicked on a clickable side');
+            }
+        }
+    }
+
+    function onDoubleClick(event) {
+        event.preventDefault();
+        mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+        mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+        raycaster.setFromCamera(mouse, camera);
+        const intersects = raycaster.intersectObjects(scene.children, true);
+
+        for (let i = 0; i < intersects.length; i++) {
+            const intersect = intersects[i];
+            if (intersect.object.userData.clickable) {
+                gsap.to(intersect.object.parent.scale, { duration: 0.2, x: 0.5, y: 0.5, z: 0.5 });
+            }
+        }
+    }
+
+    function onTouchStart(event) {
+        event.preventDefault();
+        mouse.x = (event.touches[0].clientX / window.innerWidth) * 2 - 1;
+        mouse.y = -(event.touches[0].clientY / window.innerHeight) * 2 + 1;
+        raycaster.setFromCamera(mouse, camera);
+        const intersects = raycaster.intersectObjects(scene.children, true);
+
+        for (let i = 0; i < intersects.length; i++) {
+            const intersect = intersects[i];
+            if (intersect.object.userData.clickable) {
+                selectedCube = intersect.object.parent;
+                holdTimeout = setTimeout(() => {
+                    gsap.to(selectedCube.scale, { duration: 0.2, x: 1.5, y: 1.5, z: 1.5 });
+                }, 500); // Hold for 500ms to trigger the hold action
+            }
+        }
+    }
+
+    function onTouchEnd(event) {
+        event.preventDefault();
+        if (holdTimeout) {
+            clearTimeout(holdTimeout);
+            holdTimeout = null;
+        }
+        if (selectedCube) {
+            const initialPosition = initialPositions.get(selectedCube);
+            gsap.to(selectedCube.position, { duration: 0.5, x: initialPosition.x, y: initialPosition.y, z: initialPosition.z });
+            gsap.to(selectedCube.scale, { duration: 0.5, x: 1, y: 1, z: 1 });
+            selectedCube = null;
+        }
+    }
+}
+
+
+     // Example usage
+     const testcube_imageTextures = [
+        './assets/icons/Websites01/002-globe_grid.png',
+        './assets/icons/Websites01/003-schedule.png',
+        '/assets/video/TunnelAnimations/TechTunnelA03.mp4',
+        './assets/icons/Websites01/078-settings.png',
+        './assets/img/02-UserUI/04-Logo/WhiteGear01.png',
+        './assets/icons/Websites01/002-globe_grid.png'
+    ];
+    const testcube_clickableSides = [true, false, true, false, true, false];
+    const testcube_numCubes = 3;
+    const testcube_positions = [
+        [0, 0, 0],
+        [10, 0, 0],
+        [100, 0, 0]
+    ];
+    const testcube_rotations = [
+        [0, 0, 0],
+        [0, Math.PI / 4, 0],
+        [0, Math.PI / 2, 0]
+    ];
+    const testcube_scales = [
+        [1, 1, 1],
+        [1.5, 1.5, 1.5],
+        [20, 20, 20]
+    ];
+    const testcube_spinningConfigs = [
+        { spinning: true, speed: 2 },
+        { spinning: false },
+        { spinning: true, speed: 1 }
+    ];
+
+    const { cubes, initialPositions } = createCustomCubes(scene, testcube_imageTextures, testcube_clickableSides, testcube_numCubes, testcube_positions, testcube_rotations, testcube_scales, testcube_spinningConfigs);
+    handleInteractions(scene, camera, cubes, initialPositions);
 
 
 
@@ -4434,6 +4880,8 @@ console.log(subApp01_MusicPlayerApp_obj.root.position)
 //..UUUUUUUUU....SSSSSSSSS..SEEEEEEEEEE.ERRR...RRRRRRRΔΔΔΔΔΔΔΔΔΔΔ..
 //....UUUUU.......SSSSSS...........................................
 //.................................................................
+
+
 
 
 
