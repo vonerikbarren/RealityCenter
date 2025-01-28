@@ -311,14 +311,14 @@
          <video id="userVideo" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/PersonalAnimations/ΔExplanationA01.mp4" style="display: none" ></video>
 	</div>
 
-    <button class="button menu" onclick="toggleMenu()">☰ Menu</button>
+  <button class="button menu" onclick="toggleMenu()">☰ Menu</button>
   
-  <button id="button_forward" class="button control forward">&#8593;</button>
-  <button id="button_backward"class="button control backward">&#8595;</button>
-  <button id="button_left"class="button control left" >&#8592;</button>
-  <button id="button_right"class="button control right" >&#8594;</button>
-  <button id="button_up"class="button control up">&#8670;</button>
-  <button id="button_down"class="button control down">&#8671;</button>
+  <button id="button_forward" onclick="play_sfx_click_gen()" class="button control forward">&#8593;</button>
+  <button id="button_backward" onclick="play_sfx_click_gen()" class="button control backward">&#8595;</button>
+  <button id="button_left" onclick="play_sfx_click_gen()" class="button control left" >&#8592;</button>
+  <button id="button_right" onclick="play_sfx_click_gen()" class="button control right" >&#8594;</button>
+  <button id="button_up" onclick="play_sfx_click_gen()" class="button control up">&#8670;</button>
+  <button id="button_down" onclick="play_sfx_click_gen()" class="button control down">&#8671;</button>
 
   <button class="button right-button">A</button>
   <button class="button right-button-2">B</button>
@@ -331,150 +331,32 @@
 
   <div id="circle"></div>
 
+  <!-- Sounds  -->
+  <audio id="mfx_audio00_test" class="audioTest"  src="./assets/audio/ui_Sounds/SFX_Menus/defaultClick01.wav"></audio>
 
-  <!-- <input type="text" id="output" placeholder="Type here..."> -->
-    <!-- <div id="keyboard">
-        <!-- Row01 -->
-        <!-- <button class="key">esc</button>
-        <button class="key">F1</button>
-        <button class="key">F2</button>
-        <button class="key">F3</button>
-        <button class="key">F4</button>
-        <button class="key">F5</button>
-        <button class="key">F6</button>
-        <button class="key">F7</button>
-        <button class="key">F8</button>
-        <button class="key">F9</button>
-        <button class="key">F10</button>
-        <button class="key">F11</button>
-        <button class="key">F12</button>
-        <button class="key">F13</button>
-        <button class="key">F14</button>
-        <button class="key">F15</button> -->
+  <audio id="sfx_click_gen" class="audioTest" volume="0.5" src="./assets/audio/ui_Sounds/SFX_Menus/defaultClick01.wav"></audio>
 
-        <!-- Row02 -->
-        <!-- <button class="key">`</button>
-        <button class="key">01</button>
-        <button class="key">02</button>
-        <button class="key">03</button>
-        <button class="key">04</button>
-        <button class="key">05</button>
-        <button class="key">06</button>
-        <button class="key">07</button>
-        <button class="key">08</button>
-        <button class="key">09</button>
-        <button class="key">10</button>
-        <button class="key">11</button>
-        <button class="key">12</button>
-        <button class="key">13</button>
-        <button class="key">14</button>
-        <button class="key">15</button> -->
+  <audio id="sfx_click_gen" class="audioTest"  src="./assets/audio/ui_Sounds/SFX_Menu/sfx-click-gen01.wav"></audio>
 
-        <!-- row03 -->
-        <!-- <button class="key">tab</button>
-        <button class="key">Q</button>
-        <button class="key">W</button>
-        <button class="key">E</button>
-        <button class="key">R</button>
-        <button class="key">T</button>
-        <button class="key">Y</button>
-        <button class="key">U</button>
-        <button class="key">I</button>
-        <button class="key">O</button>
-        <button class="key">P</button>
-        <button class="key">[</button>
-        <button class="key">]</button>
-        <button class="key">{</button>
-        <button class="key">}</button>
-        <button class="key">\</button> -->
+  <audio id="sfx_click_show" class="audioTest"  src="./assets/audio/ui_Sounds/SFX_Menu/sfx-click-show.wav"></audio>
 
-        <!-- row04 -->
-        <!-- <button class="key">caps</button>
-        <button class="key">A</button>
-        <button class="key">S</button>
-        <button class="key">D</button>
-        <button class="key">F</button>
-        <button class="key">G</button>
-        <button class="key">H</button>
-        <button class="key">J</button>
-        <button class="key">K</button>
-        <button class="key">L</button>
-        <button class="key">;</button>
-        <button class="key">:</button>
-        <button class="key">Δ</button>
-        <button class="key">ΔΘ</button>
-        <button class="key">Δτ</button>
-        <button class="key">ΔΞ</button> -->
+  <audio id="sfx_click_hide" class="audioTest"  src="./assets/audio/ui_Sounds/SFX_Menu/sfx-click-hide.wav"></audio>
 
-         <!-- row04 -->
-         <!-- <button class="key">ShL</button>
-         <button class="key">Z</button>
-         <button class="key">X</button>
-         <button class="key">C</button>
-         <button class="key">V</button>
-         <button class="key">B</button>
-         <button class="key">N</button>
-         <button class="key">M</button>
-         <button class="key"><</button>
-         <button class="key">></button>
-         <button class="key">?</button>
-         <button class="key">/</button>
-         <button class="key">ΔΠ</button>
-         <button class="key">ΔΦ</button>
-         <button class="key">ΔΣ</button>
-         <button class="key">ShR</button> -->
+  <audio id="sfx_click_hide" class="audioTest"  src="./assets/audio/ui_Sounds/SFX_Menu/sfx-click-hide.wav"></audio>
 
+  <audio id="sfx_click_hide" class="audioTest"  src="./assets/audio/ui_Sounds/SFX_Menu/sfx-click-hide.wav"></audio>
 
-         <!-- row05 -->
-         <!-- <button class="key">fn</button>
-         <button class="key">ctrl</button>
-         <button class="key">opt</button>
-         <button class="key">loop</button>
-         <button class="key">inpt</button>
-         <button class="key">cmd</button>
-         <button class="key">space</button>
-         <button class="key">cmd</button>
-         <button class="key">oupt</button>
-         <button class="key">opt</button>
-         <button class="key">loop</button>
-         <button class="key">&#9737;</button>
-         <button class="key">Δ&#9826;</button>
-         <button class="key">Δ&#9835;</button>
-         <button class="key">Δ&#10023;</button>
-         <button class="key">Δ&#9965;</button> -->
+  <audio id="sfx_panel_show" class="audioTest"  src="./assets/audio/ui_Sounds/SFX_Menu/sfx-panel-show.wav"></audio>
 
+  <audio id="sfx_panel_hide" class="audioTest"  src="./assets/audio/ui_Sounds/SFX_Menu/sfx-panel-hide.wav"></audio>
 
-         <!-- row06 -->
-         <!-- <button class="key">&#9888;</button>
-         <button class="key">&#9889;</button>
-         <button class="key">&#9854;</button>
-         <button class="key">&#9858;</button>
-         <button class="key">&#9759;</button>
-         <button class="key">&#128371;</button>
-         <button class="key">&#128338;</button>
-         <button class="key">&#128161;</button>
-         <button class="key">&#128294;</button>
-         <button class="key">&#128300;</button>
-         <button class="key">&#128301;</button>
+  <audio id="sfx_hand_show" class="audioTest"  src="./assets/audio/ui_Sounds/SFX_Menus/openMenu001.wav"></audio>
 
-         <button class="key">&#128302;</button>
-         <button class="key">Δ⤾</button>
-         <button class="key">Δ⤿</button>
-         <button class="key">Δ⤼</button>
-         <button class="key">Δ⤽</button>
-          -->
-         <!-- &#9965; -->
+  <audio id="sfx_hand_hide" class="audioTest"  src="./assets/audio/ui_Sounds/SFX_Menus/closeMenu001.wav"></audio>
 
-         <!-- <button class="key">p10</button>
-         <button class="key">ΔΕ</button>
-         <button class="key">ΔΧ</button>
-         <button class="key">ΔΟ</button>
-         <button class="key">ΔΩ</button> -->
-        
-        <!-- Add more keys as needed -->
-    <!-- </div> --> -->
-
-    <!-- ./assets/video/SphereAnimations/Equations3.mp4 -->
+  <audio id="sfx_hand_show1" class="audioTest"  src="./assets/audio/ui_Sounds/SFX_Items/RH_A.wav"></audio>
+  <audio id="sfx_hand_hide1" class="audioTest"  src="./assets/audio/ui_Sounds/SFX_Items/RH_B.wav"></audio>
+  <audio id="sfx_hand_hide1" class="audioTest"  src="./assets/audio/ui_Sounds/SFX_Items/ReverseSparkle.m4a"></audio>
 
 
 <script>
@@ -2479,21 +2361,27 @@ let OpeningTunnel_obj = {
                     switch (event.key) {
                         case 'w':
                             targetPosition.add(cameraDirection.clone().multiplyScalar(speed));
+                            play_sfx_click_gen()
                             break;
                         case 's':
                             targetPosition.add(cameraDirection.clone().multiplyScalar(-speed));
+                            play_sfx_click_gen()
                             break;
                         case 'a':
                             targetPosition.add(cameraDirection.clone().cross(camera.up).normalize().multiplyScalar(-speed));
+                            play_sfx_click_gen()
                             break;
                         case 'd':
                             targetPosition.add(cameraDirection.clone().cross(camera.up).normalize().multiplyScalar(speed));
+                            play_sfx_click_gen()
                             break;
                         case 'r': // Move up
                             targetPosition.add(camera.up.clone().multiplyScalar(speed));
+                            play_sfx_click_gen()
                             break;
                         case 'f': // Move down
                             targetPosition.add(camera.up.clone().multiplyScalar(-speed));
+                            play_sfx_click_gen()
                             break;
                     }
 
