@@ -2985,13 +2985,17 @@ let OmniDataFragment_root
 
 
 Scene_CrystalOrb = new THREE.Group()
-Scene_CrystalOrb.position.set(0, -5, 150)
+Scene_CrystalOrb.position.set(0, -850, -750)
 Scene_CrystalOrb.rotation.set(0, 0, 0)
-Scene_CrystalOrb.scale.set(1, 1, 1)
+Scene_CrystalOrb.scale.set(2.5, 2.5, 2.5)
 
 scene.add(Scene_CrystalOrb)
 
-const gltfLoader = new GLTFLoader().setPath( 'assets/models/crystal_orb/' );
+
+
+// tron_inspired_vr_playground
+
+const gltfLoader = new GLTFLoader().setPath( 'assets/models/small_scene/' );
     gltfLoader.load( 'scene.gltf', function ( gltf ) {
 
         Scene_CrystalOrb.add( gltf.scene );
@@ -2999,6 +3003,26 @@ const gltfLoader = new GLTFLoader().setPath( 'assets/models/crystal_orb/' );
         render();
 
     } );
+
+
+// const Tree_Digital01 = new THREE.Group()
+// Tree_Digital01.position.set(0, -450, -750)
+// Tree_Digital01.rotation.set(0, 0, 0)
+// Tree_Digital01.scale.set(2.5, 2.5, 2.5)
+
+// scene.add(Tree_Digital01)
+
+// const gltfLoader01 = new GLTFLoader().setPath( 'assets/models/tree_gn/' );
+//     gltfLoader01.load( 'scene.gltf', function ( gltf ) {
+
+//         Tree_Digital01.add( gltf.scene );
+
+//         render();
+
+//     } );
+
+    
+
 
 let Spacial_Movement_Function_Basic01 = (
     timeline,
