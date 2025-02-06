@@ -31,10 +31,10 @@
         .button {
           position: absolute;
           visibility: 50%; 
-          background-color: rgba(255, 255, 255, 0.5);
+          background-color: rgba(0, 255, 255, 0.863);
           color: white;
           border: none;
-          border-radius: 5px;
+          border-radius: 50px;
           padding: 10px;
           font-size: 16px;
           cursor: pointer;
@@ -229,12 +229,12 @@
             .button {
                 position: absolute;
                 visibility: 50%; 
-                background-color: rgba(255, 255, 255, 0.5);
+                background-color: rgba(255, 255, 255, 0.2);
                 color: white;
                 border: none;
-                border-radius: 5px;
-                padding: 10px;
-                font-size: 16px;
+                border-radius: 50px;
+                padding: 7.5px;
+                font-size: 14px;
                 cursor: pointer;
                 z-index: 1;
             }
@@ -320,11 +320,11 @@
   <button id="button_up" onclick="play_sfx_click_gen()" class="button control up">&#8670;</button>
   <button id="button_down" onclick="play_sfx_click_gen()" class="button control down">&#8671;</button>
 
-  <button class="button right-button">A</button>
-  <button class="button right-button-2">B</button>
-  <button class="button right-button-3">C</button>
-  <button class="button right-button-4">D</button>
-  <button class="button right-button-5">E</button>
+  <button class="button right-button">◬</button>
+  <button class="button right-button-2">Λ</button>
+  <button class="button right-button-3">§</button>
+  <button class="button right-button-4">⟐</button>
+  <button class="button right-button-5">Ω</button>
   
   <button class="button panel-menu" onclick="togglePanel()">☰ Panel</button>
 
@@ -1130,8 +1130,11 @@ let OpeningTunnel_obj = {
 				}
 			);
 
+            
+
 			water.rotation.x = - Math.PI / 2;
-            water.position.y = -1000000
+            water.position.y = -560
+            water.scale.set(0.5, 0.5, 0.5)
 
 			scene.add(water);
 
@@ -2839,7 +2842,7 @@ function dollyZoom() {
 
 				// Large Number here = The box dimensions all at the same time. 
 				for (let i = 0; i < count * 3; i++) {
-					positions[i] = (Math.random() - 0.5) * 100000
+					positions[i] = (Math.random() - 0.5) * 10000
 					colors[i] = Math.random()
 				}
 
@@ -2849,23 +2852,26 @@ function dollyZoom() {
 				// Particle Material init()
 				const particlesMaterial = new THREE.PointsMaterial()
 				// particlesMaterial.size = 10 // for ContainerHolderTex
-				particlesMaterial.size = 75
+				particlesMaterial.size = 2.5
 				particlesMaterial.sizeAttenuation = true;
 				// particlesMaterial.color = new THREE.Color('#1ADBCB') // neonBlueGreen
 				// particlesMaterial.color = new THREE.Color('#00ffb3') // neonBlueGreen
-				particlesMaterial.color = new THREE.Color('#1ed9d0') // neonGreenBlue
+				// particlesMaterial.color = new THREE.Color('#1ed9d0') // neonGreenBlue
+                particlesMaterial.color = new THREE.Color('#ffffff') // white
 				// particlesMaterial.color = new THREE.Color('#FFD700') // Gold
 				// particlesMaterial.color = new THREE.Color('#323232') // Black
 				// particlesMaterial.color = new THREE.Color('#a9a9a9') // Black
 				particlesMaterial.transparent = false;
 				// particlesMaterial.alphaMap = ContainerHolderWhiteA1
 				particlesMaterial.alphaMap = particleTexture02
+                particlesMaterial.map = particleTexture02
 				particlesMaterial.depthWrite = false
 				particlesMaterial.blending = THREE.AdditiveBlending
 				particlesMaterial.vertextColors = true
 
 				particles = new THREE.Points(particlesGeometry, particlesMaterial)
-				particles.position.set(0, 6000, 0)
+				particles.position.set(0, 0, 0)
+                // particles.scale.set(0.5, 0.5, 0.5)
 				// particles.position.set(0, 0, 0)
 				scene.add(particles);
 
@@ -2873,7 +2879,7 @@ function dollyZoom() {
                 let rotateParticles = () => {
                     gsap.to(particles.rotation, {
                         repeat: -1,
-                        duration: 15,
+                        duration: 5,
                         ease: "none",
                         delay: 0,
                         
@@ -3207,7 +3213,10 @@ const testShape01_sphereGeometry = new THREE.SphereGeometry(1, 32, 32);
 
     // Create a prism-like material
     const material = new THREE.MeshPhysicalMaterial({
-        color: 0xffffff,
+        map: whitePureRoom,
+        alphaMap: whitePureRoom,
+        color: new THREE.Color('#ffffff'),
+        transparent: false,
         metalness: 0.0,
         roughness: 0.1,
         transmission: 1.0, // Make the material transparent
@@ -4384,19 +4393,100 @@ function handleInteractions(scene, camera, cubes, initialPositions) {
             // // enableOrbitControls(); // Disable OrbitControls initially
             // enableFirstPersonControls();
 
-            gsap.from(camera.position, {
+
+            // StartAnimations
+
+//............................................
+//....SSSSSS..................................
+//...SSSSSSSS...tttt...................tttt...
+//..SSSSSSSSSS..tttt...................tttt...
+//..SSSSSSSSSS..tttt...................tttt...
+//.SSSS...SSSSSSttttt..aaaaaaa..rrrrrrrttttt..
+//.SSSSSS......Sttttt.aaaaaaaa..rrrrrrrttttt..
+//..SSSSSSSSS..Stttttaaaaaaaaaa.rrrrrrrttttt..
+//..SSSSSSSSSS..tttt.aaaa.aaaaa.rrrr...tttt...
+//....SSSSSSSSS.tttt..aaaaaaaaa.rrr....tttt...
+//.SSSS..SSSSSS.tttt.aaaaaaaaaa.rrr....tttt...
+//.SSSS....SSSS.tttt.aaaaa.aaaa.rrr....tttt...
+//.SSSSSSSSSSSS.tttt.aaaa.aaaaa.rrr....tttt...
+//..SSSSSSSSSS..tttttaaaaaaaaaa.rrr....ttttt..
+//...SSSSSSSSS..tttttaaaaaaaaaa.rrr....ttttt..
+//....SSSSSS......ttt..aaa...............ttt..
+//............................................
+
+            
+
+            // Create vertical tunnel
+            const numCylinders = 25;
+            const radius = 50;
+            const height = 2000;
+            const useVideoTexture = true;
+            // const videoSrc = './assets/video/ActionAnimations/Animation_EnergyLines_Blue.mp4';
+            // const videoSrc = './assets/video/SphereAnimations/Equations3.mp4';
+            const videoSrc = './assets/video/TunnelAnimations/TechTunnelA06.mp4';
+            // const videoSrc = './assets/video/SphereAnimations/BinaryAnimations01.mp4';
+            // const videoSrc = './assets/video/SphereAnimations/whiteBg_waveBreakAnimation.mp4';
+
+            createVerticalTunnel(scene, numCylinders, radius, height, useVideoTexture, videoSrc);
+
+
+            function createVerticalTunnel(scene, numCylinders, radius, height, useVideoTexture, videoSrc) {
+
+            const cylinderObject = new THREE.Group()
+            cylinderObject.position.set(0, 2000, 0)
+            scene.add(cylinderObject)
+
+            const cylinders = [];
+            const materialOptions = {
+                // color: 0x00ff00,
+                metalness: 0.5,
+                roughness: 0.5,
+                clearcoat: 1.0,
+                clearcoatRoughness: 0.1,
+                side: THREE.DoubleSide,
+            };
+
+            let videoTexture;
+            if (useVideoTexture && videoSrc) {
+                const video = document.createElement('video');
+                video.src = videoSrc;
+                video.loop = true;
+                video.muted = true;
+                video.play();
+                videoTexture = new THREE.VideoTexture(video);
+                materialOptions.map = videoTexture;
+            }
+
+            const material = new THREE.MeshBasicMaterial(materialOptions);
+
+            for (let i = 0; i < numCylinders; i++) {
+                const geometry = new THREE.CylinderGeometry(radius, radius, height, 32, 1, true);
+                const cylinder = new THREE.Mesh(geometry, material);
+                cylinder.position.y = i * height;
+                cylinder.position.z = 150
+                cylinder.scale.set(10, 1, 10)
+                // cylinder.position.set(0, 5000, 0)
+                scene.add(cylinder);
+                cylinders.push(cylinder);
+                cylinderObject.add(cylinder)
+            }
+
+            return cylinders;
+        }
+
+
+        gsap.from(camera.position, {
                 duration: 16,
                 delay: 0,
                 x: 0,
-                y: 2500,
+                y: 50000,
                 z: 160,
                 onUpdate: () => {
                     camera.lookAt(0, 0, 0);
                     UserContainer_root.lookAt(camera.position)
+                    camera.lookAt(0, 0, 0);
                 }
             })
-            
-
 
             // Event listener for key press
             document.addEventListener('keydown', (event) => {
@@ -5662,9 +5752,9 @@ let UI_ThirdPersonCameraView_root
 			folderCamera.add(camera.position, 'z').min(-25000).max(25000).step(0.001).name('z-camera')
 
             const folderButton = gui.addFolder('camera-rotation');
-			folderButton.add(camera.position, 'x').min(-3.14).max(3.14).step(0.001).name('x-camera')
-			folderButton.add(camera.position, 'y').min(-3.14).max(3.14).step(0.001).name('y-camera')
-			folderButton.add(camera.position, 'z').min(-3.14).max(3.14).step(0.001).name('z-camera')
+			folderButton.add(camera.rotation, 'x').min(-3.14).max(3.14).step(0.001).name('x-camera')
+			folderButton.add(camera.rotation, 'y').min(-3.14).max(3.14).step(0.001).name('y-camera')
+			folderButton.add(camera.rotation, 'z').min(-3.14).max(3.14).step(0.001).name('z-camera')
 
 
             const folderOrbits = gui.addFolder('subApp01_MusicPlayerApp_obj.root');
