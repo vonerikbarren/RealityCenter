@@ -1626,36 +1626,7 @@
 		}
 
 
-        /* Media Queries for Responsive Design */
-        @media (min-width: 600px) {
-            .grid-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (min-width: 768px) {
-            .grid-container {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .grid-container {
-                grid-template-columns: repeat(4, 1fr);
-            }
-        }
-
-        @media (min-width: 1200px) {
-            .grid-container {
-                grid-template-columns: repeat(5, 1fr);
-            }
-        }
-
-        @media (min-width: 1440px) {
-            .grid-container {
-                grid-template-columns: repeat(6, 1fr);
-            }
-        }
+       
 
 
 		
@@ -1926,7 +1897,7 @@
 						<!-- Instructions -->
 						<div id="instructions">
 							<h1 id="clickToEnter" style="font-size:26px">
-								[ Login ]
+								[ Login ]~
 							</h1>
 						</div>
 
@@ -7985,7 +7956,33 @@
 					direction.y = Number( canMoveVerticallyUp ) - Number( canMoveVerticallyDown );
 					direction.normalize(); // this ensures consistent movements in all directions
 
+                    function onTouchStart(event) {
+                        if (event.touches.length === 1) {
+                            controls.lock();
+                            const touch = event.touches[0];
+                            const mouseEvent = new MouseEvent('mousedown', {
+                                clientX: touch.clientX,
+                                clientY: touch.clientY
+                            });
+                            document.dispatchEvent(mouseEvent);
+                        }
+                    }
 
+                    function onTouchMove(event) {
+                        if (event.touches.length === 1) {
+                            const touch = event.touches[0];
+                            const mouseEvent = new MouseEvent('mousemove', {
+                                clientX: touch.clientX,
+                                clientY: touch.clientY
+                            });
+                            document.dispatchEvent(mouseEvent);
+                        }
+                    }
+
+                    function onTouchEnd(event) {
+                        const mouseEvent = new MouseEvent('mouseup', {});
+                        document.dispatchEvent(mouseEvent);
+                    }
 
 					
 
