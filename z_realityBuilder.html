@@ -313,12 +313,12 @@
 
   <button class="button menu" onclick="toggleMenu()">☰ Menu</button>
   
-  <button id="button_forward" onclick="play_sfx_click_gen()" class="button control forward">&#8593;</button>
-  <button id="button_backward" onclick="play_sfx_click_gen()" class="button control backward">&#8595;</button>
-  <button id="button_left" onclick="play_sfx_click_gen()" class="button control left" >&#8592;</button>
-  <button id="button_right" onclick="play_sfx_click_gen()" class="button control right" >&#8594;</button>
-  <button id="button_up" onclick="play_sfx_click_gen()" class="button control up">&#8670;</button>
-  <button id="button_down" onclick="play_sfx_click_gen()" class="button control down">&#8671;</button>
+  <button id="button_forward" class="button control forward">&#8593;</button>
+  <button id="button_backward" class="button control backward">&#8595;</button>
+  <button id="button_left" class="button control left" >&#8592;</button>
+  <button id="button_right" class="button control right" >&#8594;</button>
+  <button id="button_up" class="button control up">&#8670;</button>
+  <button id="button_down" class="button control down">&#8671;</button>
 
   <button class="button right-button">◬</button>
   <button class="button right-button-2">Λ</button>
@@ -1133,7 +1133,8 @@ let OpeningTunnel_obj = {
             
 
 			water.rotation.x = - Math.PI / 2;
-            water.position.y = -560
+            // water.position.y = -560 // For room with center tree
+            water.position.y = -560000
             water.scale.set(0.5, 0.5, 0.5)
 
 			scene.add(water);
