@@ -4279,11 +4279,29 @@ function handleInteractions(scene, camera, cubes, initialPositions) {
 }
 
 
+//...................................................
+//..TTTTTTTTT........................................
+//.TTTTTTTTTTT....................stt......ΔΔΔΔ......
+//.TTTTTTTTTTT....................stt......ΔΔΔΔΔ.....
+//.TTTTTTTTTTT....................stt.....ΔΔΔΔΔΔ.....
+//.....TTTT...eeeeeee...essssss.ssstttt...ΔΔΔΔΔΔΔ....
+//.....TTTT...eeeeeeee.eesssssssssstttt...ΔΔΔΔΔΔΔ....
+//.....TTTT..Teeeeeeee.eesssssssssstttt..ΔΔΔΔΔΔΔΔ....
+//.....TTTT..Teee..eeeeeesssssss..stt....ΔΔΔΔ.ΔΔΔΔ...
+//.....TTTT..Teeeeeeeeeeesssssss..stt...tΔΔΔ..ΔΔΔΔ...
+//.....TTTT..Teeeeeeeee.esssssss..stt...tΔΔΔ...ΔΔΔΔ..
+//.....TTTT..Teee......eessssssss.stt...tΔΔ....ΔΔΔΔ..
+//.....TTTT..Teeeeeeeeeeesss.ssss.sttt.ttΔΔΔΔΔΔΔΔΔΔ..
+//.....TTTT..Teeeeeeee.eesssssss..sttttttΔΔΔΔΔΔΔΔΔΔ..
+//.....TTTT...eeeeeeee..esssssss..sttttttΔΔΔΔΔΔΔΔΔΔ..
+//..............eeee.....sssss.....tttt..............
+//...................................................
+
      // Example usage
      const testcube_imageTextures = [
         './assets/icons/Websites01/002-globe_grid.png',
         './assets/icons/Websites01/003-schedule.png',
-        '/assets/video/TunnelAnimations/TechTunnelA03.mp4',
+        './assets/img/00-WallpaperUX/Covers/whiteCover01.jpg',
         './assets/icons/Websites01/078-settings.png',
         './assets/img/02-UserUI/04-Logo/WhiteGear01.png',
         './assets/icons/Websites01/002-globe_grid.png'
@@ -4293,7 +4311,7 @@ function handleInteractions(scene, camera, cubes, initialPositions) {
     const testcube_positions = [
         [0, 0, 0],
         [10, 0, 0],
-        [100, 0, 0]
+        [-25, 10, 0]
     ];
     const testcube_rotations = [
         [0, 0, 0],
@@ -4306,7 +4324,7 @@ function handleInteractions(scene, camera, cubes, initialPositions) {
         [20, 20, 20]
     ];
     const testcube_spinningConfigs = [
-        { spinning: true, speed: 2 },
+        { spinning: true, speed: 0.5 },
         { spinning: false },
         { spinning: true, speed: 1 }
     ];
