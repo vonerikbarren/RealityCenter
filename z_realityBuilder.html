@@ -2177,7 +2177,7 @@ let OpeningTunnel_obj = {
                 const Button_forward = document.getElementById('button_forward');
                 Button_forward.addEventListener('click', function move(direction) {
 
-                    play_sfx_click_gen()
+                    // play_sfx_click_gen()
                     gsap.to(camera.position, { z: camera.position.z - distance, duration: 1 });
                     
                     
@@ -2187,7 +2187,7 @@ let OpeningTunnel_obj = {
                 const Button_backward = document.getElementById('button_backward');
                 Button_backward.addEventListener('click', function move(direction) {
 
-                    play_sfx_click_gen()
+                    // play_sfx_click_gen()
                     gsap.to(camera.position, { z: camera.position.z + distance, duration: 1 });
                     
                 });
@@ -2196,7 +2196,7 @@ let OpeningTunnel_obj = {
                 const Button_left = document.getElementById('button_left');
                 Button_left.addEventListener('click', function move(direction) {
 
-                    play_sfx_click_gen()
+                    // play_sfx_click_gen()
                     gsap.to(camera.position, { x: camera.position.x - distance, duration: 1 });
                     
                 });
@@ -2204,7 +2204,7 @@ let OpeningTunnel_obj = {
                 const Button_right = document.getElementById('button_right');
                 Button_right.addEventListener('click', function move(direction) {
 
-                    play_sfx_click_gen()
+                    // play_sfx_click_gen()
                     gsap.to(camera.position, { x: camera.position.x + distance, duration: 1 });
                     
                 });
@@ -2213,7 +2213,7 @@ let OpeningTunnel_obj = {
                 const Button_up = document.getElementById('button_up');
                 Button_up.addEventListener('click', function move(direction) {
 
-                    play_sfx_click_gen()
+                    // play_sfx_click_gen()
                     gsap.to(camera.position, { y: camera.position.y + distance, duration: 1 });
                     
                 });
@@ -2221,7 +2221,7 @@ let OpeningTunnel_obj = {
                 const Button_down = document.getElementById('button_down');
                 Button_down.addEventListener('click', function move(direction) {
 
-                    play_sfx_click_gen()
+                    // play_sfx_click_gen()
                     gsap.to(camera.position, { y: camera.position.y - distance, duration: 1 });
                     
                 });
@@ -2990,9 +2990,33 @@ let OmniDataFragment_root
 
 
 
+//.......................................................................................................
+//.......................................................................................................
+//.......................................................................................................
+//.......................................................................................................
+//......GGGGG......LL......LTTTTTTTTT...............................
+//....GGGGGGGGG...LLLL....LLTTTTTTTTTT.FFFFFFFFFF..000000......111..
+//...GGGGGGGGGG...LLLL....LLTTTTTTTTTT.FFFFFFFFFF.00000000....1111..
+//..GGGGGGGGGGGG..LLLL....LLTTTTTTTTTT.FFFFFFFFFFF00000000.0111111..
+//..GGGG....GGGG..LLLL........TTTT.....FFF.......F000.0000.0111111..
+//.GGGGG....GGGG..LLLL........TTTT.....FFF.......F000..00000111111..
+//.GGGG...GGGGGG..LLLL........TTTT.....FFFFFFFFF.F000..0000...1111..
+//.GGGG...GGGGGG..LLLL........TTTT.....FFFFFFFFF.F00...0000...1111..
+//.GGGG...GGGGGG..LLLL........TTTT.....FFFFFFFFF.F000..0000...1111..
+//.GGGGG..GGGGGG..LLLL........TTTT.....FFF.......F000..0000...1111..
+//..GGGG....GGGG..LLLL........TTTT.....FFF.......F000..000....1111..
+//..GGGGGGGGGGGG..LLLLLLLLLL..TTTT.....FFF.......F00000000....1111..
+//...GGGGGGGGGGG..LLLLLLLLLL..TTTT.....FFF........00000000....1111..
+//....GGGGGGGGGG..LLLLLLLLLL..TTTT.....FFF........0000000.....1111..
+//.....GGGG.........................................0000............
+//..................................................................
+
+
+
 
 Scene_CrystalOrb = new THREE.Group()
-Scene_CrystalOrb.position.set(0, -850, -750)
+// Scene_CrystalOrb.position.set(0, -850, -750) // for opening scene or landing scene
+Scene_CrystalOrb.position.set(0, -80000050, -750)
 Scene_CrystalOrb.rotation.set(0, 0, 0)
 Scene_CrystalOrb.scale.set(2.5, 2.5, 2.5)
 
@@ -3010,6 +3034,9 @@ const gltfLoader = new GLTFLoader().setPath( 'assets/models/small_scene/' );
         render();
 
     } );
+
+
+
 
 
 // const Tree_Digital01 = new THREE.Group()
@@ -3075,7 +3102,26 @@ let Spacial_Movement_Function_Basic01 = (
 }
 
 
-
+//..................................................................
+//......GGGGG......LL......LTTTTTTTTT...............................
+//....GGGGGGGGG...LLLL....LLTTTTTTTTTT.FFFFFFFFFF..000000......111..
+//...GGGGGGGGGG...LLLL....LLTTTTTTTTTT.FFFFFFFFFF.00000000....1111..
+//..GGGGGGGGGGGG..LLLL....LLTTTTTTTTTT.FFFFFFFFFFF00000000.0111111..
+//..GGGG....GGGG..LLLL........TTTT.....FFF.......F000.0000.0111111..
+//.GGGGG....GGGG..LLLL........TTTT.....FFF.......F000..00000111111..
+//.GGGG...GGGGGG..LLLL........TTTT.....FFFFFFFFF.F000..0000...1111..
+//.GGGG...GGGGGG..LLLL........TTTT.....FFFFFFFFF.F00...0000...1111..
+//.GGGG...GGGGGG..LLLL........TTTT.....FFFFFFFFF.F000..0000...1111..
+//.GGGGG..GGGGGG..LLLL........TTTT.....FFF.......F000..0000...1111..
+//..GGGG....GGGG..LLLL........TTTT.....FFF.......F000..000....1111..
+//..GGGGGGGGGGGG..LLLLLLLLLL..TTTT.....FFF.......F00000000....1111..
+//...GGGGGGGGGGG..LLLLLLLLLL..TTTT.....FFF........00000000....1111..
+//....GGGGGGGGGG..LLLLLLLLLL..TTTT.....FFF........0000000.....1111..
+//.....GGGG.........................................0000............
+//.......................................................................................................
+//.......................................................................................................
+//.......................................................................................................
+//.......................................................................................................
 
 
 // 010101010101010101010101010101010101010101
