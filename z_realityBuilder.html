@@ -3048,14 +3048,14 @@ scene.add(ΔSpaceA01_WhiteRoom_root)
     ΔSpaceA01_WhiteRoom_object = new THREE.Group()
     ΔSpaceA01_WhiteRoom_object.position.set(0, 0, 0)
     ΔSpaceA01_WhiteRoom_object.rotation.set(0, 0, 0)
-    ΔSpaceA01_WhiteRoom_object.scale.set(25, 25, 25)
+    ΔSpaceA01_WhiteRoom_object.scale.set(75, 75, 75)
     ΔSpaceA01_WhiteRoom_root.add(ΔSpaceA01_WhiteRoom_object)
 
-
-    const mat_ΔSpaceA01_WhiteRoom_object = new THREE.MeshBasicMaterial({ map: SceneWallpaper_01, side: THREE.DoubleSide });
+    // map: SceneWallpaper_01
+    const mat_ΔSpaceA01_WhiteRoom_object = new THREE.MeshBasicMaterial({ map: SceneWallpaper_03, side: THREE.DoubleSide });
     mesh_ΔSpaceA01_WhiteRoom_object = new THREE.Mesh(geo_objT_SphereA0, mat_ΔSpaceA01_WhiteRoom_object);
-    mat_ΔSpaceA01_WhiteRoom_object.transparent = false;
-    mat_ΔSpaceA01_WhiteRoom_object.alphaMap = SceneWallpaper_01;
+    mat_ΔSpaceA01_WhiteRoom_object.transparent = true;
+    mat_ΔSpaceA01_WhiteRoom_object.alphaMap = SceneWallpaper_03;
     mesh_ΔSpaceA01_WhiteRoom_object.position.set(0, 0, 0);
     // mesh_ΔSpaceA01_WhiteRoom_object.position.set(-15000, 0, 0);
     mesh_ΔSpaceA01_WhiteRoom_object.scale.set(1, 1, 1);
