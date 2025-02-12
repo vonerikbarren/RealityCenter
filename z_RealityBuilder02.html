@@ -5044,6 +5044,8 @@
 				document.addEventListener( 'keyup', onKeyUp );
 				document.addEventListener( 'keydown', onKeyDown );
 
+                
+
 
 			
             // setUp_keyCommands
@@ -7956,34 +7958,7 @@
 					direction.y = Number( canMoveVerticallyUp ) - Number( canMoveVerticallyDown );
 					direction.normalize(); // this ensures consistent movements in all directions
 
-                    function onTouchStart(event) {
-                        if (event.touches.length === 1) {
-                            controls.lock();
-                            const touch = event.touches[0];
-                            const mouseEvent = new MouseEvent('mousedown', {
-                                clientX: touch.clientX,
-                                clientY: touch.clientY
-                            });
-                            document.dispatchEvent(mouseEvent);
-                        }
-                    }
-
-                    function onTouchMove(event) {
-                        if (event.touches.length === 1) {
-                            const touch = event.touches[0];
-                            const mouseEvent = new MouseEvent('mousemove', {
-                                clientX: touch.clientX,
-                                clientY: touch.clientY
-                            });
-                            document.dispatchEvent(mouseEvent);
-                        }
-                    }
-
-                    function onTouchEnd(event) {
-                        const mouseEvent = new MouseEvent('mouseup', {});
-                        document.dispatchEvent(mouseEvent);
-                    }
-
+                    
 					
 
 					function changeXspeed(speedStrengthsParams) {
@@ -8030,6 +8005,41 @@
 						canJump = true;
 
 					}
+
+
+                    function onTouchStart(event) {
+                        if (event.touches.length === 1) {
+                            controls.lock();
+                            const touch = event.touches[0];
+                            const mouseEvent = new MouseEvent('mousedown', {
+                                clientX: touch.clientX,
+                                clientY: touch.clientY
+                            });
+                            document.dispatchEvent(mouseEvent);
+                        }
+                    }
+
+                    function onTouchMove(event) {
+                        if (event.touches.length === 1) {
+                            const touch = event.touches[0];
+                            const mouseEvent = new MouseEvent('mousemove', {
+                                clientX: touch.clientX,
+                                clientY: touch.clientY
+                            });
+                            document.dispatchEvent(mouseEvent);
+                        }
+                    }
+
+                    function onTouchEnd(event) {
+                        const mouseEvent = new MouseEvent('mouseup', {});
+                        document.dispatchEvent(mouseEvent);
+                    }
+
+                     // Add event listeners for touch events
+                document.addEventListener('touchstart', onTouchStart, false);
+                document.addEventListener('touchmove', onTouchMove, false);
+                document.addEventListener('touchend', onTouchEnd, false);
+
 
 					
 
