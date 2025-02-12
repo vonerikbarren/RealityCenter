@@ -52,31 +52,31 @@
     
         .left {
           left: 10px;
-          bottom: 70px;
+          bottom: 80px;
         }
     
         .right {
           left: 100px;
-          bottom: 70px;
+          bottom: 80px;
         }
     
         .forward {
           left: 60px;
-          bottom: 120px;
+          bottom: 130px;
         }
     
         .backward {
           left: 60px;
-          bottom: 20px;
+          bottom: 30px;
         }
     
         .up {
-          left: 200px;
+          left: 190px;
           bottom: 110px;
         }
     
         .down {
-          left: 200px;
+          left: 190px;
           bottom: 30px;
         }
     
@@ -2365,27 +2365,27 @@ let OpeningTunnel_obj = {
                     switch (event.key) {
                         case 'w':
                             targetPosition.add(cameraDirection.clone().multiplyScalar(speed));
-                            play_sfx_click_gen()
+                            // play_sfx_click_gen()
                             break;
                         case 's':
                             targetPosition.add(cameraDirection.clone().multiplyScalar(-speed));
-                            play_sfx_click_gen()
+                            // play_sfx_click_gen()
                             break;
                         case 'a':
                             targetPosition.add(cameraDirection.clone().cross(camera.up).normalize().multiplyScalar(-speed));
-                            play_sfx_click_gen()
+                            // play_sfx_click_gen()
                             break;
                         case 'd':
                             targetPosition.add(cameraDirection.clone().cross(camera.up).normalize().multiplyScalar(speed));
-                            play_sfx_click_gen()
+                            // play_sfx_click_gen()
                             break;
                         case 'r': // Move up
                             targetPosition.add(camera.up.clone().multiplyScalar(speed));
-                            play_sfx_click_gen()
+                            // play_sfx_click_gen()
                             break;
                         case 'f': // Move down
                             targetPosition.add(camera.up.clone().multiplyScalar(-speed));
-                            play_sfx_click_gen()
+                            // play_sfx_click_gen()
                             break;
                     }
 
@@ -2987,6 +2987,128 @@ let OmniDataFragment_root
         let OmniVon_expressions
         let OmniVon_domains
         let OmniVon_perspectives
+
+
+//.......................................................................................................
+//.......................................................................................................
+//.......................................................................................................
+//.......................................................................................................
+//...................................................
+//..WW....WWW....WW.............iii..................
+//.WWWW..WWWWW..WWWW.hhh........iii..tttt............
+//.WWWW..WWWWW..WWWW.hhh........iii..tttt............
+//.WWWW..WWWWW..WWWW.hhh........iii..tttt............
+//..WWWW.WWWWW.WWWW..hhhhhhhh...iii.tttttt..eeeeee...
+//..WWWWWWWWWWWWWWW..hhhhhhhhh..iii.tttttt.eeeeeeee..
+//..WWWWWWWWWWWWWWW..hhhhhhhhh..iii.tttttteeeeeeeee..
+//..WWWWWWWWWWWWWWW..hhhh.hhhh..iii..tttt.eeee..eee..
+//...WWWWWW.WWWWWW...hhh...hhh..iii..tttt.eeeeeeeee..
+//...WWWWWW.WWWWWW...hhh...hhh..iii..tttt.eeeeeeeee..
+//...WWWWWW.WWWWWW...hhh...hhh..iii..tttt.eeee.......
+//....WWWWW.WWWWW....hhh...hhh..iii..tttt.eeeeeeeee..
+//....WWWW...WWWW....hhh...hhh..iii..ttttteeeeeeeee..
+//....WWWW...WWWW....hhh...hhh..iii..ttttt.eeeeeeee..
+//.....................................ttt...eeee....
+//...................................................
+
+//....................................................
+//..RRRRR.............................................
+//.RRRRRRRRRR.........................................
+//.RRRRRRRRRRR........................................
+//.RRRRRRRRRRR........................................
+//.RRRR...RRRRR..ooooooo....ooooooo...mmmmmmmmmmmmm...
+//.RRRR...RRRRR.ooooooooo..ooooooooo..mmmmmmmmmmmmmm..
+//.RRRRRRRRRRR.Rooooooooooooooooooooo.mmmmmmmmmmmmmm..
+//.RRRRRRRRRRR.Rooo...oooooooo...oooo.mmmm.mmmm..mmm..
+//.RRRRRRRRRRR.Rooo...oooooooo...oooo.mmm..mmmm..mmm..
+//.RRRR..RRRRR.Rooo...oooooooo...oooo.mmm..mmmm..mmm..
+//.RRRR...RRRR.Rooo...oooooooo...oooo.mmm..mmmm..mmm..
+//.RRRR...RRRR.Rooooooooooooooooooooo.mmm..mmmm..mmm..
+//.RRRR...RRRR..ooooooooo..ooooooooo..mmm..mmmm..mmm..
+//.RRRR...RRRRR..ooooooo....ooooooo...mmm..mmmm..mmm..
+//................ooooo......ooooo....................
+//....................................................
+
+
+
+// START HERE
+//.......................................................................................................
+
+let ΔSpaceA01_WhiteRoom_root
+let ΔSpaceA01_WhiteRoom_object, mesh_ΔSpaceA01_WhiteRoom_object
+
+ΔSpaceA01_WhiteRoom_root = new THREE.Group()
+ΔSpaceA01_WhiteRoom_root.position.set(0, 0, 0)
+ΔSpaceA01_WhiteRoom_root.rotation.set(0, 0, 0)
+ΔSpaceA01_WhiteRoom_root.scale.set(1, 1, 1)
+scene.add(ΔSpaceA01_WhiteRoom_object)
+
+    ΔSpaceA01_WhiteRoom_object = new THREE.Group()
+    ΔSpaceA01_WhiteRoom_object.position.set(0, 0, 0)
+    ΔSpaceA01_WhiteRoom_object.rotation.set(0, 0, 0)
+    ΔSpaceA01_WhiteRoom_object.scale.set(10, 10, 10)
+
+    ΔSpaceA01_WhiteRoom_root.add(ΔSpaceA01_WhiteRoom_object)
+
+
+        const mat_ΔSpaceA01_WhiteRoom_object = new THREE.MeshBasicMaterial({ map: SceneWallpaper_01, side: THREE.DoubleSide });
+        mesh_ΔSpaceA01_WhiteRoom_object = new THREE.Mesh(geo_objT_SphereA0, mat_ΔSpaceA01_WhiteRoom_object);
+        mat_ΔSpaceA01_WhiteRoom_object.transparent = false;
+        mat_ΔSpaceA01_WhiteRoom_object.alphaMap = SceneWallpaper_01;
+        mesh_ΔSpaceA01_WhiteRoom_object.position.set(0, 0, 0);
+        // mesh_ΔSpaceA01_WhiteRoom_object.position.set(-15000, 0, 0);
+        mesh_ΔSpaceA01_WhiteRoom_object.scale.set(1, 1, 1);
+        mesh_ΔSpaceA01_WhiteRoom_object.rotation.set(0, 0, 0)
+        // mesh_ΔSpaceA01_WhiteRoom_object.rotateX( - Math.PI / 2 );
+
+        // ΔSpaceA01_WhiteRoom_object.lookAt(camera)
+
+        ΔSpaceA01_WhiteRoom_object.add(mesh_ΔSpaceA01_WhiteRoom_object)
+
+
+
+
+
+
+//...................................................
+//..WW....WWW....WW.............iii..................
+//.WWWW..WWWWW..WWWW.hhh........iii..tttt............
+//.WWWW..WWWWW..WWWW.hhh........iii..tttt............
+//.WWWW..WWWWW..WWWW.hhh........iii..tttt............
+//..WWWW.WWWWW.WWWW..hhhhhhhh...iii.tttttt..eeeeee...
+//..WWWWWWWWWWWWWWW..hhhhhhhhh..iii.tttttt.eeeeeeee..
+//..WWWWWWWWWWWWWWW..hhhhhhhhh..iii.tttttteeeeeeeee..
+//..WWWWWWWWWWWWWWW..hhhh.hhhh..iii..tttt.eeee..eee..
+//...WWWWWW.WWWWWW...hhh...hhh..iii..tttt.eeeeeeeee..
+//...WWWWWW.WWWWWW...hhh...hhh..iii..tttt.eeeeeeeee..
+//...WWWWWW.WWWWWW...hhh...hhh..iii..tttt.eeee.......
+//....WWWWW.WWWWW....hhh...hhh..iii..tttt.eeeeeeeee..
+//....WWWW...WWWW....hhh...hhh..iii..ttttteeeeeeeee..
+//....WWWW...WWWW....hhh...hhh..iii..ttttt.eeeeeeee..
+//.....................................ttt...eeee....
+//...................................................
+
+//....................................................
+//..RRRRR.............................................
+//.RRRRRRRRRR.........................................
+//.RRRRRRRRRRR........................................
+//.RRRRRRRRRRR........................................
+//.RRRR...RRRRR..ooooooo....ooooooo...mmmmmmmmmmmmm...
+//.RRRR...RRRRR.ooooooooo..ooooooooo..mmmmmmmmmmmmmm..
+//.RRRRRRRRRRR.Rooooooooooooooooooooo.mmmmmmmmmmmmmm..
+//.RRRRRRRRRRR.Rooo...oooooooo...oooo.mmmm.mmmm..mmm..
+//.RRRRRRRRRRR.Rooo...oooooooo...oooo.mmm..mmmm..mmm..
+//.RRRR..RRRRR.Rooo...oooooooo...oooo.mmm..mmmm..mmm..
+//.RRRR...RRRR.Rooo...oooooooo...oooo.mmm..mmmm..mmm..
+//.RRRR...RRRR.Rooooooooooooooooooooo.mmm..mmmm..mmm..
+//.RRRR...RRRR..ooooooooo..ooooooooo..mmm..mmmm..mmm..
+//.RRRR...RRRRR..ooooooo....ooooooo...mmm..mmmm..mmm..
+//................ooooo......ooooo....................
+//....................................................
+//.......................................................................................................
+//.......................................................................................................
+//.......................................................................................................
+//.......................................................................................................
 
 
 
@@ -4021,8 +4143,8 @@ function handleInteractions(scene, camera, cubes, initialPositions) {
     window.addEventListener('mouseup', onMouseUp, false);
     window.addEventListener('contextmenu', onRightClick, false);
     window.addEventListener('dblclick', onDoubleClick, false);
-    window.addEventListener('touchstart', onTouchStart, false);
-    window.addEventListener('touchend', onTouchEnd, false);
+    // window.addEventListener('touchstart', onTouchStart, false);
+    // window.addEventListener('touchend', onTouchEnd, false);
 
     function onMouseMove(event) {
         event.preventDefault();
@@ -4106,37 +4228,37 @@ function handleInteractions(scene, camera, cubes, initialPositions) {
         }
     }
 
-    function onTouchStart(event) {
-        event.preventDefault();
-        mouse.x = (event.touches[0].clientX / window.innerWidth) * 2 - 1;
-        mouse.y = -(event.touches[0].clientY / window.innerHeight) * 2 + 1;
-        raycaster.setFromCamera(mouse, camera);
-        const intersects = raycaster.intersectObjects(scene.children, true);
+    // function onTouchStart(event) {
+    //     event.preventDefault();
+    //     mouse.x = (event.touches[0].clientX / window.innerWidth) * 2 - 1;
+    //     mouse.y = -(event.touches[0].clientY / window.innerHeight) * 2 + 1;
+    //     raycaster.setFromCamera(mouse, camera);
+    //     const intersects = raycaster.intersectObjects(scene.children, true);
 
-        for (let i = 0; i < intersects.length; i++) {
-            const intersect = intersects[i];
-            if (intersect.object.userData.clickable) {
-                selectedCube = intersect.object.parent;
-                holdTimeout = setTimeout(() => {
-                    gsap.to(selectedCube.scale, { duration: 0.2, x: 1.5, y: 1.5, z: 1.5 });
-                }, 500); // Hold for 500ms to trigger the hold action
-            }
-        }
-    }
+    //     for (let i = 0; i < intersects.length; i++) {
+    //         const intersect = intersects[i];
+    //         if (intersect.object.userData.clickable) {
+    //             selectedCube = intersect.object.parent;
+    //             holdTimeout = setTimeout(() => {
+    //                 gsap.to(selectedCube.scale, { duration: 0.2, x: 1.5, y: 1.5, z: 1.5 });
+    //             }, 500); // Hold for 500ms to trigger the hold action
+    //         }
+    //     }
+    // }
 
-    function onTouchEnd(event) {
-        event.preventDefault();
-        if (holdTimeout) {
-            clearTimeout(holdTimeout);
-            holdTimeout = null;
-        }
-        if (selectedCube) {
-            const initialPosition = initialPositions.get(selectedCube);
-            gsap.to(selectedCube.position, { duration: 0.5, x: initialPosition.x, y: initialPosition.y, z: initialPosition.z });
-            gsap.to(selectedCube.scale, { duration: 0.5, x: 1, y: 1, z: 1 });
-            selectedCube = null;
-        }
-    }
+    // function onTouchEnd(event) {
+    //     event.preventDefault();
+    //     if (holdTimeout) {
+    //         clearTimeout(holdTimeout);
+    //         holdTimeout = null;
+    //     }
+    //     if (selectedCube) {
+    //         const initialPosition = initialPositions.get(selectedCube);
+    //         gsap.to(selectedCube.position, { duration: 0.5, x: initialPosition.x, y: initialPosition.y, z: initialPosition.z });
+    //         gsap.to(selectedCube.scale, { duration: 0.5, x: 1, y: 1, z: 1 });
+    //         selectedCube = null;
+    //     }
+    // }
 }
 
 
