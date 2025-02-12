@@ -320,7 +320,7 @@
   <button id="button_up" class="button control up">&#8670;</button>
   <button id="button_down" class="button control down">&#8671;</button>
 
-  <button class="button right-button">◬</button>
+  <button onclick="sfx_click_gen" class="button right-button">◬</button>
   <button class="button right-button-2">Λ</button>
   <button class="button right-button-3">§</button>
   <button class="button right-button-4">⟐</button>
@@ -3864,14 +3864,16 @@ subApp00_DynamicWebsite_obj.root.add(
     //     "./assets/img/03-HudUI/RegPanels/ClearPanelHorizontal.svg", "",
     //     "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
     // )    
-    new makePDF_Viewer(
-        0, 0, 0,
-        0, 0, 0,
-        0.01, 0.01, 0.01,
-        "hoverClockA1",
-        "https://vonerikbarren.github.io/Portfolio--V3/#",
-        "1920px", "1200"
-    )
+
+    
+    // new makePDF_Viewer(
+    //     0, 0, 0,
+    //     0, 0, 0,
+    //     0.01, 0.01, 0.01,
+    //     "hoverClockA1",
+    //     "https://vonerikbarren.github.io/Portfolio--V3/#",
+    //     "1920px", "1200"
+    // )
         
     
 )
@@ -3888,14 +3890,14 @@ subApp01_MusicPlayerApp_obj.root.lookAt(camera.position)
 
 subApp01_MusicPlayerApp_obj.root.add(
     
-    new makePDF_Viewer(
-        0, 0, 0,
-        0, 0, 0,
-        0.1, 0.1, 0.1,
-        "hoverClockA1",
-        "https://vonerikbarren.github.io/Portfolio--V3/#",
-        "1920px", "1200"
-    )
+    // new makePDF_Viewer(
+    //     0, 0, 0,
+    //     0, 0, 0,
+    //     0.1, 0.1, 0.1,
+    //     "hoverClockA1",
+    //     "https://vonerikbarren.github.io/Portfolio--V3/#",
+    //     "1920px", "1200"
+    // )
         
     
 )
@@ -4589,7 +4591,7 @@ function handleInteractions(scene, camera, cubes, initialPositions) {
             const numCylinders = 25;
             const radius = 50;
             const height = 2000;
-            const useVideoTexture = true;
+            const useVideoTexture = false;
             // const videoSrc = './assets/video/ActionAnimations/Animation_EnergyLines_Blue.mp4';
             // const videoSrc = './assets/video/SphereAnimations/Equations3.mp4';
             const videoSrc = './assets/video/TunnelAnimations/TechTunnelA06.mp4';
@@ -4608,6 +4610,7 @@ function handleInteractions(scene, camera, cubes, initialPositions) {
             const cylinders = [];
             const materialOptions = {
                 // color: 0x00ff00,
+                map: SceneWallpaper_01,
                 metalness: 0.5,
                 roughness: 0.5,
                 clearcoat: 1.0,
