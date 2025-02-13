@@ -3138,6 +3138,53 @@ scene.add(ΔSpaceA01_WhiteRoom_root)
     rotateWhiteRoom()
 
 
+    let changeSizeOfWhiteRoom = () => {
+        gsap.to(ΔSpaceA01_WhiteRoom_object.scale, {
+            repeat: 0,
+            duration: 5,
+            ease: "none",
+            delay: 0,
+            x: 10000,
+            y: 10000,
+            z: 10000,
+        })
+
+        gsap.to(ΔSpaceA01_WhiteRoom_object.scale, {
+            repeat: 0,
+            duration: 20,
+            ease: "none",
+            delay: 5,
+            x: 1,
+            y: 1,
+            z: 1,
+        })
+
+        gsap.to(ΔSpaceA01_WhiteRoom_object.scale, {
+            repeat: 0,
+            duration: 20,
+            ease: "none",
+            delay: 25,
+            x: 0.05,
+            y: 0.05,
+            z: 0.05,
+        })
+
+        gsap.to(ΔSpaceA01_WhiteRoom_object.position, {
+            repeat: 0,
+            duration: 1,
+            ease: "none",
+            delay: 30,
+            x: 7,
+            y: 20,
+            z: 2,
+        })
+
+
+    }
+
+    changeSizeOfWhiteRoom()
+
+
 
 
 
