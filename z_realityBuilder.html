@@ -386,7 +386,7 @@
                 border-radius: 10px;
                 padding-top: 20px;
                 padding-right: 20px;
-                padding-bottom: 500px;
+                padding-bottom: 200px;
                 font-size: 16px;
                 cursor: pointer;
                 z-index: 1;
@@ -421,16 +421,16 @@
          <video id="userVideo" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/PersonalAnimations/ΔExplanationA01.mp4" style="display: none" ></video>
 	</div>
 
-  <button class="button HomeMenu" onclick="toggleMenu()">☰ Menu</button>
+  <button class="button HomeMenu" onclick="toggleMenu()">☰ System</button>
   <div class="HomePanel">
-    <h1>Home</h1>
+    <h1>SystemMenu</h1>
     <button class="button-Systems" onclick="play_sfx_click_gen()">Systems</button>
-    <button class="button-Perspectives" onclick="play_sfx_show()">Perspectives</button>
-    <button class="button-Hiearchies" onclick="play_sfx_hide()">Hiearchies</button>
-    <button class="button-Events" onclick="play_sfx_hide()">Events</button>
-    <button class="button-Times" onclick="play_sfx_hide()">Times</button>
-    <button class="button-Spaces" onclick="play_sfx_hide()">Spaces</button>
-    <button class="button-Objects" onclick="play_sfx_hide()">Objects</button>
+    <button class="button-Perspectives" onclick="play_sfx_click_gen()">Perspectives</button>
+    <button class="button-Hiearchies" onclick="play_sfx_click_gen()">Hiearchies</button>
+    <button class="button-Events" onclick="play_sfx_click_gen()">Events</button>
+    <button class="button-Times" onclick="play_sfx_click_gen()">Times</button>
+    <button class="button-Spaces" onclick="play_sfx_click_gen()">Spaces</button>
+    <button class="button-Objects" onclick="play_sfx_click_gen()">Objects</button>
   </div>
   
   <button id="button_forward" class="button control forward">&#8593;</button>
@@ -446,13 +446,14 @@
   <button class="button right-button-4">⟐</button>
   <button class="button right-button-5">Ω</button>
   
-  <button class="button option-menu" onclick="togglePanel()">☰ Options</button>
-  <div class="OptionsPanel">
-    <button class="button" onclick="play_sfx_click_gen()">Home</button>
-    <button class="button" onclick="play_sfx_show()">AboutUs</button>
-    <button class="button" onclick="play_sfx_hide()">Services</button>
-    <button class="button" onclick="play_sfx_hide()">Portfolio</button>
-    <button class="button" onclick="play_sfx_hide()">Contact</button>
+  <button class="button option-menu" onclick="togglePanel()">☰ Navigation</button>
+  <div id="OptionsPanel" class="OptionsPanel">
+    <h1>NavMenu</h1>
+    <button class="button-Home" onclick="play_sfx_click_gen()">Home</button>
+    <button class="button-AboutUs" onclick="play_sfx_click_gen()">AboutUs</button>
+    <button class="button-Services" onclick="play_sfx_click_gen()">Services</button>
+    <button class="button-Portfolio" onclick="play_sfx_click_gen()">Portfolio</button>
+    <button class="button-Contact" onclick="play_sfx_click_gen()">Contact</button>
   </div>
 
 
@@ -539,6 +540,20 @@
         document.getElementById("mySidenavRight").style.width = "0";
         document.getElementById("mainRight").style.marginRight = "0";
     }
+
+
+    function openNavigation() {
+        play_sfx_show()
+        document.getElementById("mySidenav").style.width = "450px";
+        document.getElementById("main").style.marginLeft = "450px";
+    }
+
+    function closeNav() {
+        play_sfx_hide()
+        document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("main").style.marginLeft= "0";
+    }
+
 
 
     // audio mfx
