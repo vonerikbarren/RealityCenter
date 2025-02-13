@@ -41,10 +41,50 @@
           z-index: 1;
         }
     
-        .menu {
+        .HomeMenu {
           top: 60px;
-          left: 0px;
+          left: 10px;
         }
+
+        .HomePanel {
+          top: 120px;
+          left: 10px;
+        }
+
+            .HomePanel {
+                position: absolute;
+                visibility: 50%; 
+                background-color: rgba(109, 109, 109, 0.863);
+                color: white;
+                border: 1px solid rgba(255, 255, 255, 0.5);
+                border-radius: 10px;
+                padding-top: 20px;
+                padding-right: 20px;
+                padding-bottom: 400px;
+                font-size: 16px;
+                cursor: pointer;
+                z-index: 1;
+            }
+
+        .OptionsPanel {
+          top: 120px;
+          right: 10px;
+        }
+
+            .OptionsPanel {
+                position: absolute;
+                visibility: 50%; 
+                background-color: rgba(109, 109, 109, 0.863);
+                color: white;
+                border: 1px solid rgba(255, 255, 255, 0.5);
+                border-radius: 10px;
+                padding-top: 20px;
+                padding-right: 400px;
+                padding-bottom: 500px;
+                font-size: 16px;
+                cursor: pointer;
+                z-index: 1;
+            }
     
         .control {
           bottom: 50px;
@@ -52,39 +92,53 @@
     
         .left {
           left: 10px;
-          bottom: 80px;
+          bottom: 90px;
         }
     
         .right {
           left: 100px;
-          bottom: 80px;
+          bottom: 90px;
         }
     
         .forward {
           left: 60px;
-          bottom: 130px;
+          bottom: 140px;
         }
     
         .backward {
           left: 60px;
-          bottom: 30px;
+          bottom: 40px;
         }
     
         .up {
           left: 190px;
-          bottom: 110px;
+          bottom: 120px;
         }
     
         .down {
           left: 190px;
-          bottom: 30px;
+          bottom: 40px;
         }
     
-        .panel-menu {
+        .option-menu {
           top: 35px;
           right: 10px;
         }
-    
+
+        /* .OptionsPanel {
+          position: absolute;
+          top: 100px;
+          right: 10px;
+          /* display: none; */
+        /* } */
+
+        /* .MenuPanel {
+          position: absolute;
+          top: 100px;
+          left: 10px;
+          display: none; */
+        /* } */
+
         .right-button {
           bottom: 35px;
           right: 100px;
@@ -221,6 +275,21 @@
                 font-size: 2.5vw; /* Set a larger font size for wider screens */
             }
 
+            .HomePanel {
+                position: absolute;
+                visibility: 50%; 
+                background-color: rgba(109, 109, 109, 0.863);
+                color: white;
+                border: 1px solid rgba(255, 255, 255, 0.5);
+                border-radius: 10px;
+                padding-top: 20px;
+                padding-right: 10px;
+                padding-bottom: 400px;
+                font-size: 16px;
+                cursor: pointer;
+                z-index: 1;
+            }
+
 
         }
 
@@ -234,7 +303,7 @@
                 border: 1px solid rgba(255, 255, 255, 0.5);
                 border-radius: 50px;
                 padding: 7.5px;
-                font-size: 18px;
+                font-size: 16px;
                 cursor: pointer;
                 z-index: 1;
             }
@@ -277,9 +346,50 @@
                 font-size: 1.7vw; /* Set a larger font size for wider screens */
             }
 
-            .panel-menu {
+            .option-menu {
                 top: 60px;
                 right: 10px;
+            }
+
+            .HomePanel {
+                top: 120px;
+                left: 0px;
+            }
+
+            .HomePanel {
+                position: absolute;
+                visibility: 50%; 
+                background-color: rgba(109, 109, 109, 0.863);
+                color: white;
+                border: 1px solid rgb(255, 255, 255);
+                border-radius: 10px;
+                padding-top: 20px;
+                padding-right: 0px;
+                padding-left: 20px;
+                padding-bottom: 200px;
+                font-size: 16px;
+                cursor: pointer;
+                z-index: 1;
+            }
+
+            .OptionsPanel {
+                top: 120px;
+                right: 0px;
+            }
+
+            .OptionsPanel {
+                position: absolute;
+                visibility: 50%; 
+                background-color: rgba(109, 109, 109, 0.863);
+                color: white;
+                border: 1px solid rgba(255, 255, 255, 0.5);
+                border-radius: 10px;
+                padding-top: 20px;
+                padding-right: 20px;
+                padding-bottom: 500px;
+                font-size: 16px;
+                cursor: pointer;
+                z-index: 1;
             }
         }
       </style>
@@ -311,7 +421,17 @@
          <video id="userVideo" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/PersonalAnimations/ΔExplanationA01.mp4" style="display: none" ></video>
 	</div>
 
-  <button class="button menu" onclick="toggleMenu()">☰ Menu</button>
+  <button class="button HomeMenu" onclick="toggleMenu()">☰ Menu</button>
+  <div class="HomePanel">
+    <h1>Home</h1>
+    <button class="button-Systems" onclick="play_sfx_click_gen()">Systems</button>
+    <button class="button-Perspectives" onclick="play_sfx_show()">Perspectives</button>
+    <button class="button-Hiearchies" onclick="play_sfx_hide()">Hiearchies</button>
+    <button class="button-Events" onclick="play_sfx_hide()">Events</button>
+    <button class="button-Times" onclick="play_sfx_hide()">Times</button>
+    <button class="button-Spaces" onclick="play_sfx_hide()">Spaces</button>
+    <button class="button-Objects" onclick="play_sfx_hide()">Objects</button>
+  </div>
   
   <button id="button_forward" class="button control forward">&#8593;</button>
   <button id="button_backward" class="button control backward">&#8595;</button>
@@ -326,7 +446,14 @@
   <button class="button right-button-4">⟐</button>
   <button class="button right-button-5">Ω</button>
   
-  <button class="button panel-menu" onclick="togglePanel()">☰ Panel</button>
+  <button class="button option-menu" onclick="togglePanel()">☰ Options</button>
+  <div class="OptionsPanel">
+    <button class="button" onclick="play_sfx_click_gen()">Home</button>
+    <button class="button" onclick="play_sfx_show()">AboutUs</button>
+    <button class="button" onclick="play_sfx_hide()">Services</button>
+    <button class="button" onclick="play_sfx_hide()">Portfolio</button>
+    <button class="button" onclick="play_sfx_hide()">Contact</button>
+  </div>
 
 
   <div id="circle"></div>
