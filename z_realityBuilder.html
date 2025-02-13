@@ -84,6 +84,7 @@
                 font-size: 16px;
                 cursor: pointer;
                 z-index: 1;
+                display: none;
             }
     
         .control {
@@ -364,8 +365,8 @@
                 border: 1px solid rgb(255, 255, 255);
                 border-radius: 10px;
                 padding-top: 20px;
-                padding-right: 0px;
-                padding-left: 20px;
+                padding-right: 20px;
+                padding-left: 25px;
                 padding-bottom: 200px;
                 font-size: 16px;
                 cursor: pointer;
@@ -390,6 +391,7 @@
                 font-size: 16px;
                 cursor: pointer;
                 z-index: 1;
+                display: none;
             }
         }
       </style>
@@ -424,13 +426,13 @@
   <button class="button HomeMenu" onclick="toggleMenu()">☰ System</button>
   <div class="HomePanel">
     <h1>SystemMenu</h1>
-    <button class="button-Systems" onclick="play_sfx_click_gen()">Systems</button>
-    <button class="button-Perspectives" onclick="play_sfx_click_gen()">Perspectives</button>
-    <button class="button-Hiearchies" onclick="play_sfx_click_gen()">Hiearchies</button>
-    <button class="button-Events" onclick="play_sfx_click_gen()">Events</button>
-    <button class="button-Times" onclick="play_sfx_click_gen()">Times</button>
-    <button class="button-Spaces" onclick="play_sfx_click_gen()">Spaces</button>
-    <button class="button-Objects" onclick="play_sfx_click_gen()">Objects</button>
+    <button class="button-Systems" onclick="play_sfx_click_gen()">Systems</button></br></br>
+    <button class="button-Perspectives" onclick="play_sfx_click_gen()">Perspectives</button></br></br>
+    <button class="button-Hiearchies" onclick="play_sfx_click_gen()">Hiearchies</button></br></br>
+    <button class="button-Events" onclick="play_sfx_click_gen()">Events</button></br></br>
+    <button class="button-Times" onclick="play_sfx_click_gen()">Times</button></br></br>
+    <button class="button-Spaces" onclick="play_sfx_click_gen()">Spaces</button></br></br>
+    <button class="button-Objects" onclick="play_sfx_click_gen()">Objects</button></br>
   </div>
   
   <button id="button_forward" class="button control forward">&#8593;</button>
@@ -446,10 +448,10 @@
   <button class="button right-button-4">⟐</button>
   <button class="button right-button-5">Ω</button>
   
-  <button class="button option-menu" onclick="togglePanel()">☰ Navigation</button>
+  <button class="button option-menu" onclick="toggleOptionsMenu()">☰ Navigation</button>
   <div id="OptionsPanel" class="OptionsPanel">
     <h1>NavMenu</h1>
-    <button class="button-Home" onclick="play_sfx_click_gen()">Home</button>
+    <button class="button-Home" onclick="play_sfx_click_gen()">Home</button></br>
     <button class="button-AboutUs" onclick="play_sfx_click_gen()">AboutUs</button>
     <button class="button-Services" onclick="play_sfx_click_gen()">Services</button>
     <button class="button-Portfolio" onclick="play_sfx_click_gen()">Portfolio</button>
@@ -544,14 +546,28 @@
 
     function openNavigation() {
         play_sfx_show()
-        document.getElementById("mySidenav").style.width = "450px";
-        document.getElementById("main").style.marginLeft = "450px";
+        document.getElementById("OptionsPanel").style.width = "450px";
+        document.getElementById("OptionsPanel").style.marginLeft = "450px";
     }
 
-    function closeNav() {
+    function closeNavigation() {
         play_sfx_hide()
-        document.getElementById("mySidenav").style.width = "0";
-        document.getElementById("main").style.marginLeft= "0";
+        document.getElementById("OptionsPanel").style.width = "0";
+        document.getElementById("OptionsPanel").style.marginLeft= "0";
+    }
+
+    function toggleOptionsMenu() {
+        const optionsPanel = document.getElementsByClassName("OptionsPanel");
+        if (optionsPanel.style.display === "none" || optionsPanel.style.display === "") {
+            
+            // openNavigation()
+            optionsPanel.style.display = "block";
+            
+        } else {
+            // closeNavigation()
+            optionsPanel.style.display = "none";
+            
+        }
     }
 
 
