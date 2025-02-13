@@ -363,7 +363,7 @@
                 background-color: rgba(109, 109, 109, 0.863);
                 color: white;
                 border: 1px solid rgb(255, 255, 255);
-                border-radius: 10px;
+                border-radius: 15px;
                 padding-top: 20px;
                 padding-right: 20px;
                 padding-left: 25px;
@@ -371,6 +371,7 @@
                 font-size: 16px;
                 cursor: pointer;
                 z-index: 1;
+                display: block
             }
 
             .OptionsPanel {
@@ -384,15 +385,18 @@
                 background-color: rgba(109, 109, 109, 0.863);
                 color: white;
                 border: 1px solid rgba(255, 255, 255, 0.5);
-                border-radius: 10px;
+                border-radius: 15px;
                 padding-top: 20px;
                 padding-right: 20px;
+                padding-left: 20px;
                 padding-bottom: 200px;
                 font-size: 16px;
                 cursor: pointer;
                 z-index: 1;
                 display: none;
             }
+
+
         }
       </style>
 </head>
@@ -423,8 +427,8 @@
          <video id="userVideo" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/PersonalAnimations/ΔExplanationA01.mp4" style="display: none" ></video>
 	</div>
 
-  <button class="button HomeMenu" onclick="toggleMenu()">☰ System</button>
-  <div class="SystemPanel">
+  <button class="button HomeMenu" style="display: block;" onclick="toggleSystemMenu()">☰ System</button>
+  <div id="SystemPanel" class="SystemPanel" style="display: none;">
     
     <h2>SystemMenu</h2>
     <hr/>
@@ -452,12 +456,13 @@
   
   <button class="button option-menu" onclick="toggleOptionsMenu()">☰ Navigation</button>
   <div id="OptionsPanel" class="OptionsPanel">
-    <h1>NavMenu</h1>
-    <button class="button-Home" onclick="play_sfx_click_gen()">Home</button></br>
-    <button class="button-AboutUs" onclick="play_sfx_click_gen()">AboutUs</button>
-    <button class="button-Services" onclick="play_sfx_click_gen()">Services</button>
-    <button class="button-Portfolio" onclick="play_sfx_click_gen()">Portfolio</button>
-    <button class="button-Contact" onclick="play_sfx_click_gen()">Contact</button>
+    <h2>NavMenu</h2>
+    <hr/>
+    <button class="button-Home" onclick="play_sfx_click_gen()">Home</button></br></br>
+    <button class="button-AboutUs" onclick="play_sfx_click_gen()">AboutUs</button></br></br>
+    <button class="button-Services" onclick="play_sfx_click_gen()">Services</button></br></br>
+    <button class="button-Portfolio" onclick="play_sfx_click_gen()">Portfolio</button></br></br>
+    <button class="button-Contact" onclick="play_sfx_click_gen()">Contact</button></br></br>
   </div>
 
 
@@ -559,7 +564,7 @@
     }
 
     function toggleOptionsMenu() {
-        const optionsPanel = document.getElementsByClassName("OptionsPanel");
+        const optionsPanel = document.getElementById("OptionsPanel");
         if (optionsPanel.style.display === "none" || optionsPanel.style.display === "") {
             
             // openNavigation()
@@ -568,6 +573,20 @@
         } else {
             // closeNavigation()
             optionsPanel.style.display = "none";
+            
+        }
+    }
+
+    function toggleSystemMenu() {
+        const systemPanel = document.getElementById("SystemPanel");
+        if (systemPanel.style.display === "none" || systemPanel.style.display === "") {
+            
+            // openNavigation()
+            systemPanel.style.display = "block";
+            
+        } else {
+            // closeNavigation()
+            systemPanel.style.display = "none";
             
         }
     }
