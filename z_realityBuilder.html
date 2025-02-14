@@ -367,7 +367,7 @@
                 padding-top: 20px;
                 padding-right: 20px;
                 padding-left: 25px;
-                padding-bottom: 200px;
+                padding-bottom: 100px;
                 font-size: 16px;
                 cursor: pointer;
                 z-index: 1;
@@ -389,7 +389,7 @@
                 padding-top: 20px;
                 padding-right: 20px;
                 padding-left: 20px;
-                padding-bottom: 200px;
+                padding-bottom: 100px;
                 font-size: 16px;
                 cursor: pointer;
                 z-index: 1;
@@ -568,10 +568,13 @@
         if (optionsPanel.style.display === "none" || optionsPanel.style.display === "") {
             
             // openNavigation()
+            play_sfx_show()
             optionsPanel.style.display = "block";
+            
             
         } else {
             // closeNavigation()
+            play_sfx_hide()
             optionsPanel.style.display = "none";
             
         }
@@ -582,10 +585,12 @@
         if (systemPanel.style.display === "none" || systemPanel.style.display === "") {
             
             // openNavigation()
+            play_sfx_show()
             systemPanel.style.display = "block";
             
         } else {
             // closeNavigation()
+            play_sfx_hide()
             systemPanel.style.display = "none";
             
         }
@@ -1049,6 +1054,15 @@ let OpeningTunnel_obj = {
 
 
 
+// Test Camera_stuck_to_animation_frame_to_take_place_of_camera.add_function
+let userHUD_HiearchicalΔ, mesh_userHUD_HiearchicalΔ
+
+
+let userHUD_pdfTest01
+let userHUD_img_pdfTest01
+let userHUD_comp_pdfTest01
+let userHUD_mesh_pdfTest01
+
 
 
 
@@ -1280,9 +1294,104 @@ let OpeningTunnel_obj = {
             scene.background = new THREE.Color( 0xffffff );
 			// camera.view = sun;
 
+            const cameraHelper = new THREE.CameraHelper(camera);
+            scene.add(cameraHelper);
+
 
             const newLight = new THREE.AmbientLight(0x404040)
             scene.add(newLight)
+
+            
+            // function addToCamera(camera, object) {
+            //     // Create a group to hold the object
+            //     const cameraGroup = new THREE.Group();
+            //     cameraGroup.add(object);
+
+            //     // Update the object's position and rotation to match the camera
+            //     function updateObject() {
+            //         object.position.copy(camera.position);
+            //         object.rotation.copy(camera.rotation);
+            //     }
+
+            //     // Add the update function to the render loop
+            //     function animate() {
+            //         requestAnimationFrame(animate);
+            //         updateObject();
+            //     }
+            //     animate();
+
+            //     // Return the group for further manipulation if needed
+            //     return cameraGroup;
+            // }
+
+
+
+            // function addToCamera(camera, object) {
+            //     // Ensure the object is not already a child of the camera
+            //     if (!camera.children.includes(object)) {
+            //         camera.add(object);
+            //     }
+
+            //     // Update the object's position and rotation to match the camera
+            //     function updateObject() {
+            //         object.position.set(0, 0, -10); // Adjust the offset as needed
+            //         object.rotation.set(0, 0, 0);
+            //     }
+
+            //     // Add the update function to the render loop
+            //     function animate() {
+            //         requestAnimationFrame(animate);
+            //         updateObject();
+            //     }
+            //     animate();
+            // }
+
+
+            function addToCamera(camera, object, offset = { x: 0, y: 0, z: -10 }) {
+                // Ensure the object is not already a child of the camera
+                if (!camera.children.includes(object)) {
+                    camera.add(object);
+                }
+
+                // Set the object's position relative to the camera
+                object.position.set(offset.x, offset.y, offset.z);
+
+                // Ensure the object's rotation is reset
+                object.rotation.set(0, 0, 0);
+
+                // Debugging information
+                console.log('Object added to camera:', object);
+                console.log('Camera position:', camera.position);
+                console.log('Camera rotation:', camera.rotation);
+                console.log('Object position:', object.position);
+                console.log('Object rotation:', object.rotation);
+                console.log('Object scale:', object.scale);
+                console.log('Object visibility:', object.visible);
+                console.log('Object material transparency:', object.material.transparent);
+                console.log('Object material opacity:', object.material.opacity);
+            }
+
+
+            // Function to release the object from the camera
+            function releaseFromCamera(camera, object, newParent = scene) {
+                // Ensure the object is a child of the camera
+                if (camera.children.includes(object)) {
+                    camera.remove(object); // Remove the object from the camera
+                    newParent.add(object); // Add the object to the new parent (default is the scene)
+                    
+                    // Optionally, reset the object's position and rotation
+                    object.position.copy(camera.position);
+                    object.rotation.copy(camera.rotation);
+                    object.translateZ(-150); // Adjust the offset as needed
+
+                    // Debugging information
+                    console.log('Object released from camera:', object);
+                    console.log('New parent:', newParent);
+                    console.log('Object position:', object.position);
+                    console.log('Object rotation:', object.rotation);
+                }
+            }
+
 
 
 			// Scene with Water
@@ -1291,7 +1400,7 @@ let OpeningTunnel_obj = {
 
 			// Water
 
-			const waterGeometry = new THREE.PlaneGeometry(500000, 500000);
+			const waterGeometry = new THREE.PlaneGeometry(100, 100);
 
 			water = new Water(
 				waterGeometry,
@@ -4608,12 +4717,209 @@ function handleInteractions(scene, camera, cubes, initialPositions) {
     handleInteractions(scene, camera, cubes, initialPositions);
 
 
+    
+
+    userHUD_HiearchicalΔ = new THREE.Group()
+    userHUD_HiearchicalΔ.position.set(0, 0, -100)
+    userHUD_HiearchicalΔ.rotation.set(0, 0, 0)
+    userHUD_HiearchicalΔ.scale.set(2.5, 2.5, 2.5)
+    scene.add(userHUD_HiearchicalΔ)  
+    
+
+
+    const mat_userHUD_HiearchicalΔ = new THREE.MeshBasicMaterial({ map: SceneWallpaper_01, side: THREE.DoubleSide });
+    mesh_userHUD_HiearchicalΔ = new THREE.Mesh(geo_objT_DiamondA0, mat_userHUD_HiearchicalΔ);
+    mat_userHUD_HiearchicalΔ.transparent = false;
+    mat_userHUD_HiearchicalΔ.alphaMap = SceneWallpaper_01;
+    mesh_userHUD_HiearchicalΔ.position.set(0, 0, 0);
+    // mesh_userHUD_HiearchicalΔ.position.set(-15000, 0, 0);
+    mesh_userHUD_HiearchicalΔ.scale.set(1, 1, 1);
+    mesh_userHUD_HiearchicalΔ.rotation.set(0, 0, 0)
+    // mesh_userHUD_HiearchicalΔ.rotateX( - Math.PI / 2 );
+
+    // userHUD_HiearchicalΔ.lookAt(camera)
+
+    userHUD_HiearchicalΔ.add(mesh_userHUD_HiearchicalΔ)
+
+
+
+   
+
+
+    let summon_FullHiearchyΔ = () => {
+        
+        gsap.to(mesh_userHUD_HiearchicalΔ.position, {
+            repeat: 0,
+            duration: 5,
+            delay: 0,
+            ease: "none",
+            y: -140,
+            x: 40,
+            z: -200,
+
+        })
+
+
+        gsap.to(mesh_userHUD_HiearchicalΔ.rotation, {
+            repeat: -1,
+            duration: 1,
+            delay: 0,
+            ease: "none",
+            y: 3.14,
+            x: 0,
+            z: 0,
+            onComplete: function() {
+                
+                console.log("Animation completed");
+            }
+        })
+
+    }
+
+    summon_FullHiearchyΔ()
+
+
+   
+
+    // document.addEventListener("keyup", function(event) {
+    //     if (event.key === "/") {
+    //     gsap.to(mesh_anyGeometryName.rotation, {
+    //             repeat: -1,
+    //             duration: 1,
+    //             delay: 0,
+    //             ease: "none",
+    //             y: 0,
+    //             x: 0,
+    //             z: 0,
+
+    //         })
+    //     }
+    // })
+
+
+
+
+
+
+
+
+    
+    userHUD_pdfTest01 = new THREE.Group()
+    userHUD_pdfTest01.position.set(0, 0, -100)
+    userHUD_pdfTest01.rotation.set(0, 0, 0)
+    userHUD_pdfTest01.scale.set(2.5, 2.5, 2.5)
+    scene.add(userHUD_pdfTest01)  
+
+
+
+        userHUD_comp_pdfTest01 = new THREE.Group()
+        userHUD_comp_pdfTest01.position.set(-200, 7.5, -40)
+        userHUD_comp_pdfTest01.rotation.set(0, 0, 0)
+        userHUD_comp_pdfTest01.scale.set(0.5, 0.5, 0.5)
+        userHUD_pdfTest01.add(userHUD_comp_pdfTest01)  
+
+
+        userHUD_comp_pdfTest01.add(
+    
+            new makePDF_Viewer(
+                0, 0, 0,
+                0, 0, 0,
+                0.1, 0.1, 0.1,
+                "hoverClockA1",
+                "https://vonerikbarren.github.io/Portfolio--V3/#",
+                "1200px", "1920px"
+            )
+                
+            
+        )
+
+
+
+
+
+
+        userHUD_img_pdfTest01 = new THREE.Group()
+        userHUD_img_pdfTest01.position.set(35.5, -87, -100)
+        userHUD_img_pdfTest01.rotation.set(0, 0, 0)
+        userHUD_img_pdfTest01.scale.set(0.15, 0.15, 0.15)
+        userHUD_pdfTest01.add(userHUD_img_pdfTest01)  
+
+
+        
+        userHUD_img_pdfTest01.add(
+            new hoverObject(
+                'img',
+                0, 0, 0,
+                0, 0, 0,
+                0.1, 0.1, 0.1,
+                "Testing234", "TestingClass234",
+                "./assets/icons/Websites01/002-globe_grid.png", "",
+                "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+                () => {
+
+                    gsap.to(userHUD_comp_pdfTest01.position, {
+                        repeat: 0,
+                        duration: 0.5,
+                        ease: "none",
+                        delay: 0.15,
+                        x: 0,
+                        // w: 0.010,
+                        // z: 0.010,
+                    
+
+                    })
+
+                    console.log("Hello World")
+
+                    
+                }, "#fff"
+            )
+        )
+
+
+    
+        
+
+
+        // userHUD_mesh_pdfTest01 = new THREE.Group()
+        // userHUD_mesh_pdfTest01.position.set(0, 0, -100)
+        // userHUD_mesh_pdfTest01.rotation.set(0, 0, 0)
+        // userHUD_mesh_pdfTest01.scale.set(2.5, 2.5, 2.5)
+        // userHUD_pdfTest01.add(userHUD_mesh_pdfTest01)  
+
+        //     const mat_userHUD_mesh_pdfTest01 = new THREE.MeshBasicMaterial(
+        //         { 
+        //             map: SceneWallpaper_01, 
+        //             side: THREE.DoubleSide 
+        //         }
+        //     );
+        //     mesh_userHUD_mesh_pdfTest01 = new THREE.Mesh(geo_objT_DiamondA0, mat_userHUD_mesh_pdfTest01);
+        //     mat_userHUD_mesh_pdfTest01.transparent = false;
+        //     mat_userHUD_mesh_pdfTest01.alphaMap = SceneWallpaper_01;
+        //     mesh_userHUD_mesh_pdfTest01.position.set(0, 0, 0);
+        //     // mesh_userHUD_mesh_pdfTest01.position.set(-15000, 0, 0);
+        //     mesh_userHUD_mesh_pdfTest01.scale.set(1, 1, 1);
+        //     mesh_userHUD_mesh_pdfTest01.rotation.set(0, 0, 0)
+        //     // mesh_userHUD_mesh_pdfTest01.rotateX( - Math.PI / 2 );
+
+        //     // userHUD_mesh_pdfTest01.lookAt(camera)
+
+        //     userHUD_mesh_pdfTest01.add(mesh_userHUD_mesh_pdfTest01)
+
+
+
+
+
+
 
 
 //...............................................................................................................
 //...............................................................................................................
 //...............................................................................................................
 //...............................................................................................................
+
+
+
 
             
 
@@ -6435,8 +6741,32 @@ let UI_ThirdPersonCameraView_root
             // }
 
 
+            // HudPositioning_HiearchicalΔ
+
+            userHUD_HiearchicalΔ.position.copy(camera.position);
+            userHUD_HiearchicalΔ.rotation.copy(camera.rotation);
+            userHUD_HiearchicalΔ.translateZ(-150)
+
+
+            // HudPositioning_TestCombo01_TileSkeletonTest
+
+            userHUD_pdfTest01.position.copy(camera.position);
+            userHUD_pdfTest01.rotation.copy(camera.rotation);
+            userHUD_pdfTest01.translateZ(-150)
+
+            
+
            // FrameAnimations Below this line
            // -----------------------------------------------------------
+
+
+        //    document.addEventListener("keydown", function(event) {
+                //         if (event.key === "/") {
+
+                //             // // Release the object from the camera after the animation completes
+                //             releaseFromCamera(camera, mesh_anyGeometryName);
+                //         }
+                //     })
             
 
 
