@@ -4681,40 +4681,40 @@ function handleInteractions(scene, camera, cubes, initialPositions) {
 
 
 
-     // Example usage
-     const testcube_imageTextures = [
-        './assets/icons/Websites01/002-globe_grid.png',
-        './assets/icons/Websites01/003-schedule.png',
-        './assets/img/00-WallpaperUX/Covers/whiteCover01.jpg',
-        './assets/icons/Websites01/078-settings.png',
-        './assets/img/02-UserUI/04-Logo/WhiteGear01.png',
-        './assets/icons/Websites01/002-globe_grid.png'
-    ];
-    const testcube_clickableSides = [true, false, true, false, true, false];
-    const testcube_numCubes = 3;
-    const testcube_positions = [
-        [0, 0, 0],
-        [10, 0, 0],
-        [-25, 10, 0]
-    ];
-    const testcube_rotations = [
-        [0, 0, 0],
-        [0, Math.PI / 4, 0],
-        [0, Math.PI / 2, 0]
-    ];
-    const testcube_scales = [
-        [1, 1, 1],
-        [1.5, 1.5, 1.5],
-        [20, 20, 20]
-    ];
-    const testcube_spinningConfigs = [
-        { spinning: true, speed: 0.5 },
-        { spinning: false },
-        { spinning: true, speed: 1 }
-    ];
+    //  // Example usage
+    //  const testcube_imageTextures = [
+    //     './assets/icons/Websites01/002-globe_grid.png',
+    //     './assets/icons/Websites01/003-schedule.png',
+    //     './assets/img/00-WallpaperUX/Covers/whiteCover01.jpg',
+    //     './assets/icons/Websites01/078-settings.png',
+    //     './assets/img/02-UserUI/04-Logo/WhiteGear01.png',
+    //     './assets/icons/Websites01/002-globe_grid.png'
+    // ];
+    // const testcube_clickableSides = [true, false, true, false, true, false];
+    // const testcube_numCubes = 3;
+    // const testcube_positions = [
+    //     [0, 0, 0],
+    //     [10, 0, 0],
+    //     [-25, 10, 0]
+    // ];
+    // const testcube_rotations = [
+    //     [0, 0, 0],
+    //     [0, Math.PI / 4, 0],
+    //     [0, Math.PI / 2, 0]
+    // ];
+    // const testcube_scales = [
+    //     [1, 1, 1],
+    //     [1.5, 1.5, 1.5],
+    //     [20, 20, 20]
+    // ];
+    // const testcube_spinningConfigs = [
+    //     { spinning: true, speed: 0.5 },
+    //     { spinning: false },
+    //     { spinning: true, speed: 1 }
+    // ];
 
-    const { cubes, initialPositions } = createCustomCubes(scene, testcube_imageTextures, testcube_clickableSides, testcube_numCubes, testcube_positions, testcube_rotations, testcube_scales, testcube_spinningConfigs);
-    handleInteractions(scene, camera, cubes, initialPositions);
+    // const { cubes, initialPositions } = createCustomCubes(scene, testcube_imageTextures, testcube_clickableSides, testcube_numCubes, testcube_positions, testcube_rotations, testcube_scales, testcube_spinningConfigs);
+    // handleInteractions(scene, camera, cubes, initialPositions);
 
 
     
@@ -4753,8 +4753,8 @@ function handleInteractions(scene, camera, cubes, initialPositions) {
             duration: 5,
             delay: 0,
             ease: "none",
-            y: -140,
-            x: 40,
+            y: -135,
+            x: 38,
             z: -200,
 
         })
@@ -4779,6 +4779,52 @@ function handleInteractions(scene, camera, cubes, initialPositions) {
     summon_FullHiearchyΔ()
 
 
+
+
+    function handle_Hud_HiearchicalΔ_Animations() {
+        const isMobile = window.matchMedia("(max-width: 767px)").matches;
+        const isTablet = window.matchMedia("(min-width: 768px) and (max-width: 1024px)").matches;
+        const isDesktop = window.matchMedia("(min-width: 1025px)").matches;
+        const is_S23Ultra = window.matchMedia("(max-width: 384px) and max-width: 824").matches;
+
+        if (isMobile) {
+            // Mobile-specific animation
+            gsap.to(mesh_userHUD_HiearchicalΔ.position, {
+                repeat: 0,
+                duration: 5,
+                delay: 0,
+                ease: "none",
+                y: -50,
+                x: 20,
+                z: -100,
+            });
+        } else if (isTablet) {
+            // Tablet-specific animation
+            gsap.to(mesh_userHUD_HiearchicalΔ.position, {
+                repeat: 0,
+                duration: 5,
+                delay: 0,
+                ease: "none",
+                y: -100,
+                x: 30,
+                z: -150,
+            });
+        } else if (isDesktop) {
+            // Desktop-specific animation
+            gsap.to(mesh_userHUD_HiearchicalΔ.position, {
+                repeat: 0,
+                duration: 5,
+                delay: 0,
+                ease: "none",
+                y: -138,
+                x: 40,
+                z: -200,
+            });
+        } else if (is_S23Ultra) {
+            // S23 Ultra-specific animation
+            summon_FullHiearchyΔ()
+        }
+    }
    
 
     // document.addEventListener("keyup", function(event) {
@@ -4839,7 +4885,7 @@ function handleInteractions(scene, camera, cubes, initialPositions) {
 
 
         userHUD_img_pdfTest01 = new THREE.Group()
-        userHUD_img_pdfTest01.position.set(35.5, -87, -100)
+        userHUD_img_pdfTest01.position.set(35.5, -83, -100)
         userHUD_img_pdfTest01.rotation.set(0, 0, 0)
         userHUD_img_pdfTest01.scale.set(0.15, 0.15, 0.15)
         userHUD_pdfTest01.add(userHUD_img_pdfTest01)  
