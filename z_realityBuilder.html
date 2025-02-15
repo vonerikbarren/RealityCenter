@@ -1065,6 +1065,53 @@ let userHUD_mesh_pdfTest01
 
 
 
+//...................................................
+//....SSSSSS..............iii........................
+//...SSSSSSSS...kkk.......iii........................
+//..SSSSSSSSSS..kkk.......iii........................
+//..SSSSSSSSSS..kkk.......iii........................
+//.SSSS...SSSSS.kkk..kkkk.iii..nnnnnnnnn..ssssssss...
+//.SSSSSS.......kkk.kkkkk.iii..nnnnnnnnn..ssssssss...
+//..SSSSSSSSS...kkkkkkkk..iii..nnnnnnnnn.nsssssssss..
+//..SSSSSSSSSS..kkkkkkk...iii..nnnn.nnnn.nsssssssss..
+//....SSSSSSSSS.kkkkkkk...iii..nnn...nnn..ssssssss...
+//.SSSS..SSSSSS.kkkkkkk...iii..nnn...nnn..ssssssss...
+//.SSSS....SSSS.kkkkkkkk..iii..nnn...nnn.nsssssssss..
+//.SSSSSSSSSSSS.kkk.kkkk..iii..nnn...nnn.nssss.ssss..
+//..SSSSSSSSSS..kkk.kkkkk.iii..nnn...nnn.nsssssssss..
+//...SSSSSSSSS..kkk..kkkkkiii..nnn...nnn..ssssssss...
+//....SSSSSS...............................ssssss....
+//...................................................
+
+//.....................................................
+//..I.........................................l....l...
+//.III.......................sttt............all..lll..
+//.III.......................sttt............all..lll..
+//.III.......................sttt............all..lll..
+//.III..Innnnnnnn..ssssssss.sstttt..aaaaaaa..all..lll..
+//.III..Innnnnnnn..ssssssss.sstttt.taaaaaaa..all..lll..
+//.III..Innnnnnnn.nsssssssssssttttttaaaaaaaa.all..lll..
+//.III..Innn.nnnn.nsssssssss.sttt.ttaa.aaaaa.all..lll..
+//.III..Inn...nnn..ssssssss..sttt..taaaaaaaa.all..lll..
+//.III..Inn...nnn..ssssssss..sttt.ttaaaaaaaa.all..lll..
+//.III..Inn...nnn.nsssssssss.sttt.ttaaa.aaaa.all..lll..
+//.III..Inn...nnn.nssss.ssss.sttt.ttaa.aaaaa.all..lll..
+//.III..Inn...nnn.nsssssssss.sttttttaaaaaaaa.all..lll..
+//.III..Inn...nnn..ssssssss..sttttttaaaaaaaa.all..lll..
+//..................ssssss.....ttt..aaa................
+//.....................................................
+
+
+let Skin_CyberSkin_03_root
+    let Skin_CyberSkin_03, mesh_Skin_CyberSkin_03
+    let Skin_CyberSkin_icon_root
+        let Skin_CyberSkin_icon
+
+let Skin_CyberSkin_MovementPadImg_root
+    let Skin_CyberSkin_MovementPadImg_01, mesh_Skin_CyberSkin_MovementPadImg_01
+    let Skin_CyberSkin_MovementPadImg_02, mesh_Skin_CyberSkin_MovementPadImg_02
+
+
 
 
 
@@ -5004,7 +5051,243 @@ function handleInteractions(scene, camera, cubes, initialPositions) {
 
 
 
+//...............................................................................................................
+//...............................................................................................................
+//...............................................................................................................
+//...............................................................................................................
 
+//...................................................
+//....SSSSSS..............iii........................
+//...SSSSSSSS...kkk.......iii........................
+//..SSSSSSSSSS..kkk.......iii........................
+//..SSSSSSSSSS..kkk.......iii........................
+//.SSSS...SSSSS.kkk..kkkk.iii..nnnnnnnnn..ssssssss...
+//.SSSSSS.......kkk.kkkkk.iii..nnnnnnnnn..ssssssss...
+//..SSSSSSSSS...kkkkkkkk..iii..nnnnnnnnn.nsssssssss..
+//..SSSSSSSSSS..kkkkkkk...iii..nnnn.nnnn.nsssssssss..
+//....SSSSSSSSS.kkkkkkk...iii..nnn...nnn..ssssssss...
+//.SSSS..SSSSSS.kkkkkkk...iii..nnn...nnn..ssssssss...
+//.SSSS....SSSS.kkkkkkkk..iii..nnn...nnn.nsssssssss..
+//.SSSSSSSSSSSS.kkk.kkkk..iii..nnn...nnn.nssss.ssss..
+//..SSSSSSSSSS..kkk.kkkkk.iii..nnn...nnn.nsssssssss..
+//...SSSSSSSSS..kkk..kkkkkiii..nnn...nnn..ssssssss...
+//....SSSSSS...............................ssssss....
+//...................................................
+
+//.....................................................
+//..I.........................................l....l...
+//.III.......................sttt............all..lll..
+//.III.......................sttt............all..lll..
+//.III.......................sttt............all..lll..
+//.III..Innnnnnnn..ssssssss.sstttt..aaaaaaa..all..lll..
+//.III..Innnnnnnn..ssssssss.sstttt.taaaaaaa..all..lll..
+//.III..Innnnnnnn.nsssssssssssttttttaaaaaaaa.all..lll..
+//.III..Innn.nnnn.nsssssssss.sttt.ttaa.aaaaa.all..lll..
+//.III..Inn...nnn..ssssssss..sttt..taaaaaaaa.all..lll..
+//.III..Inn...nnn..ssssssss..sttt.ttaaaaaaaa.all..lll..
+//.III..Inn...nnn.nsssssssss.sttt.ttaaa.aaaa.all..lll..
+//.III..Inn...nnn.nssss.ssss.sttt.ttaa.aaaaa.all..lll..
+//.III..Inn...nnn.nsssssssss.sttttttaaaaaaaa.all..lll..
+//.III..Inn...nnn..ssssssss..sttttttaaaaaaaa.all..lll..
+//..................ssssss.....ttt..aaa................
+//.....................................................
+
+
+Skin_CyberSkin_03_root = new THREE.Group()
+Skin_CyberSkin_03_root.position.set(0, 0, 0)
+Skin_CyberSkin_03_root.rotation.set(0, 0, 0)
+Skin_CyberSkin_03_root.scale.set(1, 1, 1)
+scene.add(Skin_CyberSkin_03_root)
+
+    Skin_CyberSkin_03 = new THREE.Group()
+    Skin_CyberSkin_03.position.set(0, 0, 0)
+    Skin_CyberSkin_03.rotation.set(0, 0, 0)
+    Skin_CyberSkin_03.scale.set(0.2, 0.231, 0.2)
+    Skin_CyberSkin_03_root.add(Skin_CyberSkin_03)
+
+    // ./assets/designs/HUD/mobile/1x/Skin_CyberSkin_03.svg
+    // ./assets/icons/Websites01/002-globe_grid.png
+    Skin_CyberSkin_03.add(
+        new hoverObject(
+            'img',
+            0, 0, 0,
+            0, 0, 0,
+            0.1, 0.1, 0.1,
+            "Testing234", "TestingClass234",
+            "./assets/designs/HUD/mobile/SVG/Skin_CyberSkin_03.svg", "",
+            "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+            () => {
+
+                //  if (userHUD_comp_pdfTest01.position.x === -200) {
+                //     gsap.to(userHUD_comp_pdfTest01.position, {
+                //         repeat: 0,
+                //         duration: 0.5,
+                //         ease: "none",
+                //         delay: 0.15,
+                //         x: 0,
+                //         // w: 0.010,
+                //         // z: 0.010,
+                //     })
+                // } else if (userHUD_comp_pdfTest01.position.x === 0) {
+                //     gsap.to(userHUD_comp_pdfTest01.position, {
+                //         repeat: 0,
+                //         duration: 0.5,
+                //         ease: "none",
+                //         delay: 0.15,
+                //         x: -200,
+                //         // w: 0.010,
+                //         // z: 0.010,
+                //     })
+                // }
+
+                // gsap.to(userHUD_comp_pdfTest01.position, {
+                //     repeat: 0,
+                //     duration: 0.5,
+                //     ease: "none",
+                //     delay: 0.15,
+                //     x: 0,
+                //     // w: 0.010,
+                //     // z: 0.010,
+                
+
+                // })
+
+                console.log("CyberSkin Active")
+
+                
+            }, "#fff"
+        )
+    )
+
+    Skin_CyberSkin_icon = new THREE.Group()
+    Skin_CyberSkin_icon.position.set(0, 0, 0)
+    Skin_CyberSkin_icon.rotation.set(0, 0, 0)
+    Skin_CyberSkin_icon.scale.set(0.2, 0.231, 0.2)
+    Skin_CyberSkin_03_root.add(Skin_CyberSkin_icon)
+
+    // ./assets/designs/HUD/mobile/1x/Skin_CyberSkin_icon.svg
+    // ./assets/icons/Websites01/002-globe_grid.png
+    Skin_CyberSkin_icon.add(
+        new hoverObject(
+            'img',
+            0, 0, 0,
+            0, 0, 0,
+            0.1, 0.1, 0.1,
+            "Testing234", "TestingClass234",
+            "./assets/designs/HUD/mobile/SVG/Skin_CyberSkin_03.svg", "",
+            "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+            () => {
+
+                //  if (userHUD_comp_pdfTest01.position.x === -200) {
+                //     gsap.to(userHUD_comp_pdfTest01.position, {
+                //         repeat: 0,
+                //         duration: 0.5,
+                //         ease: "none",
+                //         delay: 0.15,
+                //         x: 0,
+                //         // w: 0.010,
+                //         // z: 0.010,
+                //     })
+                // } else if (userHUD_comp_pdfTest01.position.x === 0) {
+                //     gsap.to(userHUD_comp_pdfTest01.position, {
+                //         repeat: 0,
+                //         duration: 0.5,
+                //         ease: "none",
+                //         delay: 0.15,
+                //         x: -200,
+                //         // w: 0.010,
+                //         // z: 0.010,
+                //     })
+                // }
+
+                // gsap.to(userHUD_comp_pdfTest01.position, {
+                //     repeat: 0,
+                //     duration: 0.5,
+                //     ease: "none",
+                //     delay: 0.15,
+                //     x: 0,
+                //     // w: 0.010,
+                //     // z: 0.010,
+                
+
+                // })
+
+                console.log("CyberSkin Active")
+
+                
+            }, "#fff"
+        )
+    )
+
+
+
+
+// Skin_CyberSkin_MovementPadImg_root
+Skin_CyberSkin_MovementPadImg_root = new THREE.Group()
+Skin_CyberSkin_MovementPadImg_root.position.set(0, 0, 0)
+Skin_CyberSkin_MovementPadImg_root.rotation.set(0, 0, 0)
+Skin_CyberSkin_MovementPadImg_root.scale.set(1, 1, 1)
+scene.add(Skin_CyberSkin_MovementPadImg_root)
+
+    Skin_CyberSkin_MovementPadImg_01 = new THREE.Group()
+    Skin_CyberSkin_MovementPadImg_01.position.set(-2.22, -5.65, 0)
+    Skin_CyberSkin_MovementPadImg_01.rotation.set(0, 0, 0)
+    Skin_CyberSkin_MovementPadImg_01.scale.set(0.055, 0.055, 0.055)
+    Skin_CyberSkin_MovementPadImg_root.add(Skin_CyberSkin_MovementPadImg_01)
+
+    // ./assets/designs/HUD/mobile/1x/Skin_CyberSkin_MovementPadImg_01.svg
+    // ./assets/icons/Websites01/002-globe_grid.png
+    Skin_CyberSkin_MovementPadImg_01.add(
+        new hoverObject(
+            'img',
+            0, 0, 0,
+            0, 0, 0,
+            0.1, 0.1, 0.1,
+            "Testing234", "TestingClass234",
+            "./assets/designs/HUD/mobile/SVG/MovmentPad_01.svg", "",
+            "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+            () => {
+
+                //  if (userHUD_comp_pdfTest01.position.x === -200) {
+                //     gsap.to(userHUD_comp_pdfTest01.position, {
+                //         repeat: 0,
+                //         duration: 0.5,
+                //         ease: "none",
+                //         delay: 0.15,
+                //         x: 0,
+                //         // w: 0.010,
+                //         // z: 0.010,
+                //     })
+                // } else if (userHUD_comp_pdfTest01.position.x === 0) {
+                //     gsap.to(userHUD_comp_pdfTest01.position, {
+                //         repeat: 0,
+                //         duration: 0.5,
+                //         ease: "none",
+                //         delay: 0.15,
+                //         x: -200,
+                //         // w: 0.010,
+                //         // z: 0.010,
+                //     })
+                // }
+
+                // gsap.to(userHUD_comp_pdfTest01.position, {
+                //     repeat: 0,
+                //     duration: 0.5,
+                //     ease: "none",
+                //     delay: 0.15,
+                //     x: 0,
+                //     // w: 0.010,
+                //     // z: 0.010,
+                
+
+                // })
+
+                console.log("CyberSkin Active")
+
+                
+            }, "#fff"
+        )
+    )
             
 
 
@@ -6837,6 +7120,20 @@ let UI_ThirdPersonCameraView_root
             userHUD_pdfTest01.position.copy(camera.position);
             userHUD_pdfTest01.rotation.copy(camera.rotation);
             userHUD_pdfTest01.translateZ(-150)
+
+
+            // Skin_CyberSkin_03_root
+
+            Skin_CyberSkin_03_root.position.copy(camera.position);
+            Skin_CyberSkin_03_root.rotation.copy(camera.rotation);
+            Skin_CyberSkin_03_root.translateZ(-10)
+
+
+            // Skin_CyberSkin_MovementPadImg_root
+
+            Skin_CyberSkin_MovementPadImg_root.position.copy(camera.position);
+            Skin_CyberSkin_MovementPadImg_root.rotation.copy(camera.rotation);
+            Skin_CyberSkin_MovementPadImg_root.translateZ(-10)
 
             
 
