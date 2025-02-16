@@ -1471,7 +1471,7 @@ let Skin_CyberSkin_MovementPadImg_root
 
 			water.rotation.x = - Math.PI / 2;
             // water.position.y = -560 // For room with center tree
-            water.position.y = -560000
+            water.position.y = 5600000000
             water.scale.set(0.5, 0.5, 0.5)
 
 			scene.add(water);
@@ -5102,7 +5102,7 @@ scene.add(Skin_CyberSkin_03_root)
     Skin_CyberSkin_03 = new THREE.Group()
     Skin_CyberSkin_03.position.set(0, 0, 0)
     Skin_CyberSkin_03.rotation.set(0, 0, 0)
-    Skin_CyberSkin_03.scale.set(0.2, 0.231, 0.2)
+    Skin_CyberSkin_03.scale.set(0.18, 0.251, 0.18)
     Skin_CyberSkin_03_root.add(Skin_CyberSkin_03)
 
     // ./assets/designs/HUD/mobile/1x/Skin_CyberSkin_03.svg
@@ -5162,7 +5162,7 @@ scene.add(Skin_CyberSkin_03_root)
     Skin_CyberSkin_icon = new THREE.Group()
     Skin_CyberSkin_icon.position.set(0, 0, 0)
     Skin_CyberSkin_icon.rotation.set(0, 0, 0)
-    Skin_CyberSkin_icon.scale.set(0.2, 0.231, 0.2)
+    Skin_CyberSkin_icon.scale.set(0.1, 0.101, 0.1)
     Skin_CyberSkin_03_root.add(Skin_CyberSkin_icon)
 
     // ./assets/designs/HUD/mobile/1x/Skin_CyberSkin_icon.svg
@@ -5174,7 +5174,7 @@ scene.add(Skin_CyberSkin_03_root)
             0, 0, 0,
             0.1, 0.1, 0.1,
             "Testing234", "TestingClass234",
-            "./assets/designs/HUD/mobile/SVG/Skin_CyberSkin_03.svg", "",
+            "./assets/designs/Techtiles/CyberPunkDesign_01/SVG/TechTile_Default_02.svg", "",
             "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
             () => {
 
@@ -5220,6 +5220,31 @@ scene.add(Skin_CyberSkin_03_root)
     )
 
 
+    function handle_Hud_MovementPadSizes() {
+        const isMobile = window.matchMedia("(max-width: 767px)").matches;
+        const isTablet = window.matchMedia("(min-width: 768px) and (max-width: 1024px)").matches;
+        const isDesktop = window.matchMedia("(min-width: 1025px)").matches;
+        const is_S23Ultra = window.matchMedia("(max-width: 384px) and (max-width: 824px)").matches;
+
+        console.log('isMobile:', isMobile);
+        console.log('isTablet:', isTablet);
+        console.log('isDesktop:', isDesktop);
+        console.log('is_S23Ultra:', is_S23Ultra);
+
+        if (is_S23Ultra) {
+            // S23 Ultra-specific animation
+            Skin_CyberSkin_MovementPadImg_01.position.set(-2.22, -5.65, 0);
+            Skin_CyberSkin_MovementPadImg_01.rotation.set(0, 0, 0);
+            Skin_CyberSkin_MovementPadImg_01.scale.set(0.055, 0.055, 0.055);
+        } else if (isDesktop) { 
+            
+        }
+    }
+
+
+   
+
+
 
 
 // Skin_CyberSkin_MovementPadImg_root
@@ -5230,9 +5255,9 @@ Skin_CyberSkin_MovementPadImg_root.scale.set(1, 1, 1)
 scene.add(Skin_CyberSkin_MovementPadImg_root)
 
     Skin_CyberSkin_MovementPadImg_01 = new THREE.Group()
-    Skin_CyberSkin_MovementPadImg_01.position.set(-2.22, -5.65, 0)
-    Skin_CyberSkin_MovementPadImg_01.rotation.set(0, 0, 0)
-    Skin_CyberSkin_MovementPadImg_01.scale.set(0.055, 0.055, 0.055)
+    // Skin_CyberSkin_MovementPadImg_01.position.set(0, 0, 0)
+    // Skin_CyberSkin_MovementPadImg_01.rotation.set(0, 0, 0)
+    // Skin_CyberSkin_MovementPadImg_01.scale.set(0.055, 0.055, 0.055)
     Skin_CyberSkin_MovementPadImg_root.add(Skin_CyberSkin_MovementPadImg_01)
 
     // ./assets/designs/HUD/mobile/1x/Skin_CyberSkin_MovementPadImg_01.svg
@@ -5288,6 +5313,8 @@ scene.add(Skin_CyberSkin_MovementPadImg_root)
             }, "#fff"
         )
     )
+
+    handle_Hud_MovementPadSizes();
             
 
 
