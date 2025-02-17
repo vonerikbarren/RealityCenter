@@ -5093,6 +5093,16 @@ function handleInteractions(scene, camera, cubes, initialPositions) {
 //.....................................................
 
 
+function isSamsungS23Ultra() {
+    return window.matchMedia("(max-width: 412px) and (max-height: 915px) and (-webkit-min-device-pixel-ratio: 3.5)").matches;
+}
+
+if (isSamsungS23Ultra()) {
+    console.log("Samsung Galaxy S23 Ultra detected");
+    // Apply specific logic for Samsung Galaxy S23 Ultra
+}
+
+
 Skin_CyberSkin_03_root = new THREE.Group()
 Skin_CyberSkin_03_root.position.set(0, 0, 0)
 Skin_CyberSkin_03_root.rotation.set(0, 0, 0)
@@ -5162,7 +5172,7 @@ scene.add(Skin_CyberSkin_03_root)
     Skin_CyberSkin_icon = new THREE.Group()
     Skin_CyberSkin_icon.position.set(0, 0, 0)
     Skin_CyberSkin_icon.rotation.set(0, 0, 0)
-    Skin_CyberSkin_icon.scale.set(0.1, 0.101, 0.1)
+    Skin_CyberSkin_icon.scale.set(0.05, 0.05, 0.05)
     Skin_CyberSkin_03_root.add(Skin_CyberSkin_icon)
 
     // ./assets/designs/HUD/mobile/1x/Skin_CyberSkin_icon.svg
@@ -5251,7 +5261,7 @@ scene.add(Skin_CyberSkin_03_root)
 Skin_CyberSkin_MovementPadImg_root = new THREE.Group()
 Skin_CyberSkin_MovementPadImg_root.position.set(0, 0, 0)
 Skin_CyberSkin_MovementPadImg_root.rotation.set(0, 0, 0)
-Skin_CyberSkin_MovementPadImg_root.scale.set(1, 1, 1)
+Skin_CyberSkin_MovementPadImg_root.scale.set(0.005, 0.005, 0.005)
 scene.add(Skin_CyberSkin_MovementPadImg_root)
 
     Skin_CyberSkin_MovementPadImg_01 = new THREE.Group()
@@ -7160,7 +7170,7 @@ let UI_ThirdPersonCameraView_root
 
             Skin_CyberSkin_MovementPadImg_root.position.copy(camera.position);
             Skin_CyberSkin_MovementPadImg_root.rotation.copy(camera.rotation);
-            Skin_CyberSkin_MovementPadImg_root.translateZ(-10)
+            Skin_CyberSkin_MovementPadImg_root.translateZ(-5)
 
             
 
