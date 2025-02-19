@@ -1290,6 +1290,12 @@ let Skin_CyberSkin_MovementPadImg_root
         const root_WebsitePanelImg01 = textureLoader.load('./assets/img/11_RealityItems/01_WebsitePanels/1x/Services.png')
 
 
+        // UI_Items
+        const GearCyberTechDesign01 = textureLoader.load('assets/designs/HUD/mobile/1x/GearHalo_01.png')
+
+        const GearCyberTechDesign02 = textureLoader.load('assets/designs/HUD/mobile/1x/GearMeasure_01.png')
+
+
 		init();
 		animate();
 
@@ -6325,15 +6331,15 @@ Skin_CyberSkin_MovementPadImg_root.scale.set(0.005, 0.005, 0.005)
                         UserContainer_DecorativeCircle01.scale.set(1, 1, 1)
                         UserContainer_MediaContainer_baseB.add(UserContainer_DecorativeCircle01)
 
-                        const mat_UserContainer_DecorativeCircle01 = new THREE.MeshBasicMaterial({ map: BaseUI_Gear01, side: THREE.DoubleSide });
+                        const mat_UserContainer_DecorativeCircle01 = new THREE.MeshBasicMaterial({ map: GearCyberTechDesign01, side: THREE.DoubleSide });
                         mesh_UserContainer_DecorativeCircle01 = new THREE.Mesh(geo_objT_CircleA1, mat_UserContainer_DecorativeCircle01);
 
                             mat_UserContainer_DecorativeCircle01.transparent = true;
-                            mat_UserContainer_DecorativeCircle01.alphaMap = BaseUI_Gear01;
+                            mat_UserContainer_DecorativeCircle01.alphaMap = GearCyberTechDesign01;
 
                         mesh_UserContainer_DecorativeCircle01.position.set(0, 0, 0);
                         mesh_UserContainer_DecorativeCircle01.rotation.set(0, 0, 0)
-                        mesh_UserContainer_DecorativeCircle01.scale.set(0.12, 0.12, 0.12);
+                        mesh_UserContainer_DecorativeCircle01.scale.set(0.20, 0.20, 0.20);
                         // mesh_UserContainer_DecorativeCircle01.rotateX( - Math.PI / 2 );
 
                         // UserContainer_DecorativeCircle01.lookAt(camera)
@@ -6349,15 +6355,15 @@ Skin_CyberSkin_MovementPadImg_root.scale.set(0.005, 0.005, 0.005)
                         UserContainer_DecorativeCircle02.scale.set(1, 1, 1)
                         UserContainer_MediaContainer_baseB.add(UserContainer_DecorativeCircle02)
 
-                        const mat_UserContainer_DecorativeCircle02 = new THREE.MeshBasicMaterial({ map: BaseUI_Gear01, side: THREE.DoubleSide });
+                        const mat_UserContainer_DecorativeCircle02 = new THREE.MeshBasicMaterial({ map: GearCyberTechDesign02, side: THREE.DoubleSide });
                         mesh_UserContainer_DecorativeCircle02 = new THREE.Mesh(geo_objT_CircleA1, mat_UserContainer_DecorativeCircle02);
 
                             mat_UserContainer_DecorativeCircle02.transparent = true;
-                            mat_UserContainer_DecorativeCircle02.alphaMap = BaseUI_Gear01;
+                            mat_UserContainer_DecorativeCircle02.alphaMap = GearCyberTechDesign02;
 
                         mesh_UserContainer_DecorativeCircle02.position.set(0, 0, 0);
                         mesh_UserContainer_DecorativeCircle02.rotation.set(0, 0, 0)
-                        mesh_UserContainer_DecorativeCircle02.scale.set(0.14, 0.14, 0.14);
+                        mesh_UserContainer_DecorativeCircle02.scale.set(0.225, 0.225, 0.225);
                             // mesh_UserContainer_DecorativeCircle02.rotateX( - Math.PI / 2 );
                         
                         UserContainer_DecorativeCircle02.add(mesh_UserContainer_DecorativeCircle02)
@@ -6372,15 +6378,15 @@ Skin_CyberSkin_MovementPadImg_root.scale.set(0.005, 0.005, 0.005)
                         UserContainer_DecorativeCircle03.scale.set(1, 1, 1)
                         UserContainer_MediaContainer_baseB.add(UserContainer_DecorativeCircle03)
 
-                        const mat_UserContainer_DecorativeCircle03 = new THREE.MeshBasicMaterial({ map: BaseUI_Gear01, side: THREE.DoubleSide });
+                        const mat_UserContainer_DecorativeCircle03 = new THREE.MeshBasicMaterial({ map: GearCyberTechDesign01, side: THREE.DoubleSide });
                         mesh_UserContainer_DecorativeCircle03 = new THREE.Mesh(geo_objT_CircleA1, mat_UserContainer_DecorativeCircle03);
 
                             mat_UserContainer_DecorativeCircle03.transparent = true;
-                            mat_UserContainer_DecorativeCircle03.alphaMap = BaseUI_Gear01;
+                            mat_UserContainer_DecorativeCircle03.alphaMap = GearCyberTechDesign01;
 
                         mesh_UserContainer_DecorativeCircle03.position.set(0, 0, 0);
                         mesh_UserContainer_DecorativeCircle03.rotation.set(0, 0, 0)
-                        mesh_UserContainer_DecorativeCircle03.scale.set(0.16, 0.16, 0.16);
+                        mesh_UserContainer_DecorativeCircle03.scale.set(0.25, 0.25, 0.25);
                         // mesh_UserContainer_DecorativeCircle03.rotateX( - Math.PI / 2 );
 
                         // UserContainer_DecorativeCircle03.lookAt(camera)
