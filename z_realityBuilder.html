@@ -92,7 +92,7 @@
         }
 
         .gamepad-movement-buttons {
-            left: 22.4999990463256px;
+            left: 22.499999046325682px;
             bottom: 56px;
             width: 100px; /* Adjust as needed */
             height: 100px; /* Adjust as needed */
@@ -114,6 +114,19 @@
             position: absolute; /* Ensure the div is positioned correctly */
             opacity: 0.5;
             transform: rotate(45deg);
+        }
+
+        .gamepad-verticalMovementPad-buttons{
+            left: 192.5px;
+            bottom: 20px;
+            width: 20px; /* Adjust as needed */
+            height: 150px; /* Adjust as needed */
+            background-image: url('assets/designs/HUD/mobile/SVG/UI_scrollComponent_02.svg');
+            background-size: cover; /* Adjust as needed */
+            background-position: center; /* Adjust as needed */
+            position: absolute; /* Ensure the div is positioned correctly */
+            opacity: 0.5;
+            transform: rotate(180deg);
         }
     
         .left {
@@ -470,9 +483,13 @@
   <button id="button_backward" class="button control backward">&#8595;</button>
   <button id="button_left" class="button control left" >&#8592;</button>
   <button id="button_right" class="button control right" >&#8594;</button>
+    <div class="gamepad-movement-buttons"></div>
+
   <button id="button_up" class="button control up">&#8670;</button>
   <button id="button_down" class="button control down">&#8671;</button>
-    <div class="gamepad-movement-buttons"></div>
+  <div class="gamepad-verticalMovementPad-buttons"></div>
+  
+    
 
   <button onclick="sfx_click_gen" class="button right-button">◬</button>
   <button class="button right-button-2">Λ</button>
@@ -1369,7 +1386,7 @@ let Skin_CyberSkin_MovementPadImg_root
 			// camera.view = sun;
 
             const cameraHelper = new THREE.CameraHelper(camera);
-            scene.add(cameraHelper);
+            // scene.add(cameraHelper);
 
 
             const newLight = new THREE.AmbientLight(0x404040)
