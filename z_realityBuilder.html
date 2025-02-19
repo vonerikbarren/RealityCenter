@@ -91,16 +91,29 @@
           bottom: 50px;
         }
 
-        .gamepad-button {
+        .gamepad-movement-buttons {
             left: 22.4999990463256px;
-            bottom: 156px;
+            bottom: 56px;
             width: 100px; /* Adjust as needed */
             height: 100px; /* Adjust as needed */
             background-image: url('./assets/designs/HUD/mobile/SVG/MovmentPad_01.svg');
             background-size: cover; /* Adjust as needed */
             background-position: center; /* Adjust as needed */
-            position: relative; /* Ensure the div is positioned correctly */
+            position: absolute; /* Ensure the div is positioned correctly */
             opacity: 0.5
+        }
+
+        .gamepad-primaryOptions-buttons{
+            right: 17px;
+            bottom: 36px;
+            width: 115px; /* Adjust as needed */
+            height: 115px; /* Adjust as needed */
+            background-image: url('./assets/designs/HUD/mobile/SVG/MovmentPad_01.svg');
+            background-size: cover; /* Adjust as needed */
+            background-position: center; /* Adjust as needed */
+            position: absolute; /* Ensure the div is positioned correctly */
+            opacity: 0.5;
+            transform: rotate(45deg);
         }
     
         .left {
@@ -459,14 +472,14 @@
   <button id="button_right" class="button control right" >&#8594;</button>
   <button id="button_up" class="button control up">&#8670;</button>
   <button id="button_down" class="button control down">&#8671;</button>
-
+    <div class="gamepad-movement-buttons"></div>
 
   <button onclick="sfx_click_gen" class="button right-button">◬</button>
   <button class="button right-button-2">Λ</button>
   <button class="button right-button-3">§</button>
   <button class="button right-button-4">⟐</button>
   <button class="button right-button-5">Ω</button>
-  <div class="gamepad-button"></div>
+    <div class="gamepad-primaryOptions-buttons"></div>
   
   <button class="button option-menu" onclick="toggleOptionsMenu()">☰ Navigation</button>
   <div id="OptionsPanel" class="OptionsPanel">
