@@ -90,6 +90,18 @@
         .control {
           bottom: 50px;
         }
+
+        .gamepad-button {
+            left: 22.4999990463256px;
+            bottom: 156px;
+            width: 100px; /* Adjust as needed */
+            height: 100px; /* Adjust as needed */
+            background-image: url('./assets/designs/HUD/mobile/SVG/MovmentPad_01.svg');
+            background-size: cover; /* Adjust as needed */
+            background-position: center; /* Adjust as needed */
+            position: relative; /* Ensure the div is positioned correctly */
+            opacity: 0.5
+        }
     
         .left {
           left: 10px;
@@ -448,11 +460,13 @@
   <button id="button_up" class="button control up">&#8670;</button>
   <button id="button_down" class="button control down">&#8671;</button>
 
+
   <button onclick="sfx_click_gen" class="button right-button">◬</button>
   <button class="button right-button-2">Λ</button>
   <button class="button right-button-3">§</button>
   <button class="button right-button-4">⟐</button>
   <button class="button right-button-5">Ω</button>
+  <div class="gamepad-button"></div>
   
   <button class="button option-menu" onclick="toggleOptionsMenu()">☰ Navigation</button>
   <div id="OptionsPanel" class="OptionsPanel">
@@ -5107,7 +5121,7 @@ Skin_CyberSkin_03_root = new THREE.Group()
 Skin_CyberSkin_03_root.position.set(0, 0, 0)
 Skin_CyberSkin_03_root.rotation.set(0, 0, 0)
 Skin_CyberSkin_03_root.scale.set(1, 1, 1)
-scene.add(Skin_CyberSkin_03_root)
+// scene.add(Skin_CyberSkin_03_root)
 
     Skin_CyberSkin_03 = new THREE.Group()
     Skin_CyberSkin_03.position.set(0, 0, 0)
@@ -5262,7 +5276,7 @@ Skin_CyberSkin_MovementPadImg_root = new THREE.Group()
 Skin_CyberSkin_MovementPadImg_root.position.set(0, 0, 0)
 Skin_CyberSkin_MovementPadImg_root.rotation.set(0, 0, 0)
 Skin_CyberSkin_MovementPadImg_root.scale.set(0.005, 0.005, 0.005)
-scene.add(Skin_CyberSkin_MovementPadImg_root)
+// scene.add(Skin_CyberSkin_MovementPadImg_root)
 
     Skin_CyberSkin_MovementPadImg_01 = new THREE.Group()
     // Skin_CyberSkin_MovementPadImg_01.position.set(0, 0, 0)
@@ -7147,30 +7161,30 @@ let UI_ThirdPersonCameraView_root
 
             // HudPositioning_HiearchicalΔ
 
-            userHUD_HiearchicalΔ.position.copy(camera.position);
-            userHUD_HiearchicalΔ.rotation.copy(camera.rotation);
-            userHUD_HiearchicalΔ.translateZ(-150)
+            // userHUD_HiearchicalΔ.position.copy(camera.position);
+            // userHUD_HiearchicalΔ.rotation.copy(camera.rotation);
+            // userHUD_HiearchicalΔ.translateZ(-150)
 
 
-            // HudPositioning_TestCombo01_TileSkeletonTest
+            // // HudPositioning_TestCombo01_TileSkeletonTest
 
-            userHUD_pdfTest01.position.copy(camera.position);
-            userHUD_pdfTest01.rotation.copy(camera.rotation);
-            userHUD_pdfTest01.translateZ(-150)
-
-
-            // Skin_CyberSkin_03_root
-
-            Skin_CyberSkin_03_root.position.copy(camera.position);
-            Skin_CyberSkin_03_root.rotation.copy(camera.rotation);
-            Skin_CyberSkin_03_root.translateZ(-10)
+            // userHUD_pdfTest01.position.copy(camera.position);
+            // userHUD_pdfTest01.rotation.copy(camera.rotation);
+            // userHUD_pdfTest01.translateZ(-150)
 
 
-            // Skin_CyberSkin_MovementPadImg_root
+            // // Skin_CyberSkin_03_root
 
-            Skin_CyberSkin_MovementPadImg_root.position.copy(camera.position);
-            Skin_CyberSkin_MovementPadImg_root.rotation.copy(camera.rotation);
-            Skin_CyberSkin_MovementPadImg_root.translateZ(-5)
+            // Skin_CyberSkin_03_root.position.copy(camera.position);
+            // Skin_CyberSkin_03_root.rotation.copy(camera.rotation);
+            // Skin_CyberSkin_03_root.translateZ(-10)
+
+
+            // // Skin_CyberSkin_MovementPadImg_root
+
+            // Skin_CyberSkin_MovementPadImg_root.position.copy(camera.position);
+            // Skin_CyberSkin_MovementPadImg_root.rotation.copy(camera.rotation);
+            // Skin_CyberSkin_MovementPadImg_root.translateZ(-5)
 
             
 
