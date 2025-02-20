@@ -17,6 +17,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/CustomEase.min.js"></script>
 
     <style>
+        @font-face {
+            font-family: 'fira-code';
+            src: url('../fonts/MyCustomFont.ttf') format('truetype');
+        }
+
         body {
           margin: 0;
           overflow: hidden;
@@ -40,7 +45,7 @@
         .button {
           position: absolute;
           visibility: 50%; 
-          background-color: rgba(0, 255, 255, 0.863);
+          background-color: rgba(255, 255, 255, 0.863);
           color: white;
           border: 1px solid rgba(255, 255, 255, 0.5);
           border-radius: 5px;
@@ -49,6 +54,13 @@
           cursor: pointer;
           opacity: 0.5;
           z-index: 1;
+        }
+
+        .button:active {
+            background-color: rgba(0, 0, 0, 0.458); /* Change background color when button is pressed */
+            color: white; /* Change text color when button is pressed */
+            border: none; /* Remove border */
+            outline: none; /* Remove outline */
         }
     
         .HomeMenu {
@@ -666,6 +678,14 @@
 
         @media (min-width: 400px) {
 
+            /* Customize the active state */
+            button:active {
+                background-color: rgba(0, 0, 0, 0.458); /* Change background color when button is pressed */
+                color: white; /* Change text color when button is pressed */
+                border: none; /* Remove border */
+                outline: none; /* Remove outline */
+            }
+
             .button {
                 /* width: 40px;
                 height: 40px; */
@@ -680,6 +700,13 @@
                 cursor: pointer;
                 z-index: 1;
 
+            }
+
+            .button:active {
+                background-color: rgba(0, 0, 0, 0.458); /* Change background color when button is pressed */
+                color: white; /* Change text color when button is pressed */
+                border: none; /* Remove border */
+                outline: none; /* Remove outline */
             }
 
             .cyber-border-TopMiddle{
