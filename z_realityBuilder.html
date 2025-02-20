@@ -70,7 +70,7 @@
 
         .HomePanel {
           top: 120px;
-          left: 10px;
+          left: 50px;
         }
 
             .HomePanel {
@@ -426,6 +426,7 @@
             background-position: center; /* Adjust as needed */
             border: 1px solid rgba(255, 255, 255, 0.9);
             border-radius: 5px;
+            z-index: 2;
             
         }
 
@@ -440,6 +441,7 @@
             background-position: center; /* Adjust as needed */
             border: 1px solid rgba(255, 255, 255, 0.9);
             border-radius: 5px;
+            z-index: 2;
             
         }
 
@@ -482,43 +484,55 @@
             height: 200px; /* Adjust as needed */
             left: 15px;
             bottom: 150px;
-            background-image: url('assets/designs/HUD/mobile/SVG/HandOptionBarLeft_01.svg');
+            background-image: url('assets/designs/HUD/general/borders/cyberPunk01/SVG/OptionRing_01.svg');
             color: black;
             position: absolute; /* Ensure the div is positioned correctly */
-            opacity: 0.35;
+            opacity: 1;
             /* animation: rotateLeft 5s linear infinite; */
             z-index: 1;
-            
         }
 
         .HandGearLeftContainer_02 {
-            width: 200px; /* Adjust as needed */
-            height: 200px; /* Adjust as needed */
-            left: 15px;
+            width: 190px; /* Adjust as needed */
+            height: 190px; /* Adjust as needed */
+            left: 35px;
             bottom: 150px;
-            background-image: url('assets/designs/HUD/general/borders/cyberPunk01/SVG/LH_Container_02.svg');
+            background-image: url('assets/designs/HUD/mobile/SVG/OptionRing_01.svg');
             color: black;
             position: absolute; /* Ensure the div is positioned correctly */
-            opacity: 0.35;
+            opacity: 0.25;
             /* animation: rotateLeft 5s linear infinite; */
             z-index: 1;
-            
         }
 
-        .HandGearRightContainer {
+        .HandGearRightContainer_01 {
             width: 200px; /* Adjust as needed */
             height: 200px; /* Adjust as needed */
             right: 15px;
             bottom: 150px;
-            background-image: url('assets/designs/HUD/mobile/SVG/HandContainer_Right_Default_01.svg');
+            background-image: url('assets/designs/HUD/general/borders/cyberPunk01/SVG/OptionRing_01.svg');
             color: black;
             position: absolute; /* Ensure the div is positioned correctly */
-            opacity: 0.35;
+            opacity: 1;
             /* animation: rotateRight 5s linear infinite; */
+            transform: scaleX(-1); /* Flip the image vertically */
             z-index: 1;
-        
-            
         }
+
+        .HandGearRightContainer_02 {
+            width: 190px; /* Adjust as needed */
+            height: 190px; /* Adjust as needed */
+            right: 35px;
+            bottom: 150px;
+            background-image: url('assets/designs/HUD/mobile/SVG/OptionRing_01.svg');
+            color: black;
+            position: absolute; /* Ensure the div is positioned correctly */
+            opacity: 0.25;
+            /* animation: rotateLeft 5s linear infinite; */
+            transform: scaleX(-1); /* Flip the image vertically */
+            z-index: 1;
+        }
+
 
 
 
@@ -914,7 +928,7 @@
 
             .SystemPanel {
                 top: 120px;
-                left: 0px;
+                left: 20px;
             }
 
             .SystemPanel {
@@ -930,13 +944,13 @@
                 padding-bottom: 100px;
                 font-size: 16px;
                 cursor: pointer;
-                z-index: 1;
+                z-index: 2;
                 display: block
             }
 
             .OptionsPanel {
                 top: 120px;
-                right: 0px;
+                right: 20px;
             }
 
             .OptionsPanel {
@@ -952,7 +966,7 @@
                 padding-bottom: 100px;
                 font-size: 16px;
                 cursor: pointer;
-                z-index: 1;
+                z-index: 2;
                 display: none;
             }
 
