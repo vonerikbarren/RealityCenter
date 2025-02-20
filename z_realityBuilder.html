@@ -27,6 +27,15 @@
           width: 100vw;
           height: 100vh;
         }
+
+        /* Customize the active state */
+        button:active {
+            background-color: rgba(0, 0, 0, 0.458); /* Change background color when button is pressed */
+            color: white; /* Change text color when button is pressed */
+            border: none; /* Remove border */
+            outline: none; /* Remove outline */
+        }
+
     
         .button {
           position: absolute;
@@ -44,7 +53,7 @@
     
         .HomeMenu {
           top: 60px;
-          left: 10px;
+          left: 75px;
         }
 
         .HomePanel {
@@ -69,7 +78,7 @@
 
         .OptionsPanel {
           top: 120px;
-          right: 10px;
+          right: 75px;
         }
 
             .OptionsPanel {
@@ -182,7 +191,7 @@
 
 
         .cyber-border-UpperLeft{
-            left: 10px;
+            left: 5px;
             top: 50px;
             width: 40px; /* Adjust as needed */
             height: 300px; /* Adjust as needed */
@@ -195,7 +204,7 @@
         }
 
         .cyber-border-UpperRight{
-            right: 10px;
+            right: 5px;
             top: 50px;
             width: 40px; /* Adjust as needed */
             height: 300px; /* Adjust as needed */
@@ -243,8 +252,9 @@
 
 
 
+
         .cyber-border-LowerLeft{
-            left: 7.5px;
+            left: 5px;
             top: 525px;
             width: 40px; /* Adjust as needed */
             height: 300px; /* Adjust as needed */
@@ -258,7 +268,7 @@
         }
 
         .cyber-border-LowerRight{
-            right: 10.5px;
+            right: 5px;
             top: 525px;
             width: 40px; /* Adjust as needed */
             height: 300px; /* Adjust as needed */
@@ -269,6 +279,7 @@
             opacity: 0.35;  
             /* transform: rotate(180deg); */
         }
+
 
 
 
@@ -304,7 +315,7 @@
 
 
         .cyber-border-BottomMiddle{
-            right: 190px;
+            right: 50%;
             bottom: -115px;
             width: 30px; /* Adjust as needed */
             height: 300px; /* Adjust as needed */
@@ -384,6 +395,42 @@
             /* transform: rotate(180deg); */
         }
 
+        
+
+
+
+
+
+
+
+        .LH_Button {
+            width: 50px; /* Adjust as needed */
+            height: 50px; /* Adjust as needed */
+            left: 10px;
+            bottom: 190px;
+            background-color: rgba(0, 255, 255, 0.863);
+          color: black;
+            background-size: cover; /* Adjust as needed */
+            background-position: center; /* Adjust as needed */
+            border: 1px solid rgba(255, 255, 255, 0.9);
+            border-radius: 5px;
+            
+        }
+
+        .RH_Button {
+            width: 50px; /* Adjust as needed */
+            height: 50px; /* Adjust as needed */
+            right: 10px;
+            bottom: 190px;
+            background-color: rgba(0, 255, 255, 0.863);
+            color: black;
+            background-size: cover; /* Adjust as needed */
+            background-position: center; /* Adjust as needed */
+            border: 1px solid rgba(255, 255, 255, 0.9);
+            border-radius: 5px;
+            
+        }
+
         @keyframes rotate {
             from {
                 transform: rotate(0deg);
@@ -392,14 +439,6 @@
                 transform: rotate(360deg);
             }
         }
-
-
-
-
-
-
-
-
 
 
         
@@ -438,6 +477,8 @@
           top: 35px;
           right: 10px;
         }
+
+
 
         /* .OptionsPanel {
           position: absolute;
@@ -626,21 +667,24 @@
         @media (min-width: 400px) {
 
             .button {
+                /* width: 40px;
+                height: 40px; */
                 position: absolute;
                 visibility: 50%; 
                 background-color: rgba(255, 255, 255, 0.2);
                 color: white;
-                border: 1px solid rgba(255, 255, 255, 0.5);
-                border-radius: 50px;
+                border: 1px solid rgb(255, 255, 255);
+                border-radius: 5px;
                 padding: 7.5px;
                 font-size: 16px;
                 cursor: pointer;
                 z-index: 1;
+
             }
 
             .cyber-border-TopMiddle{
                 /* right: 50%; */
-                left: 47%;
+                left: 50%;
                 top: -125px;
                 width: 30px; /* Adjust as needed */
                 height: 300px; /* Adjust as needed */
@@ -651,6 +695,34 @@
                 opacity: 0.35;  
                 transform: rotate(270deg) scale(0.5);
                 /* transform: rotate(180deg); */
+            }
+
+            .LH_Button, .RH_Button {
+                width: 50px; /* Adjust as needed */
+                height: 50px; /* Adjust as needed */
+                background-size: cover; /* Adjust as needed */
+                background-position: center; /* Adjust as needed */
+                color: rgba(255, 255, 255, 0.3);
+                border: none; /* Remove border */
+                background-color: transparent; /* Remove background color */
+                cursor: pointer; /* Change cursor to pointer */
+                outline: none; /* Remove default outline */
+                padding: 0; /* Remove default padding */
+                margin: 0; /* Remove default margin */
+            }
+
+            .LH_Button {
+                background-image: url('assets/designs/HUD/mobile/SVG/Button_Hand_Left_01.svg'); /* Path to your left-hand image */
+                left: 30px;
+                bottom: 210px;
+                position: absolute; /* Ensure the button is positioned correctly */
+            }
+
+            .RH_Button {
+                background-image: url('assets/designs/HUD/mobile/SVG/Button_Hand_Right_01.svg'); /* Path to your right-hand image */
+                right: 30px;
+                bottom: 210px;
+                position: absolute; /* Ensure the button is positioned correctly */
             }
 
             label {
@@ -693,7 +765,17 @@
 
             .option-menu {
                 top: 60px;
-                right: 10px;
+                right: 60px;
+                width: 40px;
+                height: 40px;
+                
+            }
+
+            .HomeMenu {
+                top: 60px;
+                left: 60px;
+                width: 40px;
+                height: 40px;
             }
 
             .SystemPanel {
@@ -772,7 +854,7 @@
 	</div>
 
 
-  <button class="button HomeMenu" style="display: block;" onclick="toggleSystemMenu()">☰ System</button>
+  <button class="button HomeMenu" style="display: block;" onclick="toggleSystemMenu()">&#9881;</button>
   <div id="SystemPanel" class="SystemPanel" style="display: none;">
     <h2>SystemMenu</h2>
     <hr/>
@@ -801,9 +883,16 @@
         <button class="button right-button-4">⟐</button>
         <button class="button right-button-5">Ω</button>
     <div class="gamepad-primaryOptions-buttons"></div>
+
+<!-- LH & RH Buttons -->
+ <div class="HandGearLeft"></div>
+ <div class="HandGearRight"></div>
+
+<button id="LH_Button" class="LH_Button" >LH</button>
+<button id="RH_Button" class="RH_Button" >RH</button>
   
  
-<button class="button option-menu" onclick="toggleOptionsMenu()">☰ Navigation</button>
+<button class="button option-menu" onclick="toggleOptionsMenu()">☰</button>
   <div id="OptionsPanel" class="OptionsPanel">
     <h2>NavMenu</h2>
     <hr/>
@@ -840,6 +929,9 @@
 <div class="UI_SpinningGear_TopRight"></div>
 <div class="UI_SpinningGear_BottomLeft"></div>
 <div class="UI_SpinningGear_BottomRight"></div>
+
+
+
 
 
 
