@@ -356,7 +356,7 @@
             background-position: center; /* Adjust as needed */
             position: absolute; /* Ensure the div is positioned correctly */
             opacity: 0.35;
-            animation: rotate 5s linear infinite;
+            animation: rotateLeft 5s linear infinite;
             z-index: 1;
             /* transform: rotate(180deg); */
         }
@@ -372,7 +372,7 @@
             background-position: center; /* Adjust as needed */
             position: absolute; /* Ensure the div is positioned correctly */
             opacity: 0.35;
-            animation: rotate 5s linear infinite;
+            animation: rotateRight 5s linear infinite;
             z-index: 1;
             /* transform: rotate(180deg); */
         }
@@ -387,7 +387,7 @@
             background-position: center; /* Adjust as needed */
             position: absolute; /* Ensure the div is positioned correctly */
             opacity: 0.35;
-            animation: rotate 5s ease-in-out infinite;
+            animation: rotateLeft 5s ease-in-out infinite;
             z-index: 1;
             /* transform: rotate(180deg); */
         }
@@ -402,7 +402,7 @@
             background-position: center; /* Adjust as needed */
             position: absolute; /* Ensure the div is positioned correctly */
             opacity: 0.35;
-            animation: rotate 5s ease-in-out infinite;
+            animation: rotateRight 5s ease-in-out infinite;
             z-index: 1;
             /* transform: rotate(180deg); */
         }
@@ -420,7 +420,7 @@
             height: 50px; /* Adjust as needed */
             left: 10px;
             bottom: 190px;
-            background-color: rgba(0, 255, 255, 0.863);
+            background-color: rgba(255, 255, 255, 0.863);
           color: black;
             background-size: cover; /* Adjust as needed */
             background-position: center; /* Adjust as needed */
@@ -434,7 +434,7 @@
             height: 50px; /* Adjust as needed */
             right: 10px;
             bottom: 190px;
-            background-color: rgba(0, 255, 255, 0.863);
+            background-color: rgba(255, 255, 255, 0.863);
             color: black;
             background-size: cover; /* Adjust as needed */
             background-position: center; /* Adjust as needed */
@@ -443,7 +443,105 @@
             
         }
 
+
+
+        .HandGearLeft {
+            width: 200px; /* Adjust as needed */
+            height: 200px; /* Adjust as needed */
+            left: 15px;
+            bottom: 150px;
+            background-image: url('assets/designs/HUD/mobile/SVG/GearHalo_01.svg');
+            color: black;
+            position: absolute; /* Ensure the div is positioned correctly */
+            opacity: 0.35;
+            animation: rotateLeft 5s linear infinite;
+            z-index: 1;
+            
+        }
+
+        .HandGearRight {
+            width: 200px; /* Adjust as needed */
+            height: 200px; /* Adjust as needed */
+            right: 15px;
+            bottom: 150px;
+            background-image: url('assets/designs/HUD/mobile/SVG/GearHalo_01.svg');
+            color: black;
+            position: absolute; /* Ensure the div is positioned correctly */
+            opacity: 0.35;
+            animation: rotateRight 5s linear infinite;
+            z-index: 1;
+        
+            
+        }
+
+
+
+
+        .HandGearLeftContainer_01 {
+            width: 200px; /* Adjust as needed */
+            height: 200px; /* Adjust as needed */
+            left: 15px;
+            bottom: 150px;
+            background-image: url('assets/designs/HUD/mobile/SVG/HandOptionBarLeft_01.svg');
+            color: black;
+            position: absolute; /* Ensure the div is positioned correctly */
+            opacity: 0.35;
+            /* animation: rotateLeft 5s linear infinite; */
+            z-index: 1;
+            
+        }
+
+        .HandGearLeftContainer_02 {
+            width: 200px; /* Adjust as needed */
+            height: 200px; /* Adjust as needed */
+            left: 15px;
+            bottom: 150px;
+            background-image: url('assets/designs/HUD/general/borders/cyberPunk01/SVG/LH_Container_02.svg');
+            color: black;
+            position: absolute; /* Ensure the div is positioned correctly */
+            opacity: 0.35;
+            /* animation: rotateLeft 5s linear infinite; */
+            z-index: 1;
+            
+        }
+
+        .HandGearRightContainer {
+            width: 200px; /* Adjust as needed */
+            height: 200px; /* Adjust as needed */
+            right: 15px;
+            bottom: 150px;
+            background-image: url('assets/designs/HUD/mobile/SVG/HandContainer_Right_Default_01.svg');
+            color: black;
+            position: absolute; /* Ensure the div is positioned correctly */
+            opacity: 0.35;
+            /* animation: rotateRight 5s linear infinite; */
+            z-index: 1;
+        
+            
+        }
+
+
+
+
         @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes rotateLeft {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(-360deg);
+            }
+        }
+
+        @keyframes rotateRight {
             from {
                 transform: rotate(0deg);
             }
@@ -684,6 +782,15 @@
                 color: white; /* Change text color when button is pressed */
                 border: none; /* Remove border */
                 outline: none; /* Remove outline */
+                transition: background-color 0.5s;
+            }
+
+            button:focus-visible {
+                background-color: rgba(0, 0, 0, 0.458); /* Change background color when button is pressed */
+                color: white; /* Change text color when button is pressed */
+                border: none; /* Remove border */
+                outline: none; /* Remove outline */
+                transition: background-color 0.5s;
             }
 
             .button {
@@ -914,6 +1021,11 @@
 <!-- LH & RH Buttons -->
  <div class="HandGearLeft"></div>
  <div class="HandGearRight"></div>
+
+ <div class="HandGearLeftContainer_01"></div>
+ <div class="HandGearLeftContainer_02"></div>
+ <div class="HandGearRightContainer_01"></div>
+ <div class="HandGearRightContainer_02"></div>
 
 <button id="LH_Button" class="LH_Button" >LH</button>
 <button id="RH_Button" class="RH_Button" >RH</button>
