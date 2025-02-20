@@ -137,7 +137,7 @@
         /* border elements */
 
         .cyber-border-Topleft{
-            left: 55px;
+            left: 1%;
             top: 45px;
             width: 120px; /* Adjust as needed */
             height: 10px; /* Adjust as needed */
@@ -150,7 +150,7 @@
         }
 
         .cyber-border-TopRight{
-            right: 55px;
+            right: 1%;
             top: 45px;
             width: 110px; /* Adjust as needed */
             height: 10px; /* Adjust as needed */
@@ -159,6 +159,20 @@
             background-position: center; /* Adjust as needed */
             position: absolute; /* Ensure the div is positioned correctly */
             opacity: 0.35;
+            /* transform: rotate(180deg); */
+        }
+
+        .cyber-border-TopMiddle{
+            right: 50%;
+            top: -90px;
+            width: 30px; /* Adjust as needed */
+            height: 300px; /* Adjust as needed */
+            background-image: url('assets/designs/HUD/general/borders/cyberPunk01/SVG/CyberBorder_LeftMiddle_01.svg');
+            background-size: cover; /* Adjust as needed */
+            background-position: center; /* Adjust as needed */
+            position: absolute; /* Ensure the div is positioned correctly */
+            opacity: 0.35;  
+            transform: rotate(270deg) scale(0.5);
             /* transform: rotate(180deg); */
         }
 
@@ -289,8 +303,95 @@
         }
 
 
+        .cyber-border-BottomMiddle{
+            right: 190px;
+            bottom: -115px;
+            width: 30px; /* Adjust as needed */
+            height: 300px; /* Adjust as needed */
+            background-image: url('assets/designs/HUD/general/borders/cyberPunk01/SVG/CyberBorder_LeftMiddle_01.svg');
+            background-size: cover; /* Adjust as needed */
+            background-position: center; /* Adjust as needed */
+            position: absolute; /* Ensure the div is positioned correctly */
+            opacity: 0.35;  
+            transform: rotate(90deg) scale(0.5);
+            /* transform: rotate(180deg); */
+        }
 
 
+
+
+
+
+
+        .UI_SpinningGear_TopLeft {
+            right: 90%;
+            top: 10px;
+            width: 120px; /* Adjust as needed */
+            height: 120px; /* Adjust as needed */
+            background-image: url('assets/designs/HUD/mobile/SVG/GearHalo_01.svg');
+            background-size: cover; /* Adjust as needed */
+            background-position: center; /* Adjust as needed */
+            position: absolute; /* Ensure the div is positioned correctly */
+            opacity: 0.35;
+            animation: rotate 10s linear infinite;
+            z-index: 1;
+            /* transform: rotate(180deg); */
+        }
+
+
+        .UI_SpinningGear_TopRight {
+            left: 90%;
+            top: 10px;
+            width: 120px; /* Adjust as needed */
+            height: 120px; /* Adjust as needed */
+            background-image: url('assets/designs/HUD/mobile/SVG/GearHalo_01.svg');
+            background-size: cover; /* Adjust as needed */
+            background-position: center; /* Adjust as needed */
+            position: absolute; /* Ensure the div is positioned correctly */
+            opacity: 0.35;
+            animation: rotate 10s linear infinite;
+            z-index: 1;
+            /* transform: rotate(180deg); */
+        }
+
+        .UI_SpinningGear_BottomLeft {
+            right: 90%;
+            bottom: 10px;
+            width: 120px; /* Adjust as needed */
+            height: 120px; /* Adjust as needed */
+            background-image: url('assets/designs/HUD/mobile/SVG/GearHalo_01.svg');
+            background-size: cover; /* Adjust as needed */
+            background-position: center; /* Adjust as needed */
+            position: absolute; /* Ensure the div is positioned correctly */
+            opacity: 0.35;
+            animation: rotate 10s linear infinite;
+            z-index: 1;
+            /* transform: rotate(180deg); */
+        }
+
+        .UI_SpinningGear_BottomRight {
+            left: 90%;
+            bottom: 10px;
+            width: 120px; /* Adjust as needed */
+            height: 120px; /* Adjust as needed */
+            background-image: url('assets/designs/HUD/mobile/SVG/GearHalo_01.svg');
+            background-size: cover; /* Adjust as needed */
+            background-position: center; /* Adjust as needed */
+            position: absolute; /* Ensure the div is positioned correctly */
+            opacity: 0.35;
+            animation: rotate 10s linear infinite;
+            z-index: 1;
+            /* transform: rotate(180deg); */
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
 
 
 
@@ -452,6 +553,20 @@
 
         @media (min-width: 600px) {
 
+            .cyber-border-TopMiddle{
+                right: 45%;
+                top: -90px;
+                width: 30px; /* Adjust as needed */
+                height: 300px; /* Adjust as needed */
+                background-image: url('assets/designs/HUD/general/borders/cyberPunk01/SVG/CyberBorder_LeftMiddle_01.svg');
+                background-size: cover; /* Adjust as needed */
+                background-position: center; /* Adjust as needed */
+                position: absolute; /* Ensure the div is positioned correctly */
+                opacity: 0.35;  
+                transform: rotate(270deg) scale(0.5);
+                /* transform: rotate(180deg); */
+            }
+
             label {
                 margin-bottom: 10px;
                 visibility: 50%; 
@@ -508,7 +623,7 @@
 
         }
 
-        @media (min-width: 300px) {
+        @media (min-width: 400px) {
 
             .button {
                 position: absolute;
@@ -521,6 +636,21 @@
                 font-size: 16px;
                 cursor: pointer;
                 z-index: 1;
+            }
+
+            .cyber-border-TopMiddle{
+                /* right: 50%; */
+                left: 47%;
+                top: -90px;
+                width: 30px; /* Adjust as needed */
+                height: 300px; /* Adjust as needed */
+                background-image: url('assets/designs/HUD/general/borders/cyberPunk01/SVG/CyberBorder_LeftMiddle_01.svg');
+                background-size: cover; /* Adjust as needed */
+                background-position: center; /* Adjust as needed */
+                position: absolute; /* Ensure the div is positioned correctly */
+                opacity: 0.35;  
+                transform: rotate(270deg) scale(0.5);
+                /* transform: rotate(180deg); */
             }
 
             label {
@@ -703,6 +833,13 @@
 <div class="cyber-border-BottomLeft"></div>
 <div class="cyber-border-BottomMiddle"></div>
 <div class="cyber-border-BottomRight"></div>
+
+
+<!-- SpinningGears -->
+<div class="UI_SpinningGear_TopLeft"></div>
+<div class="UI_SpinningGear_TopRight"></div>
+<div class="UI_SpinningGear_BottomLeft"></div>
+<div class="UI_SpinningGear_BottomRight"></div>
 
 
 
