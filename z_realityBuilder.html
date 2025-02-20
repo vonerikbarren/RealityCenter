@@ -34,10 +34,11 @@
           background-color: rgba(0, 255, 255, 0.863);
           color: white;
           border: 1px solid rgba(255, 255, 255, 0.5);
-          border-radius: 50px;
+          border-radius: 5px;
           padding: 10px;
           font-size: 16px;
           cursor: pointer;
+          opacity: 0.5;
           z-index: 1;
         }
     
@@ -57,7 +58,7 @@
                 background-color: rgba(109, 109, 109, 0.863);
                 color: white;
                 border: 1px solid rgba(255, 255, 255, 0.5);
-                border-radius: 10px;
+                border-radius: 1px;
                 padding-top: 20px;
                 padding-right: 20px;
                 padding-bottom: 400px;
@@ -77,7 +78,7 @@
                 background-color: rgba(109, 109, 109, 0.863);
                 color: white;
                 border: 1px solid rgba(255, 255, 255, 0.5);
-                border-radius: 10px;
+                border-radius: 0px;
                 padding-top: 20px;
                 padding-right: 400px;
                 padding-bottom: 500px;
@@ -128,6 +129,147 @@
             opacity: 0.5;
             transform: rotate(180deg);
         }
+
+
+
+
+
+        /* border elements */
+
+        .cyber-border-Topleft{
+            left: 55px;
+            top: 45px;
+            width: 120px; /* Adjust as needed */
+            height: 10px; /* Adjust as needed */
+            background-image: url('assets/designs/HUD/general/borders/cyberPunk01/SVG/CyberBorder_LeftTop_01.svg');
+            background-size: cover; /* Adjust as needed */
+            background-position: center; /* Adjust as needed */
+            position: absolute; /* Ensure the div is positioned correctly */
+            opacity: 0.35;
+            /* transform: rotate(180deg); */
+        }
+
+        .cyber-border-TopRight{
+            right: 55px;
+            top: 45px;
+            width: 110px; /* Adjust as needed */
+            height: 10px; /* Adjust as needed */
+            background-image: url('assets/designs/HUD/general/borders/cyberPunk01/SVG/CyberBorder_RightTop_01.svg');
+            background-size: cover; /* Adjust as needed */
+            background-position: center; /* Adjust as needed */
+            position: absolute; /* Ensure the div is positioned correctly */
+            opacity: 0.35;
+            /* transform: rotate(180deg); */
+        }
+
+
+
+
+
+
+        .cyber-border-UpperLeft{
+            left: 10px;
+            top: 100px;
+            width: 40px; /* Adjust as needed */
+            height: 300px; /* Adjust as needed */
+            background-image: url('assets/designs/HUD/general/borders/cyberPunk01/SVG/CyberBorder_LeftUpper_01.svg');
+            background-size: cover; /* Adjust as needed */
+            background-position: center; /* Adjust as needed */
+            position: absolute; /* Ensure the div is positioned correctly */
+            opacity: 0.35;
+            /* transform: rotate(180deg); */
+        }
+
+        .cyber-border-UpperRight{
+            right: 10px;
+            top: 100px;
+            width: 40px; /* Adjust as needed */
+            height: 300px; /* Adjust as needed */
+            background-image: url('assets/designs/HUD/general/borders/cyberPunk01/SVG/CyberBorder_RightUpper_01.svg');
+            background-size: cover; /* Adjust as needed */
+            background-position: center; /* Adjust as needed */
+            position: absolute; /* Ensure the div is positioned correctly */
+            opacity: 0.35;
+            /* transform: rotate(180deg); */
+        }
+
+
+
+
+
+        .cyber-border-CenterMiddleLeft{
+            left: 2.5px;
+            top: 290px;
+            width: 30px; /* Adjust as needed */
+            height: 300px; /* Adjust as needed */
+            background-image: url('assets/designs/HUD/general/borders/cyberPunk01/SVG/CyberBorder_LeftMiddle_01.svg');
+            background-size: cover; /* Adjust as needed */
+            background-position: center; /* Adjust as needed */
+            position: absolute; /* Ensure the div is positioned correctly */
+            opacity: 0.35;
+            /* transform: rotate(180deg); */
+            transform: rotate(180deg) scale(0.5);
+        }
+
+        .cyber-border-CenterMiddleRight{
+            right: 2.5px;
+            top: 290px;
+            width: 30px; /* Adjust as needed */
+            height: 300px; /* Adjust as needed */
+            background-image: url('assets/designs/HUD/general/borders/cyberPunk01/SVG/CyberBorder_LeftMiddle_01.svg');
+            background-size: cover; /* Adjust as needed */
+            background-position: center; /* Adjust as needed */
+            position: absolute; /* Ensure the div is positioned correctly */
+            opacity: 0.35;
+            transform: scale(0.5);
+            
+        }
+
+
+
+
+
+        .cyber-border-LowerLeft{
+            left: 7.5px;
+            top: 500px;
+            width: 40px; /* Adjust as needed */
+            height: 300px; /* Adjust as needed */
+            background-image: url('assets/designs/HUD/general/borders/cyberPunk01/SVG/CyberBorder_LeftLower_01.svg');
+            background-size: cover; /* Adjust as needed */
+            background-position: center; /* Adjust as needed */
+            position: absolute; /* Ensure the div is positioned correctly */
+            opacity: 0.35;
+            
+            
+        }
+
+        .cyber-border-LowerRight{
+            right: 10.5px;
+            top: 500px;
+            width: 40px; /* Adjust as needed */
+            height: 300px; /* Adjust as needed */
+            background-image: url('assets/designs/HUD/general/borders/cyberPunk01/SVG/CyberBorder_RightLower_01.svg');
+            background-size: cover; /* Adjust as needed */
+            background-position: center; /* Adjust as needed */
+            position: absolute; /* Ensure the div is positioned correctly */
+            opacity: 0.35;  
+            /* transform: rotate(180deg); */
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
     
         .left {
           left: 10px;
@@ -212,6 +354,8 @@
           border: 2px solid #FFFFFF;
           border-radius: 10px;
         }
+
+
 
         label {
 
@@ -465,9 +609,9 @@
          <video id="userVideo" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/PersonalAnimations/ΔExplanationA01.mp4" style="display: none" ></video>
 	</div>
 
+
   <button class="button HomeMenu" style="display: block;" onclick="toggleSystemMenu()">☰ System</button>
   <div id="SystemPanel" class="SystemPanel" style="display: none;">
-    
     <h2>SystemMenu</h2>
     <hr/>
     <button class="button-Systems" onclick="play_sfx_click_gen()">Systems</button></br></br>
@@ -487,27 +631,47 @@
 
   <button id="button_up" class="button control up">&#8670;</button>
   <button id="button_down" class="button control down">&#8671;</button>
-  <div class="gamepad-verticalMovementPad-buttons"></div>
-  
-    
 
-  <button onclick="sfx_click_gen" class="button right-button">◬</button>
-  <button class="button right-button-2">Λ</button>
-  <button class="button right-button-3">§</button>
-  <button class="button right-button-4">⟐</button>
-  <button class="button right-button-5">Ω</button>
+  <div class="gamepad-verticalMovementPad-buttons"></div>
+        <button onclick="sfx_click_gen" class="button right-button">◬</button>
+        <button class="button right-button-2">Λ</button>
+        <button class="button right-button-3">§</button>
+        <button class="button right-button-4">⟐</button>
+        <button class="button right-button-5">Ω</button>
     <div class="gamepad-primaryOptions-buttons"></div>
   
-  <button class="button option-menu" onclick="toggleOptionsMenu()">☰ Navigation</button>
+ 
+<button class="button option-menu" onclick="toggleOptionsMenu()">☰ Navigation</button>
   <div id="OptionsPanel" class="OptionsPanel">
     <h2>NavMenu</h2>
     <hr/>
-    <button class="button-Home" onclick="play_sfx_click_gen()">Home</button></br></br>
-    <button class="button-AboutUs" onclick="play_sfx_click_gen()">AboutUs</button></br></br>
-    <button class="button-Services" onclick="play_sfx_click_gen()">Services</button></br></br>
-    <button class="button-Portfolio" onclick="play_sfx_click_gen()">Portfolio</button></br></br>
-    <button class="button-Contact" onclick="play_sfx_click_gen()">Contact</button></br></br>
+        <button class="button-Home" onclick="play_sfx_click_gen()">Home</button></br></br>
+        <button class="button-AboutUs" onclick="play_sfx_click_gen()">AboutUs</button></br></br>
+        <button class="button-Services" onclick="play_sfx_click_gen()">Services</button></br></br>
+        <button class="button-Portfolio" onclick="play_sfx_click_gen()">Portfolio</button></br></br>
+        <button class="button-Contact" onclick="play_sfx_click_gen()">Contact</button></br></br>
   </div>
+
+
+
+<!-- Border Elements -->
+<div class="cyber-border-Topleft"></div>
+<div class="cyber-border-TopMiddle"></div>
+<div class="cyber-border-TopRight"></div>
+
+<div class="cyber-border-UpperLeft"></div>
+<div class="cyber-border-UpperRight"></div>
+
+<div class="cyber-border-CenterMiddleLeft"></div>
+<div class="cyber-border-CenterMiddleRight"></div>
+
+<div class="cyber-border-LowerLeft"></div>
+<div class="cyber-border-LowerRight"></div>
+
+<div class="cyber-border-BottomLeft"></div>
+<div class="cyber-border-BottomMiddle"></div>
+<div class="cyber-border-BottomRight"></div>
+
 
 
   <div id="circle"></div>
