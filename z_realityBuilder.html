@@ -1004,12 +1004,21 @@
 
         @media (min-width: 384px) and (max-width: 430px) and (min-height: 800px) and (max-height: 930px) {
 
+            h1 { 
+                margin: 2.5;
+            }
+
             hr {
                 border: none; /* Remove the default border */
                 height: 2px; /* Set the height of the horizontal rule */
                 background-color: whitesmoke; /* Set the background color */
                 margin: 1px; /* Add some margin for spacing */
                 opacity: 0.25;
+            }
+
+            .Navbar_Title {
+                font-size: 1.5em;
+                text-align: center;
             }
 
             /* Customize the active state */
@@ -1028,6 +1037,11 @@
                 outline: none; /* Remove outline */
                 transition: background-color 0.5s;
             }
+
+            button {
+                opacity: 0.5;
+            }
+
 
             .button {
                 /* width: 40px;
@@ -1124,16 +1138,18 @@
             
 
             .HomeMenu {
-                top: 70px;
+                top: 50px;
                 left: 60px;
                 width: 40px;
                 height: 40px;
                 vertical-align: top; /* Align text to the middle */
                 text-align: center; /* Align text to the center */
+                border-color: #FFFFFF;
+                border-radius: 5px;
             }
 
             .option-menu {
-                top: 70px;
+                top: 50px;
                 right: 60px;
                 width: 40px;
                 height: 40px;
@@ -1180,7 +1196,7 @@
                 }
 
             .SystemPanel {
-                top: 70px;
+                top: 50px;
                 left: 10px;
                 width: 145px;
                 height: 370px;
@@ -1194,19 +1210,19 @@
                     color: white;
                     padding-top: 0px;
                     padding-right: 25px;
-                    padding-left: 25px;
+                    padding-left: 20px;
                     padding-bottom: -100px;
                     font-size: 16px;
                     z-index: 2;
-                    display: block;
+                    display: none;
                     transform: scale(0.75);
                 }
 
             .OptionsPanel {
-                top: 120px;
-                right: 50px;
-                width: 230px;
-                height: 410px;
+                top: 50px;
+                right: 10px;
+                width: 145px;
+                height: 370px;
             }
 
                 .OptionsPanel {
@@ -1214,7 +1230,7 @@
                     background-image: url('assets/designs/HUD/general/borders/cyberPunk01/SVG/Panel_02_Vertical.svg');
                     background-repeat: no-repeat; /* Prevent the background image from repeating */
                     color: white;
-                    padding-top: 20px;
+                    padding-top: 0px;
                     padding-right: 20px;
                     padding-left: 20px;
                     padding-bottom: 10px;
@@ -1227,6 +1243,7 @@
         .systemOptionsListItem {
             width: 100%;
             margin: 2.5px;
+            margin-bottom: 3.5px;
             padding-left: 10px;
             font-family: 'Quantico', Arial, sans-serif; /* Apply the custom font */
             text-align: center; /* Align text to the center */
@@ -1240,6 +1257,26 @@
             opacity: 0.55;
             z-index: 5;
         }
+
+
+        .NavigationOptionsListItem {
+            width: 100%;
+            margin: 2.5px;
+            margin-bottom: 3.5px;
+            padding-left: 10px;
+            font-family: 'Quantico', Arial, sans-serif; /* Apply the custom font */
+            text-align: center; /* Align text to the center */
+            background-color: grey;
+            color: rgba(255, 255, 255, 0.9);
+            box-shadow: #FFFFFF 0px 0px 2.5px;
+            border: 1px solid rgba(255, 255, 255);
+            border-radius: 5px;
+            font-size: 12px;
+            cursor: pointer;
+            opacity: 0.55;
+            z-index: 5;
+        }
+
 
 
         .LH_Button, .RH_Button {
@@ -1435,6 +1472,7 @@
     <button class="systemOptionsListItem button-Times" onclick="play_sfx_click_gen()">Times</button></br>
     <button class="systemOptionsListItem button-Spaces" onclick="play_sfx_click_gen()">Spaces</button></br>
     <button class="systemOptionsListItem button-Objects" onclick="play_sfx_click_gen()">Objects</button></br>
+    <button class="systemOptionsListItem button-Help" onclick="play_sfx_click_gen()">Help</button></br>
   </div>
   
   <button id="button_forward" class="button control forward">&#8593;</button>
@@ -1469,13 +1507,15 @@
  
 <button class="button option-menu" onclick="toggleOptionsMenu()">☰</button>
   <div id="OptionsPanel" class="OptionsPanel">
-    <h2>NavMenu</h2>
+    <h2 class="Navbar_Title">NavMenu</h2>
     <hr/>
-        <button class="button-Home" onclick="play_sfx_click_gen()">Home</button></br></br>
-        <button class="button-AboutUs" onclick="play_sfx_click_gen()">AboutUs</button></br></br>
-        <button class="button-Services" onclick="play_sfx_click_gen()">Services</button></br></br>
-        <button class="button-Portfolio" onclick="play_sfx_click_gen()">Portfolio</button></br></br>
-        <button class="button-Contact" onclick="play_sfx_click_gen()">Contact</button></br></br>
+        <button class="NavigationOptionsListItem button-Home" onclick="play_sfx_click_gen()">Home</button></br>
+        <button class="NavigationOptionsListItem button-About" onclick="play_sfx_click_gen()">About</button></br>
+        <button class="NavigationOptionsListItem button-Services" onclick="play_sfx_click_gen()">Services</button></br>
+        <button class="NavigationOptionsListItem button-Portfolio" onclick="play_sfx_click_gen()">Portfolio</button></br>
+        <button class="NavigationOptionsListItem button-Exhibits" onclick="play_sfx_click_gen()">Exhibits</button></br>
+        <button class="NavigationOptionsListItem button-Shop" onclick="play_sfx_click_gen()">Shop</button></br>
+        <button class="NavigationOptionsListItem button-Contact" onclick="play_sfx_click_gen()">Contact</button></br>
   </div>
 
 
