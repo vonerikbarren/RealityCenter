@@ -18,14 +18,25 @@
 
     <style>
         @font-face {
-            font-family: 'fira-code';
-            src: url('../fonts/MyCustomFont.ttf') format('truetype');
-        }
+            font-family: 'Quantico';
+            src: url('./assets/fonts/Quantico-Regular.ttf') format('truetype'),
+                url('./assets/fonts/Quantico-Bold.ttf') format('truetype'),
+                url('./assets/fonts/Quantico-Italic.ttf') format('truetype'),
+                url('./assets/fonts/Quantico-BoldItalic.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+		}
 
         body {
           margin: 0;
           overflow: hidden;
-          font-family: Arial, sans-serif;
+          font-family: 'Quantico', Arial, sans-serif; /* Apply the custom font */
+        }
+
+        hr {
+            border: none; /* Remove the default border */
+            height: 1px; /* Set the height of the horizontal rule */
+            background-color: #ffffff; /* Set the background color */
         }
     
         #scene-container {
@@ -41,6 +52,10 @@
             outline: none; /* Remove outline */
         }
 
+        button {
+            opacity: 0.5;
+        }
+
     
         .button {
           position: absolute;
@@ -49,11 +64,13 @@
           color: white;
           border: 1px solid rgba(255, 255, 255, 0.5);
           border-radius: 5px;
-          padding: 10px;
+          padding: 7.5px;
           font-size: 16px;
+          font-family: 'Quantico', Arial, sans-serif; 
           cursor: pointer;
           opacity: 0.5;
           z-index: 1;
+          
         }
 
         .button:active {
@@ -791,9 +808,17 @@
 
         @media (min-width: 400px) {
 
+            hr {
+                border: none; /* Remove the default border */
+                height: 2px; /* Set the height of the horizontal rule */
+                background-color: whitesmoke; /* Set the background color */
+                margin: 20px 0; /* Add some margin for spacing */
+                opacity: 0.5;
+            }
+
             /* Customize the active state */
             button:active {
-                background-color: rgba(0, 0, 0, 0.458); /* Change background color when button is pressed */
+                background-color: rgba(255, 255, 255, 0.458); /* Change background color when button is pressed */
                 color: white; /* Change text color when button is pressed */
                 border: none; /* Remove border */
                 outline: none; /* Remove outline */
@@ -801,7 +826,7 @@
             }
 
             button:focus-visible {
-                background-color: rgba(0, 0, 0, 0.458); /* Change background color when button is pressed */
+                background-color: rgba(255, 255, 255, 0.458); /* Change background color when button is pressed */
                 color: white; /* Change text color when button is pressed */
                 border: none; /* Remove border */
                 outline: none; /* Remove outline */
@@ -812,14 +837,14 @@
                 /* width: 40px;
                 height: 40px; */
                 position: absolute;
-                visibility: 50%; 
                 background-color: rgba(255, 255, 255, 0.2);
                 color: white;
                 border: 1px solid rgb(255, 255, 255);
                 border-radius: 5px;
-                padding: 7.5px;
+                padding: 6px;
                 font-size: 16px;
                 cursor: pointer;
+                opacity: 0.75;
                 z-index: 1;
 
             }
@@ -975,6 +1000,184 @@
 
 
         }
+
+
+        @media (min-width: 384px) {
+
+            hr {
+                border: none; /* Remove the default border */
+                height: 2px; /* Set the height of the horizontal rule */
+                background-color: whitesmoke; /* Set the background color */
+                margin: 20px 0; /* Add some margin for spacing */
+                opacity: 0.5;
+            }
+
+            /* Customize the active state */
+            button:active {
+                background-color: rgba(255, 255, 255, 0.458); /* Change background color when button is pressed */
+                color: white; /* Change text color when button is pressed */
+                border: none; /* Remove border */
+                outline: none; /* Remove outline */
+                transition: background-color 0.5s;
+            }
+
+            button:focus-visible {
+                background-color: rgba(255, 255, 255, 0.458); /* Change background color when button is pressed */
+                color: white; /* Change text color when button is pressed */
+                border: none; /* Remove border */
+                outline: none; /* Remove outline */
+                transition: background-color 0.5s;
+            }
+
+            .button {
+                /* width: 40px;
+                height: 40px; */
+                position: absolute;
+                background-color: rgba(255, 255, 255, 0.2);
+                color: white;
+                border: 1px solid rgb(255, 255, 255);
+                border-radius: 5px;
+                padding: 6px;
+                font-size: 16px;
+                cursor: pointer;
+                opacity: 0.75;
+                z-index: 1;
+
+            }
+
+            .button:active {
+                background-color: rgba(0, 0, 0, 0.458); /* Change background color when button is pressed */
+                color: white; /* Change text color when button is pressed */
+                border: none; /* Remove border */
+                outline: none; /* Remove outline */
+            }
+
+            
+            .cyber-border-TopMiddle{
+                /* right: 50%; */
+                left: 50%;
+                top: -125px;
+                width: 30px; /* Adjust as needed */
+                height: 300px; /* Adjust as needed */
+                background-image: url('assets/designs/HUD/general/borders/cyberPunk01/SVG/CyberBorder_LeftMiddle_01.svg');
+                background-size: cover; /* Adjust as needed */
+                background-position: center; /* Adjust as needed */
+                position: absolute; /* Ensure the div is positioned correctly */
+                opacity: 0.35;  
+                transform: rotate(270deg) scale(0.5);
+                /* transform: rotate(180deg); */
+            }
+
+            .cyber-border-BottomMiddle{
+                left: 50%;
+                bottom: -115px;
+                width: 30px; /* Adjust as needed */
+                height: 300px; /* Adjust as needed */
+                background-image: url('assets/designs/HUD/general/borders/cyberPunk01/SVG/CyberBorder_LeftMiddle_01.svg');
+                background-size: cover; /* Adjust as needed */
+                background-position: center; /* Adjust as needed */
+                position: absolute; /* Ensure the div is positioned correctly */
+                opacity: 0.35;  
+                transform: rotate(90deg) scale(0.5);
+                /* transform: rotate(180deg); */
+            }
+
+
+            label {
+                margin-bottom: 10px;
+                visibility: 50%; 
+                font-weight: bold;
+                padding: 1px;
+                border: 1px solid rgba(0, 0, 0, 0.5);
+                background-color: rgba(255, 255, 255, 0.5);
+                position: absolute;
+                bottom: 5%;
+                left: 75%;
+                z-index: 1;
+            }
+
+            #output {
+                margin-bottom: 20px;
+                visibility: 50%; 
+                padding: 15px;
+                font-size: 12px;
+                font-weight: bold;
+                padding: 10px;
+                border: 1px solid rgba(0, 0, 0, 0.5);
+                background-color: rgba(255, 255, 255, 0.5);
+                position: absolute;
+                bottom: 16%;
+                left: 25%;
+                width: 50%;
+                z-index: 1;
+            }
+
+            #keyboard {
+                gap: 1px;
+            }
+
+            .key {
+                padding: 2.5px;
+                font-size: 1.7vw; /* Set a larger font size for wider screens */
+            }
+
+            
+
+            .HomeMenu {
+                top: 70px;
+                left: 60px;
+                width: 40px;
+                height: 40px;
+                vertical-align: top; /* Align text to the middle */
+            }
+
+            .option-menu {
+                top: 70px;
+                right: 60px;
+                width: 40px;
+                height: 40px;
+                
+            }
+
+            .SystemPanel {
+                top: 120px;
+                left: 50px;
+                width: 250px;
+                height: 540px;
+            }
+
+            .left {
+                left: 10px;
+                bottom: 90px;
+                }
+            
+                .right {
+                left: 100px;
+                bottom: 90px;
+                }
+            
+                .forward {
+                left: 60px;
+                bottom: 140px;
+                }
+            
+                .backward {
+                left: 60px;
+                bottom: 40px;
+                }
+            
+                .up {
+                left: 190px;
+                bottom: 120px;
+                }
+            
+                .down {
+                left: 190px;
+                bottom: 40px;
+                }
+            
+                
+            }
       </style>
 </head>
 
@@ -1005,7 +1208,7 @@
 	</div>
 
 
-  <button class="button HomeMenu" style="display: block;" onclick="toggleSystemMenu()">&#9881;</button>
+  <button class="button HomeMenu" style="display: block; font-size: 26px;" onclick="toggleSystemMenu()">&#9881;</button>
   <div id="SystemPanel" class="SystemPanel" style="display: none;">
     <h2>SystemMenu</h2>
     <hr/>
