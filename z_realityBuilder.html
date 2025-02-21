@@ -1182,8 +1182,8 @@
             .SystemPanel {
                 top: 120px;
                 left: 50px;
-                width: 250px;
-                height: 540px;
+                width: 200px;
+                height: 370px;
             }
 
                 .SystemPanel {
@@ -1193,9 +1193,9 @@
                     background-repeat: no-repeat; /* Prevent the background image from repeating */
                     color: white;
                     padding-top: 20px;
-                    padding-right: 20px;
+                    padding-right: 30px;
                     padding-left: 25px;
-                    padding-bottom: 100px;
+                    padding-bottom: 5px;
                     font-size: 16px;
                     cursor: pointer;
                     z-index: 2;
@@ -1212,18 +1212,36 @@
 
                 .OptionsPanel {
                     position: absolute; 
+                    background-color: rgba(255, 255, 255, 0.2);
                     background-image: url('assets/designs/HUD/general/borders/cyberPunk01/SVG/Panel_02_Vertical.svg');
                     background-repeat: no-repeat; /* Prevent the background image from repeating */
                     color: white;
                     padding-top: 20px;
                     padding-right: 20px;
                     padding-left: 20px;
-                    padding-bottom: 100px;
+                    padding-bottom: 10px;
                     font-size: 16px;
                     cursor: pointer;
                     z-index: 2;
                     display: none;
                 }
+
+        .systemOptionsListItem {
+            width: 100%;
+            margin: 5.5px;
+            padding-left: 10px;
+            font-family: 'Quantico', Arial, sans-serif; /* Apply the custom font */
+            text-align: center; /* Align text to the center */
+            background-color: grey;
+            color: rgba(255, 255, 255, 0.9);
+            box-shadow: #FFFFFF 0px 0px 5px;
+            border: 1px solid rgba(255, 255, 255);
+            border-radius: 5px;
+            font-size: 12px;
+            cursor: pointer;
+            opacity: 0.55;
+            z-index: 5;
+        }
 
 
         .LH_Button, .RH_Button {
@@ -1310,7 +1328,7 @@
             background-image: url('assets/designs/HUD/mobile/SVG/OptionRing_01.svg');
             color: black;
             position: absolute; /* Ensure the div is positioned correctly */
-            opacity: 0.25;
+            opacity: 1;
             /* animation: rotateLeft 5s linear infinite; */
             z-index: 1;
         }
@@ -1412,13 +1430,13 @@
   <div id="SystemPanel" class="SystemPanel" style="display: none;">
     <h2>SystemMenu</h2>
     <hr/>
-    <button class="button-Systems" onclick="play_sfx_click_gen()">Systems</button></br></br>
-    <button class="button-Perspectives" onclick="play_sfx_click_gen()">Perspectives</button></br></br>
-    <button class="button-Hiearchies" onclick="play_sfx_click_gen()">Hiearchies</button></br></br>
-    <button class="button-Events" onclick="play_sfx_click_gen()">Events</button></br></br>
-    <button class="button-Times" onclick="play_sfx_click_gen()">Times</button></br></br>
-    <button class="button-Spaces" onclick="play_sfx_click_gen()">Spaces</button></br></br>
-    <button class="button-Objects" onclick="play_sfx_click_gen()">Objects</button></br>
+    <button class="systemOptionsListItem button-Systems" onclick="play_sfx_click_gen()">Systems</button></br>
+    <button class="systemOptionsListItem button-Perspectives" onclick="play_sfx_click_gen()">Perspectives</button></br>
+    <button class="systemOptionsListItem button-Hiearchies" onclick="play_sfx_click_gen()">Hiearchies</button></br>
+    <button class="systemOptionsListItem button-Events" onclick="play_sfx_click_gen()">Events</button></br>
+    <button class="systemOptionsListItem button-Times" onclick="play_sfx_click_gen()">Times</button></br>
+    <button class="systemOptionsListItem button-Spaces" onclick="play_sfx_click_gen()">Spaces</button></br>
+    <button class="systemOptionsListItem button-Objects" onclick="play_sfx_click_gen()">Objects</button></br>
   </div>
   
   <button id="button_forward" class="button control forward">&#8593;</button>
