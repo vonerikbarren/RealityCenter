@@ -1002,14 +1002,14 @@
         }
 
 
-        @media (min-width: 384px) {
+        @media (min-width: 384px) and (max-width: 430px) and (min-height: 800px) and (max-height: 930px) {
 
             hr {
                 border: none; /* Remove the default border */
                 height: 2px; /* Set the height of the horizontal rule */
                 background-color: whitesmoke; /* Set the background color */
                 margin: 20px 0; /* Add some margin for spacing */
-                opacity: 0.5;
+                opacity: 0.25;
             }
 
             /* Customize the active state */
@@ -1129,6 +1129,7 @@
                 width: 40px;
                 height: 40px;
                 vertical-align: top; /* Align text to the middle */
+                text-align: center; /* Align text to the center */
             }
 
             .option-menu {
@@ -1142,11 +1143,13 @@
             .SystemPanel {
                 top: 120px;
                 left: 50px;
-                width: 250px;
-                height: 540px;
+                width: 50px;
+                height: 140px;
             }
 
-            .left {
+            
+
+                .left {
                 left: 10px;
                 bottom: 90px;
                 }
@@ -1175,6 +1178,203 @@
                 left: 190px;
                 bottom: 40px;
                 }
+
+            .SystemPanel {
+                top: 120px;
+                left: 50px;
+                width: 250px;
+                height: 540px;
+            }
+
+                .SystemPanel {
+                    position: absolute;
+                    visibility: 100%; 
+                    background-image: url('assets/designs/HUD/general/borders/cyberPunk01/SVG/Panel_02_Vertical.svg');
+                    background-repeat: no-repeat; /* Prevent the background image from repeating */
+                    color: white;
+                    padding-top: 20px;
+                    padding-right: 20px;
+                    padding-left: 25px;
+                    padding-bottom: 100px;
+                    font-size: 16px;
+                    cursor: pointer;
+                    z-index: 2;
+                    display: block;
+                    transform: scale(1);
+                }
+
+            .OptionsPanel {
+                top: 120px;
+                right: 50px;
+                width: 230px;
+                height: 410px;
+            }
+
+                .OptionsPanel {
+                    position: absolute; 
+                    background-image: url('assets/designs/HUD/general/borders/cyberPunk01/SVG/Panel_02_Vertical.svg');
+                    background-repeat: no-repeat; /* Prevent the background image from repeating */
+                    color: white;
+                    padding-top: 20px;
+                    padding-right: 20px;
+                    padding-left: 20px;
+                    padding-bottom: 100px;
+                    font-size: 16px;
+                    cursor: pointer;
+                    z-index: 2;
+                    display: none;
+                }
+
+
+        .LH_Button, .RH_Button {
+            width: 50px; /* Adjust as needed */
+            height: 50px; /* Adjust as needed */
+            background-size: cover; /* Adjust as needed */
+            background-position: center; /* Adjust as needed */
+            color: rgba(255, 255, 255, 0.3);
+            border: none; /* Remove border */
+            background-color: transparent; /* Remove background color */
+            cursor: pointer; /* Change cursor to pointer */
+            outline: none; /* Remove default outline */
+            padding: 0; /* Remove default padding */
+            margin: 0; /* Remove default margin */
+        }
+
+        .LH_Button {
+            background-image: url('assets/designs/HUD/mobile/SVG/Button_Hand_Left_01.svg'); /* Path to your left-hand image */
+            left: 30px;
+            bottom: 210px;
+            position: absolute; /* Ensure the button is positioned correctly */
+        }
+
+        .RH_Button {
+            background-image: url('assets/designs/HUD/mobile/SVG/Button_Hand_Right_01.svg'); /* Path to your right-hand image */
+            right: 30px;
+            bottom: 210px;
+            position: absolute; /* Ensure the button is positioned correctly */
+        }
+
+
+        .HandGearLeft {
+
+            width: 150px; /* Adjust as needed */
+            height: 150px; /* Adjust as needed */
+            left: 20px;
+            bottom: 150px;
+            background-image: url('assets/designs/HUD/mobile/SVG/GearHalo_01.svg');
+            color: black;
+            position: absolute; /* Ensure the div is positioned correctly */
+            opacity: 0.35;
+            animation: rotateLeft 5s linear infinite;
+            z-index: 1;
+
+        }
+
+        .HandGearRight {
+
+            width: 150px; /* Adjust as needed */
+            height: 150px; /* Adjust as needed */
+            right: 20px;
+            bottom: 150px;
+            background-image: url('assets/designs/HUD/mobile/SVG/GearHalo_01.svg');
+            color: black;
+            position: absolute; /* Ensure the div is positioned correctly */
+            opacity: 0.35;
+            animation: rotateRight 5s linear infinite;
+            z-index: 1;
+
+
+        }
+
+
+
+
+        .HandGearLeftContainer_01 {
+            width: 150px; /* Adjust as needed */
+            height: 150px; /* Adjust as needed */
+            left: 20px;
+            bottom: 150px;
+            background-image: url('assets/designs/HUD/general/borders/cyberPunk01/SVG/OptionRing_01.svg');
+            color: black;
+            position: absolute; /* Ensure the div is positioned correctly */
+            opacity: 1;
+            /* animation: rotateLeft 5s linear infinite; */
+            z-index: 1;
+        }
+
+        .HandGearLeftContainer_02 {
+            width: 190px; /* Adjust as needed */
+            height: 190px; /* Adjust as needed */
+            left: 35px;
+            bottom: 150px;
+            background-image: url('assets/designs/HUD/mobile/SVG/OptionRing_01.svg');
+            color: black;
+            position: absolute; /* Ensure the div is positioned correctly */
+            opacity: 0.25;
+            /* animation: rotateLeft 5s linear infinite; */
+            z-index: 1;
+        }
+
+        .HandGearRightContainer_01 {
+            width: 150px; /* Adjust as needed */
+            height: 150px; /* Adjust as needed */
+            right: 20px;
+            bottom: 150px;
+            background-image: url('assets/designs/HUD/general/borders/cyberPunk01/SVG/OptionRing_01.svg');
+            color: black;
+            position: absolute; /* Ensure the div is positioned correctly */
+            opacity: 1;
+            /* animation: rotateRight 5s linear infinite; */
+            transform: scaleX(-1); /* Flip the image vertically */
+            z-index: 1;
+        }
+
+        .HandGearRightContainer_02 {
+            width: 250px; /* Adjust as needed */
+            height: 250px; /* Adjust as needed */
+            right: 35px;
+            bottom: 150px;
+            background-image: url('assets/designs/HUD/mobile/SVG/OptionRing_01.svg');
+            color: black;
+            position: absolute; /* Ensure the div is positioned correctly */
+            opacity: 0.25;
+            /* animation: rotateLeft 5s linear infinite; */
+            transform: scaleX(-1); /* Flip the image vertically */
+            z-index: 1;
+        }
+
+
+
+
+
+        @keyframes rotate {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+        }
+
+        @keyframes rotateLeft {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(-360deg);
+        }
+        }
+
+        @keyframes rotateRight {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+        }
+
+
             
                 
             }
