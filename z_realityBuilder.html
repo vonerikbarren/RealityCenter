@@ -1166,34 +1166,49 @@
             
 
                 .left {
-                left: 10px;
-                bottom: 90px;
+                    left: 10px;
+                    bottom: 90px;
                 }
             
                 .right {
-                left: 100px;
-                bottom: 90px;
+                    left: 100px;
+                    bottom: 90px;
                 }
             
                 .forward {
-                left: 60px;
-                bottom: 140px;
+                    left: 61.5px;
+                    bottom: 140px;
                 }
             
                 .backward {
-                left: 60px;
-                bottom: 40px;
+                    left: 61.5px;
+                    bottom: 40px;
                 }
             
                 .up {
-                left: 190px;
-                bottom: 120px;
+                    left: 150px;
+                    bottom: 120px;
                 }
             
                 .down {
-                left: 190px;
-                bottom: 40px;
+                    left: 150px;
+                    bottom: 40px;
                 }
+
+
+                .gamepad-verticalMovementPad-buttons{
+                    left: 152.5px;
+                    bottom: 20px;
+                    width: 20px; /* Adjust as needed */
+                    height: 150px; /* Adjust as needed */
+                    background-image: url('assets/designs/HUD/mobile/SVG/UI_scrollComponent_02.svg');
+                    background-size: cover; /* Adjust as needed */
+                    background-position: center; /* Adjust as needed */
+                    position: absolute; /* Ensure the div is positioned correctly */
+                    opacity: 0.5;
+                    transform: rotate(180deg);
+                }
+
 
             .SystemPanel {
                 top: 50px;
@@ -1310,10 +1325,10 @@
 
         .HandGearLeft {
 
-            width: 150px; /* Adjust as needed */
-            height: 150px; /* Adjust as needed */
-            left: 20px;
-            bottom: 150px;
+            width: 100px; /* Adjust as needed */
+            height: 100px; /* Adjust as needed */
+            left: 70px;
+            bottom: 160px;
             background-image: url('assets/designs/HUD/mobile/SVG/GearHalo_01.svg');
             color: black;
             position: absolute; /* Ensure the div is positioned correctly */
@@ -1325,10 +1340,10 @@
 
         .HandGearRight {
 
-            width: 150px; /* Adjust as needed */
-            height: 150px; /* Adjust as needed */
-            right: 20px;
-            bottom: 150px;
+            width: 100px; /* Adjust as needed */
+            height: 100px; /* Adjust as needed */
+            right: 70px;
+            bottom: 160px;
             background-image: url('assets/designs/HUD/mobile/SVG/GearHalo_01.svg');
             color: black;
             position: absolute; /* Ensure the div is positioned correctly */
@@ -1343,9 +1358,9 @@
 
 
         .HandGearLeftContainer_01 {
-            width: 150px; /* Adjust as needed */
-            height: 150px; /* Adjust as needed */
-            left: 20px;
+            width: 125px; /* Adjust as needed */
+            height: 125px; /* Adjust as needed */
+            left: 60px;
             bottom: 150px;
             background-image: url('assets/designs/HUD/general/borders/cyberPunk01/SVG/OptionRing_01.svg');
             color: black;
@@ -1356,8 +1371,8 @@
         }
 
         .HandGearLeftContainer_02 {
-            width: 190px; /* Adjust as needed */
-            height: 190px; /* Adjust as needed */
+            width: 125px; /* Adjust as needed */
+            height: 125px; /* Adjust as needed */
             left: 35px;
             bottom: 150px;
             background-image: url('assets/designs/HUD/mobile/SVG/OptionRing_01.svg');
@@ -1368,10 +1383,14 @@
             z-index: 1;
         }
 
+
+
+
+
         .HandGearRightContainer_01 {
-            width: 150px; /* Adjust as needed */
-            height: 150px; /* Adjust as needed */
-            right: 20px;
+            width: 125px; /* Adjust as needed */
+            height: 125px; /* Adjust as needed */
+            right: 60px;
             bottom: 150px;
             background-image: url('assets/designs/HUD/general/borders/cyberPunk01/SVG/OptionRing_01.svg');
             color: black;
@@ -1383,8 +1402,8 @@
         }
 
         .HandGearRightContainer_02 {
-            width: 250px; /* Adjust as needed */
-            height: 250px; /* Adjust as needed */
+            width: 125px; /* Adjust as needed */
+            height: 125px; /* Adjust as needed */
             right: 35px;
             bottom: 150px;
             background-image: url('assets/designs/HUD/mobile/SVG/OptionRing_01.svg');
@@ -1425,6 +1444,13 @@
         to {
             transform: rotate(360deg);
         }
+        }
+
+
+        .TestingClass234:active {
+            transform: scale(1.1); /* Scale the element up slightly */
+            background-color: rgba(255, 255, 255, 0.2); /* Change background color */
+            cursor: pointer; /* Change cursor to pointer */
         }
 
 
@@ -2143,7 +2169,7 @@ let userHUD_HiearchicalΔ, mesh_userHUD_HiearchicalΔ
 
 
 let userHUD_pdfTest01
-let userHUD_img_pdfTest01
+let userHUD_imgButton_pdfTest01
 let userHUD_comp_pdfTest01
 let userHUD_mesh_pdfTest01
 
@@ -3277,6 +3303,7 @@ let Skin_CyberSkin_MovementPadImg_root
 					panelroot.addEventListener('pointerdown', action)
                     panelroot.addEventListener('touchdown', action)
 					panelroot.textContent = message
+                    panelroot.cursor = "pointer"
 					panelroot.style.alignText = "center"
                     panelroot.style.position = 'absolute'
 					
@@ -5996,7 +6023,7 @@ function handleInteractions(scene, camera, cubes, initialPositions) {
 
 
         userHUD_comp_pdfTest01 = new THREE.Group()
-        userHUD_comp_pdfTest01.position.set(-200, 7.5, -40)
+        userHUD_comp_pdfTest01.position.set(-200, 7.5, -35)
         userHUD_comp_pdfTest01.rotation.set(0, 0, 0)
         userHUD_comp_pdfTest01.scale.set(0.5, 0.5, 0.5)
         userHUD_pdfTest01.add(userHUD_comp_pdfTest01)  
@@ -6021,22 +6048,62 @@ function handleInteractions(scene, camera, cubes, initialPositions) {
 
 
 
-        userHUD_img_pdfTest01 = new THREE.Group()
-        userHUD_img_pdfTest01.position.set(35.5, -83, -100)
-        userHUD_img_pdfTest01.rotation.set(0, 0, 0)
-        userHUD_img_pdfTest01.scale.set(0.15, 0.15, 0.15)
-        userHUD_pdfTest01.add(userHUD_img_pdfTest01)  
+        userHUD_imgButton_pdfTest01 = new THREE.Group()
+        userHUD_imgButton_pdfTest01.position.set(0, 100, -100)
+        userHUD_imgButton_pdfTest01.rotation.set(0, 0, 0)
+        userHUD_imgButton_pdfTest01.scale.set(0.30, 0.30, 0.30)
+        userHUD_pdfTest01.add(userHUD_imgButton_pdfTest01)  
+
+
+        let moveUserΔ_and_moveUser_Test01 = () => {
+
+
+            gsap.to(UserContainer_root.position, {
+                repeat: 0,
+                duration: 5,
+                ease: "none",
+                delay: 0,
+                x: 1,
+                y: 400,
+                z: 1,
+
+            })
+
+            gsap.to(camera.position, {
+                repeat: 0,
+                duration: 5,
+                ease: "none",
+                delay: 0,
+                x: 20,
+                y: 200,
+                z: 100,
+
+            })
+
+
+            
+
+
+
+
+
+
+            // animateCameraToObject(UserContainer_root)
+            // setOrbitControlsTargetToObject(UserContainer_root);
+
+
+        }
 
 
         
-        userHUD_img_pdfTest01.add(
+        userHUD_imgButton_pdfTest01.add(
             new hoverObject(
                 'img',
                 0, 0, 0,
                 0, 0, 0,
                 0.1, 0.1, 0.1,
                 "Testing234", "TestingClass234",
-                "./assets/icons/Websites01/002-globe_grid.png", "",
+                "assets/icons/00-Official/UI/Isometric/Tools/world-wide-web.svg", "",
                 "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
                 () => {
 
@@ -6062,12 +6129,22 @@ function handleInteractions(scene, camera, cubes, initialPositions) {
                         })
                     }
 
-                    // gsap.to(userHUD_comp_pdfTest01.position, {
+                    // moveUserΔ_and_moveUser_Test01()
+                    // orbitControls.target.set(0, 400, 0);
+                    // orbitControls.update();
+                    
+
+
+
+
+                    // ImgButton Test Function
+
+                    // gsap.to(camera.position, {
                     //     repeat: 0,
                     //     duration: 0.5,
                     //     ease: "none",
                     //     delay: 0.15,
-                    //     x: 0,
+                    //     x: 200,
                     //     // w: 0.010,
                     //     // z: 0.010,
                     
@@ -6082,20 +6159,20 @@ function handleInteractions(scene, camera, cubes, initialPositions) {
         )
 
 
-        let rotate_userHUD_img_pdfTest01 = () => {
-            gsap.to(userHUD_img_pdfTest01.rotation, {
-                repeat: -1,
-                duration: 1,
-                delay: 0,
-                ease: "none",
-                y: 3.14,
-                x: 0,
-                z: 0,
+        // let rotate_userHUD_imgButton_pdfTest01 = () => {
+        //     gsap.to(userHUD_imgButton_pdfTest01.rotation, {
+        //         repeat: -1,
+        //         duration: 1,
+        //         delay: 0,
+        //         ease: "none",
+        //         y: 3.14,
+        //         x: 0,
+        //         z: 0,
 
-            })
-        }
+        //     })
+        // }
 
-        // rotate_userHUD_img_pdfTest01()
+        // rotate_userHUD_imgButton_pdfTest01()
 
 
     
@@ -6562,7 +6639,46 @@ Skin_CyberSkin_MovementPadImg_root.scale.set(0.005, 0.005, 0.005)
                 }
             
                 disableOrbitControls()
-               
+
+
+            // Function to change OrbitControlsTarget
+
+            // Function to set the OrbitControls target to the object's position
+                function setOrbitControlsTargetToObject(object) {
+                    orbitControls.target.copy(object.position);
+                    orbitControls.update(); // Update the controls to apply the new target
+                }
+
+
+
+
+
+            // Function to animate the camera position and OrbitControls target
+            function animateCameraToObject(object) {
+                // Animate the camera position
+                gsap.to(camera.position, {
+                    duration: 2,
+                    x: object.position.x + 5, // Offset the camera position from the object
+                    y: object.position.y + 5,
+                    z: object.position.z + 10,
+                    onUpdate: function() {
+                        // Update the controls during the animation
+                        orbitControls.update();
+                    }
+                });
+
+                // Animate the OrbitControls target
+                gsap.to(orbitControls.target, {
+                    duration: 2,
+                    x: object.position.x,
+                    y: object.position.y,
+                    z: object.position.z,
+                    onUpdate: function() {
+                        // Update the orbitControls during the animation
+                        orbitControls.update();
+                    }
+                });
+            }
                     
 
 
@@ -8275,6 +8391,9 @@ let UI_ThirdPersonCameraView_root
                 //             releaseFromCamera(camera, mesh_anyGeometryName);
                 //         }
                 //     })
+
+
+                
             
 
 
