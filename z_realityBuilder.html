@@ -33,6 +33,13 @@
           font-family: 'Quantico', Arial, sans-serif; /* Apply the custom font */
         }
 
+        h2 {
+            color: white;
+            text-shadow: grey 2px 2px 2px;
+            font-size: 24px;
+            font-family: 'Quantico', Arial, sans-serif; /* Apply the custom font */
+        }
+
         hr {
             border: none; /* Remove the default border */
             height: 1px; /* Set the height of the horizontal rule */
@@ -1002,10 +1009,12 @@
         }
 
 
-        @media (min-width: 384px) and (max-width: 430px) and (min-height: 800px) and (max-height: 930px) {
+        @media (min-width: 300px) and (max-width: 430px) and (min-height: 800px) and (max-height: 930px) {
 
-            h1 { 
+            h2 { 
                 margin: 2.5;
+                text-shadow: grey 2px 2px;
+
             }
 
             hr {
@@ -1040,6 +1049,7 @@
 
             button {
                 opacity: 0.5;
+                text-shadow: solid #FFFFFF 2px 2px 2px 2px;
             }
 
 
@@ -1409,7 +1419,7 @@
             background-image: url('assets/designs/HUD/mobile/SVG/OptionRing_01.svg');
             color: black;
             position: absolute; /* Ensure the div is positioned correctly */
-            opacity: 0.25;
+            opacity: 0.95;
             /* animation: rotateLeft 5s linear infinite; */
             transform: scaleX(-1); /* Flip the image vertically */
             z-index: 1;
