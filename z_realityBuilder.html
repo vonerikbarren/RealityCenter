@@ -180,7 +180,7 @@
             background-size: cover; /* Adjust as needed */
             background-position: center; /* Adjust as needed */
             position: absolute; /* Ensure the div is positioned correctly */
-            opacity: 0.35;
+            opacity: 0.55;
             /* transform: rotate(180deg); */
         }
 
@@ -193,7 +193,7 @@
             background-size: cover; /* Adjust as needed */
             background-position: center; /* Adjust as needed */
             position: absolute; /* Ensure the div is positioned correctly */
-            opacity: 0.35;
+            opacity: 0.55;
             /* transform: rotate(180deg); */
         }
 
@@ -206,7 +206,7 @@
             background-size: cover; /* Adjust as needed */
             background-position: center; /* Adjust as needed */
             position: absolute; /* Ensure the div is positioned correctly */
-            opacity: 0.35;  
+            opacity: 0.55;  
             transform: rotate(270deg) scale(0.5);
             /* transform: rotate(180deg); */
         }
@@ -225,7 +225,7 @@
             background-size: cover; /* Adjust as needed */
             background-position: center; /* Adjust as needed */
             position: absolute; /* Ensure the div is positioned correctly */
-            opacity: 0.35;
+            opacity: 0.55;
             /* transform: rotate(180deg); */
         }
 
@@ -238,7 +238,7 @@
             background-size: cover; /* Adjust as needed */
             background-position: center; /* Adjust as needed */
             position: absolute; /* Ensure the div is positioned correctly */
-            opacity: 0.35;
+            opacity: 0.55;
             /* transform: rotate(180deg); */
         }
 
@@ -255,7 +255,7 @@
             background-size: cover; /* Adjust as needed */
             background-position: center; /* Adjust as needed */
             position: absolute; /* Ensure the div is positioned correctly */
-            opacity: 0.35;
+            opacity: 0.55;
             /* transform: rotate(180deg); */
             transform: rotate(180deg) scale(0.5);
         }
@@ -269,7 +269,7 @@
             background-size: cover; /* Adjust as needed */
             background-position: center; /* Adjust as needed */
             position: absolute; /* Ensure the div is positioned correctly */
-            opacity: 0.35;
+            opacity: 0.55;
             transform: scale(0.5);
             
         }
@@ -288,7 +288,7 @@
             background-size: cover; /* Adjust as needed */
             background-position: center; /* Adjust as needed */
             position: absolute; /* Ensure the div is positioned correctly */
-            opacity: 0.35;
+            opacity: 0.55;
             
             
         }
@@ -302,7 +302,7 @@
             background-size: cover; /* Adjust as needed */
             background-position: center; /* Adjust as needed */
             position: absolute; /* Ensure the div is positioned correctly */
-            opacity: 0.35;  
+            opacity: 0.55;  
             /* transform: rotate(180deg); */
         }
 
@@ -319,7 +319,7 @@
             background-size: cover; /* Adjust as needed */
             background-position: center; /* Adjust as needed */
             position: absolute; /* Ensure the div is positioned correctly */
-            opacity: 0.35;
+            opacity: 0.55;
             transform: rotate(0deg) scale(0.35);
             
             
@@ -334,7 +334,7 @@
             background-size: cover; /* Adjust as needed */
             background-position: center; /* Adjust as needed */
             position: absolute; /* Ensure the div is positioned correctly */
-            opacity: 0.35;  
+            opacity: 0.55;  
             transform: rotate(0deg) scale(0.35);
             /* transform: rotate(180deg); */
         }
@@ -349,7 +349,7 @@
             background-size: cover; /* Adjust as needed */
             background-position: center; /* Adjust as needed */
             position: absolute; /* Ensure the div is positioned correctly */
-            opacity: 0.35;  
+            opacity: 0.55;  
             transform: rotate(90deg) scale(0.5);
             /* transform: rotate(180deg); */
         }
@@ -1077,7 +1077,7 @@
                 background-size: cover; /* Adjust as needed */
                 background-position: center; /* Adjust as needed */
                 position: absolute; /* Ensure the div is positioned correctly */
-                opacity: 0.35;  
+                opacity: 0.75;  
                 transform: rotate(270deg) scale(0.5);
                 /* transform: rotate(180deg); */
             }
@@ -1091,7 +1091,7 @@
                 background-size: cover; /* Adjust as needed */
                 background-position: center; /* Adjust as needed */
                 position: absolute; /* Ensure the div is positioned correctly */
-                opacity: 0.35;  
+                opacity: 0.75;  
                 transform: rotate(90deg) scale(0.5);
                 /* transform: rotate(180deg); */
             }
@@ -1329,7 +1329,7 @@
             height: 100px; /* Adjust as needed */
             left: 70px;
             bottom: 160px;
-            background-image: url('assets/designs/HUD/mobile/SVG/GearHalo_01.svg');
+            background-image: url('assets/designs/TechTiles/CyberPunkDesign_01/SVG/TechTile_GearEngine_Active_01.svg');
             color: black;
             position: absolute; /* Ensure the div is positioned correctly */
             opacity: 0.35;
@@ -1344,7 +1344,7 @@
             height: 100px; /* Adjust as needed */
             right: 70px;
             bottom: 160px;
-            background-image: url('assets/designs/HUD/mobile/SVG/GearHalo_01.svg');
+            background-image: url('assets/designs/TechTiles/CyberPunkDesign_01/SVG/TechTile_GearEngine_Active_01.svg');
             color: black;
             position: absolute; /* Ensure the div is positioned correctly */
             opacity: 0.35;
@@ -1514,7 +1514,7 @@
         <button onclick="sfx_click_gen" class="button right-button">◬</button>
         <button class="button right-button-2">Λ</button>
         <button class="button right-button-3">§</button>
-        <button class="button right-button-4">⟐</button>
+        <button id="ButtonRealityToggle" class="button right-button-4">⟐</button>
         <button class="button right-button-5">Ω</button>
     <div class="gamepad-primaryOptions-buttons"></div>
 
@@ -1906,6 +1906,8 @@
 			let mesh_objT_CylinderOpenedA0
 
         // Opening Video
+            let CenterBrain_VideoSphere_Opening_Container_RootContainer, mesh_CenterBrain_VideoSphere_Opening_Container_RootContainer
+            let CenterBrain_VideoSphere_Opening_ColorContainer, mesh_CenterBrain_VideoSphere_Opening_ColorContainer
 			let CenterBrain_VideoSphere_Opening
 			let mesh_CenterBrain_VideoSphere_Opening
 			let openingButtonIconGroup
@@ -2358,8 +2360,12 @@ let Skin_CyberSkin_MovementPadImg_root
 
         // UI_Items
         const GearCyberTechDesign01 = textureLoader.load('assets/designs/HUD/mobile/1x/GearHalo_01.png')
-
         const GearCyberTechDesign02 = textureLoader.load('assets/designs/HUD/mobile/1x/GearMeasure_01.png')
+        const GearCyberTechDesign03 = textureLoader.load('assets/designs/TechTiles/CyberPunkDesign_01/1x/TechTile_GearEngine_default_02.png')
+        const GearCyberTechDesign04 = textureLoader.load('assets/designs/TechTiles/CyberPunkDesign_01/1x/TechTile_GearEngine_Active_01.png')
+
+
+        const TechTile_CyberPunk_01 = textureLoader.load('assets/designs/TechTiles/CyberPunkDesign_01/1x/TechTile_Default_02.png')
 
 
 		init();
@@ -3675,10 +3681,21 @@ let Skin_CyberSkin_MovementPadImg_root
                 const Button_down = document.getElementById('button_down');
                 Button_down.addEventListener('click', function move(direction) {
 
-                    // play_sfx_click_gen()
                     gsap.to(camera.position, { y: camera.position.y - distance, duration: 1 });
+
+                    // play_sfx_click_gen()
                     
                 });
+                    
+            
+
+
+
+
+
+
+
+                
 
 
                 // document.addEventListener("DOMContentLoaded", () => {
@@ -4106,10 +4123,117 @@ function dollyZoom() {
             //....................................................................
 
 
-			// Toc_Geometries
+
+
+
+
+
+            // CenterBrain_VideoSphere_Opening_Container_RootContainer
+            
+
+            CenterBrain_VideoSphere_Opening_Container_RootContainer = new THREE.Group()
+            CenterBrain_VideoSphere_Opening_Container_RootContainer.position.set(0, 0, 0)
+            CenterBrain_VideoSphere_Opening_Container_RootContainer.rotation.set(0, 0, 0)
+            CenterBrain_VideoSphere_Opening_Container_RootContainer.scale.set(1, 1, 1)
+            scene.add(CenterBrain_VideoSphere_Opening_Container_RootContainer)
+
+
+            const mat_CenterBrain_VideoSphere_Opening_Container_RootContainer = new THREE.MeshBasicMaterial({ map: TechTile_CyberPunk_01, side: THREE.DoubleSide });
+            mesh_CenterBrain_VideoSphere_Opening_Container_RootContainer = new THREE.Mesh(geo_objT_BoxA0, mat_CenterBrain_VideoSphere_Opening_Container_RootContainer);
+            mat_CenterBrain_VideoSphere_Opening_Container_RootContainer.transparent = true;
+            mat_CenterBrain_VideoSphere_Opening_Container_RootContainer.alphaMap = TechTile_CyberPunk_01;
+            // mat_CenterBrain_VideoSphere_Opening_Container_RootContainer.color = new THREE.Color('#ffffff') // white
+            // mat_CenterBrain_VideoSphere_Opening_Container_RootContainer.depthWrite = true
+			// mat_CenterBrain_VideoSphere_Opening_Container_RootContainer.blending = THREE.AdditiveBlending
+            mesh_CenterBrain_VideoSphere_Opening_Container_RootContainer.position.set(0, 0, 0);
+            // mesh_CenterBrain_VideoSphere_Opening_Container_RootContainer.position.set(-15000, 0, 0);
+            mesh_CenterBrain_VideoSphere_Opening_Container_RootContainer.scale.set(1, 1, 1);
+            mesh_CenterBrain_VideoSphere_Opening_Container_RootContainer.rotation.set(0, 0, 0)
+            // mesh_CenterBrain_VideoSphere_Opening_Container_RootContainer.rotateX( - Math.PI / 2 );
+
+            // CenterBrain_VideoSphere_Opening_Container_RootContainer.lookAt(camera)
+
+            CenterBrain_VideoSphere_Opening_Container_RootContainer.add(mesh_CenterBrain_VideoSphere_Opening_Container_RootContainer)
+
 
 			
+            // CenterBrain_VideoSphere_Opening_ColorContainer
+			
 
+            CenterBrain_VideoSphere_Opening_ColorContainer = new THREE.Group()
+            CenterBrain_VideoSphere_Opening_ColorContainer.position.set(0, 0, 0)
+            CenterBrain_VideoSphere_Opening_ColorContainer.rotation.set(0, 0, 0)
+            CenterBrain_VideoSphere_Opening_ColorContainer.scale.set(1, 1, 1)
+            scene.add(CenterBrain_VideoSphere_Opening_ColorContainer)
+
+
+            const mat_CenterBrain_VideoSphere_Opening_ColorContainer = new THREE.MeshBasicMaterial({ map: TechTile_CyberPunk_01, side: THREE.DoubleSide });
+            mesh_CenterBrain_VideoSphere_Opening_ColorContainer = new THREE.Mesh(geo_objT_BoxA0, mat_CenterBrain_VideoSphere_Opening_ColorContainer);
+            mat_CenterBrain_VideoSphere_Opening_ColorContainer.transparent = true;
+            mat_CenterBrain_VideoSphere_Opening_ColorContainer.alphaMap = TechTile_CyberPunk_01;
+            mesh_CenterBrain_VideoSphere_Opening_ColorContainer.position.set(0, 0, 0);
+            // mesh_CenterBrain_VideoSphere_Opening_ColorContainer.position.set(-15000, 0, 0);
+            mesh_CenterBrain_VideoSphere_Opening_ColorContainer.scale.set(0.75, 0.75, 0.75);
+            mesh_CenterBrain_VideoSphere_Opening_ColorContainer.rotation.set(0, 0, 0)
+            // mesh_CenterBrain_VideoSphere_Opening_ColorContainer.rotateX( - Math.PI / 2 );
+
+            // CenterBrain_VideoSphere_Opening_ColorContainer.lookAt(camera)
+
+            CenterBrain_VideoSphere_Opening_ColorContainer.add(mesh_CenterBrain_VideoSphere_Opening_ColorContainer)
+
+
+             // Define an array of colors
+             const colorsArray = [
+                    0xff0000, // Red
+                    0xff7f00, // Orange
+                    0xffff00, // Yellow
+                    0x00ff00, // Green
+                    0x0000ff, // Blue
+                    0x4b0082, // Indigo
+                    0x8b00ff, // Violet
+                    0xff00ff, // Magenta
+                    0x00ffff, // Cyan
+                    0xffffff  // White
+                ];
+
+
+             // Function to animate the mesh color
+             function animateMeshColor(mesh, colorsArray, duration) {
+                    let colorIndex = 0;
+
+                    function changeColor() {
+                        gsap.to(mesh.material.color, {
+                            r: (colorsArray[colorIndex] >> 16 & 255) / 255,
+                            g: (colorsArray[colorIndex] >> 8 & 255) / 255,
+                            b: (colorsArray[colorIndex] & 255) / 255,
+                            duration: duration,
+                            onComplete: () => {
+                                colorIndex = (colorIndex + 1) % colorsArray.length;
+                                changeColor();
+                            }
+                        });
+                    }
+
+                    changeColor();
+                }
+
+            // Start the color animation
+            animateMeshColor(mesh_CenterBrain_VideoSphere_Opening_ColorContainer, colorsArray, 0.1);
+
+
+            let rotate_mesh_CenterBrain_VideoSphere_Opening_ColorContainer = () => {
+                gsap.to(mesh_CenterBrain_VideoSphere_Opening_ColorContainer.rotation, {
+                    repeat: -1,
+                    duration: 1.5,
+                    ease: "none",
+                    delay: .25,
+                    y: '-= 3.14',
+                    x: '-= 1.575',
+                    z: '-= 1.575',
+                })
+            }
+
+            rotate_mesh_CenterBrain_VideoSphere_Opening_ColorContainer()
 
 			
 
@@ -4150,22 +4274,85 @@ function dollyZoom() {
 
 				mesh_CenterBrain_VideoSphere_Opening.position.set(0, 0, 0)
 				mesh_CenterBrain_VideoSphere_Opening.rotation.set(0, 1.565, 0)
-				mesh_CenterBrain_VideoSphere_Opening.scale.set(10000, 10000, 10000)
+				mesh_CenterBrain_VideoSphere_Opening.scale.set(0.75, 0.75, 0.75)
 				CenterBrain_VideoSphere_Opening.add(mesh_CenterBrain_VideoSphere_Opening)
 
 
 			
 
                 let Toggle_VideoSphere = () => {
-                    if (mesh_CenterBrain_VideoSphere_Opening.scale.x === 10000) {
-                        gsap.to(mesh_CenterBrain_VideoSphere_Opening.scale, {
+                    if (mesh_CenterBrain_VideoSphere_Opening.scale.x === 0.75) {
+                        // gsap.to(mesh_CenterBrain_VideoSphere_Opening.scale, {
+
+						// 	repeat: -1,
+						// 	duration: 3.5,
+						// 	delay: 0,
+						// 	x: 0.1,
+                        //     y: 0.1,
+                        //     z: 0.1
+							
+						// })
+
+                        gsap.to(mesh_CenterBrain_VideoSphere_Opening_ColorContainer.scale, {
+
+							repeat: -1,
+							duration: .15,
+							delay: 0,
+							x: 0.25,
+                            y: 0.25,
+                            z: 0.25
+							
+						})
+
+
+                        gsap.to(CenterBrain_VideoSphere_Opening_Container_RootContainer.scale, {
+
+                            repeat: -1,
+                            duration: 1,
+                            delay: 0,
+                            x: 0.55,
+                            y: 0.55,
+                            z: 0.55
+
+                        })
+
+
+
+
+
+
+                        // gsap.to(mesh_CenterBrain_VideoSphere_Opening.position, {
+
+						// 	repeat: 0,
+						// 	duration: 2.5,
+						// 	delay: 0,
+						// 	x: 25,
+                        //     y: 10,
+                        //     z: 25,
+							
+						// })
+
+
+                        gsap.to(mesh_CenterBrain_VideoSphere_Opening_ColorContainer.position, {
 
 							repeat: 0,
 							duration: 2.5,
 							delay: 0,
-							x: 0.5,
-                            y: 0.5,
-                            z: 0.5
+							x: 25,
+                            y: 10,
+                            z: 25,
+							
+						})
+
+
+                        gsap.to(CenterBrain_VideoSphere_Opening_Container_RootContainer.position, {
+
+							repeat: 0,
+							duration: 2.5,
+							delay: 0,
+							x: 25,
+                            y: 10,
+                            z: 25,
 							
 						})
                         
@@ -4183,22 +4370,53 @@ function dollyZoom() {
                 }
 
                 document.addEventListener("keydown", function(event) {
-					if (event.key === "(") {
+					if (event.key === '"') {
 						Toggle_VideoSphere()
 					}
 				})
 
                 let rotateSphere = () => {
-                gsap.to(mesh_CenterBrain_VideoSphere_Opening.rotation, {
-                    repeat: -1,
-                    duration: 4.5,
-                    ease: "none",
-                    delay: .25,
-                    y: '-= 1.575',
-                })
-            }
+                    gsap.to(mesh_CenterBrain_VideoSphere_Opening.rotation, {
+                        repeat: -1,
+                        duration: 4.5,
+                        ease: "none",
+                        delay: .25,
+                        y: '-= 1.575',
+                    })
+                }
 
                 // rotateSphere()
+
+
+
+
+                const Button_RealityToggle = document.getElementById('ButtonRealityToggle');
+                Button_RealityToggle.addEventListener('click', function ToggleReality() {
+
+                    play_sfx_click_gen()
+                    
+                    gsap.to(mesh_CenterBrain_VideoSphere_Opening.rotation, {
+                        repeat: -1,
+                        duration: 5.5,
+                        delay: 0,
+                        ease: "linear",
+                        y: Math.PI * 2,
+
+					})
+
+                    
+                    Toggle_VideoSphere()
+
+                });
+
+               
+
+
+
+               
+
+                // Start the color animation
+                // animateMeshColor(mesh_CenterBrain_VideoSphere_Opening, colorsArray, 0.1);
 
 
 
@@ -7487,11 +7705,11 @@ Skin_CyberSkin_MovementPadImg_root.scale.set(0.005, 0.005, 0.005)
                         UserContainer_DecorativeCircle01.scale.set(1, 1, 1)
                         UserContainer_MediaContainer_baseB.add(UserContainer_DecorativeCircle01)
 
-                        const mat_UserContainer_DecorativeCircle01 = new THREE.MeshBasicMaterial({ map: GearCyberTechDesign01, side: THREE.DoubleSide });
+                        const mat_UserContainer_DecorativeCircle01 = new THREE.MeshBasicMaterial({ map: GearCyberTechDesign04, side: THREE.DoubleSide });
                         mesh_UserContainer_DecorativeCircle01 = new THREE.Mesh(geo_objT_CircleA1, mat_UserContainer_DecorativeCircle01);
 
                             mat_UserContainer_DecorativeCircle01.transparent = true;
-                            mat_UserContainer_DecorativeCircle01.alphaMap = GearCyberTechDesign01;
+                            mat_UserContainer_DecorativeCircle01.alphaMap = GearCyberTechDesign04;
 
                         mesh_UserContainer_DecorativeCircle01.position.set(0, 0, 0);
                         mesh_UserContainer_DecorativeCircle01.rotation.set(0, 0, 0)
@@ -7534,11 +7752,11 @@ Skin_CyberSkin_MovementPadImg_root.scale.set(0.005, 0.005, 0.005)
                         UserContainer_DecorativeCircle03.scale.set(1, 1, 1)
                         UserContainer_MediaContainer_baseB.add(UserContainer_DecorativeCircle03)
 
-                        const mat_UserContainer_DecorativeCircle03 = new THREE.MeshBasicMaterial({ map: GearCyberTechDesign01, side: THREE.DoubleSide });
+                        const mat_UserContainer_DecorativeCircle03 = new THREE.MeshBasicMaterial({ map: GearCyberTechDesign04, side: THREE.DoubleSide });
                         mesh_UserContainer_DecorativeCircle03 = new THREE.Mesh(geo_objT_CircleA1, mat_UserContainer_DecorativeCircle03);
 
                             mat_UserContainer_DecorativeCircle03.transparent = true;
-                            mat_UserContainer_DecorativeCircle03.alphaMap = GearCyberTechDesign01;
+                            mat_UserContainer_DecorativeCircle03.alphaMap = GearCyberTechDesign04;
 
                         mesh_UserContainer_DecorativeCircle03.position.set(0, 0, 0);
                         mesh_UserContainer_DecorativeCircle03.rotation.set(0, 0, 0)
