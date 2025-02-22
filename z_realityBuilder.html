@@ -1861,12 +1861,16 @@
         let newSpeedStrengthParams
         let Control_newSpeedStrengthParams
         let particles
+
         const raycaster_plc = new THREE.Raycaster();
         const mouse_plc = new THREE.Vector2();
         const objects = [];
         // const pointerLockControls = new PointerLockControls(camera, document.body);
         
 
+        // Z-Target
+        let zTargetObject_root
+        let zTargetObject, mesh_zTargetObject
 
 
         
@@ -2366,6 +2370,14 @@ let Skin_CyberSkin_MovementPadImg_root
 
 
         const TechTile_CyberPunk_01 = textureLoader.load('assets/designs/TechTiles/CyberPunkDesign_01/1x/TechTile_Default_02.png')
+
+
+
+        // Hand Items
+        const Hand_robotic_pointDown = textureLoader.load('assets/img/02-UserUI/hands/02-FinalWhite-Series/02-PointFinger/PointLeftHandFromMiddleTop.png')
+        const Hand_robotic_pointUp = textureLoader.load('assets/designs/HUD/mobile/1x/Hand_Robotic_PointUp.png')
+        const Hand_robotic_pointLeft = textureLoader.load('assets/designs/HUD/mobile/1x/Hand_Robotic_PointLeft.png')
+        const Hand_robotic_pointRight = textureLoader.load('assets/designs/HUD/mobile/1x/Hand_Robotic_PointRight.png')
 
 
 		init();
@@ -8210,6 +8222,100 @@ Skin_CyberSkin_MovementPadImg_root.scale.set(0.005, 0.005, 0.005)
 					}
 				})
 
+//.......................................................
+//..ZZZZZZZZZ........TTTTTTTTT.....AAA.......RRRRR.......
+//.ZZZZZZZZZZZ......TTTTTTTTTTT...AAAAA.....RRRRRRRRRR...
+//.ZZZZZZZZZZZ......TTTTTTTTTTT...AAAAA.....RRRRRRRRRRR..
+//.ZZZZZZZZZZZ......TTTTTTTTTTT..AAAAAAA....RRRRRRRRRRR..
+//......ZZZZZZ..........TTTT.....AAAAAAA....RRR....RRRR..
+//.....ZZZZZZ...........TTTT....AAAAAAAA....RRR....RRRR..
+//.....ZZZZZ............TTTT....AAAAAAAAA...RRRRRRRRRRR..
+//....ZZZZZ...------....TTTT....AAAA.AAAA...RRRRRRRRRR...
+//...ZZZZZ....------....TTTT...AAAAAAAAAA...RRRRRRRRRRR..
+//..ZZZZZ.....------....TTTT...AAAAAAAAAAA..RRR..RRRRRR..
+//.ZZZZZZ.....------....TTTT...AAAAAAAAAAA..RRR....RRRR..
+//.ZZZZZZZZZZZ..........TTTT..TAAAAAAAAAAA..RRR....RRRR..
+//.ZZZZZZZZZZZ..........TTTT..TAAA....AAAAA.RRR....RRRR..
+//.ZZZZZZZZZZZ..........TTTT..TAAA.....AAAA.RRR....RRRR..
+//.......................................................
+
+
+
+zTargetObject = new THREE.Group()
+zTargetObject.position.set(0, 50, 0)
+zTargetObject.rotation.set(0, 0, 0)
+zTargetObject.scale.set(1, 1, 1)
+scene.add(zTargetObject)
+
+
+const mat_zTargetObject = new THREE.MeshBasicMaterial({ map: Hand_robotic_pointDown, side: THREE.DoubleSide });
+mesh_zTargetObject = new THREE.Mesh(geo_objT_CircleA1, mat_zTargetObject);
+mat_zTargetObject.transparent = true;
+mat_zTargetObject.alphaMap = Hand_robotic_pointDown;
+mesh_zTargetObject.position.set(0, 0, 0);
+// mesh_zTargetObject.position.set(-15000, 0, 0);
+mesh_zTargetObject.scale.set(1, 1, 1);
+mesh_zTargetObject.rotation.set(0, 0, 0)
+// mesh_zTargetObject.rotateX( - Math.PI / 2 );
+
+// zTargetObject.lookAt(camera)
+
+zTargetObject.add(mesh_zTargetObject)
+
+
+
+let zTarget_Animation_01 = (target) => {
+     // Scale animation
+     gsap.to(target.scale, {
+        duration: 0.5,
+        x: 1.2,
+        y: 1.2,
+        z: 1.2,
+        yoyo: true,
+        repeat: -1,
+        ease: "power1.inOut"
+    });
+
+    // Rotation animation
+    gsap.to(target.rotation, {
+        duration: 2,
+        y: "+=6.28", // Rotate 360 degrees
+        repeat: -1,
+        ease: "none"
+    });
+
+    // Position animation (optional, for a bobbing effect)
+    gsap.to(target.position, {
+        duration: 1,
+        y: "+=0.5",
+        yoyo: true,
+        repeat: -1,
+        ease: "sine.inOut"
+    });
+}
+
+
+
+let zTarget_Animation_02 =  () => {
+
+    // TheTarget.add(zTargetObject)
+
+    // Scale animation
+    gsap.to(zTargetObject.position, {
+        duration: 0.5,   
+        y: 70,
+        yoyo: true,
+        repeat: -1,
+        ease: "power1.inOut"
+    });
+
+    
+}
+
+zTarget_Animation_02()
+
+
+
 
 //................................................................
 //..UU.....UU....I..........HH......H....UU.....UU....DDDDD.......
@@ -8396,6 +8502,15 @@ let UI_ThirdPersonCameraView_root
 			window.addEventListener('resize', onWindowResize);
 
 		}
+
+
+
+
+
+
+
+
+
 
 		function onWindowResize() {
 
