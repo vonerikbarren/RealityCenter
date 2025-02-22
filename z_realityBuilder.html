@@ -1391,6 +1391,8 @@
             left: 60px;
             bottom: 150px;
             background-image: url('assets/designs/HUD/general/borders/cyberPunk01/SVG/OptionRing_01.svg');
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5); /* Adjust the values as needed */
+            border-radius: 100px;
             color: black;
             position: absolute; /* Ensure the div is positioned correctly */
             opacity: 1;
@@ -1404,6 +1406,7 @@
             left: 35px;
             bottom: 150px;
             background-image: url('assets/designs/HUD/mobile/SVG/OptionRing_01.svg');
+            border-radius: 50px;
             color: black;
             position: absolute; /* Ensure the div is positioned correctly */
             opacity: 1;
@@ -1421,6 +1424,8 @@
             right: 60px;
             bottom: 150px;
             background-image: url('assets/designs/HUD/general/borders/cyberPunk01/SVG/OptionRing_01.svg');
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5); /* Adjust the values as needed */
+            border-radius: 100px;
             color: black;
             position: absolute; /* Ensure the div is positioned correctly */
             opacity: 1;
@@ -2496,7 +2501,8 @@ let Skin_CyberSkin_MovementPadImg_root
 			scene = new THREE.Scene();
 
 			// Search.Camera
-			camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 50000);
+			// camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 50000); // works well with mobile.
+            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 500000000);
 			// camera.position.set(30, 6000, 24000); // previous
             camera.position.set(0, 0, 160); // previous
             camera.scale.set(10, 10, 10);
