@@ -1634,13 +1634,17 @@
   <button id="button_up" class="button control up">&#8670;</button>
   <button id="button_down" class="button control down">&#8671;</button>
 
+
+  <!-- Right_Buttons -->
   <div class="gamepad-verticalMovementPad-buttons"></div>
+
         <button onclick="sfx_click_gen" class="button right-button">◬</button>
-        <button class="button right-button-2">⏲</button>
+        <button id="Toggle_ΔT" class="button right-button-2">⏲</button>
         <button class="button right-button-3">§</button>
         <button id="ButtonRealityToggle" class="button right-button-4">⟐</button>
         <button class="button right-button-5">Ω</button>
         <button class="button right-button-6">Λ</button>
+
     <div class="gamepad-primaryOptions-buttons"></div>
 
 <!-- LH & RH Buttons -->
@@ -8520,10 +8524,29 @@ Skin_CyberSkin_MovementPadImg_root.scale.set(0.005, 0.005, 0.005)
     // PushToStaticDOM
     // ------------------------------------------------------------------------------------
 
-    const Summon_TimeΔ = document.getElementById("Summon_TimeΔ");
-    // Summon_TimeΔ.addEventListener("click", function() {
-    //     document.getElementById("StaticDOM").appendChild(TimeCore);
-    // });
+    const Summon_TimeΔ = document.getElementById("Toggle_ΔT");
+    Summon_TimeΔ.addEventListener("click", function() {
+       if (TimeCore.scale.x === 100) {
+           gsap.to(TimeCore.scale, {
+               duration: 1,
+               delay: 0,
+               ease: "none",
+               x: 0.001,
+               y: 0.001,
+               z: 0.001,
+           });
+       } else {
+        gsap.to(TimeCore.scale, {
+               duration: 1,
+               delay: 0,
+               ease: "none",
+               x: 100,
+               y: 100,
+               z: 100,
+           });
+       }
+
+    });
 
 
 
