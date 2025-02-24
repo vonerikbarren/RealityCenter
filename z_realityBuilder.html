@@ -648,36 +648,45 @@
           bottom: 35px;
           right: 100px;
           text-shadow: grey 2px 2px 2px;
-          border-radius: 10px;
+          border-radius: 50px;
         }
     
         .right-button-2 {
           bottom: 75px;
           right: 60px;
           text-shadow: grey 2px 2px 2px;
-          border-radius: 10px;
+          border-radius: 50px;
         }
     
         .right-button-3 {
           bottom: 115px;
           right: 20px;
           text-shadow: grey 2px 2px 2px;
-          border-radius: 10px;
+          border-radius: 50px;
         }
     
         .right-button-4 {
           bottom: 115px;
           right: 100px;
           text-shadow: grey 2px 2px 2px;
-          border-radius: 10px;
+          border-radius: 50px;
         }
 
         .right-button-5 {
           bottom: 35px;
           right: 20px;
           text-shadow: grey 2px 2px 2px;
-          border-radius: 10px;
+          border-radius: 50px;
         }
+
+        .right-button-6 {
+          bottom: 30px;
+          right: 60px;
+          text-shadow: grey 2px 2px 2px;
+          border-radius: 50px;
+        }
+
+        
 
 
 
@@ -1210,6 +1219,75 @@
                 }
 
 
+                /* ------------------------------------------------- */
+                /* Mobile Right Buttons */
+                /* ------------------------------------------------- */
+
+                .right-button-2 {
+                    bottom: 75px;
+                    right: 55px;
+                    padding: 7.5px;
+                    padding-left: 10px;
+                    padding-right: 10px;
+                    font-size: 18px;
+                    text-shadow: grey 2px 2px 2px;
+                    box-shadow: #FFFFFF repeat 0px 0px 2.5px;
+                    border: 1px solid rgba(255, 255, 255);
+                    border-radius: 50px;
+                }
+
+                .right-button-2:active {
+                    bottom: 75px;
+                    right: 55px;
+                    background-color: purple;
+                    padding: 7.5px;
+                    padding-left: 10px;
+                    padding-right: 10px;
+                    font-size: 18px;
+                    text-shadow: grey 2px 2px 2px;
+                    box-shadow: #FFFFFF repeat 0px 0px 2.5px;
+                    border: 1px solid rgba(255, 255, 255);
+                    border-radius: 50px;
+                }
+
+
+                .right-button-2::after {
+                    bottom: 75px;
+                    right: 55px;
+                    background-color: purple;
+                    padding: 7.5px;
+                    padding-left: 10px;
+                    padding-right: 10px;
+                    font-size: 18px;
+                    text-shadow: grey 2px 2px 2px;
+                    box-shadow: #FFFFFF repeat 0px 0px 2.5px;
+                    border: 1px solid rgba(255, 255, 255);
+                    border-radius: 50px;
+                }
+
+
+                .right-button-2::focus-visible {
+                    bottom: 75px;
+                    right: 55px;
+                    background-color: purple;
+                    padding: 7.5px;
+                    padding-left: 10px;
+                    padding-right: 10px;
+                    font-size: 18px;
+                    text-shadow: grey 2px 2px 2px;
+                    box-shadow: #FFFFFF repeat 0px 0px 2.5px;
+                    border: 1px solid rgba(255, 255, 255);
+                    border-radius: 50px;
+                }
+
+                .right-button-6 {
+                    bottom: 30px;
+                    right: 60px;
+                    text-shadow: grey 2px 2px 2px;
+                    border-radius: 50px;
+                }
+
+
                 .gamepad-verticalMovementPad-buttons{
                     left: 152.5px;
                     bottom: 20px;
@@ -1558,10 +1636,11 @@
 
   <div class="gamepad-verticalMovementPad-buttons"></div>
         <button onclick="sfx_click_gen" class="button right-button">◬</button>
-        <button class="button right-button-2">Λ</button>
+        <button class="button right-button-2">⏲</button>
         <button class="button right-button-3">§</button>
         <button id="ButtonRealityToggle" class="button right-button-4">⟐</button>
         <button class="button right-button-5">Ω</button>
+        <button class="button right-button-6">Λ</button>
     <div class="gamepad-primaryOptions-buttons"></div>
 
 <!-- LH & RH Buttons -->
@@ -2432,6 +2511,11 @@ let Skin_CyberSkin_MovementPadImg_root
         const Hand_robotic_pointUp = textureLoader.load('assets/designs/HUD/mobile/1x/Hand_Robotic_PointUp.png')
         const Hand_robotic_pointLeft = textureLoader.load('assets/designs/HUD/mobile/1x/Hand_Robotic_PointLeft.png')
         const Hand_robotic_pointRight = textureLoader.load('assets/designs/HUD/mobile/1x/Hand_Robotic_PointRight.png')
+
+
+        // Grids
+        const TimeGrid01_Test = textureLoader.load('assets/img/03-HudUI/PrimaryHud01_DrLight/A08_GeneralGrids_Square/formA/SquareGrid_White_formA.png')
+        const TimeGrid02_Test = textureLoader.load('assets/img/03-HudUI/HelpMenus/HelpMenuPanel01.png')
 
 
 		init();
@@ -4855,7 +4939,7 @@ const geo_PrimaryBoundary = new THREE.BoxGeometry(
 const mat_PrimaryBoundary = new THREE.MeshBasicMaterial({ map: workSphereImg, side: THREE.DoubleSide });
 mesh_PrimaryBoundary = new THREE.Mesh(geo_PrimaryBoundary, mat_PrimaryBoundary);
 mat_PrimaryBoundary.transparent = false;
-mat_PrimaryBoundary.wireframe = true
+mat_PrimaryBoundary.wireframe = true;
 mat_PrimaryBoundary.alphaMap = workSphereImg;
 mesh_PrimaryBoundary.position.set(0, 0, 0);
 
@@ -8192,6 +8276,27 @@ Skin_CyberSkin_MovementPadImg_root.scale.set(0.005, 0.005, 0.005)
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     //.........................................................
     //..TTTTTTTTT.iiii.........................................
     //.TTTTTTTTTTTiiii...............................ΔΔΔΔ......
@@ -8220,19 +8325,19 @@ Skin_CyberSkin_MovementPadImg_root.scale.set(0.005, 0.005, 0.005)
     const TimeCycleTunnelX = new THREE.Group();
     TimeCycleTunnelX.position.set(0, 0, 0);
     TimeCycleTunnelX.rotation.set(0, 0, 0);
-    TimeCycleTunnelX.scale.set(1, 1, 1);
+    TimeCycleTunnelX.scale.set(5, 5, 5);
     TimeCore.add(TimeCycleTunnelX);
 
     const TimeCycleTunnelY = new THREE.Group();
     TimeCycleTunnelY.position.set(0, 0, 0);
     TimeCycleTunnelY.rotation.set(0, 0, 0);
-    TimeCycleTunnelY.scale.set(1, 1, 1);
+    TimeCycleTunnelY.scale.set(5, 5, 5);
     TimeCore.add(TimeCycleTunnelY);
 
     const TimeCycleTunnelZ = new THREE.Group();
     TimeCycleTunnelZ.position.set(0, 0, 0);
     TimeCycleTunnelZ.rotation.set(0, 0, 0);
-    TimeCycleTunnelZ.scale.set(1, 1, 1);
+    TimeCycleTunnelZ.scale.set(5, 5, 5);
     TimeCore.add(TimeCycleTunnelZ);
 
     //.........................................................
@@ -8242,9 +8347,10 @@ Skin_CyberSkin_MovementPadImg_root.scale.set(0.005, 0.005, 0.005)
     const cycleGeometryX = new THREE.CylinderGeometry(5, 5, 20, 32, 1, true);
     const cycleMaterialX = new THREE.MeshBasicMaterial(
         { 
-            color: 0x00ff00,
+            color: 0xffffff,
             wireframe: false,
-            map: SceneWallpaper_01,
+            map: TimeGrid02_Test,
+            alphaMap: TimeGrid02_Test,
             side: THREE.DoubleSide, 
             transparent: true,
             opacity: 0.5,
@@ -8253,9 +8359,9 @@ Skin_CyberSkin_MovementPadImg_root.scale.set(0.005, 0.005, 0.005)
 
     for (let i = 0; i < 20; i++) {
         const cycleX = new THREE.Mesh(cycleGeometryX, cycleMaterialX);
-        cycleX.position.set(i * 20 - 10, 0, 0); // Position TimeCyclesY in a row
+        cycleX.position.set(i * -20 - 10, 0, 0); // Position TimeCyclesY in a row
         cycleX.rotation.set(0, 0, Math.PI / 2 ); // Rotate TimeCyclesY to stand up
-        TimeCore.add(cycleX);
+        TimeCycleTunnelX.add(cycleX);
         // TimeCycleTunnelX.push(cycleX);
         TimeCyclesX.push(cycleX)
         
@@ -8270,9 +8376,10 @@ Skin_CyberSkin_MovementPadImg_root.scale.set(0.005, 0.005, 0.005)
     const cycleGeometryY = new THREE.CylinderGeometry(5, 5, 20, 32, 1, true);
     const cycleMaterialY = new THREE.MeshBasicMaterial(
         { 
-            color: 0xff0000,
+            color: 0xffffff,
             wireframe: false,
-            map: SceneWallpaper_01,
+            map: TimeGrid02_Test,
+            alphaMap: TimeGrid02_Test,
             side: THREE.DoubleSide,  
             transparent: true,
             opacity: 0.5,
@@ -8283,7 +8390,7 @@ Skin_CyberSkin_MovementPadImg_root.scale.set(0.005, 0.005, 0.005)
         const cycleY = new THREE.Mesh(cycleGeometryY, cycleMaterialY);
         cycleY.position.set(0, i * 20 - 10, 0); // Position TimeCyclesX in a row along the X axis
         // cycleZ.rotation.set(0, Math.PI / 2, 0); // Rotate TimeCyclesZ to stand up
-        TimeCore.add(cycleY);
+        TimeCycleTunnelY.add(cycleY);
         // TimeCycleTunnelY.push(cycleY);
         TimeCyclesY.push(cycleY);
 
@@ -8298,9 +8405,10 @@ Skin_CyberSkin_MovementPadImg_root.scale.set(0.005, 0.005, 0.005)
     const cycleGeometryZ = new THREE.CylinderGeometry(5, 5, 20, 32, 1, true);
     const cycleMaterialZ = new THREE.MeshBasicMaterial(
         { 
-            color: 0x0000ff, 
+            color: 0xffffff, 
             wireframe: false,
-            map: SceneWallpaper_01,
+            map: TimeGrid02_Test,
+            alphaMap: TimeGrid02_Test,
             side: THREE.DoubleSide, 
             openEnded: true,
             transparent: true,
@@ -8310,9 +8418,9 @@ Skin_CyberSkin_MovementPadImg_root.scale.set(0.005, 0.005, 0.005)
 
     for (let i = 0; i < 20; i++) {
         const cycleZ = new THREE.Mesh(cycleGeometryZ, cycleMaterialZ);
-        cycleZ.position.set(0, 0, i * 20 - 10); // Position TimeCyclesZ in a row along the Z axis
+        cycleZ.position.set(0, 0, i * -20 + 10); // Position TimeCyclesZ in a row along the Z axis
         cycleZ.rotation.set(Math.PI / 2, 0, 0); // Rotate TimeCyclesZ to stand up
-        TimeCore.add(cycleZ);
+        TimeCycleTunnelZ.add(cycleZ);
         // TimeCycleTunnelZ.push(cycleZ);
         TimeCyclesZ.push(cycleZ);
     }
@@ -8337,44 +8445,57 @@ Skin_CyberSkin_MovementPadImg_root.scale.set(0.005, 0.005, 0.005)
 
     document.addEventListener("keydown", function(event) {
         if (event.key === "+") {
-            TimeCyclesY.forEach((cycle, index) => {
-                timeline.to(cycle.position, {
-                    y: 10, // Scale up to represent 1 minute
-                    duration: 1, // 1 second per TimeCycle
-                    ease: "none",
-                    repeat: 1,
-                    yoyo: true,
-                    delay: index * 1 // Stagger the animation
-                }, 0);
-            });
+            gsap.to(TimeCycleTunnelX.position, {
+                duration: 60,
+                delay: 0,
+                ease: "none",
+                x: "+= 100",
 
-            TimeCyclesZ.forEach((cycle, index) => {
-                timeline.to(cycle.position, {
-                    y: 10, // Scale up to represent 1 minute
-                    duration: 1, // 1 second per TimeCycle
-                    ease: "none",
-                    repeat: 1,
-                    yoyo: true,
-                    delay: index * 1 // Stagger the animation
-                }, 0);
-            });
+            })
 
-            TimeCyclesX.forEach((cycle, index) => {
-                timeline.to(cycle.position, {
-                    y: 10, // Scale up to represent 1 minute
-                    duration: 1, // 1 second per TimeCycle
-                    ease: "none",
-                    repeat: 1,
-                    yoyo: true,
-                    delay: index * 1 // Stagger the animation
-                }, 0);
-            });
+            gsap.to(TimeCycleTunnelY.position, {
+                duration: 60,
+                delay: 0,
+                ease: "none",
+                y: "-= 100",
+
+            })
+
+            gsap.to(TimeCycleTunnelZ.position, {
+                duration: 60,
+                delay: 0,
+                ease: "none",
+                z: "+= 100",
+
+            })
         }
     })
 
     document.addEventListener("keydown", function(event) {
         if (event.key === "-") {
-            distance = 25
+            gsap.to(TimeCycleTunnelX.position, {
+                duration: 60,
+                delay: 0,
+                ease: "none",
+                x: "-= 100",
+
+            })
+
+            gsap.to(TimeCycleTunnelY.position, {
+                duration: 60,
+                delay: 0,
+                ease: "none",
+                y: "+= 100",
+
+            })
+
+            gsap.to(TimeCycleTunnelZ.position, {
+                duration: 60,
+                delay: 0,
+                ease: "none",
+                z: "-= 100",
+
+            })
         }
     })
 
@@ -8394,6 +8515,15 @@ Skin_CyberSkin_MovementPadImg_root.scale.set(0.005, 0.005, 0.005)
         timeline.restart();
         timeline.pause();
     });
+
+
+    // PushToStaticDOM
+    // ------------------------------------------------------------------------------------
+
+    const Summon_TimeΔ = document.getElementById("Summon_TimeΔ");
+    // Summon_TimeΔ.addEventListener("click", function() {
+    //     document.getElementById("StaticDOM").appendChild(TimeCore);
+    // });
 
 
 
