@@ -1428,7 +1428,7 @@
             border-radius: 100px;
             color: black;
             position: absolute; /* Ensure the div is positioned correctly */
-            opacity: 1;
+            opacity: 0.75;
             /* animation: rotateRight 5s linear infinite; */
             transform: scaleX(-1); /* Flip the image vertically */
             z-index: 1;
@@ -1453,30 +1453,30 @@
 
 
         @keyframes rotate {
-        from {
-            transform: rotate(0deg);
-        }
-        to {
-            transform: rotate(360deg);
-        }
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
         }
 
         @keyframes rotateLeft {
-        from {
-            transform: rotate(0deg);
-        }
-        to {
-            transform: rotate(-360deg);
-        }
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(-360deg);
+            }
         }
 
         @keyframes rotateRight {
-        from {
-            transform: rotate(0deg);
-        }
-        to {
-            transform: rotate(360deg);
-        }
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
         }
 
 
@@ -1490,6 +1490,19 @@
             
                 
             }
+
+
+        #music-player {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 10;
+        }
+
+        #scene-container {
+            width: 100vw;
+            height: 100vh;
+        }
       </style>
 </head>
 
@@ -1603,6 +1616,14 @@
 <div class="UI_SpinningGear_TopRight"></div>
 <div class="UI_SpinningGear_BottomLeft"></div>
 <div class="UI_SpinningGear_BottomRight"></div>
+
+<!-- MusicPlayer -->
+<div id="music-player">
+    <audio id="audio" controls>
+        <source src="path/to/your/music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+</div>
 
 
 
@@ -3678,7 +3699,23 @@ let Skin_CyberSkin_MovementPadImg_root
                 // 010101010101010101010101010101010100101010101010101010
 
 
-                const distance = 25;
+                var distance = 1000;
+
+                document.addEventListener("keydown", function(event) {
+					if (event.key === "+") {
+						distance = 1000
+					}
+				})
+
+                document.addEventListener("keydown", function(event) {
+					if (event.key === "-") {
+						distance = 25
+					}
+				})
+
+
+
+
 
                 const Button_forward = document.getElementById('button_forward');
                 Button_forward.addEventListener('click', function move(direction) {
@@ -4763,6 +4800,26 @@ let OmniDataFragment_root
 //.......................................................................................................
 
 
+
+//.....................................................................................
+//.bbbb...............................................ddd..............................
+//.bbbb...............................................ddd..............................
+//.bbbb...............................................ddd..............................
+//.bbbbbbbbb....ooooooo..uuuu...uuu..nnnnnnnnn...dddddddd...aaaaaaa..rrrrrryyyy..yyyy..
+//.bbbbbbbbbb..ooooooooo.uuuu...uuu..nnnnnnnnn..ddddddddd..aaaaaaaa..rrrrrryyyy..yyyy..
+//.bbbbbbbbbbbooooooooooouuuu...uuu..nnnnnnnnn.dddddddddd.aaaaaaaaaa.rrrrrryyyy..yyyy..
+//.bbbbb.bbbbboooo...oooouuuu...uuu..nnnn.nnnn.dddd..dddd.aaaa.aaaaa.rrrr...yyyyyyyy...
+//.bbbb...bbbboooo...oooouuuu...uuu..nnn...nnn.dddd...ddd..aaaaaaaaa.rrr....yyyyyyyy...
+//.bbbb...bbbboooo...oooouuuu...uuu..nnn...nnn.dddd...ddd.aaaaaaaaaa.rrr....yyyyyyyy...
+//.bbbbb..bbbboooo...oooo.uuu..uuuu..nnn...nnn.dddd..dddd.aaaaa.aaaa.rrr.....yyyyyy....
+//.bbbbbbbbbbbooooooooooo.uuuuuuuuu..nnn...nnn.dddddddddd.aaaa.aaaaa.rrr.....yyyyyy....
+//.bbbbbbbbbb..ooooooooo..uuuuuuuuu..nnn...nnn..ddddddddd.aaaaaaaaaa.rrr.....yyyyyy....
+//.bbbbbbbbbb...ooooooo...uuuuuuuuu..nnn...nnn..ddddddddd.aaaaaaaaaa.rrr......yyyy.....
+//......bbb......ooooo......uuu...................ddd.......aaa...............yyyy.....
+//..........................................................................yyyyyy.....
+//..........................................................................yyyyy......
+//..........................................................................yyyyy......
+//.....................................................................................
 
 // PrimaryBoundary
 // ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~~*~*~*~*~*~*~*~
@@ -6861,42 +6918,46 @@ Skin_CyberSkin_MovementPadImg_root.scale.set(0.005, 0.005, 0.005)
 			scene.add(directionalLight)
 
 
-            let enableOrbitControls = () => {
+            // let enableOrbitControls = () => {
                 
-                orbitControls = new OrbitControls( camera, cssrenderer.domElement );
-                orbitControls.maxPolarAngle = Math.PI  * 2
-                orbitControls.maxAzimuthAngle = Math.PI * 2
-                orbitControls.target.set( 0, 0, 0 );
-                orbitControls.minDistance = 1;
-                orbitControls.maxDistance = 700000000.0;
-                orbitControls.screenSpacePanning = true
-                orbitControls.enablePan = true
+            //     orbitControls = new OrbitControls( camera, cssrenderer.domElement );
+            //     orbitControls.maxPolarAngle = Math.PI  * 2
+            //     orbitControls.maxAzimuthAngle = Math.PI * 2
+            //     orbitControls.target.set( 0, 0, 0 );
+            //     orbitControls.minDistance = 1;
+            //     orbitControls.maxDistance = 700000000.0;
+            //     orbitControls.screenSpacePanning = true
+            //     orbitControls.enablePan = true
                 
-                orbitControls.rotateSpeed = 0.025
-                orbitControls.zoomSpeed = 1
-                orbitControls.movementSpeed = 10000;
-                orbitControls.enabled = false; // Start with FirstPersonControls disabled
-                orbitControls.update();
-                // orbitControls.minPolarAngle = Math.PI * 0.495;
-                // disableFirstPersonControls()
+            //     orbitControls.rotateSpeed = 0.025
+            //     orbitControls.zoomSpeed = 1
+            //     orbitControls.movementSpeed = 10000;
+            //     orbitControls.enabled = false; // Start with FirstPersonControls disabled
+            //     orbitControls.update();
+            //     // orbitControls.minPolarAngle = Math.PI * 0.495;
+            //     // disableFirstPersonControls()
 
-            }
+            // }
 
 
             let enableOrbitCenterControls = () => {
                 orbitControls = new OrbitControls( camera, cssrenderer.domElement );
-                orbitControls.maxPolarAngle = Math.PI  * 2
-                orbitControls.maxAzimuthAngle = Math.PI * 2
-                orbitControls.target.set( 0, 0, 0 );
+
+                orbitControls.maxPolarAngle = Math.PI;
+                orbitControls.minAzimuthAngle = Infinity
+                orbitControls.maxAzimuthAngle = Infinity
+            
+                orbitControls.target.set( 0, 5, 0 );
                 orbitControls.minDistance = 1;
-                orbitControls.maxDistance = 700000000.0;
+                orbitControls.maxDistance = 700000000;
+
                 orbitControls.screenSpacePanning = true
                 orbitControls.enablePan = true
                 
                 orbitControls.rotateSpeed = 0.025
                 orbitControls.zoomSpeed = 1
                 orbitControls.movementSpeed = 10000;
-                orbitControls.enabled = false; // Start with FirstPersonControls disabled
+                orbitControls.enabled = true; // Start with FirstPersonControls disabled
                 orbitControls.update();
                 // orbitControls.minPolarAngle = Math.PI * 0.495;
                 // disableFirstPersonControls()
@@ -7112,10 +7173,10 @@ Skin_CyberSkin_MovementPadImg_root.scale.set(0.005, 0.005, 0.005)
             const materialOptions = {
                 // color: 0x00ff00,
                 map: SceneWallpaper_01,
-                metalness: 0.5,
-                roughness: 0.5,
-                clearcoat: 1.0,
-                clearcoatRoughness: 0.1,
+                // metalness: 0.5,
+                // roughness: 0.5,
+                // clearcoat: 1.0,
+                // clearcoatRoughness: 0.1,
                 side: THREE.DoubleSide,
             };
 
@@ -7148,8 +7209,12 @@ Skin_CyberSkin_MovementPadImg_root.scale.set(0.005, 0.005, 0.005)
         }
 
 
+        // For Application
+        // \- duration = 16
+        // For Application Testing
+        // \- duration = 8
         gsap.from(camera.position, {
-                duration: 16,
+                duration: 8,
                 delay: 0,
                 x: 0,
                 y: 50000,
@@ -8126,6 +8191,212 @@ Skin_CyberSkin_MovementPadImg_root.scale.set(0.005, 0.005, 0.005)
 
 
 
+
+    //.........................................................
+    //..TTTTTTTTT.iiii.........................................
+    //.TTTTTTTTTTTiiii...............................ΔΔΔΔ......
+    //.TTTTTTTTTTTiiii...............................ΔΔΔΔΔ.....
+    //.TTTTTTTTTTTiiii..............................ΔΔΔΔΔΔ.....
+    //.....TTTT...iiii.mmmmmmmmmmmmmm...eeeeeee.....ΔΔΔΔΔΔΔ....
+    //.....TTTT...iiii.mmmmmmmmmmmmmmm..eeeeeeee....ΔΔΔΔΔΔΔ....
+    //.....TTTT...iiii.mmmmmmmmmmmmmmm.meeeeeeee...ΔΔΔΔΔΔΔΔ....
+    //.....TTTT...iiii.mmmm..mmmm.mmmm.meee..eeee..ΔΔΔΔ.ΔΔΔΔ...
+    //.....TTTT...iiii.mmmm..mmmm.mmmm.meeeeeeeee.ΔΔΔΔ..ΔΔΔΔ...
+    //.....TTTT...iiii.mmmm..mmmm.mmmm.meeeeeeeee.ΔΔΔΔ...ΔΔΔΔ..
+    //.....TTTT...iiii.mmmm..mmmm.mmmm.meee.......ΔΔΔ....ΔΔΔΔ..
+    //.....TTTT...iiii.mmmm..mmmm.mmmm.meeeeeeeeeeΔΔΔΔΔΔΔΔΔΔΔ..
+    //.....TTTT...iiii.mmmm..mmmm.mmmm.meeeeeeee.eΔΔΔΔΔΔΔΔΔΔΔ..
+    //.....TTTT...iiii.mmmm..mmmm.mmmm..eeeeeeeeeeΔΔΔΔΔΔΔΔΔΔΔ..
+    //....................................eeee.................
+    //.........................................................
+
+    // Create TimeCore group
+    const TimeCore = new THREE.Group();
+    TimeCore.position.set(0, 0, 0);
+    TimeCore.rotation.set(0, 0, 0);
+    TimeCore.scale.set(100, 100, 100);
+    scene.add(TimeCore);
+
+    const TimeCycleTunnelX = new THREE.Group();
+    TimeCycleTunnelX.position.set(0, 0, 0);
+    TimeCycleTunnelX.rotation.set(0, 0, 0);
+    TimeCycleTunnelX.scale.set(1, 1, 1);
+    TimeCore.add(TimeCycleTunnelX);
+
+    const TimeCycleTunnelY = new THREE.Group();
+    TimeCycleTunnelY.position.set(0, 0, 0);
+    TimeCycleTunnelY.rotation.set(0, 0, 0);
+    TimeCycleTunnelY.scale.set(1, 1, 1);
+    TimeCore.add(TimeCycleTunnelY);
+
+    const TimeCycleTunnelZ = new THREE.Group();
+    TimeCycleTunnelZ.position.set(0, 0, 0);
+    TimeCycleTunnelZ.rotation.set(0, 0, 0);
+    TimeCycleTunnelZ.scale.set(1, 1, 1);
+    TimeCore.add(TimeCycleTunnelZ);
+
+    //.........................................................
+    // Create 20 TimeCyclesY and add them to the TimeCore group
+    //.........................................................
+    const TimeCyclesX = [];
+    const cycleGeometryX = new THREE.CylinderGeometry(5, 5, 20, 32, 1, true);
+    const cycleMaterialX = new THREE.MeshBasicMaterial(
+        { 
+            color: 0x00ff00,
+            wireframe: false,
+            map: SceneWallpaper_01,
+            side: THREE.DoubleSide, 
+            transparent: true,
+            opacity: 0.5,
+        }
+    );
+
+    for (let i = 0; i < 20; i++) {
+        const cycleX = new THREE.Mesh(cycleGeometryX, cycleMaterialX);
+        cycleX.position.set(i * 20 - 10, 0, 0); // Position TimeCyclesY in a row
+        cycleX.rotation.set(0, 0, Math.PI / 2 ); // Rotate TimeCyclesY to stand up
+        TimeCore.add(cycleX);
+        // TimeCycleTunnelX.push(cycleX);
+        TimeCyclesX.push(cycleX)
+        
+    }
+
+
+
+    //.........................................................
+    // Create 20 TimeCyclesX and add them to the TimeCore group
+    //.........................................................
+    const TimeCyclesY= [];
+    const cycleGeometryY = new THREE.CylinderGeometry(5, 5, 20, 32, 1, true);
+    const cycleMaterialY = new THREE.MeshBasicMaterial(
+        { 
+            color: 0xff0000,
+            wireframe: false,
+            map: SceneWallpaper_01,
+            side: THREE.DoubleSide,  
+            transparent: true,
+            opacity: 0.5,
+        }
+    );
+
+    for (let i = 0; i < 20; i++) {
+        const cycleY = new THREE.Mesh(cycleGeometryY, cycleMaterialY);
+        cycleY.position.set(0, i * 20 - 10, 0); // Position TimeCyclesX in a row along the X axis
+        // cycleZ.rotation.set(0, Math.PI / 2, 0); // Rotate TimeCyclesZ to stand up
+        TimeCore.add(cycleY);
+        // TimeCycleTunnelY.push(cycleY);
+        TimeCyclesY.push(cycleY);
+
+    }
+
+    
+
+    //.........................................................
+    // Create 20 TimeCyclesZ and add them to the TimeCore group
+    //.........................................................
+    const TimeCyclesZ = [];
+    const cycleGeometryZ = new THREE.CylinderGeometry(5, 5, 20, 32, 1, true);
+    const cycleMaterialZ = new THREE.MeshBasicMaterial(
+        { 
+            color: 0x0000ff, 
+            wireframe: false,
+            map: SceneWallpaper_01,
+            side: THREE.DoubleSide, 
+            openEnded: true,
+            transparent: true,
+            opacity: 0.5,
+        }
+    );
+
+    for (let i = 0; i < 20; i++) {
+        const cycleZ = new THREE.Mesh(cycleGeometryZ, cycleMaterialZ);
+        cycleZ.position.set(0, 0, i * 20 - 10); // Position TimeCyclesZ in a row along the Z axis
+        cycleZ.rotation.set(Math.PI / 2, 0, 0); // Rotate TimeCyclesZ to stand up
+        TimeCore.add(cycleZ);
+        // TimeCycleTunnelZ.push(cycleZ);
+        TimeCyclesZ.push(cycleZ);
+    }
+
+    
+
+
+
+
+
+
+
+
+    // // Set initial camera position
+    // camera.position.z = 30;
+
+    // GSAP timeline for animation
+    const timeline = gsap.timeline({ paused: false });
+
+    
+
+
+    document.addEventListener("keydown", function(event) {
+        if (event.key === "+") {
+            TimeCyclesY.forEach((cycle, index) => {
+                timeline.to(cycle.position, {
+                    y: 10, // Scale up to represent 1 minute
+                    duration: 1, // 1 second per TimeCycle
+                    ease: "none",
+                    repeat: 1,
+                    yoyo: true,
+                    delay: index * 1 // Stagger the animation
+                }, 0);
+            });
+
+            TimeCyclesZ.forEach((cycle, index) => {
+                timeline.to(cycle.position, {
+                    y: 10, // Scale up to represent 1 minute
+                    duration: 1, // 1 second per TimeCycle
+                    ease: "none",
+                    repeat: 1,
+                    yoyo: true,
+                    delay: index * 1 // Stagger the animation
+                }, 0);
+            });
+
+            TimeCyclesX.forEach((cycle, index) => {
+                timeline.to(cycle.position, {
+                    y: 10, // Scale up to represent 1 minute
+                    duration: 1, // 1 second per TimeCycle
+                    ease: "none",
+                    repeat: 1,
+                    yoyo: true,
+                    delay: index * 1 // Stagger the animation
+                }, 0);
+            });
+        }
+    })
+
+    document.addEventListener("keydown", function(event) {
+        if (event.key === "-") {
+            distance = 25
+        }
+    })
+
+
+    // Audio element and event listeners
+    const audio = document.getElementById('audio');
+
+    audio.addEventListener('play', () => {
+        timeline.play();
+    });
+
+    audio.addEventListener('pause', () => {
+        timeline.pause();
+    });
+
+    audio.addEventListener('ended', () => {
+        timeline.restart();
+        timeline.pause();
+    });
+
+
+
                
 //...................................................................................
 //......AAA.......NN......N....I....MMM.....MMM.......AAA....ATTTTTTTTT...EEEEEEEE...
@@ -8605,110 +8876,145 @@ let UI_ThirdPersonCameraView_root
             }
 
 
-            // Update camera rotation based on mouse movements if mouse follow is enabled
-            if (mouseFollowEnabled) {
+            // // Update camera rotation based on mouse movements if mouse follow is enabled
+            // if (mouseFollowEnabled) {
                 
-                targetX = mouseX * -Math.abs(0.1);
-                targetY = mouseY * 0.1;
-                onUpdate: () => {
-                            camera.lookAt(0, 0, 0);
-                        }
+            //     targetX = mouseX * -Math.abs(0.1);
+            //     targetY = mouseY * 0.1;
+            //     onUpdate: () => {
+            //                 camera.lookAt(0, 0, 0);
+            //             }
 
-                setTimeout(() => {
-                    // camera.lookAt(0, 100, 0)
-                    targetX = mouseX * -Math.abs(1.05);;
-                    targetY = mouseX * Math.abs(1.05);;
-                }, 3000);
+            //     setTimeout(() => {
+            //         // camera.lookAt(0, 100, 0)
+            //         targetX = mouseX * -Math.abs(1.05);;
+            //         targetY = mouseX * Math.abs(1.05);;
+            //     }, 3000);
 
                 
-                camera.rotation.y += (targetX - camera.rotation.y) * 0.1;
-                camera.rotation.x += (targetY - camera.rotation.x) * 0.1;
-                // disableOrbitControls()
-            }
+            //     camera.rotation.y += (targetX - camera.rotation.y) * 0.1;
+            //     camera.rotation.x += (targetY - camera.rotation.x) * 0.1;
+            //     // disableOrbitControls()
+            // }
 
             
 
             
 
 
-            if ( pointerLockControls.isLocked === true ) {
+            // if ( pointerLockControls.isLocked === true ) {
 
-					raycaster_plc.ray.origin.copy( pointerLockControls.getObject().position );
-					raycaster_plc.ray.origin.y -= 0; // Camera's Height when landed
+			// 		raycaster_plc.ray.origin.copy( pointerLockControls.getObject().position );
+			// 		raycaster_plc.ray.origin.y -= 0; // Camera's Height when landed
 
-					const intersections = raycaster_plc.intersectObjects( objects, true );
+			// 		const intersections = raycaster_plc.intersectObjects( objects, true );
 
-					// For Stationary Flight Mode
-					const onObject = intersections.length < 0.1;
+			// 		// For Stationary Flight Mode
+			// 		const onObject = intersections.length < 0.1;
 
-					// For Jetpack Mode
-					// const onObject = intersections.length > 0.1;
+			// 		// For Jetpack Mode
+			// 		// const onObject = intersections.length > 0.1;
 
-					const delta = ( time - prevTime ) / 1000;
+			// 		const delta = ( time - prevTime ) / 1000;
 
-					velocity.x -= velocity.x * 1.0 * delta;
-					velocity.z -= velocity.z * 1.0 * delta;
+			// 		velocity.x -= velocity.x * 1.0 * delta;
+			// 		velocity.z -= velocity.z * 1.0 * delta;
 
-          		// Gravity Strength
-					velocity.y -= 9.8 * 100.0 * delta; // 100.0 = mass
+          	// 	// Gravity Strength
+			// 		velocity.y -= 9.8 * 100.0 * delta; // 100.0 = mass
 
-					direction.z = Number( moveForward ) - Number( moveBackward );
-					direction.x = Number( moveRight ) - Number( moveLeft );
-					direction.y = Number( canMoveVerticallyUp ) - Number( canMoveVerticallyDown );
-					direction.normalize(); // this ensures consistent movements in all directions
+			// 		direction.z = Number( moveForward ) - Number( moveBackward );
+			// 		direction.x = Number( moveRight ) - Number( moveLeft );
+			// 		direction.y = Number( canMoveVerticallyUp ) - Number( canMoveVerticallyDown );
+			// 		direction.normalize(); // this ensures consistent movements in all directions
 
 
-
-					
-
-					function changeXspeed(speedStrengthsParams) {
-						let spdXstrength = speedStrengthsParams.x
-						let changeXStrength = spdXstrength * 0.1
-
-						speedStrengthsParams.x = changeXStrength
-					}
-
-					function changeYspeed() {
-						let spdYstrength = speedStrengthsParams.y
-						let changeYStrength = spdXstrength * 0.1
-
-						return changeYStrength
-					}
 
 					
 
-          		// Speed Strength
+			// 		function changeXspeed(speedStrengthsParams) {
+			// 			let spdXstrength = speedStrengthsParams.x
+			// 			let changeXStrength = spdXstrength * 0.1
 
+			// 			speedStrengthsParams.x = changeXStrength
+			// 		}
 
-					if ( moveForward || moveBackward ) velocity.z -= direction.z * speedStrengthsParams.x * delta;
-					if ( moveLeft || moveRight ) velocity.x -= direction.x * speedStrengthsParams.x * delta;
-					if ( canMoveVerticallyUp || canMoveVerticallyDown ) velocity.y -= direction.y * speedStrengthsParams.y * delta;
+			// 		function changeYspeed() {
+			// 			let spdYstrength = speedStrengthsParams.y
+			// 			let changeYStrength = spdXstrength * 0.1
 
-					if ( onObject === true ) {
-
-						velocity.y = Math.max( 0, velocity.y );
-						canJump = true;
-
-					}
-
-					pointerLockControls.moveRight( - velocity.x * delta );
-					pointerLockControls.moveForward( - velocity.z * delta );
-					// pointerLockControls.canMoveVerticallyUp( - velocity.y * delta);
-
-					pointerLockControls.getObject().position.y += ( velocity.y * delta ); // new behavior
-
-					if ( pointerLockControls.getObject().position.y < 10 ) {
-
-						velocity.y = 0;
-						pointerLockControls.getObject().position.y = 1;
-
-						canJump = true;
-
-					}
+			// 			return changeYStrength
+			// 		}
 
 					
 
-				}
+          	// 	// Speed Strength
+
+
+			// 		// if ( moveForward || moveBackward ) velocity.z -= direction.z * speedStrengthsParams.x * delta;
+			// 		// if ( moveLeft || moveRight ) velocity.x -= direction.x * speedStrengthsParams.x * delta;
+			// 		// if ( canMoveVerticallyUp || canMoveVerticallyDown ) velocity.y -= direction.y * speedStrengthsParams.y * delta;
+
+			// 		// if ( onObject === true ) {
+
+			// 		// 	velocity.y = Math.max( 0, velocity.y );
+			// 		// 	canJump = true;
+
+			// 		// }
+
+			// 		// pointerLockControls.moveRight( - velocity.x * delta );
+			// 		// pointerLockControls.moveForward( - velocity.z * delta );
+			// 		// // pointerLockControls.canMoveVerticallyUp( - velocity.y * delta);
+
+			// 		// pointerLockControls.getObject().position.y += ( velocity.y * delta ); // new behavior
+
+			// 		// if ( pointerLockControls.getObject().position.y < 10 ) {
+
+			// 		// 	velocity.y = 0;
+			// 		// 	pointerLockControls.getObject().position.y = 1;
+
+			// 		// 	canJump = true;
+
+			// 		// }
+
+					
+
+			// 	}
+
+
+
+                // if (camera.rotation.x > 0) {
+                //     camera.rotation.x = 0
+                // } else if (camera.rotation.x < 0) {
+                //     camera.rotation.x = 0
+                // }
+
+
+                // if (camera.rotation.y > 0) {
+                //     camera.rotation.y = 0
+                // } else if (camera.rotation.y < 0) {
+                //     camera.rotation.y = 0
+                // }
+
+
+                // if (camera.rotation.z > 0) {
+                //     camera.rotation.z = 0
+                // } else if (camera.rotation.z < 0) {
+                //     camera.rotation.z = 0
+                // }
+
+
+
+
+                // Orbit Controls Bug Fix past 180deg
+
+                if ( camera.position.z > 0 ) {
+                    camera.rotation.z = 0
+                    camera.lookAt(0, 5, 0)
+                } else if ( camera.position.z < 0 ) {
+                    orbitControls.update()
+                }   
+
 
 
 
