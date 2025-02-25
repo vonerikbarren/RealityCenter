@@ -1280,9 +1280,11 @@
                     border-radius: 50px;
                 }
 
+
+                /* button_Λ */
                 .right-button-6 {
-                    bottom: 30px;
-                    right: 60px;
+                    bottom: 130px;
+                    right: 62.5px;
                     text-shadow: grey 2px 2px 2px;
                     border-radius: 50px;
                 }
@@ -1572,9 +1574,13 @@
 
         #music-player {
             position: absolute;
-            top: 10px;
-            right: 10px;
+            top: 60%;
+            right: -300px;
             z-index: 10;
+            display: block;
+            transition: right 0.5s ease; /* Smooth transition */
+            opacity: 0.5;
+            transform: scale(0.85)
         }
 
         #scene-container {
@@ -1638,12 +1644,12 @@
   <!-- Right_Buttons -->
   <div class="gamepad-verticalMovementPad-buttons"></div>
 
-        <button onclick="sfx_click_gen" class="button right-button">◬</button>
-        <button id="Toggle_ΔT" class="button right-button-2">⏲</button>
+        <button onclick="sfx_click_gen()" class="button right-button">◬</button>
+        <button id="Toggle_ΔT" class="button right-button-2" ">⏲</button>
         <button class="button right-button-3">§</button>
         <button id="ButtonRealityToggle" class="button right-button-4">⟐</button>
         <button class="button right-button-5">Ω</button>
-        <button class="button right-button-6">Λ</button>
+        <button class="button right-button-6" onclick="toggle_ΛPlayer()">Λ</button>
 
     <div class="gamepad-primaryOptions-buttons"></div>
 
@@ -1703,7 +1709,7 @@
 <!-- MusicPlayer -->
 <div id="music-player">
     <audio id="audio" controls>
-        <source src="path/to/your/music.mp3" type="audio/mpeg">
+        <source src="assets/audio/env_music/Consciousness_D03.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
 </div>
@@ -1717,6 +1723,8 @@
 
   <!-- Sounds  -->
   <audio id="mfx_audio00_test" class="audioTest"  src="./assets/audio/ui_Sounds/SFX_Menus/defaultClick01.wav"></audio>
+
+  <audio id="mfx_audio01_test_02" class="audioTest"  src=""></audio>
 
   <audio id="sfx_click_gen" class="audioTest" volume="0.5" src="./assets/audio/ui_Sounds/SFX_Menus/defaultClick01.wav"></audio>
 
@@ -1840,6 +1848,31 @@
             play_sfx_hide()
             systemPanel.style.display = "none";
             
+        }
+    }
+
+
+    function toggle_ΛPlayer() {
+        const musicPlayer = document.getElementById("music-player");
+
+        // if (musicPlayer.style.display === "none" || musicPlayer.style.display === "") {
+        //     play_sfx_show()
+        //     musicPlayer.style.display = "block";
+
+        // } else {
+        //     play_sfx_hide()
+        //     musicPlayer.style.display = "none";
+
+        // }
+
+        if (musicPlayer.style.right === "-300px" || musicPlayer.style.right === "") {
+            play_sfx_show()
+            musicPlayer.style.right = "10px";
+
+        } else {
+            play_sfx_hide()
+            musicPlayer.style.right = "-300px";
+
         }
     }
 
@@ -8505,17 +8538,17 @@ Skin_CyberSkin_MovementPadImg_root.scale.set(0.005, 0.005, 0.005)
 
 
     // Audio element and event listeners
-    const audio = document.getElementById('audio');
+    const mfx_audio01_test_02 = document.getElementById('mfx_audio01_test_02');
 
-    audio.addEventListener('play', () => {
+    mfx_audio01_test_02.addEventListener('play', () => {
         timeline.play();
     });
 
-    audio.addEventListener('pause', () => {
+    mfx_audio01_test_02.addEventListener('pause', () => {
         timeline.pause();
     });
 
-    audio.addEventListener('ended', () => {
+    mfx_audio01_test_02.addEventListener('ended', () => {
         timeline.restart();
         timeline.pause();
     });
@@ -8525,6 +8558,7 @@ Skin_CyberSkin_MovementPadImg_root.scale.set(0.005, 0.005, 0.005)
     // ------------------------------------------------------------------------------------
 
     const Summon_TimeΔ = document.getElementById("Toggle_ΔT");
+
     Summon_TimeΔ.addEventListener("click", function() {
        if (TimeCore.scale.x === 100) {
            gsap.to(TimeCore.scale, {
@@ -9166,7 +9200,12 @@ let UI_ThirdPersonCameraView_root
                     camera.lookAt(0, 5, 0)
                 } else if ( camera.position.z < 0 ) {
                     orbitControls.update()
-                }   
+                } else {
+                    orbitControls.update()
+                }
+
+
+
 
 
 
