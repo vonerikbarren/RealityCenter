@@ -1432,7 +1432,7 @@
             width: 100px; /* Adjust as needed */
             height: 100px; /* Adjust as needed */
             left: 70px;
-            bottom: 162px;
+            bottom: 200px;
             background-image: url('assets/designs/TechTiles/CyberPunkDesign_01/SVG/TechTile_GearEngine_Active_01.svg');
             box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5); /* Adjust the values as needed */
             border-radius: 50px;
@@ -1449,7 +1449,7 @@
             width: 100px; /* Adjust as needed */
             height: 100px; /* Adjust as needed */
             right: 70px;
-            bottom: 162px;
+            bottom: 200px;
             background-image: url('assets/designs/TechTiles/CyberPunkDesign_01/SVG/TechTile_GearEngine_Active_01.svg');
             box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5); /* Adjust the values as needed */
             border-radius: 50px;
@@ -1469,7 +1469,7 @@
             width: 125px; /* Adjust as needed */
             height: 125px; /* Adjust as needed */
             left: 60px;
-            bottom: 150px;
+            bottom: 190px;
             background-image: url('assets/designs/HUD/general/borders/cyberPunk01/SVG/OptionRing_01.svg');
             box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5); /* Adjust the values as needed */
             border-radius: 100px;
@@ -1481,17 +1481,34 @@
         }
 
         .HandGearLeftContainer_02 {
+            width: 300px; /* Adjust as needed */
+            height: 300px; /* Adjust as needed */
+            left: -70px;
+            bottom: 130px;
+            padding: 1px;
+            background-image: url('assets/img/03-HudUI/BrainHolders/LeftBrain/LeftBrainHolder_Default01.png');
+            border-radius: 100px;
+            color: black;
+            position: absolute; /* Ensure the div is positioned correctly */
+            opacity: 1;
+            transform: scale(0.85);
+            animation: moveUpDown 7.5s infinite; /* Apply the animation */
+            /* animation: rotateLeft 5s linear infinite; */
+            z-index: 2;
+        }
+
+        .HandGearRightContainer_03 {
             width: 125px; /* Adjust as needed */
-            height: 125px; /* Adjust as needed */
+            height: 100px; /* Adjust as needed */
             left: 35px;
             bottom: 150px;
-            background-image: url('assets/designs/HUD/mobile/SVG/OptionRing_01.svg');
+            background-image: url('assets/img/03-HudUI/BrainHolders/LeftBrain/LeftBrainHolder_Default01.png');
             border-radius: 50px;
             color: black;
             position: absolute; /* Ensure the div is positioned correctly */
             opacity: 1;
             /* animation: rotateLeft 5s linear infinite; */
-            z-index: 1;
+            z-index: 2;
         }
 
 
@@ -1502,7 +1519,7 @@
             width: 125px; /* Adjust as needed */
             height: 125px; /* Adjust as needed */
             right: 60px;
-            bottom: 150px;
+            bottom: 190px;
             background-image: url('assets/designs/HUD/general/borders/cyberPunk01/SVG/OptionRing_01.svg');
             box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5); /* Adjust the values as needed */
             border-radius: 100px;
@@ -1515,21 +1532,47 @@
         }
 
         .HandGearRightContainer_02 {
-            width: 125px; /* Adjust as needed */
-            height: 125px; /* Adjust as needed */
-            right: 35px;
-            bottom: 150px;
-            background-image: url('assets/designs/HUD/mobile/SVG/OptionRing_01.svg');
+            width: 300px; /* Adjust as needed */
+            height: 300px; /* Adjust as needed */
+            right: -10px;
+            bottom: 130px;
+            background-image: url('assets/img/03-HudUI/BrainHolders/RightBrain/RightBrainHolder_Default01.png');
+            border-radius: 100px;
             color: black;
             position: absolute; /* Ensure the div is positioned correctly */
             opacity: 0.95;
+            display:block;
+            animation: moveUpDown 7.5s infinite; /* Apply the animation */
             /* animation: rotateLeft 5s linear infinite; */
-            transform: scaleX(-1); /* Flip the image vertically */
+            transform: scale(0.85);
+            z-index: 2;
+        }
+
+        .HandGearRightContainer_03 {
+            width: 175px; /* Adjust as needed */
+            height: 175px; /* Adjust as needed */
+            right: 35px;
+            bottom: 150px;
+            /* background-image: url('assets/img/03-HudUI/BrainHolders/RightBrain/RightBrainHolder_Default01.png'); */
+            color: black;
+            position: absolute; /* Ensure the div is positioned correctly */
+            opacity: 0.95;
+            display: none;
+            /* animation: rotateLeft 5s linear infinite; */
+            /* transform: scaleX(); Flip the image vertically */
             z-index: 1;
         }
 
 
 
+        @keyframes moveUpDown {
+            0%, 100% {
+                transform: translateY(0) scale(0.85);
+            }
+            50% {
+                transform: translateY(-20px) scale(0.85); /* Adjust the value as needed */
+            }
+        }
 
 
         @keyframes rotate {
@@ -1580,7 +1623,23 @@
             display: block;
             transition: right 0.5s ease; /* Smooth transition */
             opacity: 0.5;
+            cursor: pointer;
             transform: scale(0.85)
+        }
+
+        .button-container {
+            position: absolute;
+            top: 200px;
+            left: 20px;
+            z-index: 10;
+            transform: scale(0.85);
+        }
+
+        .shape-button {
+            margin: 5px;
+            padding: 10px 20px;
+            background-color: grey;
+            cursor: pointer;
         }
 
         #scene-container {
@@ -1654,13 +1713,19 @@
     <div class="gamepad-primaryOptions-buttons"></div>
 
 <!-- LH & RH Buttons -->
+
+
  <div class="HandGearLeft"></div>
  <div class="HandGearRight"></div>
 
  <div class="HandGearLeftContainer_01"></div>
  <div class="HandGearLeftContainer_02"></div>
+ <div class="HandGearLeftContainer_03"></div>
+
  <div class="HandGearRightContainer_01"></div>
  <div class="HandGearRightContainer_02"></div>
+ <div class="HandGearRightContainer_03"></div>
+ 
 
 <button id="LH_Button" class="LH_Button" >LH</button>
 <button id="RH_Button" class="RH_Button" >RH</button>
@@ -1712,6 +1777,16 @@
         <source src="assets/audio/env_music/Consciousness_D03.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
+</div>
+
+
+<div class="button-container">
+    <button class="shape-button" data-shape="sphere">Sphere</button>
+    <button class="shape-button" data-shape="grid">Grid</button>
+    <button class="shape-button" data-shape="spiral">Spiral</button>
+    <button class="shape-button" data-shape="galaxy">Galaxy</button>
+    <button class="shape-button" data-shape="carousel">Carousel</button>
+    <button class="shape-button" data-shape="slideshow">SlideShow</button>
 </div>
 
 
@@ -2545,9 +2620,9 @@ let Skin_CyberSkin_MovementPadImg_root
 
         // Hand Items
         const Hand_robotic_pointDown = textureLoader.load('assets/img/02-UserUI/hands/02-FinalWhite-Series/02-PointFinger/PointLeftHandFromMiddleTop.png')
-        const Hand_robotic_pointUp = textureLoader.load('assets/designs/HUD/mobile/1x/Hand_Robotic_PointUp.png')
-        const Hand_robotic_pointLeft = textureLoader.load('assets/designs/HUD/mobile/1x/Hand_Robotic_PointLeft.png')
-        const Hand_robotic_pointRight = textureLoader.load('assets/designs/HUD/mobile/1x/Hand_Robotic_PointRight.png')
+        // const Hand_robotic_pointUp = textureLoader.load('assets/designs/HUD/mobile/1x/Hand_Robotic_PointUp.png')
+        // const Hand_robotic_pointLeft = textureLoader.load('assets/designs/HUD/mobile/1x/Hand_Robotic_PointLeft.png')
+        // const Hand_robotic_pointRight = textureLoader.load('assets/designs/HUD/mobile/1x/Hand_Robotic_PointRight.png')
 
 
         // Grids
@@ -8508,6 +8583,7 @@ Skin_CyberSkin_MovementPadImg_root.scale.set(0.005, 0.005, 0.005)
         }
     })
 
+
     document.addEventListener("keydown", function(event) {
         if (event.key === "-") {
             gsap.to(TimeCycleTunnelX.position, {
@@ -8581,6 +8657,172 @@ Skin_CyberSkin_MovementPadImg_root.scale.set(0.005, 0.005, 0.005)
        }
 
     });
+
+
+
+
+
+
+
+//..................................................................................................
+//..I................................SSSSSS.........................................................
+//.III..............................SSSSSSSS...Shh..................................................
+//.III.............................gSSSSSSSSS..Shh..................................................
+//.III.............................gSSSSSSSSS..Shh..................................................
+//.III..Immmmmmmmmmmm....gggggggg.ggSS...SSSSS.Shhhhhhh....aaaaaaa.aappppppp....eeeeee...esssssss...
+//.III..Immmmmmmmmmmmm..mgggggggg.ggSSSS.......Shhhhhhhh..haaaaaaa.aapppppppp..peeeeeee..esssssss...
+//.III..Immmmmmmmmmmmm.mmgggggggg..gSSSSSSSS...Shhhhhhhh.hhaaaaaaaaaapppppppppppeeeeeeeeeessssssss..
+//.III..Immm.mmmm..mmm.mmgg..gggg..gSSSSSSSSS..Shhh.hhhh.hhaa.aaaaaaappp.pppppppee..eeeeeessssssss..
+//.III..Imm..mmmm..mmm.mmgg..gggg....SSSSSSSSS.Shh...hhh..haaaaaaaaaapp...ppppppeeeeeeee.esssssss...
+//.III..Imm..mmmm..mmm.mmgg...ggg.ggSS..SSSSSS.Shh...hhh.hhaaaaaaaaaapp...ppppppeeeeeeee.esssssss...
+//.III..Imm..mmmm..mmm.mmgg..gggg.ggSS....SSSS.Shh...hhh.hhaaa.aaaaaapp...ppppppee......eessssssss..
+//.III..Imm..mmmm..mmm.mmgggggggg.ggSSSSSSSSSS.Shh...hhh.hhaa.aaaaaaapppppppppppeeeeeeeeeesss.ssss..
+//.III..Imm..mmmm..mmm..mgggggggg..gSSSSSSSSS..Shh...hhh.hhaaaaaaaaaapppppppp.ppeeeeeee.eessssssss..
+//.III..Imm..mmmm..mmm...gggggggg...SSSSSSSSS..Shh...hhh.hhaaaaaaaaaapppppppp..peeeeeee..esssssss...
+//.....................mmggg.gggg....SSSSSS................aaa.....aapp.ppp......eeee.....ssssss....
+//.....................mmgggggggg..................................aapp.............................
+//......................mgggggggg..................................aapp.............................
+//......................mggggggg...................................aapp.............................
+//..................................................................................................
+
+
+
+// // Function to create a sphere with images
+// function createImageSphere(images, numImages) {
+//     const radius = 50;
+//     const geo_imgShape = new THREE.SphereGeometry(radius, 32, 32);
+//     const mat_imgShape_array = [];
+
+//     for (let i = 0; i < numImages; i++) {
+//         const tex_imgShape = new THREE.TextureLoader().load(images[i % images.length]);
+//         const mat_imgShape = new THREE.MeshBasicMaterial({ map: tex_imgShape, side: THREE.DoubleSide });
+//         mat_imgShape_array.push(mat_imgShape);
+//     }
+
+//     const mesh_imgShape_sphere = new THREE.Mesh(geo_imgShape, mat_imgShape_array);
+//     scene.add(mesh_imgShape_sphere);
+
+//     return mesh_imgShape_sphere;
+// }
+
+
+// // Example usage
+// const images = [
+//     'assets/img/02-UserUI/07-MySon/MySon01.png',
+//     'assets/img/02-UserUI/07-MySon/MySon01.png',
+//     'assets/img/02-UserUI/07-MySon/MySon01.png',
+//     'assets/img/02-UserUI/07-MySon/MySon01.png',
+//     'assets/img/02-UserUI/07-MySon/MySon01.png',
+//     'assets/img/02-UserUI/07-MySon/MySon01.png',
+// ];
+
+
+
+
+
+
+// const numImages = 6;
+// const imageSphere = createImageSphere(images, numImages);
+
+
+// // Function to create different shapes
+// function createShapes(shape) {
+//     const positions = [];
+//     const numImages = images.length;
+
+//     switch (shape) {
+//         case 'sphere':
+//             const radius = 5;
+//             for (let i = 0; i < numImages; i++) {
+//                 const phi = Math.acos(-1 + (2 * i) / numImages);
+//                 const theta = Math.sqrt(numImages * Math.PI) * phi;
+//                 positions.push(new THREE.Vector3(
+//                     radius * Math.cos(theta) * Math.sin(phi),
+//                     radius * Math.sin(theta) * Math.sin(phi),
+//                     radius * Math.cos(phi)
+//                 ));
+//             }
+//             break;
+//         case 'grid':
+//             const gridSize = Math.ceil(Math.sqrt(numImages));
+//             for (let i = 0; i < numImages; i++) {
+//                 const x = (i % gridSize) - gridSize / 2;
+//                 const y = Math.floor(i / gridSize) - gridSize / 2;
+//                 positions.push(new THREE.Vector3(x, y, 0));
+//             }
+//             break;
+//         case 'spiral':
+//             const spiralRadius = 5;
+//             const spiralHeight = 10;
+//             for (let i = 0; i < numImages; i++) {
+//                 const angle = i * 0.1;
+//                 const x = spiralRadius * Math.cos(angle);
+//                 const y = (i / numImages) * spiralHeight - spiralHeight / 2;
+//                 const z = spiralRadius * Math.sin(angle);
+//                 positions.push(new THREE.Vector3(x, y, z));
+//             }
+//             break;
+//         case 'galaxy':
+//             const galaxyRadius = 5;
+//             for (let i = 0; i < numImages; i++) {
+//                 const angle = i * 0.1;
+//                 const distance = Math.random() * galaxyRadius;
+//                 const x = distance * Math.cos(angle);
+//                 const y = (Math.random() - 0.5) * 2;
+//                 const z = distance * Math.sin(angle);
+//                 positions.push(new THREE.Vector3(x, y, z));
+//             }
+//             break;
+//         case 'carousel':
+//             const carouselRadius = 5;
+//             for (let i = 0; i < numImages; i++) {
+//                 const angle = (i / numImages) * Math.PI * 2;
+//                 const x = carouselRadius * Math.cos(angle);
+//                 const y = 0;
+//                 const z = carouselRadius * Math.sin(angle);
+//                 positions.push(new THREE.Vector3(x, y, z));
+//             }
+//             break;
+//     }
+
+//     return positions;
+// }
+
+
+// // Function to animate images to new positions
+// function animateImagesToShape(shape) {
+//     const positions = createShapes(shape);
+//     const positionAttribute = imageSphere.geo_imgShape.attributes.position;
+//     const vertexCount = positionAttribute.count;
+
+//     const newPositions = new Float32Array(vertexCount * 3);
+//     for (let i = 0; i < vertexCount; i++) {
+//         const pos = positions[i % positions.length];
+//         newPositions[i * 3] = pos.x;
+//         newPositions[i * 3 + 1] = pos.y;
+//         newPositions[i * 3 + 2] = pos.z;
+//     }
+
+//     gsap.to(positionAttribute.array, {
+//         duration: 2,
+//         x: (i) => newPositions[i * 3],
+//         y: (i) => newPositions[i * 3 + 1],
+//         z: (i) => newPositions[i * 3 + 2],
+//         stagger: 0.1,
+//         onUpdate: () => {
+//             positionAttribute.needsUpdate = true;
+//         }
+//     });
+// }
+
+
+// // Add event listeners to the buttons
+// document.querySelectorAll('.shape-button').forEach(button => {
+//     button.addEventListener('click', () => {
+//         const shape = button.getAttribute('data-shape');
+//         animateImagesToShape(shape);
+//     });
+// });
 
 
 

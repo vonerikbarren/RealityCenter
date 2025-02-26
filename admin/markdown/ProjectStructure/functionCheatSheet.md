@@ -81,12 +81,14 @@ Grid01 - BasicHud03b
 ## Any Geometry
 ``` js
 
+let anyGeometryName_root
 let anyGeometryName, mesh_anyGeometryName
 
-anyGeometryName = new THREE.Group()
+**anyGeometryName = new THREE.Group()
 anyGeometryName.position.set(0, 0, 0)
 anyGeometryName.rotation.set(0, 0, 0)
 anyGeometryName.scale.set(1, 1, 1)
+scene.add(anyGeometryName)
 
 
 const mat_anyGeometryName = new THREE.MeshBasicMaterial({ map: SceneWallpaper_01, side: THREE.DoubleSide });
@@ -101,7 +103,7 @@ mesh_anyGeometryName.rotation.set(0, 0, 0)
 
 // anyGeometryName.lookAt(camera)
 
-anyGeometryName.add(mesh_anyGeometryName)
+anyGeometryName.add(mesh_anyGeometryName)**
 
 ```
 
