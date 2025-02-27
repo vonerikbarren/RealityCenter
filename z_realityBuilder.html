@@ -8739,7 +8739,7 @@ const images = [
 
 ];
 
-const targets = { sphere: [], grid: [], helix: [], spiral: [] };
+const targets = { sphere: [], grid: [], helix: [], galaxy: [] };
 
 const vector = new THREE.Vector3();
 
@@ -8958,8 +8958,8 @@ function createImageHelixB(images) {
 }
 
 // Create the image helix
-createImageHelixA(images);
-createImageHelixB(images);
+// createImageHelixA(images);
+// createImageHelixB(images);
 
 
 let rotateHelix = () => {
@@ -8981,6 +8981,69 @@ let rotateHelix = () => {
 }
 
 rotateHelix()
+
+
+// Galaxy
+const imgGalaxy_root = new THREE.Group();
+imgGalaxy_root.position.set(5, 10, -10);
+imgGalaxy_root.rotation.set(0, 0, 0);
+imgGalaxy_root.scale.set(10, 10, 10);
+scene.add(imgGalaxy_root);
+
+
+// Function to create a galaxy spiral of planes with images
+function createImageGalaxy(images) {
+    const numImages = images.length;
+    const radius = 20; // Initial radius of the spiral
+    const spacing = 5; // Spacing between planes
+    const spiralTurns = 2; // Number of turns in the spiral
+
+    for (let i = 0; i < numImages; i++) {
+        const texture = new THREE.TextureLoader().load(images[i]);
+        const material = new THREE.MeshBasicMaterial({ map: texture, side: THREE.DoubleSide });
+        const planeGeometry = new THREE.BoxGeometry(2, 2);
+        const plane = new THREE.Mesh(planeGeometry, material);
+
+        const angle = i * (Math.PI * 2) / (numImages / spiralTurns); // Angle for the spiral
+        const distance = radius + (i * spacing / numImages); // Distance from the center
+
+        plane.position.x = distance * Math.cos(angle);
+        plane.position.y = (i - numImages / 2) * spacing / numImages; // Vertical position
+        plane.position.z = distance * Math.sin(angle);
+
+        plane.lookAt(0, 0, 0);
+
+        imgGalaxy_root.add(plane);
+        targets.galaxy.push(plane);
+    }
+}
+
+// Create the image galaxy spiral
+createImageGalaxy(images);
+
+let rotateGalaxy = () => {
+    gsap.to(imgGalaxy_root.rotation, {
+        repeat: -1,
+        duration: 20,
+        ease: "none",
+        delay: 0,
+        y: "+=3.14"
+    })
+
+    console.log("rotating galaxy")
+
+    // gsap.to(imgHelix_root.position, {
+    //     repeat: -1,
+    //     duration: 10,
+    //     ease: "none",
+    //     delay: 0,
+    //     y: -1000
+    // })
+}
+
+
+
+rotateGalaxy()
 
 
 
