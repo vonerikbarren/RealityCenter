@@ -2630,6 +2630,16 @@ let Skin_CyberSkin_MovementPadImg_root
         const TimeGrid02_Test = textureLoader.load('assets/img/03-HudUI/HelpMenus/HelpMenuPanel01.png')
 
 
+
+
+        // EnvSpecific
+
+
+
+        // PortfolioSpecific
+
+
+
 		init();
 		animate();
 
@@ -8664,26 +8674,229 @@ Skin_CyberSkin_MovementPadImg_root.scale.set(0.005, 0.005, 0.005)
 
 
 
-//..................................................................................................
-//..I................................SSSSSS.........................................................
-//.III..............................SSSSSSSS...Shh..................................................
-//.III.............................gSSSSSSSSS..Shh..................................................
-//.III.............................gSSSSSSSSS..Shh..................................................
-//.III..Immmmmmmmmmmm....gggggggg.ggSS...SSSSS.Shhhhhhh....aaaaaaa.aappppppp....eeeeee...esssssss...
-//.III..Immmmmmmmmmmmm..mgggggggg.ggSSSS.......Shhhhhhhh..haaaaaaa.aapppppppp..peeeeeee..esssssss...
-//.III..Immmmmmmmmmmmm.mmgggggggg..gSSSSSSSS...Shhhhhhhh.hhaaaaaaaaaapppppppppppeeeeeeeeeessssssss..
-//.III..Immm.mmmm..mmm.mmgg..gggg..gSSSSSSSSS..Shhh.hhhh.hhaa.aaaaaaappp.pppppppee..eeeeeessssssss..
-//.III..Imm..mmmm..mmm.mmgg..gggg....SSSSSSSSS.Shh...hhh..haaaaaaaaaapp...ppppppeeeeeeee.esssssss...
-//.III..Imm..mmmm..mmm.mmgg...ggg.ggSS..SSSSSS.Shh...hhh.hhaaaaaaaaaapp...ppppppeeeeeeee.esssssss...
-//.III..Imm..mmmm..mmm.mmgg..gggg.ggSS....SSSS.Shh...hhh.hhaaa.aaaaaapp...ppppppee......eessssssss..
-//.III..Imm..mmmm..mmm.mmgggggggg.ggSSSSSSSSSS.Shh...hhh.hhaa.aaaaaaapppppppppppeeeeeeeeeesss.ssss..
-//.III..Imm..mmmm..mmm..mgggggggg..gSSSSSSSSS..Shh...hhh.hhaaaaaaaaaapppppppp.ppeeeeeee.eessssssss..
-//.III..Imm..mmmm..mmm...gggggggg...SSSSSSSSS..Shh...hhh.hhaaaaaaaaaapppppppp..peeeeeee..esssssss...
-//.....................mmggg.gggg....SSSSSS................aaa.....aapp.ppp......eeee.....ssssss....
-//.....................mmgggggggg..................................aapp.............................
-//......................mgggggggg..................................aapp.............................
-//......................mggggggg...................................aapp.............................
-//..................................................................................................
+//.............................................................................................................
+//.[[[[[..I................................SSSSSS.......................................................ss]]]..
+//.[[[[[.III..............................SSSSSSSS...Shh................................................ss]]]..
+//.[[[[[.III.............................SSSSSSSSSS..Shh................................................ss]]]..
+//.[[[...III.............................SSSSSSSSSS..Shh..................................................]]]..
+//.[[[...III..mmmmmmmmmmmmm....gggggggg.gSSS...SSSSS.Shhhhhhh....aaaaaaa.aappppppp....eeeeee...esssssss...]]]..
+//.[[[...III..mmmmmmmmmmmmmm..ggggggggg.gSSSSS.......Shhhhhhhh..aaaaaaaa.aapppppppp..peeeeeee..esssssss...]]]..
+//.[[[...III..mmmmmmmmmmmmmm.mggggggggg..SSSSSSSSS...Shhhhhhhh.haaaaaaaaaaapppppppppppeeeeeeeeeessssssss..]]]..
+//.[[[...III..mmmm.mmmm..mmm.mggg..gggg..SSSSSSSSSS..Shhh.hhhh.haaa.aaaaaaappp.pppppppee..eeeeeessssssss..]]]..
+//.[[[...III..mmm..mmmm..mmm.mggg..gggg....SSSSSSSSS.Shh...hhh..aaaaaaaaaaapp...ppppppeeeeeeee.esssssss...]]]..
+//.[[[...III..mmm..mmmm..mmm.mggg...ggg.gSSS..SSSSSS.Shh...hhh.haaaaaaaaaaapp...ppppppeeeeeeee.esssssss...]]]..
+//.[[[...III..mmm..mmmm..mmm.mggg..gggg.gSSS....SSSS.Shh...hhh.haaaa.aaaaaapp...ppppppee......eessssssss..]]]..
+//.[[[...III..mmm..mmmm..mmm.mggggggggg.gSSSSSSSSSSS.Shh...hhh.haaa.aaaaaaapppppppppppeeeeeeeeeesss.ssss..]]]..
+//.[[[...III..mmm..mmmm..mmm..ggggggggg..SSSSSSSSSS..Shh...hhh.haaaaaaaaaaapppppppp.ppeeeeeee.eessssssss..]]]..
+//.[[[...III..mmm..mmmm..mmm...gggggggg...SSSSSSSSS..Shh...hhh.haaaaaaaaaaapppppppp..peeeeeee..esssssss...]]]..
+//.[[[.......................mgggg.gggg....SSSSSS................aaa.....aapp.ppp......eeee.....ssssss....]]]..
+//.[[[[[.....................mggggggggg..................................aapp...........................ss]]]..
+//.[[[[[......................ggggggggg..................................aapp...........................ss]]]..
+//.[[[[[......................gggggggg...................................aapp...........................ss]]]..
+//.............................................................................................................
+
+
+const targets = 
+{ 
+    vector: [],
+    sphere: [], 
+    grid: [], 
+    cube: [],
+    helix: [], 
+    galaxy: [], 
+
+};
+
+
+//.............................................................
+//..I..................................AAA.....................
+//.III................................AAAAA....................
+//.III................................AAAAA....................
+//.III...............................AAAAAAA...................
+//.III..Immmmmmmmmmmm....gggggggg....AAAAAAA....rrrrrr.rrrrrr..
+//.III..Immmmmmmmmmmmm..mgggggggg....AAAAAAA....rrrrrr.rrrrrr..
+//.III..Immmmmmmmmmmmm.mmgggggggg...AAAAAAAAA...rrrrrr.rrrrrr..
+//.III..Immm.mmmm..mmm.mmgg..gggg...AAAA.AAAA...rrrr...rrrr....
+//.III..Imm..mmmm..mmm.mmgg..gggg...AAAAAAAAAA..rrr....rrr.....
+//.III..Imm..mmmm..mmm.mmgg...ggg..gAAAAAAAAAA..rrr....rrr.....
+//.III..Imm..mmmm..mmm.mmgg..gggg..gAAAAAAAAAA..rrr....rrr.....
+//.III..Imm..mmmm..mmm.mmgggggggg..gAAAAAAAAAAA.rrr....rrr.....
+//.III..Imm..mmmm..mmm..mgggggggg.ggAAA....AAAA.rrr....rrr.....
+//.III..Imm..mmmm..mmm...gggggggg.ggAA.....AAAA.rrr....rrr.....
+//.....................mmggg.gggg..............................
+//.....................mmgggggggg..............................
+//......................mgggggggg..............................
+//......................mggggggg...............................
+//.............................................................
+
+
+
+// ImageTestObjects
+// ./assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png
+// ./assets/img/10-ObjectUI/02-TechTiles/DigiTechTile00/ComplexBlackDesign02.png
+
+// Example usage
+const images = [
+    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
+    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
+    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
+    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
+    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
+    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
+    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
+    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
+    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
+    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
+    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
+    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
+    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
+    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
+    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
+    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
+    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
+    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
+    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
+    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
+    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
+    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
+    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
+    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
+    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
+    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
+    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
+    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
+    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
+    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
+    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
+    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
+    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
+    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
+    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
+    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
+    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
+    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
+    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
+    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
+    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
+
+];
+
+
+const images01 = [
+    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
+    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
+    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
+    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
+    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
+    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
+    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
+    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
+    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
+    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
+    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
+    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
+    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
+    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
+    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
+    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
+    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
+    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
+    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
+    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
+    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
+    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
+    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
+    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
+    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
+    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
+    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
+    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
+    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
+    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
+    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
+    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
+    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
+    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
+    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
+    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
+    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
+    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
+    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
+    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
+    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
+
+];
+
+
+const images02 = [
+    'assets/img/10-ObjectUI/02-TechTiles/DigiTechTile07/01-Base/DigiTechTile07.png',
+    'assets/img/10-ObjectUI/02-TechTiles/DigiTechTile07/01-Base/DigiTechTile07.png',
+    'assets/img/10-ObjectUI/02-TechTiles/DigiTechTile07/01-Base/DigiTechTile07.png',
+    'assets/img/10-ObjectUI/02-TechTiles/DigiTechTile07/01-Base/DigiTechTile07.png',
+    'assets/img/10-ObjectUI/02-TechTiles/DigiTechTile07/01-Base/DigiTechTile07.png',
+    'assets/img/10-ObjectUI/02-TechTiles/DigiTechTile07/01-Base/DigiTechTile07.png',
+    'assets/img/10-ObjectUI/02-TechTiles/DigiTechTile07/01-Base/DigiTechTile07.png',
+    'assets/img/10-ObjectUI/02-TechTiles/DigiTechTile07/01-Base/DigiTechTile07.png',
+    'assets/img/10-ObjectUI/02-TechTiles/DigiTechTile07/01-Base/DigiTechTile07.png',
+    'assets/img/10-ObjectUI/02-TechTiles/DigiTechTile07/01-Base/DigiTechTile07.png',
+    'assets/img/10-ObjectUI/02-TechTiles/DigiTechTile07/01-Base/DigiTechTile07.png',
+    'assets/img/10-ObjectUI/02-TechTiles/DigiTechTile07/01-Base/DigiTechTile07.png',
+    'assets/img/10-ObjectUI/02-TechTiles/DigiTechTile07/01-Base/DigiTechTile07.png',
+    'assets/img/10-ObjectUI/02-TechTiles/DigiTechTile07/01-Base/DigiTechTile07.png',
+    'assets/img/10-ObjectUI/02-TechTiles/DigiTechTile07/01-Base/DigiTechTile07.png',
+    'assets/img/10-ObjectUI/02-TechTiles/DigiTechTile07/01-Base/DigiTechTile07.png',
+    'assets/img/10-ObjectUI/02-TechTiles/DigiTechTile07/01-Base/DigiTechTile07.png',
+    'assets/img/10-ObjectUI/02-TechTiles/DigiTechTile07/01-Base/DigiTechTile07.png',
+    'assets/img/10-ObjectUI/02-TechTiles/DigiTechTile07/01-Base/DigiTechTile07.png',
+    'assets/img/10-ObjectUI/02-TechTiles/DigiTechTile07/01-Base/DigiTechTile07.png',
+    'assets/img/10-ObjectUI/02-TechTiles/DigiTechTile07/01-Base/DigiTechTile07.png',
+    'assets/img/10-ObjectUI/02-TechTiles/DigiTechTile07/01-Base/DigiTechTile07.png',
+    'assets/img/10-ObjectUI/02-TechTiles/DigiTechTile07/01-Base/DigiTechTile07.png',
+    'assets/img/10-ObjectUI/02-TechTiles/DigiTechTile07/01-Base/DigiTechTile07.png',
+    'assets/img/10-ObjectUI/02-TechTiles/DigiTechTile07/01-Base/DigiTechTile07.png',
+    'assets/img/10-ObjectUI/02-TechTiles/DigiTechTile07/01-Base/DigiTechTile07.png',
+    'assets/img/10-ObjectUI/02-TechTiles/DigiTechTile07/01-Base/DigiTechTile07.png',
+    'assets/img/10-ObjectUI/02-TechTiles/DigiTechTile07/01-Base/DigiTechTile07.png',
+    'assets/img/10-ObjectUI/02-TechTiles/DigiTechTile07/01-Base/DigiTechTile07.png',
+    'assets/img/10-ObjectUI/02-TechTiles/DigiTechTile07/01-Base/DigiTechTile07.png',
+    'assets/img/10-ObjectUI/02-TechTiles/DigiTechTile07/01-Base/DigiTechTile07.png',
+    'assets/img/10-ObjectUI/02-TechTiles/DigiTechTile07/01-Base/DigiTechTile07.png',
+    'assets/img/10-ObjectUI/02-TechTiles/DigiTechTile07/01-Base/DigiTechTile07.png',
+    'assets/img/10-ObjectUI/02-TechTiles/DigiTechTile07/01-Base/DigiTechTile07.png',
+    'assets/img/10-ObjectUI/02-TechTiles/DigiTechTile07/01-Base/DigiTechTile07.png',
+    'assets/img/10-ObjectUI/02-TechTiles/DigiTechTile07/01-Base/DigiTechTile07.png',
+    'assets/img/10-ObjectUI/02-TechTiles/DigiTechTile07/01-Base/DigiTechTile07.png',
+    'assets/img/10-ObjectUI/02-TechTiles/DigiTechTile07/01-Base/DigiTechTile07.png',
+    'assets/img/10-ObjectUI/02-TechTiles/DigiTechTile07/01-Base/DigiTechTile07.png',
+    'assets/img/10-ObjectUI/02-TechTiles/DigiTechTile07/01-Base/DigiTechTile07.png',
+    'assets/img/10-ObjectUI/02-TechTiles/DigiTechTile07/01-Base/DigiTechTile07.png',
+
+];
+
+
+
+const image_containers = [];
+
+//...............................................................................................
+//..I................................SSSSSS......................................................
+//.III..............................SSSSSSSS..............phh....................................
+//.III.............................gSSSSSSSSS.............phh....................................
+//.III.............................gSSSSSSSSS.............phh....................................
+//.III..Immmmmmmmmmmm....gggggggg.ggSS...SSSSSSSppppppp...phhhhhhh....eeeeee...errrrr..eeeeee....
+//.III..Immmmmmmmmmmmm..mgggggggg.ggSSSS......SSpppppppp..phhhhhhhh..eeeeeeee..errrrr.reeeeeee...
+//.III..Immmmmmmmmmmmm.mmgggggggg..gSSSSSSSS..SSppppppppp.phhhhhhhh.heeeeeeeee.errrrrrreeeeeeee..
+//.III..Immm.mmmm..mmm.mmgg..gggg..gSSSSSSSSS.SSppp.ppppp.phhh.hhhh.heee..eeee.errr..rree..eeee..
+//.III..Imm..mmmm..mmm.mmgg..gggg....SSSSSSSSSSSpp...pppp.phh...hhh.heeeeeeeee.err...rreeeeeeee..
+//.III..Imm..mmmm..mmm.mmgg...ggg.ggSS..SSSSSSSSpp...pppp.phh...hhh.heeeeeeeee.err...rreeeeeeee..
+//.III..Imm..mmmm..mmm.mmgg..gggg.ggSS....SSSSSSpp...pppp.phh...hhh.heee.......err...rree........
+//.III..Imm..mmmm..mmm.mmgggggggg.ggSSSSSSSSSSSSppppppppp.phh...hhh.heeeeeeeee.err...rreeeeeeee..
+//.III..Imm..mmmm..mmm..mgggggggg..gSSSSSSSSS.SSpppppppp..phh...hhh.heeeeeeee..err...rreeeeeee...
+//.III..Imm..mmmm..mmm...gggggggg...SSSSSSSSS.SSpppppppp..phh...hhh..eeeeeeee..err....reeeeeee...
+//.....................mmggg.gggg....SSSSSS...SSpp.ppp.................eeee.............eeee.....
+//.....................mmgggggggg.............SSpp...............................................
+//......................mgggggggg.............SSpp...............................................
+//......................mggggggg..............SSpp...............................................
+//...............................................................................................
 
 
 const imgSphere_root = new THREE.Group();
@@ -8693,53 +8906,9 @@ imgSphere_root.scale.set(1, 1, 1);
 scene.add(imgSphere_root);
 
 
-// Example usage
-const images = [
-    'assets/img/02-UserUI/07-MySon/MySon01.png',
-    'assets/img/02-UserUI/07-MySon/MySon01.png',
-    'assets/img/02-UserUI/07-MySon/MySon01.png',
-    'assets/img/02-UserUI/07-MySon/MySon01.png',
-    'assets/img/02-UserUI/07-MySon/MySon01.png',
-    'assets/img/02-UserUI/07-MySon/MySon01.png',
-    'assets/img/02-UserUI/07-MySon/MySon01.png',
-    'assets/img/02-UserUI/07-MySon/MySon01.png',
-    'assets/img/02-UserUI/07-MySon/MySon01.png',
-    'assets/img/02-UserUI/07-MySon/MySon01.png',
-    'assets/img/02-UserUI/07-MySon/MySon01.png',
-    'assets/img/02-UserUI/07-MySon/MySon01.png',
-    'assets/img/02-UserUI/07-MySon/MySon01.png',
-    'assets/img/02-UserUI/07-MySon/MySon01.png',
-    'assets/img/02-UserUI/07-MySon/MySon01.png',
-    'assets/img/02-UserUI/07-MySon/MySon01.png',
-    'assets/img/02-UserUI/07-MySon/MySon01.png',
-    'assets/img/02-UserUI/07-MySon/MySon01.png',
-    'assets/img/02-UserUI/07-MySon/MySon01.png',
-    'assets/img/02-UserUI/07-MySon/MySon01.png',
-    'assets/img/02-UserUI/07-MySon/MySon01.png',
-    'assets/img/02-UserUI/07-MySon/MySon01.png',
-    'assets/img/02-UserUI/07-MySon/MySon01.png',
-    'assets/img/02-UserUI/07-MySon/MySon01.png',
-    'assets/img/02-UserUI/07-MySon/MySon01.png',
-    'assets/img/02-UserUI/07-MySon/MySon01.png',
-    'assets/img/02-UserUI/07-MySon/MySon01.png',
-    'assets/img/02-UserUI/07-MySon/MySon01.png',
-    'assets/img/02-UserUI/07-MySon/MySon01.png',
-    'assets/img/02-UserUI/07-MySon/MySon01.png',
-    'assets/img/02-UserUI/07-MySon/MySon01.png',
-    'assets/img/02-UserUI/07-MySon/MySon01.png',
-    'assets/img/02-UserUI/07-MySon/MySon01.png',
-    'assets/img/02-UserUI/07-MySon/MySon01.png',
-    'assets/img/02-UserUI/07-MySon/MySon01.png',
-    'assets/img/02-UserUI/07-MySon/MySon01.png',
-    'assets/img/02-UserUI/07-MySon/MySon01.png',
-    'assets/img/02-UserUI/07-MySon/MySon01.png',
-    'assets/img/02-UserUI/07-MySon/MySon01.png',
-    'assets/img/02-UserUI/07-MySon/MySon01.png',
-    'assets/img/02-UserUI/07-MySon/MySon01.png',
 
-];
 
-const targets = { sphere: [], grid: [], helix: [], galaxy: [] };
+
 
 const vector = new THREE.Vector3();
 
@@ -8835,7 +9004,26 @@ let rotate_imgSphere = () => {
 
 
 
-
+//......................................................................
+//..I..................................GGGGG............rii.............
+//.III...............................GGGGGGGGG..........rii........ddd..
+//.III..............................GGGGGGGGGG..........rii........ddd..
+//.III.............................gGGGGGGGGGGG.........rii........ddd..
+//.III..Immmmmmmmmmmm....gggggggg..gGGG....GGGG..Grrrrr.rii...dddddddd..
+//.III..Immmmmmmmmmmmm..mgggggggg.ggGGG....GGGG..Grrrrr.rii..idddddddd..
+//.III..Immmmmmmmmmmmm.mmgggggggg.ggGG...GGGGGG..Grrrrr.rii.iidddddddd..
+//.III..Immm.mmmm..mmm.mmgg..gggg.ggGG...GGGGGG..Grrr...rii.iidd..dddd..
+//.III..Imm..mmmm..mmm.mmgg..gggg.ggGG...GGGGGG..Grr....rii.iidd...ddd..
+//.III..Imm..mmmm..mmm.mmgg...ggg.ggGGG..GGGGGG..Grr....rii.iidd...ddd..
+//.III..Imm..mmmm..mmm.mmgg..gggg..gGGG....GGGG..Grr....rii.iidd..dddd..
+//.III..Imm..mmmm..mmm.mmgggggggg..gGGGGGGGGGGG..Grr....rii.iidddddddd..
+//.III..Imm..mmmm..mmm..mgggggggg...GGGGGGGGGGG..Grr....rii..idddddddd..
+//.III..Imm..mmmm..mmm...gggggggg....GGGGGGGGGG..Grr....rii..idddddddd..
+//.....................mmggg.gggg.....GGGG.....................ddd......
+//.....................mmgggggggg.......................................
+//......................mgggggggg.......................................
+//......................mggggggg........................................
+//......................................................................
 
 // Grid
 
@@ -8902,6 +9090,28 @@ function createImageGrid(images) {
 
 
 
+
+
+//.............................................................................
+//..I...............................HH......H..............l...lii.............
+//.III.............................gHHH...HHHH............ell..lii.............
+//.III.............................gHHH...HHHH............ell..lii.............
+//.III.............................gHHH...HHHH............ell..lii.............
+//.III..Immmmmmmmmmmm....gggggggg..gHHH...HHHH...eeeeee...ell..lii.iixx..xxxx..
+//.III..Immmmmmmmmmmmm..mgggggggg..gHHHHHHHHHH..eeeeeeee..ell..lii.iixxxxxxxx..
+//.III..Immmmmmmmmmmmm.mmgggggggg..gHHHHHHHHHH.Heeeeeeeee.ell..lii..ixxxxxxx...
+//.III..Immm.mmmm..mmm.mmgg..gggg..gHHHHHHHHHH.Heee..eeee.ell..lii..ixxxxxx....
+//.III..Imm..mmmm..mmm.mmgg..gggg..gHHHHHHHHHH.Heeeeeeeee.ell..lii...xxxxxx....
+//.III..Imm..mmmm..mmm.mmgg...ggg..gHHH...HHHH.Heeeeeeeee.ell..lii...xxxxxx....
+//.III..Imm..mmmm..mmm.mmgg..gggg..gHHH...HHHH.Heee.......ell..lii...xxxxxx....
+//.III..Imm..mmmm..mmm.mmgggggggg..gHHH...HHHH.Heeeeeeeee.ell..lii..ixxxxxxx...
+//.III..Imm..mmmm..mmm..mgggggggg..gHHH...HHHH.Heeeeeeee..ell..lii.iixxxxxxxx..
+//.III..Imm..mmmm..mmm...gggggggg..gHHH...HHHH..eeeeeeee..ell..lii.iixx.xxxxx..
+//.....................mmggg.gggg.................eeee.........................
+//.....................mmgggggggg..............................................
+//......................mgggggggg..............................................
+//......................mggggggg...............................................
+//.............................................................................
 
 // Helix
 
@@ -8983,6 +9193,29 @@ let rotateHelix = () => {
 rotateHelix()
 
 
+
+//.............................................................................................
+//..I..................................GGGGG................l..................................
+//.III...............................GGGGGGGGG.............all.................................
+//.III..............................GGGGGGGGGG.............all.................................
+//.III.............................gGGGGGGGGGGG............all.................................
+//.III..Immmmmmmmmmmm....gggggggg..gGGG....GGGG...aaaaaaa..all...aaaaaaa.aaxx..xxxxxxyy..yyyy..
+//.III..Immmmmmmmmmmmm..mgggggggg.ggGGG....GGGG..Gaaaaaaa..all..laaaaaaa.aaxxxxxxxxxxyy..yyyy..
+//.III..Immmmmmmmmmmmm.mmgggggggg.ggGG...GGGGGG.GGaaaaaaaa.all.llaaaaaaaa.axxxxxxx.xxyy..yyyy..
+//.III..Immm.mmmm..mmm.mmgg..gggg.ggGG...GGGGGG.GGaa.aaaaa.all.llaa.aaaaa.axxxxxx...xyyyyyyy...
+//.III..Imm..mmmm..mmm.mmgg..gggg.ggGG...GGGGGG..Gaaaaaaaa.all..laaaaaaaa..xxxxxx...xyyyyyyy...
+//.III..Imm..mmmm..mmm.mmgg...ggg.ggGGG..GGGGGG.GGaaaaaaaa.all.llaaaaaaaa..xxxxxx...xyyyyyyy...
+//.III..Imm..mmmm..mmm.mmgg..gggg..gGGG....GGGG.GGaaa.aaaa.all.llaaa.aaaa..xxxxxx....yyyyyy....
+//.III..Imm..mmmm..mmm.mmgggggggg..gGGGGGGGGGGG.GGaa.aaaaa.all.llaa.aaaaa.axxxxxxx...yyyyyy....
+//.III..Imm..mmmm..mmm..mgggggggg...GGGGGGGGGGG.GGaaaaaaaa.all.llaaaaaaaaaaxxxxxxxx..yyyyyy....
+//.III..Imm..mmmm..mmm...gggggggg....GGGGGGGGGG.GGaaaaaaaa.all.llaaaaaaaaaaxx.xxxxx...yyyy.....
+//.....................mmggg.gggg.....GGGG........aaa............aaa..................yyyy.....
+//.....................mmgggggggg...................................................xyyyyy.....
+//......................mgggggggg...................................................xyyyy......
+//......................mggggggg....................................................xyyyy......
+//.............................................................................................
+
+
 // Galaxy
 const imgGalaxy_root = new THREE.Group();
 imgGalaxy_root.position.set(5, 10, -10);
@@ -9019,15 +9252,17 @@ function createImageGalaxy(images) {
 }
 
 // Create the image galaxy spiral
-createImageGalaxy(images);
+// createImageGalaxy(images);
 
 let rotateGalaxy = () => {
     gsap.to(imgGalaxy_root.rotation, {
+
         repeat: -1,
         duration: 20,
         ease: "none",
         delay: 0,
-        y: "+=3.14"
+        y: "+=3.14",
+
     })
 
     console.log("rotating galaxy")
@@ -9044,6 +9279,317 @@ let rotateGalaxy = () => {
 
 
 rotateGalaxy()
+
+
+
+
+//.......................................................................
+//..I...............................LL........iii........................
+//.III.............................gLLL.......iii........................
+//.III.............................gLLL.......iii........................
+//.III.............................gLLL.......iii........................
+//.III..Immmmmmmmmmmm....gggggggg..gLLL.......iii..nnnnnnnnn...eeeeee....
+//.III..Immmmmmmmmmmmm..mgggggggg..gLLL.......iii..nnnnnnnnn..eeeeeeee...
+//.III..Immmmmmmmmmmmm.mmgggggggg..gLLL.......iii..nnnnnnnnn.neeeeeeeee..
+//.III..Immm.mmmm..mmm.mmgg..gggg..gLLL.......iii..nnnn.nnnn.neee..eeee..
+//.III..Imm..mmmm..mmm.mmgg..gggg..gLLL.......iii..nnn...nnn.neeeeeeeee..
+//.III..Imm..mmmm..mmm.mmgg...ggg..gLLL.......iii..nnn...nnn.neeeeeeeee..
+//.III..Imm..mmmm..mmm.mmgg..gggg..gLLL.......iii..nnn...nnn.neee........
+//.III..Imm..mmmm..mmm.mmgggggggg..gLLLLLLLLL.iii..nnn...nnn.neeeeeeeee..
+//.III..Imm..mmmm..mmm..mgggggggg..gLLLLLLLLL.iii..nnn...nnn.neeeeeeee...
+//.III..Imm..mmmm..mmm...gggggggg..gLLLLLLLLL.iii..nnn...nnn..eeeeeeee...
+//.....................mmggg.gggg...............................eeee.....
+//.....................mmgggggggg........................................
+//......................mgggggggg........................................
+//......................mggggggg.........................................
+//.......................................................................
+
+// ImgLineVector
+
+const imgVector_root = new THREE.Group();
+imgVector_root.position.set(15, 100, -10);
+imgVector_root.rotation.set(0, 0, 0);
+imgVector_root.scale.set(7.5, 7.5, 7.5);
+scene.add(imgVector_root);
+
+const imgVectorInkTest00_root = new THREE.Group();
+imgVectorInkTest00_root.position.set(15, 100, -10);
+imgVectorInkTest00_root.rotation.set(0, 0, 0);
+imgVectorInkTest00_root.scale.set(7.5, 7.5, 7.5);
+scene.add(imgVectorInkTest00_root);
+
+const imgVectorInkTest01_root = new THREE.Group();
+imgVectorInkTest01_root.position.set(15, 100, -10);
+imgVectorInkTest01_root.rotation.set(0, 0, 0);
+imgVectorInkTest01_root.scale.set(7.5, 7.5, 7.5);
+scene.add(imgVectorInkTest01_root);
+
+const imgVectorInkTest02_root = new THREE.Group();
+imgVectorInkTest02_root.position.set(15, 100, -10);
+imgVectorInkTest02_root.rotation.set(0, 0, 0);
+imgVectorInkTest02_root.scale.set(7.5, 7.5, 7.5);
+scene.add(imgVectorInkTest02_root);
+
+
+
+// Function to create a straight line of planes with images
+function createImageLine(images) {
+    const numImages = images.length;
+    const spacing = 5; // Spacing between planes
+
+    for (let i = 0; i < numImages; i++) {
+        const texture = new THREE.TextureLoader().load(images[i]);
+        const material = new THREE.MeshBasicMaterial({ map: texture, side: THREE.DoubleSide });
+        const planeGeometry = new THREE.BoxGeometry(2, 2, 2);
+        const plane = new THREE.Mesh(planeGeometry, material);
+
+        const x = i * spacing; // Horizontal position
+        const y = i * spacing; // Horizontal position
+        const z = i * spacing; // Horizontal position
+
+        plane.position.set(0, y, 0);
+        plane.lookAt(0, 0, 0);
+
+        imgVector_root.add(plane);
+        targets.vector.push(plane);
+    }
+}
+
+// Function to create a straight line of planes with images
+function createImageLineA(images) {
+    const numImages = images.length;
+    const spacing = 5; // Spacing between planes
+
+    for (let i = 0; i < numImages; i++) {
+        const texture = new THREE.TextureLoader().load(images[i]);
+        const material = new THREE.MeshBasicMaterial({ map: texture, side: THREE.DoubleSide });
+        const planeGeometry = new THREE.BoxGeometry(2, 2, 2);
+        const plane = new THREE.Mesh(planeGeometry, material);
+
+        const x = i * spacing; // Horizontal position
+        const y = i * spacing; // Horizontal position
+        const z = i * spacing; // Horizontal position
+
+        plane.position.set(0, y, 0);
+        plane.lookAt(0, 0, 0);
+
+        imgVector_root.add(plane);
+        targets.vector.push(plane);
+    }
+}
+
+
+// Function to create a straight line of planes with images
+function createImage_BoxLineAlpha(images) {
+    const numImages = images.length;
+    const spacing = 5; // Spacing between planes
+
+    for (let i = 0; i < numImages; i++) {
+        const texture = new THREE.TextureLoader().load(images[i]);
+        const material = new THREE.MeshBasicMaterial({ map: texture, side: THREE.DoubleSide });
+        const planeGeometry = new THREE.BoxGeometry(3, 3, 3);
+        const plane = new THREE.Mesh(planeGeometry, material);
+
+        material.transparent = true;
+        // material.opacity = 0.5;
+
+        const x = i * spacing; // Horizontal position
+        const y = i * spacing; // Horizontal position
+        const z = i * spacing; // Horizontal position
+
+        plane.position.set(0, y, 0);
+        plane.lookAt(0, 0, 0);
+
+        imgVectorInkTest01_root.add(plane);
+        targets.vector.push(plane);
+    }
+}
+
+// Function to create a straight line of planes with images
+function createImage_BoxLineAlpha_01(images) {
+    const numImages = images.length;
+    const spacing = 5; // Spacing between planes
+
+    for (let i = 0; i < numImages; i++) {
+        const texture = new THREE.TextureLoader().load(images[i]);
+        const material = new THREE.MeshBasicMaterial({ map: texture, side: THREE.DoubleSide });
+        const planeGeometry = new THREE.BoxGeometry(4, 4, 4);
+        const plane = new THREE.Mesh(planeGeometry, material);
+
+        material.transparent = true;
+        // material.opacity = 0.5;
+
+        const x = i * spacing; // Horizontal position
+        const y = i * spacing; // Horizontal position
+        const z = i * spacing; // Horizontal position
+
+        plane.position.set(0, y, 0);
+        plane.lookAt(0, 0, 0);
+
+        imgVectorInkTest01_root.add(plane);
+        targets.vector.push(plane);
+    }
+}
+
+
+
+
+
+// // Create the image line
+// createImageLine(
+//     imgVectorInkTest01_root,
+//     geo_objT_BoxA0,
+//     images01,
+//     15,
+//     900, undefined, undefined,
+//     false, 0.5,
+// );
+
+
+
+// Create the image line
+createImageLine(images);
+// createImageLineA(images02);
+createImage_BoxLineAlpha(images01);
+createImage_BoxLineAlpha_01(images02);
+
+
+
+
+let movingLine = () => {
+    gsap.to(imgVector_root.position, {
+        repeat: -1,
+        duration: 10,
+        ease: "none",
+        delay: 0,
+        y: -1000
+    })
+
+    // gsap.to(imgVectorInkTest00_root.position, {
+    //     repeat: -1,
+    //     duration: 10,
+    //     ease: "none",
+    //     delay: 0,
+    //     y: -1000
+    // })
+
+    gsap.to(imgVectorInkTest01_root.position, {
+        repeat: -1,
+        duration: 10,
+        ease: "none",
+        delay: 0,
+        y: -1000
+    })
+
+    gsap.to(imgVectorInkTest02_root.position, {
+        repeat: -1,
+        duration: 10,
+        ease: "none",
+        delay: 0,
+        y: -1000
+    })
+}
+
+
+movingLine()
+
+
+
+
+
+
+
+
+
+
+// // Function to create a straight line of planes with images
+// function createImageLine(
+//     root, 
+//     GeometryInk,
+//     images,
+//     spacing,
+//     vx, vy, vz,
+//     transparent, opacity,
+
+// ) {
+//     const numImages = images.length;
+    
+
+//     for (let i = 0; i < numImages; i++) {
+//         const texture = new THREE.TextureLoader().load(images[i]);
+//         const material = new THREE.MeshBasicMaterial({ map: texture, side: THREE.DoubleSide });
+//         const planeGeometry = new THREE.BoxGeometry(2, 2, 2);
+//         const plane = new THREE.Mesh(GeometryInk, material);
+
+//         material.transparent = transparent;
+//         material.alphamap = new THREE.TextureLoader().load(images[i]);
+//         material.opacity = opacity;
+
+//         vx = i * spacing; // Horizontal position
+//         vy = i * spacing; // vertical position
+//         vz = i * spacing; // depth position
+
+//         plane.position.set(vx, vy, vz);
+//         plane.lookAt(0, 0, 0);
+
+//         // gsap.to(plane.rotation, {
+//         //     repeat: -1,
+//         //     duration: 30,
+//         //     ease: "none",
+//         //     delay: 0,
+//         //     y: i * -2.5,
+//         // })
+
+//         root.add(plane);
+//         targets.vector.push(plane);
+//     }
+// }
+
+
+
+
+
+
+
+
+//..............................................................................................................
+//..I..................................CCC..................................................................l...
+//.III...............................CCCCCCCC..............................................................ell..
+//.III..............................CCCCCCCCCC.............................................................ell..
+//.III.............................gCCCCCCCCCC.............................................................ell..
+//.III..Immmmmmmmmmmm....gggggggg..gCCC...CCCCC..aaaaaaa..arrrrr..ooooooo..oouu...uuu..usssssss...eeeeee...ell..
+//.III..Immmmmmmmmmmmm..mgggggggg.ggCCC....CCCC.aaaaaaaa..arrrrr.roooooooo.oouu...uuu..usssssss..seeeeeee..ell..
+//.III..Immmmmmmmmmmmm.mmgggggggg.ggCC.........Caaaaaaaaa.arrrrrrrooooooooooouu...uuu.uusssssssssseeeeeeee.ell..
+//.III..Immm.mmmm..mmm.mmgg..gggg.ggCC.........Caaa.aaaaa.arrr..rroo...oooooouu...uuu.uussssssssssee..eeee.ell..
+//.III..Imm..mmmm..mmm.mmgg..gggg.ggCC..........aaaaaaaaa.arr...rroo...oooooouu...uuu..usssssss.sseeeeeeee.ell..
+//.III..Imm..mmmm..mmm.mmgg...ggg.ggCCC....CCCCCaaaaaaaaa.arr...rroo...oooooouu...uuu..usssssss.sseeeeeeee.ell..
+//.III..Imm..mmmm..mmm.mmgg..gggg..gCCC...CCCCCCaaaa.aaaa.arr...rroo...oooo.ouu..uuuu.uussssssssssee.......ell..
+//.III..Imm..mmmm..mmm.mmgggggggg..gCCCCCCCCCC.Caaa.aaaaa.arr...rrooooooooo.ouuuuuuuu.uusss.sssssseeeeeeee.ell..
+//.III..Imm..mmmm..mmm..mgggggggg...CCCCCCCCCC.Caaaaaaaaa.arr....roooooooo..ouuuuuuuu.uusssssssssseeeeeee..ell..
+//.III..Imm..mmmm..mmm...gggggggg....CCCCCCCC..Caaaaaaaaa.arr.....ooooooo...ouuuuuuuu..usssssss..seeeeeee..ell..
+//.....................mmggg.gggg.....CCCCC......aaa...............ooooo......uuu.......ssssss.....eeee.........
+//.....................mmgggggggg...............................................................................
+//......................mgggggggg...............................................................................
+//......................mggggggg................................................................................
+//..............................................................................................................
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
