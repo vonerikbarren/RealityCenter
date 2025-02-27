@@ -1567,7 +1567,7 @@
 
         @keyframes moveUpDown {
             0%, 100% {
-                transform: translateY(0) scale(0.55);
+                transform: translateY(0) scale(0.65);
             }
             50% {
                 transform: translateY(-20px) scale(0.65); /* Adjust the value as needed */
@@ -8739,7 +8739,7 @@ const images = [
 
 ];
 
-const targets = { sphere: [] };
+const targets = { sphere: [], grid: [], helix: [], spiral: [] };
 
 const vector = new THREE.Vector3();
 
@@ -8784,13 +8784,13 @@ function createImageSphere
 
         imgSphere_root.add(objectMesh);
 
-        gsap.to(objectMesh.rotation, {
-            repeat: -1,
-            duration: 2.5,
-            ease: "none",
-            delay: 0,
-            y: "+= 5",
-        })
+        // gsap.to(objectMesh.rotation, {
+        //     repeat: -1,
+        //     duration: 2.5,
+        //     ease: "none",
+        //     delay: 0,
+        //     y: "+= 5",
+        // })
 
         // gsap.to(objectMesh.scale, {
         //     repeat: -1,
@@ -8815,24 +8815,173 @@ function createImageSphere
 }
 
 // Create the image sphere
-createImageSphere(
-    images, 300, 
-    30, 30, 30,
-);
+// createImageSphere(
+//     images, 300, 
+//     30, 30, 30,
+// );
 
 
 
 let rotate_imgSphere = () => {
     gsap.to(imgSphere_root.rotation, {
         repeat: -1,
-        duration: 15,
+        duration: 2,
         ease: "none",
         delay: 0,
         y: "+= 5",
     })
 }
 
-rotate_imgSphere()
+
+
+
+
+
+// Grid
+
+// Function to create a grid of planes with images
+// function createImageGrid(images) {
+//     const numImages = images.length;
+
+//     for (let i = 0; i < numImages; i++) {
+//         const texture = new THREE.TextureLoader().load(images[i]);
+//         const material = new THREE.MeshBasicMaterial({ map: texture, side: THREE.DoubleSide });
+//         const planeGeometry = new THREE.PlaneGeometry(2, 2);
+//         const plane = new THREE.Mesh(planeGeometry, material);
+//         plane.scale.set(10, 10, 10);
+
+//         plane.position.x = ((i % 5) * 10) + 1.5;
+//         plane.position.y = ((Math.floor(i / 10) % 5) * 4) + 2;
+//         plane.position.z = (Math.floor(i / 30)) * 10 - 20;
+
+//         plane.rotation.y = -Math.PI / 2;
+
+//         scene.add(plane);
+//         targets.grid.push(plane);
+//     }
+// }
+
+
+
+const imgGrid_root = new THREE.Group();
+imgGrid_root.position.set(5, 10, -10);
+imgGrid_root.rotation.set(0, 0, 0);
+imgGrid_root.scale.set(10, 10, 10);
+scene.add(imgGrid_root);
+
+
+// Function to create a grid of planes with images
+function createImageGrid(images) {
+    const numImages = images.length;
+    const gridSize = Math.ceil(Math.cbrt(numImages)); // Calculate grid size (cube root of numImages)
+    const spacing = -4; // Spacing between planes
+
+    for (let i = 0; i < numImages; i++) {
+        const texture = new THREE.TextureLoader().load(images[i]);
+        const material = new THREE.MeshBasicMaterial({ map: texture, side: THREE.DoubleSide });
+        const objectGeometry = new THREE.BoxGeometry(2, 2, 2);
+        const objectMesh = new THREE.Mesh(objectGeometry, material);
+
+        // Calculate grid positions
+        const x = (i % gridSize) * spacing;
+        const y = (Math.floor(i / gridSize) % gridSize) * spacing;
+        const z = Math.floor(i / (gridSize * gridSize)) * spacing;
+
+        objectMesh.position.set(x, y, z);
+
+        imgGrid_root.add(objectMesh);
+        targets.grid.push(objectMesh);
+    }
+}
+
+
+
+// Create the image grid
+// createImageGrid(images);
+
+
+
+
+
+// Helix
+
+const imgHelix_root = new THREE.Group();
+imgHelix_root.position.set(5, 10, -10);
+imgHelix_root.rotation.set(0, 0, 0);
+imgHelix_root.scale.set(10, 10, 10);
+scene.add(imgHelix_root);
+
+// Function to create a helix of planes with images
+function createImageHelixA(images) {
+    const numImages = images.length;
+    const radius = 10; // Radius of the helix
+    const spacing = 5; // Vertical spacing between planes
+
+    for (let i = 0; i < numImages; i++) {
+        const texture = new THREE.TextureLoader().load(images[i]);
+        const material = new THREE.MeshBasicMaterial({ map: texture, side: THREE.DoubleSide });
+        const planeGeometry = new THREE.BoxGeometry(2, 2);
+        const plane = new THREE.Mesh(planeGeometry, material);
+
+        const theta = i * 0.5; // Angle for the helix
+        const y = i * spacing; // Vertical position
+
+        plane.position.setFromCylindricalCoords(radius, theta, y);
+        plane.lookAt(0, y, 0);
+
+        imgHelix_root.add(plane);
+        targets.helix.push(plane);
+    }
+}
+
+// Function to create a helix of planes with images
+function createImageHelixB(images) {
+    const numImages = images.length;
+    const radius = -10; // Radius of the helix
+    const spacing = 5; // Vertical spacing between planes
+
+    for (let i = 0; i < numImages; i++) {
+        const texture = new THREE.TextureLoader().load(images[i]);
+        const material = new THREE.MeshBasicMaterial({ map: texture, side: THREE.DoubleSide });
+        const planeGeometry = new THREE.BoxGeometry(2, 2);
+        const plane = new THREE.Mesh(planeGeometry, material);
+
+        const theta = i * 0.5; // Angle for the helix
+        const y = i * spacing; // Vertical position
+
+        plane.position.setFromCylindricalCoords(radius, theta, y);
+        plane.lookAt(0, y, 0);
+
+        imgHelix_root.add(plane);
+        targets.helix.push(plane);
+    }
+}
+
+// Create the image helix
+createImageHelixA(images);
+createImageHelixB(images);
+
+
+let rotateHelix = () => {
+    gsap.to(imgHelix_root.rotation, {
+        repeat: -1,
+        duration: 2,
+        ease: "none",
+        delay: 0,
+        y: "+= 10",
+    })
+
+    gsap.to(imgHelix_root.position, {
+        repeat: -1,
+        duration: 10,
+        ease: "none",
+        delay: 0,
+        y: -1000
+    })
+}
+
+rotateHelix()
+
 
 
                
