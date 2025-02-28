@@ -1687,6 +1687,8 @@
          <video id="none" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/TunnelAnimations/TechTunnelA03.mp4" style="display: none" ></video>
 
          <video id="userVideo" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/PersonalAnimations/ΔExplanationA01.mp4" style="display: none" ></video>
+
+         <audio id="background-music" src="assets/audio/env_music/Portfolio_ΔofTechincalAmbienceV3_1.mp3" autoplay loop></audio>
 	</div>
 
 
@@ -1703,11 +1705,27 @@
     <button class="systemOptionsListItem button-Objects" onclick="play_sfx_click_gen()">Objects</button></br>
     <button class="systemOptionsListItem button-Help" onclick="play_sfx_click_gen()">Help</button></br>
   </div>
+
+
+  <div class="additional_systemOptions">
+    <div class="Secondary_systems_options"></div>
+    <div class="Secondary-perspectives-options"></div>
+    <div class="Secondary-Hiearchies-options"></div>
+    <div class="Secondary-events-options"></div>
+    <div class="Secondary-times-options"></div>
+    <div class="Secondary-spaces-options"></div>
+    <div class="Secondary-objects-options"></div>
+    <div class="Secondary-help-options"></div>
+  </div>
+
+
   
-  <button id="button_forward" class="button control forward">&#8593;</button>
-  <button id="button_backward" class="button control backward">&#8595;</button>
-  <button id="button_left" class="button control left" >&#8592;</button>
-  <button id="button_right" class="button control right" >&#8594;</button>
+
+  
+  <button id="button_forward" class="button control forward">⬆</button>
+  <button id="button_backward" class="button control backward">⬇</button>
+  <button id="button_left" class="button control left" >⬅</button>
+  <button id="button_right" class="button control right" >⮕</button>
     <div class="gamepad-movement-buttons"></div>
 
   <button id="button_up" class="button control up">&#8670;</button>
@@ -1759,6 +1777,17 @@
   </div>
 
 
+  <div class="additional_navOptions_menu">
+    <div class="Secondary-Home-options"></div>
+    <div class="Secondary-About-options"></div>
+    <div class="Secondary-Services-options"></div>
+    <div class="Secondary-Portfolio-options"></div>
+    <div class="Secondary-Exhibits-options"></div>
+    <div class="Secondary-Shop-options"></div>
+    <div class="Secondary-Contact-options"></div>
+  </div>
+
+
 
 <!-- Border Elements -->
 <div class="cyber-border-Topleft"></div>
@@ -1789,6 +1818,7 @@
 <div id="music-player">
     <audio id="audio" controls>
         <source src="assets/audio/env_music/Consciousness_D03.mp3" type="audio/mpeg">
+        <!-- <source src="assets/audio/env_music/Portfolio_ΔofTechincalAmbienceV3_1.mp3" type="audio/mpeg"> -->
         Your browser does not support the audio element.
     </audio>
 </div>
@@ -2789,7 +2819,7 @@ let starOrb_root
 			camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 50000); // works well with mobile.
             // camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 500000000);
 			// camera.position.set(30, 6000, 24000); // previous
-            camera.position.set(0, 0, 160); // previous
+            camera.position.set(0, 5, 160); // previous
             camera.scale.set(10, 10, 10);
             scene.background = new THREE.Color( 0xffffff );
 			// camera.view = sun;
@@ -7481,7 +7511,7 @@ Skin_CyberSkin_MovementPadImg_root.scale.set(0.005, 0.005, 0.005)
                 duration: 8,
                 delay: 0,
                 x: 0,
-                y: 50000,
+                y: 60000,
                 z: 160,
                 onUpdate: () => {
                     camera.lookAt(0, 0, 0);
@@ -7518,7 +7548,7 @@ Skin_CyberSkin_MovementPadImg_root.scale.set(0.005, 0.005, 0.005)
                         duration: 1,
                         delay: 0,
                         x: 0,
-                        y: 0,
+                        y: 1,
                         z: 160,
                         onUpdate: () => {
                             camera.lookAt(0, 0, 0);
