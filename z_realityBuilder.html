@@ -87,6 +87,20 @@
             border: none; /* Remove border */
             outline: none; /* Remove outline */
         }
+
+        .TestingClass234 {
+                width: 500px;
+                height: 500px;
+                position: absolute;
+                transform: scale(1.1); /* Scale the element up slightly */
+                cursor: pointer; /* Change cursor to pointer */
+            }
+
+        .TestingClass234:active {
+                transform: scale(0.125); /* Scale the element up slightly */
+                background-color: rgba(255, 255, 255, 0.2); /* Change background color */
+                cursor: pointer; /* Change cursor to pointer */
+            }
     
         .HomeMenu {
           top: 60px;
@@ -10148,10 +10162,47 @@ createRingFloor(images01);
 
 
 const CrystalStarTest_root = new THREE.Group();
-CrystalStarTest_root.position.set(0, 60, 0);
+CrystalStarTest_root.position.set(0, 100, 0);
 CrystalStarTest_root.rotation.set(0, 0, 0);
-CrystalStarTest_root.scale.set(5, 5, 5);
+CrystalStarTest_root.scale.set(100, 100, 100);
 scene.add(CrystalStarTest_root);
+
+
+let spin_CrystalStar = () => {
+    gsap.to(CrystalStarTest_root.rotation, {
+        repeat: -1,
+        duration: .5,
+        ease: "none",
+        delay: 0,
+        x: "+=3.14",
+        y: "+=3.14",
+        z: "+=3.14",
+    })
+
+    gsap.to(CrystalStarTest_root.scale, {
+        repeat: 0,
+        duration: 20,
+        ease: "none",
+        delay: 0,
+        x: 100,
+        y: 100,
+        z: 100,
+    })
+
+    gsap.to(CrystalStarTest_root.scale, {
+        repeat: -1,
+        duration: 20,
+        ease: "none",
+        delay: 10,
+        x: 1,
+        y: 1,
+        z: 1,
+    })
+
+
+}
+
+// spin_CrystalStar()
 
 
 
@@ -10202,6 +10253,7 @@ CrystalStarTest_root.add(icosahedronRoot);
 // Function to create an icosahedron
 function createIcosahedron() {
     const material = new THREE.MeshPhongMaterial({
+        map: workSphereImg,
         color: 0xffffff,
         specular: 0xaaaaaa,
         shininess: 0,
@@ -10232,6 +10284,9 @@ starOrb_root.rotation.set(0, 0, 0);
 starOrb_root.scale.set(1, 1, 1);
 CrystalStarTest_root.add(starOrb_root);
 
+
+    // Diagonal Cones
+
         starOrb_StarOrbVector_01 = new THREE.Group();
         starOrb_StarOrbVector_01.position.set(20, 10, 0);
         starOrb_StarOrbVector_01.rotation.set(0.1, 0, -1.2);
@@ -10260,6 +10315,108 @@ CrystalStarTest_root.add(starOrb_root);
         starOrb_root.add(starOrb_StarOrbVector_04);
 
 
+    // Left, Right, Back, Forward
+
+        starOrb_StarOrbVector_05 = new THREE.Group();
+        starOrb_StarOrbVector_05.position.set(-22.5, 0, 0);
+        starOrb_StarOrbVector_05.rotation.set(1.575, 0, 1.575);
+        starOrb_StarOrbVector_05.scale.set(1, 1, 1);
+        starOrb_root.add(starOrb_StarOrbVector_05);
+
+        starOrb_StarOrbVector_06 = new THREE.Group();
+        starOrb_StarOrbVector_06.position.set(22.5, 0, 0);
+        starOrb_StarOrbVector_06.rotation.set(-1.575, 0, -1.575);
+        starOrb_StarOrbVector_06.scale.set(1, 1, 1);
+        starOrb_root.add(starOrb_StarOrbVector_06);
+
+        starOrb_StarOrbVector_07 = new THREE.Group();
+        starOrb_StarOrbVector_07.position.set(0, 0, -22.5);
+        starOrb_StarOrbVector_07.rotation.set(-1.575, 0, 0);
+        starOrb_StarOrbVector_07.scale.set(1, 1, 1);
+        starOrb_root.add(starOrb_StarOrbVector_07);
+
+
+        starOrb_StarOrbVector_08 = new THREE.Group();
+        starOrb_StarOrbVector_08.position.set(0, 0, 22.5);
+        starOrb_StarOrbVector_08.rotation.set(1.575, 0, 0);
+        starOrb_StarOrbVector_08.scale.set(1, 1, 1);
+        starOrb_root.add(starOrb_StarOrbVector_08);
+
+
+    // Up, Down
+
+        starOrb_StarOrbVector_09 = new THREE.Group();
+        starOrb_StarOrbVector_09.position.set(0, 22.5, 0);
+        starOrb_StarOrbVector_09.rotation.set(0, 0, 0);
+        starOrb_StarOrbVector_09.scale.set(1, 1, 1);
+        starOrb_root.add(starOrb_StarOrbVector_09);
+
+        starOrb_StarOrbVector_10 = new THREE.Group();
+        starOrb_StarOrbVector_10.position.set(0, -22.5, 0);
+        starOrb_StarOrbVector_10.rotation.set(3.14, 0, 0);
+        starOrb_StarOrbVector_10.scale.set(1, 1, 1);
+        starOrb_root.add(starOrb_StarOrbVector_10);
+
+
+    // Front Diagonal Left and Right / Up and Down
+
+
+        const starOrb_StarOrbVector_11 = new THREE.Group();
+        starOrb_StarOrbVector_11.position.set(10.5, 10.5, -10.5);
+        starOrb_StarOrbVector_11.rotation.set(-0.5, 0.5, -0.5);
+        starOrb_StarOrbVector_11.scale.set(1, 1, 1);
+        starOrb_root.add(starOrb_StarOrbVector_11);
+
+        const starOrb_StarOrbVector_12 = new THREE.Group();
+        starOrb_StarOrbVector_12.position.set(-10.5, 10.5, -10.5);
+        starOrb_StarOrbVector_12.rotation.set(-0.5, -0.5, 0.5);
+        starOrb_StarOrbVector_12.scale.set(1, 1, 1);
+        starOrb_root.add(starOrb_StarOrbVector_12);
+
+        const starOrb_StarOrbVector_13 = new THREE.Group();
+        starOrb_StarOrbVector_13.position.set(10.5, -10.5, -10.5);
+        starOrb_StarOrbVector_13.rotation.set(-3.14, -0.5, -1);
+        starOrb_StarOrbVector_13.scale.set(1, 1, 1);
+        starOrb_root.add(starOrb_StarOrbVector_13);
+
+        const starOrb_StarOrbVector_14 = new THREE.Group();
+        starOrb_StarOrbVector_14.position.set(-10.5, -10.5, -10.5);
+        starOrb_StarOrbVector_14.rotation.set(3.14, 0.5, 1);
+        starOrb_StarOrbVector_14.scale.set(1, 1, 1);
+        starOrb_root.add(starOrb_StarOrbVector_14);
+
+
+
+
+    // Front Diagonal Left and Right / Up and Down
+
+        const starOrb_StarOrbVector_15 = new THREE.Group();
+        starOrb_StarOrbVector_15.position.set(10.5, 10.5, 10.5);
+        starOrb_StarOrbVector_15.rotation.set(0.5, -0.5, -0.5);
+        starOrb_StarOrbVector_15.scale.set(1, 1, 1);
+        starOrb_root.add(starOrb_StarOrbVector_15);
+
+        const starOrb_StarOrbVector_16 = new THREE.Group();
+        starOrb_StarOrbVector_16.position.set(-10.5, 10.5, 10.5);
+        starOrb_StarOrbVector_16.rotation.set(0.5, 0.5, 0.5);
+        starOrb_StarOrbVector_16.scale.set(1, 1, 1);
+        starOrb_root.add(starOrb_StarOrbVector_16);
+
+        const starOrb_StarOrbVector_17 = new THREE.Group();
+        starOrb_StarOrbVector_17.position.set(10.5, -10.5, 10.5);
+        starOrb_StarOrbVector_17.rotation.set(3.14, 0.5, -1);
+        starOrb_StarOrbVector_17.scale.set(1, 1, 1);
+        starOrb_root.add(starOrb_StarOrbVector_17);
+
+        const starOrb_StarOrbVector_18 = new THREE.Group();
+        starOrb_StarOrbVector_18.position.set(-10.5, -10.5, 10.5);
+        starOrb_StarOrbVector_18.rotation.set(3.14, -0.5, 1);
+        starOrb_StarOrbVector_18.scale.set(1, 1, 1);
+        starOrb_root.add(starOrb_StarOrbVector_18);
+
+
+
+
 
 
 // Function to create a single cone
@@ -10273,6 +10430,7 @@ function createCone(
 ) {
     const material = new THREE.MeshPhongMaterial({
         color: color,
+        map: workSphereImg,
         specular: 0xaaaaaa,
         shininess: 100,
         transparent: transparent,
@@ -10281,6 +10439,7 @@ function createCone(
     });
 
     const coneGeometry = new THREE.ConeGeometry(radius, height, 4, 1);
+    coneGeometry.translate(0, height / 2, 0); // Translate the geometry so the base is at the specified position
     const cone = new THREE.Mesh(coneGeometry, material);
     cone.position.set(px, py, pz);
     cone.rotation.set(rx, ry, rz);
@@ -10294,10 +10453,14 @@ function createCone(
 // 0xff0000
 // 0x00ff00
 
-// Example usage
+
+let lengthOfCones = 50
+let loc = lengthOfCones
+
+// Diagnal Left and Right Up and Down Cones
 const cone01 = createCone(
     starOrb_StarOrbVector_01,
-    2.5, 15, 0xffffff, // height, radius, color
+    2.5, loc, 0xffffff, // height, radius, color
     0, 0, 0, // position (px, py, pz)
     0, 0, 0, // rotation (rx, ry, rz)
     1, 1, 1, // scale (sx, sy, sz)
@@ -10306,7 +10469,7 @@ const cone01 = createCone(
 
 const cone02 = createCone(
     starOrb_StarOrbVector_02,
-    2.5, 12, 0xffffff, // height, radius, color
+    2.5, loc, 0xffffff, // height, radius, color
     0, 0, 0, // position (px, py, pz)
     0, 0, 0, // rotation (rx, ry, rz)
     1, 1, 1, // scale (sx, sy, sz)
@@ -10315,7 +10478,7 @@ const cone02 = createCone(
 
 const cone03 = createCone(
     starOrb_StarOrbVector_03,
-    2.5, 10, 0xffffff, // height, radius, color
+    2.5, loc, 0xffffff, // height, radius, color
     0, 0, 0, // position (px, py, pz)
     0, 0, 0, // rotation (rx, ry, rz)
     1, 1, 1, // scale (sx, sy, sz)
@@ -10324,7 +10487,7 @@ const cone03 = createCone(
 
 const cone04 = createCone(
     starOrb_StarOrbVector_04,
-    2.5, 8, 0xffffff, // height, radius, color
+    2.5, loc, 0xffffff, // height, radius, color
     0, 0, 0, // position (px, py, pz)
     0, 0, 0, // rotation (rx, ry, rz)
     1, 1, 1, // scale (sx, sy, sz)
@@ -10332,6 +10495,158 @@ const cone04 = createCone(
 );
 
 
+
+// Left, Right, Back, Forward
+
+
+const cone05 = createCone(
+    starOrb_StarOrbVector_05,
+    2.5, loc, 0xffffff, // height, radius, color
+    0, 0, 0, // position (px, py, pz)
+    0, 0, 0, // rotation (rx, ry, rz)
+    1, 1, 1, // scale (sx, sy, sz)
+    true, 0.8 // transparent, opacity
+);
+
+
+const cone06 = createCone(
+    starOrb_StarOrbVector_06,
+    2.5, loc, 0xffffff, // height, radius, color
+    0, 0, 0, // position (px, py, pz)
+    0, 0, 0, // rotation (rx, ry, rz)
+    1, 1, 1, // scale (sx, sy, sz)
+    true, 0.8 // transparent, opacity
+);
+
+
+const cone07 = createCone(
+    starOrb_StarOrbVector_07,
+    2.5, loc, 0xffffff, // height, radius, color
+    0, 0, 0, // position (px, py, pz)
+    0, 0, 0, // rotation (rx, ry, rz)
+    1, 1, 1, // scale (sx, sy, sz)
+    true, 0.8 // transparent, opacity
+);
+
+
+const cone08 = createCone(
+    starOrb_StarOrbVector_08,
+    2.5, loc, 0xffffff, // height, radius, color
+    0, 0, 0, // position (px, py, pz)
+    0, 0, 0, // rotation (rx, ry, rz)
+    1, 1, 1, // scale (sx, sy, sz)
+    true, 0.8 // transparent, opacity
+);
+
+
+
+// Up, Down
+
+const cone09 = createCone(
+    starOrb_StarOrbVector_09,
+    2.5, loc, 0xffffff, // height, radius, color
+    0, 0, 0, // position (px, py, pz)
+    0, 0, 0, // rotation (rx, ry, rz)
+    1, 1, 1, // scale (sx, sy, sz)
+    true, 0.8 // transparent, opacity
+);
+
+
+const cone10 = createCone(
+    starOrb_StarOrbVector_10,
+    2.5, loc, 0xffffff, // height, radius, color
+    0, 0, 0, // position (px, py, pz)
+    0, 0, 0, // rotation (rx, ry, rz)
+    1, 1, 1, // scale (sx, sy, sz)
+    true, 0.8 // transparent, opacity
+);
+
+
+
+
+// Front Diagonal Left and Right / Up and Down
+
+
+const cone11 = createCone(
+    starOrb_StarOrbVector_11,
+    2.5, loc, 0xffffff, // radius, height, color
+    0, 0, 0, // position (px, py, pz)
+    0, 0, 0, // rotation (rx, ry, rz)
+    1, 1, 1, // scale (sx, sy, sz)
+    true, 0.8 // transparent, opacity
+);
+
+const cone12 = createCone(
+    starOrb_StarOrbVector_12,
+    2.5, loc, 0xffffff, // radius, height, color
+    0, 0, 0, // position (px, py, pz)
+    0, 0, 0, // rotation (rx, ry, rz)
+    1, 1, 1, // scale (sx, sy, sz)
+    true, 0.8 // transparent, opacity
+);
+
+const cone13 = createCone(
+    starOrb_StarOrbVector_13,
+    2.5, loc, 0xffffff, // radius, height, color
+    0, 0, 0, // position (px, py, pz)
+    0, 0, 0, // rotation (rx, ry, rz)
+    1, 1, 1, // scale (sx, sy, sz)
+    true, 0.8 // transparent, opacity
+);
+
+const cone14 = createCone(
+    starOrb_StarOrbVector_14,
+    2.5, loc, 0xffffff, // radius, height, color
+    0, 0, 0, // position (px, py, pz)
+    0, 0, 0, // rotation (rx, ry, rz)
+    1, 1, 1, // scale (sx, sy, sz)
+    true, 0.8 // transparent, opacity
+);
+
+
+
+
+
+
+
+// Front Diagonal Left and Right / Up and Down
+
+
+const cone15 = createCone(
+    starOrb_StarOrbVector_15,
+    2.5, loc, 0xffffff, // radius, height, color
+    0, 0, 0, // position (px, py, pz)
+    0, 0, 0, // rotation (rx, ry, rz)
+    1, 1, 1, // scale (sx, sy, sz)
+    true, 0.8 // transparent, opacity
+);
+
+const cone16 = createCone(
+    starOrb_StarOrbVector_16,
+    2.5, loc, 0xffffff, // radius, height, color
+    0, 0, 0, // position (px, py, pz)
+    0, 0, 0, // rotation (rx, ry, rz)
+    1, 1, 1, // scale (sx, sy, sz)
+    true, 0.8 // transparent, opacity
+);
+
+const cone17 = createCone(
+    starOrb_StarOrbVector_17,
+    2.5, loc, 0xffffff, // radius, height, color
+    0, 0, 0, // position (px, py, pz)
+    0, 0, 0, // rotation (rx, ry, rz)
+    1, 1, 1, // scale (sx, sy, sz)
+    true, 0.8 // transparent, opacity
+);
+
+const cone18 = createCone(
+    starOrb_StarOrbVector_18,
+    2.5, loc, 0xffffff, // radius, height, color
+    0, 0, 0, // position (px, py, pz)
+    0, 0, 0, // rotation (rx, ry, rz)
+    1, 1, 1, // scale (sx, sy, sz)
+    true, 0.8 // transparent, opacity
+);
 
 
 
@@ -10983,23 +11298,23 @@ let UI_ThirdPersonCameraView_root
 			folderButton.add(camera.rotation, 'z').min(-3.14).max(3.14).step(0.001).name('z-camera')
 
 
-            const folderPanels = gui.addFolder('starOrb_StarOrbVector_03');
-			folderPanels.add(starOrb_StarOrbVector_03.position, 'x').min(-10000).max(10000).step(0.01).name('x-starOrb_StarOrbVector_03')
-			folderPanels.add(starOrb_StarOrbVector_03.position, 'y').min(-10000).max(10000).step(0.01).name('y-starOrb_StarOrbVector_03')
-			folderPanels.add(starOrb_StarOrbVector_03.position, 'z').min(-10000).max(10000).step(0.01).name('z-starOrb_StarOrbVector_03')
+            const folderPanels = gui.addFolder('starOrb_StarOrbVector_18');
+			folderPanels.add(starOrb_StarOrbVector_18.position, 'x').min(-10000).max(10000).step(0.01).name('x-starOrb_StarOrbVector_18')
+			folderPanels.add(starOrb_StarOrbVector_18.position, 'y').min(-10000).max(10000).step(0.01).name('y-starOrb_StarOrbVector_18')
+			folderPanels.add(starOrb_StarOrbVector_18.position, 'z').min(-10000).max(10000).step(0.01).name('z-starOrb_StarOrbVector_18')
 
 
-            const folderOrbits = gui.addFolder('starOrb_StarOrbVector_03');
-			folderOrbits.add(starOrb_StarOrbVector_03.rotation, 'x').min(-3.14).max(3.14).step(0.001).name('x-starOrb_StarOrbVector_03')
-			folderOrbits.add(starOrb_StarOrbVector_03.rotation, 'y').min(-3.14).max(3.14).step(0.001).name('y-starOrb_StarOrbVector_03')
-			folderOrbits.add(starOrb_StarOrbVector_03.rotation, 'z').min(-3.14).max(3.14).step(0.001).name('z-starOrb_StarOrbVector_03')
+            const folderOrbits = gui.addFolder('starOrb_StarOrbVector_18');
+			folderOrbits.add(starOrb_StarOrbVector_18.rotation, 'x').min(-3.14).max(3.14).step(0.001).name('x-starOrb_StarOrbVector_18')
+			folderOrbits.add(starOrb_StarOrbVector_18.rotation, 'y').min(-3.14).max(3.14).step(0.001).name('y-starOrb_StarOrbVector_18')
+			folderOrbits.add(starOrb_StarOrbVector_18.rotation, 'z').min(-3.14).max(3.14).step(0.001).name('z-starOrb_StarOrbVector_18')
 
            
 
-            const folderPanels01 = gui.addFolder('starOrb_StarOrbVector_03');
-			folderPanels01.add(starOrb_StarOrbVector_03.scale, 'x').min(-10000).max(10000).step(0.01).name('x-starOrb_StarOrbVector_03')
-			folderPanels01.add(starOrb_StarOrbVector_03.scale, 'y').min(-10000).max(10000).step(0.01).name('y-starOrb_StarOrbVector_03')
-			folderPanels01.add(starOrb_StarOrbVector_03.scale, 'z').min(-10000).max(10000).step(0.01).name('z-starOrb_StarOrbVector_01')
+            const folderPanels01 = gui.addFolder('starOrb_StarOrbVector_18');
+			folderPanels01.add(starOrb_StarOrbVector_18.scale, 'x').min(-10000).max(10000).step(0.01).name('x-starOrb_StarOrbVector_18')
+			folderPanels01.add(starOrb_StarOrbVector_18.scale, 'y').min(-10000).max(10000).step(0.01).name('y-starOrb_StarOrbVector_18')
+			folderPanels01.add(starOrb_StarOrbVector_18.scale, 'z').min(-10000).max(10000).step(0.01).name('z-starOrb_StarOrbVector_18')
 
 
 
