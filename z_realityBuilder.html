@@ -2476,6 +2476,50 @@ let Skin_CyberSkin_MovementPadImg_root
 
 
 
+//......................................................................
+//....SSSSSS..............................OOOOOO........................
+//...SSSSSSSS...tttt.....................OOOOOOOOO.........rbbb.........
+//..SSSSSSSSSS..tttt....................OOOOOOOOOO.........rbbb.........
+//..SSSSSSSSSS..tttt...................OOOOOOOOOOOO........rbbb.........
+//.SSSS...SSSSSSttttt..aaaaaaa..rrrrrr.OOOO....OOOO..rrrrrrrbbbbbbbb....
+//.SSSSSS......Sttttt.aaaaaaaa..rrrrrr.OOOO....OOOOO.rrrrrrrbbbbbbbbb...
+//..SSSSSSSSS..Stttttaaaaaaaaaa.rrrrrrrOOO......OOOO.rrrrrrrbbbbbbbbbb..
+//..SSSSSSSSSS..tttt.aaaa.aaaaa.rrrr..rOOO......OOOO.rrrr..rbbbb.bbbbb..
+//....SSSSSSSSS.tttt..aaaaaaaaa.rrr...rOOO......OOOO.rrr...rbbb...bbbb..
+//.SSSS..SSSSSS.tttt.aaaaaaaaaa.rrr....OOOO....OOOOO.rrr...rbbb...bbbb..
+//.SSSS....SSSS.tttt.aaaaa.aaaa.rrr....OOOO....OOOO..rrr...rbbbb..bbbb..
+//.SSSSSSSSSSSS.tttt.aaaa.aaaaa.rrr....OOOOOOOOOOOO..rrr...rbbbbbbbbbb..
+//..SSSSSSSSSS..tttttaaaaaaaaaa.rrr.....OOOOOOOOOO...rrr...rbbbbbbbbb...
+//...SSSSSSSSS..tttttaaaaaaaaaa.rrr......OOOOOOOOO...rrr...rbbbbbbbbb...
+//....SSSSSS......ttt..aaa................OOOOOO................bbb.....
+//......................................................................
+
+
+let starOrb_root
+    let starOrb_StarOrbVector_01
+    let starOrb_StarOrbVector_02
+    let starOrb_StarOrbVector_03
+    let starOrb_StarOrbVector_04
+    let starOrb_StarOrbVector_05
+    let starOrb_StarOrbVector_06
+    let starOrb_StarOrbVector_07
+    let starOrb_StarOrbVector_08
+    let starOrb_StarOrbVector_09
+    let starOrb_StarOrbVector_10
+    let starOrb_StarOrbVector_11
+    let starOrb_StarOrbVector_12
+    let starOrb_StarOrbVector_13
+    let starOrb_StarOrbVector_14
+    let starOrb_StarOrbVector_15
+    let starOrb_StarOrbVector_16
+    let starOrb_StarOrbVector_17
+    let starOrb_StarOrbVector_18
+    let starOrb_StarOrbVector_19
+    let starOrb_StarOrbVector_20
+
+
+
+
         //....................................................................
         //.............DDDDD................OOOOOO......BBBBB............JJ...
         //...333333...DDDDDDDDD............OOOOOOOOO...BBBBBBBBBB.......JJJJ..
@@ -10081,6 +10125,218 @@ createRingFloor(images01);
 
 
 
+//...................................................................................................
+//......CCC..................................................l.....SSSSSS............................
+//....CCCCCCCC..............................tttt............lll...SSSSSSSS...tttt....................
+//...CCCCCCCCCC.............................tttt............lll..SSSSSSSSSS..tttt....................
+//..CCCCCCCCCCC.............................tttt............lll..SSSSSSSSSS..tttt....................
+//..CCCC...CCCCC.rrrrrrryyy..yyyy.ssssssss.sttttt..aaaaaaa..lll.lSSS...SSSSSSttttt..aaaaaaa..rrrrrr..
+//.CCCCC....CCCC.rrrrrrryyy..yyyy.ssssssss.sttttt.aaaaaaaa..lll.lSSSSS......Sttttt.aaaaaaaa..rrrrrr..
+//.CCCC..........rrrrrrryyy..yyyyyssssssssssttttttaaaaaaaaa.lll..SSSSSSSSS..Sttttttaaaaaaaaa.rrrrrr..
+//.CCCC..........rrrr...yyyyyyyy.ysssssssss.tttt.taaa.aaaaa.lll..SSSSSSSSSS..tttt.taaa.aaaaa.rrrr....
+//.CCCC..........rrr....yyyyyyyy..ssssssss..tttt..aaaaaaaaa.lll....SSSSSSSSS.tttt..aaaaaaaaa.rrr.....
+//.CCCCC....CCCC.rrr....yyyyyyyy..ssssssss..tttt.taaaaaaaaa.lll.lSSS..SSSSSS.tttt.taaaaaaaaa.rrr.....
+//..CCCC...CCCCC.rrr.....yyyyyy..ysssssssss.tttt.taaaa.aaaa.lll.lSSS....SSSS.tttt.taaaa.aaaa.rrr.....
+//..CCCCCCCCCCC..rrr.....yyyyyy..yssss.ssss.tttt.taaa.aaaaa.lll.lSSSSSSSSSSS.tttt.taaa.aaaaa.rrr.....
+//...CCCCCCCCCC..rrr.....yyyyyy..ysssssssss.ttttttaaaaaaaaa.lll..SSSSSSSSSS..ttttttaaaaaaaaa.rrr.....
+//....CCCCCCCC...rrr......yyyy....ssssssss..ttttttaaaaaaaaa.lll...SSSSSSSSS..ttttttaaaaaaaaa.rrr.....
+//.....CCCCC..............yyyy.....ssssss.....ttt..aaa.............SSSSSS......ttt..aaa..............
+//......................yyyyyy.......................................................................
+//......................yyyyy........................................................................
+//......................yyyyy........................................................................
+//...................................................................................................
+
+
+const CrystalStarTest_root = new THREE.Group();
+CrystalStarTest_root.position.set(0, 60, 0);
+CrystalStarTest_root.rotation.set(0, 0, 0);
+CrystalStarTest_root.scale.set(5, 5, 5);
+scene.add(CrystalStarTest_root);
+
+
+
+
+// // Function to create a Swarovski crystal star candle holder
+// function createCrystalStar() {
+//     const material = new THREE.MeshPhongMaterial({
+//         color: 0xffffff,
+//         specular: 0xaaaaaa,
+//         shininess: 100,
+//         transparent: true,
+//         opacity: 0.8,
+//         side: THREE.DoubleSide
+//     });
+
+//     const icosahedronGeometry = new THREE.IcosahedronGeometry(7);
+//     const icosahedron = new THREE.Mesh(icosahedronGeometry, material);
+//     CrystalStarTest_root.add(icosahedron);
+
+//     const coneGeometry = new THREE.ConeGeometry(5, 20, 4, 1, false); // Increased height to 20
+//     const cones = [];
+
+//     for (let i = 0; i < icosahedronGeometry.attributes.position.count; i++) {
+//         const vertex = new THREE.Vector3().fromBufferAttribute(icosahedronGeometry.attributes.position, i);
+//         const cone = new THREE.Mesh(coneGeometry, material);
+//         cone.position.copy(vertex);
+//         cone.lookAt(0, 0, 0);
+//         cone.translateY(10); // Move the cone outward so it attaches to the surface
+//         CrystalStarTest_root.add(cone);
+//         cones.push(cone);
+//     }
+
+//     return { icosahedron, cones };
+// }
+
+// // Create the Swarovski crystal star candle holder
+// const crystalStar = createCrystalStar();
+
+
+
+// Create the root group for the icosahedron
+const icosahedronRoot = new THREE.Group();
+icosahedronRoot.position.set(0, 0, 0);
+icosahedronRoot.rotation.set(0, 0, 0);
+icosahedronRoot.scale.set(2, 2, 2);
+CrystalStarTest_root.add(icosahedronRoot);
+
+// Function to create an icosahedron
+function createIcosahedron() {
+    const material = new THREE.MeshPhongMaterial({
+        color: 0xffffff,
+        specular: 0xaaaaaa,
+        shininess: 0,
+        transparent: true,
+        opacity: 0.8,
+        side: THREE.DoubleSide,
+        flatShading: true,
+    });
+
+    const icosahedronGeometry = new THREE.IcosahedronGeometry(7, 1)
+    const icosahedron = new THREE.Mesh(icosahedronGeometry, material);
+    icosahedronRoot.add(icosahedron);
+
+    return icosahedron;
+}
+
+// Create the icosahedron
+const icosahedron = createIcosahedron();
+
+
+
+
+
+// Create the root group for the cones
+starOrb_root = new THREE.Group();
+starOrb_root.position.set(0, 0, 0);
+starOrb_root.rotation.set(0, 0, 0);
+starOrb_root.scale.set(1, 1, 1);
+CrystalStarTest_root.add(starOrb_root);
+
+        starOrb_StarOrbVector_01 = new THREE.Group();
+        starOrb_StarOrbVector_01.position.set(20, 10, 0);
+        starOrb_StarOrbVector_01.rotation.set(0.1, 0, -1.2);
+        starOrb_StarOrbVector_01.scale.set(1, 1, 1);
+        starOrb_root.add(starOrb_StarOrbVector_01);
+
+
+        starOrb_StarOrbVector_02 = new THREE.Group();
+        starOrb_StarOrbVector_02.position.set(-20, 10, 0);
+        starOrb_StarOrbVector_02.rotation.set(0.1, 0, 1.2);
+        starOrb_StarOrbVector_02.scale.set(1, 1, 1);
+        starOrb_root.add(starOrb_StarOrbVector_02);
+
+
+        starOrb_StarOrbVector_03 = new THREE.Group();
+        starOrb_StarOrbVector_03.position.set(16, -16, 0);
+        starOrb_StarOrbVector_03.rotation.set(3.14, 0, -0.8);
+        starOrb_StarOrbVector_03.scale.set(1, 1, 1);
+        starOrb_root.add(starOrb_StarOrbVector_03);
+
+
+        starOrb_StarOrbVector_04 = new THREE.Group();
+        starOrb_StarOrbVector_04.position.set(-16, -16, 0);
+        starOrb_StarOrbVector_04.rotation.set(3.14, 0, 0.8);
+        starOrb_StarOrbVector_04.scale.set(1, 1, 1);
+        starOrb_root.add(starOrb_StarOrbVector_04);
+
+
+
+
+// Function to create a single cone
+function createCone(
+    root,
+    radius, height, color,
+    px, py, pz,
+    rx, ry, rz,
+    sx, sy, sz,
+    transparent, opacity
+) {
+    const material = new THREE.MeshPhongMaterial({
+        color: color,
+        specular: 0xaaaaaa,
+        shininess: 100,
+        transparent: transparent,
+        opacity: opacity,
+        side: THREE.DoubleSide
+    });
+
+    const coneGeometry = new THREE.ConeGeometry(radius, height, 4, 1);
+    const cone = new THREE.Mesh(coneGeometry, material);
+    cone.position.set(px, py, pz);
+    cone.rotation.set(rx, ry, rz);
+    cone.scale.set(sx, sy, sz);
+
+    root.add(cone);
+
+    return cone;
+}
+
+// 0xff0000
+// 0x00ff00
+
+// Example usage
+const cone01 = createCone(
+    starOrb_StarOrbVector_01,
+    2.5, 15, 0xffffff, // height, radius, color
+    0, 0, 0, // position (px, py, pz)
+    0, 0, 0, // rotation (rx, ry, rz)
+    1, 1, 1, // scale (sx, sy, sz)
+    true, 0.8 // transparent, opacity
+);
+
+const cone02 = createCone(
+    starOrb_StarOrbVector_02,
+    2.5, 12, 0xffffff, // height, radius, color
+    0, 0, 0, // position (px, py, pz)
+    0, 0, 0, // rotation (rx, ry, rz)
+    1, 1, 1, // scale (sx, sy, sz)
+    true, 0.8 // transparent, opacity
+);
+
+const cone03 = createCone(
+    starOrb_StarOrbVector_03,
+    2.5, 10, 0xffffff, // height, radius, color
+    0, 0, 0, // position (px, py, pz)
+    0, 0, 0, // rotation (rx, ry, rz)
+    1, 1, 1, // scale (sx, sy, sz)
+    true, 0.8 // transparent, opacity
+);
+
+const cone04 = createCone(
+    starOrb_StarOrbVector_04,
+    2.5, 8, 0xffffff, // height, radius, color
+    0, 0, 0, // position (px, py, pz)
+    0, 0, 0, // rotation (rx, ry, rz)
+    1, 1, 1, // scale (sx, sy, sz)
+    true, 0.8 // transparent, opacity
+);
+
+
+
+
+
+
+
 
 // // Function to create a straight line of planes with images
 // function createImageLine(
@@ -10689,6 +10945,8 @@ let UI_ThirdPersonCameraView_root
             gui.close()
             // gui.hide()
 
+            
+
             const folderUserSystemControls = gui.addFolder('⚙️ My Experience System Controls')
             folderUserSystemControls.add(newSpeedStrengthParams, 'left').min(1).max(500000).step(100).name('|- A2. [ ~*~ [ User Height Scale ] ~*~ ] ')
 
@@ -10725,21 +10983,23 @@ let UI_ThirdPersonCameraView_root
 			folderButton.add(camera.rotation, 'z').min(-3.14).max(3.14).step(0.001).name('z-camera')
 
 
-            const folderOrbits = gui.addFolder('subApp01_MusicPlayerApp_obj.root');
-			folderOrbits.add(subApp01_MusicPlayerApp_obj.root.rotation, 'x').min(-3.14).max(3.14).step(0.001).name('x-subApp01_MusicPlayerApp_obj.root')
-			folderOrbits.add(subApp01_MusicPlayerApp_obj.root.rotation, 'y').min(-3.14).max(3.14).step(0.001).name('y-subApp01_MusicPlayerApp_obj.root')
-			folderOrbits.add(subApp01_MusicPlayerApp_obj.root.rotation, 'z').min(-3.14).max(3.14).step(0.001).name('z-subApp01_MusicPlayerApp_obj.root')
-
-            const folderPanels = gui.addFolder('subApp01_MusicPlayerApp_obj.root');
-			folderPanels.add(subApp01_MusicPlayerApp_obj.root.position, 'x').min(-10000).max(10000).step(0.01).name('x-subApp01_MusicPlayerApp_obj.root')
-			folderPanels.add(subApp01_MusicPlayerApp_obj.root.position, 'y').min(-10000).max(10000).step(0.01).name('y-subApp01_MusicPlayerApp_obj.root')
-			folderPanels.add(subApp01_MusicPlayerApp_obj.root.position, 'z').min(-10000).max(10000).step(0.01).name('z-subApp01_MusicPlayerApp_obj.root')
+            const folderPanels = gui.addFolder('starOrb_StarOrbVector_03');
+			folderPanels.add(starOrb_StarOrbVector_03.position, 'x').min(-10000).max(10000).step(0.01).name('x-starOrb_StarOrbVector_03')
+			folderPanels.add(starOrb_StarOrbVector_03.position, 'y').min(-10000).max(10000).step(0.01).name('y-starOrb_StarOrbVector_03')
+			folderPanels.add(starOrb_StarOrbVector_03.position, 'z').min(-10000).max(10000).step(0.01).name('z-starOrb_StarOrbVector_03')
 
 
-            const folderPanels01 = gui.addFolder('subApp01_MusicPlayerApp_obj.root');
-			folderPanels01.add(subApp01_MusicPlayerApp_obj.root.scale, 'x').min(-10000).max(10000).step(0.01).name('x-subApp01_MusicPlayerApp_obj.root')
-			folderPanels01.add(subApp01_MusicPlayerApp_obj.root.scale, 'y').min(-10000).max(10000).step(0.01).name('y-subApp01_MusicPlayerApp_obj.root')
-			folderPanels01.add(subApp01_MusicPlayerApp_obj.root.scale, 'z').min(-10000).max(10000).step(0.01).name('z-subApp01_MusicPlayerApp_obj.root')
+            const folderOrbits = gui.addFolder('starOrb_StarOrbVector_03');
+			folderOrbits.add(starOrb_StarOrbVector_03.rotation, 'x').min(-3.14).max(3.14).step(0.001).name('x-starOrb_StarOrbVector_03')
+			folderOrbits.add(starOrb_StarOrbVector_03.rotation, 'y').min(-3.14).max(3.14).step(0.001).name('y-starOrb_StarOrbVector_03')
+			folderOrbits.add(starOrb_StarOrbVector_03.rotation, 'z').min(-3.14).max(3.14).step(0.001).name('z-starOrb_StarOrbVector_03')
+
+           
+
+            const folderPanels01 = gui.addFolder('starOrb_StarOrbVector_03');
+			folderPanels01.add(starOrb_StarOrbVector_03.scale, 'x').min(-10000).max(10000).step(0.01).name('x-starOrb_StarOrbVector_03')
+			folderPanels01.add(starOrb_StarOrbVector_03.scale, 'y').min(-10000).max(10000).step(0.01).name('y-starOrb_StarOrbVector_03')
+			folderPanels01.add(starOrb_StarOrbVector_03.scale, 'z').min(-10000).max(10000).step(0.01).name('z-starOrb_StarOrbVector_01')
 
 
 
