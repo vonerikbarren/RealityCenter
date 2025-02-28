@@ -1780,14 +1780,14 @@
 </div>
 
 
-<div class="button-container">
+<!-- <div class="button-container">
     <button class="shape-button" data-shape="sphere">Sphere</button>
     <button class="shape-button" data-shape="grid">Grid</button>
     <button class="shape-button" data-shape="spiral">Spiral</button>
     <button class="shape-button" data-shape="galaxy">Galaxy</button>
     <button class="shape-button" data-shape="carousel">Carousel</button>
     <button class="shape-button" data-shape="slideshow">SlideShow</button>
-</div>
+</div> -->
 
 
 
@@ -2728,8 +2728,8 @@ let Skin_CyberSkin_MovementPadImg_root
 			scene = new THREE.Scene();
 
 			// Search.Camera
-			// camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 50000); // works well with mobile.
-            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 500000000);
+			camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 50000); // works well with mobile.
+            // camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 500000000);
 			// camera.position.set(30, 6000, 24000); // previous
             camera.position.set(0, 0, 160); // previous
             camera.scale.set(10, 10, 10);
@@ -8704,6 +8704,22 @@ const targets =
     cube: [],
     helix: [], 
     galaxy: [], 
+    stoneHenge: [],
+    pyramid: [],
+    diamond: [],
+    tetrahedron: [],
+    octahedron: [],
+    icosahedron: [],
+    dodecahedron: [],
+    torus: [],
+    torusKnot: [],
+    knot: [],
+    floorPanels_forwards: [],
+    floorPanels_horizontal: [],
+    floorPanel_carousel: [],
+    floorPanelRingsExpanded: [],
+    panelTrails: [],
+
 
 };
 
@@ -8783,47 +8799,47 @@ const images = [
 
 
 const images01 = [
-    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
-    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
-    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
-    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
-    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
-    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
-    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
-    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
-    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
-    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
-    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
-    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
-    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
-    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
-    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
-    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
-    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
-    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
-    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
-    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
-    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
-    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
-    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
-    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
-    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
-    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
-    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
-    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
-    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
-    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
-    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
-    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
-    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
-    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
-    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
-    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
-    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
-    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
-    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
-    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
-    'assets/img/10-ObjectUI/02-TechTiles/Version06/TechTileBasic00.png',
+    'assets/designs/TechTiles/CyberPunkDesign_01/1x/TechTile_GearEngine_Active_01.png',
+    'assets/designs/TechTiles/CyberPunkDesign_01/1x/TechTile_GearEngine_Active_01.png',
+    'assets/designs/TechTiles/CyberPunkDesign_01/1x/TechTile_GearEngine_Active_01.png',
+    'assets/designs/TechTiles/CyberPunkDesign_01/1x/TechTile_GearEngine_Active_01.png',
+    'assets/designs/TechTiles/CyberPunkDesign_01/1x/TechTile_GearEngine_Active_01.png',
+    'assets/designs/TechTiles/CyberPunkDesign_01/1x/TechTile_GearEngine_Active_01.png',
+    'assets/designs/TechTiles/CyberPunkDesign_01/1x/TechTile_GearEngine_Active_01.png',
+    'assets/designs/TechTiles/CyberPunkDesign_01/1x/TechTile_GearEngine_Active_01.png',
+    'assets/designs/TechTiles/CyberPunkDesign_01/1x/TechTile_GearEngine_Active_01.png',
+    'assets/designs/TechTiles/CyberPunkDesign_01/1x/TechTile_GearEngine_Active_01.png',
+    'assets/designs/TechTiles/CyberPunkDesign_01/1x/TechTile_GearEngine_Active_01.png',
+    'assets/designs/TechTiles/CyberPunkDesign_01/1x/TechTile_GearEngine_Active_01.png',
+    'assets/designs/TechTiles/CyberPunkDesign_01/1x/TechTile_GearEngine_Active_01.png',
+    'assets/designs/TechTiles/CyberPunkDesign_01/1x/TechTile_GearEngine_Active_01.png',
+    'assets/designs/TechTiles/CyberPunkDesign_01/1x/TechTile_GearEngine_Active_01.png',
+    'assets/designs/TechTiles/CyberPunkDesign_01/1x/TechTile_GearEngine_Active_01.png',
+    'assets/designs/TechTiles/CyberPunkDesign_01/1x/TechTile_GearEngine_Active_01.png',
+    'assets/designs/TechTiles/CyberPunkDesign_01/1x/TechTile_GearEngine_Active_01.png',
+    'assets/designs/TechTiles/CyberPunkDesign_01/1x/TechTile_GearEngine_Active_01.png',
+    'assets/designs/TechTiles/CyberPunkDesign_01/1x/TechTile_GearEngine_Active_01.png',
+    'assets/designs/TechTiles/CyberPunkDesign_01/1x/TechTile_GearEngine_Active_01.png',
+    'assets/designs/TechTiles/CyberPunkDesign_01/1x/TechTile_GearEngine_Active_01.png',
+    'assets/designs/TechTiles/CyberPunkDesign_01/1x/TechTile_GearEngine_Active_01.png',
+    'assets/designs/TechTiles/CyberPunkDesign_01/1x/TechTile_GearEngine_Active_01.png',
+    'assets/designs/TechTiles/CyberPunkDesign_01/1x/TechTile_GearEngine_Active_01.png',
+    'assets/designs/TechTiles/CyberPunkDesign_01/1x/TechTile_GearEngine_Active_01.png',
+    'assets/designs/TechTiles/CyberPunkDesign_01/1x/TechTile_GearEngine_Active_01.png',
+    'assets/designs/TechTiles/CyberPunkDesign_01/1x/TechTile_GearEngine_Active_01.png',
+    'assets/designs/TechTiles/CyberPunkDesign_01/1x/TechTile_GearEngine_Active_01.png',
+    'assets/designs/TechTiles/CyberPunkDesign_01/1x/TechTile_GearEngine_Active_01.png',
+    'assets/designs/TechTiles/CyberPunkDesign_01/1x/TechTile_GearEngine_Active_01.png',
+    'assets/designs/TechTiles/CyberPunkDesign_01/1x/TechTile_GearEngine_Active_01.png',
+    'assets/designs/TechTiles/CyberPunkDesign_01/1x/TechTile_GearEngine_Active_01.png',
+    'assets/designs/TechTiles/CyberPunkDesign_01/1x/TechTile_GearEngine_Active_01.png',
+    'assets/designs/TechTiles/CyberPunkDesign_01/1x/TechTile_GearEngine_Active_01.png',
+    'assets/designs/TechTiles/CyberPunkDesign_01/1x/TechTile_GearEngine_Active_01.png',
+    'assets/designs/TechTiles/CyberPunkDesign_01/1x/TechTile_GearEngine_Active_01.png',
+    'assets/designs/TechTiles/CyberPunkDesign_01/1x/TechTile_GearEngine_Active_01.png',
+    'assets/designs/TechTiles/CyberPunkDesign_01/1x/TechTile_GearEngine_Active_01.png',
+    'assets/designs/TechTiles/CyberPunkDesign_01/1x/TechTile_GearEngine_Active_01.png',
+    'assets/designs/TechTiles/CyberPunkDesign_01/1x/TechTile_GearEngine_Active_01.png',
 
 ];
 
@@ -8871,11 +8887,100 @@ const images02 = [
     'assets/img/10-ObjectUI/02-TechTiles/DigiTechTile07/01-Base/DigiTechTile07.png',
     'assets/img/10-ObjectUI/02-TechTiles/DigiTechTile07/01-Base/DigiTechTile07.png',
 
+
+
 ];
+
+
+const beamsCircles = [
+    'assets/img/02-UserUI/03-TechCircles/Abstract/Circle-Electric013png.png',
+    'assets/img/02-UserUI/03-TechCircles/Abstract/Circle-Electric013png.png',
+    'assets/img/02-UserUI/03-TechCircles/Abstract/Circle-Electric013png.png',
+    'assets/img/02-UserUI/03-TechCircles/Abstract/Circle-Electric013png.png',
+    'assets/img/02-UserUI/03-TechCircles/Abstract/Circle-Electric013png.png',
+    'assets/img/02-UserUI/03-TechCircles/Abstract/Circle-Electric013png.png',
+    'assets/img/02-UserUI/03-TechCircles/Abstract/Circle-Electric013png.png',
+    'assets/img/02-UserUI/03-TechCircles/Abstract/Circle-Electric013png.png',
+    'assets/img/02-UserUI/03-TechCircles/Abstract/Circle-Electric013png.png',
+    'assets/img/02-UserUI/03-TechCircles/Abstract/Circle-Electric013png.png',
+    'assets/img/02-UserUI/03-TechCircles/Abstract/Circle-Electric013png.png',
+    'assets/img/02-UserUI/03-TechCircles/Abstract/Circle-Electric013png.png',
+    'assets/img/02-UserUI/03-TechCircles/Abstract/Circle-Electric013png.png',
+    'assets/img/02-UserUI/03-TechCircles/Abstract/Circle-Electric013png.png',
+    'assets/img/02-UserUI/03-TechCircles/Abstract/Circle-Electric013png.png',
+    'assets/img/02-UserUI/03-TechCircles/Abstract/Circle-Electric013png.png',
+    'assets/img/02-UserUI/03-TechCircles/Abstract/Circle-Electric013png.png',
+    'assets/img/02-UserUI/03-TechCircles/Abstract/Circle-Electric013png.png',
+    'assets/img/02-UserUI/03-TechCircles/Abstract/Circle-Electric013png.png',
+    'assets/img/02-UserUI/03-TechCircles/Abstract/Circle-Electric013png.png',
+    'assets/img/02-UserUI/03-TechCircles/Abstract/Circle-Electric013png.png',
+]
+
+
+
+const images_for_AboutMe_Courousel = [
+    'assets/img/09-MainSpaces/AboutMe/AboutMe_Adventure.png',
+    'assets/img/09-MainSpaces/News_Updates_Announcements/Latest_News.png',
+    'assets/img/09-MainSpaces/AboutMe/AboutMe_Education.png',
+    'assets/img/09-MainSpaces/News_Updates_Announcements/Latest_News.png',
+    'assets/img/09-MainSpaces/AboutMe/AboutMe_Interests.png',
+    'assets/img/09-MainSpaces/News_Updates_Announcements/Latest_News.png',
+    'assets/img/09-MainSpaces/AboutMe/AboutMe_ProfessionalJ.png',
+    'assets/img/09-MainSpaces/News_Updates_Announcements/Latest_News.png',
+]
+
+
+
+const images_for_NewsUpdates_and_Announcements = [
+    'assets/img/09-MainSpaces/News_Updates_Announcements/BlogOverview.png',
+    'assets/img/09-MainSpaces/News_Updates_Announcements/Books.png',
+    'assets/img/09-MainSpaces/News_Updates_Announcements/Latest_News.png',
+    'assets/img/09-MainSpaces/News_Updates_Announcements/UpdatesToApp.png',
+    'assets/img/09-MainSpaces/News_Updates_Announcements/VlogMenu.png',
+    'assets/img/09-MainSpaces/News_Updates_Announcements/VlogPost.png',
+]
+
+
+
+const images_for_FloorPanels = [
+    'assets/img/05-Env/FloorPanels/A00_floorPanelOfLight.png',
+    'assets/img/05-Env/FloorPanels/A00_floorPanelOfLight.png',
+    'assets/img/05-Env/FloorPanels/A00_floorPanelOfLight.png',
+    'assets/img/05-Env/FloorPanels/A00_floorPanelOfLight.png',
+    'assets/img/05-Env/FloorPanels/A00_floorPanelOfLight.png',
+    'assets/img/05-Env/FloorPanels/A00_floorPanelOfLight.png',
+    'assets/img/05-Env/FloorPanels/A00_floorPanelOfLight.png',
+    'assets/img/05-Env/FloorPanels/A00_floorPanelOfLight.png',
+    'assets/img/05-Env/FloorPanels/A00_floorPanelOfLight.png',
+    'assets/img/05-Env/FloorPanels/A00_floorPanelOfLight.png',
+    'assets/img/05-Env/FloorPanels/A00_floorPanelOfLight.png',
+    'assets/img/05-Env/FloorPanels/A00_floorPanelOfLight.png',
+    'assets/img/05-Env/FloorPanels/A00_floorPanelOfLight.png',
+    'assets/img/05-Env/FloorPanels/A00_floorPanelOfLight.png',
+    'assets/img/05-Env/FloorPanels/A00_floorPanelOfLight.png',
+    'assets/img/05-Env/FloorPanels/A00_floorPanelOfLight.png',
+    'assets/img/05-Env/FloorPanels/A00_floorPanelOfLight.png',
+    'assets/img/05-Env/FloorPanels/A00_floorPanelOfLight.png',
+    'assets/img/05-Env/FloorPanels/A00_floorPanelOfLight.png',
+    'assets/img/05-Env/FloorPanels/A00_floorPanelOfLight.png',
+    'assets/img/05-Env/FloorPanels/A00_floorPanelOfLight.png',
+    'assets/img/05-Env/FloorPanels/A00_floorPanelOfLight.png',
+    'assets/img/05-Env/FloorPanels/A00_floorPanelOfLight.png',
+    'assets/img/05-Env/FloorPanels/A00_floorPanelOfLight.png',
+    'assets/img/05-Env/FloorPanels/A00_floorPanelOfLight.png',
+    'assets/img/05-Env/FloorPanels/A00_floorPanelOfLight.png',
+    'assets/img/05-Env/FloorPanels/A00_floorPanelOfLight.png',
+    'assets/img/05-Env/FloorPanels/A00_floorPanelOfLight.png',
+    'assets/img/05-Env/FloorPanels/A00_floorPanelOfLight.png',
+    'assets/img/05-Env/FloorPanels/A00_floorPanelOfLight.png',
+    'assets/img/05-Env/FloorPanels/A00_floorPanelOfLight.png',
+    'assets/img/05-Env/FloorPanels/A00_floorPanelOfLight.png',
+]
 
 
 
 const image_containers = [];
+
 
 //...............................................................................................
 //..I................................SSSSSS......................................................
@@ -9220,14 +9325,14 @@ rotateHelix()
 const imgGalaxy_root = new THREE.Group();
 imgGalaxy_root.position.set(5, 10, -10);
 imgGalaxy_root.rotation.set(0, 0, 0);
-imgGalaxy_root.scale.set(10, 10, 10);
+imgGalaxy_root.scale.set(5.5, 5.5, 5.5);
 scene.add(imgGalaxy_root);
 
 
 // Function to create a galaxy spiral of planes with images
-function createImageGalaxy(images) {
+function createImageGalaxy_ΔcoreCube(images) {
     const numImages = images.length;
-    const radius = 20; // Initial radius of the spiral
+    const radius = 10; // Initial radius of the spiral
     const spacing = 5; // Spacing between planes
     const spiralTurns = 2; // Number of turns in the spiral
 
@@ -9251,8 +9356,38 @@ function createImageGalaxy(images) {
     }
 }
 
+function createImageGalaxy_ΔSkinCyberGear(images) {
+    const numImages = images.length;
+    const radius = 10; // Initial radius of the spiral
+    const spacing = 5; // Spacing between planes
+    const spiralTurns = 2; // Number of turns in the spiral
+
+    for (let i = 0; i < numImages; i++) {
+        const texture = new THREE.TextureLoader().load(images[i]);
+        const material = new THREE.MeshBasicMaterial({ map: texture, side: THREE.DoubleSide });
+        const planeGeometry = new THREE.BoxGeometry(2, 2);
+        const plane = new THREE.Mesh(planeGeometry, material);
+
+        material.transparent = true;
+        material.alphaMap = new THREE.TextureLoader().load(images[i]);
+
+        const angle = i * (Math.PI * 2) / (numImages / spiralTurns); // Angle for the spiral
+        const distance = radius + (i * spacing / numImages); // Distance from the center
+
+        plane.position.x = distance * Math.cos(angle);
+        plane.position.y = (i - numImages / 2) * spacing / numImages; // Vertical position
+        plane.position.z = distance * Math.sin(angle);
+
+        plane.lookAt(0, 0, 0);
+
+        imgGalaxy_root.add(plane);
+        targets.galaxy.push(plane);
+    }
+}
+
 // Create the image galaxy spiral
-// createImageGalaxy(images);
+// createImageGalaxy_ΔcoreCube(images);
+// createImageGalaxy_ΔSkinCyberGear(images01)
 
 let rotateGalaxy = () => {
     gsap.to(imgGalaxy_root.rotation, {
@@ -9307,35 +9442,35 @@ rotateGalaxy()
 // ImgLineVector
 
 const imgVector_root = new THREE.Group();
-imgVector_root.position.set(15, 100, -10);
+imgVector_root.position.set(25, 100, -10);
 imgVector_root.rotation.set(0, 0, 0);
-imgVector_root.scale.set(7.5, 7.5, 7.5);
-scene.add(imgVector_root);
+imgVector_root.scale.set(2.5, 2.5, 2.5);
+// scene.add(imgVector_root);
 
 const imgVectorInkTest00_root = new THREE.Group();
-imgVectorInkTest00_root.position.set(15, 100, -10);
+imgVectorInkTest00_root.position.set(25, 100, -10);
 imgVectorInkTest00_root.rotation.set(0, 0, 0);
-imgVectorInkTest00_root.scale.set(7.5, 7.5, 7.5);
-scene.add(imgVectorInkTest00_root);
+imgVectorInkTest00_root.scale.set(2.5, 2.5, 2.5);
+// scene.add(imgVectorInkTest00_root);
 
 const imgVectorInkTest01_root = new THREE.Group();
-imgVectorInkTest01_root.position.set(15, 100, -10);
+imgVectorInkTest01_root.position.set(25, 100, -10);
 imgVectorInkTest01_root.rotation.set(0, 0, 0);
-imgVectorInkTest01_root.scale.set(7.5, 7.5, 7.5);
-scene.add(imgVectorInkTest01_root);
+imgVectorInkTest01_root.scale.set(2.5, 2.5, 2.5);
+// scene.add(imgVectorInkTest01_root);
 
 const imgVectorInkTest02_root = new THREE.Group();
-imgVectorInkTest02_root.position.set(15, 100, -10);
+imgVectorInkTest02_root.position.set(25, 100, -10);
 imgVectorInkTest02_root.rotation.set(0, 0, 0);
-imgVectorInkTest02_root.scale.set(7.5, 7.5, 7.5);
-scene.add(imgVectorInkTest02_root);
+imgVectorInkTest02_root.scale.set(2.5, 2.5, 2.5);
+// scene.add(imgVectorInkTest02_root);
 
 
 
 // Function to create a straight line of planes with images
 function createImageLine(images) {
     const numImages = images.length;
-    const spacing = 5; // Spacing between planes
+    const spacing = 15; // Spacing between planes
 
     for (let i = 0; i < numImages; i++) {
         const texture = new THREE.TextureLoader().load(images[i]);
@@ -9358,7 +9493,7 @@ function createImageLine(images) {
 // Function to create a straight line of planes with images
 function createImageLineA(images) {
     const numImages = images.length;
-    const spacing = 5; // Spacing between planes
+    const spacing = 15; // Spacing between planes
 
     for (let i = 0; i < numImages; i++) {
         const texture = new THREE.TextureLoader().load(images[i]);
@@ -9373,6 +9508,14 @@ function createImageLineA(images) {
         plane.position.set(0, y, 0);
         plane.lookAt(0, 0, 0);
 
+        // gsap.to(plane.rotation, {
+        //     repeat: -1,
+        //     duration: 30,
+        //     ease: "none",
+        //     delay: 0,
+        //     y: i * -2.5,
+        // })
+
         imgVector_root.add(plane);
         targets.vector.push(plane);
     }
@@ -9382,7 +9525,7 @@ function createImageLineA(images) {
 // Function to create a straight line of planes with images
 function createImage_BoxLineAlpha(images) {
     const numImages = images.length;
-    const spacing = 5; // Spacing between planes
+    const spacing = 15; // Spacing between planes
 
     for (let i = 0; i < numImages; i++) {
         const texture = new THREE.TextureLoader().load(images[i]);
@@ -9400,15 +9543,25 @@ function createImage_BoxLineAlpha(images) {
         plane.position.set(0, y, 0);
         plane.lookAt(0, 0, 0);
 
+        gsap.to(plane.rotation, {
+            repeat: -1,
+            duration: 30,
+            ease: "none",
+            delay: 0,
+            y: i * -2.5,
+        })
+
         imgVectorInkTest01_root.add(plane);
         targets.vector.push(plane);
+
+
     }
 }
 
 // Function to create a straight line of planes with images
 function createImage_BoxLineAlpha_01(images) {
     const numImages = images.length;
-    const spacing = 5; // Spacing between planes
+    const spacing = 15; // Spacing between planes
 
     for (let i = 0; i < numImages; i++) {
         const texture = new THREE.TextureLoader().load(images[i]);
@@ -9425,6 +9578,15 @@ function createImage_BoxLineAlpha_01(images) {
 
         plane.position.set(0, y, 0);
         plane.lookAt(0, 0, 0);
+
+        gsap.to(plane.rotation, {
+            repeat: -1,
+            duration: 30,
+            ease: "none",
+            delay: 0,
+            x: i * -2.5,
+        })
+
 
         imgVectorInkTest01_root.add(plane);
         targets.vector.push(plane);
@@ -9494,9 +9656,427 @@ let movingLine = () => {
 movingLine()
 
 
+//............................................................................................
+//..I...............................PPPPP......................................l..............
+//.III.............................gPPPPPPPPP.................................ell.............
+//.III.............................gPPPPPPPPP.................................ell.............
+//.III.............................gPPPPPPPPPP................................ell.............
+//.III..Immmmmmmmmmmm....gggggggg..gPPP...PPPP..aaaaaaa..annnnnnnn...eeeeee...ell..lsssssss...
+//.III..Immmmmmmmmmmmm..mgggggggg..gPPP...PPPP.Paaaaaaa..annnnnnnn..neeeeeee..ell..lsssssss...
+//.III..Immmmmmmmmmmmm.mmgggggggg..gPPPPPPPPPPPPaaaaaaaa.annnnnnnn.nneeeeeeee.ell.llssssssss..
+//.III..Immm.mmmm..mmm.mmgg..gggg..gPPPPPPPPPPPPaa.aaaaa.annn.nnnn.nnee..eeee.ell.llssssssss..
+//.III..Imm..mmmm..mmm.mmgg..gggg..gPPPPPPPPP..Paaaaaaaa.ann...nnn.nneeeeeeee.ell..lsssssss...
+//.III..Imm..mmmm..mmm.mmgg...ggg..gPPPPPPPP..PPaaaaaaaa.ann...nnn.nneeeeeeee.ell..lsssssss...
+//.III..Imm..mmmm..mmm.mmgg..gggg..gPPP.......PPaaa.aaaa.ann...nnn.nnee.......ell.llssssssss..
+//.III..Imm..mmmm..mmm.mmgggggggg..gPPP.......PPaa.aaaaa.ann...nnn.nneeeeeeee.ell.llsss.ssss..
+//.III..Imm..mmmm..mmm..mgggggggg..gPPP.......PPaaaaaaaa.ann...nnn.nneeeeeee..ell.llssssssss..
+//.III..Imm..mmmm..mmm...gggggggg..gPPP.......PPaaaaaaaa.ann...nnn..neeeeeee..ell..lsssssss...
+//.....................mmggg.gggg...............aaa...................eeee..........ssssss....
+//.....................mmgggggggg.............................................................
+//......................mgggggggg.............................................................
+//......................mggggggg..............................................................
+//............................................................................................
+
+
+const imgPanels_root = new THREE.Group();
+imgPanels_root.position.set(0, -10, 100);
+imgPanels_root.rotation.set(0, 0, 0);
+imgPanels_root.scale.set(2.5, 2.5, 2.5);
+scene.add(imgPanels_root);
+
+const imgPanels_00 = new THREE.Group();
+imgPanels_00.position.set(100, -10, 0);
+imgPanels_00.rotation.set(0, 1.575, 0);
+imgPanels_00.scale.set(2.5, 2.5, 2.5);
+scene.add(imgPanels_00);
+
+const imgPanels_01 = new THREE.Group();
+imgPanels_01.position.set(25, 100, -10);
+imgPanels_01.rotation.set(0, 0, 0);
+imgPanels_01.scale.set(2.5, 2.5, 2.5);
+// scene.add(imgPanels_01);
+
+const imgPanels_02 = new THREE.Group();
+imgPanels_02.position.set(25, 100, -10);
+imgPanels_02.rotation.set(0, 0, 0);
+imgPanels_02.scale.set(2.5, 2.5, 2.5);
+// scene.add(imgPanels_02);
+
+
+// Function to create a straight floor panel
+function createStraightFloorPanel_forward(images) {
+    const numImages = images.length;
+    const spacing = 10; // Spacing between panels
+
+    for (let i = 0; i < numImages; i++) {
+        const texture = new THREE.TextureLoader().load(images[i]);
+        const material = new THREE.MeshBasicMaterial({ map: texture, side: THREE.DoubleSide });
+        const planeGeometry = new THREE.PlaneGeometry(10, 10); // Rectangular floor panel
+        const plane = new THREE.Mesh(planeGeometry, material);
+
+        material.transparent = true;
+        material.opacity = 0.85;
+        material.color = new THREE.Color(0xffffff);
+
+        const x = i * spacing; // Horizontal position
+        const y = i * spacing; // Horizontal position
+        const z = i * spacing; // Horizontal position
+
+        plane.position.set(0, 0, -z);
+        plane.rotation.x = -Math.PI / 2; // Rotate to lie flat on the ground
+
+        imgPanels_root.add(plane);
+        targets.floorPanels_forwards.push(plane);
+    }
+}
+
+
+// Function to create a straight floor panel
+function createStraightFloorPanel_sideToSide(images) {
+    const numImages = images.length;
+    const spacing = 10; // Spacing between panels
+
+    for (let i = 0; i < numImages; i++) {
+        const texture = new THREE.TextureLoader().load(images[i]);
+        const material = new THREE.MeshBasicMaterial({ map: texture, side: THREE.DoubleSide });
+        const planeGeometry = new THREE.PlaneGeometry(10, 10); // Rectangular floor panel
+        const plane = new THREE.Mesh(planeGeometry, material);
+
+        material.transparent = true;
+        material.opacity = 0.85;
+        material.color = new THREE.Color(0xffffff);
+
+        const x = i * spacing; // Horizontal position
+        const y = i * spacing; // Horizontal position
+        const z = i * spacing; // Horizontal position
+
+        plane.position.set(0, 0, -z);
+        plane.rotation.x = -Math.PI / 2; // Rotate to lie flat on the ground
+
+        imgPanels_00.add(plane);
+        targets.floorPanels_horizontal.push(plane);
+    }
+}
+
+// Create the straight floor panel
+// createStraightFloorPanel_forward(images_for_FloorPanels);
+// createStraightFloorPanel_sideToSide(images_for_FloorPanels)
 
 
 
+
+//.................................
+//..I..............................
+//.III.............................
+//.III.............................
+//.III.............................
+//.III..Immmmmmmmmmmm....gggggggg..
+//.III..Immmmmmmmmmmmm..mgggggggg..
+//.III..Immmmmmmmmmmmm.mmgggggggg..
+//.III..Immm.mmmm..mmm.mmgg..gggg..
+//.III..Imm..mmmm..mmm.mmgg..gggg..
+//.III..Imm..mmmm..mmm.mmgg...ggg..
+//.III..Imm..mmmm..mmm.mmgg..gggg..
+//.III..Imm..mmmm..mmm.mmgggggggg..
+//.III..Imm..mmmm..mmm..mgggggggg..
+//.III..Imm..mmmm..mmm...gggggggg..
+//.....................mmggg.gggg..
+//.....................mmgggggggg..
+//......................mgggggggg..
+//......................mggggggg...
+//.................................
+
+
+//....................................................................................................
+//..RRRRR.......iii.........................PPPPP......................................l..............
+//.RRRRRRRRRR...iii........................PPPPPPPPPP.................................ell.............
+//.RRRRRRRRRRR..iii........................PPPPPPPPPP.................................ell.............
+//.RRRRRRRRRRR..iii........................PPPPPPPPPPP................................ell.............
+//.RRRR...RRRRR.iii..nnnnnnnnn...gggggggg..PPPP...PPPP..aaaaaaa..annnnnnnn...eeeeee...ell..lsssssss...
+//.RRRR...RRRRR.iii..nnnnnnnnn..ggggggggg..PPPP...PPPP.aaaaaaaa..annnnnnnn..neeeeeee..ell..lsssssss...
+//.RRRRRRRRRRR..iii..nnnnnnnnn.nggggggggg..PPPPPPPPPPPPaaaaaaaaa.annnnnnnn.nneeeeeeee.ell.llssssssss..
+//.RRRRRRRRRRR..iii..nnnn.nnnn.nggg..gggg..PPPPPPPPPPPPaaa.aaaaa.annn.nnnn.nnee..eeee.ell.llssssssss..
+//.RRRRRRRRRRR..iii..nnn...nnn.nggg..gggg..PPPPPPPPPP..aaaaaaaaa.ann...nnn.nneeeeeeee.ell..lsssssss...
+//.RRRR..RRRRR..iii..nnn...nnn.nggg...ggg..PPPPPPPPP..Paaaaaaaaa.ann...nnn.nneeeeeeee.ell..lsssssss...
+//.RRRR...RRRR..iii..nnn...nnn.nggg..gggg..PPPP.......Paaaa.aaaa.ann...nnn.nnee.......ell.llssssssss..
+//.RRRR...RRRR..iii..nnn...nnn.nggggggggg..PPPP.......Paaa.aaaaa.ann...nnn.nneeeeeeee.ell.llsss.ssss..
+//.RRRR...RRRR..iii..nnn...nnn..ggggggggg..PPPP.......Paaaaaaaaa.ann...nnn.nneeeeeee..ell.llssssssss..
+//.RRRR...RRRRR.iii..nnn...nnn...gggggggg..PPPP.......Paaaaaaaaa.ann...nnn..neeeeeee..ell..lsssssss...
+//.............................ngggg.gggg...............aaa...................eeee..........ssssss....
+//.............................nggggggggg.............................................................
+//..............................ggggggggg.............................................................
+//..............................gggggggg..............................................................
+//....................................................................................................
+
+
+
+
+const imgRingPanels_root = new THREE.Group();
+imgRingPanels_root.position.set(0, -10, 0);
+imgRingPanels_root.rotation.set(0, 0, 0);
+imgRingPanels_root.scale.set(2.5, 2.5, 2.5);
+scene.add(imgRingPanels_root);
+
+// Function to create a carousel of flat square panels
+function createFlatSquarePanelCarousel(images) {
+    const numImages = images.length;
+    const radius = 70; // Radius of the carousel
+
+    for (let i = 0; i < numImages; i++) {
+        const texture = new THREE.TextureLoader().load(images[i]);
+        const material = new THREE.MeshBasicMaterial({ map: texture, side: THREE.DoubleSide });
+        const planeGeometry = new THREE.PlaneGeometry(10, 10); // Square panels
+        const plane = new THREE.Mesh(planeGeometry, material);
+
+        const angle = (i / numImages) * Math.PI * 2; // Angle for the carousel
+
+        material.transparent = true;
+        material.alphaMap = new THREE.TextureLoader().load(images[i]);
+        material.opacity = 0.85;    
+
+        plane.position.x = radius * Math.cos(angle);
+        plane.position.z = radius * Math.sin(angle);
+        plane.position.y = 0; // Keep all panels at the same height
+
+        plane.rotation.x = -Math.PI / 2; // Rotate to lie flat on the ground
+
+        imgRingPanels_root.add(plane);
+        targets.floorPanel_carousel.push(plane);
+    }
+}
+
+// Create the flat square panel carousel
+// createFlatSquarePanelCarousel(images_for_FloorPanels);
+
+
+
+//.................................
+//..I..............................
+//.III.............................
+//.III.............................
+//.III.............................
+//.III..Immmmmmmmmmmm....gggggggg..
+//.III..Immmmmmmmmmmmm..mgggggggg..
+//.III..Immmmmmmmmmmmm.mmgggggggg..
+//.III..Immm.mmmm..mmm.mmgg..gggg..
+//.III..Imm..mmmm..mmm.mmgg..gggg..
+//.III..Imm..mmmm..mmm.mmgg...ggg..
+//.III..Imm..mmmm..mmm.mmgg..gggg..
+//.III..Imm..mmmm..mmm.mmgggggggg..
+//.III..Imm..mmmm..mmm..mgggggggg..
+//.III..Imm..mmmm..mmm...gggggggg..
+//.....................mmggg.gggg..
+//.....................mmgggggggg..
+//......................mgggggggg..
+//......................mggggggg...
+//.................................
+
+
+//.................................................................................
+//..PPPPP...................................RRRRR.......Rii........................
+//.PPPPPPPPPP..............................eRRRRRRRRR...Rii........................
+//.PPPPPPPPPP..............................eRRRRRRRRRR..Rii........................
+//.PPPPPPPPPPP.............................eRRRRRRRRRR..Rii........................
+//.PPPP...PPPPPPuu...uuu..urrrrr..eeeeee...eRRR...RRRRR.Rii..innnnnnnn...gggggggg..
+//.PPPP...PPPPPPuu...uuu..urrrrr.reeeeeee..eRRR...RRRRR.Rii..innnnnnnn..ngggggggg..
+//.PPPPPPPPPPPPPuu...uuu..urrrrrrreeeeeeee.eRRRRRRRRRR..Rii..innnnnnnn.nngggggggg..
+//.PPPPPPPPPPPPPuu...uuu..urrr..rree..eeee.eRRRRRRRRRR..Rii..innn.nnnn.nngg..gggg..
+//.PPPPPPPPPP.PPuu...uuu..urr...rreeeeeeee.eRRRRRRRRRR..Rii..inn...nnn.nngg..gggg..
+//.PPPPPPPPP..PPuu...uuu..urr...rreeeeeeee.eRRR..RRRRR..Rii..inn...nnn.nngg...ggg..
+//.PPPP........Puu..uuuu..urr...rree.......eRRR...RRRR..Rii..inn...nnn.nngg..gggg..
+//.PPPP........Puuuuuuuu..urr...rreeeeeeee.eRRR...RRRR..Rii..inn...nnn.nngggggggg..
+//.PPPP........Puuuuuuuu..urr...rreeeeeee..eRRR...RRRR..Rii..inn...nnn..ngggggggg..
+//.PPPP........Puuuuuuuu..urr....reeeeeee..eRRR...RRRRR.Rii..inn...nnn...gggggggg..
+//...............uuu...............eeee................................nnggg.gggg..
+//.....................................................................nngggggggg..
+//......................................................................ngggggggg..
+//......................................................................nggggggg...
+//.................................................................................
+
+
+//............................................................
+//..PPPPP......................................l..............
+//.PPPPPPPPPP.................................ell.............
+//.PPPPPPPPPP.................................ell.............
+//.PPPPPPPPPPP................................ell.............
+//.PPPP...PPPP..aaaaaaa..annnnnnnn...eeeeee...ell..lsssssss...
+//.PPPP...PPPP.Paaaaaaa..annnnnnnn..neeeeeee..ell..lsssssss...
+//.PPPPPPPPPPPPPaaaaaaaa.annnnnnnn.nneeeeeeee.ell.llssssssss..
+//.PPPPPPPPPPPPPaa.aaaaa.annn.nnnn.nnee..eeee.ell.llssssssss..
+//.PPPPPPPPPP..Paaaaaaaa.ann...nnn.nneeeeeeee.ell..lsssssss...
+//.PPPPPPPPP..PPaaaaaaaa.ann...nnn.nneeeeeeee.ell..lsssssss...
+//.PPPP.......PPaaa.aaaa.ann...nnn.nnee.......ell.llssssssss..
+//.PPPP.......PPaa.aaaaa.ann...nnn.nneeeeeeee.ell.llsss.ssss..
+//.PPPP.......PPaaaaaaaa.ann...nnn.nneeeeeee..ell.llssssssss..
+//.PPPP.......PPaaaaaaaa.ann...nnn..neeeeeee..ell..lsssssss...
+//..............aaa...................eeee..........ssssss....
+//............................................................
+
+
+
+
+const img_PureRing_Panels = new THREE.Group();
+img_PureRing_Panels.position.set(0, -10, 0);
+img_PureRing_Panels.rotation.set(0, 0, 0);
+img_PureRing_Panels.scale.set(2.5, 2.5, 2.5);
+scene.add(img_PureRing_Panels);
+
+// Function to create a continuous ring floor
+function createRingFloor(images) {
+    const numImages = images.length;
+    const innerRadius = 10; // Inner radius of the rings
+    const outerRadius = 20; // Outer radius of the rings
+    const spacing = 2; // Spacing between rings
+
+    for (let i = 0; i < numImages; i++) {
+        const texture = new THREE.TextureLoader().load(images[i]);
+        const material = new THREE.MeshBasicMaterial({ map: texture, side: THREE.DoubleSide });
+        const ringGeometry = new THREE.RingGeometry(innerRadius, outerRadius, 32); // Ring geometry
+        const ring = new THREE.Mesh(ringGeometry, material);
+
+        material.transparent = true;
+        material.alphaMap = new THREE.TextureLoader().load(images[i]);
+        material.opacity = 0.85;    
+
+        const y = i * spacing; // Vertical position
+
+        ring.position.set(0, y, 0);
+        ring.rotation.x = -Math.PI / 2; // Rotate to lie flat on the ground
+
+        img_PureRing_Panels.add(ring);
+        targets.floorPanel_carousel.push(ring);
+    }
+}
+
+// Create the continuous ring floor
+// createRingFloor(beamsCircles);
+
+
+let glitchWarping = () => {
+    gsap.from(img_PureRing_Panels.position, {
+        repeat: -1,
+        duration: 1,
+        // yoyo: true,
+        ease: "none",
+        delay: 0,
+        y: -100
+    })
+
+    gsap.to(img_PureRing_Panels.rotation, {
+        repeat: -1,
+        duration: 10,
+        ease: "none",
+        delay: 0,
+        y: "+=3.14",
+    })
+}
+
+// glitchWarping()
+
+
+
+//.................................
+//..I..............................
+//.III.............................
+//.III.............................
+//.III.............................
+//.III..Immmmmmmmmmmm....gggggggg..
+//.III..Immmmmmmmmmmmm..mgggggggg..
+//.III..Immmmmmmmmmmmm.mmgggggggg..
+//.III..Immm.mmmm..mmm.mmgg..gggg..
+//.III..Imm..mmmm..mmm.mmgg..gggg..
+//.III..Imm..mmmm..mmm.mmgg...ggg..
+//.III..Imm..mmmm..mmm.mmgg..gggg..
+//.III..Imm..mmmm..mmm.mmgggggggg..
+//.III..Imm..mmmm..mmm..mgggggggg..
+//.III..Imm..mmmm..mmm...gggggggg..
+//.....................mmggg.gggg..
+//.....................mmgggggggg..
+//......................mgggggggg..
+//......................mggggggg...
+//.................................
+
+
+//.......................................................................................
+//..EEEEEEEEE............................................................................
+//.EEEEEEEEEEE.................................................ddd..................ddd..
+//.EEEEEEEEEEE.................................................ddd..................ddd..
+//.EEEEEEEEEEE.................................................ddd..................ddd..
+//.EEEE.......EExx..xxxxxxppppppp....aaaaaaa..annnnnnnn...dddddddd...eeeeee....dddddddd..
+//.EEEEEEEEEE.EExxxxxxxxxxpppppppp..paaaaaaa..annnnnnnn..ndddddddd..deeeeeee..edddddddd..
+//.EEEEEEEEEE..Exxxxxxx.xxpppppppppppaaaaaaaa.annnnnnnn.nndddddddd.ddeeeeeeeeeedddddddd..
+//.EEEEEEEEEE..Exxxxxx..xxppp.pppppppaa.aaaaa.annn.nnnn.nndd..dddd.ddee..eeeeeedd..dddd..
+//.EEEEEEEEEE...xxxxxx..xxpp...pppp.paaaaaaaa.ann...nnn.nndd...ddd.ddeeeeeeeeeedd...ddd..
+//.EEEE.........xxxxxx..xxpp...ppppppaaaaaaaa.ann...nnn.nndd...ddd.ddeeeeeeeeeedd...ddd..
+//.EEEE.........xxxxxx..xxpp...ppppppaaa.aaaa.ann...nnn.nndd..dddd.ddee......eedd..dddd..
+//.EEEEEEEEEEE.Exxxxxxx.xxpppppppppppaa.aaaaa.ann...nnn.nndddddddd.ddeeeeeeeeeedddddddd..
+//.EEEEEEEEEEEEExxxxxxxxxxpppppppp.ppaaaaaaaa.ann...nnn..ndddddddd.ddeeeeeee..edddddddd..
+//.EEEEEEEEEEEEExx.xxxxxxxpppppppp.ppaaaaaaaa.ann...nnn..ndddddddd..deeeeeee..edddddddd..
+//......................xxpp.ppp.....aaa...................ddd........eeee......ddd......
+//......................xxpp.............................................................
+//......................xxpp.............................................................
+//......................xxpp.............................................................
+//.......................................................................................
+
+
+//....................................................................................................
+//..RRRRR.......iii.........................PPPPP......................................l..............
+//.RRRRRRRRRR...iii........................PPPPPPPPPP.................................ell.............
+//.RRRRRRRRRRR..iii........................PPPPPPPPPP.................................ell.............
+//.RRRRRRRRRRR..iii........................PPPPPPPPPPP................................ell.............
+//.RRRR...RRRRR.iii..nnnnnnnnn...gggggggg..PPPP...PPPP..aaaaaaa..annnnnnnn...eeeeee...ell..lsssssss...
+//.RRRR...RRRRR.iii..nnnnnnnnn..ggggggggg..PPPP...PPPP.aaaaaaaa..annnnnnnn..neeeeeee..ell..lsssssss...
+//.RRRRRRRRRRR..iii..nnnnnnnnn.nggggggggg..PPPPPPPPPPPPaaaaaaaaa.annnnnnnn.nneeeeeeee.ell.llssssssss..
+//.RRRRRRRRRRR..iii..nnnn.nnnn.nggg..gggg..PPPPPPPPPPPPaaa.aaaaa.annn.nnnn.nnee..eeee.ell.llssssssss..
+//.RRRRRRRRRRR..iii..nnn...nnn.nggg..gggg..PPPPPPPPPP..aaaaaaaaa.ann...nnn.nneeeeeeee.ell..lsssssss...
+//.RRRR..RRRRR..iii..nnn...nnn.nggg...ggg..PPPPPPPPP..Paaaaaaaaa.ann...nnn.nneeeeeeee.ell..lsssssss...
+//.RRRR...RRRR..iii..nnn...nnn.nggg..gggg..PPPP.......Paaaa.aaaa.ann...nnn.nnee.......ell.llssssssss..
+//.RRRR...RRRR..iii..nnn...nnn.nggggggggg..PPPP.......Paaa.aaaaa.ann...nnn.nneeeeeeee.ell.llsss.ssss..
+//.RRRR...RRRR..iii..nnn...nnn..ggggggggg..PPPP.......Paaaaaaaaa.ann...nnn.nneeeeeee..ell.llssssssss..
+//.RRRR...RRRRR.iii..nnn...nnn...gggggggg..PPPP.......Paaaaaaaaa.ann...nnn..neeeeeee..ell..lsssssss...
+//.............................ngggg.gggg...............aaa...................eeee..........ssssss....
+//.............................nggggggggg.............................................................
+//..............................ggggggggg.............................................................
+//..............................gggggggg..............................................................
+//....................................................................................................
+
+
+
+const img_RingPanelsExpanded_root = new THREE.Group();
+img_RingPanelsExpanded_root.position.set(0, -10, 0);
+img_RingPanelsExpanded_root.rotation.set(0, 0, 0);
+img_RingPanelsExpanded_root.scale.set(2.5, 2.5, 2.5);
+scene.add(img_RingPanelsExpanded_root);
+
+// Function to create a continuous ring floor with increasing size
+function createRingFloor(images) {
+    const numImages = images.length;
+    const initialInnerRadius = 5; // Initial inner radius of the rings
+    const initialOuterRadius = 10; // Initial outer radius of the rings
+    const radiusIncrement = 10; // Increment for each subsequent ring
+
+    for (let i = 0; i < numImages; i++) {
+        const texture = new THREE.TextureLoader().load(images[i]);
+        const material = new THREE.MeshBasicMaterial({ map: texture, side: THREE.DoubleSide });
+        const innerRadius = initialInnerRadius + i * radiusIncrement;
+        const outerRadius = initialOuterRadius + i * radiusIncrement;
+        const ringGeometry = new THREE.RingGeometry(innerRadius, outerRadius, 32); // Ring geometry
+        const ring = new THREE.Mesh(ringGeometry, material);
+
+        material.transparent = true;
+        material.alphaMap = new THREE.TextureLoader().load(images[i]);
+        material.opacity = 0.85;    
+
+        ring.position.set(0, 0, 0);
+        ring.rotation.x = -Math.PI / 2; // Rotate to lie flat on the ground
+
+        img_RingPanelsExpanded_root.add(ring);
+        targets.floorPanelRingsExpanded.push(ring);
+    }
+}
+
+// Create the continuous ring floor with increasing size
+createRingFloor(images01);
 
 
 
@@ -9549,6 +10129,76 @@ movingLine()
 
 
 
+//......................................................................
+//..I..............................gTTTTTTTT..................aai...i...
+//.III............................ggTTTTTTTTT.................aai..iil..
+//.III............................ggTTTTTTTTT.................aai..iil..
+//.III............................ggTTTTTTTTT.................aai..iil..
+//.III..Immmmmmmmmmmm....gggggggg.....TTTT...Trrrrr..raaaaaa..aai..iil..
+//.III..Immmmmmmmmmmmm..mgggggggg.....TTTT...Trrrrr.rraaaaaa..aai..iil..
+//.III..Immmmmmmmmmmmm.mmgggggggg.....TTTT...Trrrrrrrraaaaaaa.aai..iil..
+//.III..Immm.mmmm..mmm.mmgg..gggg.....TTTT...Trrr..rrra.aaaaa.aai..iil..
+//.III..Imm..mmmm..mmm.mmgg..gggg.....TTTT...Trr....rraaaaaaa.aai..iil..
+//.III..Imm..mmmm..mmm.mmgg...ggg.....TTTT...Trr...rrraaaaaaa.aai..iil..
+//.III..Imm..mmmm..mmm.mmgg..gggg.....TTTT...Trr...rrraa.aaaa.aai..iil..
+//.III..Imm..mmmm..mmm.mmgggggggg.....TTTT...Trr...rrra.aaaaa.aai..iil..
+//.III..Imm..mmmm..mmm..mgggggggg.....TTTT...Trr...rrraaaaaaa.aai..iil..
+//.III..Imm..mmmm..mmm...gggggggg.....TTTT...Trr...rrraaaaaaa.aai..iil..
+//.....................mmggg.gggg....................raa................
+//.....................mmgggggggg.......................................
+//......................mgggggggg.......................................
+//......................mggggggg........................................
+//......................................................................
+
+const imgTrail_root = new THREE.Group();
+imgTrail_root.position.set(25, 100, -10);
+imgTrail_root.rotation.set(0, 0, 0);
+imgTrail_root.scale.set(2.5, 2.5, 2.5);
+// scene.add(imgTrail_root);
+
+const imgTrail_00 = new THREE.Group();
+imgTrail_00.position.set(25, 100, -10);
+imgTrail_00.rotation.set(0, 0, 0);
+imgTrail_00.scale.set(2.5, 2.5, 2.5);
+// scene.add(imgTrail_00);
+
+const imgTrail_01 = new THREE.Group();
+imgTrail_01.position.set(25, 100, -10);
+imgTrail_01.rotation.set(0, 0, 0);
+imgTrail_01.scale.set(2.5, 2.5, 2.5);
+// scene.add(imgTrail_01);
+
+const imgTrail_02 = new THREE.Group();
+imgTrail_02.position.set(25, 100, -10);
+imgTrail_02.rotation.set(0, 0, 0);
+imgTrail_02.scale.set(2.5, 2.5, 2.5);
+// scene.add(imgTrail_02);
+
+
+// Function to create a trail of circular panels with gradual opacity increase
+function createCircularPanelTrail(images) {
+    const numImages = images.length;
+    const spacing = 5; // Spacing between panels
+
+    for (let i = 0; i < numImages; i++) {
+        const texture = new THREE.TextureLoader().load(images[i]);
+        const material = new THREE.MeshBasicMaterial({ map: texture, side: THREE.DoubleSide, transparent: true, opacity: i / numImages });
+        const circleGeometry = new THREE.CircleGeometry(5, 32); // Circular floor panel
+        const circle = new THREE.Mesh(circleGeometry, material);
+
+        const x = i * spacing; // Horizontal position
+
+        circle.position.set(x, 0, 0);
+        circle.rotation.x = -Math.PI / 2; // Rotate to lie flat on the ground
+
+        imgTrail_root.add(circle);
+        targets.panelTrails.push(circle);
+    }
+}
+
+// Create the circular panel trail
+// createCircularPanelTrail(images_for_FloorPanels);
+
 
 
 
@@ -9575,6 +10225,84 @@ movingLine()
 
 
 
+const imgCarousel_root = new THREE.Group();
+imgCarousel_root.position.set(25, 100, -10);
+imgCarousel_root.rotation.set(0, 0, 0);
+imgCarousel_root.scale.set(10, 10, 10);
+scene.add(imgCarousel_root);
+
+
+// Function to create a carousel of rectangular planes
+function createImageCarousel__AboutMe(images) {
+    const numImages = images.length;
+    const radius = 20; // Radius of the carousel
+
+    for (let i = 0; i < numImages; i++) {
+        const texture = new THREE.TextureLoader().load(images[i]);
+        const material = new THREE.MeshBasicMaterial({ map: texture, side: THREE.DoubleSide });
+        const planeGeometry = new THREE.BoxGeometry(8, 10, 0.5); // Rectangular planes
+        const plane = new THREE.Mesh(planeGeometry, material);
+
+        const angle = (i / numImages) * Math.PI * 2; // Angle for the carousel
+
+        plane.position.x = radius * Math.cos(angle);
+        plane.position.z = radius * Math.sin(angle);
+        plane.position.y = 0; // Keep all planes at the same height
+
+        plane.lookAt(0, 0, 0);
+
+        // Animate the floating effect
+        gsap.to(plane.position, {
+            y: "+=2.5",
+            duration: 2.5,
+            repeat: -1,
+            yoyo: true,
+            ease: "sine.inOut",
+            delay: i * 0.5 // Stagger the start time for each plane
+        });
+
+        imgCarousel_root.add(plane);
+        targets.stoneHenge.push(plane);
+    }
+}
+
+// Function to create a carousel of rectangular planes
+function createImageCarousel__Announcements_and_Updates(images) {
+    const numImages = images.length;
+    const radius = 40; // Radius of the carousel
+
+    for (let i = 0; i < numImages; i++) {
+        const texture = new THREE.TextureLoader().load(images[i]);
+        const material = new THREE.MeshBasicMaterial({ map: texture, side: THREE.DoubleSide });
+        const planeGeometry = new THREE.BoxGeometry(8, 10, 0.5); // Rectangular planes
+        const plane = new THREE.Mesh(planeGeometry, material);
+
+        const angle = (i / numImages) * Math.PI * 2; // Angle for the carousel
+
+        plane.position.x = radius * Math.cos(angle);
+        plane.position.z = radius * Math.sin(angle);
+        plane.position.y = 0; // Keep all planes at the same height
+
+        plane.lookAt(0, 0, 0);
+
+        // Animate the floating effect
+        gsap.to(plane.position, {
+            y: "+=2.5",
+            duration: 2.5,
+            repeat: -1,
+            yoyo: true,
+            ease: "sine.inOut",
+            delay: i * 0.5 // Stagger the start time for each plane
+        });
+
+        imgCarousel_root.add(plane);
+        targets.stoneHenge.push(plane);
+    }
+}
+
+// Create the image carousel
+createImageCarousel__AboutMe(images_for_AboutMe_Courousel);
+createImageCarousel__Announcements_and_Updates(images_for_NewsUpdates_and_Announcements);
 
 
 
