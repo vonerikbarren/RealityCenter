@@ -1011,7 +1011,7 @@
                 top: 120px;
                 right: 50px;
                 width: 230px;
-                height: 410px;
+                height: 310px;
             }
 
                 .OptionsPanel {
@@ -1029,8 +1029,12 @@
                     display: none;
                 }
 
+            
 
         }
+
+
+
 
 
         @media (min-width: 300px) and (max-width: 430px) and (min-height: 800px) and (max-height: 930px) {
@@ -1203,23 +1207,23 @@
             
 
                 .left {
-                    left: 10px;
-                    bottom: 90px;
+                    left: 20px;
+                    bottom: 87.5px;
                 }
             
                 .right {
-                    left: 100px;
-                    bottom: 90px;
+                    left: 97.5px;
+                    bottom: 87.5px;
                 }
             
                 .forward {
-                    left: 61.5px;
-                    bottom: 140px;
+                    left: 58px;
+                    bottom: 125px;
                 }
             
                 .backward {
-                    left: 61.5px;
-                    bottom: 40px;
+                    left: 58px;
+                    bottom: 50px;
                 }
             
                 .up {
@@ -1403,6 +1407,45 @@
             opacity: 0.55;
             z-index: 5;
         }
+
+
+
+        .additional_systemOptions {
+                top: 120px;
+                right: 50px;
+                width: 230px;
+                height: 310px;
+            }
+
+                .additional_systemOptions {
+                    position: absolute; 
+                    background-image: url('assets/designs/HUD/general/borders/cyberPunk01/SVG/Panel_02_Vertical.svg');
+                    background-repeat: no-repeat; /* Prevent the background image from repeating */
+                    color: white;
+                    padding-top: 20px;
+                    padding-right: 20px;
+                    padding-left: 20px;
+                    padding-bottom: 100px;
+                    font-size: 16px;
+                    cursor: pointer;
+                    z-index: 2;
+                    display: block;
+                }
+
+                .Secondary_systems_options {
+                    position: absolute; 
+                    background-image: url('assets/designs/HUD/general/borders/cyberPunk01/SVG/Panel_02_Vertical.svg');
+                    background-repeat: no-repeat; /* Prevent the background image from repeating */
+                    color: white;
+                    padding-top: 20px;
+                    padding-right: 20px;
+                    padding-left: 20px;
+                    padding-bottom: 100px;
+                    font-size: 16px;
+                    cursor: pointer;
+                    z-index: 2;
+                    display: none;
+                }
 
 
 
@@ -1708,8 +1751,24 @@
 
 
   <div class="additional_systemOptions">
-    <div class="Secondary_systems_options"></div>
-    <div class="Secondary-perspectives-options"></div>
+
+    <div class="Secondary_systems_options">
+        <button>UserInterface</button>
+        <button>UserExperience</button>
+        <button>Button</button>
+        <button>Button</button>
+        <button>Button</button>
+    </div>
+
+
+    <div class="Secondary-perspectives-options">
+        <button>FirstPerson</button>
+        <button>ThirdPerson</button>
+        <button>TopDown</button>
+        <button>SideScroller</button>
+        <button>Isometric</button>
+    </div>
+
     <div class="Secondary-Hiearchies-options"></div>
     <div class="Secondary-events-options"></div>
     <div class="Secondary-times-options"></div>
