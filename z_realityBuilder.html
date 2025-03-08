@@ -1367,12 +1367,13 @@
                     padding-bottom: 5px;
                     font-size: 16px;
                     transform: scale(0.75);
+                    cursor: none;
                     z-index: 2;
                     display: none;
                 }
 
         .systemOptionsListItem {
-            width: 100%;
+            width: 75%;
             margin: 2.5px;
             margin-bottom: 3.5px;
             padding-left: 10px;
@@ -1385,7 +1386,7 @@
             border-radius: 5px;
             font-size: 12px;
             cursor: pointer;
-            opacity: 0.55;
+            opacity: 0.95;
             z-index: 5;
         }
 
@@ -1412,40 +1413,58 @@
 
         .additional_systemOptions {
                 top: 120px;
-                right: 50px;
-                width: 230px;
-                height: 310px;
+                right: 30px;
+                width: 140px;
+                height: 250px;
             }
 
                 .additional_systemOptions {
                     position: absolute; 
+                    /* background-color: aqua; */
                     background-image: url('assets/designs/HUD/general/borders/cyberPunk01/SVG/Panel_02_Vertical.svg');
                     background-repeat: no-repeat; /* Prevent the background image from repeating */
                     color: white;
                     padding-top: 20px;
                     padding-right: 20px;
                     padding-left: 20px;
-                    padding-bottom: 100px;
+                    padding-bottom: -20px;
                     font-size: 16px;
-                    cursor: pointer;
                     z-index: 2;
                     display: block;
                 }
 
-                .Secondary_systems_options {
-                    position: absolute; 
-                    background-image: url('assets/designs/HUD/general/borders/cyberPunk01/SVG/Panel_02_Vertical.svg');
-                    background-repeat: no-repeat; /* Prevent the background image from repeating */
-                    color: white;
-                    padding-top: 20px;
-                    padding-right: 20px;
-                    padding-left: 20px;
-                    padding-bottom: 100px;
-                    font-size: 16px;
-                    cursor: pointer;
-                    z-index: 2;
-                    display: none;
-                }
+                    .Secondary_systems_options {
+                        position: absolute; 
+                        top: 30px;
+                        left: 2px;
+                        width: 200px;
+                        height: auto;   
+                        background-repeat: no-repeat; /* Prevent the background image from repeating */
+                        color: white;
+                        padding-top: 20px;
+                        padding-right: 10px;
+                        padding-left: 10px;
+                        padding-bottom: 150px;
+                        /* margin-right: 50px; */
+                        font-size: 16px;
+                        z-index: 2;
+                        display: block;
+                    }
+
+                    .Secondary-perspectives-options {
+                        position: absolute; 
+                        background-image: url('assets/designs/HUD/general/borders/cyberPunk01/SVG/Panel_02_Vertical.svg');
+                        background-repeat: no-repeat; /* Prevent the background image from repeating */
+                        color: white;
+                        padding-top: 20px;
+                        padding-right: 20px;
+                        padding-left: 20px;
+                        padding-bottom: 100px;
+                        font-size: 16px;
+                        cursor: pointer;
+                        z-index: 2;
+                        display: none;
+                    }
 
 
 
@@ -1753,16 +1772,17 @@
   <div class="additional_systemOptions">
 
     <div class="Secondary_systems_options">
-        <button>UserInterface</button>
-        <button>UserExperience</button>
-        <button>Button</button>
-        <button>Button</button>
-        <button>Button</button>
+        
+        <button class="systemOptionsListItem">UserInterface</button>
+        <button class="systemOptionsListItem">UserExperience</button>
+        <button class="systemOptionsListItem">Button</button>
+        <button class="systemOptionsListItem">Button</button>
+        <button class="systemOptionsListItem">Button</button>
     </div>
 
 
     <div class="Secondary-perspectives-options">
-        <button>FirstPerson</button>
+        <button class="systemOptionsListItem">FirstPerson</button>
         <button>ThirdPerson</button>
         <button>TopDown</button>
         <button>SideScroller</button>
@@ -2042,6 +2062,23 @@
         //     musicPlayer.style.display = "none";
 
         // }
+
+        if (musicPlayer.style.right === "-300px" || musicPlayer.style.right === "") {
+            play_sfx_show()
+            musicPlayer.style.right = "10px";
+
+        } else {
+            play_sfx_hide()
+            musicPlayer.style.right = "-300px";
+
+        }
+    }
+
+
+    function toggleAdditionalSystemMenuItems() {
+        const musicPlayer = document.getElementById("music-player");
+
+        
 
         if (musicPlayer.style.right === "-300px" || musicPlayer.style.right === "") {
             play_sfx_show()
@@ -10253,7 +10290,7 @@ createRingFloor(images01);
 const CrystalStarTest_root = new THREE.Group();
 CrystalStarTest_root.position.set(0, 100, 0);
 CrystalStarTest_root.rotation.set(0, 0, 0);
-CrystalStarTest_root.scale.set(100, 100, 100);
+CrystalStarTest_root.scale.set(10, 10, 10);
 scene.add(CrystalStarTest_root);
 
 
@@ -10273,25 +10310,25 @@ let spin_CrystalStar = () => {
         duration: 20,
         ease: "none",
         delay: 0,
-        x: 100,
-        y: 100,
-        z: 100,
+        x: 0.5,
+        y: 0.5,
+        z: 0.5,
     })
 
-    gsap.to(CrystalStarTest_root.scale, {
-        repeat: -1,
-        duration: 20,
-        ease: "none",
-        delay: 10,
-        x: 1,
-        y: 1,
-        z: 1,
-    })
+    // gsap.to(CrystalStarTest_root.scale, {
+    //     repeat: -1,
+    //     duration: 20,
+    //     ease: "none",
+    //     delay: 10,
+    //     x: 1,
+    //     y: 1,
+    //     z: 1,
+    // })
 
 
 }
 
-// spin_CrystalStar()
+spin_CrystalStar()
 
 
 
