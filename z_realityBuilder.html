@@ -11103,7 +11103,7 @@ function createImageCarousel__AboutMe(images) {
     for (let i = 0; i < numImages; i++) {
         const texture = new THREE.TextureLoader().load(images[i]);
         const material = new THREE.MeshBasicMaterial({ map: texture, side: THREE.DoubleSide });
-        const planeGeometry = new THREE.BoxGeometry(8, 10, 0.5); // Rectangular planes
+        const planeGeometry = new THREE.BoxGeometry(8, 10, 0.05); // Rectangular planes
         const plane = new THREE.Mesh(planeGeometry, material);
 
         const angle = (i / numImages) * Math.PI * 2; // Angle for the carousel
@@ -11111,6 +11111,7 @@ function createImageCarousel__AboutMe(images) {
         plane.position.x = radius * Math.cos(angle);
         plane.position.z = radius * Math.sin(angle);
         plane.position.y = 0; // Keep all planes at the same height
+        // plane.rotation.y = Math.PI * 2; // Rotate the plane to face the camera
 
         plane.lookAt(0, 0, 0);
 
@@ -11137,7 +11138,7 @@ function createImageCarousel__Announcements_and_Updates(images) {
     for (let i = 0; i < numImages; i++) {
         const texture = new THREE.TextureLoader().load(images[i]);
         const material = new THREE.MeshBasicMaterial({ map: texture, side: THREE.DoubleSide });
-        const planeGeometry = new THREE.BoxGeometry(8, 10, 0.5); // Rectangular planes
+        const planeGeometry = new THREE.BoxGeometry(8, 10, 0.05); // Rectangular planes
         const plane = new THREE.Mesh(planeGeometry, material);
 
         const angle = (i / numImages) * Math.PI * 2; // Angle for the carousel
@@ -11145,8 +11146,10 @@ function createImageCarousel__Announcements_and_Updates(images) {
         plane.position.x = radius * Math.cos(angle);
         plane.position.z = radius * Math.sin(angle);
         plane.position.y = 0; // Keep all planes at the same height
+        // plane.rotation.y = Math.PI * 2; // Rotate the plane to face the camera
 
         plane.lookAt(0, 0, 0);
+        // plane.rotation.set(0, 1.575, 0);
 
         // Animate the floating effect
         gsap.to(plane.position, {
