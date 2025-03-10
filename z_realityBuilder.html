@@ -4605,7 +4605,7 @@ function dollyZoom() {
             
 
             CenterBrain_VideoSphere_Opening_Container_RootContainer = new THREE.Group()
-            CenterBrain_VideoSphere_Opening_Container_RootContainer.position.set(0, 0, 0)
+            CenterBrain_VideoSphere_Opening_Container_RootContainer.position.set(0, 100, 0)
             CenterBrain_VideoSphere_Opening_Container_RootContainer.rotation.set(0, 0, 0)
             CenterBrain_VideoSphere_Opening_Container_RootContainer.scale.set(1, 1, 1)
             scene.add(CenterBrain_VideoSphere_Opening_Container_RootContainer)
@@ -4615,6 +4615,8 @@ function dollyZoom() {
             mesh_CenterBrain_VideoSphere_Opening_Container_RootContainer = new THREE.Mesh(geo_objT_BoxA0, mat_CenterBrain_VideoSphere_Opening_Container_RootContainer);
             mat_CenterBrain_VideoSphere_Opening_Container_RootContainer.transparent = true;
             mat_CenterBrain_VideoSphere_Opening_Container_RootContainer.alphaMap = TechTile_CyberPunk_01;
+            mat_CenterBrain_VideoSphere_Opening_Container_RootContainer.depthWrite = false
+			mat_CenterBrain_VideoSphere_Opening_Container_RootContainer.blending = THREE.AdditiveBlending
             // mat_CenterBrain_VideoSphere_Opening_Container_RootContainer.color = new THREE.Color('#ffffff') // white
             // mat_CenterBrain_VideoSphere_Opening_Container_RootContainer.depthWrite = true
 			// mat_CenterBrain_VideoSphere_Opening_Container_RootContainer.blending = THREE.AdditiveBlending
@@ -4634,9 +4636,9 @@ function dollyZoom() {
 			
 
             CenterBrain_VideoSphere_Opening_ColorContainer = new THREE.Group()
-            CenterBrain_VideoSphere_Opening_ColorContainer.position.set(0, 0, 0)
+            CenterBrain_VideoSphere_Opening_ColorContainer.position.set(0, 100, 0)
             CenterBrain_VideoSphere_Opening_ColorContainer.rotation.set(0, 0, 0)
-            CenterBrain_VideoSphere_Opening_ColorContainer.scale.set(1, 1, 1)
+            CenterBrain_VideoSphere_Opening_ColorContainer.scale.set(2, 2, 2)
             scene.add(CenterBrain_VideoSphere_Opening_ColorContainer)
 
 
@@ -4708,6 +4710,30 @@ function dollyZoom() {
 
             rotate_mesh_CenterBrain_VideoSphere_Opening_ColorContainer()
 
+
+
+            let expandToggle_DefinitionCube = () => {
+                gsap.to(CenterBrain_VideoSphere_Opening_Container_RootContainer.scale, {
+                        repeat: -1,
+                        duration: 2.5,
+                        delay: 0,
+                        x: 0.1,
+                        y: 0.1,
+                        z: 0.1
+                    })
+
+                gsap.to(CenterBrain_VideoSphere_Opening_Container_RootContainer.scale, {
+                    repeat: -1,
+                    duration: 2.5,
+                    delay: 2,
+                    x: 5,
+                    y: 5,
+                    z: 5, 
+                })
+            }
+
+            expandToggle_DefinitionCube()
+
 			
 
 
@@ -4717,10 +4743,10 @@ function dollyZoom() {
             // Search.video01
 				// Opening Video Object
 				CenterBrain_VideoSphere_Opening = new THREE.Group()
-				CenterBrain_VideoSphere_Opening.position.set(0, 1.15, 0)
+				CenterBrain_VideoSphere_Opening.position.set(0, 100, 0)
 				// CenterBrain_VideoSphere_Opening.position.set(0, 0, -500144) // Away from User
 				CenterBrain_VideoSphere_Opening.rotation.set(0, 0, 0)
-				CenterBrain_VideoSphere_Opening.scale.set(1, 1, 1)
+				CenterBrain_VideoSphere_Opening.scale.set(0.5, 0.5, 0.5)
 
 				console.log(CenterBrain_VideoSphere_Opening.position)
 	
@@ -7553,7 +7579,7 @@ Skin_CyberSkin_MovementPadImg_root.scale.set(0.005, 0.005, 0.005)
             createVerticalTunnel(scene, numCylinders, radius, height, useVideoTexture, videoSrc);
 
 
-            function createVerticalTunnel(scene, numCylinders, radius, height, useVideoTexture, videoSrc) {
+        function createVerticalTunnel(scene, numCylinders, radius, height, useVideoTexture, videoSrc) {
 
             const cylinderObject = new THREE.Group()
             cylinderObject.position.set(0, 2000, 0)
@@ -7604,17 +7630,33 @@ Skin_CyberSkin_MovementPadImg_root.scale.set(0.005, 0.005, 0.005)
         // For Application Testing
         // \- duration = 8
         gsap.from(camera.position, {
-                duration: 8,
-                delay: 0,
-                x: 0,
-                y: 60000,
-                z: 160,
-                onUpdate: () => {
-                    camera.lookAt(0, 0, 0);
-                    UserContainer_root.lookAt(camera.position)
-                    camera.lookAt(0, 0, 0);
-                }
-            })
+            duration: 8,
+            delay: 0,
+            x: 0,
+            y: 60000,
+            z: 160,
+            onUpdate: () => {
+                camera.lookAt(0, 0, 0);
+                UserContainer_root.lookAt(camera.position)
+                camera.lookAt(0, 0, 0);
+            }
+        })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             // Event listener for key press
             document.addEventListener('keydown', (event) => {
@@ -9104,13 +9146,13 @@ const beamsCircles = [
 
 const images_for_AboutMe_Courousel = [
     'assets/img/09-MainSpaces/AboutMe/AboutMe_Adventure.png',
-    'assets/img/09-MainSpaces/News_Updates_Announcements/Latest_News.png',
+    // 'assets/img/09-MainSpaces/News_Updates_Announcements/Latest_News.png',
     'assets/img/09-MainSpaces/AboutMe/AboutMe_Education.png',
-    'assets/img/09-MainSpaces/News_Updates_Announcements/Latest_News.png',
+    // 'assets/img/09-MainSpaces/News_Updates_Announcements/Latest_News.png',
     'assets/img/09-MainSpaces/AboutMe/AboutMe_Interests.png',
-    'assets/img/09-MainSpaces/News_Updates_Announcements/Latest_News.png',
+    // 'assets/img/09-MainSpaces/News_Updates_Announcements/Latest_News.png',
     'assets/img/09-MainSpaces/AboutMe/AboutMe_ProfessionalJ.png',
-    'assets/img/09-MainSpaces/News_Updates_Announcements/Latest_News.png',
+    // 'assets/img/09-MainSpaces/News_Updates_Announcements/Latest_News.png',
 ]
 
 
@@ -9641,7 +9683,7 @@ const imgVectorInkTest01_root = new THREE.Group();
 imgVectorInkTest01_root.position.set(25, 100, -10);
 imgVectorInkTest01_root.rotation.set(0, 0, 0);
 imgVectorInkTest01_root.scale.set(2.5, 2.5, 2.5);
-// scene.add(imgVectorInkTest01_root);
+scene.add(imgVectorInkTest01_root);
 
 const imgVectorInkTest02_root = new THREE.Group();
 imgVectorInkTest02_root.position.set(25, 100, -10);
@@ -9805,7 +9847,7 @@ createImage_BoxLineAlpha_01(images02);
 let movingLine = () => {
     gsap.to(imgVector_root.position, {
         repeat: -1,
-        duration: 10,
+        duration: 5,
         ease: "none",
         delay: 0,
         y: -1000
@@ -9821,7 +9863,7 @@ let movingLine = () => {
 
     gsap.to(imgVectorInkTest01_root.position, {
         repeat: -1,
-        duration: 10,
+        duration: 5,
         ease: "none",
         delay: 0,
         y: -1000
@@ -9829,7 +9871,7 @@ let movingLine = () => {
 
     gsap.to(imgVectorInkTest02_root.position, {
         repeat: -1,
-        duration: 10,
+        duration: 5,
         ease: "none",
         delay: 0,
         y: -1000
@@ -10580,7 +10622,7 @@ function createCone(
 // 0x00ff00
 
 
-let lengthOfCones = 50
+let lengthOfCones = 25
 let loc = lengthOfCones
 
 // Diagnal Left and Right Up and Down Cones
@@ -10776,7 +10818,11 @@ const cone18 = createCone(
 
 
 
-
+const imgTrailVector_root = new THREE.Group();
+imgTrailVector_root.position.set(25, 100, -10);
+imgTrailVector_root.rotation.set(0, 0, 0);
+imgTrailVector_root.scale.set(2.5, 2.5, 2.5);
+scene.add(imgTrailVector_root);
 
 
 // // Function to create a straight line of planes with images
@@ -10821,6 +10867,9 @@ const cone18 = createCone(
 //         targets.vector.push(plane);
 //     }
 // }
+
+
+// createImageLine(imgTrailVector_root, GearCyberTechDesign04, images01);
 
 
 
