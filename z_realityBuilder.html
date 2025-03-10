@@ -8925,6 +8925,8 @@ Skin_CyberSkin_MovementPadImg_root.scale.set(0.005, 0.005, 0.005)
 const targets = 
 { 
     vector: [],
+    vector_horizontal: [],
+    vector_depth: [],
     sphere: [], 
     grid: [], 
     cube: [],
@@ -9679,17 +9681,29 @@ imgVectorInkTest00_root.rotation.set(0, 0, 0);
 imgVectorInkTest00_root.scale.set(2.5, 2.5, 2.5);
 // scene.add(imgVectorInkTest00_root);
 
+
+// Y-Axis cubeVector
 const imgVectorInkTest01_root = new THREE.Group();
-imgVectorInkTest01_root.position.set(25, 100, -10);
+imgVectorInkTest01_root.position.set(0, 100, -10);
 imgVectorInkTest01_root.rotation.set(0, 0, 0);
 imgVectorInkTest01_root.scale.set(2.5, 2.5, 2.5);
 scene.add(imgVectorInkTest01_root);
 
+
+// X-Axis cubeVector
 const imgVectorInkTest02_root = new THREE.Group();
-imgVectorInkTest02_root.position.set(25, 100, -10);
+imgVectorInkTest02_root.position.set(0, 100, -10);
 imgVectorInkTest02_root.rotation.set(0, 0, 0);
 imgVectorInkTest02_root.scale.set(2.5, 2.5, 2.5);
-// scene.add(imgVectorInkTest02_root);
+scene.add(imgVectorInkTest02_root);
+
+
+// Z-Axis cubeVector
+const imgVectorInkTest03_root = new THREE.Group();
+imgVectorInkTest03_root.position.set(0, 100, 0);
+imgVectorInkTest03_root.rotation.set(0, 0, 0);
+imgVectorInkTest03_root.scale.set(2.5, 2.5, 2.5);
+scene.add(imgVectorInkTest03_root);
 
 
 
@@ -9820,6 +9834,79 @@ function createImage_BoxLineAlpha_01(images) {
 }
 
 
+// Function to create a straight line of planes with images [ animated horizontally ]
+function createImage_BoxLineAlpha_02(images) {
+    const numImages = images.length;
+    const spacing = 15; // Spacing between planes
+
+    for (let i = 0; i < numImages; i++) {
+        const texture = new THREE.TextureLoader().load(images[i]);
+        const material = new THREE.MeshBasicMaterial({ map: texture, side: THREE.DoubleSide });
+        const planeGeometry = new THREE.BoxGeometry(4, 4, 4);
+        const plane = new THREE.Mesh(planeGeometry, material);
+
+        material.transparent = true;
+        // material.opacity = 0.5;
+
+        const x = i * spacing; // Horizontal position
+        const y = i * spacing; // Horizontal position
+        const z = i * spacing; // Horizontal position
+
+        plane.position.set(x, 0, 0);
+        plane.lookAt(0, 0, 0);
+
+        gsap.to(plane.rotation, {
+            repeat: -1,
+            duration: 30,
+            ease: "none",
+            delay: 0,
+            x: i * -2.5,
+        })
+
+
+        imgVectorInkTest02_root.add(plane);
+        targets.vector_horizontal.push(plane);
+    }
+}
+
+
+
+// Function to create a straight line of planes with images [ animated Z-Axis ]
+function createImage_BoxLineAlpha_03(images) {
+    const numImages = images.length;
+    const spacing = 15; // Spacing between planes
+
+    for (let i = 0; i < numImages; i++) {
+        const texture = new THREE.TextureLoader().load(images[i]);
+        const material = new THREE.MeshBasicMaterial({ map: texture, side: THREE.DoubleSide });
+        const planeGeometry = new THREE.BoxGeometry(4, 4, 4);
+        const plane = new THREE.Mesh(planeGeometry, material);
+
+        material.transparent = true;
+        // material.opacity = 0.5;
+
+        const x = i * spacing; // Horizontal position
+        const y = i * spacing; // Horizontal position
+        const z = i * spacing; // Horizontal position
+
+        plane.position.set(0, 0, z);
+        plane.lookAt(0, 0, 0);
+
+        gsap.to(plane.rotation, {
+            repeat: -1,
+            duration: 30,
+            ease: "none",
+            delay: 0,
+            x: i * -2.5,
+        })
+
+
+        imgVectorInkTest03_root.add(plane);
+        targets.vector_depth.push(plane);
+    }
+}
+
+
 
 
 
@@ -9840,11 +9927,13 @@ createImageLine(images);
 // createImageLineA(images02);
 createImage_BoxLineAlpha(images01);
 createImage_BoxLineAlpha_01(images02);
+createImage_BoxLineAlpha_02(images02);
+createImage_BoxLineAlpha_03(images02);
 
 
 
 
-let movingLine = () => {
+let imgVectorInkTest01_root_movingLine = () => {
     gsap.to(imgVector_root.position, {
         repeat: -1,
         duration: 5,
@@ -9869,17 +9958,48 @@ let movingLine = () => {
         y: -1000
     })
 
+    
+}
+
+
+imgVectorInkTest01_root_movingLine()
+
+
+
+let imgVectorInkTest02_root_movingLine = () => {
+    
+
     gsap.to(imgVectorInkTest02_root.position, {
         repeat: -1,
         duration: 5,
         ease: "none",
         delay: 0,
-        y: -1000
+        x: -1000
     })
+
 }
 
 
-movingLine()
+imgVectorInkTest02_root_movingLine()
+
+
+
+
+let imgVectorInkTest03_root_movingLine = () => {
+    
+
+    gsap.to(imgVectorInkTest03_root.position, {
+        repeat: -1,
+        duration: 5,
+        ease: "none",
+        delay: 0,
+        z: -1000
+    })
+
+}
+
+
+imgVectorInkTest03_root_movingLine()
 
 
 //............................................................................................
@@ -10375,39 +10495,6 @@ spin_CrystalStar()
 
 
 
-// // Function to create a Swarovski crystal star candle holder
-// function createCrystalStar() {
-//     const material = new THREE.MeshPhongMaterial({
-//         color: 0xffffff,
-//         specular: 0xaaaaaa,
-//         shininess: 100,
-//         transparent: true,
-//         opacity: 0.8,
-//         side: THREE.DoubleSide
-//     });
-
-//     const icosahedronGeometry = new THREE.IcosahedronGeometry(7);
-//     const icosahedron = new THREE.Mesh(icosahedronGeometry, material);
-//     CrystalStarTest_root.add(icosahedron);
-
-//     const coneGeometry = new THREE.ConeGeometry(5, 20, 4, 1, false); // Increased height to 20
-//     const cones = [];
-
-//     for (let i = 0; i < icosahedronGeometry.attributes.position.count; i++) {
-//         const vertex = new THREE.Vector3().fromBufferAttribute(icosahedronGeometry.attributes.position, i);
-//         const cone = new THREE.Mesh(coneGeometry, material);
-//         cone.position.copy(vertex);
-//         cone.lookAt(0, 0, 0);
-//         cone.translateY(10); // Move the cone outward so it attaches to the surface
-//         CrystalStarTest_root.add(cone);
-//         cones.push(cone);
-//     }
-
-//     return { icosahedron, cones };
-// }
-
-// // Create the Swarovski crystal star candle holder
-// const crystalStar = createCrystalStar();
 
 
 
@@ -10417,6 +10504,13 @@ icosahedronRoot.position.set(0, 0, 0);
 icosahedronRoot.rotation.set(0, 0, 0);
 icosahedronRoot.scale.set(2, 2, 2);
 CrystalStarTest_root.add(icosahedronRoot);
+
+const icosahedronRoom_root = new THREE.Group();
+icosahedronRoom_root.position.set(0, 100, 0);
+icosahedronRoom_root.rotation.set(0, 0, 0);
+icosahedronRoom_root.scale.set(125, 125, 125);
+scene.add(icosahedronRoom_root);
+
 
 // Function to create an icosahedron
 function createIcosahedron() {
@@ -10429,6 +10523,9 @@ function createIcosahedron() {
         opacity: 0.8,
         side: THREE.DoubleSide,
         flatShading: true,
+        depthWrite: false,
+		blending: THREE.AdditiveBlending,
+		vertextColors: true
     });
 
     const icosahedronGeometry = new THREE.IcosahedronGeometry(7, 1)
@@ -10438,8 +10535,29 @@ function createIcosahedron() {
     return icosahedron;
 }
 
+
+// Function to create an icosahedron
+function createIcosahedronRoom() {
+    const material = new THREE.MeshPhongMaterial({
+        map: workSphereImg,
+        color: 0xffffff,
+        specular: 0xaaaaaa,
+        shininess: 0,
+        transparent: true,
+        opacity: 0.8,
+        side: THREE.DoubleSide,
+        flatShading: true,
+    });
+
+    const icosahedronGeometry = new THREE.IcosahedronGeometry(7, 1)
+    const icosahedron_room = new THREE.Mesh(icosahedronGeometry, material);
+    icosahedronRoom_root.add(icosahedron_room);
+
+    return icosahedron_room;
+}
+
 // Create the icosahedron
-const icosahedron = createIcosahedron();
+const icosahedron = createIcosahedronRoom();
 
 
 
@@ -10596,11 +10714,10 @@ function createCone(
     sx, sy, sz,
     transparent, opacity
 ) {
-    const material = new THREE.MeshPhongMaterial({
+    const material = new THREE.MeshBasicMaterial({
         color: color,
         map: workSphereImg,
-        specular: 0xaaaaaa,
-        shininess: 100,
+        alphaMap: workSphereImg,
         transparent: transparent,
         opacity: opacity,
         side: THREE.DoubleSide
