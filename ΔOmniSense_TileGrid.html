@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Grid</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    #grid-container {
+      display: grid;
+      grid-template-columns: repeat(10, 1fr); /* Default to 10 columns */
+      grid-template-rows: repeat(10, 1fr);   /* Default to 10 rows */
+      gap: 2px;
+      width: 80vw;
+      height: 80vh;
+      margin: auto;
+      border: 2px solid black;
+      overflow: hidden;
+    }
+    .grid-cell {
+      border: 1px solid #ccc;
+      background-color: #f9f9f9;
+      text-align: center;
+      line-height: 2em;
+      cursor: pointer;
+    }
+    .menu {
+      position: absolute;
+      background: white;
+      border: 1px solid #ccc;
+      padding: 5px;
+      display: none;
+      z-index: 100;
+    }
+    .menu li {
+      list-style: none;
+      padding: 5px;
+      cursor: pointer;
+    }
+    .menu li:hover {
+      background-color: #e6e6e6;
+    }
+  </style>
+</head>
+<body>
+  <div id="grid-container"></div>
+
+  <!-- Left Click Menu -->
+  <ul id="left-click-menu" class="menu">
+    <li>Left Option 1</li>
+    <li>Left Option 2</li>
+  </ul>
+
+  <!-- Right Click Menu -->
+  <ul id="right-click-menu" class="menu">
+    <li>Right Option 1</li>
+    <li>Right Option 2</li>
+  </ul>
+
+  <script>
+    const gridContainer = document.getElementById('grid-container');
+    const leftClickMenu = document.getElementById('left-click-menu');
+    const rightClickMenu = document.getElementById('right-click-menu');
+
+    // Create a 10x10 grid of cells
+    for (let i = 0; i < 100; i++) {
+      const cell = document.createElement('div');
+      cell.className = 'grid-cell';
+      cell.textContent = i + 1; // Cell number (optional)
+      gridContainer.appendChild(cell);
+
+      // Handle left-click menu
+      cell.addEventListener('click', (e) => {
+        toggleMenu(e, leftClickMenu);
+      });
+
+      // Handle right-click menu
+      cell.addEventListener('contextmenu', (e) => {
+        e.preventDefault();
+        toggleMenu(e, rightClickMenu);
+      });
+    }
+
+    // Function to toggle menus
+    function toggleMenu(e, menu) {
+      closeMenus(); // Close any open menus
+      menu.style.display = 'block';
+      menu.style.top = `${e.clientY}px`;
+      menu.style.left = `${e.clientX}px`;
+    }
+
+    // Function to close menus
+    function closeMenus() {
+      leftClickMenu.style.display = 'none';
+      rightClickMenu.style.display = 'none';
+    }
+
+    // Close menus on outside click
+    document.addEventListener('click', (e) => {
+      if (!e.target.classList.contains('grid-cell')) closeMenus();
+    });
+
+    // Close menus on right-click outside
+    document.addEventListener('contextmenu', (e) => {
+      if (!e.target.classList.contains('grid-cell')) closeMenus();
+    });
+
+    // Handle zooming
+    document.addEventListener('wheel', (e) => {
+      e.preventDefault();
+      const scale = e.deltaY > 0 ? 1.1 : 0.9; // Zoom in or out
+      gridContainer.style.transform = `scale(${scale})`;
+    });
+  </script>
+</body>
+</html>
