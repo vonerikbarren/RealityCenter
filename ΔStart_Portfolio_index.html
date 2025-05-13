@@ -2742,6 +2742,15 @@ let starOrb_root
         const SceneWallpaper_03 = textureLoader.load('./assets/img/00-WallpaperUX/Covers/whiteCover03.jpg')
         const whitePureRoom = textureLoader.load('./assets/img/00-WallpaperUX/Covers/pureWhiteWallpaper01.jpeg')
 
+        
+        // Wallpapers
+        const SpaceWallpaper01 = textureLoader.load('./assets/img/00-WallpaperUX/Space/E01-Space01.jpeg')
+        const SpaceWallpaper02 = textureLoader.load('./assets/img/00-WallpaperUX/Space/E01-Space02.jpeg')
+        const wallpaper02 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/Grid02.jpg')
+        const wallpaper03 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/Grid03.jpg')
+        const wallpaper04 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/Grid04.jpg')
+        const wallpaper05 = textureLoader.load('./assets/img/00-WallpaperUX/Wallpapers/Grid05.jpg')
+
 
         // Gears
         const BaseUI_Gear01 = textureLoader.load('./assets/img/02-UserUI/04-Logo/WhiteGear01.png')
@@ -4069,7 +4078,7 @@ let starOrb_root
 							duration: 1.5,
 							delay: 0,
                             ease: "none",
-							y: 0,
+							y: 10,
                             x: 0,
                             z: 0,
 
@@ -8414,7 +8423,7 @@ Skin_CyberSkin_MovementPadImg_root.scale.set(0.005, 0.005, 0.005)
                                 })
                             }
 
-                            openPersonalSpace()
+                            // openPersonalSpace()
 
 
                     UserContainer_MediaContainer_baseD = new THREE.Group()
@@ -10512,6 +10521,8 @@ icosahedronRoom_root.scale.set(125, 125, 125);
 scene.add(icosahedronRoom_root);
 
 
+
+
 // Function to create an icosahedron
 function createIcosahedron() {
     const material = new THREE.MeshPhongMaterial({
@@ -10539,25 +10550,60 @@ function createIcosahedron() {
 // Function to create an icosahedron
 function createIcosahedronRoom() {
     const material = new THREE.MeshPhongMaterial({
-        map: workSphereImg,
+        map: SpaceWallpaper01,
         color: 0xffffff,
         specular: 0xaaaaaa,
         shininess: 0,
-        transparent: true,
-        opacity: 0.8,
+        transparent: false,
+        opacity: 0.85,
         side: THREE.DoubleSide,
         flatShading: true,
     });
 
     const icosahedronGeometry = new THREE.IcosahedronGeometry(7, 1)
-    const icosahedron_room = new THREE.Mesh(icosahedronGeometry, material);
+    const icosahedron_room = new THREE.Mesh(geo_objT_SphereA0, material);
     icosahedronRoom_root.add(icosahedron_room);
+
+    gsap.to(icosahedronRoom_root.rotation, {
+        repeat: -1,
+        duration: 10,
+        ease: "none",
+        delay: 0,
+        x: "+=3.14",
+        y: "+=6.28",
+        z: "+=3.14",
+    })
+
+    // gsap.to(icosahedronRoom_root.rotation, {
+    //     repeat: -1,
+    //     duration: 15,
+    //     ease: "none",
+    //     delay: 0,
+    //     y: "+=6.28",
+        
+    // })
 
     return icosahedron_room;
 }
 
 // Create the icosahedron
 const icosahedron = createIcosahedronRoom();
+
+
+
+// rotateIcosahedronRoom = () => {
+//     gsap.to(icosahedronRoom_root.rotation, {
+//         repeat: -1,
+//         duration: 10,
+//         ease: "none",
+//         delay: 0,
+//         x: "+=3.14",
+//         y: "+=3.14",
+//         z: "+=3.14",
+//     })
+// }
+// rotateIcosahedronRoom()
+
 
 
 
@@ -11328,6 +11374,281 @@ createImageCarousel__Announcements_and_Updates(images_for_NewsUpdates_and_Announ
 
 					}
 				})
+
+
+let animationPractice = (target) => {
+
+    document.addEventListener("keydown", function(event) {
+        if (event.key === "-") {
+            // camera.position.y += 10000
+
+            camera.lookAt(500, 0, 0)
+
+            gsap.to(target.position, {
+                duration: 1.5,
+                delay: 0,
+                ease: "none",
+                y: 0,
+                x: 0,
+                z: 0,
+
+            })
+        }
+    })
+}
+
+animationPractice(camera)
+
+// let cameraRotator = THREE.Group()
+// cameraRotator.position.set(0, 0, 0)
+// cameraRotator.rotation.set(0, 0, 0)
+// cameraRotator.scale.set(1, 1, 1)
+// scene.add(cameraRotator)
+// cameraRotator.attach(camera)
+
+
+let userRealityContainerAnimation = (target00, target01, cameraOffsetDistance ) => {
+
+    document.addEventListener("keydown", function(event) {
+        if (event.key === "-") {
+            // camera.position.y += 10000
+
+            target00_ZPosition = 0
+            target01_ZPosition = 0 - cameraOffsetDistance
+
+            target.lookAt(500, 0, 0)
+
+            let tl00 = gsap.timeline(
+                {
+                    repeat: 2,
+                    repeatDelay: 1,
+                    delay:  0.01
+                }
+            )
+
+            let tl01 = gsap.timeline(
+                {
+                    repeat: 2,
+                    repeatDelay: 1,
+                    delay:  0.01
+                }
+            )
+
+            tl00.to(target00.position, {
+                duration: 1.5,
+                delay: 0,
+                ease: "none",
+                y: 500,
+                x: 0,
+                z: target00_ZPosition,
+
+            })
+
+                tl01.to(target01.position, {
+                    duration: 1.5,
+                    delay: 0,
+                    ease: "none",
+                    y: 500,
+                    x: 0,
+                    z: target01_ZPosition,
+
+                })
+
+            tl00.to(target00.position, {
+                duration: 2.5,
+                delay: 0,
+                ease: "none",
+                y: 250,
+                x: -500,
+                z: target00_ZPosition,
+
+            })
+
+                tl01.to(target01.position, {
+                    duration: 2.5,
+                    delay: 0,
+                    ease: "none",
+                    y: 250,
+                    x: -500,
+                    z: target01_ZPosition,
+
+                })
+
+            tl00.to(target00.position, {
+                duration: 3.5,
+                delay: 0,
+                ease: "none",
+                y: 250,
+                x: 500,
+                z: target00_ZPosition,
+
+            })
+
+                tl01.to(target01.position, {
+                    duration: 3.5,
+                    delay: 0,
+                    ease: "none",
+                    y: 250,
+                    x: 500,
+                    z: target01_ZPosition,
+
+                })
+
+            tl00.to(target00.position, {
+                duration: 3.5,
+                delay: 0,
+                ease: "none",
+                y: 250,
+                x: 0,
+                z: 3000 - target00_ZPosition,
+
+            })
+
+                tl01.to(target01.position, {
+                    duration: 3.5,
+                    delay: 0,
+                    ease: "none",
+                    y: 250,
+                    x: 0,
+                    z: 3000 - target01_ZPosition,
+
+                })
+
+            tl00.to(target00.position, {
+                duration: 1.5,
+                delay: 0,
+                ease: "none",
+                y: 10,
+                x: 0,
+                z: 120 - target00_ZPosition,
+
+            })
+
+                tl01.to(target01.position, {
+                    duration: 1.5,
+                    delay: 0,
+                    ease: "none",
+                    y: 10,
+                    x: 0,
+                    z: 120 - target01_ZPosition,
+
+                })
+
+            tl00.to(target00.position, {
+                duration: 1.5,
+                delay: 0,
+                ease: "none",
+                y: 100,
+                x: 0,
+                z: 120 - target00_ZPosition,
+                onComplete: () => {
+                    orbitControls.target(0, 500, 0)
+                    orbitControls.update()
+                }
+
+            })
+
+                tl01.to(target01.position, {
+                    duration: 1.5,
+                    delay: 0,
+                    ease: "none",
+                    y: 100,
+                    x: 0,
+                    z: 120 - target01_ZPosition,
+                    onComplete: () => {
+                        orbitControls.target(0, 500, 0)
+                        orbitControls.update()
+                    }
+
+                })
+        }
+    })
+}
+
+userRealityContainerAnimation(camera, UserContainer_root, -100)
+
+// document.addEventListener("keydown", function(event) {
+//     if (event.key === "-") {
+//         // camera.position.y += 10000
+
+//         camera.lookAt(500, 0, 0)
+
+//         let tl01 = gsap.timeline(
+//             {
+//                 repeat: 2,
+//                 repeatDelay: 1,
+//                 delay:  0.01
+//             }
+//         )
+
+//         tl01.to(camera.position, {
+//             duration: 1.5,
+//             delay: 0,
+//             ease: "none",
+//             y: 500,
+//             x: 0,
+//             z: 0,
+
+//         })
+
+//         tl01.to(camera.position, {
+//             duration: 2.5,
+//             delay: 0,
+//             ease: "none",
+//             y: 250,
+//             x: -500,
+//             z: 0,
+
+//         })
+
+//         tl01.to(camera.position, {
+//             duration: 3.5,
+//             delay: 0,
+//             ease: "none",
+//             y: 250,
+//             x: 500,
+//             z: 0,
+
+//         })
+
+//         tl01.to(camera.position, {
+//             duration: 3.5,
+//             delay: 0,
+//             ease: "none",
+//             y: 250,
+//             x: 0,
+//             z: 3000,
+
+//         })
+
+//         tl01.to(camera.position, {
+//             duration: 1.5,
+//             delay: 0,
+//             ease: "none",
+//             y: 10,
+//             x: 0,
+//             z: 120,
+
+//         })
+
+//         tl01.to(camera.position, {
+//             duration: 1.5,
+//             delay: 0,
+//             ease: "none",
+//             y: 100,
+//             x: 0,
+//             z: 120,
+//             onComplete: () => {
+//                 orbitControls.target(0, 500, 0)
+//                 orbitControls.update()
+//             }
+
+//         })
+//     }
+// })
+
+
+
 
 //.......................................................
 //..ZZZZZZZZZ........TTTTTTTTT.....AAA.......RRRRR.......
