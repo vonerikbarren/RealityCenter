@@ -1761,7 +1761,7 @@
     <button class="systemOptionsListItem button-Systems" onclick="play_sfx_click_gen()">Systems</button></br>
     <button class="systemOptionsListItem button-Perspectives" onclick="play_sfx_click_gen()">Perspectives</button></br>
     <button class="systemOptionsListItem button-Hiearchies" onclick="play_sfx_click_gen()">Hiearchies</button></br>
-    <button class="systemOptionsListItem button-Events" onclick="play_sfx_click_gen()">Events</button></br>
+    <button class="systemOptionsListItem button-Events" onclick="camera_and_userContainer_root__Animation01()">Events</button></br>
     <button class="systemOptionsListItem button-Times" onclick="play_sfx_click_gen()">Times</button></br>
     <button class="systemOptionsListItem button-Spaces" onclick="play_sfx_click_gen()">Spaces</button></br>
     <button class="systemOptionsListItem button-Objects" onclick="play_sfx_click_gen()">Objects</button></br>
@@ -1769,16 +1769,16 @@
   </div>
 
 
-  <div class="additional_systemOptions">
+  <!-- <div class="additional_systemOptions"> -->
 
-    <div class="Secondary_systems_options">
+    <!-- <div class="Secondary_systems_options">
         
         <button class="systemOptionsListItem">UserInterface</button>
         <button class="systemOptionsListItem">UserExperience</button>
         <button class="systemOptionsListItem">Button</button>
         <button class="systemOptionsListItem">Button</button>
         <button class="systemOptionsListItem">Button</button>
-    </div>
+    </div> -->
 
 
     <div class="Secondary-perspectives-options">
@@ -6851,15 +6851,31 @@ function handleInteractions(scene, camera, cubes, initialPositions) {
         }
 
 
+        // let animateHover_imgButton_pdfTest01 = () => {
+        //     gsap.to(userHUD_imgButton_pdfTest01.position, {
+        //         repeat: -1,
+        //         duration: 1,
+        //         delay: 0,
+        //         yoyo: true,
+        //         ease: "none",
+        //         y: 0.001,
+        //         x: 0,
+        //         z: 0,
+
+        //     })
+        // }
+        // animateHover_imgButton_pdfTest01()
+
+
         
         userHUD_imgButton_pdfTest01.add(
             new hoverObject(
                 'img',
                 0, 0, 0,
                 0, 0, 0,
-                0.1, 0.1, 0.1,
+                0.35, 0.35, 0.35,
                 "Testing234", "TestingClass234",
-                "assets/icons/00-Official/UI/Isometric/Tools/world-wide-web.svg", "",
+                "assets/icons/Hud_LH_RH_Apps/LH/01_System/02_RealityOptions/00_Reality_Systems/Reality_Systems.svg", "",
                 "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
                 () => {
 
@@ -11407,24 +11423,174 @@ animationPractice(camera)
 // cameraRotator.attach(camera)
 
 
-let userRealityContainerAnimation = (target00, target01, cameraOffsetDistance ) => {
+// let userRealityContainerAnimation = (target00, target01, cameraOffsetDistance ) => {
 
+//     document.addEventListener("keydown", function(event) {
+//         if (event.key === "-") {
+//             // camera.position.y += 10000
+
+//             target00_ZPosition = 0
+//             target01_ZPosition = 0 - cameraOffsetDistance
+
+//             // target.lookAt(500, 0, 0)
+
+//             let tl00 = gsap.timeline(
+//                 {
+//                     repeat: 2,
+//                     repeatDelay: 1,
+//                     delay:  0.01
+//                 }
+//             )
+
+//             let tl01 = gsap.timeline(
+//                 {
+//                     repeat: 2,
+//                     repeatDelay: 1,
+//                     delay:  0.01
+//                 }
+//             )
+
+//             tl00.to(target00.position, {
+//                 duration: 1.5,
+//                 delay: 0,
+//                 ease: "none",
+//                 y: 500,
+//                 x: 0,
+//                 z: 0,
+
+//             })
+
+//                 tl01.to(target01.position, {
+//                     duration: 1.5,
+//                     delay: 0,
+//                     ease: "none",
+//                     y: 500,
+//                     x: 0,
+//                     z: target01_ZPosition,
+
+//                 })
+
+//             tl00.to(target00.position, {
+//                 duration: 2.5,
+//                 delay: 0,
+//                 ease: "none",
+//                 y: 250,
+//                 x: -500,
+//                 z: 0,
+
+//             })
+
+//                 tl01.to(target01.position, {
+//                     duration: 2.5,
+//                     delay: 0,
+//                     ease: "none",
+//                     y: 250,
+//                     x: -500,
+//                     z: target01_ZPosition,
+
+//                 })
+
+//             tl00.to(target00.position, {
+//                 duration: 3.5,
+//                 delay: 0,
+//                 ease: "none",
+//                 y: 250,
+//                 x: 500,
+//                 z: 0,
+
+//             })
+
+//                 tl01.to(target01.position, {
+//                     duration: 3.5,
+//                     delay: 0,
+//                     ease: "none",
+//                     y: 250,
+//                     x: 500,
+//                     z: target01_ZPosition,
+
+//                 })
+
+//             tl00.to(target00.position, {
+//                 duration: 3.5,
+//                 delay: 0,
+//                 ease: "none",
+//                 y: 250,
+//                 x: 0,
+//                 z: 3000 - target00_ZPosition,
+
+//             })
+
+//                 tl01.to(target01.position, {
+//                     duration: 3.5,
+//                     delay: 0,
+//                     ease: "none",
+//                     y: 250,
+//                     x: 0,
+//                     z: 3000 - target01_ZPosition,
+
+//                 })
+
+//             tl00.to(target00.position, {
+//                 duration: 1.5,
+//                 delay: 0,
+//                 ease: "none",
+//                 y: 10,
+//                 x: 0,
+//                 z: 120 - target00_ZPosition,
+
+//             })
+
+//                 tl01.to(target01.position, {
+//                     duration: 1.5,
+//                     delay: 0,
+//                     ease: "none",
+//                     y: 10,
+//                     x: 0,
+//                     z: 120 - target01_ZPosition,
+
+//                 })
+
+//             tl00.to(target00.position, {
+//                 duration: 1.5,
+//                 delay: 0,
+//                 ease: "none",
+//                 y: 100,
+//                 x: 0,
+//                 z: 120 - target00_ZPosition,
+//                 onComplete: () => {
+//                     orbitControls.target(0, 500, 0)
+//                     orbitControls.update()
+//                 }
+
+//             })
+
+//                 tl01.to(target01.position, {
+//                     duration: 1.5,
+//                     delay: 0,
+//                     ease: "none",
+//                     y: 100,
+//                     x: 0,
+//                     z: 120 - target01_ZPosition,
+//                     onComplete: () => {
+//                         orbitControls.target(0, 500, 0)
+//                         orbitControls.update()
+//                     }
+
+//                 })
+//         }
+//     })
+// }
+
+// userRealityContainerAnimation(camera, UserContainer_root, -100)
+
+let camera_and_userContainer_root__Animation01 = () => {
     document.addEventListener("keydown", function(event) {
         if (event.key === "-") {
             // camera.position.y += 10000
 
-            target00_ZPosition = 0
-            target01_ZPosition = 0 - cameraOffsetDistance
+            play_sfx_click_gen()
 
-            target.lookAt(500, 0, 0)
-
-            let tl00 = gsap.timeline(
-                {
-                    repeat: 2,
-                    repeatDelay: 1,
-                    delay:  0.01
-                }
-            )
+            camera.lookAt(500, 0, 0)
 
             let tl01 = gsap.timeline(
                 {
@@ -11434,218 +11600,167 @@ let userRealityContainerAnimation = (target00, target01, cameraOffsetDistance ) 
                 }
             )
 
-            tl00.to(target00.position, {
+            tl01.to(camera.position, {
                 duration: 1.5,
                 delay: 0,
                 ease: "none",
                 y: 500,
                 x: 0,
-                z: target00_ZPosition,
+                z: 0,
 
             })
 
-                tl01.to(target01.position, {
+                tl01.to(UserContainer_root.position, {
                     duration: 1.5,
                     delay: 0,
                     ease: "none",
-                    y: 500,
+                    y: 400,
                     x: 0,
-                    z: target01_ZPosition,
+                    z: 25, // offset view
 
                 })
 
-            tl00.to(target00.position, {
+                tl01.to(UserContainer_root.rotation, {
+                    duration: 1.5,
+                    delay: -1,
+                    ease: "none",
+                    y: 0,
+                    x: -1.575,
+                    z: 0,
+
+                })
+
+
+            tl01.to(camera.position, {
                 duration: 2.5,
-                delay: 0,
+                delay: 1.5,
                 ease: "none",
                 y: 250,
                 x: -500,
-                z: target00_ZPosition,
+                z: 0,
 
             })
 
-                tl01.to(target01.position, {
+                tl01.to(UserContainer_root.position, {
                     duration: 2.5,
                     delay: 0,
                     ease: "none",
-                    y: 250,
-                    x: -500,
-                    z: target01_ZPosition,
+                    y: 225, // offset view
+                    x: -400,
+                    z: 0,
 
                 })
 
-            tl00.to(target00.position, {
+                tl01.to(UserContainer_root.rotation, {
+                    duration: 1.5,
+                    delay: -1,
+                    ease: "none",
+                    y: -1.575,
+                    x: 0,
+                    z: 0,
+
+                })
+
+            tl01.to(camera.position, {
                 duration: 3.5,
-                delay: 0,
+                delay: 1.5,
                 ease: "none",
                 y: 250,
                 x: 500,
-                z: target00_ZPosition,
+                z: 0,
 
             })
 
-                tl01.to(target01.position, {
+                tl01.to(UserContainer_root.position, {
                     duration: 3.5,
                     delay: 0,
                     ease: "none",
-                    y: 250,
-                    x: 500,
-                    z: target01_ZPosition,
+                    y: 225, // offset view
+                    x: 400,
+                    z: 0,
 
                 })
 
-            tl00.to(target00.position, {
+                tl01.to(UserContainer_root.rotation, {
+                    duration: 1.5,
+                    delay: -1,
+                    ease: "none",
+                    y: 1.575,
+                    x: 0,
+                    z: 0,
+
+                })
+
+            tl01.to(camera.position, {
                 duration: 3.5,
-                delay: 0,
+                delay: 1.5,
                 ease: "none",
                 y: 250,
                 x: 0,
-                z: 3000 - target00_ZPosition,
+                z: 3000,
 
             })
 
-                tl01.to(target01.position, {
+                tl01.to(UserContainer_root.position, {
                     duration: 3.5,
                     delay: 0,
                     ease: "none",
-                    y: 250,
+                    y: 225, // offset view
                     x: 0,
-                    z: 3000 - target01_ZPosition,
+                    z: 2900,
 
                 })
 
-            tl00.to(target00.position, {
+                tl01.to(UserContainer_root.rotation, {
+                    duration: 1.5,
+                    delay: -1,
+                    ease: "none",
+                    y: 0,
+                    x: 0,
+                    z: 0,
+
+                })
+
+            tl01.to(camera.position, {
                 duration: 1.5,
-                delay: 0,
+                delay: 1,
                 ease: "none",
                 y: 10,
                 x: 0,
-                z: 120 - target00_ZPosition,
+                z: 120,
 
             })
 
-                tl01.to(target01.position, {
-                    duration: 1.5,
+                tl01.to(UserContainer_root.position, {
+                    duration: 3.5,
                     delay: 0,
                     ease: "none",
-                    y: 10,
+                    y: 10, // offset view
                     x: 0,
-                    z: 120 - target01_ZPosition,
+                    z: 0,
 
                 })
 
-            tl00.to(target00.position, {
+            tl01.to(camera.position, {
                 duration: 1.5,
                 delay: 0,
                 ease: "none",
                 y: 100,
                 x: 0,
-                z: 120 - target00_ZPosition,
+                z: 120,
                 onComplete: () => {
                     orbitControls.target(0, 500, 0)
                     orbitControls.update()
                 }
 
             })
-
-                tl01.to(target01.position, {
-                    duration: 1.5,
-                    delay: 0,
-                    ease: "none",
-                    y: 100,
-                    x: 0,
-                    z: 120 - target01_ZPosition,
-                    onComplete: () => {
-                        orbitControls.target(0, 500, 0)
-                        orbitControls.update()
-                    }
-
-                })
         }
     })
 }
 
-userRealityContainerAnimation(camera, UserContainer_root, -100)
+camera_and_userContainer_root__Animation01()
 
-// document.addEventListener("keydown", function(event) {
-//     if (event.key === "-") {
-//         // camera.position.y += 10000
 
-//         camera.lookAt(500, 0, 0)
-
-//         let tl01 = gsap.timeline(
-//             {
-//                 repeat: 2,
-//                 repeatDelay: 1,
-//                 delay:  0.01
-//             }
-//         )
-
-//         tl01.to(camera.position, {
-//             duration: 1.5,
-//             delay: 0,
-//             ease: "none",
-//             y: 500,
-//             x: 0,
-//             z: 0,
-
-//         })
-
-//         tl01.to(camera.position, {
-//             duration: 2.5,
-//             delay: 0,
-//             ease: "none",
-//             y: 250,
-//             x: -500,
-//             z: 0,
-
-//         })
-
-//         tl01.to(camera.position, {
-//             duration: 3.5,
-//             delay: 0,
-//             ease: "none",
-//             y: 250,
-//             x: 500,
-//             z: 0,
-
-//         })
-
-//         tl01.to(camera.position, {
-//             duration: 3.5,
-//             delay: 0,
-//             ease: "none",
-//             y: 250,
-//             x: 0,
-//             z: 3000,
-
-//         })
-
-//         tl01.to(camera.position, {
-//             duration: 1.5,
-//             delay: 0,
-//             ease: "none",
-//             y: 10,
-//             x: 0,
-//             z: 120,
-
-//         })
-
-//         tl01.to(camera.position, {
-//             duration: 1.5,
-//             delay: 0,
-//             ease: "none",
-//             y: 100,
-//             x: 0,
-//             z: 120,
-//             onComplete: () => {
-//                 orbitControls.target(0, 500, 0)
-//                 orbitControls.update()
-//             }
-
-//         })
-//     }
-// })
 
 
 
