@@ -6807,7 +6807,7 @@ function handleInteractions(scene, camera, cubes, initialPositions) {
         userHUD_imgButton_pdfTest01 = new THREE.Group()
         userHUD_imgButton_pdfTest01.position.set(0, 100, -100)
         userHUD_imgButton_pdfTest01.rotation.set(0, 0, 0)
-        userHUD_imgButton_pdfTest01.scale.set(0.10, 0.10, 0.10)
+        userHUD_imgButton_pdfTest01.scale.set(0.30, 0.30, 0.30)
         userHUD_pdfTest01.add(userHUD_imgButton_pdfTest01)  
 
 
@@ -6875,7 +6875,7 @@ function handleInteractions(scene, camera, cubes, initialPositions) {
                 0, 0, 0,
                 0.1, 0.1, 0.1,
                 "Testing234", "TestingClass234",
-                "assets/icons/Hud_LH_RH_Apps/LH/01_System/02_RealityOptions/00_Reality_Systems/Reality_Systems.svg", "",
+                "assets/icons/00-Official/UI/Isometric/Tools/home-folder.svg", "",
                 "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
                 () => {
 
@@ -8692,7 +8692,7 @@ Skin_CyberSkin_MovementPadImg_root.scale.set(0.005, 0.005, 0.005)
     const TimeCore = new THREE.Group();
     TimeCore.position.set(0, 0, 0);
     TimeCore.rotation.set(0, 0, 0);
-    TimeCore.scale.set(100, 100, 100);
+    TimeCore.scale.set(0.001, 0.001, 0.001);
     scene.add(TimeCore);
 
     const TimeCycleTunnelX = new THREE.Group();
@@ -8897,23 +8897,23 @@ Skin_CyberSkin_MovementPadImg_root.scale.set(0.005, 0.005, 0.005)
     const Summon_TimeΔ = document.getElementById("Toggle_ΔT");
 
     Summon_TimeΔ.addEventListener("click", function() {
-       if (TimeCore.scale.x === 100) {
+       if (TimeCore.scale.x === 0.001) {
            gsap.to(TimeCore.scale, {
-               duration: 1,
-               delay: 0,
-               ease: "none",
-               x: 0.001,
-               y: 0.001,
-               z: 0.001,
-           });
-       } else {
-        gsap.to(TimeCore.scale, {
                duration: 1,
                delay: 0,
                ease: "none",
                x: 100,
                y: 100,
                z: 100,
+           });
+       } else {
+        gsap.to(TimeCore.scale, {
+               duration: 1,
+               delay: 0,
+               ease: "none",
+               x: 0.001,
+               y: 0.001,
+               z: 0.001,
            });
        }
 
