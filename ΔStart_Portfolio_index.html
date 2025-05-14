@@ -1372,10 +1372,47 @@
                     display: none;
                 }
 
-        .systemOptionsListItem {
-            width: 75%;
+        .SystemOptionsListItem {
+            width: 100%;
             margin: 2.5px;
             margin-bottom: 3.5px;
+            padding-left: 1px;
+            font-family: 'Quantico', Arial, sans-serif; /* Apply the custom font */
+            text-align: center; /* Align text to the center */
+            background-color: grey;
+            color: rgba(255, 255, 255, 0.9);
+            box-shadow: #FFFFFF 0px 0px 2.5px;
+            border: 1px solid rgba(255, 255, 255);
+            border-radius: 5px;
+            font-size: 12px;
+            cursor: pointer;
+            opacity: 0.95;
+            z-index: 5;
+        }
+
+        .SystemOptions_ListItem {
+            margin: 2.5px;
+            margin-bottom: 3.5px;
+            padding-left: 1px;
+            padding: 2.5px;
+            font-family: 'Quantico', Arial, sans-serif; /* Apply the custom font */
+            text-align: center; /* Align text to the center */
+            background-color: grey;
+            color: rgba(255, 255, 255, 0.9);
+            box-shadow: #FFFFFF 0px 0px 2.5px;
+            border: 1px solid rgba(255, 255, 255);
+            border-radius: 5px;
+            font-size: 12px;
+            cursor: pointer;
+            opacity: 0.65;
+            z-index: 5;
+        }
+
+
+        .NavigationOptionsListItem {
+            width: 100%;
+            margin: 2.5px;
+            margin-bottom: 1.5px;
             padding-left: 10px;
             font-family: 'Quantico', Arial, sans-serif; /* Apply the custom font */
             text-align: center; /* Align text to the center */
@@ -1391,31 +1428,12 @@
         }
 
 
-        .NavigationOptionsListItem {
-            width: 100%;
-            margin: 2.5px;
-            margin-bottom: 3.5px;
-            padding-left: 10px;
-            font-family: 'Quantico', Arial, sans-serif; /* Apply the custom font */
-            text-align: center; /* Align text to the center */
-            background-color: grey;
-            color: rgba(255, 255, 255, 0.9);
-            box-shadow: #FFFFFF 0px 0px 2.5px;
-            border: 1px solid rgba(255, 255, 255);
-            border-radius: 5px;
-            font-size: 12px;
-            cursor: pointer;
-            opacity: 0.55;
-            z-index: 5;
-        }
-
-
 
         .additional_systemOptions {
-                top: 120px;
-                right: 30px;
+                top: 270px;
+                left: 75px;
                 width: 140px;
-                height: 250px;
+                height: 310px;
             }
 
                 .additional_systemOptions {
@@ -1426,29 +1444,34 @@
                     color: white;
                     padding-top: 20px;
                     padding-right: 20px;
-                    padding-left: 20px;
+                    padding-left: 35px;
                     padding-bottom: -20px;
-                    font-size: 16px;
+                    font-size: 12px;
                     z-index: 2;
-                    display: block;
+                    display: none;
+                    transform: rotate(90deg); /* Rotate the element by 90 degrees */
+                    transform-origin: center; /* Set the rotation point to the center */
                 }
 
                     .Secondary_systems_options {
                         position: absolute; 
                         top: 30px;
-                        left: 2px;
-                        width: 200px;
+                        left: -30px;
+                        width: 250px;
                         height: auto;   
                         background-repeat: no-repeat; /* Prevent the background image from repeating */
                         color: white;
-                        padding-top: 20px;
+                        padding-top: 1px;
                         padding-right: 10px;
                         padding-left: 10px;
                         padding-bottom: 150px;
+                        /* box-shadow: inset 0px 0px 2.5px; */
                         /* margin-right: 50px; */
-                        font-size: 16px;
+                        font-size: 12px;
                         z-index: 2;
                         display: block;
+                        transform: rotate(-90deg); /* Rotate the element by 90 degrees */
+                        transform-origin: center; /* Set the rotation point to the center */
                     }
 
                     .Secondary-perspectives-options {
@@ -1758,27 +1781,27 @@
   <div id="SystemPanel" class="SystemPanel" style="display: none;">
     <h2>SystemMenu</h2>
     <hr/>
-    <button class="systemOptionsListItem button-Systems" onclick="play_sfx_click_gen()">Systems</button></br>
-    <button class="systemOptionsListItem button-Perspectives" onclick="play_sfx_click_gen()">Perspectives</button></br>
-    <button class="systemOptionsListItem button-Hiearchies" onclick="play_sfx_click_gen()">Hiearchies</button></br>
-    <button id="StartCameraAndContainer_root_Animation01" class="systemOptionsListItem button-Events" onclick="camera_and_userContainer_root__Animation01()">Events</button></br>
-    <button class="systemOptionsListItem button-Times" onclick="play_sfx_click_gen()">Times</button></br>
-    <button class="systemOptionsListItem button-Spaces" onclick="play_sfx_click_gen()">Spaces</button></br>
-    <button class="systemOptionsListItem button-Objects" onclick="play_sfx_click_gen()">Objects</button></br>
-    <button class="systemOptionsListItem button-Help" onclick="play_sfx_click_gen()">Help</button></br>
+    <button class="SystemOptionsListItem button-Systems" onclick="toggleAdditionalItemsMenuContainer()">Systems</button></br>
+    <button class="SystemOptionsListItem button-Perspectives" onclick="play_sfx_click_gen()">Perspectives</button></br>
+    <button class="SystemOptionsListItem button-Hiearchies" onclick="play_sfx_click_gen()">Hiearchies</button></br>
+    <button id="StartCameraAndContainer_root_Animation01" class="SystemOptionsListItem button-Events" onclick="camera_and_userContainer_root__Animation01()">Events</button></br>
+    <button class="SystemOptionsListItem button-Times" onclick="play_sfx_click_gen()">Times</button></br>
+    <button class="SystemOptionsListItem button-Spaces" onclick="play_sfx_click_gen()">Spaces</button></br>
+    <button class="SystemOptionsListItem button-Objects" onclick="play_sfx_click_gen()">Objects</button></br>
+    <button class="SystemOptionsListItem button-Help" onclick="play_sfx_click_gen()">Help</button></br>
   </div>
 
 
-  <!-- <div class="additional_systemOptions"> -->
+  <div class="additional_systemOptions">
 
-    <!-- <div class="Secondary_systems_options">
-        
-        <button class="systemOptionsListItem">UserInterface</button>
-        <button class="systemOptionsListItem">UserExperience</button>
-        <button class="systemOptionsListItem">Button</button>
-        <button class="systemOptionsListItem">Button</button>
-        <button class="systemOptionsListItem">Button</button>
-    </div> -->
+    <div class="Secondary_systems_options">
+        <br/>
+        <button class="SystemOptions_ListItem">Admin</button>
+        <button class="SystemOptions_ListItem">Controllers</button>
+        <button class="SystemOptions_ListItem">Interfaces</button>
+        <button class="SystemOptions_ListItem">Realities</button>
+        <button class="SystemOptions_ListItem">Commands</button>
+    </div>
 
 
     <div class="Secondary-perspectives-options">
@@ -2090,6 +2113,24 @@
 
         }
     }
+
+
+
+    function toggleAdditionalItemsMenuContainer() {
+        const additionalItemsContainer = document.querySelector(".additional_systemOptions");
+
+        if (additionalItemsContainer.style.display === "none" || additionalItemsContainer.style.display === "") {
+            play_sfx_show()
+            additionalItemsContainer.style.display = "block";
+
+
+        } else {
+            play_sfx_hide()
+            additionalItemsContainer.style.display = "none";
+        }
+    }
+
+
 
 
 
@@ -2465,6 +2506,35 @@ let subApp01_MusicPlayerApp_obj = {
 
 
 }
+
+
+
+let Virtual_SystemMenuItem_Systems_ΔCore
+    let Virtual_SystemMenuItem_Admin_ΔCore
+    let Virtual_SystemMenuItem_Controllers_ΔCore
+    let Virtual_SystemMenuItem_Interfaces_ΔCore
+    let Virtual_SystemMenuItem_Realities_ΔCore
+
+let Virtual_SystemMenuItem_Perspectives_ΔCore
+let Virtual_SystemMenuItem_Hiearchies_ΔCore
+let Virtual_SystemMenuItem_Events_ΔCore
+let Virtual_SystemMenuItem_Times_ΔCore
+let Virtual_SystemMenuItem_Spaces_ΔCore
+let Virtual_SystemMenuItem_Objects_ΔCore
+let Virtual_SystemMenuItem_Help_ΔCore
+
+
+
+
+let VirtualMenuItem_Home_ΔCore
+let VirtualMenuItem_About_ΔCore
+let VirtualMenuItem_Services_ΔCore
+let VirtualMenuItem_Portfolio_ΔCore
+let VirtualMenuItem_Exhibits_ΔCore
+let VirtualMenuItem_Shop_ΔCore
+let VirtualMenuItem_Contact_ΔCore
+
+
 
 
 
