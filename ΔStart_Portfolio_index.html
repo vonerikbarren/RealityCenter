@@ -8113,7 +8113,7 @@ function handleInteractions(scene, camera, cubes, initialPositions) {
                 0.1, 0.1, 0.1,
                 "hoverClockA1",
                 "./pages/Applications/10-Memory-Cards/index.html",
-                "700px", "1200px"
+                "700px", "700px"
             )
                 
             
@@ -8142,7 +8142,7 @@ function handleInteractions(scene, camera, cubes, initialPositions) {
                 0.1, 0.1, 0.1,
                 "hoverClockA1",
                 "./pages/Applications/03-ToDoList/index.html",
-                "700px", "1200px"
+                "700px", "700px"
             )
                 
             
@@ -8169,8 +8169,8 @@ function handleInteractions(scene, camera, cubes, initialPositions) {
                 0, 0, 0,
                 0.1, 0.1, 0.1,
                 "hoverClockA1",
-                "./pages/Applications/03-ToDoList/index.html",
-                "700px", "1200px"
+                "./pages/Applications/05-DrinkWater/index.html",
+                "700px", "700px"
             )
                 
             
@@ -8180,6 +8180,7 @@ function handleInteractions(scene, camera, cubes, initialPositions) {
 
         Summon_WaterTrackerApp.addEventListener("click", function() {
             if (WaterTrackerApp_root.position.x === -200) {
+                play_sfx_show()
                 gsap.to(WaterTrackerApp_root.position, {
                     repeat: 0,
                     duration: 0.5,
@@ -8190,6 +8191,7 @@ function handleInteractions(scene, camera, cubes, initialPositions) {
                     // z: 0.010,
                 })
             } else if (WaterTrackerApp_root.position.x === 0) {
+                play_sfx_hide()
                 gsap.to(WaterTrackerApp_root.position, {
                     repeat: 0,
                     duration: 0.5,
@@ -8208,6 +8210,7 @@ function handleInteractions(scene, camera, cubes, initialPositions) {
 
         Summon_ToDoListApp.addEventListener("click", function() {
             if (TodoApp_root.position.x === -200) {
+                play_sfx_show()
                 gsap.to(TodoApp_root.position, {
                     repeat: 0,
                     duration: 0.5,
@@ -8218,6 +8221,7 @@ function handleInteractions(scene, camera, cubes, initialPositions) {
                     // z: 0.010,
                 })
             } else if (TodoApp_root.position.x === 0) {
+                play_sfx_hide()
                 gsap.to(TodoApp_root.position, {
                     repeat: 0,
                     duration: 0.5,
@@ -8239,6 +8243,7 @@ function handleInteractions(scene, camera, cubes, initialPositions) {
 
         Summon_FlashcardsApp.addEventListener("click", function() {
             if (FlashCardsApp_root.position.x === -200) {
+                play_sfx_show()
                 gsap.to(FlashCardsApp_root.position, {
                     repeat: 0,
                     duration: 0.5,
@@ -8249,6 +8254,7 @@ function handleInteractions(scene, camera, cubes, initialPositions) {
                     // z: 0.010,
                 })
             } else if (FlashCardsApp_root.position.x === 0) {
+                play_sfx_hide()
                 gsap.to(FlashCardsApp_root.position, {
                     repeat: 0,
                     duration: 0.5,
@@ -13877,15 +13883,15 @@ let UI_ThirdPersonCameraView_root
 
             WaterTrackerApp_core.position.copy(camera.position);
             WaterTrackerApp_core.rotation.copy(camera.rotation);
-            WaterTrackerApp_core.translateZ(-100)
+            WaterTrackerApp_core.translateZ(-50)
 
             ToDoApp_core.position.copy(camera.position);
             ToDoApp_core.rotation.copy(camera.rotation);
-            ToDoApp_core.translateZ(-100)
+            ToDoApp_core.translateZ(-50)
 
             FlashCardsApp_core.position.copy(camera.position);
             FlashCardsApp_core.rotation.copy(camera.rotation);
-            FlashCardsApp_core.translateZ(-100)
+            FlashCardsApp_core.translateZ(-50)
 
             
 
