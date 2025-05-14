@@ -708,6 +708,20 @@
           border-radius: 50px;
         }
 
+        .right-button-8 {
+          bottom: 75px;
+          right: 110px;
+          text-shadow: grey 2px 2px 2px;
+          border-radius: 50px;
+        }
+
+        .right-button-9 {
+          bottom: 75px;
+          right: 5px;
+          text-shadow: grey 2px 2px 2px;
+          border-radius: 50px;
+        }
+
         
 
 
@@ -2672,6 +2686,8 @@
         <button class="button right-button-5">Ω</button>
         <button class="button right-button-6" onclick="toggle_ΛPlayer()">Λ</button>
         <button id="Toggle_ΔN" class="button right-button-7"">N</button>
+        <button id="Toggle_ΔΞ" class="button right-button-8">Ξ</button>
+        <button id="Toggle_WaterTrackerApp" class="button right-button-9">⽔</button>
 
     <div class="gamepad-primaryOptions-buttons"></div>
 
@@ -3666,6 +3682,16 @@ let VirtualMenuItem_Contact_ΔCore
 
 let FlashCardsApp_core
 let FlashCardsApp_root
+let FlashCardsApp_data
+
+let ToDoApp_core
+let TodoApp_root
+let ToDoApp_data
+
+
+let WaterTrackerApp_core
+let WaterTrackerApp_root
+let WaterTrackerApp_data
 
 
 
@@ -8092,6 +8118,121 @@ function handleInteractions(scene, camera, cubes, initialPositions) {
                 
             
         )
+
+
+
+    ToDoApp_core = new THREE.Group()
+    ToDoApp_core.position.set(0, 0, -100)
+    ToDoApp_core.rotation.set(0, 0, 0)
+    ToDoApp_core.scale.set(2.5, 2.5, 2.5)
+    scene.add(ToDoApp_core)  
+
+        TodoApp_root = new THREE.Group()
+        TodoApp_root.position.set(-200, 7.5, -35)
+        TodoApp_root.rotation.set(0, 0, 0)
+        TodoApp_root.scale.set(0.5, 0.5, 0.5)
+        ToDoApp_core.add(TodoApp_root)  
+
+
+        TodoApp_root.add(
+    
+            new makePDF_Viewer(
+                0, 0, 0,
+                0, 0, 0,
+                0.1, 0.1, 0.1,
+                "hoverClockA1",
+                "./pages/Applications/03-ToDoList/index.html",
+                "700px", "1200px"
+            )
+                
+            
+        )
+
+    
+    WaterTrackerApp_core = new THREE.Group()
+    WaterTrackerApp_core.position.set(0, 0, -100)
+    WaterTrackerApp_core.rotation.set(0, 0, 0)
+    WaterTrackerApp_core.scale.set(2.5, 2.5, 2.5)
+    scene.add(WaterTrackerApp_core)  
+
+        WaterTrackerApp_root = new THREE.Group()
+        WaterTrackerApp_root.position.set(-200, 7.5, -35)
+        WaterTrackerApp_root.rotation.set(0, 0, 0)
+        WaterTrackerApp_root.scale.set(0.5, 0.5, 0.5)
+        WaterTrackerApp_core.add(WaterTrackerApp_root)  
+
+
+        WaterTrackerApp_root.add(
+    
+            new makePDF_Viewer(
+                0, 0, 0,
+                0, 0, 0,
+                0.1, 0.1, 0.1,
+                "hoverClockA1",
+                "./pages/Applications/03-ToDoList/index.html",
+                "700px", "1200px"
+            )
+                
+            
+        )
+
+        const Summon_WaterTrackerApp = document.getElementById("Toggle_WaterTrackerApp");
+
+        Summon_WaterTrackerApp.addEventListener("click", function() {
+            if (WaterTrackerApp_root.position.x === -200) {
+                gsap.to(WaterTrackerApp_root.position, {
+                    repeat: 0,
+                    duration: 0.5,
+                    ease: "none",
+                    delay: 0.15,
+                    x: 0,
+                    // w: 0.010,
+                    // z: 0.010,
+                })
+            } else if (WaterTrackerApp_root.position.x === 0) {
+                gsap.to(WaterTrackerApp_root.position, {
+                    repeat: 0,
+                    duration: 0.5,
+                    ease: "none",
+                    delay: 0.15,
+                    x: -200,
+                    // w: 0.010,
+                    // z: 0.010,
+                })
+            }
+
+        });
+
+
+        const Summon_ToDoListApp = document.getElementById("Toggle_ΔΞ");
+
+        Summon_ToDoListApp.addEventListener("click", function() {
+            if (TodoApp_root.position.x === -200) {
+                gsap.to(TodoApp_root.position, {
+                    repeat: 0,
+                    duration: 0.5,
+                    ease: "none",
+                    delay: 0.15,
+                    x: 0,
+                    // w: 0.010,
+                    // z: 0.010,
+                })
+            } else if (TodoApp_root.position.x === 0) {
+                gsap.to(TodoApp_root.position, {
+                    repeat: 0,
+                    duration: 0.5,
+                    ease: "none",
+                    delay: 0.15,
+                    x: -200,
+                    // w: 0.010,
+                    // z: 0.010,
+                })
+            }
+
+        });
+
+
+    
 
 
         const Summon_FlashcardsApp = document.getElementById("Toggle_ΔN");
@@ -13734,9 +13875,19 @@ let UI_ThirdPersonCameraView_root
             userHUD_pdfTest01.rotation.copy(camera.rotation);
             userHUD_pdfTest01.translateZ(-150)
 
+            WaterTrackerApp_core.position.copy(camera.position);
+            WaterTrackerApp_core.rotation.copy(camera.rotation);
+            WaterTrackerApp_core.translateZ(-100)
+
+            ToDoApp_core.position.copy(camera.position);
+            ToDoApp_core.rotation.copy(camera.rotation);
+            ToDoApp_core.translateZ(-100)
+
             FlashCardsApp_core.position.copy(camera.position);
             FlashCardsApp_core.rotation.copy(camera.rotation);
             FlashCardsApp_core.translateZ(-100)
+
+            
 
 
             // // Skin_CyberSkin_03_root
