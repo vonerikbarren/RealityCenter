@@ -2257,22 +2257,33 @@
                     display: block;
                 }
 
+                .identificationContainer {
+                    display: none;
+                }
+
                 
 
                 .identification-panel {
                     position: absolute;
-                    width: 300px;
-                    height: 150px;
-                    background-color: rgba(255, 255, 255, 0.8);
+                    top: 40%;
+                    left: 15%;
+                    width: 250px;
+                    height: 175px;  
+                   
+                    background-color: rgb(255, 255, 255, 0.25);
+                    background-repeat: black no-repeat; /* Prevent the background image from repeating */
+                    background-repeat: no-repeat; /* Prevent the background image from repeating */
+                    /* position: absolute;  */
                     color: white;
-                    border-radius: 10px;
-                    font-size: 10px;
-                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-                    border: 2.5px inset rgba(255, 255, 255, 0.2);
-                    display: none; /* Hidden by default */
-                    z-index: 0;
-                    overflow: hidden;
-                    font-family: 'Arial', sans-serif;
+                    padding-top: 1px;
+                    padding-right: 10px;
+                    padding-left: 10px;
+                    padding-bottom: 150px;
+                    /* box-shadow: inset 0px 0px 2.5px; */
+                    /* margin-right: 50px; */
+                    font-size: 12px;
+                    z-index: 2;
+                    display: none;
                 }
 
                 .identification-panel h3 {
@@ -2953,20 +2964,23 @@
 
 
 
-
-
-    <div id="identification-panel" class="identification-panel">
-        <div class="identification-header">
-            <h3 id="object-name">Object Name</h3>
-            <p id="object-coordinates">Coordinates: X: 0, Y: 0, Z: 0</p>
-        </div>
-        <div class="identification-body">
-            <p id="object-info">Hover or tap on an object to see its details here.</p>
-        </div>
-        <div class="identification-footer">
-            <p id="page-number">Page 1</p>
+    <div id="identificationContainer" class="identificationContainer">
+        <div id="identification-panel" class="identification-panel">
+            <div class="identification-header">
+                <h3 id="object-name">Object Name</h3>
+                <p id="object-coordinates">Coordinates: X: 0, Y: 0, Z: 0</p>
+            </div>
+            <div class="identification-body">
+                <p id="object-info">Hover or tap on an object to see its details here.</p>
+            </div>
+            <div class="identification-footer">
+                <p id="page-number">Page 1</p>
+            </div>
         </div>
     </div>
+
+
+    
 
 
 <!-- LH & RH Buttons -->
@@ -2995,17 +3009,6 @@
 <button id="CH_Button" class="CH_Button" >CH</button>
 <button id="ID_Button" class="ID_Button" >ID</button>
 
-
-
-
-
-
-
-
-
-
-
-<button id="ID_Button" class="ID_Button" >ID</button>
   
  
 <button class="button option-menu" onclick="toggleOptionsMenu()">☰</button>
@@ -8781,7 +8784,7 @@ function handleInteractions(scene, camera, cubes, initialPositions) {
 
         // Select the transcendent-hand gear containers
         const indentificationPanelContainer = document.querySelectorAll(
-            '.identification-panel, .identification-header, .identification-body, .identification-footer'
+            '.identificationContainer, .identification-panel, .identification-header, .identification-body, .identification-footer'
         );
 
         // Function to toggle visibility of elements
@@ -8814,7 +8817,6 @@ function handleInteractions(scene, camera, cubes, initialPositions) {
 
         id_Button.addEventListener('click', () => {
             toggleVisibility(indentificationPanelContainer);
-            console.log("ID Button Clicked")
         });
 
 
