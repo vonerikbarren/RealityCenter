@@ -8453,8 +8453,10 @@ function handleInteractions(scene, camera, cubes, initialPositions) {
         handGearLeftContainer02.addEventListener('click', () => {
             // Toggle the size of HandGearLeftContainer_01
             if (handGearLeftContainer01.style.transform === 'scale(2)') {
+                play_sfx_click_gen()
                 handGearLeftContainer01.style.transform = 'scale(1)'; // Reset to original size
             } else {
+                play_sfx_click_gen()
                 handGearLeftContainer01.style.transform = 'scale(2)'; // Make it larger
             }
         });
@@ -8468,8 +8470,10 @@ function handleInteractions(scene, camera, cubes, initialPositions) {
         handGearRightContainer02.addEventListener('click', () => {
             // Toggle the size of HandGearRightContainer_01
             if (handGearRightContainer01.style.transform === 'scale(2)') {
+                play_sfx_click_gen()
                 handGearRightContainer01.style.transform = 'scale(1)'; // Reset to original size
             } else {
+                play_sfx_click_gen()
                 handGearRightContainer01.style.transform = 'scale(2)'; // Make it larger
             }
         });
@@ -8493,8 +8497,12 @@ function handleInteractions(scene, camera, cubes, initialPositions) {
         function toggleVisibility(elements) {
             elements.forEach(element => {
                 if (element.style.display === 'none' || element.style.display === '') {
+                    play_sfx_click_gen()
+                    play_sfx_show()
                     element.style.display = 'block'; // Show the element
                 } else {
+                    play_sfx_click_gen()
+                    play_sfx_hide()
                     element.style.display = 'none'; // Hide the element
                 }
             });
