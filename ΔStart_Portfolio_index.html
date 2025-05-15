@@ -2238,13 +2238,92 @@
                 }
 
 
+                .inspectorPanelContainer_root {
+                    position: absolute; 
+                    top: 10px;
+                    left: 10px;
+                    width: 250px;
+                    height: auto;   
+                    background-repeat: black no-repeat; /* Prevent the background image from repeating */
+                    color: white;
+                    padding-top: 1px;
+                    padding-right: 10px;
+                    padding-left: 10px;
+                    padding-bottom: 150px;
+                    /* box-shadow: inset 0px 0px 2.5px; */
+                    /* margin-right: 50px; */
+                    font-size: 12px;
+                    z-index: 2;
+                    display: block;
+                }
 
+                
+
+                .identification-panel {
+                    position: absolute;
+                    width: 300px;
+                    height: 150px;
+                    background-color: rgba(255, 255, 255, 0.8);
+                    color: white;
+                    border-radius: 10px;
+                    font-size: 10px;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+                    border: 2.5px inset rgba(255, 255, 255, 0.2);
+                    display: none; /* Hidden by default */
+                    z-index: 0;
+                    overflow: hidden;
+                    font-family: 'Arial', sans-serif;
+                }
+
+                .identification-panel h3 {
+                    margin: 0;
+                    font-size: 8px;
+                    color: #333;
+                }
+
+                .identification-panel p {
+                    margin: 0;
+                    font-size: 8px;
+                    color: #333;
+                }
+
+                .identification-header {
+                    padding: 10px;
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+                    text-align: center;
+                }
+
+                .identification-header h3 {
+                    margin: 0;
+                    font-size: 10px;
+                }
+
+                .identification-header p {
+                    margin: 5px 0 0;
+                    font-size: 10px;
+                    color: rgba(255, 255, 255, 0.7);
+                }
+
+                .identification-body {
+                    padding: 10px;
+                    height: calc(100% - 90px); /* Adjust height to leave space for header and footer */
+                    overflow-y: auto; /* Make the body scrollable */
+                    font-size: 10px;
+                }
+
+                .identification-footer {
+                    padding: 10px;
+                    border-top: 1px solid rgba(255, 255, 255, 0.2);
+                    text-align: center;
+                    font-size: 10px;
+                    color: rgba(255, 255, 255, 0.7);
+                }
 
             
                   
 
 
-        .LH_Button, .RH_Button, .CH_Button {
+        .LH_Button, .RH_Button, .CH_Button, .ID_Button {
             width: 50px; /* Adjust as needed */
             height: 50px; /* Adjust as needed */
             background-size: cover; /* Adjust as needed */
@@ -2262,29 +2341,42 @@
 
         .LH_Button {
             background-image: url('assets/designs/HUD/mobile/SVG/Button_Hand_Left_01.svg'); /* Path to your left-hand image */
-            left: 30px;
-            bottom: 210px;
+            left: 1%;
+            bottom: 31%;
             background-color: transparent; /* Remove background color */
             text-shadow: grey 2px 2px;
             position: absolute; /* Ensure the button is positioned correctly */
+            z-index: 10;
         }
 
         .RH_Button {
             background-image: url('assets/designs/HUD/mobile/SVG/Button_Hand_Right_01.svg'); /* Path to your right-hand image */
-            right: 30px;
-            bottom: 210px;
+            right: 1%;
+            bottom: 31%;
             background-color: transparent; /* Remove background color */
             text-shadow: grey 2px 2px;
             position: absolute; /* Ensure the button is positioned correctly */
+            z-index: 10;
         }
 
         .CH_Button {
             background-image: url('assets/designs/HUD/mobile/SVG/Button_Hand_Right_01.svg'); /* Path to your right-hand image */
-            right: 37.5%;
-            bottom: 10%;
+            right: 1%;
+            top: 37.5%;
             background-color: transparent; /* Remove background color */
             text-shadow: grey 2px 2px;
             position: absolute; /* Ensure the button is positioned correctly */
+            z-index: 10;
+        }
+
+        .ID_Button {
+            background-image: url('assets/designs/HUD/mobile/SVG/Button_Hand_Left_01.svg'); /* Path to your right-hand image */
+            left: 1%;
+            top: 37.5%;
+            background-color: transparent; /* Remove background color */
+            text-shadow: grey 2px 2px;
+            position: absolute; /* Ensure the button is positioned correctly */
+            z-index: 10;
         }
 
 
@@ -2785,6 +2877,48 @@
     <div class="Secondary-spaces-options"></div>
     <div class="Secondary-objects-options"></div>
     <div class="Secondary-help-options"></div> -->
+
+
+    <!-- <div class="identificationPanel_root">
+        <div class="identificationPanelHeader"></div>""
+        <div class="identificationPanelBody">
+            <div class="identificationPanelBody_01"></div>
+            <div class="identificationPanelBody_02"></div>
+            <div class="identificationPanelBody_03"></div>
+            <div class="identificationPanelBody_04"></div>
+            <div class="identificationPanelBody_05"></div>
+            <div class="identificationPanelBody_06"></div>
+        <div class="identificationPanelFooter"></div>
+    </div> -->
+
+    <!-- <div class="inspectorPanelContainer_root">
+        <div class="inspector-header">
+            <h3>Inspector</h3>
+        </div>
+        <div class="inspector-body">
+
+            <div id="identification-panel" class="identification-panel">
+                <div class="identification-header">
+                    <h3 id="object-name">Object Name</h3>
+                    <p id="object-coordinates">Coordinates: X: 0, Y: 0, Z: 0</p>
+                </div>
+                <div class="identification-body">
+                    <p id="object-info">Hover or tap on an object to see its details here.</p>
+                </div>
+                <div class="identification-footer">
+                    <p id="page-number">Page 1</p>
+                </div>
+            </div>
+
+        </div>
+        <div class="inspector-footer">
+            <p>Page 1</p>
+        </div>
+    </div> -->
+
+
+   
+    
   
 
 
@@ -2816,6 +2950,25 @@
 
     <div class="gamepad-primaryOptions-buttons"></div>
 
+
+
+
+
+
+    <div id="identification-panel" class="identification-panel">
+        <div class="identification-header">
+            <h3 id="object-name">Object Name</h3>
+            <p id="object-coordinates">Coordinates: X: 0, Y: 0, Z: 0</p>
+        </div>
+        <div class="identification-body">
+            <p id="object-info">Hover or tap on an object to see its details here.</p>
+        </div>
+        <div class="identification-footer">
+            <p id="page-number">Page 1</p>
+        </div>
+    </div>
+
+
 <!-- LH & RH Buttons -->
 
 
@@ -2840,6 +2993,19 @@
 <button id="LH_Button" class="LH_Button" >LH</button>
 <button id="RH_Button" class="RH_Button" >RH</button>
 <button id="CH_Button" class="CH_Button" >CH</button>
+<button id="ID_Button" class="ID_Button" >ID</button>
+
+
+
+
+
+
+
+
+
+
+
+<button id="ID_Button" class="ID_Button" >ID</button>
   
  
 <button class="button option-menu" onclick="toggleOptionsMenu()">☰</button>
@@ -2989,7 +3155,7 @@
 <!-- MusicPlayer -->
 <div id="music-player">
     <audio id="audio" controls>
-        <source src="assets/audio/env_music/Consciousness_D03.mp3" type="audio/mpeg">
+        <source src="assets/audio/env_music/OmniAmbience.mp3" type="audio/mpeg" autoplay loop>
         <!-- <source src="assets/audio/env_music/Portfolio_ΔofTechincalAmbienceV3_1.mp3" type="audio/mpeg"> -->
         Your browser does not support the audio element.
     </audio>
@@ -8574,11 +8740,29 @@ function handleInteractions(scene, camera, cubes, initialPositions) {
         });
 
 
+        // // Select the elements
+        // const inspectorPanel = document.querySelector('.identification-panel');
+        // const identificationPanel = document.querySelector('.HandGearOfConsciousnessContainer_01');
+
+        // // Add a click event listener to HandGearOfConsciousness
+        // handGearOfConsciousness.addEventListener('click', () => {
+        //     // Toggle the size of handGearOfConsciousnessContainer_01
+        //     if (handGearOfConsciousnessContainer_01.style.transform === 'scale(2)') {
+        //         play_sfx_click_gen()
+        //         handGearOfConsciousnessContainer_01.style.transform = 'scale(1)'; // Reset to original size
+        //     } else {
+        //         play_sfx_click_gen()
+        //         handGearOfConsciousnessContainer_01.style.transform = 'scale(2)'; // Make it larger
+        //     }
+        // });
+
+
 
         // Select the buttons
         const lhButton = document.getElementById('LH_Button');
         const rhButton = document.getElementById('RH_Button');
-        const thButton = document.getElementById('CH_Button');
+        const chButton = document.getElementById('CH_Button');
+        const id_Button = document.getElementById('ID_Button');
 
         // Select the left-hand gear containers
         const leftGearContainers = document.querySelectorAll(
@@ -8593,6 +8777,11 @@ function handleInteractions(scene, camera, cubes, initialPositions) {
         // Select the transcendent-hand gear containers
         const consiousGearContainers = document.querySelectorAll(
             '.HandGearOfConsciousnessContainer_01, .HandGearOfConsciousnessContainer_02, .HandGearOfConsciousnessContainer_03, .HandGearOfConsciousness '
+        );
+
+        // Select the transcendent-hand gear containers
+        const indentificationPanelContainer = document.querySelectorAll(
+            '.identification-panel, .identification-header, .identification-body, .identification-footer'
         );
 
         // Function to toggle visibility of elements
@@ -8619,8 +8808,69 @@ function handleInteractions(scene, camera, cubes, initialPositions) {
             toggleVisibility(rightGearContainers);
         });
 
-        thButton.addEventListener('click', () => {
+        chButton.addEventListener('click', () => {
             toggleVisibility(consiousGearContainers);
+        });
+
+        id_Button.addEventListener('click', () => {
+            toggleVisibility(indentificationPanelContainer);
+            console.log("ID Button Clicked")
+        });
+
+
+
+
+
+
+
+
+
+        // Select the Identification Panel elements
+        const identificationPanel = document.getElementById('identification-panel');
+        const objectName = document.getElementById('object-name');
+        const objectCoordinates = document.getElementById('object-coordinates');
+        const objectInfo = document.getElementById('object-info');
+
+        // Function to show the Identification Panel
+        function showIdentificationPanel(name, x, y, z, info) {
+            objectName.textContent = name;
+            objectCoordinates.textContent = `Coordinates: X: ${x}, Y: ${y}, Z: ${z}`;
+            objectInfo.textContent = info;
+            identificationPanel.style.display = 'block';
+        }
+
+        // Function to hide the Identification Panel
+        function hideIdentificationPanel() {
+            identificationPanel.style.display = 'none';
+        }
+
+        // Example: Add hover and tap events to objects in the scene
+        const objectsInScene = document.querySelectorAll('.scene-object'); // Replace with your scene objects
+
+        objectsInScene.forEach((object) => {
+            // Desktop: Show panel on hover
+            object.addEventListener('mouseenter', () => {
+                const name = object.getAttribute('data-name') || 'Unknown Object';
+                const x = object.getAttribute('data-x') || 0;
+                const y = object.getAttribute('data-y') || 0;
+                const z = object.getAttribute('data-z') || 0;
+                const info = object.getAttribute('data-info') || 'No additional information available.';
+                showIdentificationPanel(name, x, y, z, info);
+            });
+
+            object.addEventListener('mouseleave', hideIdentificationPanel);
+
+            // Mobile: Show panel on tap
+            object.addEventListener('touchstart', () => {
+                const name = object.getAttribute('data-name') || 'Unknown Object';
+                const x = object.getAttribute('data-x') || 0;
+                const y = object.getAttribute('data-y') || 0;
+                const z = object.getAttribute('data-z') || 0;
+                const info = object.getAttribute('data-info') || 'No additional information available.';
+                showIdentificationPanel(name, x, y, z, info);
+            });
+
+            object.addEventListener('touchend', hideIdentificationPanel);
         });
 
 
