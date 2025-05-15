@@ -2289,6 +2289,7 @@
             box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5); /* Adjust the values as needed */
             border-radius: 50px;
             color: black;
+            display: none; /* Hide the element by default */
             position: absolute; /* Ensure the div is positioned correctly */
             opacity: 0.55;
             animation: rotateLeft 5s linear infinite;
@@ -2306,6 +2307,7 @@
             box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5); /* Adjust the values as needed */
             border-radius: 50px;
             color: black;
+            display: none; /* Hide the element by default */
             position: absolute; /* Ensure the div is positioned correctly */
             opacity: 0.55;
             animation: rotateRight 5s linear infinite;
@@ -2326,10 +2328,12 @@
             box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5); /* Adjust the values as needed */
             border-radius: 100px;
             color: black;
+            display: none; /* Hide the element by default */
             position: absolute; /* Ensure the div is positioned correctly */
             opacity: 1;
             /* animation: rotateLeft 5s linear infinite; */
             z-index: 1;
+            transition: transform 0.3s ease; /* Smooth transition for scaling */
         }
 
         .HandGearLeftContainer_02 {
@@ -2338,16 +2342,29 @@
             left: -50px;
             bottom: 120px;
             padding: 1px;
+            outline: none; /* Remove the focus outline */
             background-image: url('assets/img/03-HudUI/BrainHolders/LeftBrain/LeftBrainHolder_Default01.png');
             border-radius: 100px;
             color: black;
             position: absolute; /* Ensure the div is positioned correctly */
             opacity: 1;
+            display: none; /* Hide the element by default */
+            cursor: pointer; /* Change cursor to pointer */
             transform: scale(0.85);
             animation: moveUpDown 7.5s infinite; /* Apply the animation */
             /* animation: rotateLeft 5s linear infinite; */
             z-index: 2;
+            transition: transform 0.3s ease; /* Smooth transition for scaling */
         }
+
+            .HandGearLeftContainer_02:focus {
+                outline: none; /* Ensure no outline appears when focused */
+            }
+
+            .HandGearLeftContainer_02:active {
+                outline: none; /* Remove outline when active */
+                /* background: none; Prevent any background color change */
+            }
 
         .HandGearRightContainer_03 {
             width: 125px; /* Adjust as needed */
@@ -2357,10 +2374,12 @@
             background-image: url('assets/img/03-HudUI/BrainHolders/LeftBrain/LeftBrainHolder_Default01.png');
             border-radius: 50px;
             color: black;
+            display: none; /* Hide the element by default */
             position: absolute; /* Ensure the div is positioned correctly */
             opacity: 1;
             /* animation: rotateLeft 5s linear infinite; */
             z-index: 2;
+            transition: transform 0.3s ease; /* Smooth transition for scaling */
         }
 
 
@@ -2373,14 +2392,17 @@
             right: 60px;
             bottom: 190px;
             background-image: url('assets/designs/HUD/general/borders/cyberPunk01/SVG/OptionRing_01.svg');
+            background-repeat: no-repeat; /* Prevent the background image from repeating */
             box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5); /* Adjust the values as needed */
             border-radius: 100px;
             color: black;
+            display: none; /* Hide the element by default */
             position: absolute; /* Ensure the div is positioned correctly */
             opacity: 0.75;
             /* animation: rotateRight 5s linear infinite; */
             transform: scaleX(-1); /* Flip the image vertically */
             z-index: 1;
+            transition: transform 0.3s ease; /* Smooth transition for scaling */
         }
 
         .HandGearRightContainer_02 {
@@ -2388,16 +2410,32 @@
             height: 300px; /* Adjust as needed */
             right: -10px;
             bottom: 120px;
+            outline: none; /* Remove the focus outline */
             background-image: url('assets/img/03-HudUI/BrainHolders/RightBrain/RightBrainHolder_Default01.png');
+            background-repeat: no-repeat; /* Prevent the background image from repeating */
             border-radius: 100px;
             color: black;
             position: absolute; /* Ensure the div is positioned correctly */
             opacity: 0.95;
-            display:block;
+            display:none;
+            cursor: pointer; /* Change cursor to pointer */
             animation: moveUpDown 7.5s infinite; /* Apply the animation */
             /* animation: rotateLeft 5s linear infinite; */
-            transform: scale(0.85);
+            transition: transform 0.3s ease; /* Smooth transition for scaling */
             z-index: 2;
+        }
+
+        .HandGearRightContainer_02:hover {
+            transform: scale(0.15); /* Scale the element up slightly */
+            outline: none; /* Remove the focus outline */
+            cursor: pointer; /* Change cursor to pointer */
+        }
+
+        .HandGearRightContainer_02:active {
+            transform: scale(0.95); /* Scale the element up slightly */
+            outline: none; /* Remove the focus outline */
+            background-color: rgba(255, 255, 255, 0.2); /* Change background color */
+            cursor: pointer; /* Change cursor to pointer */
         }
 
         .HandGearRightContainer_03 {
@@ -2413,6 +2451,21 @@
             /* animation: rotateLeft 5s linear infinite; */
             /* transform: scaleX(); Flip the image vertically */
             z-index: 1;
+            transition: transform 0.3s ease; /* Smooth transition for scaling */
+        }
+
+
+        /* Hover Effect for Both Hands */
+        .HandGearLeftContainer_02:hover,
+        .HandGearRightContainer_02:hover {
+            transform: scale(1.1); /* Slightly increase size */
+            transition: transform 0.3s ease; /* Smooth transition */
+        }
+
+        .HandGearLeftContainer_02:active,
+        .HandGearRightContainer_02:active {
+            transform: scale(1.1); /* Slightly increase size on tap */
+            transition: transform 0.3s ease; /* Smooth transition */
         }
 
 
@@ -2703,7 +2756,7 @@
 
  <div class="HandGearRightContainer_01"></div>
  <div class="HandGearRightContainer_02"></div>
- <div class="HandGearRightContainer_03"></div>
+ <!-- <div class="HandGearRightContainer_03"></div> -->
  
 
 <button id="LH_Button" class="LH_Button" >LH</button>
@@ -8389,6 +8442,72 @@ function handleInteractions(scene, camera, cubes, initialPositions) {
 
 
 
+
+
+
+        // Select the elements
+        const handGearLeftContainer02 = document.querySelector('.HandGearLeftContainer_02');
+        const handGearLeftContainer01 = document.querySelector('.HandGearLeftContainer_01');
+
+        // Add a click event listener to HandGearLeftContainer_02
+        handGearLeftContainer02.addEventListener('click', () => {
+            // Toggle the size of HandGearLeftContainer_01
+            if (handGearLeftContainer01.style.transform === 'scale(2)') {
+                handGearLeftContainer01.style.transform = 'scale(1)'; // Reset to original size
+            } else {
+                handGearLeftContainer01.style.transform = 'scale(2)'; // Make it larger
+            }
+        });
+
+
+        // Select the elements
+        const handGearRightContainer02 = document.querySelector('.HandGearRightContainer_02');
+        const handGearRightContainer01 = document.querySelector('.HandGearRightContainer_01');
+
+        // Add a click event listener to HandGearRightContainer_02
+        handGearRightContainer02.addEventListener('click', () => {
+            // Toggle the size of HandGearRightContainer_01
+            if (handGearRightContainer01.style.transform === 'scale(2)') {
+                handGearRightContainer01.style.transform = 'scale(1)'; // Reset to original size
+            } else {
+                handGearRightContainer01.style.transform = 'scale(2)'; // Make it larger
+            }
+        });
+
+
+        // Select the buttons
+        const lhButton = document.getElementById('LH_Button');
+        const rhButton = document.getElementById('RH_Button');
+
+        // Select the left-hand gear containers
+        const leftGearContainers = document.querySelectorAll(
+            '.HandGearLeftContainer_01, .HandGearLeftContainer_02, .HandGearLeftContainer_03, .HandGearLeft'
+        );
+
+        // Select the right-hand gear containers
+        const rightGearContainers = document.querySelectorAll(
+            '.HandGearRightContainer_01, .HandGearRightContainer_02, .HandGearRightContainer_03, .HandGearRight '
+        );
+
+        // Function to toggle visibility of elements
+        function toggleVisibility(elements) {
+            elements.forEach(element => {
+                if (element.style.display === 'none' || element.style.display === '') {
+                    element.style.display = 'block'; // Show the element
+                } else {
+                    element.style.display = 'none'; // Hide the element
+                }
+            });
+        }
+
+        // Add click event listeners to the buttons
+        lhButton.addEventListener('click', () => {
+            toggleVisibility(leftGearContainers);
+        });
+
+        rhButton.addEventListener('click', () => {
+            toggleVisibility(rightGearContainers);
+        });
 
 
 
