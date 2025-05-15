@@ -2244,7 +2244,7 @@
                   
 
 
-        .LH_Button, .RH_Button {
+        .LH_Button, .RH_Button, .TH_Button {
             width: 50px; /* Adjust as needed */
             height: 50px; /* Adjust as needed */
             background-size: cover; /* Adjust as needed */
@@ -2273,6 +2273,15 @@
             background-image: url('assets/designs/HUD/mobile/SVG/Button_Hand_Right_01.svg'); /* Path to your right-hand image */
             right: 30px;
             bottom: 210px;
+            background-color: transparent; /* Remove background color */
+            text-shadow: grey 2px 2px;
+            position: absolute; /* Ensure the button is positioned correctly */
+        }
+
+        .TH_Button {
+            background-image: url('assets/designs/HUD/mobile/SVG/Button_Hand_Right_01.svg'); /* Path to your right-hand image */
+            right: 37.5%;
+            bottom: 10%;
             background-color: transparent; /* Remove background color */
             text-shadow: grey 2px 2px;
             position: absolute; /* Ensure the button is positioned correctly */
@@ -2312,6 +2321,25 @@
             opacity: 0.55;
             animation: rotateRight 5s linear infinite;
             z-index: 1;
+
+
+        }
+
+        .HandGearTranscendent {
+
+            width: 100px; /* Adjust as needed */
+            height: 100px; /* Adjust as needed */
+            right: 37.5%;
+            top: 200px;
+            background-image: url('assets/designs/TechTiles/CyberPunkDesign_01/SVG/TechTile_GearEngine_Active_01.svg');
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5); /* Adjust the values as needed */
+            border-radius: 50px;
+            color: black;
+            display: none; /* Hide the element by default */
+            position: absolute; /* Ensure the div is positioned correctly */
+            opacity: 0.55;
+            animation: rotateRight 5s linear infinite;
+            z-index: 5;
 
 
         }
@@ -2466,6 +2494,47 @@
         .HandGearRightContainer_02:active {
             transform: scale(1.1); /* Slightly increase size on tap */
             transition: transform 0.3s ease; /* Smooth transition */
+        }
+
+
+
+
+        .HandGearTranscendentContainer_01 {
+            width: 125px; /* Adjust as needed */
+            height: 125px; /* Adjust as needed */
+            left: 33%;
+            top: 190px;
+            background-image: url('assets/designs/HUD/general/borders/cyberPunk01/SVG/OptionRing_01.svg');
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5); /* Adjust the values as needed */
+            border-radius: 100px;
+            color: black;
+            display: none; /* Hide the element by default */
+            position: absolute; /* Ensure the div is positioned correctly */
+            opacity: 1;
+            /* animation: rotateLeft 5s linear infinite; */
+            z-index: 1;
+            transition: transform 0.3s ease; /* Smooth transition for scaling */
+        }
+
+        .HandGearTranscendentContainer_02_ {
+            width: 300px; /* Adjust as needed */
+            height: 300px; /* Adjust as needed */
+            left: -50px;
+            bottom: 120px;
+            padding: 1px;
+            outline: none; /* Remove the focus outline */
+            background-image: url('assets/img/03-HudUI/BrainHolders/LeftBrain/LB_OptionsMenu/LB_OptionsMenu01.png');
+            border-radius: 100px;
+            color: black;
+            position: absolute; /* Ensure the div is positioned correctly */
+            opacity: 1;
+            display: none; /* Hide the element by default */
+            cursor: pointer; /* Change cursor to pointer */
+            transform: scale(0.85);
+            animation: moveUpDown 7.5s infinite; /* Apply the animation */
+            /* animation: rotateLeft 5s linear infinite; */
+            z-index: 2;
+            transition: transform 0.3s ease; /* Smooth transition for scaling */
         }
 
 
@@ -2749,6 +2818,7 @@
 
  <div class="HandGearLeft"></div>
  <div class="HandGearRight"></div>
+ <div class="HandGearTranscendent"></div>
 
  <div class="HandGearLeftContainer_01"></div>
  <div class="HandGearLeftContainer_02"></div>
@@ -2757,10 +2827,16 @@
  <div class="HandGearRightContainer_01"></div>
  <div class="HandGearRightContainer_02"></div>
  <!-- <div class="HandGearRightContainer_03"></div> -->
+
+
+ <div class="HandGearTranscendentContainer_01"></div>
+ <div class="HandGearTranscendentContainer_02"></div>
+
  
 
 <button id="LH_Button" class="LH_Button" >LH</button>
 <button id="RH_Button" class="RH_Button" >RH</button>
+<button id="TH_Button" class="TH_Button" >TH</button>
   
  
 <button class="button option-menu" onclick="toggleOptionsMenu()">☰</button>
@@ -8478,10 +8554,28 @@ function handleInteractions(scene, camera, cubes, initialPositions) {
             }
         });
 
+        // Select the elements
+        const handGearTranscendent = document.querySelector('.HandGearTranscendent');
+        const handGearTranscendentContainer_01 = document.querySelector('.HandGearTranscendentContainer_01');
+
+        // Add a click event listener to HandGearTranscendent
+        handGearTranscendent.addEventListener('click', () => {
+            // Toggle the size of HandGearRightContainer_01
+            if (handGearTranscendentContainer_01.style.transform === 'scale(2)') {
+                play_sfx_click_gen()
+                handGearTranscendentContainer_01.style.transform = 'scale(1)'; // Reset to original size
+            } else {
+                play_sfx_click_gen()
+                handGearTranscendentContainer_01.style.transform = 'scale(2)'; // Make it larger
+            }
+        });
+
+
 
         // Select the buttons
         const lhButton = document.getElementById('LH_Button');
         const rhButton = document.getElementById('RH_Button');
+        const thButton = document.getElementById('TH_Button');
 
         // Select the left-hand gear containers
         const leftGearContainers = document.querySelectorAll(
@@ -8491,6 +8585,11 @@ function handleInteractions(scene, camera, cubes, initialPositions) {
         // Select the right-hand gear containers
         const rightGearContainers = document.querySelectorAll(
             '.HandGearRightContainer_01, .HandGearRightContainer_02, .HandGearRightContainer_03, .HandGearRight '
+        );
+
+        // Select the transcendent-hand gear containers
+        const transcendentGearContainers = document.querySelectorAll(
+            '.HandGearTranscendentContainer_01, .HandGearTranscendentContainer_02, .HandGearTranscendentContainer_03, .HandGearTranscendent '
         );
 
         // Function to toggle visibility of elements
@@ -8515,6 +8614,10 @@ function handleInteractions(scene, camera, cubes, initialPositions) {
 
         rhButton.addEventListener('click', () => {
             toggleVisibility(rightGearContainers);
+        });
+
+        thButton.addEventListener('click', () => {
+            toggleVisibility(transcendentGearContainers);
         });
 
 
