@@ -2244,7 +2244,7 @@
                   
 
 
-        .LH_Button, .RH_Button, .TH_Button {
+        .LH_Button, .RH_Button, .CH_Button {
             width: 50px; /* Adjust as needed */
             height: 50px; /* Adjust as needed */
             background-size: cover; /* Adjust as needed */
@@ -2278,7 +2278,7 @@
             position: absolute; /* Ensure the button is positioned correctly */
         }
 
-        .TH_Button {
+        .CH_Button {
             background-image: url('assets/designs/HUD/mobile/SVG/Button_Hand_Right_01.svg'); /* Path to your right-hand image */
             right: 37.5%;
             bottom: 10%;
@@ -2325,7 +2325,7 @@
 
         }
 
-        .HandGearTranscendent {
+        .HandGearOfConsciousness {
 
             width: 100px; /* Adjust as needed */
             height: 100px; /* Adjust as needed */
@@ -2499,7 +2499,7 @@
 
 
 
-        .HandGearTranscendentContainer_01 {
+        .HandGearOfConsciousnessContainer_01 {
             width: 125px; /* Adjust as needed */
             height: 125px; /* Adjust as needed */
             left: 33%;
@@ -2516,7 +2516,7 @@
             transition: transform 0.3s ease; /* Smooth transition for scaling */
         }
 
-        .HandGearTranscendentContainer_02_ {
+        .HandGearOfConsciousnessContainer_02 {
             width: 300px; /* Adjust as needed */
             height: 300px; /* Adjust as needed */
             left: -50px;
@@ -2818,7 +2818,7 @@
 
  <div class="HandGearLeft"></div>
  <div class="HandGearRight"></div>
- <div class="HandGearTranscendent"></div>
+ <div class="HandGearOfConsciousness"></div>
 
  <div class="HandGearLeftContainer_01"></div>
  <div class="HandGearLeftContainer_02"></div>
@@ -2829,14 +2829,14 @@
  <!-- <div class="HandGearRightContainer_03"></div> -->
 
 
- <div class="HandGearTranscendentContainer_01"></div>
- <div class="HandGearTranscendentContainer_02"></div>
+ <div class="HandGearOfConsciousnessContainer_01"></div>
+ <div class="HandGearOfConsciousnessContainer_02"></div>
 
  
 
 <button id="LH_Button" class="LH_Button" >LH</button>
 <button id="RH_Button" class="RH_Button" >RH</button>
-<button id="TH_Button" class="TH_Button" >TH</button>
+<button id="CH_Button" class="CH_Button" >CH</button>
   
  
 <button class="button option-menu" onclick="toggleOptionsMenu()">☰</button>
@@ -8555,18 +8555,18 @@ function handleInteractions(scene, camera, cubes, initialPositions) {
         });
 
         // Select the elements
-        const handGearTranscendent = document.querySelector('.HandGearTranscendent');
-        const handGearTranscendentContainer_01 = document.querySelector('.HandGearTranscendentContainer_01');
+        const handGearOfConsciousness = document.querySelector('.HandGearOfConsciousness');
+        const handGearOfConsciousnessContainer_01 = document.querySelector('.HandGearOfConsciousnessContainer_01');
 
-        // Add a click event listener to HandGearTranscendent
-        handGearTranscendent.addEventListener('click', () => {
-            // Toggle the size of HandGearRightContainer_01
-            if (handGearTranscendentContainer_01.style.transform === 'scale(2)') {
+        // Add a click event listener to HandGearOfConsciousness
+        handGearOfConsciousness.addEventListener('click', () => {
+            // Toggle the size of handGearOfConsciousnessContainer_01
+            if (handGearOfConsciousnessContainer_01.style.transform === 'scale(2)') {
                 play_sfx_click_gen()
-                handGearTranscendentContainer_01.style.transform = 'scale(1)'; // Reset to original size
+                handGearOfConsciousnessContainer_01.style.transform = 'scale(1)'; // Reset to original size
             } else {
                 play_sfx_click_gen()
-                handGearTranscendentContainer_01.style.transform = 'scale(2)'; // Make it larger
+                handGearOfConsciousnessContainer_01.style.transform = 'scale(2)'; // Make it larger
             }
         });
 
@@ -8575,7 +8575,7 @@ function handleInteractions(scene, camera, cubes, initialPositions) {
         // Select the buttons
         const lhButton = document.getElementById('LH_Button');
         const rhButton = document.getElementById('RH_Button');
-        const thButton = document.getElementById('TH_Button');
+        const thButton = document.getElementById('CH_Button');
 
         // Select the left-hand gear containers
         const leftGearContainers = document.querySelectorAll(
@@ -8588,8 +8588,8 @@ function handleInteractions(scene, camera, cubes, initialPositions) {
         );
 
         // Select the transcendent-hand gear containers
-        const transcendentGearContainers = document.querySelectorAll(
-            '.HandGearTranscendentContainer_01, .HandGearTranscendentContainer_02, .HandGearTranscendentContainer_03, .HandGearTranscendent '
+        const consiousGearContainers = document.querySelectorAll(
+            '.HandGearOfConsciousnessContainer_01, .HandGearOfConsciousnessContainer_02, .HandGearOfConsciousnessContainer_03, .HandGearOfConsciousness '
         );
 
         // Function to toggle visibility of elements
@@ -8617,7 +8617,7 @@ function handleInteractions(scene, camera, cubes, initialPositions) {
         });
 
         thButton.addEventListener('click', () => {
-            toggleVisibility(transcendentGearContainers);
+            toggleVisibility(consiousGearContainers);
         });
 
 
