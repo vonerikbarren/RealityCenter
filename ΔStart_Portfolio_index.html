@@ -869,6 +869,13 @@
                 opacity: 0.5;
             }
 
+            h2 {
+                color: white;
+                text-shadow: grey 2px 2px 2px;
+                font-size: 14px;
+                font-family: 'Quantico', Arial, sans-serif; /* Apply the custom font */
+            }
+
             /* Customize the active state */
             button:active {
                 background-color: rgba(255, 255, 255, 0.458); /* Change background color when button is pressed */
@@ -1062,9 +1069,9 @@
         @media (min-width: 300px) and (max-width: 430px) and (min-height: 800px) and (max-height: 930px) {
 
             h2 { 
-                margin: 2.5;
+                margin: 1;
                 text-shadow: grey 2px 2px;
-
+                font-size: 14px;
             }
 
             hr {
@@ -1346,9 +1353,9 @@
 
             .SystemPanel {
                 top: 50px;
-                left: 10px;
-                width: 145px;
-                height: 370px;
+                left: 7.5px;
+                width: 155px;
+                height: 290px;
             }
 
                 .SystemPanel {
@@ -1356,13 +1363,13 @@
                     visibility: 100%; 
                     background-image: url('assets/designs/HUD/general/borders/cyberPunk01/SVG/Panel_02_Vertical.svg');
                     background-repeat: no-repeat; /* Prevent the background image from repeating */
-                    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5); /* Adjust the values as needed */
-                    border-radius: 15px;
+                    box-shadow: 2px 2px 2px rgba(255, 255, 255, 0.5); /* Adjust the values as needed */
+                    border-radius: 5px;
                     color: white;
                     padding-top: 0px;
                     padding-right: 25px;
                     padding-left: 20px;
-                    padding-bottom: 5px;
+                    padding-bottom: 10px;
                     font-size: 16px;
                     z-index: 2;
                     display: none;
@@ -1371,22 +1378,22 @@
 
             .OptionsPanel {
                 top: 50px;
-                right: 10px;
-                width: 145px;
-                height: 370px;
+                right: 7.5px;
+                width: 155px;
+                height: 290px;
             }
 
                 .OptionsPanel {
                     position: absolute; 
                     background-image: url('assets/designs/HUD/general/borders/cyberPunk01/SVG/Panel_02_Vertical.svg');
                     background-repeat: no-repeat; /* Prevent the background image from repeating */
-                    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5); /* Adjust the values as needed */
+                    box-shadow: 5px 5px 10px rgba(255, 255, 255, 0.5); /* Adjust the values as needed */
                     border-radius: 15px;
                     color: white;
                     padding-top: 0px;
                     padding-right: 20px;
                     padding-left: 20px;
-                    padding-bottom: 5px;
+                    padding-bottom: 10px;
                     font-size: 16px;
                     transform: scale(0.75);
                     cursor: none;
@@ -2156,7 +2163,93 @@
                         transform: rotate(-90deg); /* Rotate the element by 90 degrees */
                         transform-origin: center; /* Set the rotation point to the center */
                     }
+            
+            .additional_timeOptions {
+                top: 270px;
+                left: 75px;
+                width: 140px;
+                height: 310px;
+            }
 
+                .additional_timeOptions {
+                    position: absolute; 
+                    /* background-color: aqua; */
+                    background-image: url('assets/designs/HUD/general/borders/cyberPunk01/SVG/Panel_02_Vertical.svg');
+                    background-repeat: no-repeat; /* Prevent the background image from repeating */
+                    color: white;
+                    padding-top: 20px;
+                    padding-right: 20px;
+                    padding-left: 35px;
+                    padding-bottom: -20px;
+                    font-size: 12px;
+                    z-index: 2;
+                    display: none;
+                    transform: rotate(90deg); /* Rotate the element by 90 degrees */
+                    transform-origin: center; /* Set the rotation point to the center */
+                }
+
+                    .Secondary_times_optionsL1 {
+                        position: absolute; 
+                        top: -10px;
+                        left: 10px;
+                        width: 250px;
+                        height: auto;   
+                        background-repeat: no-repeat; /* Prevent the background image from repeating */
+                        color: white;
+                        padding-top: 1px;
+                        padding-right: 10px;
+                        padding-left: 10px;
+                        padding-bottom: 150px;
+                        /* box-shadow: inset 0px 0px 2.5px; */
+                        /* margin-right: 50px; */
+                        font-size: 12px;
+                        z-index: 2;
+                        display: block;
+                        transform: rotate(-90deg); /* Rotate the element by 90 degrees */
+                        transform-origin: center; /* Set the rotation point to the center */
+                    }
+
+                    .Secondary_times_optionsL2 {
+                        position: absolute; 
+                        top: -100px;
+                        left: 10px;
+                        width: 250px;
+                        height: auto;   
+                        background-repeat: no-repeat; /* Prevent the background image from repeating */
+                        color: white;
+                        padding-top: 1px;
+                        padding-right: 10px;
+                        padding-left: 10px;
+                        padding-bottom: 150px;
+                        /* box-shadow: inset 0px 0px 2.5px; */
+                        /* margin-right: 50px; */
+                        font-size: 12px;
+                        z-index: 2;
+                        display: block;
+                        transform: rotate(-90deg); /* Rotate the element by 90 degrees */
+                        transform-origin: center; /* Set the rotation point to the center */
+                    }
+
+                    .Secondary_times_optionsL3 {
+                        position: absolute; 
+                        top: -200px;
+                        left: 10px;
+                        width: 250px;
+                        height: auto;   
+                        background-repeat: no-repeat; /* Prevent the background image from repeating */
+                        color: white;
+                        padding-top: 1px;
+                        padding-right: 10px;
+                        padding-left: 10px;
+                        padding-bottom: 150px;
+                        /* box-shadow: inset 0px 0px 2.5px; */
+                        /* margin-right: 50px; */
+                        font-size: 12px;
+                        z-index: 2;
+                        display: block;
+                        transform: rotate(-90deg); /* Rotate the element by 90 degrees */
+                        transform-origin: center; /* Set the rotation point to the center */
+                    }
 
 
             .additional_eventOptions {
@@ -2183,71 +2276,70 @@
                     transform-origin: center; /* Set the rotation point to the center */
                 }
 
-                .Secondary_events_options {
-                    position: absolute; 
-                    top: 10px;
-                    left: 10px;
-                    width: 250px;
-                    height: auto;   
-                    background-repeat: no-repeat; /* Prevent the background image from repeating */
-                    color: white;
-                    padding-top: 1px;
-                    padding-right: 10px;
-                    padding-left: 10px;
-                    padding-bottom: 150px;
-                    /* box-shadow: inset 0px 0px 2.5px; */
-                    /* margin-right: 50px; */
-                    font-size: 12px;
-                    z-index: 2;
-                    display: block;
-                    transform: rotate(-90deg); /* Rotate the element by 90 degrees */
-                    transform-origin: center; /* Set the rotation point to the center */
-                }
+                    .Secondary_events_optionsL1 {
+                        position: absolute; 
+                        top: -10px;
+                        left: 10px;
+                        width: 250px;
+                        height: auto;   
+                        background-repeat: no-repeat; /* Prevent the background image from repeating */
+                        color: white;
+                        padding-top: 1px;
+                        padding-right: 10px;
+                        padding-left: 10px;
+                        padding-bottom: 150px;
+                        /* box-shadow: inset 0px 0px 2.5px; */
+                        /* margin-right: 50px; */
+                        font-size: 12px;
+                        z-index: 2;
+                        display: block;
+                        transform: rotate(-90deg); /* Rotate the element by 90 degrees */
+                        transform-origin: center; /* Set the rotation point to the center */
+                    }
 
-            .additional_timeOptions {
-                top: 270px;
-                left: 75px;
-                width: 140px;
-                height: 310px;
-            }
+                    .Secondary_events_optionsL2 {
+                        position: absolute; 
+                        top: -100px;
+                        left: 10px;
+                        width: 250px;
+                        height: auto;   
+                        background-repeat: no-repeat; /* Prevent the background image from repeating */
+                        color: white;
+                        padding-top: 1px;
+                        padding-right: 10px;
+                        padding-left: 10px;
+                        padding-bottom: 150px;
+                        /* box-shadow: inset 0px 0px 2.5px; */
+                        /* margin-right: 50px; */
+                        font-size: 12px;
+                        z-index: 2;
+                        display: block;
+                        transform: rotate(-90deg); /* Rotate the element by 90 degrees */
+                        transform-origin: center; /* Set the rotation point to the center */
+                    }
 
-                .additional_timeOptions {
-                    position: absolute; 
-                    /* background-color: aqua; */
-                    background-image: url('assets/designs/HUD/general/borders/cyberPunk01/SVG/Panel_02_Vertical.svg');
-                    background-repeat: no-repeat; /* Prevent the background image from repeating */
-                    color: white;
-                    padding-top: 20px;
-                    padding-right: 20px;
-                    padding-left: 35px;
-                    padding-bottom: -20px;
-                    font-size: 12px;
-                    z-index: 2;
-                    display: none;
-                    transform: rotate(90deg); /* Rotate the element by 90 degrees */
-                    transform-origin: center; /* Set the rotation point to the center */
-                }
+                    .Secondary_events_optionsL3 {
+                        position: absolute; 
+                        top: -200px;
+                        left: 10px;
+                        width: 250px;
+                        height: auto;   
+                        background-repeat: no-repeat; /* Prevent the background image from repeating */
+                        color: white;
+                        padding-top: 1px;
+                        padding-right: 10px;
+                        padding-left: 10px;
+                        padding-bottom: 150px;
+                        /* box-shadow: inset 0px 0px 2.5px; */
+                        /* margin-right: 50px; */
+                        font-size: 12px;
+                        z-index: 2;
+                        display: block;
+                        transform: rotate(-90deg); /* Rotate the element by 90 degrees */
+                        transform-origin: center; /* Set the rotation point to the center */
+                    }
 
-                .Secondary_times_options {
-                    position: absolute; 
-                    top: 10px;
-                    left: 10px;
-                    width: 250px;
-                    height: auto;   
-                    background-repeat: no-repeat; /* Prevent the background image from repeating */
-                    color: white;
-                    padding-top: 1px;
-                    padding-right: 10px;
-                    padding-left: 10px;
-                    padding-bottom: 150px;
-                    /* box-shadow: inset 0px 0px 2.5px; */
-                    /* margin-right: 50px; */
-                    font-size: 12px;
-                    z-index: 2;
-                    display: block;
-                    transform: rotate(-90deg); /* Rotate the element by 90 degrees */
-                    transform-origin: center; /* Set the rotation point to the center */
-                }
+            
 
             .additional_spaceOptions {
                 top: 270px;
@@ -3263,12 +3355,12 @@
   <button class="button HomeMenu" style="display: block; font-size: 26px;" onclick="toggleSystemMenu()">&#9881;</button>
   <div id="SystemPanel" class="SystemPanel" style="display: none;">
     <h2>SystemMenu</h2>
-    <hr/>
     <button class="SystemOptionsListItem button-Systems" onclick="toggleAdditionalExperiencesItemsMenuContainer()">Experiences</button></br>
     <button class="SystemOptionsListItem button-Perspectives" onclick="toggleAdditionalSystemsItemsMenuContainer()">Systems</button></br>
     <button class="SystemOptionsListItem button-Hiearchies" onclick="toggleAdditionalHiearchyMenuItems()">Hiearchies</button></br>
     <button id="StartCameraAndContainer_root_Animation01" class="SystemOptionsListItem button-Events" onclick="toggleAdditionalPerspectiveMenuItems()">Perspectives</button></br>
     <button class="SystemOptionsListItem button-Times" onclick="toggleAdditionalTimeMenuItems()">Times</button></br>
+    <button class="SystemOptionsListItem button-Events" onclick="toggleAdditionalEventMenuItems()">Events</button></br>
     <button class="SystemOptionsListItem button-Spaces" onclick="toggleAdditionalSpaceMenuItems()">Spaces</button></br>
     <button class="SystemOptionsListItem button-Objects" onclick="toggleAdditionalObjectMenuItems()">Objects</button></br>
     <button class="SystemOptionsListItem button-Help" onclick="toggleAdditionalHelpMenuItems()">Help</button></br>
@@ -3501,28 +3593,71 @@
   </div>
 
 
-  <div class="additional_eventOptions">
-    <div class="Secondary_events_options">
-        <br/>
-        <button class="SystemOptions_ListItem">eventsOption01</button>
-        <button class="SystemOptions_ListItem">eventsOption02</button>
-        <button class="SystemOptions_ListItem">eventsOption03</button>
-        <button class="SystemOptions_ListItem">eventsOption04</button>
-        <button class="SystemOptions_ListItem">eventsOption05</button>
-    </div>
-  </div>
-
-
   <div class="additional_timeOptions">
-    <div class="Secondary_times_options">
+
+    <div class="Secondary_times_optionsL1">
         <br/>
-        <button class="SystemOptions_ListItem">timesOption01</button>
-        <button class="SystemOptions_ListItem">timesOption02</button>
-        <button class="SystemOptions_ListItem">timesOption03</button>
-        <button class="SystemOptions_ListItem">timesOption04</button>
-        <button class="SystemOptions_ListItem">timesOption05</button>
+        <button class="SystemOptions_ListItem">⟐T01</button>
+        <button class="SystemOptions_ListItem">⟐T02</button>
+        <button class="SystemOptions_ListItem">⟐T03</button>
+        <button class="SystemOptions_ListItem">⟐T04</button>
+        <button class="SystemOptions_ListItem">⟐T05</button>
     </div>
+
+    <div class="Secondary_times_optionsL2">
+        <br/>
+        <button class="SystemOptions_ListItem">⟐T06</button>
+        <button class="SystemOptions_ListItem">⟐T07</button>
+        <button class="SystemOptions_ListItem">⟐T08</button>
+        <button class="SystemOptions_ListItem">⟐T09</button>
+        <button class="SystemOptions_ListItem">⟐T10</button>
+    </div>
+
+    <div class="Secondary_times_optionsL3">
+        <br/>
+        <button class="SystemOptions_ListItem">⟐T11</button>
+        <button class="SystemOptions_ListItem">⟐T12</button>
+        <button class="SystemOptions_ListItem">⟐T13</button>
+        <button class="SystemOptions_ListItem">⟐T14</button>
+        <button class="SystemOptions_ListItem">⟐T15</button>
+    </div>
+
   </div>
+
+
+  <div class="additional_eventOptions">
+
+    <div class="Secondary_events_optionsL1">
+        <br/>
+        <button class="SystemOptions_ListItem">⟐Δ01</button>
+        <button class="SystemOptions_ListItem">⟐Δ02</button>
+        <button class="SystemOptions_ListItem">⟐Δ03</button>
+        <button class="SystemOptions_ListItem">⟐Δ04</button>
+        <button class="SystemOptions_ListItem">⟐Δ05</button>
+    </div>
+
+    <div class="Secondary_events_optionsL2">
+        <br/>
+        <button class="SystemOptions_ListItem">⟐Δ06</button>
+        <button class="SystemOptions_ListItem">⟐Δ07</button>
+        <button class="SystemOptions_ListItem">⟐Δ08</button>
+        <button class="SystemOptions_ListItem">⟐Δ09</button>
+        <button class="SystemOptions_ListItem">⟐Δ10</button>
+    </div>
+
+    <div class="Secondary_events_optionsL3">
+        <br/>
+        <button class="SystemOptions_ListItem">⟐Δ11</button>
+        <button class="SystemOptions_ListItem">⟐Δ12</button>
+        <button class="SystemOptions_ListItem">⟐Δ13</button>
+        <button class="SystemOptions_ListItem">⟐Δ14</button>
+        <button class="SystemOptions_ListItem">⟐Δ15</button>
+    </div>
+
+  </div>
+
+
+  
 
 
   <div class="additional_spaceOptions">
