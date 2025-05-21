@@ -28264,6 +28264,42 @@ let starOrb_root
 
 
 
+//..............................................
+//..DDDDD.......................................
+//.DDDDDDDDD.........................ckk........
+//.DDDDDDDDDDD.......................ckk........
+//.DDDDDDDDDDD.......................ckk........
+//.DDDD...DDDDD..ooooooo....ccccccc..ckk..kkkk..
+//.DDDD....DDDD.ooooooooo..ccccccccc.ckk.kkkkk..
+//.DDDD....DDDDDoooooooooooccccccccc.ckkkkkkk...
+//.DDDD....DDDDDooo...oooooccc..cccc.ckkkkkk....
+//.DDDD....DDDDDooo...oooooccc.......ckkkkkk....
+//.DDDD...DDDDDDooo...oooooccc.......ckkkkkk....
+//.DDDD...DDDD.Dooo...oooooccc..cccc.ckkkkkkk...
+//.DDDDDDDDDDD.Doooooooooooccccccccc.ckk.kkkk...
+//.DDDDDDDDDD...ooooooooo..cccccccc..ckk.kkkkk..
+//.DDDDDDDDD.....ooooooo...cccccccc..ckk..kkkk..
+//................ooooo......cccc...............
+//..............................................
+
+
+let HUD_Dock_core
+let HUD_Dock_root
+let HUD_Dock_container, mesh_HUD_Dock_container
+let HUD_Dock_data
+let HUD_Dock_settings
+
+let HUD_Dock_default
+
+    let HUD_Dock_QuickStorage_core
+    let HUD_Dock_QuickStorage_root
+    let HUD_Dock_QuickStorage_container
+    let HUD_Dock_QuickStorage_data
+    let HUD_Dock_QuickStorage_settings
+
+
+
+
         //....................................................................
         //.............DDDDD................OOOOOO......BBBBB............JJ...
         //...333333...DDDDDDDDD............OOOOOOOOO...BBBBBBBBBB.......JJJJ..
@@ -28425,6 +28461,17 @@ let starOrb_root
         // Grids
         const TimeGrid01_Test = textureLoader.load('assets/img/03-HudUI/PrimaryHud01_DrLight/A08_GeneralGrids_Square/formA/SquareGrid_White_formA.png')
         const TimeGrid02_Test = textureLoader.load('assets/img/03-HudUI/HelpMenus/HelpMenuPanel01.png')
+
+
+        // Dock Pieces
+
+        const DockPiece01 = textureLoader.load('assets/img/13_HUD_OfficialThemes/HUDTheme01_Infin8teFreedom/09_HUD_Dock/01_MenuSkeleton/01_Resting/Dock_Resting.png')
+
+        const DockPiece02 = textureLoader.load('assets/img/13_HUD_OfficialThemes/HUDTheme01_Infin8teFreedom/09_HUD_Dock/01_MenuSkeleton/02_Active/Dock_Active.png')
+
+        const DockPiece03 = textureLoader.load('assets/img/13_HUD_OfficialThemes/HUDTheme01_Infin8teFreedom/09_HUD_Dock/01_MenuSkeleton/03_Analyze/Dock_Analyze.png')
+
+        const DockPiece04 = textureLoader.load('assets/img/13_HUD_OfficialThemes/HUDTheme01_Infin8teFreedom/09_HUD_Dock/01_MenuSkeleton/04_Edit/Dock_Edit.png')
 
 
 
@@ -35263,6 +35310,96 @@ function handleInteractions(scene, camera, cubes, initialPositions) {
 //...............................................................................................................
 //...............................................................................................................
 //...............................................................................................................
+
+
+//..............................................
+//..DDDDD.......................................
+//.DDDDDDDDD.........................ckk........
+//.DDDDDDDDDDD.......................ckk........
+//.DDDDDDDDDDD.......................ckk........
+//.DDDD...DDDDD..ooooooo....ccccccc..ckk..kkkk..
+//.DDDD....DDDD.ooooooooo..ccccccccc.ckk.kkkkk..
+//.DDDD....DDDDDoooooooooooccccccccc.ckkkkkkk...
+//.DDDD....DDDDDooo...oooooccc..cccc.ckkkkkk....
+//.DDDD....DDDDDooo...oooooccc.......ckkkkkk....
+//.DDDD...DDDDDDooo...oooooccc.......ckkkkkk....
+//.DDDD...DDDD.Dooo...oooooccc..cccc.ckkkkkkk...
+//.DDDDDDDDDDD.Doooooooooooccccccccc.ckk.kkkk...
+//.DDDDDDDDDD...ooooooooo..cccccccc..ckk.kkkkk..
+//.DDDDDDDDD.....ooooooo...cccccccc..ckk..kkkk..
+//................ooooo......cccc...............
+//..............................................
+
+
+HUD_Dock_core = new THREE.Group()
+HUD_Dock_core.position.set(0, 0, 0)
+HUD_Dock_core.rotation.set(0, 0, 0)
+HUD_Dock_core.scale.set(1, 1, 1)
+scene.add(HUD_Dock_core)
+
+
+    HUD_Dock_root = new THREE.Group()
+    HUD_Dock_root.position.set(0, 0, 0)
+    HUD_Dock_root.rotation.set(0, 0, 0)
+    HUD_Dock_root.scale.set(1, 1, 1)
+    HUD_Dock_core.add(HUD_Dock_root)
+
+        HUD_Dock_container = new THREE.Group()
+        HUD_Dock_container.position.set(0, 0, 0)
+        HUD_Dock_container.rotation.set(0, 0, 0)
+        HUD_Dock_container.scale.set(1, 1, 1)
+        HUD_Dock_root.add(HUD_Dock_container)
+
+        const mat_HUD_Dock_container = new THREE.MeshBasicMaterial({ map: DockPiece01, side: THREE.DoubleSide });
+            mesh_HUD_Dock_container = new THREE.Mesh(geo_objT_PlaneA1, mat_HUD_Dock_container);
+            mat_HUD_Dock_container.transparent = false;
+            mat_HUD_Dock_container.alphaMap = DockPiece01;
+            mesh_HUD_Dock_container.position.set(0, 0, 0);
+            // mesh_HUD_Dock_container.position.set(-15000, 0, 0);
+            mesh_HUD_Dock_container.scale.set(1, 1, 1);
+            mesh_HUD_Dock_container.rotation.set(0, 0, 0)
+            // mesh_HUD_Dock_container.rotateX( - Math.PI / 2 );
+
+            // HUD_Dock_container.lookAt(camera)
+
+            HUD_Dock_container.add(mesh_HUD_Dock_container)
+
+
+
+
+        
+
+
+
+    // ./assets/designs/HUD/mobile/1x/HUD_Dock_core.svg
+    // ./assets/icons/Websites01/002-globe_grid.png
+    HUD_Dock_root.add(
+        new hoverObject(
+            'img',
+            0, 0, 0,
+            0, 0, 0,
+            0.1, 0.1, 0.1,
+            "Testing234", "TestingClass234",
+            "./assets/designs/HUD/mobile/SVG/HUD_Dock_core.svg", "",
+            "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+            () => {
+
+                // gsap.to(userHUD_comp_pdfTest01.position, {
+                //     repeat: 0,
+                //     duration: 0.5,
+                //     ease: "none",
+                //     delay: 0.15,
+                //     x: -200,
+                //     // w: 0.010,
+                //     // z: 0.010,
+                // })
+
+                console.log("HUD Dock Core Active")
+
+                
+            }, "#fff"
+        )
+    )
 
 
 
