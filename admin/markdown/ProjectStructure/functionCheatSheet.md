@@ -103,7 +103,7 @@ mesh_anyGeometryName.rotation.set(0, 0, 0)
 
 // anyGeometryName.lookAt(camera)
 
-anyGeometryName.add(mesh_anyGeometryName)**
+anyGeometryName.add(mesh_anyGeometryName)****
 
 ```
 

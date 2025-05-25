@@ -24437,7 +24437,7 @@
 <button id="LH_Button" class="LH_Button" >LH</button>
 <button id="RH_Button" class="RH_Button" >RH</button>
 <button id="CH_Button" class="CH_Button" >CH</button>
-<button id="ID_Button" class="ID_Button" >ID</button>
+<button id="ID_Button" class="ID_Button" >DO</button>
 
   
  
@@ -32698,6 +32698,7 @@ function handleInteractions(scene, camera, cubes, initialPositions) {
         });
 
 
+
         
 
 
@@ -35345,18 +35346,18 @@ scene.add(HUD_Dock_core)
     HUD_Dock_core.add(HUD_Dock_root)
 
         HUD_Dock_container = new THREE.Group()
-        HUD_Dock_container.position.set(0, 0, 0)
+        HUD_Dock_container.position.set(0, -20, 0)
         HUD_Dock_container.rotation.set(0, 0, 0)
         HUD_Dock_container.scale.set(1, 1, 1)
         HUD_Dock_root.add(HUD_Dock_container)
 
         const mat_HUD_Dock_container = new THREE.MeshBasicMaterial({ map: DockPiece01, side: THREE.DoubleSide });
             mesh_HUD_Dock_container = new THREE.Mesh(geo_objT_PlaneA1, mat_HUD_Dock_container);
-            mat_HUD_Dock_container.transparent = false;
+            mat_HUD_Dock_container.transparent = true;
             mat_HUD_Dock_container.alphaMap = DockPiece01;
             mesh_HUD_Dock_container.position.set(0, 0, 0);
             // mesh_HUD_Dock_container.position.set(-15000, 0, 0);
-            mesh_HUD_Dock_container.scale.set(1, 1, 1);
+            mesh_HUD_Dock_container.scale.set(2.75, 1, 1);
             mesh_HUD_Dock_container.rotation.set(0, 0, 0)
             // mesh_HUD_Dock_container.rotateX( - Math.PI / 2 );
 
@@ -35366,6 +35367,9 @@ scene.add(HUD_Dock_core)
 
 
 
+            
+
+
 
         
 
@@ -35373,33 +35377,33 @@ scene.add(HUD_Dock_core)
 
     // ./assets/designs/HUD/mobile/1x/HUD_Dock_core.svg
     // ./assets/icons/Websites01/002-globe_grid.png
-    HUD_Dock_root.add(
-        new hoverObject(
-            'img',
-            0, 0, 0,
-            0, 0, 0,
-            0.1, 0.1, 0.1,
-            "Testing234", "TestingClass234",
-            "./assets/designs/HUD/mobile/SVG/HUD_Dock_core.svg", "",
-            "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
-            () => {
+    // HUD_Dock_root.add(
+    //     new hoverObject(
+    //         'img',
+    //         0, 0, 0,
+    //         0, 0, 0,
+    //         0.1, 0.1, 0.1,
+    //         "Testing234", "TestingClass234",
+    //         "ssets/img/13_HUD_OfficialThemes/HUDTheme01_Infin8teFreedom/09_HUD_Dock/01_MenuSkeleton/01_Resting/Dock_Resting.svg", "",
+    //         "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
+    //         () => {
 
-                // gsap.to(userHUD_comp_pdfTest01.position, {
-                //     repeat: 0,
-                //     duration: 0.5,
-                //     ease: "none",
-                //     delay: 0.15,
-                //     x: -200,
-                //     // w: 0.010,
-                //     // z: 0.010,
-                // })
+    //             // gsap.to(userHUD_comp_pdfTest01.position, {
+    //             //     repeat: 0,
+    //             //     duration: 0.5,
+    //             //     ease: "none",
+    //             //     delay: 0.15,
+    //             //     x: -200,
+    //             //     // w: 0.010,
+    //             //     // z: 0.010,
+    //             // })
 
-                console.log("HUD Dock Core Active")
+    //             console.log("HUD Dock Core Active")
 
                 
-            }, "#fff"
-        )
-    )
+    //         }, "#fff"
+    //     )
+    // )
 
 
 
@@ -40897,6 +40901,10 @@ let UI_ThirdPersonCameraView_root
             FlashCardsApp_core.rotation.copy(camera.rotation);
             FlashCardsApp_core.translateZ(-50)
 
+
+            HUD_Dock_root.position.copy(camera.position);
+            HUD_Dock_root.rotation.copy(camera.rotation);
+            HUD_Dock_root.translateZ(-50)
             
 
 
