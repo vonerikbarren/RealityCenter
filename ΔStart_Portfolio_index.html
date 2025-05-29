@@ -20733,8 +20733,8 @@
                     position: absolute;
                     top: 35%;
                     left: 12.5%;
-                    width: 263px;
-                    height: 215px;  
+                    width: 265px;
+                    height: 225px;  
                      /* Path to your left-hand image */
                     background-color: rgb(255, 255, 255, 0.25);
                     background-repeat: black no-repeat; /* Prevent the background image from repeating */
@@ -20746,7 +20746,7 @@
                     padding-top: 1px;
                     padding-right: 10px;
                     padding-left: 10px;
-                    padding-bottom: 170px;
+                    padding-bottom: 180px;
                     /* box-shadow: inset 0px 0px 2.5px; */
                     /* margin-right: 50px; */
                     font-size: 12px;
@@ -24363,7 +24363,7 @@
     <div id="identificationContainer" class="identificationContainer">
         <div id="identification-panel" class="identification-panel">
             <div class="identification-header">
-                <h3 id="object-name">_Dock_</h3>
+                <h3 id="object-name">_⟐Dock_</h3>
                 <!-- <p id="object-coordinates">Coordinates: X: 0, Y: 0, Z: 0</p> -->
             </div>
             <div class="identification-body">
@@ -28252,8 +28252,8 @@ let starOrb_root
 let HUD_Dock_core
 let HUD_Dock_root
 let HUD_Dock_container, mesh_HUD_Dock_container
-let HUD_Dock_conatiner01, mesh_HUD_Dock_conatiner01 // Flat Dock
-let HUD_Dock_conatiner02, mesh_HUD_Dock_conatiner02 // Tunnel Dock
+let HUD_Dock_container01, mesh_HUD_Dock_container01 // Flat Dock
+let HUD_Dock_container02, mesh_HUD_Dock_container02 // Tunnel Dock
 let HUD_Dock_data
 let HUD_Dock_settings
 
@@ -35333,6 +35333,10 @@ scene.add(HUD_Dock_core)
         mesh_HUD_Dock_container = new THREE.Mesh(geo_objT_PlaneA1, mat_HUD_Dock_container);
         mat_HUD_Dock_container.transparent = true;
         mat_HUD_Dock_container.alphaMap = gridStandard_Even_01;
+        mat_HUD_Dock_container.color = new THREE.Color('#ffffff') // white
+        mat_HUD_Dock_container.depthWrite = true
+        mat_HUD_Dock_container.blending = THREE.AdditiveBlending
+        mat_HUD_Dock_container.vertextColors = true
         mesh_HUD_Dock_container.position.set(0, 0, 0);
         // mesh_HUD_Dock_container.position.set(-15000, 0, 0);
         mesh_HUD_Dock_container.scale.set(3, 3, 3);
@@ -35346,32 +35350,36 @@ scene.add(HUD_Dock_core)
 
 
         // HUD_Dock_conatiner01 = DOCK CYLINDER
-        HUD_Dock_conatiner01 = new THREE.Group()
-        HUD_Dock_conatiner01.position.set(0, 17.5, 10)
-        HUD_Dock_conatiner01.rotation.set(1.575, 0, 1.575)
-        HUD_Dock_conatiner01.scale.set(1, 1, 1)
-        HUD_Dock_root.add(HUD_Dock_conatiner01)
+        HUD_Dock_container01 = new THREE.Group()
+        HUD_Dock_container01.position.set(0, 17.5, 10)
+        HUD_Dock_container01.rotation.set(1.575, 0, 1.575)
+        HUD_Dock_container01.scale.set(1, 1, 1)
+        HUD_Dock_root.add(HUD_Dock_container01)
 
-        const mat_HUD_Dock_conatiner01 = new THREE.MeshBasicMaterial({ map: gridStandard_Even_01, side: THREE.DoubleSide });
-        mesh_HUD_Dock_conatiner01 = new THREE.Mesh(geo_objT_CylinderClosedA0, mat_HUD_Dock_conatiner01);
-        mat_HUD_Dock_conatiner01.transparent = true;
-        mat_HUD_Dock_conatiner01.wireframe = false;
-        mat_HUD_Dock_conatiner01.alphaMap = gridStandard_Even_01;
-        mesh_HUD_Dock_conatiner01.position.set(0, 0, 0);
-        // mesh_HUD_Dock_conatiner01.position.set(-15000, 0, 0);
-        mesh_HUD_Dock_conatiner01.scale.set(1.5, 5, 1.5);
-        mesh_HUD_Dock_conatiner01.rotation.set(0, 0, 0)
-        // mesh_HUD_Dock_conatiner01.rotateX( - Math.PI / 2 );
+        const mat_HUD_Dock_container01 = new THREE.MeshBasicMaterial({ map: gridStandard_Even_01, side: THREE.DoubleSide });
+        mesh_HUD_Dock_container01 = new THREE.Mesh(geo_objT_CylinderClosedA0, mat_HUD_Dock_container01);
+        mat_HUD_Dock_container01.transparent = true;
+        mat_HUD_Dock_container01.wireframe = false;
+        mat_HUD_Dock_container01.alphaMap = gridStandard_Even_01;
+        mat_HUD_Dock_container01.color = new THREE.Color('#ffffff') // white
+        mat_HUD_Dock_container01.depthWrite = true
+        mat_HUD_Dock_container01.blending = THREE.AdditiveBlending
+        mat_HUD_Dock_container01.vertextColors = true
+        mesh_HUD_Dock_container01.position.set(0, 0, 0);
+        // mesh_HUD_Dock_container01.position.set(-15000, 0, 0);
+        mesh_HUD_Dock_container01.scale.set(1.5, 5, 1.5);
+        mesh_HUD_Dock_container01.rotation.set(0, 0, 0)
+        // mesh_HUD_Dock_container01.rotateX( - Math.PI / 2 );
 
-        // HUD_Dock_conatiner01.lookAt(camera)
+        // HUD_Dock_container01.lookAt(camera)
 
-        HUD_Dock_conatiner01.add(mesh_HUD_Dock_conatiner01)
+        HUD_Dock_container01.add(mesh_HUD_Dock_container01)
 
 
 
-        let rotate_DockContainer01 = () => {
+        let rotate_HUD_Dock_container01 = () => {
 
-            gsap.to(HUD_Dock_conatiner01.rotation, {
+            gsap.to(HUD_Dock_container01.rotation, {
                 repeat: -1,
                 duration: 60,
                 ease: "none",
@@ -35381,7 +35389,7 @@ scene.add(HUD_Dock_core)
 
         }
 
-        rotate_DockContainer01()
+        rotate_HUD_Dock_container01()
 
 
        
