@@ -20735,7 +20735,7 @@
                     left: 15%;
                     width: 250px;
                     height: 175px;  
-                   
+                     /* Path to your left-hand image */
                     background-color: rgb(255, 255, 255, 0.25);
                     background-repeat: black no-repeat; /* Prevent the background image from repeating */
                     background-repeat: no-repeat; /* Prevent the background image from repeating */
@@ -24397,14 +24397,14 @@
     <div id="identificationContainer" class="identificationContainer">
         <div id="identification-panel" class="identification-panel">
             <div class="identification-header">
-                <h3 id="object-name">Object Name</h3>
-                <p id="object-coordinates">Coordinates: X: 0, Y: 0, Z: 0</p>
+                <!-- <h3 id="object-name">Object Name</h3>
+                <p id="object-coordinates">Coordinates: X: 0, Y: 0, Z: 0</p> -->
             </div>
             <div class="identification-body">
-                <p id="object-info">Hover or tap on an object to see its details here.</p>
+                <!-- <p id="object-info">Hover or tap on an object to see its details here.</p> -->
             </div>
             <div class="identification-footer">
-                <p id="page-number">Page 1</p>
+                <!-- <p id="page-number">Page 1</p> -->
             </div>
         </div>
     </div>
@@ -28286,6 +28286,8 @@ let starOrb_root
 let HUD_Dock_core
 let HUD_Dock_root
 let HUD_Dock_container, mesh_HUD_Dock_container
+let HUD_Dock_conatiner01, mesh_HUD_Dock_conatiner01 // Flat Dock
+let HUD_Dock_conatiner02, mesh_HUD_Dock_conatiner02 // Tunnel Dock
 let HUD_Dock_data
 let HUD_Dock_settings
 
@@ -28381,6 +28383,11 @@ let HUD_Dock_default
         const SceneWallpaper_02 = textureLoader.load('./assets/img/00-WallpaperUX/Covers/whiteCover02.jpg')
         const SceneWallpaper_03 = textureLoader.load('./assets/img/00-WallpaperUX/Covers/whiteCover03.jpg')
         const whitePureRoom = textureLoader.load('./assets/img/00-WallpaperUX/Covers/pureWhiteWallpaper01.jpeg')
+
+
+        // Grids
+        const gridStandard_Even_01 = textureLoader.load('./assets/img/13_HUD_OfficialThemes/HUDTheme01_Infin8teFreedom/00_HUD_BaseGrid/01_MainHUD_Types/00_grid_even/grid_even_default01.png')
+        const grid02 = textureLoader.load('./assets/img/00-WallpaperUX/Grids/Grid02.jpg')
 
         
         // Wallpapers
@@ -32717,7 +32724,7 @@ function handleInteractions(scene, camera, cubes, initialPositions) {
                 0, 0, 0,
                 0.1, 0.1, 0.1,
                 "Testing234", "TestingClass234",
-                "assets/icons/00-Official/UI/Isometric/Tools/home-folder.svg", "",
+                "assets/img/02-UserUI/04-Logo/WhiteLogoTree.svgr", "",
                 "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
                 () => {
 
@@ -35355,21 +35362,59 @@ scene.add(HUD_Dock_core)
         HUD_Dock_root.add(HUD_Dock_container)
 
         const mat_HUD_Dock_container = new THREE.MeshBasicMaterial({ map: DockPiece01, side: THREE.DoubleSide });
-            mesh_HUD_Dock_container = new THREE.Mesh(geo_objT_PlaneA1, mat_HUD_Dock_container);
-            mat_HUD_Dock_container.transparent = true;
-            mat_HUD_Dock_container.alphaMap = DockPiece01;
-            mesh_HUD_Dock_container.position.set(0, 0, 0);
-            // mesh_HUD_Dock_container.position.set(-15000, 0, 0);
-            mesh_HUD_Dock_container.scale.set(2.75, 1, 1);
-            mesh_HUD_Dock_container.rotation.set(0, 0, 0)
-            // mesh_HUD_Dock_container.rotateX( - Math.PI / 2 );
+        mesh_HUD_Dock_container = new THREE.Mesh(geo_objT_PlaneA1, mat_HUD_Dock_container);
+        mat_HUD_Dock_container.transparent = true;
+        mat_HUD_Dock_container.alphaMap = DockPiece01;
+        mesh_HUD_Dock_container.position.set(0, 0, 0);
+        // mesh_HUD_Dock_container.position.set(-15000, 0, 0);
+        mesh_HUD_Dock_container.scale.set(2.75, 1, 1);
+        mesh_HUD_Dock_container.rotation.set(0, 0, 0)
+        // mesh_HUD_Dock_container.rotateX( - Math.PI / 2 );
 
-            // HUD_Dock_container.lookAt(camera)
+        // HUD_Dock_container.lookAt(camera)
 
-            HUD_Dock_container.add(mesh_HUD_Dock_container)
+        HUD_Dock_container.add(mesh_HUD_Dock_container)
 
 
-        // HUD_Dock_core toggle function 
+        HUD_Dock_conatiner01 = new THREE.Group()
+        HUD_Dock_conatiner01.position.set(0, 0, 10)
+        HUD_Dock_conatiner01.rotation.set(1.575, 0, 1.575)
+        HUD_Dock_conatiner01.scale.set(1, 1, 1)
+        HUD_Dock_root.add(HUD_Dock_conatiner01)
+
+        const mat_HUD_Dock_conatiner01 = new THREE.MeshBasicMaterial({ map: gridStandard_Even_01, side: THREE.DoubleSide });
+        mesh_HUD_Dock_conatiner01 = new THREE.Mesh(geo_objT_CylinderClosedA0, mat_HUD_Dock_conatiner01);
+        mat_HUD_Dock_conatiner01.transparent = true;
+        mat_HUD_Dock_conatiner01.wireframe = false;
+        mat_HUD_Dock_conatiner01.alphaMap = gridStandard_Even_01;
+        mesh_HUD_Dock_conatiner01.position.set(0, 0, 0);
+        // mesh_HUD_Dock_conatiner01.position.set(-15000, 0, 0);
+        mesh_HUD_Dock_conatiner01.scale.set(2, 5, 2);
+        mesh_HUD_Dock_conatiner01.rotation.set(0, 0, 0)
+        // mesh_HUD_Dock_conatiner01.rotateX( - Math.PI / 2 );
+
+        // HUD_Dock_conatiner01.lookAt(camera)
+
+        HUD_Dock_conatiner01.add(mesh_HUD_Dock_conatiner01)
+
+
+
+        let rotate_DockContainer01 = () => {
+
+            gsap.to(HUD_Dock_conatiner01.rotation, {
+                repeat: -1,
+                duration: 3.14,
+                ease: "none",
+                delay: 0.15,
+                x: 6.28,
+            })
+
+        }
+
+        rotate_DockContainer01()
+
+
+       
 
 
 
