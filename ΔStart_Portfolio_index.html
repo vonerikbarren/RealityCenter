@@ -35355,19 +35355,21 @@ scene.add(HUD_Dock_core)
     HUD_Dock_root.scale.set(1, 1, 1)
     HUD_Dock_core.add(HUD_Dock_root)
 
+
+        // HUD_Dock_container = DOCK PLANE
         HUD_Dock_container = new THREE.Group()
         HUD_Dock_container.position.set(0, -20, 0)
         HUD_Dock_container.rotation.set(0, 0, 0)
         HUD_Dock_container.scale.set(1, 1, 1)
         HUD_Dock_root.add(HUD_Dock_container)
 
-        const mat_HUD_Dock_container = new THREE.MeshBasicMaterial({ map: DockPiece01, side: THREE.DoubleSide });
+        const mat_HUD_Dock_container = new THREE.MeshBasicMaterial({ map: gridStandard_Even_01, side: THREE.DoubleSide });
         mesh_HUD_Dock_container = new THREE.Mesh(geo_objT_PlaneA1, mat_HUD_Dock_container);
         mat_HUD_Dock_container.transparent = true;
-        mat_HUD_Dock_container.alphaMap = DockPiece01;
+        mat_HUD_Dock_container.alphaMap = gridStandard_Even_01;
         mesh_HUD_Dock_container.position.set(0, 0, 0);
         // mesh_HUD_Dock_container.position.set(-15000, 0, 0);
-        mesh_HUD_Dock_container.scale.set(2.75, 1, 1);
+        mesh_HUD_Dock_container.scale.set(2.75, 2, 1);
         mesh_HUD_Dock_container.rotation.set(0, 0, 0)
         // mesh_HUD_Dock_container.rotateX( - Math.PI / 2 );
 
@@ -35376,6 +35378,8 @@ scene.add(HUD_Dock_core)
         HUD_Dock_container.add(mesh_HUD_Dock_container)
 
 
+
+        // HUD_Dock_conatiner01 = DOCK CYLINDER
         HUD_Dock_conatiner01 = new THREE.Group()
         HUD_Dock_conatiner01.position.set(0, 0, 10)
         HUD_Dock_conatiner01.rotation.set(1.575, 0, 1.575)
@@ -35389,7 +35393,7 @@ scene.add(HUD_Dock_core)
         mat_HUD_Dock_conatiner01.alphaMap = gridStandard_Even_01;
         mesh_HUD_Dock_conatiner01.position.set(0, 0, 0);
         // mesh_HUD_Dock_conatiner01.position.set(-15000, 0, 0);
-        mesh_HUD_Dock_conatiner01.scale.set(2, 5, 2);
+        mesh_HUD_Dock_conatiner01.scale.set(1.5, 5, 1.5);
         mesh_HUD_Dock_conatiner01.rotation.set(0, 0, 0)
         // mesh_HUD_Dock_conatiner01.rotateX( - Math.PI / 2 );
 
@@ -35403,10 +35407,10 @@ scene.add(HUD_Dock_core)
 
             gsap.to(HUD_Dock_conatiner01.rotation, {
                 repeat: -1,
-                duration: 3.14,
+                duration: 60,
                 ease: "none",
                 delay: 0.15,
-                x: 6.28,
+                x: 15.75,
             })
 
         }
@@ -40660,12 +40664,36 @@ let UI_ThirdPersonCameraView_root
             raycaster.setFromCamera(mouse, camera);
 
             // Check for intersections with your meshes
+
             
 
 			const gui = new GUI();
             gui.close()
             // gui.hide()
 
+
+            // Object to hold target position values
+                const targetPosition = {
+                    x: 0,
+                    y: 0,
+                    z: 0
+                };
+
+                // Add GUI controls for the target position
+            gui.add(targetPosition, 'x', -100, 100).onChange((value) => {
+                orbitControls.target.x = value;
+                orbitControls.update(); // Update the controls to apply the new target
+            });
+
+            gui.add(targetPosition, 'y', -100, 100).onChange((value) => {
+                orbitControls.target.y = value;
+                orbitControls.update();
+            });
+
+            gui.add(targetPosition, 'z', -100, 100).onChange((value) => {
+                orbitControls.target.z = value;
+                orbitControls.update();
+            });
             
 
             const folderUserSystemControls = gui.addFolder('⚙️ My Experience System Controls')
