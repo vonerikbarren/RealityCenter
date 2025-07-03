@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Visual Dijkstra</title>
+  <style>
+    body { background: #111; color: #eee; font-family: sans-serif; text-align: center; }
+    canvas { background: #222; display: block; margin: 0 auto; border: 1px solid #444; }
+    button { margin: 20px; padding: 10px 20px; font-size: 16px; }
+  </style>
+</head>
+<body>
+  <h2>Dijkstra Visualizer</h2>
+  <button onclick="runDijkstra()">Run Dijkstra</button>
+  <canvas id="canvas" width="600" height="400"></canvas>
+
+  <script>
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+
+    const nodes = {
+      A: { x: 100, y: 200 },
+      B: { x: 200, y: 100 },
+      C: { x: 200, y: 300 },
+      D: { x: 350, y: 200 },
+      E: { x: 500, y: 200 }
+    };
+
+    const edges = {
+      A: { B: 2, C: 4 },
+      B: { A: 2, D: 7 },
+      C: { A: 4, D: 1 },
+      D: { B: 7, C: 1, E: 3 },
+      E: { D: 3 }
+    };
+
+    function drawGraph(path = []) {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Draw edges
+      for (let from in edges) {
+        for (let to in edges[from]) {
+          const a = nodes[from], b = nodes[to];
+          ctx.strokeStyle = "#666";
+          ctx.lineWidth = 2;
+          ctx.beginPath();
+          ctx.moveTo(a.x, a.y);
+          ctx.lineTo(b.x, b.y);
+          ctx.stroke();
+        }
+      }
+
+      // Draw nodes
+      for (let key in nodes) {
+        const node = nodes[key];
+        ctx.beginPath();
+        ctx.arc(node.x, node.y, 20, 0, Math.PI * 2);
+        ctx.fillStyle = path.includes(key) ? "#00ff88" : "#fff";
+        ctx.fill();
+        ctx.strokeStyle = "#000";
+        ctx.stroke();
+        ctx.fillStyle = "#000";
+        ctx.fillText(key, node.x - 5, node.y + 5);
+      }
+    }
+
+    function dijkstra(graph, start) {
+      const distances = {};
+      const prev = {};
+      const visited = new Set();
+      const pq = new Set(Object.keys(graph));
+
+      for (let node of pq) {
+        distances[node] = node === start ? 0 : Infinity;
+        prev[node] = null;
+      }
+
+      while (pq.size > 0) {
+        let current = [...pq].reduce((a, b) =>
+          distances[a] < distances[b] ? a : b
+        );
+        pq.delete(current);
+
+        for (let neighbor in graph[current]) {
+          const alt = distances[current] + graph[current][neighbor];
+          if (alt < distances[neighbor]) {
+            distances[neighbor] = alt;
+            prev[neighbor] = current;
+          }
+        }
+      }
+
+      return { distances, prev };
+    }
+
+    function reconstructPath(prev, end) {
+      const path = [];
+      let current = end;
+      while (current) {
+        path.unshift(current);
+        current = prev[current];
+      }
+      return path;
+    }
+
+    async function runDijkstra() {
+      const { prev } = dijkstra(edges, "A");
+      const path = reconstructPath(prev, "E");
+
+      for (let i = 0; i <= path.length; i++) {
+        drawGraph(path.slice(0, i));
+        await new Promise(res => setTimeout(res, 600));
+      }
+    }
+
+    drawGraph();
+  </script>
+</body>
+</html>

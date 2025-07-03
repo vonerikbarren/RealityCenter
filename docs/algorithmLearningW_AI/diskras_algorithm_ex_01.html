@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Dijkstra Demo</title>
+</head>
+<body>
+  <h2>Dijkstra Pathfinding – Basic Graph</h2>
+  <button onclick="runDijkstra()">Run Algorithm</button>
+  <pre id="output"></pre>
+
+  <script>
+    class PriorityQueue {
+      constructor() {
+        this.items = [];
+      }
+      enqueue(element, priority) {
+        this.items.push({ element, priority });
+        this.items.sort((a, b) => a.priority - b.priority);
+      }
+      dequeue() {
+        return this.items.shift();
+      }
+      isEmpty() {
+        return this.items.length === 0;
+      }
+    }
+
+    function dijkstra(graph, start) {
+      const distances = {};
+      const prev = {};
+      const pq = new PriorityQueue();
+
+      for (let node in graph) {
+        distances[node] = node === start ? 0 : Infinity;
+        prev[node] = null;
+        pq.enqueue(node, distances[node]);
+      }
+
+      while (!pq.isEmpty()) {
+        const { element: current } = pq.dequeue();
+
+        for (let neighbor in graph[current]) {
+          const alt = distances[current] + graph[current][neighbor];
+          if (alt < distances[neighbor]) {
+            distances[neighbor] = alt;
+            prev[neighbor] = current;
+            pq.enqueue(neighbor, alt);
+          }
+        }
+      }
+
+      return { distances, prev };
+    }
+
+    function runDijkstra() {
+      const graph = {
+        A: { B: 4, C: 2 },
+        B: { A: 4, C: 1, D: 5 },
+        C: { A: 2, B: 1, D: 8, E: 10 },
+        D: { B: 5, C: 8, E: 2, Z: 6 },
+        E: { C: 10, D: 2, Z: 3 },
+        Z: { D: 6, E: 3 }
+      };
+
+      const result = dijkstra(graph, "A");
+      const output = document.getElementById("output");
+      output.textContent = JSON.stringify(result, null, 2);
+    }
+  </script>
+</body>
+</html>
