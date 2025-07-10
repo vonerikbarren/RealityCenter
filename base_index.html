@@ -36188,6 +36188,139 @@ scene.add(Grid_Cubic_00)
 
 
 
+// OmniGlyph
+
+const OmniGlyph_core = new THREE.Group();
+OmniGlyph_core.position.set(0, 0, 0);
+OmniGlyph_core.rotation.set(0, 0, 0);
+OmniGlyph_core.scale.set(1, 1, 1);
+scene.add(OmniGlyph_core);
+
+// Create the OmniGlyph object
+const OmniGlyph_OmniObj_core = new THREE.Group();
+OmniGlyph_OmniObj_core.position.set(0, 0, 0);
+OmniGlyph_OmniObj_core.rotation.set(0, 0, 0);   
+OmniGlyph_OmniObj_core.scale.set(0.1, 0.1, 0.1);
+OmniGlyph_core.add(OmniGlyph_OmniObj_core);
+
+
+const OmniGlyph_OmniSpaces_core = new THREE.Group();
+OmniGlyph_OmniSpaces_core.position.set(0, 0, 0);
+OmniGlyph_OmniSpaces_core.rotation.set(0, 0, 0);
+OmniGlyph_OmniSpaces_core.scale.set(1, 1, 1);
+OmniGlyph_core.add(OmniGlyph_OmniSpaces_core);
+
+
+const OmniGlyph_OmniContainers_core = new THREE.Group();
+OmniGlyph_OmniContainers_core.position.set(0, 0, 0);
+OmniGlyph_OmniContainers_core.rotation.set(0, 0, 0);
+OmniGlyph_OmniContainers_core.scale.set(1, 1, 1);
+OmniGlyph_core.add(OmniGlyph_OmniContainers_core);
+
+
+const OmniGlyph_OmniFunctions_core = new THREE.Group();
+OmniGlyph_OmniFunctions_core.position.set(0, 0, 0);
+OmniGlyph_OmniFunctions_core.rotation.set(0, 0, 0);
+OmniGlyph_OmniFunctions_core.scale.set(1, 1, 1);
+OmniGlyph_core.add(OmniGlyph_OmniFunctions_core);
+
+
+const OmniGlyph_OmniTime_core = new THREE.Group();
+OmniGlyph_OmniTime_core.position.set(0, 0, 0);
+OmniGlyph_OmniTime_core.rotation.set(0, 0, 0);
+OmniGlyph_OmniTime_core.scale.set(1, 1, 1);
+OmniGlyph_core.add(OmniGlyph_OmniTime_core);
+
+
+const OmniGlyph_OmniPerspectives_core = new THREE.Group();
+OmniGlyph_OmniPerspectives_core.position.set(0, 0, 0);
+OmniGlyph_OmniPerspectives_core.rotation.set(0, 0, 0);
+OmniGlyph_OmniPerspectives_core.scale.set(1, 1, 1);
+OmniGlyph_core.add(OmniGlyph_OmniPerspectives_core);
+
+
+const OmniGlyph_OmniGravity_core = new THREE.Group();
+OmniGlyph_OmniGravity_core.position.set(0, 0, 0);
+OmniGlyph_OmniGravity_core.rotation.set(0, 0, 0);
+OmniGlyph_OmniGravity_core.scale.set(1, 1, 1);
+OmniGlyph_core.add(OmniGlyph_OmniGravity_core);
+
+
+
+
+
+
+
+
+
+
+
+// # OmniTrasformations
+
+// |- 
+
+const OmniTransformations_OmniAnimation01_core = new THREE.Group();
+OmniTransformations_OmniAnimation01_core.position.set(0, 0, 0);
+OmniTransformations_OmniAnimation01_core.rotation.set(0, 0, 0);
+OmniTransformations_OmniAnimation01_core.scale.set(1, 1, 1);
+scene.add(OmniTransformations_OmniAnimation01_core);
+
+
+// Create a building...
+const Build_a_building = new THREE.Group();
+Build_a_building.position.set(0, 0, 0);
+Build_a_building.rotation.set(0, 0, 0);
+Build_a_building.scale.set(1, 1, 1);
+scene.add(Build_a_building);
+
+
+// 🎨 Materials
+const cubeMaterialA = new THREE.MeshStandardMaterial({ color: 0xffffff });
+const cubeMaterialB = new THREE.MeshStandardMaterial({ color: 0x333333 });
+
+// 🧱 OmniCubes Grid System
+const omniGrid = new THREE.Group();
+omniScene.add(omniGrid);
+
+const omniResolution = 8;          // 8x8 grid
+const cubeUnit = 1;
+const unitSpacing = 1.2;
+const omniCubes = [];
+
+// 🔲 Generate Symbolic Checkerboard
+for (let row = 0; row < omniResolution; row++) {
+  for (let col = 0; col < omniResolution; col++) {
+    const cubeGeometry = new THREE.BoxGeometry(cubeUnit, cubeUnit, cubeUnit);
+    const useMaterialA = (row + col) % 2 === 0;
+    const cube = new THREE.Mesh(cubeGeometry, useMaterialA ? cubeMaterialA : cubeMaterialB);
+
+    cube.position.set(row * unitSpacing, 0, col * unitSpacing);
+    omniGrid.add(cube);
+    omniCubes.push(cube);
+  }
+}
+
+function triggerOmniStack() {
+  omniCubes.forEach((omniCube, index) => {
+    const delayFrame = index * 0.05;
+    gsap.to(omniCube.position, {
+      y: index * 0.15,
+      duration: 0.3,
+      ease: "none",
+      delay: delayFrame
+    });
+  });
+}
+
+// 🎹 Bind "b" Key to Trigger OmniStack
+window.addEventListener("keydown", (event) => {
+  if (event.key.toLowerCase() === "b") {
+    console.log("🔊 OmniStack initiated via key [B]");
+    triggerOmniStack();
+  }
+});
+
+
 
 
 
