@@ -20450,15 +20450,15 @@
                 .identification-panel {
                     position: absolute;
                     top: 35%;
-                    left: 12.5%;
-                    width: 265px;
-                    height: 225px;  
+                    left: 25%;
+                    width: 525px;
+                    height: 525px;  
                      /* Path to your left-hand image */
                     background-color: rgb(255, 255, 255, 0.25);
                     background-repeat: black no-repeat; /* Prevent the background image from repeating */
                     background-repeat: no-repeat; /* Prevent the background image from repeating */
                     border: 0.75px inset rgba(255, 255, 255, 0.25);
-                    border-radius: 5px;
+                    border-radius: 15px;
                     /* position: absolute;  */
                     color: white;
                     /* padding-top: 1px;
@@ -20504,36 +20504,39 @@
                 
 
                 .identification-body {
-                    position: fixed; /* Position relative to the parent */
-                    display: grid; /* Use CSS Grid */
-                    grid-template-columns: repeat(2, 1fr); /* 2 equal-width columns */
-                    grid-template-rows: repeat(2, 1fr); /* 8 equal-height rows */
-                    gap: 2px; /* Space between cells */
-                    width: 265px; /* Ensure it fills the parent container */
-                    height: 265px; /* Ensure it fills the parent container  */
-                    padding: 1px; /* Optional padding */
-                    background-color: rgba(255, 255, 255, 0.1); /* Background color */
-                    overflow: hidden; /* Prevent overflow */
-                    box-sizing: border-box; /* Include padding in width/height */
+                    position: relative;
+                    padding: 10px;
+                    display: grid;
+                    bottom: 60px;
+                    left: 0px;
+                    grid-template-columns: repeat(8, 2fr);
+                    grid-template-rows: repeat(8, 2fr);
+                    gap: 4px;
+                    width: 500px;            /* 2x original width */
+                    height: 500px;           /* 2x original height */
+                    border: 2px solid white;   /* Visual debug */
+                    border-radius: 15px;
+                    margin: 0 auto;
+                    overflow: scroll;
+                    
                 }
 
-                .identification-body div {
-                    /* background-image: url('assets/designs/HUD/mobile/SVG/Identification_01.svg'); Path to your left-hand image */
-                    width: 100px; /* Adjust width as needed */
-                    height: 100px; /* Adjust height as needed */
-                    background-size: cover; /* Ensure the background image covers the cell */
-                    background-position: center; /* Center the background image */
-                    background-repeat: no-repeat; /* Prevent the background image from repeating */
-                    padding: 5px; /* Optional padding */
-                    background-color: rgba(255, 255, 255, 0.5); /* Cell background color */
-                    border: 1px solid rgba(255, 255, 255, 0.7); /* Cell border */
-                    border-radius: 2px; /* Optional rounded corners */
-                    cursor: pointer; /* Make cells clickable */
-                    display: flex; /* Center content inside cells */
+                
+
+
+                .idenfitication-cell {
+                    position: relative;
+                    aspect-ratio: 1 / 1;
+                    background-color: rgba(255, 255, 255, 0.5);
+                    border: 1px solid rgba(255, 255, 255, 0.7);
+                    display: flex;
                     align-items: center;
                     justify-content: center;
-                    font-size: 10px; /* Optional text inside cells */
-                    color: black; /* Text color */
+                    font-size: 10px;
+                    color: black;
+                    border: 2px dashed white; 
+
+                    scale: 0.75; /* Scale down to fit the panel */
                 }
 
                 .identification-body div:hover {
@@ -44335,70 +44338,70 @@
             </div>
             <div class="identification-body">
                 <!-- 64 square cells -->
-                <div>1</div>
-                <div>2</div>
-                <div>3</div>
-                <div>4</div>
-                <div>5</div>
-                <div>6</div>
-                <div>7</div>
-                <div>8</div>
-                <div>9</div>
-                <div>10</div>
-                <div>11</div>
-                <div>12</div>
-                <div>13</div>
-                <div>14</div>
-                <div>15</div>
-                <div>16</div>
-                <div>17</div>
-                <div>18</div>
-                <div>19</div>
-                <div>20</div>
-                <div>21</div>
-                <div>22</div>
-                <div>23</div>
-                <div>24</div>
-                <div>25</div>
-                <div>26</div>
-                <div>27</div>
-                <div>28</div>
-                <div>29</div>
-                <div>30</div>
-                <div>31</div>
-                <div>32</div>
-                <div>33</div>
-                <div>34</div>
-                <div>35</div>
-                <div>36</div>
-                <div>37</div>
-                <div>38</div>
-                <div>39</div>
-                <div>40</div>
-                <div>41</div>
-                <div>42</div>
-                <div>43</div>
-                <div>44</div>
-                <div>45</div>
-                <div>46</div>
-                <div>47</div>
-                <div>48</div>
-                <div>49</div>
-                <div>50</div>
-                <div>51</div>
-                <div>52</div>
-                <div>53</div>
-                <div>54</div>
-                <div>55</div>
-                <div>56</div>
-                <div>57</div>
-                <div>58</div>
-                <div>59</div>
-                <div>60</div>
-                <div>61</div>
-                <div>62</div>
-                <div>63</div>
-                <div>64</div>
+                <div class="idenfitication-cell">1</div>
+                <div class="idenfitication-cell">2</div>
+                <div class="idenfitication-cell">3</div>
+                <div class="idenfitication-cell">4</div>
+                <div class="idenfitication-cell">5</div>
+                <div class="idenfitication-cell">6</div>
+                <div class="idenfitication-cell">7</div>
+                <div class="idenfitication-cell">8</div>
+                <div class="idenfitication-cell">9</div>
+                <div class="idenfitication-cell">10</div>
+                <div class="idenfitication-cell">11</div>
+                <div class="idenfitication-cell">12</div>
+                <div class="idenfitication-cell">13</div>
+                <div class="idenfitication-cell">14</div>
+                <div class="idenfitication-cell">15</div>
+                <div class="idenfitication-cell">16</div>
+                <div class="idenfitication-cell">17</div>
+                <div class="idenfitication-cell">18</div>
+                <div class="idenfitication-cell">19</div>
+                <div class="idenfitication-cell">20</div>
+                <div class="idenfitication-cell">21</div>
+                <div class="idenfitication-cell">22</div>
+                <div class="idenfitication-cell">23</div>
+                <div class="idenfitication-cell">24</div>
+                <div class="idenfitication-cell">25</div>
+                <div class="idenfitication-cell">26</div>
+                <div class="idenfitication-cell">27</div>
+                <div class="idenfitication-cell">28</div>
+                <div class="idenfitication-cell">29</div>
+                <div class="idenfitication-cell">30</div>
+                <div class="idenfitication-cell">31</div>
+                <div class="idenfitication-cell">32</div>
+                <div class="idenfitication-cell">33</div>
+                <div class="idenfitication-cell">34</div>
+                <div class="idenfitication-cell">35</div>
+                <div class="idenfitication-cell">36</div>
+                <div class="idenfitication-cell">37</div>
+                <div class="idenfitication-cell">38</div>
+                <div class="idenfitication-cell">39</div>
+                <div class="idenfitication-cell">40</div>
+                <div class="idenfitication-cell">41</div>
+                <div class="idenfitication-cell">42</div>
+                <div class="idenfitication-cell">43</div>
+                <div class="idenfitication-cell">44</div>
+                <div class="idenfitication-cell">45</div>
+                <div class="idenfitication-cell">46</div>
+                <div class="idenfitication-cell">47</div>
+                <div class="idenfitication-cell">48</div>
+                <div class="idenfitication-cell">49</div>
+                <div class="idenfitication-cell">50</div>
+                <div class="idenfitication-cell">51</div>
+                <div class="idenfitication-cell">52</div>
+                <div class="idenfitication-cell">53</div>
+                <div class="idenfitication-cell">54</div>
+                <div class="idenfitication-cell">55</div>
+                <div class="idenfitication-cell">56</div>
+                <div class="idenfitication-cell">57</div>
+                <div class="idenfitication-cell">58</div>
+                <div class="idenfitication-cell">59</div>
+                <div class="idenfitication-cell">60</div>
+                <div class="idenfitication-cell">61</div>
+                <div class="idenfitication-cell">62</div>
+                <div class="idenfitication-cell">63</div>
+                <div class="idenfitication-cell">64</div>
             </div>
             <div class="identification-footer">
                 <!-- <p id="page-number">Page 1</p> -->
@@ -55357,7 +55360,7 @@ scene.add(HUD_Dock_core)
         HUD_Dock_container = new THREE.Group()
         HUD_Dock_container.position.set(0, -7.5, 0)
         HUD_Dock_container.rotation.set(0, 0, 0)
-        HUD_Dock_container.scale.set(1, 1, 1)
+        HUD_Dock_container.scale.set(1.75, 1.75, 1.75)
         HUD_Dock_root.add(HUD_Dock_container)
 
         const mat_HUD_Dock_container = new THREE.MeshBasicMaterial({ map: gridStandard_Even_01, side: THREE.DoubleSide });
