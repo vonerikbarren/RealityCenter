@@ -1233,6 +1233,7 @@
 
 
         .SystemOptions_ListItem {
+            bottom: -10.5;
             margin: 2.5px;
             margin-bottom: 3.5px;
             padding-left: 1px;
@@ -1493,7 +1494,7 @@
 
 
         .additional_experiencesOptions {
-                top: 270px;
+                top: 250px;
                 left: 75px;
                 width: 140px;
                 height: 310px;
@@ -2575,7 +2576,7 @@
 
 
         .additional_systemOptions {
-                top: 270px;
+                top: 250px;
                 left: 80px;
                 width: 140px;
                 height: 310px;
@@ -4757,7 +4758,7 @@
 
 
             .additional_hiearchiesOptions {
-                top: 270px;
+                top: 250px;
                 left: 75px;
                 width: 140px;
                 height: 310px;
@@ -5857,7 +5858,7 @@
 
             
             .additional_timeOptions {
-                top: 270px;
+                top: 250px;
                 left: 75px;
                 width: 140px;
                 height: 310px;
@@ -6974,7 +6975,7 @@
 
 
             .additional_eventOptions {
-                top: 270px;
+                top: 250px;
                 left: 75px;
                 width: 140px;
                 height: 310px;
@@ -8163,7 +8164,7 @@
 
 
             .additional_spaceOptions {
-                top: 270px;
+                top: 250px;
                 left: 75px;
                 width: 140px;
                 height: 310px;
@@ -9288,7 +9289,7 @@
 
 
             .additional_objectOptions {
-                top: 270px;
+                top: 250px;
                 left: 75px;
                 width: 140px;
                 height: 310px;
@@ -10419,7 +10420,7 @@
 
 
             .additional_helpOptions {
-                top: 270px;
+                top: 250px;
                 left: 75px;
                 width: 140px;
                 height: 310px;
@@ -23918,7 +23919,7 @@
 
 
                     .sub_additional_perspectivesOptionsA {
-                        bottom: 160px;
+                        top: 270px;
                         left: 35px;
                         width: 255px;
                         height: 90px;
@@ -27242,7 +27243,7 @@
 
                 
                     .sub_additional_eventsOptionsA {
-                        bottom: 160px;
+                        top: 270px;
                         left: 35px;
                         width: 255px;
                         height: 90px;
@@ -41246,6 +41247,7 @@
             <div class="sub_additional_experiencesOptionsA">
                 <div class="sub_Secondary_experiences_optionsA01">
                     <br/>
+
                     <button class="SystemOptions_ListItem">ExperienceChild01</button>
                     <button class="SystemOptions_ListItem">ExperienceChild02</button>
                     <button class="SystemOptions_ListItem">ExperienceChild03</button>
@@ -50754,6 +50756,62 @@ function dollyZoom() {
                 }
 
                 rotateParticles()
+
+
+                
+                // Particle system: userFirstPersonStateParticles
+                const userFirstPersonStateParticles_particleCount = 1000;
+                const userFirstPersonStateParticles_particleGeometry = new THREE.BufferGeometry();
+                const userFirstPersonStatePartciles_positions = new Float32Array(userFirstPersonStateParticles_particleCount * 3);
+
+                for (let i = 0; i < userFirstPersonStateParticles_particleCount; i++) {
+                userFirstPersonStatePartciles_positions[i * 3 + 0] = (Math.random() - 0.5) * 2; // x
+                userFirstPersonStatePartciles_positions[i * 3 + 1] = (Math.random() - 0.5) * 2; // y
+                userFirstPersonStatePartciles_positions[i * 3 + 2] = (Math.random() - 0.5) * 1; // z
+                }
+
+                userFirstPersonStateParticles_particleGeometry.setAttribute('position', new THREE.BufferAttribute(userFirstPersonStatePartciles_positions, 3));
+
+                const particleMaterial = new THREE.PointsMaterial({
+                color: 0x00aaff,
+                size: 0.03,
+                transparent: true,
+                opacity: 0.7,
+                });
+
+                const userFirstPersonStateParticles = new THREE.Points(userFirstPersonStateParticles_particleGeometry, particleMaterial);
+
+                userFirstPersonStateParticles.position.set(0, 0, -10)
+				userFirstPersonStateParticles.rotation.set(0, 0, 0)
+                userFirstPersonStateParticles.scale.set(0.5, 0.5, 0.5)
+                scene.add(userFirstPersonStateParticles);
+
+
+
+                // GSAP animation for forward movement
+                function animateForward() {
+                const pos = userFirstPersonStateParticles_particleGeometry.attributes.position.array;
+
+                for (let i = 0; i < pos.length; i += 3) {
+                        const z = pos[i + 2];
+
+                            gsap.to(pos, {
+                            [i + 2]: z - 1.5,
+                            duration: 0.6,
+                            ease: "power2.out",
+                            onUpdate: () => {
+                                userFirstPersonStateParticles_particleGeometry.attributes.position.needsUpdate = true;
+                            }
+                        });
+                    }
+                }
+
+                // Key listener for movement
+                document.addEventListener("keydown", (e) => {
+                    if (e.key === "w") {
+                        animateForward();
+                    }
+                });
 
 //.................................................................
 //....SSSSSS........CCC.......EEEEEEEEE...NN......N....EEEEEEEEE...
