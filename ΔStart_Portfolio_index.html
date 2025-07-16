@@ -43303,7 +43303,7 @@
                     <div class="sub_additional_spacesOptionsA">
                         <div class="sub_Secondary_spaces_optionsA01">
                             <br/>
-                            <button class="SystemOptions_ListItem">WhiteRoom</button>
+                            <button id="whiteRoomToggle" class="SystemOptions_ListItem">[White_Room]</button>
                             <button class="SystemOptions_ListItem">ΔO02</button>
                             <button class="SystemOptions_ListItem">ΔO03</button>
                             <button class="SystemOptions_ListItem">ΔO04</button>
@@ -59200,6 +59200,41 @@ const icosahedron = createIcosahedronRoom();
 // }
 // rotateIcosahedronRoom()
 
+
+
+let toggleIcosahedronRoom = () => {
+    if (icosahedronRoom_root.scale.x === 125) {
+        gsap.to(icosahedronRoom_root.scale, {
+            duration: 0.55,
+            ease: "power2.inOut",
+            x: 1,
+            y: 1,
+            z: 1
+        });
+    } else {
+        gsap.to(icosahedronRoom_root.scale, {
+            duration: 0.55,
+            ease: "power2.inOut",
+            x: 125,
+            y: 125,
+            z: 125
+        });
+    }
+}
+
+
+document.addEventListener("keydown", function(event) {
+    if (event.key === "O") {
+        toggleIcosahedronRoom();
+    }
+})
+
+
+ const Summon_whiteRoomToggleΔ = document.getElementById("whiteRoomToggle");
+
+    Summon_whiteRoomToggleΔ.addEventListener("click", function() {
+       toggleIcosahedronRoom();
+    });
 
 
 
