@@ -20605,7 +20605,7 @@
             background-size: cover; /* Adjust as needed */
             background-position: center; /* Adjust as needed */
             color: rgba(255, 255, 255, 0.3);
-            border: none; /* Remove border */
+            border: 1px solid rgba(255, 255, 255, 0.95); /* Remove border */
             box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5); /* Adjust the values as needed */
             border-radius: 25px;
             background-color: transparent; /* Remove background color */
@@ -43272,7 +43272,7 @@
   <div class="additional_spaceOptions">
     <div class="Secondary_spaces_optionsL1">
         <br/>
-        <button id='sub_SpacesMenuA' class="SystemOptions_ListItem">⟐O01</button>
+        <button id='sub_SpacesMenuA' class="SystemOptions_ListItem">⟐Default</button>
         <button id='sub_SpacesMenuB' class="SystemOptions_ListItem">⟐O02</button>
         <button id='sub_SpacesMenuC' class="SystemOptions_ListItem">⟐O03</button>
         <button id='sub_SpacesMenuD' class="SystemOptions_ListItem">⟐O04</button>
@@ -43303,7 +43303,7 @@
                     <div class="sub_additional_spacesOptionsA">
                         <div class="sub_Secondary_spaces_optionsA01">
                             <br/>
-                            <button class="SystemOptions_ListItem">ΔO01</button>
+                            <button class="SystemOptions_ListItem">WhiteRoom</button>
                             <button class="SystemOptions_ListItem">ΔO02</button>
                             <button class="SystemOptions_ListItem">ΔO03</button>
                             <button class="SystemOptions_ListItem">ΔO04</button>
@@ -59142,40 +59142,42 @@ function createIcosahedron() {
 // workSphereImg
 // timeSphereImg_01
 // whitePureRoom
+// whiteRoom01_GoldFloor
 function createIcosahedronRoom() {
-    const material = new THREE.MeshPhongMaterial({
+    const material = new THREE.MeshStandardMaterial({
         map: whitePureRoom,
+        alphaMap: whiteRoom01_GoldFloor, 
         color: 0xffffff,
         specular: 0xaaaaaa,
-        shininess: 0,
+        shininess: 0.9,
         transparent: false,
         opacity: 0.85,
         side: THREE.DoubleSide,
-        flatShading: true,
+        flatShading: false,
     });
 
     const icosahedronGeometry = new THREE.IcosahedronGeometry(7, 1)
     const icosahedron_room = new THREE.Mesh(geo_objT_SphereA0, material);
     icosahedronRoom_root.add(icosahedron_room);
 
-    gsap.to(icosahedronRoom_root.rotation, {
-        repeat: -1,
-        duration: 10,
-        ease: "none",
-        delay: 0,
-        x: "+=3.14",
-        y: "+=6.28",
-        z: "+=3.14",
-    })
-
     // gsap.to(icosahedronRoom_root.rotation, {
     //     repeat: -1,
-    //     duration: 15,
+    //     duration: 10,
     //     ease: "none",
     //     delay: 0,
+    //     x: "+=3.14",
     //     y: "+=6.28",
-        
+    //     z: "+=3.14",
     // })
+
+    gsap.to(icosahedronRoom_root.rotation, {
+        repeat: -1,
+        duration: 15,
+        ease: "none",
+        delay: 0,
+        y: "+=6.28",
+        
+    })
 
     return icosahedron_room;
 }
