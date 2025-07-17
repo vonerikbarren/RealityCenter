@@ -41203,7 +41203,7 @@
 
          <video id="defaultSphere_04" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/TimeLapseAnimations/Hyperlapse_CrosswalkIntersection01.mp4" style="display: none" ></video>
 
-         <video id="defaultSphere_05" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/PersonalAnimations/ΔExplanationA01.mp4" style="display: none" ></video>
+         <video id="defaultSphere_05" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/SphereAnimations/ColorfulDiamonds.mp4" style="display: none" ></video>
 
          <video id="defaultSphere_06" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/PersonalAnimations/ΔExplanationA01.mp4" style="display: none" ></video>
 
@@ -43333,7 +43333,7 @@
 
                         <div class="sub_Secondary_spaces_optionsA02">
                             <br/>
-                            <button class="SystemOptions_ListItem">ΔO01</button>
+                            <button id="MolecularRoomToggle" class="SystemOptions_ListItem">[Molecular_Space]</button>
                             <button class="SystemOptions_ListItem">ΔO02</button>
                             <button class="SystemOptions_ListItem">ΔO03</button>
                             <button class="SystemOptions_ListItem">ΔO04</button>
@@ -50774,7 +50774,7 @@ function dollyZoom() {
 				// scene.add(CenterBrain_VideoSphere_Opening_V05)
 				// camera.attach(CenterBrain_VideoSphere_Opening_V05)
 
-				const videoOpening_05 = document.getElementById('openingVideo')
+				const videoOpening_05 = document.getElementById('defaultSphere_05')
 				const videoOpening_05_Tex = new THREE.VideoTexture(videoOpening_05)
                 videoOpening_05_Tex.format = THREE.RGBAFormat
 				const videoOpening_05_Mat = new THREE.MeshBasicMaterial(
@@ -59832,6 +59832,90 @@ let toggleTimeLapseOutside_Room = () => {
 
     Summon_TimelapseOutsideSpaceToggleΔ.addEventListener("click", function() {
        toggleTimeLapseOutside_Room();
+    });
+
+
+
+
+
+
+// search.ΔO05
+
+const spacial_molecularSpace_root = new THREE.Group();
+spacial_molecularSpace_root.position.set(0, 1000, 0);
+spacial_molecularSpace_root.rotation.set(0, 0, 0);
+spacial_molecularSpace_root.scale.set(125, 125, 125);
+scene.add(spacial_molecularSpace_root);
+
+function createSpace_molecularSpace() {
+    const material = new THREE.MeshStandardMaterial({
+        map: videoOpening_05_Tex,
+        alphaMap: whiteRoom01_GoldFloor, 
+        color: 0xffffff,
+        specular: 0xaaaaaa,
+        shininess: 0.9,
+        transparent: false,
+        opacity: 0.85,
+        side: THREE.DoubleSide,
+        flatShading: false,
+    });
+
+    const spacial_MolecularSpaceGeometry = new THREE.SphereGeometry(7, 1)
+    const spacial_MolecularSpace_room = new THREE.Mesh(geo_objT_SphereA0, material);
+    spacial_molecularSpace_root.add(spacial_MolecularSpace_room);
+
+    // gsap.to(spacial_molecularSpace_root.rotation, {
+    //     repeat: -1,
+    //     duration: 10,
+    //     ease: "none",
+    //     delay: 0,
+    //     x: "+=3.14",
+    //     y: "+=6.28",
+    //     z: "+=3.14",
+    // })
+
+    gsap.to(spacial_molecularSpace_root.rotation, {
+        repeat: -1,
+        duration: 15,
+        ease: "none",
+        delay: 0,
+        y: "+=6.28",
+        
+    })
+
+    return spacial_MolecularSpace_room;
+}
+
+// Create the icosahedron
+const createSpace_molecularSpace_ = createSpace_molecularSpace();
+
+
+
+let toggleMolecular_Room = () => {
+    if (spacial_molecularSpace_root.scale.x === 125) {
+        gsap.to(spacial_molecularSpace_root.scale, {
+            duration: 0.55,
+            ease: "power2.inOut",
+            x: 1,
+            y: 1,
+            z: 1
+        });
+    } else {
+        gsap.to(spacial_molecularSpace_root.scale, {
+            duration: 0.55,
+            ease: "power2.inOut",
+            x: 125,
+            y: 125,
+            z: 125
+        });
+    }
+}
+
+
+ const Summon_MolecularSpaceToggleΔ = document.getElementById("MolecularRoomToggle");
+
+    Summon_MolecularSpaceToggleΔ.addEventListener("click", function() {
+       toggleMolecular_Room();
     });
 
 
