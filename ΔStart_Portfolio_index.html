@@ -41193,6 +41193,27 @@
 
          <video id="userVideo" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/PersonalAnimations/ΔExplanationA01.mp4" style="display: none" ></video>
 
+         <!--Spheres-->
+
+         <video id="defaultSphere_01" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/TunnelAnimations/TechTunnel00.mp4" style="display: none" ></video>
+
+         <video id="defaultSphere_02" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/PersonalAnimations/ΔExplanationA01.mp4" style="display: none" ></video>
+
+         <video id="defaultSphere_03" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/PersonalAnimations/ΔExplanationA01.mp4" style="display: none" ></video>
+
+         <video id="defaultSphere_04" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/TimeLapseAnimations/Hyperlapse_CrosswalkIntersection01.mp4" style="display: none" ></video>
+
+         <video id="defaultSphere_05" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/PersonalAnimations/ΔExplanationA01.mp4" style="display: none" ></video>
+
+         <video id="defaultSphere_06" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/PersonalAnimations/ΔExplanationA01.mp4" style="display: none" ></video>
+
+         <video id="defaultSphere_07" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/PersonalAnimations/ΔExplanationA01.mp4" style="display: none" ></video>
+
+         <video id="defaultSphere_08" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/PersonalAnimations/ΔExplanationA01.mp4" style="display: none" ></video>
+
+
+         <!-- Audio files -->
+
          <audio id="background-music" src="assets/audio/env_music/Portfolio_ΔofTechincalAmbienceV3_1.mp3" autoplay loop></audio>
 	</div>
 
@@ -43303,10 +43324,10 @@
                     <div class="sub_additional_spacesOptionsA">
                         <div class="sub_Secondary_spaces_optionsA01">
                             <br/>
-                            <button id="whiteRoomToggle" class="SystemOptions_ListItem">[White_Room]</button>
-                            <button class="SystemOptions_ListItem">ΔO02</button>
-                            <button class="SystemOptions_ListItem">ΔO03</button>
-                            <button class="SystemOptions_ListItem">ΔO04</button>
+                            <button id="whiteRoomToggle" class="SystemOptions_ListItem">[White_Space]</button>
+                            <button id="SpaceRoomToggle" class="SystemOptions_ListItem">[Outer_Space]</button>
+                            <button id="EquationRoomToggle" class="SystemOptions_ListItem">[Mind_Space]</button>
+                            <button id="TimelapseRoomToggle"  class="SystemOptions_ListItem">[Timelapse_Space]</button>
                             
                         </div>
 
@@ -43316,7 +43337,6 @@
                             <button class="SystemOptions_ListItem">ΔO02</button>
                             <button class="SystemOptions_ListItem">ΔO03</button>
                             <button class="SystemOptions_ListItem">ΔO04</button>
-                            
                         </div>
                     </div>
 
@@ -50588,6 +50608,313 @@ function dollyZoom() {
 
                 });
 
+
+
+
+
+                // videoSphere_01
+                const CenterBrain_VideoSphere_Opening_V01 = new THREE.Group()
+				CenterBrain_VideoSphere_Opening_V01.position.set(0, 100, 0)
+				// CenterBrain_VideoSphere_Opening_V01.position.set(0, 0, -500144) // Away from User
+				CenterBrain_VideoSphere_Opening_V01.rotation.set(0, 0, 0)
+				CenterBrain_VideoSphere_Opening_V01.scale.set(0.5, 0.5, 0.5)
+
+				console.log(CenterBrain_VideoSphere_Opening_V01.position)
+	
+				// scene.add(CenterBrain_VideoSphere_Opening_V01)
+				// camera.attach(CenterBrain_VideoSphere_Opening_V01)
+
+				const videoOpening_01 = document.getElementById('defaultSphere_01')
+				const videoOpening_01_Tex = new THREE.VideoTexture(videoOpening_01)
+                videoOpening_01_Tex.format = THREE.RGBAFormat
+				const videoOpening_01_Mat = new THREE.MeshBasicMaterial(
+					{
+						map: videoOpening_01_Tex,
+						side: THREE.DoubleSide,
+						toneMapped: false,
+					}
+				)
+
+				let mesh_CenterBrain_VideoSphere_Opening_V01 = new THREE.Mesh(
+					geo_objT_SphereA0, 
+					videoOpening_01_Mat
+				)
+
+                videoOpening_01_Mat.transparent = true
+
+				mesh_CenterBrain_VideoSphere_Opening_V01.position.set(0, 0, 0)
+				mesh_CenterBrain_VideoSphere_Opening_V01.rotation.set(0, 1.565, 0)
+				mesh_CenterBrain_VideoSphere_Opening_V01.scale.set(0.75, 0.75, 0.75)
+				CenterBrain_VideoSphere_Opening_V01.add(mesh_CenterBrain_VideoSphere_Opening_V01)
+
+
+
+
+                // videoSphere_02
+                const CenterBrain_VideoSphere_Opening_V02 = new THREE.Group()
+				CenterBrain_VideoSphere_Opening_V02.position.set(0, 100, 0)
+				// CenterBrain_VideoSphere_Opening_V02.position.set(0, 0, -500144) // Away from User
+				CenterBrain_VideoSphere_Opening_V02.rotation.set(0, 0, 0)
+				CenterBrain_VideoSphere_Opening_V02.scale.set(0.5, 0.5, 0.5)
+
+				console.log(CenterBrain_VideoSphere_Opening_V02.position)
+	
+				// scene.add(CenterBrain_VideoSphere_Opening_V02)
+				// camera.attach(CenterBrain_VideoSphere_Opening_V02)
+
+				const videoOpening_02 = document.getElementById('openingVideo')
+				const videoOpening_02_Tex = new THREE.VideoTexture(videoOpening_02)
+                videoOpening_02_Tex.format = THREE.RGBAFormat
+				const videoOpening_02_Mat = new THREE.MeshBasicMaterial(
+					{
+						map: videoOpening_02_Tex,
+						side: THREE.DoubleSide,
+						toneMapped: false,
+					}
+				)
+
+				let mesh_CenterBrain_VideoSphere_Opening_V02 = new THREE.Mesh(
+					geo_objT_SphereA0, 
+					videoOpening_02_Mat
+				)
+
+                videoOpening_02_Mat.transparent = true
+
+				mesh_CenterBrain_VideoSphere_Opening_V02.position.set(0, 0, 0)
+				mesh_CenterBrain_VideoSphere_Opening_V02.rotation.set(0, 1.565, 0)
+				mesh_CenterBrain_VideoSphere_Opening_V02.scale.set(0.75, 0.75, 0.75)
+				CenterBrain_VideoSphere_Opening_V02.add(mesh_CenterBrain_VideoSphere_Opening_V02)
+
+
+
+                // videoSphere_03
+                const CenterBrain_VideoSphere_Opening_V03 = new THREE.Group()
+				CenterBrain_VideoSphere_Opening_V03.position.set(0, 100, 0)
+				// CenterBrain_VideoSphere_Opening_V03.position.set(0, 0, -500144) // Away from User
+				CenterBrain_VideoSphere_Opening_V03.rotation.set(0, 0, 0)
+				CenterBrain_VideoSphere_Opening_V03.scale.set(0.5, 0.5, 0.5)
+
+				console.log(CenterBrain_VideoSphere_Opening_V03.position)
+	
+				// scene.add(CenterBrain_VideoSphere_Opening_V03)
+				// camera.attach(CenterBrain_VideoSphere_Opening_V03)
+
+				const videoOpening_03 = document.getElementById('openingVideo')
+				const videoOpening_03_Tex = new THREE.VideoTexture(videoOpening_03)
+                videoOpening_03_Tex.format = THREE.RGBAFormat
+				const videoOpening_03_Mat = new THREE.MeshBasicMaterial(
+					{
+						map: videoOpening_03_Tex,
+						side: THREE.DoubleSide,
+						toneMapped: false,
+					}
+				)
+
+				let mesh_CenterBrain_VideoSphere_Opening_V03 = new THREE.Mesh(
+					geo_objT_SphereA0, 
+					videoOpening_03_Mat
+				)
+
+                videoOpening_03_Mat.transparent = true
+
+				mesh_CenterBrain_VideoSphere_Opening_V03.position.set(0, 0, 0)
+				mesh_CenterBrain_VideoSphere_Opening_V03.rotation.set(0, 1.565, 0)
+				mesh_CenterBrain_VideoSphere_Opening_V03.scale.set(0.75, 0.75, 0.75)
+				CenterBrain_VideoSphere_Opening_V03.add(mesh_CenterBrain_VideoSphere_Opening_V03)
+
+
+
+                // videoSphere_04
+                const CenterBrain_VideoSphere_Opening_V04 = new THREE.Group()
+				CenterBrain_VideoSphere_Opening_V04.position.set(0, 100, 0)
+				// CenterBrain_VideoSphere_Opening_V04.position.set(0, 0, -500144) // Away from User
+				CenterBrain_VideoSphere_Opening_V04.rotation.set(0, 0, 0)
+				CenterBrain_VideoSphere_Opening_V04.scale.set(0.5, 0.5, 0.5)
+
+				console.log(CenterBrain_VideoSphere_Opening_V04.position)
+	
+				// scene.add(CenterBrain_VideoSphere_Opening_V04)
+				// camera.attach(CenterBrain_VideoSphere_Opening_V04)
+
+				const videoOpening_04 = document.getElementById('defaultSphere_04')
+				const videoOpening_04_Tex = new THREE.VideoTexture(videoOpening_04)
+                videoOpening_04_Tex.format = THREE.RGBAFormat
+				const videoOpening_04_Mat = new THREE.MeshBasicMaterial(
+					{
+						map: videoOpening_04_Tex,
+						side: THREE.DoubleSide,
+						toneMapped: false,
+					}
+				)
+
+				let mesh_CenterBrain_VideoSphere_Opening_V04 = new THREE.Mesh(
+					geo_objT_SphereA0, 
+					videoOpening_04_Mat
+				)
+
+                videoOpening_04_Mat.transparent = true
+
+				mesh_CenterBrain_VideoSphere_Opening_V04.position.set(0, 0, 0)
+				mesh_CenterBrain_VideoSphere_Opening_V04.rotation.set(0, 1.565, 0)
+				mesh_CenterBrain_VideoSphere_Opening_V04.scale.set(0.75, 0.75, 0.75)
+				CenterBrain_VideoSphere_Opening_V04.add(mesh_CenterBrain_VideoSphere_Opening_V04)
+
+
+
+
+                // videoSphere_05
+                const CenterBrain_VideoSphere_Opening_V05 = new THREE.Group()
+				CenterBrain_VideoSphere_Opening_V05.position.set(0, 100, 0)
+				// CenterBrain_VideoSphere_Opening_V05.position.set(0, 0, -500144) // Away from User
+				CenterBrain_VideoSphere_Opening_V05.rotation.set(0, 0, 0)
+				CenterBrain_VideoSphere_Opening_V05.scale.set(0.5, 0.5, 0.5)
+
+				console.log(CenterBrain_VideoSphere_Opening_V05.position)
+	
+				// scene.add(CenterBrain_VideoSphere_Opening_V05)
+				// camera.attach(CenterBrain_VideoSphere_Opening_V05)
+
+				const videoOpening_05 = document.getElementById('openingVideo')
+				const videoOpening_05_Tex = new THREE.VideoTexture(videoOpening_05)
+                videoOpening_05_Tex.format = THREE.RGBAFormat
+				const videoOpening_05_Mat = new THREE.MeshBasicMaterial(
+					{
+						map: videoOpening_05_Tex,
+						side: THREE.DoubleSide,
+						toneMapped: false,
+					}
+				)
+
+				let mesh_CenterBrain_VideoSphere_Opening_V05 = new THREE.Mesh(
+					geo_objT_SphereA0, 
+					videoOpening_05_Mat
+				)
+
+                videoOpening_05_Mat.transparent = true
+
+				mesh_CenterBrain_VideoSphere_Opening_V05.position.set(0, 0, 0)
+				mesh_CenterBrain_VideoSphere_Opening_V05.rotation.set(0, 1.565, 0)
+				mesh_CenterBrain_VideoSphere_Opening_V05.scale.set(0.75, 0.75, 0.75)
+				CenterBrain_VideoSphere_Opening_V05.add(mesh_CenterBrain_VideoSphere_Opening_V05)
+
+
+
+
+                // videoSphere_06
+                const CenterBrain_VideoSphere_Opening_V06 = new THREE.Group()
+				CenterBrain_VideoSphere_Opening_V06.position.set(0, 100, 0)
+				// CenterBrain_VideoSphere_Opening_V06.position.set(0, 0, -500144) // Away from User
+				CenterBrain_VideoSphere_Opening_V06.rotation.set(0, 0, 0)
+				CenterBrain_VideoSphere_Opening_V06.scale.set(0.5, 0.5, 0.5)
+
+				console.log(CenterBrain_VideoSphere_Opening_V06.position)
+	
+				// scene.add(CenterBrain_VideoSphere_Opening_V06)
+				// camera.attach(CenterBrain_VideoSphere_Opening_V06)
+
+				const videoOpening_06 = document.getElementById('openingVideo')
+				const videoOpening_06_Tex = new THREE.VideoTexture(videoOpening_06)
+                videoOpening_06_Tex.format = THREE.RGBAFormat
+				const videoOpening_06_Mat = new THREE.MeshBasicMaterial(
+					{
+						map: videoOpening_06_Tex,
+						side: THREE.DoubleSide,
+						toneMapped: false,
+					}
+				)
+
+				let mesh_CenterBrain_VideoSphere_Opening_V06 = new THREE.Mesh(
+					geo_objT_SphereA0, 
+					videoOpening_06_Mat
+				)
+
+                videoOpening_06_Mat.transparent = true
+
+				mesh_CenterBrain_VideoSphere_Opening_V06.position.set(0, 0, 0)
+				mesh_CenterBrain_VideoSphere_Opening_V06.rotation.set(0, 1.565, 0)
+				mesh_CenterBrain_VideoSphere_Opening_V06.scale.set(0.75, 0.75, 0.75)
+				CenterBrain_VideoSphere_Opening_V06.add(mesh_CenterBrain_VideoSphere_Opening_V06)
+
+
+
+                // videoSphere_07
+                const CenterBrain_VideoSphere_Opening_V07 = new THREE.Group()
+				CenterBrain_VideoSphere_Opening_V07.position.set(0, 100, 0)
+				// CenterBrain_VideoSphere_Opening_V07.position.set(0, 0, -500144) // Away from User
+				CenterBrain_VideoSphere_Opening_V07.rotation.set(0, 0, 0)
+				CenterBrain_VideoSphere_Opening_V07.scale.set(0.5, 0.5, 0.5)
+
+				console.log(CenterBrain_VideoSphere_Opening_V07.position)
+	
+				// scene.add(CenterBrain_VideoSphere_Opening_V07)
+				// camera.attach(CenterBrain_VideoSphere_Opening_V07)
+
+				const videoOpening_07 = document.getElementById('openingVideo')
+				const videoOpening_07_Tex = new THREE.VideoTexture(videoOpening_07)
+                videoOpening_07_Tex.format = THREE.RGBAFormat
+				const videoOpening_07_Mat = new THREE.MeshBasicMaterial(
+					{
+						map: videoOpening_07_Tex,
+						side: THREE.DoubleSide,
+						toneMapped: false,
+					}
+				)
+
+				let mesh_CenterBrain_VideoSphere_Opening_V07 = new THREE.Mesh(
+					geo_objT_SphereA0, 
+					videoOpening_07_Mat
+				)
+
+                videoOpening_07_Mat.transparent = true
+
+				mesh_CenterBrain_VideoSphere_Opening_V07.position.set(0, 0, 0)
+				mesh_CenterBrain_VideoSphere_Opening_V07.rotation.set(0, 1.565, 0)
+				mesh_CenterBrain_VideoSphere_Opening_V07.scale.set(0.75, 0.75, 0.75)
+				CenterBrain_VideoSphere_Opening_V07.add(mesh_CenterBrain_VideoSphere_Opening_V07)
+
+
+
+
+                // videoSphere_08
+                const CenterBrain_VideoSphere_Opening_V08 = new THREE.Group()
+				CenterBrain_VideoSphere_Opening_V08.position.set(0, 100, 0)
+				// CenterBrain_VideoSphere_Opening_V08.position.set(0, 0, -500144) // Away from User
+				CenterBrain_VideoSphere_Opening_V08.rotation.set(0, 0, 0)
+				CenterBrain_VideoSphere_Opening_V08.scale.set(0.5, 0.5, 0.5)
+
+				console.log(CenterBrain_VideoSphere_Opening_V08.position)
+	
+				// scene.add(CenterBrain_VideoSphere_Opening_V08)
+				// camera.attach(CenterBrain_VideoSphere_Opening_V08)
+
+				const videoOpening_08 = document.getElementById('openingVideo')
+				const videoOpening_08_Tex = new THREE.VideoTexture(videoOpening_08)
+                videoOpening_08_Tex.format = THREE.RGBAFormat
+				const videoOpening_08_Mat = new THREE.MeshBasicMaterial(
+					{
+						map: videoOpening_08_Tex,
+						side: THREE.DoubleSide,
+						toneMapped: false,
+					}
+				)
+
+				let mesh_CenterBrain_VideoSphere_Opening_V08 = new THREE.Mesh(
+					geo_objT_SphereA0, 
+					videoOpening_08_Mat
+				)
+
+                videoOpening_08_Mat.transparent = true
+
+				mesh_CenterBrain_VideoSphere_Opening_V08.position.set(0, 0, 0)
+				mesh_CenterBrain_VideoSphere_Opening_V08.rotation.set(0, 1.565, 0)
+				mesh_CenterBrain_VideoSphere_Opening_V08.scale.set(0.75, 0.75, 0.75)
+				CenterBrain_VideoSphere_Opening_V08.add(mesh_CenterBrain_VideoSphere_Opening_V08)
+
+
+
+
+
+
                
 
 
@@ -50607,6 +50934,7 @@ function dollyZoom() {
 
 
 
+                
 
 
 			
@@ -59106,7 +59434,7 @@ CrystalStarTest_root.add(icosahedronRoot);
 const icosahedronRoom_root = new THREE.Group();
 icosahedronRoom_root.position.set(0, 100, 0);
 icosahedronRoom_root.rotation.set(0, 0, 0);
-icosahedronRoom_root.scale.set(125, 125, 125);
+icosahedronRoom_root.scale.set(1, 1, 1);
 scene.add(icosahedronRoom_root);
 
 
@@ -59145,8 +59473,8 @@ function createIcosahedron() {
 // whiteRoom01_GoldFloor
 function createIcosahedronRoom() {
     const material = new THREE.MeshStandardMaterial({
-        map: whitePureRoom,
-        alphaMap: whiteRoom01_GoldFloor, 
+        map: videoOpening_01_Tex,
+        alphaMap: videoOpening_01_Tex, 
         color: 0xffffff,
         specular: 0xaaaaaa,
         shininess: 0.9,
@@ -59235,6 +59563,277 @@ document.addEventListener("keydown", function(event) {
     Summon_whiteRoomToggleΔ.addEventListener("click", function() {
        toggleIcosahedronRoom();
     });
+
+
+
+
+//.............................................................................
+//....SSSSSS..........................................................???......
+//...SSSSSSSS.......................................................???????....
+//..SSSSSSSSSS.....................................................?????????...
+//..SSSSSSSSSS.....................................................?????????...
+//.SSSS...SSSSSSpppppppp....aaaaaaa...ccccccc...eeeeee...ssssssss..????.?????..
+//.SSSSSS......Sppppppppp..aaaaaaaa..ccccccccc.eeeeeeee..ssssssss..???..????...
+//..SSSSSSSSS..Spppppppppppaaaaaaaaaacccccccccceeeeeeeeeesssssssss.....?????...
+//..SSSSSSSSSS.Spppp.ppppppaaa.aaaaaaccc..ccccceee..eeeeesssssssss....??????...
+//....SSSSSSSSSSppp...pppp.aaaaaaaaaaccc......ceeeeeeeee.ssssssss.....????.....
+//.SSSS..SSSSSSSppp...pppppaaaaaaaaaaccc......ceeeeeeeee.ssssssss.....????.....
+//.SSSS....SSSSSppp...pppppaaaa.aaaaaccc..ccccceee......esssssssss....???......
+//.SSSSSSSSSSSSSpppppppppppaaa.aaaaaacccccccccceeeeeeeeeessss.ssss....????.....
+//..SSSSSSSSSS.Sppppppppp.paaaaaaaaa.cccccccc.ceeeeeeee.esssssssss....????.....
+//...SSSSSSSSS.Sppppppppp.paaaaaaaaa.cccccccc..eeeeeeee..ssssssss.....????.....
+//....SSSSSS...Sppp.ppp.....aaa........cccc......eeee.....ssssss...............
+//.............Sppp............................................................
+//.............Sppp............................................................
+//.............Sppp............................................................
+//.............................................................................
+
+
+
+
+// search.ΔO01
+
+
+const spacial_OuterSpaceRoom_root = new THREE.Group();
+spacial_OuterSpaceRoom_root.position.set(0, 100, 0);
+spacial_OuterSpaceRoom_root.rotation.set(0, 0, 0);
+spacial_OuterSpaceRoom_root.scale.set(1, 1, 1);
+scene.add(spacial_OuterSpaceRoom_root);
+
+function createSpace_OuterSpace() {
+    const material = new THREE.MeshStandardMaterial({
+        map: SpaceWallpaper01,
+        alphaMap: whiteRoom01_GoldFloor, 
+        color: 0xffffff,
+        specular: 0xaaaaaa,
+        shininess: 0.9,
+        transparent: false,
+        opacity: 0.85,
+        side: THREE.DoubleSide,
+        flatShading: false,
+    });
+
+    const spacial_OuterSpaceGeometry = new THREE.SphereGeometry(7, 1)
+    const spacial_OuterSpace_room = new THREE.Mesh(geo_objT_SphereA0, material);
+    spacial_OuterSpaceRoom_root.add(spacial_OuterSpace_room);
+
+    gsap.to(spacial_OuterSpaceRoom_root.rotation, {
+        repeat: -1,
+        duration: 10,
+        ease: "none",
+        delay: 0,
+        x: "+=3.14",
+        y: "+=6.28",
+        z: "+=3.14",
+    })
+
+    // gsap.to(spacial_OuterSpaceRoom_root.rotation, {
+    //     repeat: -1,
+    //     duration: 15,
+    //     ease: "none",
+    //     delay: 0,
+    //     y: "+=6.28",
+        
+    // })
+
+    return spacial_OuterSpace_room;
+}
+
+// Create the icosahedron
+const createSpace_OuterSpace_ = createSpace_OuterSpace();
+
+
+
+let toggleSpaceRoom = () => {
+    if (spacial_OuterSpaceRoom_root.scale.x === 125) {
+        gsap.to(spacial_OuterSpaceRoom_root.scale, {
+            duration: 0.55,
+            ease: "power2.inOut",
+            x: 1,
+            y: 1,
+            z: 1
+        });
+    } else {
+        gsap.to(spacial_OuterSpaceRoom_root.scale, {
+            duration: 0.55,
+            ease: "power2.inOut",
+            x: 125,
+            y: 125,
+            z: 125
+        });
+    }
+}
+
+
+ const Summon_spaceRoomToggleΔ = document.getElementById("SpaceRoomToggle");
+
+    Summon_spaceRoomToggleΔ.addEventListener("click", function() {
+       toggleSpaceRoom();
+    });
+
+
+
+
+// search.ΔO02
+
+
+const spacial_EquationRoom_root = new THREE.Group();
+spacial_EquationRoom_root.position.set(0, 100, 0);
+spacial_EquationRoom_root.rotation.set(0, 0, 0);
+spacial_EquationRoom_root.scale.set(1, 1, 1);
+scene.add(spacial_EquationRoom_root);
+
+function createSpace_EquationSpace() {
+    const material = new THREE.MeshStandardMaterial({
+        map: videoOpening_Tex,
+        alphaMap: whiteRoom01_GoldFloor, 
+        color: 0xffffff,
+        specular: 0xaaaaaa,
+        shininess: 0.9,
+        transparent: false,
+        opacity: 0.85,
+        side: THREE.DoubleSide,
+        flatShading: false,
+    });
+
+    const spacial_EquationSpaceGeometry = new THREE.SphereGeometry(7, 1)
+    const spacial_EquationSpace_room = new THREE.Mesh(geo_objT_SphereA0, material);
+    spacial_EquationRoom_root.add(spacial_EquationSpace_room);
+
+    // gsap.to(spacial_EquationRoom_root.rotation, {
+    //     repeat: -1,
+    //     duration: 10,
+    //     ease: "none",
+    //     delay: 0,
+    //     x: "+=3.14",
+    //     y: "+=6.28",
+    //     z: "+=3.14",
+    // })
+
+    gsap.to(spacial_EquationRoom_root.rotation, {
+        repeat: -1,
+        duration: 15,
+        ease: "none",
+        delay: 0,
+        y: "+=6.28",
+        
+    })
+
+    return spacial_EquationSpace_room;
+}
+
+// Create the icosahedron
+const createSpace_EquationSpace_ = createSpace_EquationSpace();
+
+
+
+let toggleEquationRoom = () => {
+    if (spacial_EquationRoom_root.scale.x === 125) {
+        gsap.to(spacial_EquationRoom_root.scale, {
+            duration: 0.55,
+            ease: "power2.inOut",
+            x: 1,
+            y: 1,
+            z: 1
+        });
+    } else {
+        gsap.to(spacial_EquationRoom_root.scale, {
+            duration: 0.55,
+            ease: "power2.inOut",
+            x: 125,
+            y: 125,
+            z: 125
+        });
+    }
+}
+
+
+ const Summon_equationRoomToggleΔ = document.getElementById("EquationRoomToggle");
+
+    Summon_equationRoomToggleΔ.addEventListener("click", function() {
+       toggleEquationRoom();
+    });
+
+
+// search.ΔO03
+
+const spacial_Timelapse_outside_root = new THREE.Group();
+spacial_Timelapse_outside_root.position.set(0, 1000, 0);
+spacial_Timelapse_outside_root.rotation.set(0, 0, 0);
+spacial_Timelapse_outside_root.scale.set(125, 125, 125);
+scene.add(spacial_Timelapse_outside_root);
+
+function createSpace_TimelapseSpace() {
+    const material = new THREE.MeshStandardMaterial({
+        map: videoOpening_04_Tex,
+        alphaMap: whiteRoom01_GoldFloor, 
+        color: 0xffffff,
+        specular: 0xaaaaaa,
+        shininess: 0.9,
+        transparent: false,
+        opacity: 0.85,
+        side: THREE.DoubleSide,
+        flatShading: false,
+    });
+
+    const spacial_TimelapseOutsideSpaceGeometry = new THREE.SphereGeometry(7, 1)
+    const spacial_TimelapseOutsideSpace_room = new THREE.Mesh(geo_objT_SphereA0, material);
+    spacial_Timelapse_outside_root.add(spacial_TimelapseOutsideSpace_room);
+
+    // gsap.to(spacial_Timelapse_outside_root.rotation, {
+    //     repeat: -1,
+    //     duration: 10,
+    //     ease: "none",
+    //     delay: 0,
+    //     x: "+=3.14",
+    //     y: "+=6.28",
+    //     z: "+=3.14",
+    // })
+
+    gsap.to(spacial_Timelapse_outside_root.rotation, {
+        repeat: -1,
+        duration: 15,
+        ease: "none",
+        delay: 0,
+        y: "+=6.28",
+        
+    })
+
+    return spacial_TimelapseOutsideSpace_room;
+}
+
+// Create the icosahedron
+const createSpace_TimelapseSpace_ = createSpace_TimelapseSpace();
+
+
+
+let toggleTimeLapseOutside_Room = () => {
+    if (spacial_Timelapse_outside_root.scale.x === 125) {
+        gsap.to(spacial_Timelapse_outside_root.scale, {
+            duration: 0.55,
+            ease: "power2.inOut",
+            x: 1,
+            y: 1,
+            z: 1
+        });
+    } else {
+        gsap.to(spacial_Timelapse_outside_root.scale, {
+            duration: 0.55,
+            ease: "power2.inOut",
+            x: 125,
+            y: 125,
+            z: 125
+        });
+    }
+}
+
+
+ const Summon_TimelapseOutsideSpaceToggleΔ = document.getElementById("TimelapseRoomToggle");
+
+    Summon_TimelapseOutsideSpaceToggleΔ.addEventListener("click", function() {
+       toggleTimeLapseOutside_Room();
+    });
+
 
 
 
