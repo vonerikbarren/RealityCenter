@@ -41203,9 +41203,9 @@
 
          <video id="defaultSphere_04" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/TimeLapseAnimations/Hyperlapse_CrosswalkIntersection01.mp4" style="display: none" ></video>
 
-         <video id="defaultSphere_05" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/SphereAnimations/ColorfulDiamonds.mp4" style="display: none" ></video>
+         <video id="defaultSphere_05" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/SphereAnimations/ColorfulInfinity.mp4" style="display: none" ></video>
 
-         <video id="defaultSphere_06" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/PersonalAnimations/ΔExplanationA01.mp4" style="display: none" ></video>
+         <video id="defaultSphere_06" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/SphereAnimations/Animation_DataRoom02.mp4" style="display: none" ></video>
 
          <video id="defaultSphere_07" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/PersonalAnimations/ΔExplanationA01.mp4" style="display: none" ></video>
 
@@ -43334,7 +43334,7 @@
                         <div class="sub_Secondary_spaces_optionsA02">
                             <br/>
                             <button id="MolecularRoomToggle" class="SystemOptions_ListItem">[Molecular_Space]</button>
-                            <button class="SystemOptions_ListItem">ΔO02</button>
+                            <button id="SocialSystemsRoomToggle" class="SystemOptions_ListItem">[SocialSystems_Space]</button>
                             <button class="SystemOptions_ListItem">ΔO03</button>
                             <button class="SystemOptions_ListItem">ΔO04</button>
                         </div>
@@ -50812,7 +50812,7 @@ function dollyZoom() {
 				// scene.add(CenterBrain_VideoSphere_Opening_V06)
 				// camera.attach(CenterBrain_VideoSphere_Opening_V06)
 
-				const videoOpening_06 = document.getElementById('openingVideo')
+				const videoOpening_06 = document.getElementById('defaultSphere_06')
 				const videoOpening_06_Tex = new THREE.VideoTexture(videoOpening_06)
                 videoOpening_06_Tex.format = THREE.RGBAFormat
 				const videoOpening_06_Mat = new THREE.MeshBasicMaterial(
@@ -59760,7 +59760,7 @@ let toggleEquationRoom = () => {
 const spacial_Timelapse_outside_root = new THREE.Group();
 spacial_Timelapse_outside_root.position.set(0, 1000, 0);
 spacial_Timelapse_outside_root.rotation.set(0, 0, 0);
-spacial_Timelapse_outside_root.scale.set(125, 125, 125);
+spacial_Timelapse_outside_root.scale.set(1, 1, 1);
 scene.add(spacial_Timelapse_outside_root);
 
 function createSpace_TimelapseSpace() {
@@ -59844,7 +59844,7 @@ let toggleTimeLapseOutside_Room = () => {
 const spacial_molecularSpace_root = new THREE.Group();
 spacial_molecularSpace_root.position.set(0, 1000, 0);
 spacial_molecularSpace_root.rotation.set(0, 0, 0);
-spacial_molecularSpace_root.scale.set(125, 125, 125);
+spacial_molecularSpace_root.scale.set(1, 1, 1);
 scene.add(spacial_molecularSpace_root);
 
 function createSpace_molecularSpace() {
@@ -59919,6 +59919,88 @@ let toggleMolecular_Room = () => {
     });
 
 
+
+
+
+
+// search.ΔO06
+
+const spacial_SocialSystemsSpace_root = new THREE.Group();
+spacial_SocialSystemsSpace_root.position.set(0, 900, 0);
+spacial_SocialSystemsSpace_root.rotation.set(0, 0, 0);
+spacial_SocialSystemsSpace_root.scale.set(125, 125, 125);
+scene.add(spacial_SocialSystemsSpace_root);
+
+function createSpace_SocialSystemsSpace() {
+    const material = new THREE.MeshStandardMaterial({
+        map: videoOpening_06_Tex,
+        alphaMap: whiteRoom01_GoldFloor, 
+        color: 0xffffff,
+        specular: 0xaaaaaa,
+        shininess: 0.9,
+        transparent: false,
+        opacity: 0.85,
+        side: THREE.DoubleSide,
+        flatShading: false,
+    });
+
+    const spacial_SocialSystemsSpaceGeometry = new THREE.SphereGeometry(7, 1)
+    const spacial_SocialSystemsSpace_room = new THREE.Mesh(geo_objT_BoxA0, material);
+    spacial_SocialSystemsSpace_root.add(spacial_SocialSystemsSpace_room);
+
+    // gsap.to(spacial_SocialSystemsSpace_root.rotation, {
+    //     repeat: -1,
+    //     duration: 10,
+    //     ease: "none",
+    //     delay: 0,
+    //     x: "+=3.14",
+    //     y: "+=6.28",
+    //     z: "+=3.14",
+    // })
+
+    gsap.to(spacial_SocialSystemsSpace_root.rotation, {
+        repeat: -1,
+        duration: 15,
+        ease: "none",
+        delay: 0,
+        y: "+=6.28",
+        
+    })
+
+    return spacial_SocialSystemsSpace_room;
+}
+
+// Create the icosahedron
+const createSpace_SocialSystems_ = createSpace_SocialSystemsSpace();
+
+
+
+let toggleSocialSystems_Room = () => {
+    if (spacial_SocialSystemsSpace_root.scale.x === 125) {
+        gsap.to(spacial_SocialSystemsSpace_root.scale, {
+            duration: 0.55,
+            ease: "power2.inOut",
+            x: 1,
+            y: 1,
+            z: 1
+        });
+    } else {
+        gsap.to(spacial_SocialSystemsSpace_root.scale, {
+            duration: 0.55,
+            ease: "power2.inOut",
+            x: 125,
+            y: 125,
+            z: 125
+        });
+    }
+}
+
+
+ const Summon_SocialSystemsSpaceToggleΔ = document.getElementById("SocialSystemsRoomToggle");
+
+    Summon_SocialSystemsSpaceToggleΔ.addEventListener("click", function() {
+       toggleSocialSystems_Room();
+    });
 
 
 
