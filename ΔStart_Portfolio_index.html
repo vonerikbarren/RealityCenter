@@ -1552,6 +1552,50 @@
             transform-origin: center; /* Set the rotation point to the center */
         }
 
+        #defaultSphere_06 {
+            position: absolute;
+            display: none;
+            top: -1.5%;
+            left: 11.5%;
+            height: 420px;
+            width: 420px;
+            border: inset 1.5px rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            box-shadow: 2px 2px 2px rgba(255, 255, 255, 0.95); /* Adjust the values as needed */
+            scale: 53.5%;
+            transform-origin: center; /* Set the rotation point to the center */
+        }
+
+
+        #defaultSphere_07 {
+            position: absolute;
+            display: none;
+            top: -1.5%;
+            left: 11.5%;
+            height: 420px;
+            width: 420px;
+            border: inset 1.5px rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            box-shadow: 2px 2px 2px rgba(255, 255, 255, 0.95); /* Adjust the values as needed */
+            scale: 53.5%;
+            transform-origin: center; /* Set the rotation point to the center */
+        }
+
+
+
+        #defaultSphere_08 {
+            position: absolute;
+            display: none;
+            top: -1.5%;
+            left: 11.5%;
+            height: 420px;
+            width: 420px;
+            border: inset 1.5px rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            box-shadow: 2px 2px 2px rgba(255, 255, 255, 0.95); /* Adjust the values as needed */
+            scale: 53.5%;
+            transform-origin: center; /* Set the rotation point to the center */
+        }
 
 
 
@@ -59601,6 +59645,7 @@ let whiteRoomVideo = document.getElementById("defaultSphere_01")
 let toggleIcosahedronRoom = () => {
     if (icosahedronRoom_root.scale.x === 125) {
         
+        play_sfx_click_gen()
 
         whiteRoomVideo.style.display = "none"
 
@@ -59612,6 +59657,8 @@ let toggleIcosahedronRoom = () => {
             z: 1
         });
     } else {
+
+        play_sfx_click_gen()
 
         whiteRoomVideo.style.display = "block"
 
@@ -59723,6 +59770,8 @@ let OuterSpaceRoomVideo = document.getElementById("defaultSphere_02")
 let toggleSpaceRoom = () => {
     if (spacial_OuterSpaceRoom_root.scale.x === 125) {
 
+        play_sfx_click_gen()
+
         OuterSpaceRoomVideo.style.display = "none"
 
         gsap.to(spacial_OuterSpaceRoom_root.scale, {
@@ -59733,6 +59782,8 @@ let toggleSpaceRoom = () => {
             z: 1
         });
     } else {
+
+        play_sfx_click_gen()
 
         OuterSpaceRoomVideo.style.display = "block"
 
@@ -59814,6 +59865,8 @@ let EquationSpaceRoomVideo = document.getElementById("openingVideo")
 let toggleEquationRoom = () => {
     if (spacial_EquationRoom_root.scale.x === 125) {
 
+        play_sfx_click_gen()
+
         EquationSpaceRoomVideo.style.display = "none"
 
         gsap.to(spacial_EquationRoom_root.scale, {
@@ -59824,6 +59877,8 @@ let toggleEquationRoom = () => {
             z: 1
         });
     } else {
+
+        play_sfx_click_gen()
 
         EquationSpaceRoomVideo.style.display = "block"
 
@@ -59902,6 +59957,8 @@ let StreetTimeLapseSpaceRoomVideo = document.getElementById("defaultSphere_04")
 let toggleTimeLapseOutside_Room = () => {
     if (spacial_Timelapse_outside_root.scale.x === 125) {
 
+        play_sfx_click_gen()
+
         StreetTimeLapseSpaceRoomVideo.style.display = "none"
 
         gsap.to(spacial_Timelapse_outside_root.scale, {
@@ -59912,6 +59969,8 @@ let toggleTimeLapseOutside_Room = () => {
             z: 1
         });
     } else {
+
+        play_sfx_click_gen()
 
         StreetTimeLapseSpaceRoomVideo.style.display = "block"
 
@@ -59992,6 +60051,8 @@ let MolecularSpaceRoomVideo = document.getElementById("defaultSphere_05")
 let toggleMolecular_Room = () => {
     if (spacial_molecularSpace_root.scale.x === 125) {
 
+        play_sfx_click_gen()
+
         MolecularSpaceRoomVideo.style.display = "none"
 
         gsap.to(spacial_molecularSpace_root.scale, {
@@ -60002,6 +60063,8 @@ let toggleMolecular_Room = () => {
             z: 1
         });
     } else {
+
+        play_sfx_click_gen()
 
         MolecularSpaceRoomVideo.style.display = "block"
 
@@ -60078,10 +60141,15 @@ function createSpace_SocialSystemsSpace() {
 // Create the icosahedron
 const createSpace_SocialSystems_ = createSpace_SocialSystemsSpace();
 
-
+let SocialSystemsSpaceRoomVideo = document.getElementById("defaultSphere_06")
 
 let toggleSocialSystems_Room = () => {
     if (spacial_SocialSystemsSpace_root.scale.x === 125) {
+
+        play_sfx_click_gen()
+
+        SocialSystemsSpaceRoomVideo.style.display = "none"
+
         gsap.to(spacial_SocialSystemsSpace_root.scale, {
             duration: 0.55,
             ease: "power2.inOut",
@@ -60090,6 +60158,11 @@ let toggleSocialSystems_Room = () => {
             z: 1
         });
     } else {
+
+        play_sfx_click_gen()
+
+        SocialSystemsSpaceRoomVideo.style.display = "block"
+
         gsap.to(spacial_SocialSystemsSpace_root.scale, {
             duration: 0.55,
             ease: "power2.inOut",
@@ -60164,10 +60237,15 @@ function createSpace_NaturalSystemsSpace() {
 // Create the icosahedron
 const createSpace_NaturalSystems_ = createSpace_NaturalSystemsSpace();
 
-
+let NaturalSystemsSpaceRoomVideo = document.getElementById("defaultSphere_07")
 
 let toggleNaturalSystems_Room = () => {
     if (spacial_NaturalSystemsSpace_root.scale.x === 125) {
+
+        play_sfx_click_gen()
+
+        NaturalSystemsSpaceRoomVideo.style.display = "none"
+
         gsap.to(spacial_NaturalSystemsSpace_root.scale, {
             duration: 0.55,
             ease: "power2.inOut",
@@ -60176,6 +60254,11 @@ let toggleNaturalSystems_Room = () => {
             z: 1
         });
     } else {
+
+        play_sfx_click_gen()
+
+        NaturalSystemsSpaceRoomVideo.style.display = "block"
+
         gsap.to(spacial_NaturalSystemsSpace_root.scale, {
             duration: 0.55,
             ease: "power2.inOut",
@@ -60244,10 +60327,15 @@ function createSpace_CelestialSystemsSpace() {
 // Create the icosahedron
 const createSpace_CelestialSystems_ = createSpace_CelestialSystemsSpace();
 
-
+let CelestialSystemsSpaceRoomVideo = document.getElementById("defaultSphere_08")
 
 let toggleCelestialSystems_Room = () => {
     if (spacial_CelestialSystemsSpace_root.scale.x === 125) {
+
+        play_sfx_click_gen()
+
+        CelestialSystemsSpaceRoomVideo.style.display = "none"
+
         gsap.to(spacial_CelestialSystemsSpace_root.scale, {
             duration: 0.55,
             ease: "power2.inOut",
@@ -60256,6 +60344,11 @@ let toggleCelestialSystems_Room = () => {
             z: 1
         });
     } else {
+
+        play_sfx_click_gen()
+
+        CelestialSystemsSpaceRoomVideo.style.display = "block"
+
         gsap.to(spacial_CelestialSystemsSpace_root.scale, {
             duration: 0.55,
             ease: "power2.inOut",
