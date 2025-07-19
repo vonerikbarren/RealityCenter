@@ -1495,15 +1495,15 @@
 
         #defaultSphere_01 {
             position: absolute;
-            display: show;
-            top: 10%;
-            left: 20%;
+            display: none;
+            top: 15%;
+            left: 10.5%;
             height: 250px;
             width: 420px;
             border: inset 1.5px rgba(255, 255, 255, 0.95);
             border-radius: 12px;
             box-shadow: 2px 2px 2px rgba(255, 255, 255, 0.95); /* Adjust the values as needed */
-            scale: 75%;
+            scale: 50%;
             transform-origin: center; /* Set the rotation point to the center */
             
 
@@ -59552,9 +59552,13 @@ const icosahedron = createIcosahedronRoom();
 // rotateIcosahedronRoom()
 
 
-
+let whiteRoomVideo = document.getElementById("defaultSphere_01")
 let toggleIcosahedronRoom = () => {
     if (icosahedronRoom_root.scale.x === 125) {
+        
+
+        whiteRoomVideo.style.display = "none"
+
         gsap.to(icosahedronRoom_root.scale, {
             duration: 0.55,
             ease: "power2.inOut",
@@ -59563,6 +59567,8 @@ let toggleIcosahedronRoom = () => {
             z: 1
         });
     } else {
+
+        whiteRoomVideo.style.display = "block"
         gsap.to(icosahedronRoom_root.scale, {
             duration: 0.55,
             ease: "power2.inOut",
