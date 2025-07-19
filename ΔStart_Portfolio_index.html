@@ -1493,6 +1493,26 @@
         }
 
 
+        #defaultSphere_01 {
+            position: absolute;
+            display: show;
+            top: 10%;
+            left: 20%;
+            height: 250px;
+            width: 420px;
+            border: inset 1.5px rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            box-shadow: 2px 2px 2px rgba(255, 255, 255, 0.95); /* Adjust the values as needed */
+            scale: 75%;
+            transform-origin: center; /* Set the rotation point to the center */
+            
+
+
+        }
+
+        
+
+
         .additional_experiencesOptions {
                 top: 250px;
                 left: 75px;
@@ -1505,6 +1525,7 @@
                     /* background-color: aqua; */
                     background-image: url('assets/designs/HUD/general/borders/cyberPunk01/SVG/Panel_02_Vertical.svg');
                     background-repeat: no-repeat; /* Prevent the background image from repeating */
+                    box-shadow: 2px 2px 2px rgba(255, 255, 255, 0.5); /* Adjust the values as needed */
                     color: white;
                     padding-top: 20px;
                     padding-right: 20px;
@@ -2588,6 +2609,7 @@
                     /* background-color: aqua; */
                     background-image: url('assets/designs/HUD/general/borders/cyberPunk01/SVG/Panel_02_Vertical.svg');
                     background-repeat: no-repeat; /* Prevent the background image from repeating */
+                    box-shadow: 2px 2px 2px rgba(255, 255, 255, 0.5); /* Adjust the values as needed */
                     color: white;
                     padding-top: 20px;
                     padding-right: 20px;
@@ -21683,6 +21705,7 @@
                     /* background-color: aqua; */
                     background-image: url('assets/designs/HUD/general/borders/cyberPunk01/SVG/Panel_02_Vertical.svg');
                     background-repeat: no-repeat; /* Prevent the background image from repeating */
+                    box-shadow: 2px 2px 2px rgba(255, 255, 255, 0.5); /* Adjust the values as needed */
                     color: white;
                     padding-top: 20px;
                     padding-right: 20px;
@@ -41195,7 +41218,7 @@
 
          <!--Spheres-->
 
-         <video id="defaultSphere_01" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/TunnelAnimations/TechTunnel00.mp4" style="display: none" ></video>
+         <video id="defaultSphere_01" class="defaultSphere_01" playsinline controls  autoplay loop width="320" height="240" src="./assets/video/TunnelAnimations/TechTunnel00.mp4"></video>
 
          <video id="defaultSphere_02" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/PersonalAnimations/ΔExplanationA01.mp4" style="display: none" ></video>
 
@@ -50887,7 +50910,7 @@ function dollyZoom() {
 				// scene.add(CenterBrain_VideoSphere_Opening_V08)
 				// camera.attach(CenterBrain_VideoSphere_Opening_V08)
 
-				const videoOpening_08 = document.getElementById('openingVideo')
+				const videoOpening_08 = document.getElementById('defaultSphere_08')
 				const videoOpening_08_Tex = new THREE.VideoTexture(videoOpening_08)
                 videoOpening_08_Tex.format = THREE.RGBAFormat
 				const videoOpening_08_Mat = new THREE.MeshBasicMaterial(
@@ -59928,7 +59951,7 @@ let toggleMolecular_Room = () => {
 const spacial_SocialSystemsSpace_root = new THREE.Group();
 spacial_SocialSystemsSpace_root.position.set(0, 900, 0);
 spacial_SocialSystemsSpace_root.rotation.set(0, 0, 0);
-spacial_SocialSystemsSpace_root.scale.set(125, 125, 125);
+spacial_SocialSystemsSpace_root.scale.set(1, 1, 1);
 scene.add(spacial_SocialSystemsSpace_root);
 
 function createSpace_SocialSystemsSpace() {
@@ -60014,7 +60037,7 @@ let toggleSocialSystems_Room = () => {
 const spacial_NaturalSystemsSpace_root = new THREE.Group();
 spacial_NaturalSystemsSpace_root.position.set(0, 900, 0);
 spacial_NaturalSystemsSpace_root.rotation.set(0, 0, 0);
-spacial_NaturalSystemsSpace_root.scale.set(125, 125, 125);
+spacial_NaturalSystemsSpace_root.scale.set(1, 1, 1);
 scene.add(spacial_NaturalSystemsSpace_root);
 
 function createSpace_NaturalSystemsSpace() {
@@ -60099,7 +60122,7 @@ scene.add(spacial_CelestialSystemsSpace_root);
 
 function createSpace_CelestialSystemsSpace() {
     const material = new THREE.MeshStandardMaterial({
-        map: videoOpening_07_Tex,
+        map: videoOpening_08_Tex,
         alphaMap: whiteRoom01_GoldFloor, 
         color: 0xffffff,
         specular: 0xaaaaaa,
@@ -60126,7 +60149,7 @@ function createSpace_CelestialSystemsSpace() {
 
     gsap.to(spacial_CelestialSystemsSpace_root.rotation, {
         repeat: -1,
-        duration: 15,
+        duration: 30,
         ease: "none",
         delay: 0,
         y: "+=6.28",
