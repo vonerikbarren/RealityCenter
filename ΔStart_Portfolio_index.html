@@ -41207,9 +41207,9 @@
 
          <video id="defaultSphere_06" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/SphereAnimations/Animation_DataRoom02.mp4" style="display: none" ></video>
 
-         <video id="defaultSphere_07" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/PersonalAnimations/ΔExplanationA01.mp4" style="display: none" ></video>
+         <video id="defaultSphere_07" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/TimeLapseAnimations/ThePowerOfNatureTimelapse.mp4" style="display: none" ></video>
 
-         <video id="defaultSphere_08" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/PersonalAnimations/ΔExplanationA01.mp4" style="display: none" ></video>
+         <video id="defaultSphere_08" class="countDown" playsinline  autoplay loop width="320" height="240" src="./assets/video/SphereAnimations/Timelapse360_SpaceExperience01.mp4" style="display: none" ></video>
 
 
          <!-- Audio files -->
@@ -43335,8 +43335,8 @@
                             <br/>
                             <button id="MolecularRoomToggle" class="SystemOptions_ListItem">[Molecular_Space]</button>
                             <button id="SocialSystemsRoomToggle" class="SystemOptions_ListItem">[SocialSystems_Space]</button>
-                            <button class="SystemOptions_ListItem">ΔO03</button>
-                            <button class="SystemOptions_ListItem">ΔO04</button>
+                            <button id="NaturalSystemsRoomToggle" class="SystemOptions_ListItem">[NaturalSystems_Space]</button>
+                            <button id="CelestialSystemsRoomToggle" class="SystemOptions_ListItem">[CelestialSystems_Space]</button>
                         </div>
                     </div>
 
@@ -50849,7 +50849,7 @@ function dollyZoom() {
 				// scene.add(CenterBrain_VideoSphere_Opening_V07)
 				// camera.attach(CenterBrain_VideoSphere_Opening_V07)
 
-				const videoOpening_07 = document.getElementById('openingVideo')
+				const videoOpening_07 = document.getElementById('defaultSphere_07')
 				const videoOpening_07_Tex = new THREE.VideoTexture(videoOpening_07)
                 videoOpening_07_Tex.format = THREE.RGBAFormat
 				const videoOpening_07_Mat = new THREE.MeshBasicMaterial(
@@ -60001,6 +60001,192 @@ let toggleSocialSystems_Room = () => {
     Summon_SocialSystemsSpaceToggleΔ.addEventListener("click", function() {
        toggleSocialSystems_Room();
     });
+
+
+
+
+
+
+
+
+// search.ΔO06
+
+const spacial_NaturalSystemsSpace_root = new THREE.Group();
+spacial_NaturalSystemsSpace_root.position.set(0, 900, 0);
+spacial_NaturalSystemsSpace_root.rotation.set(0, 0, 0);
+spacial_NaturalSystemsSpace_root.scale.set(125, 125, 125);
+scene.add(spacial_NaturalSystemsSpace_root);
+
+function createSpace_NaturalSystemsSpace() {
+    const material = new THREE.MeshStandardMaterial({
+        map: videoOpening_07_Tex,
+        alphaMap: whiteRoom01_GoldFloor, 
+        color: 0xffffff,
+        specular: 0xaaaaaa,
+        shininess: 0.9,
+        transparent: false,
+        opacity: 0.85,
+        side: THREE.DoubleSide,
+        flatShading: false,
+    });
+
+    const spacial_NaturalSystemsSpaceGeometry = new THREE.SphereGeometry(7, 1)
+    const spacial_NaturalSystemsSpace_room = new THREE.Mesh(geo_objT_SphereA0, material);
+    spacial_NaturalSystemsSpace_root.add(spacial_NaturalSystemsSpace_room);
+
+    // gsap.to(spacial_NaturalSystemsSpace_root.rotation, {
+    //     repeat: -1,
+    //     duration: 10,
+    //     ease: "none",
+    //     delay: 0,
+    //     x: "+=3.14",
+    //     y: "+=6.28",
+    //     z: "+=3.14",
+    // })
+
+    gsap.to(spacial_NaturalSystemsSpace_root.rotation, {
+        repeat: -1,
+        duration: 15,
+        ease: "none",
+        delay: 0,
+        y: "+=6.28",
+        
+    })
+
+    return spacial_NaturalSystemsSpace_room;
+}
+
+// Create the icosahedron
+const createSpace_NaturalSystems_ = createSpace_NaturalSystemsSpace();
+
+
+
+let toggleNaturalSystems_Room = () => {
+    if (spacial_NaturalSystemsSpace_root.scale.x === 125) {
+        gsap.to(spacial_NaturalSystemsSpace_root.scale, {
+            duration: 0.55,
+            ease: "power2.inOut",
+            x: 1,
+            y: 1,
+            z: 1
+        });
+    } else {
+        gsap.to(spacial_NaturalSystemsSpace_root.scale, {
+            duration: 0.55,
+            ease: "power2.inOut",
+            x: 125,
+            y: 125,
+            z: 125
+        });
+    }
+}
+
+
+ const Summon_NaturalSystemsSpaceToggleΔ = document.getElementById("NaturalSystemsRoomToggle");
+
+    Summon_NaturalSystemsSpaceToggleΔ.addEventListener("click", function() {
+       toggleNaturalSystems_Room();
+    });
+
+
+
+
+const spacial_CelestialSystemsSpace_root = new THREE.Group();
+spacial_CelestialSystemsSpace_root.position.set(0, 900, 0);
+spacial_CelestialSystemsSpace_root.rotation.set(0, 0, 0);
+spacial_CelestialSystemsSpace_root.scale.set(125, 125, 125);
+scene.add(spacial_CelestialSystemsSpace_root);
+
+function createSpace_CelestialSystemsSpace() {
+    const material = new THREE.MeshStandardMaterial({
+        map: videoOpening_07_Tex,
+        alphaMap: whiteRoom01_GoldFloor, 
+        color: 0xffffff,
+        specular: 0xaaaaaa,
+        shininess: 0.9,
+        transparent: false,
+        opacity: 0.85,
+        side: THREE.DoubleSide,
+        flatShading: false,
+    });
+
+    const spacial_CelestialSystemsSpaceGeometry = new THREE.SphereGeometry(7, 1)
+    const spacial_CelestialSystemsSpace_room = new THREE.Mesh(geo_objT_SphereA0, material);
+    spacial_CelestialSystemsSpace_root.add(spacial_CelestialSystemsSpace_room);
+
+    // gsap.to(spacial_CelestialSystemsSpace_root.rotation, {
+    //     repeat: -1,
+    //     duration: 10,
+    //     ease: "none",
+    //     delay: 0,
+    //     x: "+=3.14",
+    //     y: "+=6.28",
+    //     z: "+=3.14",
+    // })
+
+    gsap.to(spacial_CelestialSystemsSpace_root.rotation, {
+        repeat: -1,
+        duration: 15,
+        ease: "none",
+        delay: 0,
+        y: "+=6.28",
+        
+    })
+
+    return spacial_CelestialSystemsSpace_room;
+}
+
+// Create the icosahedron
+const createSpace_CelestialSystems_ = createSpace_CelestialSystemsSpace();
+
+
+
+let toggleCelestialSystems_Room = () => {
+    if (spacial_CelestialSystemsSpace_root.scale.x === 125) {
+        gsap.to(spacial_CelestialSystemsSpace_root.scale, {
+            duration: 0.55,
+            ease: "power2.inOut",
+            x: 1,
+            y: 1,
+            z: 1
+        });
+    } else {
+        gsap.to(spacial_CelestialSystemsSpace_root.scale, {
+            duration: 0.55,
+            ease: "power2.inOut",
+            x: 125,
+            y: 125,
+            z: 125
+        });
+    }
+}
+
+
+ const Summon_CelestialSystemsSpaceToggleΔ = document.getElementById("CelestialSystemsRoomToggle");
+
+    Summon_CelestialSystemsSpaceToggleΔ.addEventListener("click", function() {
+       toggleCelestialSystems_Room();
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
