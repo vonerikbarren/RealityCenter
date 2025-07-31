@@ -1,0 +1,254 @@
+{
+  "⟐mni": {
+    "⟐⊤": {
+      "index": 1,
+      "⟐mniArtifactTitle": "⟐mniArtifact of Cognition",
+      "projectTitle": "NeuroSwitch Atlas",
+      "description": "Visualize how the mind interacts with layered systems by switching symbolic gates",
+      "functionality": "User toggles cognitive interface types via 3D panels, each revealing structural patterns",
+      "societalBenefit": "Improves intuitive understanding of mental schemas for learning and interface design",
+      "glyphForms": ["⊤", "∴", "⇔", "∈", "ℂ"],
+      "glyphMeanings": ["Truth and assertion", "Logical outcome", "Bidirectional logic", "Presence and awareness", "Cognitive container or symbol set"]
+    },
+    "⟐∂": {
+      "index": 2,
+      "⟐mniArtifactTitle": "⟐mniArtifact of Emotion",
+      "projectTitle": "Sentiment Strata",
+      "description": "Reveal nested emotion triggers based on symbolic input",
+      "functionality": "Emotional layers animate in GSAP and react to user-driven context switches",
+      "societalBenefit": "Supports emotional processing, regulation, and deeper empathy",
+      "glyphForms": ["∂", "♥", "⇌", "∪", "∇"],
+      "glyphMeanings": ["Emotional gradient", "Core affection or heart resonance", "Fluid polarity states", "Union of emotional logic", "Spectrum of feeling"]
+    },
+    "⟐⊇": {
+      "index": 3,
+      "⟐mniArtifactTitle": "⟐mniArtifact of Containment",
+      "projectTitle": "Logic Nest Builder",
+      "description": "Build recursive structures to visualize nested symbolic containment",
+      "functionality": "Drop logic nodes into 3D enclosures with expandable depth",
+      "societalBenefit": "Trains nested reasoning and symbolic framing",
+      "glyphForms": ["⊇", "⊂", "□", "ℵ", "⨉"],
+      "glyphMeanings": ["Superset structure", "Logical inclusion", "Structural integrity", "Infinite recursion", "Dimensional anchor point"]
+    },
+    "⟐∃": {
+      "index": 4,
+      "⟐mniArtifactTitle": "⟐mniArtifact of Time",
+      "projectTitle": "ChronoThread Mapper",
+      "description": "Track emotional or logical narratives across symbolic time",
+      "functionality": "Time threads animate through story glyphs and emotional cycles",
+      "societalBenefit": "Enhances temporal awareness and cognitive sequencing",
+      "glyphForms": ["∃", "⟶", "∆", "↻", "⨀"],
+      "glyphMeanings": ["Existence trigger", "Narrative vector", "Transformation state", "Rhythmic cycle", "Symbolic rebirth or time renewal"]
+    },
+    "⟐∀": {
+      "index": 5,
+      "⟐mniArtifactTitle": "⟐mniArtifact of Identity",
+      "projectTitle": "RoleMorph Engine",
+      "description": "Model identity evolution via archetype transitions and emotive morphing",
+      "functionality": "Avatars change role through symbolic selections and GSAP transitions",
+      "societalBenefit": "Supports personal identity exploration and narrative role fluency",
+      "glyphForms": ["∀", "∫", "∴", "Δ", "Ψ"],
+      "glyphMeanings": ["Universal role archetype", "Mythic or memory path", "Transformation logic", "Identity shift point", "Symbolic persona"]
+    },
+    "⟐⇌": {
+      "index": 6,
+      "⟐mniArtifactTitle": "⟐mniArtifact of Modality",
+      "projectTitle": "ToggleVerse Console",
+      "description": "Switch between internal and external states of system behavior",
+      "functionality": "Logic toggles and pulse flows animate dual states and transitions",
+      "societalBenefit": "Promotes systemic adaptability and internal mode literacy",
+      "glyphForms": ["⇌", "⊕", "⇔", "∈", "Φ"],
+      "glyphMeanings": ["Reversible switch", "Charged state or node power", "Exchange channel", "Truth presence", "Function of mode"]
+    },
+    "⟐◉": {
+      "index": 7,
+      "⟐mniArtifactTitle": "⟐mniArtifact of Perception",
+      "projectTitle": "Perspective Array",
+      "description": "Cycle viewpoints and interpret realities through emotional filters",
+      "functionality": "Rotate symbolic lenses that reveal dimensional changes",
+      "societalBenefit": "Encourages metacognitive awareness and perceptual flexibility",
+      "glyphForms": ["◉", "∇", "⟐", "⊙", "⋂"],
+      "glyphMeanings": ["Eye or observer trigger", "Spectrum layer", "Focal zone", "Observation gate", "Overlay of viewpoints"]
+    },
+    "⟐⇒": {
+      "index": 8,
+      "⟐mniArtifactTitle": "⟐mniArtifact of Change",
+      "projectTitle": "ChangeTrigger Sandbox",
+      "description": "Activate directional transformations across symbolic and emotional states",
+      "functionality": "Map sequences of transformation through logic flow animations",
+      "societalBenefit": "Improves intentional change management and abstract consequence design",
+      "glyphForms": ["⇒", "Δ", "⟶", "↻", "∴"],
+      "glyphMeanings": ["Symbolic outcome", "State transition", "Progression path", "Rhythmic shift", "Convergent result"]
+    },
+    "⟐∫": {
+      "index": 9,
+      "⟐mniArtifactTitle": "⟐mniArtifact of Memory",
+      "projectTitle": "Narrative Echo Mapper",
+      "description": "Trace emotional and mythic echoes through symbolic cycles",
+      "functionality": "Echo glyphs animate across time to reveal recurring archetypes",
+      "societalBenefit": "Supports memory retrieval and generational storytelling",
+      "glyphForms": ["∫", "∴", "⟶", "⚶", "∀"],
+      "glyphMeanings": ["Memory continuity", "Story conclusion", "Plotline arc", "Mythic anchor", "Role persistence"]
+    },
+    "⟐▤": {
+      "index": 10,
+      "⟐mniArtifactTitle": "⟐mniArtifact of Structure",
+      "projectTitle": "Blueprint Bloom",
+      "description": "Generate living designs by planting symbolic logic and watching it grow",
+      "functionality": "Symbolic seeds expand into framework grids with branching logic",
+      "societalBenefit": "Cultivates systemic design thinking and creative planning",
+      "glyphForms": ["▤", "⊇", "ℵ", "⨉", "□"],
+      "glyphMeanings": ["Architectural frame", "System nesting", "Recursive blueprint", "Space logic", "Dimensional stability"]
+    },
+    "⟐↯": {
+      "index": 11,
+      "⟐mniArtifactTitle": "⟐mniArtifact of Energy",
+      "projectTitle": "PulseWeave Matrix",
+      "description": "Render symbolic energy pulses that power and influence interface flows",
+      "functionality": "Triggers activate radiating glyph waves and vector-based surge simulations",
+      "societalBenefit": "Teaches energy modeling and symbolic intention in interface environments",
+      "glyphForms": ["↯", "⊕", "⚡", "∑", "∘"],
+      "glyphMeanings": ["Electric surge", "Node charge", "Kinetic trigger", "Energy accumulation", "Orbital point of energy release"]
+    },
+    "⟐⚶": {
+      "index": 12,
+      "⟐mniArtifactTitle": "⟐mniArtifact of Myth",
+      "projectTitle": "MythoCircuit Builder",
+      "description": "Weave mythic paths across symbolic glyph maps to explore archetypal resonance",
+      "functionality": "Users trace glyph lines that reflect mythic arcs, transitions, and motifs",
+      "societalBenefit": "Revives ancestral logic and promotes deep narrative awareness",
+      "glyphForms": ["⚶", "∫", "Ψ", "⨁", "⛬"],
+      "glyphMeanings": ["Mythic guidepoint", "Memory stream", "Persona gate", "Symbolic convergence", "Ritual structure"]
+    },
+    "⟐⨁": {
+      "index": 13,
+      "⟐mniArtifactTitle": "⟐mniArtifact of Fusion",
+      "projectTitle": "MergeNode Harmonizer",
+      "description": "Combine separate systems and symbolic layers into a unified structure",
+      "functionality": "Dual glyph flows merge and animate synthesis outputs in dimensional space",
+      "societalBenefit": "Facilitates system integration and intuitive modular architecture",
+      "glyphForms": ["⨁", "⊕", "∪", "⇌", "☍"],
+      "glyphMeanings": ["Fusion point", "Charged node", "Union form", "Duality flow", "Conjunction threshold"]
+    },
+    "⟐☍": {
+      "index": 14,
+      "⟐mniArtifactTitle": "⟐mniArtifact of Opposition",
+      "projectTitle": "Conflict Phase Array",
+      "description": "Display symbolic and emotional tensions as dynamic waveforms",
+      "functionality": "Glyphs pulse in tension cycles and users map resolution paths",
+      "societalBenefit": "Assists conflict resolution and promotes emotional decoding",
+      "glyphForms": ["☍", "⇔", "↯", "∅", "⊖"],
+      "glyphMeanings": ["Opposition charge", "Bidirectional conflict", "Disruptive current", "Null resolution", "Symbolic negation"]
+    },
+    "⟐⋔": {
+      "index": 15,
+      "⟐mniArtifactTitle": "⟐mniArtifact of Choice",
+      "projectTitle": "PathSplit Interface",
+      "description": "Navigate decision nodes represented by glyph branches",
+      "functionality": "Users select symbolic forks, triggering differentiated storylines",
+      "societalBenefit": "Promotes clarity in decision-making and future-state visualization",
+      "glyphForms": ["⋔", "⟶", "∇", "⊞", "→"],
+      "glyphMeanings": ["Choice point", "Narrative direction", "Emotional descent", "Option grid", "Linear progression"]
+    },
+    "⟐∅": {
+      "index": 16,
+      "⟐mniArtifactTitle": "⟐mniArtifact of Absence",
+      "projectTitle": "NullSpace Explorer",
+      "description": "Explore meaning through voids and symbolic negation",
+      "functionality": "Negative glyphs remove data and reveal system balance shifts",
+      "societalBenefit": "Teaches value of subtraction and presence-in-absence logic",
+      "glyphForms": ["∅", "⊖", "△", "⚶", "⊘"],
+      "glyphMeanings": ["Void entity", "Subtracted symbol", "Loss transition", "Mythic removal", "Circular null"]
+    },
+    "⟐⊚": {
+      "index": 17,
+      "⟐mniArtifactTitle": "⟐mniArtifact of Memory Access",
+      "projectTitle": "Mnemonic Loop Grid",
+      "description": "Symbolic memories unfold through recurring glyph motion",
+      "functionality": "Interactive loops surface retained data and story fragments",
+      "societalBenefit": "Supports mnemonic mapping and user-based memory interface design",
+      "glyphForms": ["⊚", "↻", "∫", "⚶", "∘"],
+      "glyphMeanings": ["Memory loop", "Cycle rotation", "Time continuity", "Narrative echo", "Focus return"]
+    },
+    "⟐⋂": {
+      "index": 18,
+      "⟐mniArtifactTitle": "⟐mniArtifact of Convergence",
+      "projectTitle": "Intersection Cortex",
+      "description": "Reveal crossover points in symbolic systems and emotional networks",
+      "functionality": "User-directed glyph layers collide and resolve in unified projections",
+      "societalBenefit": "Encourages multilateral thinking and collaborative design logic",
+      "glyphForms": ["⋂", "⨁", "∩", "⇌", "Φ"],
+      "glyphMeanings": ["Intersect zone", "Merged force", "Logical convergence", "Balanced transfer", "Mode synthesis"]
+    },
+    "⟐⊖": {
+      "index": 19,
+      "⟐mniArtifactTitle": "⟐mniArtifact of Dissonance",
+      "projectTitle": "ClashEngine Viewer",
+      "description": "Render symbolic misalignments and track emotional dissonance paths",
+      "functionality": "Glyph friction creates reactive splines and triggers dissonance glyph states",
+      "societalBenefit": "Improves emotional recognition and symbolic misalignment diagnostics",
+      "glyphForms": ["⊖", "☍", "↯", "∅", "◧"],
+      "glyphMeanings": ["Symbolic tension", "Conflict vector", "Energetic breakdown", "Null force", "Unstable element"]
+    },
+    "⟐⧉": {
+      "index": 20,
+      "⟐mniArtifactTitle": "⟐mniArtifact of Parallelism",
+      "projectTitle": "ParaNode Simulator",
+      "description": "View symbolic structures coexisting across parallel emotional states",
+      "functionality": "Split-screen glyph arrays animate simultaneous symbolic outcomes",
+      "societalBenefit": "Supports multidimensional thinking and alternative scenario exploration",
+      "glyphForms": ["⧉", "∥", "⊞", "⇔", "≋"],
+      "glyphMeanings": ["Parallel field", "Dual trajectory", "Choice space", "Symmetric switch", "Equivalence drift"]
+    },
+    "⟐∵": {
+      "index": 21,
+      "⟐mniArtifactTitle": "⟐mniArtifact of Origin",
+      "projectTitle": "SourceGlyph Network",
+      "description": "Trace symbolic birthpoints and primal system triggers",
+      "functionality": "Origin glyphs generate multi-branch source maps and radiate energy flows",
+      "societalBenefit": "Encourages exploration of foundational logic and system ancestry",
+      "glyphForms": ["∵", "⊙", "↥", "∆", "∈"],
+      "glyphMeanings": ["Origin logic", "Center point", "Upward emergence", "Change seed", "System inclusion"]
+    },
+    "⟐⛬": {
+      "index": 22,
+      "⟐mniArtifactTitle": "⟐mniArtifact of Ritual",
+      "projectTitle": "GlyphRite Composer",
+      "description": "Construct meaningful symbolic rituals through patterned glyph invocation",
+      "functionality": "Users organize glyph cycles into ritual formations with emotional feedback loops",
+      "societalBenefit": "Strengthens intention and supports psychological anchoring through symbolic practice",
+      "glyphForms": ["⛬", "⚶", "∫", "⊕", "△"],
+      "glyphMeanings": ["Ritual anchor", "Myth stream", "Memory path", "Charge trigger", "Transition glyph"]
+    },
+    "⟐⊞": {
+      "index": 23,
+      "⟐mniArtifactTitle": "⟐mniArtifact of Structure Choice",
+      "projectTitle": "GridFork Constructor",
+      "description": "Model branching logic with emotional overlays in grid-based structures",
+      "functionality": "Users animate multidirectional pathways via glyph toggles",
+      "societalBenefit": "Enhances planning systems and supports decision map modeling",
+      "glyphForms": ["⊞", "⋔", "⧉", "∩", "→"],
+      "glyphMeanings": ["Grid node", "Choice moment", "Parallel fork", "Convergent branch", "Linear directive"]
+    },
+    "⟐↥": {
+      "index": 24,
+      "⟐mniArtifactTitle": "⟐mniArtifact of Uplift",
+      "projectTitle": "RiseTrigger Synth",
+      "description": "Depict symbolic momentum, elevation, and emotional ascension",
+      "functionality": "Glyph layers rise through harmonic frequencies and pulse gradients",
+      "societalBenefit": "Supports motivational design and uplift-centered interface flow",
+      "glyphForms": ["↥", "⊕", "◉", "∑", "∆"],
+      "glyphMeanings": ["Upward force", "Energy node", "Viewpoint focus", "Cumulative lift", "Change initiator"]
+    },
+    "⟐≋": {
+      "index": 25,
+      "⟐mniArtifactTitle": "⟐mniArtifact of Equivalence",
+      "projectTitle": "BalanceStream Visualizer",
+      "description": "Explore symbolic parity and emotion-based symmetry in modular systems",
+      "functionality": "Glyph states animate mirroring patterns across interface planes",
+      "societalBenefit": "Fosters fairness systems and emotional symmetry awareness",
+      "glyphForms": ["≋", "⇔", "∥", "⊚", "∪"],
+      "glyphMeanings": ["Equivalence flow", "Bidirectional balance", "Parallel alignment", "Memory loop", "Unified structure"]
+    }
+  }
+}
