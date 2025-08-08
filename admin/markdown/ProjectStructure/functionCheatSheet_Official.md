@@ -24,7 +24,7 @@
 \- RightHandComponent = mat_userΔ_RH_Menu_baseComponentA_Orbit01
 
 \- Floor Texture = search.floorTex
-\- Technicality = [technicality()]****
+\- Technicality = [technicality()]
 
 
 

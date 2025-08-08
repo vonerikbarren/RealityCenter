@@ -54,3 +54,19 @@ C.Populate_The_Tree
 D.Move_Tree_To_App
 E.Assign_Sounds_Per_Tree_Design
 F.Test_Action_to_Sound_on_All_Devices
+
+
+
+
+## ShortcutsManager
+\- 1 = dat.gui.open()
+\- 2 = dat.gui.hide()
+
+
+
+
+
+# shortcut to css classes for editing
+
+( remember to check you are in the right area and test often. )
+
