@@ -68397,8 +68397,11 @@
                         let UserContainer_Δ04, mesh_UserContainer_Δ04
 
 
-                    let UserContainer_Orbit02_root, mesh_UserContainer_Orbit02_root
-                    let UserContainer_Orbit03_root, mesh_UserContainer_Orbit03_root
+                    let UserContainer_Orbit02_root, mesh_UserContainer_Orbit02_TheOrbit02
+                    let UserContainer_Orbit02_TheOrbit02
+
+                    let UserContainer_Orbit03_root, mesh_UserContainer_Orbit03_TheOrbit03
+                    let UserContainer_Orbit03_TheOrbit03
 
 
         let Hud_root
@@ -69011,7 +69014,7 @@ let HUD_Dock_default
 			camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 500); // works well with mobile.
             // camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 500000000);
 			// camera.position.set(30, 6000, 24000); // previous
-            camera.position.set(0, 5, 160); // previous
+            camera.position.set(0, 7.5, 160); // previous
             camera.scale.set(10, 10, 10);
             scene.background = new THREE.Color( 0xffffff );
 			// camera.view = sun;
@@ -69022,6 +69025,11 @@ let HUD_Dock_default
 
             const newLight = new THREE.AmbientLight(0x404040)
             scene.add(newLight)
+
+            
+            const lod = new THREE.LOD();
+
+
 
             
             // function addToCamera(camera, object) {
@@ -69237,7 +69245,60 @@ let HUD_Dock_default
 
                     
                 }
-				
+
+
+                //.............................................................................................................
+                //.[[[[[..I................................SSSSSS.......................................................ss]]]..
+                //.[[[[[.III..............................SSSSSSSS...Shh................................................ss]]]..
+                //.[[[[[.III.............................SSSSSSSSSS..Shh................................................ss]]]..
+                //.[[[...III.............................SSSSSSSSSS..Shh..................................................]]]..
+                //.[[[...III..mmmmmmmmmmmmm....gggggggg.gSSS...SSSSS.Shhhhhhh....aaaaaaa.aappppppp....eeeeee...esssssss...]]]..
+                //.[[[...III..mmmmmmmmmmmmmm..ggggggggg.gSSSSS.......Shhhhhhhh..aaaaaaaa.aapppppppp..peeeeeee..esssssss...]]]..
+                //.[[[...III..mmmmmmmmmmmmmm.mggggggggg..SSSSSSSSS...Shhhhhhhh.haaaaaaaaaaapppppppppppeeeeeeeeeessssssss..]]]..
+                //.[[[...III..mmmm.mmmm..mmm.mggg..gggg..SSSSSSSSSS..Shhh.hhhh.haaa.aaaaaaappp.pppppppee..eeeeeessssssss..]]]..
+                //.[[[...III..mmm..mmmm..mmm.mggg..gggg....SSSSSSSSS.Shh...hhh..aaaaaaaaaaapp...ppppppeeeeeeee.esssssss...]]]..
+                //.[[[...III..mmm..mmmm..mmm.mggg...ggg.gSSS..SSSSSS.Shh...hhh.haaaaaaaaaaapp...ppppppeeeeeeee.esssssss...]]]..
+                //.[[[...III..mmm..mmmm..mmm.mggg..gggg.gSSS....SSSS.Shh...hhh.haaaa.aaaaaapp...ppppppee......eessssssss..]]]..
+                //.[[[...III..mmm..mmmm..mmm.mggggggggg.gSSSSSSSSSSS.Shh...hhh.haaa.aaaaaaapppppppppppeeeeeeeeeesss.ssss..]]]..
+                //.[[[...III..mmm..mmmm..mmm..ggggggggg..SSSSSSSSSS..Shh...hhh.haaaaaaaaaaapppppppp.ppeeeeeee.eessssssss..]]]..
+                //.[[[...III..mmm..mmmm..mmm...gggggggg...SSSSSSSSS..Shh...hhh.haaaaaaaaaaapppppppp..peeeeeee..esssssss...]]]..
+                //.[[[.......................mgggg.gggg....SSSSSS................aaa.....aapp.ppp......eeee.....ssssss....]]]..
+                //.[[[[[.....................mggggggggg..................................aapp...........................ss]]]..
+                //.[[[[[......................ggggggggg..................................aapp...........................ss]]]..
+                //.[[[[[......................gggggggg...................................aapp...........................ss]]]..
+                //.............................................................................................................
+
+
+                const targets = 
+                { 
+                    vector: [],
+                    vector_horizontal: [],
+                    vector_depth: [],
+                    sphere: [], 
+                    grid: [], 
+                    cube: [],
+                    helix: [], 
+                    galaxy: [], 
+                    stoneHenge: [],
+                    pyramid: [],
+                    diamond: [],
+                    tetrahedron: [],
+                    octahedron: [],
+                    icosahedron: [],
+                    dodecahedron: [],
+                    torus: [],
+                    torusKnot: [],
+                    knot: [],
+                    floorPanels_forwards: [],
+                    floorPanels_horizontal: [],
+                    floorPanel_carousel: [],
+                    floorPanelRingsExpanded: [],
+                    panelTrails: [],
+                    orbitObjects: []
+
+
+                };
+                                
 
 				const objectTestingGroupParams = {
 
@@ -70157,21 +70218,21 @@ let HUD_Dock_default
 
                 // Center User
 
-                document.addEventListener("keydown", function(event) {
-					if (event.key === "o") {
-						// camera.position.y += 10000
+                // document.addEventListener("keydown", function(event) {
+				// 	if (event.key === "o") {
+				// 		// camera.position.y += 10000
 
-						gsap.to(camera.position, {
-							duration: 1.5,
-							delay: 0,
-                            ease: "none",
-							y: 10,
-                            x: 0,
-                            z: 0,
+				// 		gsap.to(camera.position, {
+				// 			duration: 1.5,
+				// 			delay: 0,
+                //             ease: "none",
+				// 			y: 10,
+                //             x: 0,
+                //             z: 0,
 
-						})
-					}
-				})
+				// 		})
+				// 	}
+				// })
 
 
 
@@ -70393,7 +70454,7 @@ let HUD_Dock_default
 
             // Assuming you have a camera and a scene already set up
                 const cameraDirection = new THREE.Vector3();
-                const moveSpeed = distance; // Adjust the speed as needed
+                const moveSpeed = 25; // Adjust the speed as needed
                 const fastMoveSpeed = 20000; // Fast move speed when Control key is pressed
 
                 document.addEventListener('keydown', (event) => {
@@ -77390,7 +77451,7 @@ Skin_CyberSkin_MovementPadImg_root.scale.set(0.005, 0.005, 0.005)
 
             UserContainer_root = new THREE.Group()
                 // UserContainer_root.position.set(30, 5990, 23950);
-                UserContainer_root.position.set(0, 5, 0);
+                UserContainer_root.position.set(0, 7.5, 0);
                 UserContainer_root.rotation.set(0, 0, 0)
                 UserContainer_root.scale.set(10, 10, 10)
                 UserContainer_root.lookAt(camera.position)
@@ -77698,6 +77759,8 @@ Skin_CyberSkin_MovementPadImg_root.scale.set(0.005, 0.005, 0.005)
                             
                             UserContainer_PersonalSpace_Space.add(mesh_UserContainer_PersonalSpace_Space)
 
+                            let personalSpaceOpened = false
+
 
                             let spinPersonalSpaceOnly = () => {
                                 gsap.to(mesh_UserContainer_PersonalSpace_Space.rotation, {
@@ -77715,7 +77778,7 @@ Skin_CyberSkin_MovementPadImg_root.scale.set(0.005, 0.005, 0.005)
                             let openPersonalSpace = () => {
                                 gsap.to(mesh_UserContainer_PersonalSpace_Space.scale, {
                                     repeat: 0,
-                                    duration: 20,
+                                    duration: 5,
                                     ease: "none",
                                     delay: 2.5,
                                     x: 5,
@@ -77723,7 +77786,36 @@ Skin_CyberSkin_MovementPadImg_root.scale.set(0.005, 0.005, 0.005)
                                     z: 5,
                             
                                 })
+
+                                personalSpaceOpened = true
                             }
+
+                            let closePersonalSpace = () => {
+                                gsap.to(mesh_UserContainer_PersonalSpace_Space.scale, {
+                                    repeat: 0,
+                                    duration: 5,
+                                    ease: "none",
+                                    delay: 2.5,
+                                    x: 0.5,
+                                    y: 0.5,
+                                    z: 0.5,
+                            
+                                })
+
+                                personalSpaceOpened = false
+                            }
+
+                            document.addEventListener("keydown", function(event) {
+                                if (event.key === "O") {
+                                    openPersonalSpace()
+                                }
+                            })
+
+                            document.addEventListener("keydown", function(event) {
+                                if (event.key === "o") {
+                                    closePersonalSpace()
+                                }
+                            })
 
                             // openPersonalSpace()
 
@@ -77782,7 +77874,7 @@ Skin_CyberSkin_MovementPadImg_root.scale.set(0.005, 0.005, 0.005)
                             UserContainer_Orbit01_TheOrbit01.add(mesh_UserContainer_Orbit01_TheOrbit01)
 
 
-                        
+                        // 3rdPerson_Orbit02
 
                         UserContainer_Orbit02_root = new THREE.Group()
                         UserContainer_Orbit02_root.position.set(0, 0, 0)
@@ -77791,10 +77883,10 @@ Skin_CyberSkin_MovementPadImg_root.scale.set(0.005, 0.005, 0.005)
                         UserContainer_MediaContainer_baseD.add(UserContainer_Orbit02_root)
 
                             UserContainer_Orbit02_TheOrbit02 = new THREE.Group()
-                            UserContainer_Orbit02_TheOrbit02.position.set(0, 1.15, 0)
+                            UserContainer_Orbit02_TheOrbit02.position.set(0.2, 1.2, 0)
                             // UserContainer_Orbit02_TheOrbit02.rotation.set(-1.448, 0.832, 0)
-                            UserContainer_Orbit02_TheOrbit02.rotation.set(0, 0, 0)
-                            UserContainer_Orbit02_TheOrbit02.scale.set(1, 1, 1)
+                            UserContainer_Orbit02_TheOrbit02.rotation.set(-0.798, 1.012, 0)
+                            UserContainer_Orbit02_TheOrbit02.scale.set(1.5, 1.5, 1.5)
                             UserContainer_Orbit02_root.add(UserContainer_Orbit02_TheOrbit02)
 
                             let Orbit02_Dimensions = {
@@ -77829,7 +77921,153 @@ Skin_CyberSkin_MovementPadImg_root.scale.set(0.005, 0.005, 0.005)
 
                             // UserContainer_Orbit02_TheOrbit02.lookAt(camera)
                             
-                            UserContainer_Orbit02_TheOrbit02.add(mesh_UserContainer_Orbit01_TheOrbit02)
+                            UserContainer_Orbit02_TheOrbit02.add(mesh_UserContainer_Orbit02_TheOrbit02)
+
+
+
+
+
+
+                         // 3rdPerson_Orbit03
+
+                        UserContainer_Orbit03_root = new THREE.Group()
+                        UserContainer_Orbit03_root.position.set(0, 0, 0)
+                        UserContainer_Orbit03_root.rotation.set(0, 0, 0)
+                        UserContainer_Orbit03_root.scale.set(1, 1, 1)
+                        UserContainer_MediaContainer_baseD.add(UserContainer_Orbit03_root)
+
+                            UserContainer_Orbit03_TheOrbit03 = new THREE.Group()
+                            UserContainer_Orbit03_TheOrbit03.position.set(0.2, 1.2, 0)
+                            // UserContainer_Orbit03_TheOrbit03.rotation.set(-1.448, 0.832, 0)
+                            UserContainer_Orbit03_TheOrbit03.rotation.set(1.575, 0, 0)
+                            UserContainer_Orbit03_TheOrbit03.scale.set(2, 2, 2)
+                            UserContainer_Orbit03_root.add(UserContainer_Orbit03_TheOrbit03)
+
+                            let Orbit03_Dimensions = {
+                                radius: 10,
+                                tube: 0.0549,
+                                radialSegements: 30,
+                                tubularSegments: 200,
+                                arc: 6.283185307179586,
+                            }
+
+                            const geo_objT_Orbit03 = new THREE.TorusGeometry(
+
+                               Orbit03_Dimensions.radius,
+                               Orbit03_Dimensions.tube,
+                               Orbit03_Dimensions.radialSegments,
+                               Orbit03_Dimensions.tubularSegments,
+                               Orbit03_Dimensions.arc,
+
+                            )
+
+                            const mat_UserContainer_Orbit03_TheOrbit03 = new THREE.MeshBasicMaterial({ map: SceneWallpaper_03, side: THREE.DoubleSide });
+                            mesh_UserContainer_Orbit03_TheOrbit03 = new THREE.Mesh(geo_objT_Orbit03, mat_UserContainer_Orbit03_TheOrbit03);
+
+                                mat_UserContainer_Orbit03_TheOrbit03.transparent = true;
+                                mat_UserContainer_Orbit03_TheOrbit03.wireframe = false;
+                                mat_UserContainer_Orbit03_TheOrbit03.alphaMap = SceneWallpaper_03;
+
+                            mesh_UserContainer_Orbit03_TheOrbit03.position.set(0, 0, 0);
+                            mesh_UserContainer_Orbit03_TheOrbit03.rotation.set(0, 0, 0)
+                            mesh_UserContainer_Orbit03_TheOrbit03.scale.set(0.2, 0.2, 0.2);
+                            // mesh_UserContainer_Orbit03_TheOrbit03.rotateX( - Math.PI / 2 );
+
+                            // UserContainer_Orbit03_TheOrbit03.lookAt(camera)
+                            
+                            UserContainer_Orbit03_TheOrbit03.add(mesh_UserContainer_Orbit03_TheOrbit03)
+
+
+
+
+                            const orbit03_rotator_root = new THREE.Group()
+                            UserContainer_MediaContainer_baseD.add(orbit03_rotator_root)
+
+                            const orbit03_rotator_obj_test01 = new THREE.Group()
+
+
+
+
+
+                            // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                            // \- Test
+                            // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+                            const imgOrbit_Objs = new THREE.Group();
+                            imgOrbit_Objs.position.set(0, 1.2, 0);
+                            imgOrbit_Objs.rotation.set(0, 0, 0);
+                            imgOrbit_Objs.scale.set(1, 1, 1);
+                            UserContainer_MediaContainer_baseD.add(imgOrbit_Objs);
+
+                            const images_for_orbitsTest01 = [
+                                'assets/img/09-MainSpaces/AboutMe/AboutMe_Adventure.png',
+                                // 'assets/img/09-MainSpaces/News_Updates_Announcements/Latest_News.png',
+                                'assets/img/09-MainSpaces/AboutMe/AboutMe_Education.png',
+                                // 'assets/img/09-MainSpaces/News_Updates_Announcements/Latest_News.png',
+                                'assets/img/09-MainSpaces/AboutMe/AboutMe_Interests.png',
+                                // 'assets/img/09-MainSpaces/News_Updates_Announcements/Latest_News.png',
+                                'assets/img/09-MainSpaces/AboutMe/AboutMe_ProfessionalJ.png',
+                                // 'assets/img/09-MainSpaces/News_Updates_Announcements/Latest_News.png',
+                            ]
+
+
+                            // Function to create a carousel of rectangular planes
+                            function create_OrbitObjectsTest01(images) {
+                                const numImages = images.length;
+                                const radius = 4.12; // Radius of the carousel
+
+                                for (let i = 0; i < numImages; i++) {
+                                    const texture = new THREE.TextureLoader().load(images[i]);
+                                    const material = new THREE.MeshBasicMaterial({ map: texture, side: THREE.DoubleSide });
+                                    const shapeGeometry = new THREE.BoxGeometry(1, 1, 1); // Rectangular planes
+                                    const shape = new THREE.Mesh(shapeGeometry, material);
+
+                                    const angle = (i / numImages) * Math.PI * 2; // Angle for the carousel
+
+                                    shape.position.x = radius * Math.cos(angle);
+                                    shape.position.z = radius * Math.sin(angle);
+                                    shape.position.y = 0; // Keep all shapes at the same height
+                                    // shape.rotation.y = Math.PI * 2; // Rotate the shape to face the camera
+
+                                    shape.lookAt(0, 0, 0);
+                                    // shape.rotation.set(0, 1.575, 0);
+
+                                    // Animate the floating effect
+                                    // gsap.to(shape.position, {
+                                    //     y: "-=1.5",
+                                    //     duration: 3.5,
+                                    //     repeat: -1,
+                                    //     yoyo: true,
+                                    //     ease: "sine.inOut",
+                                    //     delay: i * 0.5 // Stagger the start time for each shape
+                                    // });
+
+                                    shape.scale.set(0.25, 0.25, 0.25);
+
+                                    imgOrbit_Objs.add(shape);
+                                    targets.orbitObjects.push(shape);
+                                }
+                            }
+
+                            create_OrbitObjectsTest01(images_for_orbitsTest01);
+
+
+                            let rotateOrbitObjectsTest_clockwise = () => {
+                                gsap.to(imgOrbit_Objs.rotation, {
+                                    repeat: -1,
+                                    duration: 5,
+                                    ease: "none",
+                                    delay: 0,
+                                    y: "3.14",
+                                   
+                            
+                                })
+                            }
+
+                            rotateOrbitObjectsTest_clockwise()
+
+
+
 
 
                                 // # UserContainer_Δ01
@@ -78294,56 +78532,7 @@ Skin_CyberSkin_MovementPadImg_root.scale.set(0.005, 0.005, 0.005)
 
 
 
-//.............................................................................................................
-//.[[[[[..I................................SSSSSS.......................................................ss]]]..
-//.[[[[[.III..............................SSSSSSSS...Shh................................................ss]]]..
-//.[[[[[.III.............................SSSSSSSSSS..Shh................................................ss]]]..
-//.[[[...III.............................SSSSSSSSSS..Shh..................................................]]]..
-//.[[[...III..mmmmmmmmmmmmm....gggggggg.gSSS...SSSSS.Shhhhhhh....aaaaaaa.aappppppp....eeeeee...esssssss...]]]..
-//.[[[...III..mmmmmmmmmmmmmm..ggggggggg.gSSSSS.......Shhhhhhhh..aaaaaaaa.aapppppppp..peeeeeee..esssssss...]]]..
-//.[[[...III..mmmmmmmmmmmmmm.mggggggggg..SSSSSSSSS...Shhhhhhhh.haaaaaaaaaaapppppppppppeeeeeeeeeessssssss..]]]..
-//.[[[...III..mmmm.mmmm..mmm.mggg..gggg..SSSSSSSSSS..Shhh.hhhh.haaa.aaaaaaappp.pppppppee..eeeeeessssssss..]]]..
-//.[[[...III..mmm..mmmm..mmm.mggg..gggg....SSSSSSSSS.Shh...hhh..aaaaaaaaaaapp...ppppppeeeeeeee.esssssss...]]]..
-//.[[[...III..mmm..mmmm..mmm.mggg...ggg.gSSS..SSSSSS.Shh...hhh.haaaaaaaaaaapp...ppppppeeeeeeee.esssssss...]]]..
-//.[[[...III..mmm..mmmm..mmm.mggg..gggg.gSSS....SSSS.Shh...hhh.haaaa.aaaaaapp...ppppppee......eessssssss..]]]..
-//.[[[...III..mmm..mmmm..mmm.mggggggggg.gSSSSSSSSSSS.Shh...hhh.haaa.aaaaaaapppppppppppeeeeeeeeeesss.ssss..]]]..
-//.[[[...III..mmm..mmmm..mmm..ggggggggg..SSSSSSSSSS..Shh...hhh.haaaaaaaaaaapppppppp.ppeeeeeee.eessssssss..]]]..
-//.[[[...III..mmm..mmmm..mmm...gggggggg...SSSSSSSSS..Shh...hhh.haaaaaaaaaaapppppppp..peeeeeee..esssssss...]]]..
-//.[[[.......................mgggg.gggg....SSSSSS................aaa.....aapp.ppp......eeee.....ssssss....]]]..
-//.[[[[[.....................mggggggggg..................................aapp...........................ss]]]..
-//.[[[[[......................ggggggggg..................................aapp...........................ss]]]..
-//.[[[[[......................gggggggg...................................aapp...........................ss]]]..
-//.............................................................................................................
 
-
-const targets = 
-{ 
-    vector: [],
-    vector_horizontal: [],
-    vector_depth: [],
-    sphere: [], 
-    grid: [], 
-    cube: [],
-    helix: [], 
-    galaxy: [], 
-    stoneHenge: [],
-    pyramid: [],
-    diamond: [],
-    tetrahedron: [],
-    octahedron: [],
-    icosahedron: [],
-    dodecahedron: [],
-    torus: [],
-    torusKnot: [],
-    knot: [],
-    floorPanels_forwards: [],
-    floorPanels_horizontal: [],
-    floorPanel_carousel: [],
-    floorPanelRingsExpanded: [],
-    panelTrails: [],
-
-
-};
 
 
 //.............................................................
@@ -80029,11 +80218,11 @@ let toggleIcosahedronRoom = () => {
 }
 
 
-document.addEventListener("keydown", function(event) {
-    if (event.key === "O") {
-        toggleIcosahedronRoom();
-    }
-})
+// document.addEventListener("keydown", function(event) {
+//     if (event.key === "O") {
+//         toggleIcosahedronRoom();
+//     }
+// })
 
 
  const Summon_whiteRoomToggleΔ = document.getElementById("whiteRoomToggle");
@@ -81372,6 +81561,14 @@ function createImageCarousel__Announcements_and_Updates(images) {
 
 
 
+
+
+
+
+
+
+
+
                
 //...................................................................................
 //......AAA.......NN......N....I....MMM.....MMM.......AAA....ATTTTTTTTT...EEEEEEEE...
@@ -82349,16 +82546,16 @@ let UI_ThirdPersonCameraView_root
 			folderButton.add(camera.rotation, 'z').min(-3.14).max(3.14).step(0.001).name('z-camera')
 
 
-            const folderPanels = gui.addFolder('starOrb_StarOrbVector_18');
-			folderPanels.add(starOrb_StarOrbVector_18.position, 'x').min(-10000).max(10000).step(0.01).name('x-starOrb_StarOrbVector_18')
-			folderPanels.add(starOrb_StarOrbVector_18.position, 'y').min(-10000).max(10000).step(0.01).name('y-starOrb_StarOrbVector_18')
-			folderPanels.add(starOrb_StarOrbVector_18.position, 'z').min(-10000).max(10000).step(0.01).name('z-starOrb_StarOrbVector_18')
+            const folderPanels = gui.addFolder('imgOrbit_Objs');
+			folderPanels.add(imgOrbit_Objs.position, 'x').min(-100).max(100).step(0.01).name('x-imgOrbit_Objs')
+			folderPanels.add(imgOrbit_Objs.position, 'y').min(-100).max(100).step(0.01).name('y-imgOrbit_Objs')
+			folderPanels.add(imgOrbit_Objs.position, 'z').min(-100).max(100).step(0.01).name('z-imgOrbit_Objs')
 
 
-            const folderOrbits = gui.addFolder('starOrb_StarOrbVector_18');
-			folderOrbits.add(starOrb_StarOrbVector_18.rotation, 'x').min(-3.14).max(3.14).step(0.001).name('x-starOrb_StarOrbVector_18')
-			folderOrbits.add(starOrb_StarOrbVector_18.rotation, 'y').min(-3.14).max(3.14).step(0.001).name('y-starOrb_StarOrbVector_18')
-			folderOrbits.add(starOrb_StarOrbVector_18.rotation, 'z').min(-3.14).max(3.14).step(0.001).name('z-starOrb_StarOrbVector_18')
+            const folderOrbits = gui.addFolder('UserContainer_Orbit02_root');
+			folderOrbits.add(UserContainer_Orbit02_root.rotation, 'x').min(-3.14).max(3.14).step(0.001).name('x-UserContainer_Orbit02_root')
+			folderOrbits.add(UserContainer_Orbit02_root.rotation, 'y').min(-3.14).max(3.14).step(0.001).name('y-UserContainer_Orbit02_root')
+			folderOrbits.add(UserContainer_Orbit02_root.rotation, 'z').min(-3.14).max(3.14).step(0.001).name('z-UserContainer_Orbit02_root')
 
            
 
