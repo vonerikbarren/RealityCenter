@@ -69294,7 +69294,9 @@ let HUD_Dock_default
                     floorPanel_carousel: [],
                     floorPanelRingsExpanded: [],
                     panelTrails: [],
-                    orbitObjects: []
+                    orbitObjects: [],
+                    Orbit_of_Containers_Test01: [],
+                    Orbit_of_Containers_Test02: [],
 
 
                 };
@@ -77780,10 +77782,21 @@ Skin_CyberSkin_MovementPadImg_root.scale.set(0.005, 0.005, 0.005)
                                     repeat: 0,
                                     duration: 5,
                                     ease: "none",
-                                    delay: 2.5,
+                                    delay: .75,
                                     x: 5,
                                     y: 5,
                                     z: 5,
+                            
+                                })
+
+
+                                gsap.to(camera.position, {
+                                    repeat: 0,
+                                    duration: 5,
+                                    ease: "none",
+                                    delay: .75,
+                                    z: "+= 100",
+                                    y: "+= 100",
                             
                                 })
 
@@ -77795,10 +77808,20 @@ Skin_CyberSkin_MovementPadImg_root.scale.set(0.005, 0.005, 0.005)
                                     repeat: 0,
                                     duration: 5,
                                     ease: "none",
-                                    delay: 2.5,
+                                    delay: .75,
                                     x: 0.5,
                                     y: 0.5,
                                     z: 0.5,
+                            
+                                })
+
+                                gsap.to(camera.position, {
+                                    repeat: 0,
+                                    duration: 5,
+                                    ease: "none",
+                                    delay: .75,
+                                    z: "-= 100",
+                                    y: "-= 100",
                             
                                 })
 
@@ -77988,6 +78011,61 @@ Skin_CyberSkin_MovementPadImg_root.scale.set(0.005, 0.005, 0.005)
 
 
 
+                        const UserContainer_Orbit04_root = new THREE.Group()
+                        UserContainer_Orbit04_root.position.set(0, 0, 0)
+                        UserContainer_Orbit04_root.rotation.set(0, 0, 0)
+                        UserContainer_Orbit04_root.scale.set(1, 1, 1)
+                        UserContainer_MediaContainer_baseD.add(UserContainer_Orbit04_root)
+
+                            const UserContainer_Orbit04_TheOrbit04 = new THREE.Group()
+                            UserContainer_Orbit04_TheOrbit04.position.set(0.2, 1.2, 0)
+                            // UserContainer_Orbit04_TheOrbit04.rotation.set(-1.448, 0.832, 0)
+                            UserContainer_Orbit04_TheOrbit04.rotation.set(1.575, 0, 0)
+                            UserContainer_Orbit04_TheOrbit04.scale.set(3, 3, 3)
+                            UserContainer_Orbit04_root.add(UserContainer_Orbit04_TheOrbit04)
+
+                            let Orbit04_Dimensions = {
+                                radius: 10,
+                                tube: 0.0549,
+                                radialSegements: 30,
+                                tubularSegments: 200,
+                                arc: 6.283185307179586,
+                            }
+
+                            const geo_objT_Orbit04 = new THREE.TorusGeometry(
+
+                               Orbit04_Dimensions.radius,
+                               Orbit04_Dimensions.tube,
+                               Orbit04_Dimensions.radialSegments,
+                               Orbit04_Dimensions.tubularSegments,
+                               Orbit04_Dimensions.arc,
+
+                            )
+
+                            const mat_UserContainer_Orbit04_TheOrbit04 = new THREE.MeshBasicMaterial({ map: SceneWallpaper_03, side: THREE.DoubleSide });
+                            const mesh_UserContainer_Orbit04_TheOrbit04 = new THREE.Mesh(geo_objT_TorusA0, mat_UserContainer_Orbit04_TheOrbit04);
+
+                                mat_UserContainer_Orbit04_TheOrbit04.transparent = true;
+                                mat_UserContainer_Orbit04_TheOrbit04.wireframe = false;
+                                mat_UserContainer_Orbit04_TheOrbit04.alphaMap = SceneWallpaper_03;
+
+                            mesh_UserContainer_Orbit04_TheOrbit04.position.set(0, 0, 0);
+                            mesh_UserContainer_Orbit04_TheOrbit04.rotation.set(0, 0, 0)
+                            mesh_UserContainer_Orbit04_TheOrbit04.scale.set(0.2, 0.2, 0.2);
+                            // mesh_UserContainer_Orbit04_TheOrbit03.rotateX( - Math.PI / 2 );
+
+                            // UserContainer_Orbit04_TheOrbit03.lookAt(camera)
+                            
+                            UserContainer_Orbit04_TheOrbit04.add(mesh_UserContainer_Orbit03_TheOrbit03)
+
+
+
+
+                           
+
+
+
+
 
                             // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
                             // \- Test
@@ -78020,7 +78098,7 @@ Skin_CyberSkin_MovementPadImg_root.scale.set(0.005, 0.005, 0.005)
                                     const texture = new THREE.TextureLoader().load(images[i]);
                                     const material = new THREE.MeshBasicMaterial({ map: texture, side: THREE.DoubleSide });
                                     const shapeGeometry = new THREE.BoxGeometry(1, 1, 1); // Rectangular planes
-                                    const shape = new THREE.Mesh(shapeGeometry, material);
+                                    const shape = new THREE.Mesh(geo_objT_BoxA0, material);
 
                                     const angle = (i / numImages) * Math.PI * 2; // Angle for the carousel
 
@@ -78042,7 +78120,7 @@ Skin_CyberSkin_MovementPadImg_root.scale.set(0.005, 0.005, 0.005)
                                     //     delay: i * 0.5 // Stagger the start time for each shape
                                     // });
 
-                                    shape.scale.set(0.25, 0.25, 0.25);
+                                    shape.scale.set(0.025, 0.025, 0.025);
 
                                     imgOrbit_Objs.add(shape);
                                     targets.orbitObjects.push(shape);
@@ -78065,6 +78143,243 @@ Skin_CyberSkin_MovementPadImg_root.scale.set(0.005, 0.005, 0.005)
                             }
 
                             rotateOrbitObjectsTest_clockwise()
+
+
+
+
+                            const Orbit_of_Containers_Test01 = new THREE.Group();
+                            Orbit_of_Containers_Test01.position.set(0, 1.2, 0);
+                            Orbit_of_Containers_Test01.rotation.set(0.611, 0, 0);
+                            Orbit_of_Containers_Test01.scale.set(1, 1, 1);
+                            UserContainer_MediaContainer_baseD.add(Orbit_of_Containers_Test01);
+
+                                const Orbit_of_Containers_Test01_1 = new THREE.Group();
+                                Orbit_of_Containers_Test01_1.position.set(0, 1.2, 0);
+                                Orbit_of_Containers_Test01_1.rotation.set(0, 0, 0);
+                                Orbit_of_Containers_Test01_1.scale.set(1, 1, 1);
+                                Orbit_of_Containers_Test01.add(Orbit_of_Containers_Test01_1);
+
+
+
+                            const images_for_Orbit_of_Containers_Test01 = [
+                                'assets/img/09-MainSpaces/AboutMe/AboutMe_Adventure.png',
+                                // 'assets/img/09-MainSpaces/News_Updates_Announcements/Latest_News.png',
+                                'assets/img/09-MainSpaces/AboutMe/AboutMe_Education.png',
+                                // 'assets/img/09-MainSpaces/News_Updates_Announcements/Latest_News.png',
+                                'assets/img/09-MainSpaces/AboutMe/AboutMe_Interests.png',
+                                // 'assets/img/09-MainSpaces/News_Updates_Announcements/Latest_News.png',
+                                'assets/img/09-MainSpaces/AboutMe/AboutMe_ProfessionalJ.png',
+                                // 'assets/img/09-MainSpaces/News_Updates_Announcements/Latest_News.png',
+                                'assets/img/09-MainSpaces/AboutMe/AboutMe_ProfessionalJ.png',
+                                // 'assets/img/09-MainSpaces/News_Updates_Announcements/Latest_News.png',
+                                'assets/img/09-MainSpaces/AboutMe/AboutMe_ProfessionalJ.png',
+                                // 'assets/img/09-MainSpaces/News_Updates_Announcements/Latest_News.png',
+                                'assets/img/09-MainSpaces/AboutMe/AboutMe_ProfessionalJ.png',
+                                // 'assets/img/09-MainSpaces/News_Updates_Announcements/Latest_News.png',
+                                'assets/img/09-MainSpaces/AboutMe/AboutMe_ProfessionalJ.png',
+                                // 'assets/img/09-MainSpaces/News_Updates_Announcements/Latest_News.png',
+                                'assets/img/09-MainSpaces/AboutMe/AboutMe_ProfessionalJ.png',
+                                // 'assets/img/09-MainSpaces/News_Updates_Announcements/Latest_News.png',
+                                'assets/img/09-MainSpaces/AboutMe/AboutMe_ProfessionalJ.png',
+                                // 'assets/img/09-MainSpaces/News_Updates_Announcements/Latest_News.png',
+                                'assets/img/09-MainSpaces/AboutMe/AboutMe_ProfessionalJ.png',
+                                // 'assets/img/09-MainSpaces/News_Updates_Announcements/Latest_News.png',
+                                'assets/img/09-MainSpaces/AboutMe/AboutMe_ProfessionalJ.png',
+                                // 'assets/img/09-MainSpaces/News_Updates_Announcements/Latest_News.png',
+                                'assets/img/09-MainSpaces/AboutMe/AboutMe_ProfessionalJ.png',
+                                // 'assets/img/09-MainSpaces/News_Updates_Announcements/Latest_News.png',
+                                'assets/img/09-MainSpaces/AboutMe/AboutMe_ProfessionalJ.png',
+                                // 'assets/img/09-MainSpaces/News_Updates_Announcements/Latest_News.png',
+                            ]
+
+
+                            // Function to create a carousel of rectangular planes
+                            function create_Orbit_of_Containers_Test01(images) {
+                                const numImages = images.length;
+                                const radius = 10; // Radius of the carousel
+
+                                for (let i = 0; i < numImages; i++) {
+                                    const texture = new THREE.TextureLoader().load(images[i]);
+                                    const material = new THREE.MeshBasicMaterial({ map: texture, side: THREE.DoubleSide });
+                                    const shapeGeometry = new THREE.BoxGeometry(1, 1, 1); // Rectangular planes
+                                    const shape = new THREE.Mesh(geo_objT_SphereA0, material);
+
+                                    const angle = (i / numImages) * Math.PI * 2; // Angle for the carousel
+
+                                    shape.position.x = radius * Math.cos(angle);
+                                    shape.position.z = radius * Math.sin(angle);
+                                    shape.position.y = 0; // Keep all shapes at the same height
+                                    // shape.rotation.y = Math.PI * 2; // Rotate the shape to face the camera
+
+                                    shape.lookAt(0, 0, 0);
+                                    // shape.rotation.set(0, 1.575, 0);
+
+                                    // Animate the floating effect
+                                    // gsap.to(shape.position, {
+                                    //     y: "-=1.5",
+                                    //     duration: 3.5,
+                                    //     repeat: -1,
+                                    //     yoyo: true,
+                                    //     ease: "sine.inOut",
+                                    //     delay: i * 0.5 // Stagger the start time for each shape
+                                    // });
+
+                                    shape.scale.set(0.025, 0.025, 0.025);
+
+
+                                    Orbit_of_Containers_Test01_1.add(shape);
+                                    targets.Orbit_of_Containers_Test01.push(shape);
+                                }
+                            }
+
+                            create_Orbit_of_Containers_Test01(images_for_Orbit_of_Containers_Test01);
+
+
+                            let rotate_Orbit_of_Containers_Test01 = () => {
+                                gsap.to(Orbit_of_Containers_Test01.rotation, {
+                                    repeat: -1,
+                                    duration: 15,
+                                    ease: "none",
+                                    delay: 0,
+                                    y: "12.56",
+                                    // y: "12.56",
+                                    // x: "12.56",
+                                   
+                            
+                                })
+                            }
+
+
+
+                            rotate_Orbit_of_Containers_Test01()
+
+
+
+
+
+
+
+                            const Orbit_of_Containers_Test02 = new THREE.Group();
+                            Orbit_of_Containers_Test02.position.set(0, 0, 0);
+                            Orbit_of_Containers_Test02.rotation.set(0, 0, 0);
+                            Orbit_of_Containers_Test02.scale.set(1, 1, 1);
+                            UserContainer_MediaContainer_baseD.add(Orbit_of_Containers_Test02);
+
+                                const Orbit_of_Containers_Test02_1 = new THREE.Group();
+                                Orbit_of_Containers_Test02_1.position.set(0, 1.2, 0);
+                                Orbit_of_Containers_Test02_1.rotation.set(0, 0, 0);
+                                Orbit_of_Containers_Test02_1.scale.set(1, 1, 1);
+                                Orbit_of_Containers_Test02.add(Orbit_of_Containers_Test02_1);
+
+
+
+                            const images_for_Orbit_of_Containers_Test02 = [
+                                'assets/img/09-MainSpaces/AboutMe/AboutMe_Adventure.png',
+                                // 'assets/img/09-MainSpaces/News_Updates_Announcements/Latest_News.png',
+                                'assets/img/09-MainSpaces/AboutMe/AboutMe_Education.png',
+                                // 'assets/img/09-MainSpaces/News_Updates_Announcements/Latest_News.png',
+                                'assets/img/09-MainSpaces/AboutMe/AboutMe_Interests.png',
+                                // 'assets/img/09-MainSpaces/News_Updates_Announcements/Latest_News.png',
+                                'assets/img/09-MainSpaces/AboutMe/AboutMe_ProfessionalJ.png',
+                                // 'assets/img/09-MainSpaces/News_Updates_Announcements/Latest_News.png',
+                                'assets/img/09-MainSpaces/AboutMe/AboutMe_ProfessionalJ.png',
+                                // 'assets/img/09-MainSpaces/News_Updates_Announcements/Latest_News.png',
+                                'assets/img/09-MainSpaces/AboutMe/AboutMe_ProfessionalJ.png',
+                                // 'assets/img/09-MainSpaces/News_Updates_Announcements/Latest_News.png',
+                                'assets/img/09-MainSpaces/AboutMe/AboutMe_ProfessionalJ.png',
+                                // 'assets/img/09-MainSpaces/News_Updates_Announcements/Latest_News.png',
+                                'assets/img/09-MainSpaces/AboutMe/AboutMe_ProfessionalJ.png',
+                                // 'assets/img/09-MainSpaces/News_Updates_Announcements/Latest_News.png',
+                                'assets/img/09-MainSpaces/AboutMe/AboutMe_ProfessionalJ.png',
+                                // 'assets/img/09-MainSpaces/News_Updates_Announcements/Latest_News.png',
+                                'assets/img/09-MainSpaces/AboutMe/AboutMe_ProfessionalJ.png',
+                                // 'assets/img/09-MainSpaces/News_Updates_Announcements/Latest_News.png',
+                                'assets/img/09-MainSpaces/AboutMe/AboutMe_ProfessionalJ.png',
+                                // 'assets/img/09-MainSpaces/News_Updates_Announcements/Latest_News.png',
+                                'assets/img/09-MainSpaces/AboutMe/AboutMe_ProfessionalJ.png',
+                                // 'assets/img/09-MainSpaces/News_Updates_Announcements/Latest_News.png',
+                                'assets/img/09-MainSpaces/AboutMe/AboutMe_ProfessionalJ.png',
+                                // 'assets/img/09-MainSpaces/News_Updates_Announcements/Latest_News.png',
+                                'assets/img/09-MainSpaces/AboutMe/AboutMe_ProfessionalJ.png',
+                                // 'assets/img/09-MainSpaces/News_Updates_Announcements/Latest_News.png',
+                            ]
+
+
+                            // Function to create a carousel of rectangular planes
+                            function create_Orbit_of_Containers_Test02(images) {
+                                const numImages = images.length;
+                                const radius = 7.5; // Radius of the carousel
+
+                                for (let i = 0; i < numImages; i++) {
+                                    const texture = new THREE.TextureLoader().load(images[i]);
+                                    const material = new THREE.MeshBasicMaterial({ map: texture, side: THREE.DoubleSide });
+                                    const shapeGeometry = new THREE.BoxGeometry(1, 1, 1); // Rectangular planes
+                                    const shape = new THREE.Mesh(geo_objT_DiamondA0, material);
+
+                                    const angle = (i / numImages) * Math.PI * 2; // Angle for the carousel
+
+                                    shape.position.x = radius * Math.cos(angle);
+                                    shape.position.z = radius * Math.sin(angle);
+                                    shape.position.y = 0; // Keep all shapes at the same height
+                                    // shape.rotation.y = Math.PI * 2; // Rotate the shape to face the camera
+
+                                    shape.lookAt(0, 0, 0);
+                                    // shape.rotation.set(0, 1.575, 0);
+
+                                    // Animate the floating effect
+                                    // gsap.to(shape.position, {
+                                    //     y: "-=1.5",
+                                    //     duration: 3.5,
+                                    //     repeat: -1,
+                                    //     yoyo: true,
+                                    //     ease: "sine.inOut",
+                                    //     delay: i * 0.5 // Stagger the start time for each shape
+                                    // });
+
+                                    shape.scale.set(0.025, 0.025, 0.025);
+
+
+                                    Orbit_of_Containers_Test02_1.add(shape);
+                                    targets.Orbit_of_Containers_Test02.push(shape);
+                                }
+                            }
+
+                            create_Orbit_of_Containers_Test02(images_for_Orbit_of_Containers_Test02);
+
+
+                            let rotate_Orbit_of_Containers_Test02 = () => {
+                                gsap.to(Orbit_of_Containers_Test02.rotation, {
+                                    repeat: -1,
+                                    duration: 25,
+                                    ease: "none",
+                                    delay: 0,
+                                    y: "-12.56",
+                                    // y: "12.56",
+                                    // x: "12.56",
+                                   
+                            
+                                })
+                            }
+
+
+
+                            rotate_Orbit_of_Containers_Test02()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            
 
 
 
@@ -82546,16 +82861,16 @@ let UI_ThirdPersonCameraView_root
 			folderButton.add(camera.rotation, 'z').min(-3.14).max(3.14).step(0.001).name('z-camera')
 
 
-            const folderPanels = gui.addFolder('imgOrbit_Objs');
-			folderPanels.add(imgOrbit_Objs.position, 'x').min(-100).max(100).step(0.01).name('x-imgOrbit_Objs')
-			folderPanels.add(imgOrbit_Objs.position, 'y').min(-100).max(100).step(0.01).name('y-imgOrbit_Objs')
-			folderPanels.add(imgOrbit_Objs.position, 'z').min(-100).max(100).step(0.01).name('z-imgOrbit_Objs')
+            const folderPanels = gui.addFolder('Orbit_of_Containers_Test01');
+			folderPanels.add(Orbit_of_Containers_Test01.position, 'x').min(-100).max(100).step(0.01).name('x-Orbit_of_Containers_Test01')
+			folderPanels.add(Orbit_of_Containers_Test01.position, 'y').min(-100).max(100).step(0.01).name('y-Orbit_of_Containers_Test01')
+			folderPanels.add(Orbit_of_Containers_Test01.position, 'z').min(-100).max(100).step(0.01).name('z-Orbit_of_Containers_Test01')
 
 
-            const folderOrbits = gui.addFolder('UserContainer_Orbit02_root');
-			folderOrbits.add(UserContainer_Orbit02_root.rotation, 'x').min(-3.14).max(3.14).step(0.001).name('x-UserContainer_Orbit02_root')
-			folderOrbits.add(UserContainer_Orbit02_root.rotation, 'y').min(-3.14).max(3.14).step(0.001).name('y-UserContainer_Orbit02_root')
-			folderOrbits.add(UserContainer_Orbit02_root.rotation, 'z').min(-3.14).max(3.14).step(0.001).name('z-UserContainer_Orbit02_root')
+            const folderOrbits = gui.addFolder('Orbit_of_Containers_Test01');
+			folderOrbits.add(Orbit_of_Containers_Test01.rotation, 'x').min(-3.14).max(3.14).step(0.001).name('x-Orbit_of_Containers_Test01')
+			folderOrbits.add(Orbit_of_Containers_Test01.rotation, 'y').min(-3.14).max(3.14).step(0.001).name('y-Orbit_of_Containers_Test01')
+			folderOrbits.add(Orbit_of_Containers_Test01.rotation, 'z').min(-3.14).max(3.14).step(0.001).name('z-Orbit_of_Containers_Test01')
 
            
 

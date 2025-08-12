@@ -1,0 +1,72 @@
+{
+  "root": {
+    "Actual": [
+      {
+        "hand": "LH",
+        "label": "Logic Realm",
+        "function": "Analytical, structural, data-driven",
+        "apps": [
+          { "index": 1, "name": "OmniVector", "appName": "OmniVector", "description": "Visualize and manipulate vectors, forces, and motion paths to understand spatial dynamics." },
+          { "index": 2, "name": "OmniGrid", "description": "Explore modular environments with snapping, scaling, and spatial logic for structured design." },
+          { "index": 3, "name": "OmniRay", "description": "Fire rays to measure distances, inspect object relationships, and analyze spatial alignment." },
+          { "index": 4, "name": "OmniNode", "description": "Dive into object hierarchies, metadata, and dependency trees to understand system architecture." },
+          { "index": 5, "name": "OmniSequence", "description": "Build and test time-based logic flows and animations with stepwise control." },
+          { "index": 6, "name": "OmniQuant", "description": "Overlay numerical data such as position, rotation, scale, and velocity for precision editing." },
+          { "index": 7, "name": "OmniScript", "description": "Inject and edit live scripts within objects or environments to customize behavior." },
+          { "index": 8, "name": "OmniAxis", "description": "Lock, rotate, and transform objects along specific axes for controlled manipulation." },
+          { "index": 9, "name": "OmniDebug", "description": "Toggle wireframes, bounding boxes, and console diagnostics for system-level inspection." },
+          { "index": 10, "name": "OmniLens", "description": "Apply filters to highlight logical patterns, object states, and structural relationships." },
+          { "index": 11, "name": "OmniCause", "description": "Visualize cause-and-effect relationships between objects, actions, and states." },
+          { "index": 12, "name": "OmniPulse", "description": "Monitor real-time feedback loops showing how user actions affect system metrics." },
+          { "index": 13, "name": "OmniFreeze", "description": "Freeze and inspect a moment in time with full data overlay for detailed analysis." },
+          { "index": 14, "name": "OmniForge", "description": "Build custom logic modules or mini-systems to architect new rules and behaviors." },
+          { "index": 15, "name": "OmniSim", "description": "Run layered simulations—physics, logic, behavior—side by side to reveal system interactions." }
+        ]
+      },
+      {
+        "hand": "RH",
+        "label": "Creative Realm",
+        "function": "Expressive, sensory, emotional",
+        "apps": [
+          { "index": 1, "name": "OmniColor", "description": "Paint with emotion—dynamic color flows based on mood, rhythm, or symbolic intent." },
+          { "index": 2, "name": "OmniMorph", "description": "Sculpt and morph geometry with intuitive gestures for organic design." },
+          { "index": 3, "name": "OmniEcho", "description": "Embed ambient soundscapes and reactive audio nodes to enrich spatial experience." },
+          { "index": 4, "name": "OmniTexture", "description": "Blend and animate textures with symbolic overlays and emotional resonance." },
+          { "index": 5, "name": "OmniBloom", "description": "Animate lighting, shadows, and reflections to evoke mood and depth." },
+          { "index": 6, "name": "OmniGlyph", "description": "Leave symbolic trails, glyphs, or visual poetry in space as expressive markers." },
+          { "index": 7, "name": "OmniSketch", "description": "Freehand draw in 3D space—notes, symbols, or abstract art." },
+          { "index": 8, "name": "OmniBeat", "description": "Sync animations and transitions to rhythm, music, or pulse patterns." },
+          { "index": 9, "name": "OmniAura", "description": "Visualize and paint emotional or energetic fields around objects or avatars." },
+          { "index": 10, "name": "OmniSymbol", "description": "Project archetypal symbols onto objects or environments to infuse meaning." },
+          { "index": 11, "name": "OmniInk", "description": "Paint with emotional states—joy, grief, awe—mapped to color, texture, and sound." },
+          { "index": 12, "name": "OmniDream", "description": "Build surreal or symbolic environments that defy physical laws and invite imagination." },
+          { "index": 13, "name": "OmniStory", "description": "Plant narrative nodes that grow into evolving storylines and symbolic arcs." },
+          { "index": 14, "name": "OmniGesture", "description": "Control objects and effects with expressive hand or body gestures." },
+          { "index": 15, "name": "OmniMyth", "description": "Project mythic archetypes—hero, shadow, guide—into the space for identity exploration." }
+        ]
+      },
+      {
+        "hand": "CH",
+        "label": "Conscious Realm",
+        "function": "Philosophical, psychological, symbolic",
+        "apps": [
+          { "index": 1, "name": "OmniShift", "description": "Change worldview—lens, scale, or dimensional frame to alter perception." },
+          { "index": 2, "name": "OmniEchoPattern", "description": "Detect and highlight recurring symbolic or behavioral patterns across space and time." },
+          { "index": 3, "name": "OmniIntent", "description": "Visualize user goals, object purpose, and narrative arcs to clarify intention." },
+          { "index": 4, "name": "OmniBridge", "description": "Scrub through time layers—past, present, future states—to explore evolution." },
+          { "index": 5, "name": "OmniEthic", "description": "Filter visibility based on ethical, emotional, or symbolic tags." },
+          { "index": 6, "name": "OmniDual", "description": "Split screen for logical vs emotional comparison to reveal internal conflict or harmony." },
+          { "index": 7, "name": "OmniRipple", "description": "Show ripple effects of actions across space, time, and symbolic layers." },
+          { "index": 8, "name": "OmniLegacy", "description": "Mark objects with long-term significance or generational meaning." },
+          { "index": 9, "name": "OmniFork", "description": "Preview alternate outcomes or decision branches to reflect on agency." },
+          { "index": 10, "name": "OmniMeta", "description": "Modify the rules, physics, or symbolic logic of the environment itself." },
+          { "index": 11, "name": "OmniMirror", "description": "Reflect user behavior, choices, and patterns back to them in symbolic form." },
+          { "index": 12, "name": "OmniThread", "description": "Trace emotional and philosophical connections between objects, memories, and meanings." },
+          { "index": 13, "name": "OmniShadow", "description": "Explore suppressed or unconscious aspects of self through symbolic interaction." },
+          { "index": 14, "name": "OmniWisdom", "description": "Access philosophical insights or quotes tied to objects or actions for reflection." },
+          { "index": 15, "name": "OmniEchoChoice", "description": "Replay past decisions and visualize alternate paths to understand personal evolution." }
+        ]
+      }
+    ]
+  }
+}
