@@ -958,3 +958,92 @@ document.addEventListener("keydown", function(event) {
 
 
 ```
+
+
+
+
+
+//...............................................................................
+//....SSSSSS.....................................................................
+//...SSSSSSSS....................................................................
+//..SSSSSSSSSS...................................................................
+//..SSSSSSSSSS...................................................................
+//.SSSS...SSSSSSuuu...uuu..mmmmmmmmmmmmm...mmmmmmmmmmmmm....ooooooo...nnnnnnnnn..
+//.SSSSSS......Suuu...uuu..mmmmmmmmmmmmmm..mmmmmmmmmmmmmm..ooooooooo..nnnnnnnnn..
+//..SSSSSSSSS..Suuu...uuu..mmmmmmmmmmmmmm..mmmmmmmmmmmmmm.moooooooooo.nnnnnnnnn..
+//..SSSSSSSSSS.Suuu...uuu..mmmm.mmmm..mmm..mmmm.mmmm..mmm.mooo...oooo.nnnn.nnnn..
+//....SSSSSSSSSSuuu...uuu..mmm..mmmm..mmm..mmm..mmmm..mmm.mooo...oooo.nnn...nnn..
+//.SSSS..SSSSSSSuuu...uuu..mmm..mmmm..mmm..mmm..mmmm..mmm.mooo...oooo.nnn...nnn..
+//.SSSS....SSSS.uuu..uuuu..mmm..mmmm..mmm..mmm..mmmm..mmm.mooo...oooo.nnn...nnn..
+//.SSSSSSSSSSSS.uuuuuuuuu..mmm..mmmm..mmm..mmm..mmmm..mmm.moooooooooo.nnn...nnn..
+//..SSSSSSSSSS..uuuuuuuuu..mmm..mmmm..mmm..mmm..mmmm..mmm..ooooooooo..nnn...nnn..
+//...SSSSSSSSS..uuuuuuuuu..mmm..mmmm..mmm..mmm..mmmm..mmm...ooooooo...nnn...nnn..
+//....SSSSSS......uuu........................................ooooo...............
+//...............................................................................
+
+``` js
+
+// Summon OrbitsOfUser3rdPerson
+document.addEventListener("keydown", function(event) {
+    if (event.ctrlKey && event.key === "{" ) {
+        gsap.to(imgOrbit_Objs.scale, {
+            duration: .25,
+            delay: 0,
+            x: 0.75,
+            y: 0.75,
+            z: 0.75
+        })
+
+        gsap.to(Orbit_of_Containers_Test01_1.scale, {
+            duration: .25,
+            delay: 0,
+            x: 0.75,
+            y: 0.75,
+            z: 0.75
+        })
+
+        gsap.to(Orbit_of_Containers_Test02_1.scale, {
+            duration: .25,
+            delay: 0,
+            x: 0.75,
+            y: 0.75,
+            z: 0.75
+        })
+    }
+})
+
+
+
+
+// -------------------------------------------
+// Cancel Summon
+document.addEventListener("keydown", function(event) {
+    if (event.key === "[" ) {
+        gsap.to(imgOrbit_Objs.scale, {
+            duration: .25,
+            delay: 0,
+            x: 0.001,
+            y: 0.001,
+            z: 0.001
+        })
+
+        gsap.to(Orbit_of_Containers_Test01_1.scale, {
+            duration: .25,
+            delay: 0,
+            x: 0.001,
+            y: 0.001,
+            z: 0.001
+        })
+
+        gsap.to(Orbit_of_Containers_Test02_1.scale, {
+            duration: .25,
+            delay: 0,
+            x: 0.001,
+            y: 0.001,
+            z: 0.001
+        })
+    }
+})
+
+
+```
