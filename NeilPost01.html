@@ -68974,6 +68974,16 @@ let HUD_Dock_default
 
 
 
+        // People Specic
+        const Neil01 = textureLoader.load('assets/img/02-UserUI/07-MySon/MySon01.png')
+        const Neil02 = textureLoader.load('assets/img/02-UserUI/07-MySon/MySon02.png')
+        const Neil03 = textureLoader.load('assets/img/02-UserUI/07-MySon/MySon03.png')
+        const Neil04 = textureLoader.load('assets/img/02-UserUI/07-MySon/MySon04.png')
+
+
+
+
+
         // EnvSpecific
 
 
@@ -73347,7 +73357,7 @@ function handleInteractions(scene, camera, cubes, initialPositions) {
 
     
     userHUD_pdfTest01 = new THREE.Group()
-    userHUD_pdfTest01.position.set(0, 0, -100)
+    userHUD_pdfTest01.position.set(0, 0, -600)
     userHUD_pdfTest01.rotation.set(0, 0, 0)
     userHUD_pdfTest01.scale.set(2.5, 2.5, 2.5)
     scene.add(userHUD_pdfTest01)  
@@ -73355,9 +73365,9 @@ function handleInteractions(scene, camera, cubes, initialPositions) {
 
 
         userHUD_comp_pdfTest01 = new THREE.Group()
-        userHUD_comp_pdfTest01.position.set(-200, 7.5, -35)
+        userHUD_comp_pdfTest01.position.set(-300, 7.5, -15)
         userHUD_comp_pdfTest01.rotation.set(0, 0, 0)
-        userHUD_comp_pdfTest01.scale.set(0.5, 0.5, 0.5)
+        userHUD_comp_pdfTest01.scale.set(0.75, 0.75, 0.75)
         userHUD_pdfTest01.add(userHUD_comp_pdfTest01)  
 
 
@@ -73643,7 +73653,7 @@ function handleInteractions(scene, camera, cubes, initialPositions) {
                 "TheHeaderTest", "TheHeaderClassNameTest", "HeaderNameTest", "Um... Hello World",
                 () => {
 
-                     if (userHUD_comp_pdfTest01.position.x === -200) {
+                     if (userHUD_comp_pdfTest01.position.x === -300) {
                         gsap.to(userHUD_comp_pdfTest01.position, {
                             repeat: 0,
                             duration: 0.5,
@@ -79115,47 +79125,47 @@ Skin_CyberSkin_MovementPadImg_root.scale.set(0.005, 0.005, 0.005)
 
 // Example usage
 const images = [
-    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
-    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
-    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
-    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
-    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
-    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
-    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
-    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
-    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
-    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
-    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
-    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
-    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
-    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
-    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
-    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
-    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
-    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
-    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
-    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
-    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
-    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
-    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
-    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
-    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
-    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
-    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
-    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
-    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
-    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
-    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
-    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
-    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
-    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
-    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
-    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
-    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
-    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
-    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
-    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
-    'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
+    'assets/img/02-UserUI/07-MySon/MySon01.png',
+    'assets/img/02-UserUI/07-MySon/MySon02.png',
+    'assets/img/02-UserUI/07-MySon/MySon03.png',
+    'assets/img/02-UserUI/07-MySon/MySon04.png',
+    'assets/img/02-UserUI/07-MySon/MySon01.png',
+    'assets/img/02-UserUI/07-MySon/MySon02.png',
+    'assets/img/02-UserUI/07-MySon/MySon03.png',
+    'assets/img/02-UserUI/07-MySon/MySon04.png',
+    'assets/img/02-UserUI/07-MySon/MySon01.png',
+    'assets/img/02-UserUI/07-MySon/MySon02.png',
+    'assets/img/02-UserUI/07-MySon/MySon03.png',
+    'assets/img/02-UserUI/07-MySon/MySon04.png',
+    'assets/img/02-UserUI/07-MySon/MySon01.png',
+    'assets/img/02-UserUI/07-MySon/MySon02.png',
+    'assets/img/02-UserUI/07-MySon/MySon03.png',
+    'assets/img/02-UserUI/07-MySon/MySon04.png',
+    'assets/img/02-UserUI/07-MySon/MySon01.png',
+    'assets/img/02-UserUI/07-MySon/MySon02.png',
+    'assets/img/02-UserUI/07-MySon/MySon03.png',
+    // 'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
+    // 'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
+    // 'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
+    // 'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
+    // 'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
+    // 'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
+    // 'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
+    // 'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
+    // 'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
+    // 'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
+    // 'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
+    // 'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
+    // 'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
+    // 'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
+    // 'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
+    // 'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
+    // 'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
+    // 'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
+    // 'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
+    // 'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
+    // 'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
+    // 'assets/img/00-WallpaperUX/Wallpapers/Textures/tex_circut_gold.jpg',
 
 ];
 
@@ -79369,8 +79379,8 @@ const image_containers = [];
 const imgSphere_root = new THREE.Group();
 imgSphere_root.position.set(0, 0, 0);
 imgSphere_root.rotation.set(0, 0, 0);
-imgSphere_root.scale.set(0.001, 0.001, 0.001);
-// scene.add(imgSphere_root);
+imgSphere_root.scale.set(0.1, 0.1, 0.1);
+UserContainer_root.add(imgSphere_root);
 
 
 
@@ -79408,7 +79418,7 @@ function createImageSphere
     for (let i = 0; i < numImages; i++) {
         const texture = new THREE.TextureLoader().load(imagesArr[i]);
         const material = new THREE.MeshBasicMaterial({ map: texture, side: THREE.DoubleSide });
-        const objectGeometry = new THREE.BoxGeometry(2, 2, 2);
+        const objectGeometry = new THREE.BoxGeometry(1, 1, 1);
         const objectMesh = new THREE.Mesh(objectGeometry, material);
         objectMesh.scale.set(scaleX, scaleY, scaleZ)
 
@@ -79416,7 +79426,7 @@ function createImageSphere
         const theta = Math.sqrt(numImages * Math.PI) * phi;
 
         objectMesh.position.setFromSphericalCoords(radius, phi, theta);
-        objectMesh.scale.set(2.5, 2.5, 2.5)
+        // objectMesh.scale.set(2.5, 2.5, 2.5)
         objectMesh.lookAt(0, 0, 0);
 
         imgSphere_root.add(objectMesh);
@@ -79429,15 +79439,15 @@ function createImageSphere
             y: "+= 5",
         })
 
-        gsap.to(objectMesh.scale, {
-            repeat: -1,
-            duration: 2.5,
-            ease: "none",
-            delay: 0,
-            x: 4.5,
-            y: 4.5,
-            z: 4.5,
-        })
+        // gsap.to(objectMesh.scale, {
+        //     repeat: -1,
+        //     duration: 2.5,
+        //     ease: "none",
+        //     delay: 0,
+        //     x: 4.5,
+        //     y: 4.5,
+        //     z: 4.5,
+        // })
 
         // gsap.to(objectMesh.scale, {
         //     repeat: -1,
@@ -79457,10 +79467,10 @@ function createImageSphere
 //     30, 30, 30,
 // );
 
-// createImageSphere(
-//     images, 300,
-//     30, 30, 30,
-// )
+createImageSphere(
+    images, 100,
+    10, 10, 10,
+)
 
 
 
@@ -79472,7 +79482,7 @@ let rotate_imgSphere = () => {
         duration: 2,
         ease: "none",
         delay: 0,
-        y: "+= 5",
+        y: "+= 12.46",
     })
 }
 
@@ -83285,30 +83295,30 @@ document.addEventListener("keydown", function(event) {
 
 // Summon Summon_User3rdPerson_Space
 document.addEventListener("keydown", function(event) {
-    if (event.key === "O" ) {
-        gsap.to(imgSphere_root.position, {
+    if (event.key === "]" ) {
+        gsap.to(imgSphere_root.scale, {
             repeat: 0,
             duration: 0.5,
             ease: "none",
             delay: 0.15,
-            x: 1,
-            w: 1,
-            z: 1,
+            x: 2,
+            y: 2,
+            z: 2,
         })
     } 
 })
 
 // unSummon Summon_User3rdPerson_Space
 document.addEventListener("keydown", function(event) {
-    if (event.key === "o" ) {
-        gsap.to(imgSphere_root.position, {
+    if (event.ctrlKey && event.key === "}" ) {
+        gsap.to(imgSphere_root.scale, {
             repeat: 0,
             duration: 0.5,
             ease: "none",
             delay: 0.15,
-            x: 0.001,
-            w: 0.001,
-            z: 0.001,
+            x: 0.1,
+            y: 0.1,
+            z: 0.1,
         })
     } 
 })
