@@ -605,6 +605,62 @@ RealityCenter/assets/img/10-ObjectUI/01-MusicPlayer/RealityDisc.png
 
 
 
+
+
+/- # BEAMS
+\- These are for quick fxs
+
+/- # blueBeam
+\- 'RealityCenter/assets/img/08-ObjUI/beams/Png/beam_blue.png',
+
+
+/- # brightYellowBeam
+\- 'RealityCenter/assets/img/08-ObjUI/beams/Png/beam_brightYellow.png',
+
+
+/- # greenBeam
+\- 'RealityCenter/assets/img/08-ObjUI/beams/Png/beam_Green.png',
+
+
+/- # limeGreenBeam
+\- 'RealityCenter/assets/img/08-ObjUI/beams/Png/beam_LimeGreen.png',
+
+
+/- # magentaBeam
+\- 'RealityCenter/assets/img/08-ObjUI/beams/Png/beam_magenta.png',
+
+
+/- # neonGreenBeam
+\- 'RealityCenter/assets/img/08-ObjUI/beams/Png/beam_NeonGreen.png',
+
+
+/- # warmYellowBeam
+\- 'RealityCenter/assets/img/08-ObjUI/beams/Png/beam_warmYellow.png',
+
+
+/- # whiteBeam
+\- 'RealityCenter/assets/img/08-ObjUI/beams/Png/beam_white.png',
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //.............................
 //.....00000........888888.....
 //...000000000....888888888....
@@ -863,36 +919,6 @@ RealityCenter/assets/img/10-ObjectUI/01-MusicPlayer/RealityDisc.png
 
 
 
-/- # blueBeam
-\- 'RealityCenter/assets/img/08-ObjUI/beams/Png/beam_blue.png',
-
-
-/- # brightYellowBeam
-\- 'RealityCenter/assets/img/08-ObjUI/beams/Png/beam_brightYellow.png',
-
-
-/- # greenBeam
-\- 'RealityCenter/assets/img/08-ObjUI/beams/Png/beam_Green.png',
-
-
-/- # limeGreenBeam
-\- 'RealityCenter/assets/img/08-ObjUI/beams/Png/beam_LimeGreen.png',
-
-
-/- # magentaBeam
-\- 'RealityCenter/assets/img/08-ObjUI/beams/Png/beam_magenta.png',
-
-
-/- # neonGreenBeam
-\- 'RealityCenter/assets/img/08-ObjUI/beams/Png/beam_NeonGreen.png',
-
-
-/- # warmYellowBeam
-\- 'RealityCenter/assets/img/08-ObjUI/beams/Png/beam_warmYellow.png',
-
-
-/- # whiteBeam
-\- 'RealityCenter/assets/img/08-ObjUI/beams/Png/beam_white.png',
 
 
 
@@ -903,24 +929,6 @@ RealityCenter/assets/img/10-ObjectUI/01-MusicPlayer/RealityDisc.png
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-/- # Small Beams
-\- These are more for quick interface experiences
-
-
-/- # 
 
 
 
