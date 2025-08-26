@@ -876,19 +876,23 @@ RealityCenter/assets/img/10-ObjectUI/01-MusicPlayer/RealityDisc.png
 
 
 /- # limeGreenBeam
-\- 'RealityCenter/assets/img/08-ObjUI/beams/Png/beam_LimeGreen.png.png',
+\- 'RealityCenter/assets/img/08-ObjUI/beams/Png/beam_LimeGreen.png',
 
 
 /- # magentaBeam
-\- 'RealityCenter/assets/img/08-ObjUI/beams/Png/beam_magenta.png.png',
+\- 'RealityCenter/assets/img/08-ObjUI/beams/Png/beam_magenta.png',
 
 
-/- # blueBeam
-\- 'RealityCenter/assets/img/08-ObjUI/beams/Png/beam_blue.png',
+/- # neonGreenBeam
+\- 'RealityCenter/assets/img/08-ObjUI/beams/Png/beam_NeonGreen.png',
 
 
-/- # blueBeam
-\- 'RealityCenter/assets/img/08-ObjUI/beams/Png/beam_blue.png',
+/- # warmYellowBeam
+\- 'RealityCenter/assets/img/08-ObjUI/beams/Png/beam_warmYellow.png',
+
+
+/- # whiteBeam
+\- 'RealityCenter/assets/img/08-ObjUI/beams/Png/beam_white.png',
 
 
 
