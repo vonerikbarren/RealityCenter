@@ -68961,6 +68961,22 @@ let HUD_Dock_default
         const TimeGrid02_Test = textureLoader.load('assets/img/03-HudUI/HelpMenus/HelpMenuPanel01.png')
 
 
+        const StandardGrid_Even = textureLoader.load('./assets/img/13_HUD_OfficialThemes/HUDTheme01_Infin8teFreedom/00_HUD_BaseGrid/01_MainHUD_Types/00_grid_even/grid_even_default01.png')
+
+
+        const StandardGrid_Rectangle = textureLoader.load('./assets/img/13_HUD_OfficialThemes/HUDTheme01_Infin8teFreedom/00_HUD_BaseGrid/01_MainHUD_Types/01_grid_straight/grid_straight_default_02.png')
+
+
+        const StandardGrid_CurvedIn = textureLoader.load('./assets/img/13_HUD_OfficialThemes/HUDTheme01_Infin8teFreedom/00_HUD_BaseGrid/01_MainHUD_Types/02_grid_curvedIn/grid_curvedIn_default01.png')
+
+
+        const StandardGrid_CurvedOut = textureLoader.load('./assets/img/13_HUD_OfficialThemes/HUDTheme01_Infin8teFreedom/00_HUD_BaseGrid/01_MainHUD_Types/03_grid_curvedOut/grid_curvedOut_default01.png')
+
+
+
+
+
+
         // Dock Pieces
 
         const DockPiece01 = textureLoader.load('assets/img/13_HUD_OfficialThemes/HUDTheme01_Infin8teFreedom/09_HUD_Dock/01_MenuSkeleton/01_Resting/Dock_Resting.png')
@@ -78836,18 +78852,18 @@ Skin_CyberSkin_MovementPadImg_root.scale.set(0.005, 0.005, 0.005)
     TimeCycleTunnelX.position.set(0, 0, 0);
     TimeCycleTunnelX.rotation.set(0, 0, 0);
     TimeCycleTunnelX.scale.set(5, 5, 5);
-    TimeCore.add(TimeCycleTunnelX);
+    // TimeCore.add(TimeCycleTunnelX);
 
     const TimeCycleTunnelY = new THREE.Group();
     TimeCycleTunnelY.position.set(0, 0, 0);
     TimeCycleTunnelY.rotation.set(0, 0, 0);
     TimeCycleTunnelY.scale.set(5, 5, 5);
-    TimeCore.add(TimeCycleTunnelY);
+    // TimeCore.add(TimeCycleTunnelY);
 
     const TimeCycleTunnelZ = new THREE.Group();
     TimeCycleTunnelZ.position.set(0, 0, 0);
     TimeCycleTunnelZ.rotation.set(0, 0, 0);
-    TimeCycleTunnelZ.scale.set(5, 5, 5);
+    TimeCycleTunnelZ.scale.set(2.5, 2.5, 2.5);
     TimeCore.add(TimeCycleTunnelZ);
 
     //.........................................................
@@ -78859,8 +78875,8 @@ Skin_CyberSkin_MovementPadImg_root.scale.set(0.005, 0.005, 0.005)
         { 
             color: 0xffffff,
             wireframe: false,
-            map: TimeGrid02_Test,
-            alphaMap: TimeGrid02_Test,
+            map: StandardGrid_Even,
+            alphaMap: StandardGrid_Even,
             side: THREE.DoubleSide, 
             transparent: true,
             opacity: 0.5,
@@ -78888,8 +78904,8 @@ Skin_CyberSkin_MovementPadImg_root.scale.set(0.005, 0.005, 0.005)
         { 
             color: 0xffffff,
             wireframe: false,
-            map: TimeGrid02_Test,
-            alphaMap: TimeGrid02_Test,
+            map: StandardGrid_Even,
+            alphaMap: StandardGrid_Even,
             side: THREE.DoubleSide,  
             transparent: true,
             opacity: 0.5,
@@ -78917,8 +78933,8 @@ Skin_CyberSkin_MovementPadImg_root.scale.set(0.005, 0.005, 0.005)
         { 
             color: 0xffffff, 
             wireframe: false,
-            map: TimeGrid02_Test,
-            alphaMap: TimeGrid02_Test,
+            map: StandardGrid_Even,
+            alphaMap: StandardGrid_Even,
             side: THREE.DoubleSide, 
             openEnded: true,
             transparent: true,
@@ -79077,6 +79093,100 @@ Skin_CyberSkin_MovementPadImg_root.scale.set(0.005, 0.005, 0.005)
        }
 
     });
+
+
+
+// Summon OrbitsOfUser3rdPerson
+document.addEventListener("keydown", function(event) {
+    if (event.key === "t" ) {
+        if (TimeCore.scale.x === 0.001) {
+           gsap.to(TimeCore.scale, {
+               duration: 1,
+               delay: 0,
+               ease: "none",
+               x: 100,
+               y: 100,
+               z: 100,
+           });
+       } else {
+        gsap.to(TimeCore.scale, {
+               duration: 1,
+               delay: 0,
+               ease: "none",
+               x: 0.001,
+               y: 0.001,
+               z: 0.001,
+           });
+       }
+    }
+})
+
+
+
+
+
+
+
+
+
+// Summon OrbitsOfUser3rdPerson
+document.addEventListener("keydown", function(event) {
+    if (event.key === "T" && event.key === "ArrowUp" ) {
+        gsap.to(TimeCycleTunnelZ.position, {
+            duration: 10,
+            delay: 0,
+            // x: 0.75,
+            // y: 0.75,
+            z: -10000
+        })
+    }
+})
+
+
+// Summon OrbitsOfUser3rdPerson
+document.addEventListener("keydown", function(event) {
+    if (event.key === "T" && event.key === "ArrowDown" ) {
+        gsap.to(TimeCycleTunnelZ.position, {
+            duration: 10,
+            delay: 0,
+            // x: 0.75,
+            // y: 0.75,
+            z: 10000
+        })
+    }
+})
+
+
+
+
+// Summon OrbitsOfUser3rdPerson
+document.addEventListener("keydown", function(event) {
+    if (event.key === "y" ) {
+        gsap.to(TimeCycleTunnelZ.position, {
+            duration: 10,
+            delay: 0,
+            // x: 0.75,
+            // y: 0.75,
+            z: "-=100"
+        })
+    }
+})
+
+
+// Summon OrbitsOfUser3rdPerson
+document.addEventListener("keydown", function(event) {
+    if (event.key === "h" ) {
+        gsap.to(TimeCycleTunnelZ.position, {
+            duration: 10,
+            delay: 0,
+            // x: 0.75,
+            // y: 0.75,
+            z: "+=100"
+        })
+    }
+})
+
+
 
 
     
@@ -80882,7 +80992,7 @@ const createSpace_OuterSpace_ = createSpace_OuterSpace();
 let OuterSpaceRoomVideo = document.getElementById("defaultSphere_02")
 
 let toggleSpaceRoom = () => {
-    if (spacial_OuterSpaceRoom_root.scale.x === 125) {
+    if (spacial_OuterSpaceRoom_root.scale.x === 300) {
 
         play_sfx_click_gen()
 
@@ -80904,9 +81014,9 @@ let toggleSpaceRoom = () => {
         gsap.to(spacial_OuterSpaceRoom_root.scale, {
             duration: 0.55,
             ease: "power2.inOut",
-            x: 125,
-            y: 125,
-            z: 125
+            x: 300,
+            y: 300,
+            z: 300
         });
     }
 }
@@ -80977,7 +81087,7 @@ const createSpace_EquationSpace_ = createSpace_EquationSpace();
 let EquationSpaceRoomVideo = document.getElementById("openingVideo")
 
 let toggleEquationRoom = () => {
-    if (spacial_EquationRoom_root.scale.x === 125) {
+    if (spacial_EquationRoom_root.scale.x === 300) {
 
         play_sfx_click_gen()
 
@@ -80999,9 +81109,9 @@ let toggleEquationRoom = () => {
         gsap.to(spacial_EquationRoom_root.scale, {
             duration: 0.55,
             ease: "power2.inOut",
-            x: 125,
-            y: 125,
-            z: 125
+            x: 300,
+            y: 300,
+            z: 300
         });
     }
 }
@@ -81069,7 +81179,7 @@ let StreetTimeLapseSpaceRoomVideo = document.getElementById("defaultSphere_04")
 
 
 let toggleTimeLapseOutside_Room = () => {
-    if (spacial_Timelapse_outside_root.scale.x === 125) {
+    if (spacial_Timelapse_outside_root.scale.x === 300) {
 
         play_sfx_click_gen()
 
@@ -81091,9 +81201,9 @@ let toggleTimeLapseOutside_Room = () => {
         gsap.to(spacial_Timelapse_outside_root.scale, {
             duration: 0.55,
             ease: "power2.inOut",
-            x: 125,
-            y: 125,
-            z: 125
+            x: 300,
+            y: 300,
+            z: 300
         });
     }
 }
@@ -81163,7 +81273,7 @@ const createSpace_molecularSpace_ = createSpace_molecularSpace();
 let MolecularSpaceRoomVideo = document.getElementById("defaultSphere_05")
 
 let toggleMolecular_Room = () => {
-    if (spacial_molecularSpace_root.scale.x === 125) {
+    if (spacial_molecularSpace_root.scale.x === 300) {
 
         play_sfx_click_gen()
 
@@ -81186,9 +81296,9 @@ let toggleMolecular_Room = () => {
         gsap.to(spacial_molecularSpace_root.scale, {
             duration: 0.55,
             ease: "power2.inOut",
-            x: 125,
-            y: 125,
-            z: 125
+            x: 300,
+            y: 300,
+            z: 300
         });
     }
 }
@@ -81258,7 +81368,7 @@ const createSpace_SocialSystems_ = createSpace_SocialSystemsSpace();
 let SocialSystemsSpaceRoomVideo = document.getElementById("defaultSphere_06")
 
 let toggleSocialSystems_Room = () => {
-    if (spacial_SocialSystemsSpace_root.scale.x === 125) {
+    if (spacial_SocialSystemsSpace_root.scale.x === 300) {
 
         play_sfx_click_gen()
 
@@ -81280,9 +81390,9 @@ let toggleSocialSystems_Room = () => {
         gsap.to(spacial_SocialSystemsSpace_root.scale, {
             duration: 0.55,
             ease: "power2.inOut",
-            x: 125,
-            y: 125,
-            z: 125
+            x: 300,
+            y: 300,
+            z: 300
         });
     }
 }
@@ -81354,7 +81464,7 @@ const createSpace_NaturalSystems_ = createSpace_NaturalSystemsSpace();
 let NaturalSystemsSpaceRoomVideo = document.getElementById("defaultSphere_07")
 
 let toggleNaturalSystems_Room = () => {
-    if (spacial_NaturalSystemsSpace_root.scale.x === 125) {
+    if (spacial_NaturalSystemsSpace_root.scale.x === 300) {
 
         play_sfx_click_gen()
 
@@ -81376,9 +81486,9 @@ let toggleNaturalSystems_Room = () => {
         gsap.to(spacial_NaturalSystemsSpace_root.scale, {
             duration: 0.55,
             ease: "power2.inOut",
-            x: 125,
-            y: 125,
-            z: 125
+            x: 300,
+            y: 300,
+            z: 300
         });
     }
 }
@@ -81444,7 +81554,7 @@ const createSpace_CelestialSystems_ = createSpace_CelestialSystemsSpace();
 let CelestialSystemsSpaceRoomVideo = document.getElementById("defaultSphere_08")
 
 let toggleCelestialSystems_Room = () => {
-    if (spacial_CelestialSystemsSpace_root.scale.x === 125) {
+    if (spacial_CelestialSystemsSpace_root.scale.x === 300) {
 
         play_sfx_click_gen()
 
@@ -81466,9 +81576,9 @@ let toggleCelestialSystems_Room = () => {
         gsap.to(spacial_CelestialSystemsSpace_root.scale, {
             duration: 0.55,
             ease: "power2.inOut",
-            x: 125,
-            y: 125,
-            z: 125
+            x: 300,
+            y: 300,
+            z: 300
         });
     }
 }
@@ -83292,6 +83402,8 @@ document.addEventListener("keydown", function(event) {
         })
     } 
 })
+
+
 
 // Summon Summon_User3rdPerson_Space
 document.addEventListener("keydown", function(event) {
