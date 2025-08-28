@@ -79549,15 +79549,16 @@ function createImageSphere
             y: "+= 5",
         })
 
-        // gsap.to(objectMesh.scale, {
-        //     repeat: -1,
-        //     duration: 2.5,
-        //     ease: "none",
-        //     delay: 0,
-        //     x: 4.5,
-        //     y: 4.5,
-        //     z: 4.5,
-        // })
+        gsap.to(objectMesh.scale, {
+            repeat: -1,
+            duration: 2.5,
+            ease: "none",
+            yoyo: true,
+            delay: 0,
+            x: 4.5,
+            y: 4.5,
+            z: 4.5,
+        })
 
         // gsap.to(objectMesh.scale, {
         //     repeat: -1,
