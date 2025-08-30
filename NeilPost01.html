@@ -76826,6 +76826,7 @@ Skin_CyberSkin_MovementPadImg_root.scale.set(0.005, 0.005, 0.005)
                 // disableFirstPersonControls()
             }
 
+            // orbitControls.enabled = false;
        
 
             // Function to disable OrbitControls
@@ -79216,11 +79217,11 @@ document.addEventListener("keydown", function(event) {
 
 
 
-// Summon OrbitsOfUser3rdPerson
+// Start_Event_Backwards
 document.addEventListener("keydown", function(event) {
     if (event.key === "u" ) {
         gsap.to(TimeCycleTunnelZ.position, {
-            duration: 60,
+            duration: 120,
             delay: 0,
             // x: 0.75,
             // y: 0.75,
@@ -79230,11 +79231,11 @@ document.addEventListener("keydown", function(event) {
 })
 
 
-// Summon OrbitsOfUser3rdPerson
+// Start_Event_Forwards
 document.addEventListener("keydown", function(event) {
     if (event.key === "j" ) {
         gsap.to(TimeCycleTunnelZ.position, {
-            duration: 60,
+            duration: 120,
             delay: 0,
             // x: 0.75,
             // y: 0.75,
@@ -80011,7 +80012,7 @@ imgVectorInkTest01_root.scale.set(2.5, 2.5, 2.5);
 
 // X-Axis cubeVector
 const imgVectorInkTest02_root = new THREE.Group();
-imgVectorInkTest02_root.position.set(0, 100, -10);
+imgVectorInkTest02_root.position.set(0, 100, 0);
 imgVectorInkTest02_root.rotation.set(0, 0, 0);
 imgVectorInkTest02_root.scale.set(2.5, 2.5, 2.5);
 // scene.add(imgVectorInkTest02_root);
@@ -80019,10 +80020,10 @@ imgVectorInkTest02_root.scale.set(2.5, 2.5, 2.5);
 
 // Z-Axis cubeVector
 const imgVectorInkTest03_root = new THREE.Group();
-imgVectorInkTest03_root.position.set(0, 100, 0);
+imgVectorInkTest03_root.position.set(0, 700, -2000);
 imgVectorInkTest03_root.rotation.set(0, 0, 0);
 imgVectorInkTest03_root.scale.set(2.5, 2.5, 2.5);
-// scene.add(imgVectorInkTest03_root);
+scene.add(imgVectorInkTest03_root);
 
 
 
@@ -80193,7 +80194,7 @@ function createImage_BoxLineAlpha_02(images) {
 // Function to create a straight line of planes with images [ animated Z-Axis ]
 function createImage_BoxLineAlpha_03(images) {
     const numImages = images.length;
-    const spacing = 15; // Spacing between planes
+    const spacing = 100; // Spacing between planes
 
     for (let i = 0; i < numImages; i++) {
         const texture = new THREE.TextureLoader().load(images[i]);
@@ -80309,10 +80310,10 @@ let imgVectorInkTest03_root_movingLine = () => {
 
     gsap.to(imgVectorInkTest03_root.position, {
         repeat: -1,
-        duration: 5,
+        duration: 10,
         ease: "none",
         delay: 0,
-        z: -1000
+        z: 2000
     })
 
 }
