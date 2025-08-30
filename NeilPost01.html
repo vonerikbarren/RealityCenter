@@ -72502,97 +72502,97 @@ animate();
 
 
 
-document.addEventListener("keydown", function(event) {
-    if (event.key === "j") {
-        // camera.position.y += 10000
+// document.addEventListener("keydown", function(event) {
+//     if (event.key === "j") {
+//         // camera.position.y += 10000
 
-        camera.lookAt(UserContainer_root)
+//         camera.lookAt(UserContainer_root)
 
-        // Spacial_Movement_Function_Basic01()
+//         // Spacial_Movement_Function_Basic01()
 
-        // ================================================
-        // # Timeline01
-        // ================================================
-        let tl01 = gsap.timeline(
-            {
-                repeat: 2,
-                repeatDelay: 1,
-                delay:  0.01
-            }
-        )
-
-
-        // ================================================
-        // # Timeline02
-        // ================================================
-
-        let tl02 = gsap.timeline(
-            {
-                repeat: 2,
-                repeatDelay: 1,
-            }
-        )
+//         // ================================================
+//         // # Timeline01
+//         // ================================================
+//         let tl01 = gsap.timeline(
+//             {
+//                 repeat: 2,
+//                 repeatDelay: 1,
+//                 delay:  0.01
+//             }
+//         )
 
 
-        // let crystalOrb_pos = new THREE.Vector3(100, 0, -100);
-        // let crystalOrb_rot = new THREE.Vector3(0, 1.575, 0);
-        // let crystalOrb_sca = new THREE.Vector3(5, 5, 5);
-        // let crystalOrb_durationData = 10;
-        // let crystalOrb_delayData = 0;
-        // let crystalOrb_easeData = "none";
-        // let crystalOrb_opacityData = 0.1;
+//         // ================================================
+//         // # Timeline02
+//         // ================================================
 
-        // let crystalOrb_AnimationData = {
-        //     pos: crystalOrb_pos,
-        //     rot: crystalOrb_rot,
-        //     sca: crystalOrb_sca,
-        //     dur: crystalOrb_durationData,
-        //     del: crystalOrb_delayData,
-        //     eas: crystalOrb_easeData,
-        //     opa: crystalOrb_opacityData
-        // };
-
-        let crystalOrb_AnimationData = {
-            tlx: tl01,
-            obj: Scene_CrystalOrb,
-            pos: new THREE.Vector3(100, 0, -100),
-            rot: new THREE.Vector3(0, 1.575, 0),
-            sca: new THREE.Vector3(50, 50, 50),
-            osc: new THREE.Vector3(50, 50, 50),
-            dur: 10,
-            del: 0,
-            eas: "none",
-            opa: 0.1
-        };
-
-        let UserΔ_AnimationData = {
-            tlx: tl02,
-            obj: Scene_CrystalOrb,
-            pos: new THREE.Vector3(100, 0, -100),
-            rot: new THREE.Vector3(0, 1.575, 0),
-            sca: new THREE.Vector3(5, 5, 5),
-            dur: 10,
-            del: 0,
-            eas: "none",
-            opa: 0.1
-        }
-
-        Spacial_Movement_Function_Basic01(
-            crystalOrb_AnimationData.tlx,
-            crystalOrb_AnimationData.obj,
-            crystalOrb_AnimationData.pos,
-            crystalOrb_AnimationData.rot,
-            crystalOrb_AnimationData.sca,
-            crystalOrb_AnimationData.osc,
-            crystalOrb_AnimationData.dur,
-            crystalOrb_AnimationData.del,
-            crystalOrb_AnimationData.eas,
-            crystalOrb_AnimationData.opa
-        );
+//         let tl02 = gsap.timeline(
+//             {
+//                 repeat: 2,
+//                 repeatDelay: 1,
+//             }
+//         )
 
 
+//         // let crystalOrb_pos = new THREE.Vector3(100, 0, -100);
+//         // let crystalOrb_rot = new THREE.Vector3(0, 1.575, 0);
+//         // let crystalOrb_sca = new THREE.Vector3(5, 5, 5);
+//         // let crystalOrb_durationData = 10;
+//         // let crystalOrb_delayData = 0;
+//         // let crystalOrb_easeData = "none";
+//         // let crystalOrb_opacityData = 0.1;
 
-        // Spacial_Movement_Function_Basic01(tl01, Scene_CrystalOrb, crystalOrb_pos, crystalOrb_rot, crystalOrb_sca, crystalOrb_durationData, crystalOrb_delayData, crystalOrb_easeData, crystalOrb_opacityData);
+//         // let crystalOrb_AnimationData = {
+//         //     pos: crystalOrb_pos,
+//         //     rot: crystalOrb_rot,
+//         //     sca: crystalOrb_sca,
+//         //     dur: crystalOrb_durationData,
+//         //     del: crystalOrb_delayData,
+//         //     eas: crystalOrb_easeData,
+//         //     opa: crystalOrb_opacityData
+//         // };
+
+//         let crystalOrb_AnimationData = {
+//             tlx: tl01,
+//             obj: Scene_CrystalOrb,
+//             pos: new THREE.Vector3(100, 0, -100),
+//             rot: new THREE.Vector3(0, 1.575, 0),
+//             sca: new THREE.Vector3(50, 50, 50),
+//             osc: new THREE.Vector3(50, 50, 50),
+//             dur: 10,
+//             del: 0,
+//             eas: "none",
+//             opa: 0.1
+//         };
+
+//         let UserΔ_AnimationData = {
+//             tlx: tl02,
+//             obj: Scene_CrystalOrb,
+//             pos: new THREE.Vector3(100, 0, -100),
+//             rot: new THREE.Vector3(0, 1.575, 0),
+//             sca: new THREE.Vector3(5, 5, 5),
+//             dur: 10,
+//             del: 0,
+//             eas: "none",
+//             opa: 0.1
+//         }
+
+//         Spacial_Movement_Function_Basic01(
+//             crystalOrb_AnimationData.tlx,
+//             crystalOrb_AnimationData.obj,
+//             crystalOrb_AnimationData.pos,
+//             crystalOrb_AnimationData.rot,
+//             crystalOrb_AnimationData.sca,
+//             crystalOrb_AnimationData.osc,
+//             crystalOrb_AnimationData.dur,
+//             crystalOrb_AnimationData.del,
+//             crystalOrb_AnimationData.eas,
+//             crystalOrb_AnimationData.opa
+//         );
+
+
+
+//         // Spacial_Movement_Function_Basic01(tl01, Scene_CrystalOrb, crystalOrb_pos, crystalOrb_rot, crystalOrb_sca, crystalOrb_durationData, crystalOrb_delayData, crystalOrb_easeData, crystalOrb_opacityData);
 
 
 
@@ -72600,9 +72600,9 @@ document.addEventListener("keydown", function(event) {
 
         
         
-        console.log('button pressed')
-    }
-})
+//         console.log('button pressed')
+//     }
+// })
 
 
 // Example object to interact with
@@ -79167,7 +79167,7 @@ document.addEventListener("keydown", function(event) {
             delay: 0,
             // x: 0.75,
             // y: 0.75,
-            z: "-=100"
+            z: "-=10"
         })
     }
 })
@@ -79181,11 +79181,67 @@ document.addEventListener("keydown", function(event) {
             delay: 0,
             // x: 0.75,
             // y: 0.75,
+            z: "+=10"
+        })
+    }
+})
+
+
+// Summon OrbitsOfUser3rdPerson
+document.addEventListener("keydown", function(event) {
+    if (event.ctrlKey && event.key === "y" ) {
+        gsap.to(TimeCycleTunnelZ.position, {
+            duration: 10,
+            delay: 0,
+            // x: 0.75,
+            // y: 0.75,
+            z: "-=100"
+        })
+    }
+})
+
+
+// Summon OrbitsOfUser3rdPerson
+document.addEventListener("keydown", function(event) {
+    if (event.ctrlKey && event.key === "h" ) {
+        gsap.to(TimeCycleTunnelZ.position, {
+            duration: 10,
+            delay: 0,
+            // x: 0.75,
+            // y: 0.75,
             z: "+=100"
         })
     }
 })
 
+
+
+// Summon OrbitsOfUser3rdPerson
+document.addEventListener("keydown", function(event) {
+    if (event.key === "u" ) {
+        gsap.to(TimeCycleTunnelZ.position, {
+            duration: 60,
+            delay: 0,
+            // x: 0.75,
+            // y: 0.75,
+            z: "-=1000"
+        })
+    }
+})
+
+
+// Summon OrbitsOfUser3rdPerson
+document.addEventListener("keydown", function(event) {
+    if (event.key === "j" ) {
+        gsap.to(TimeCycleTunnelZ.position, {
+            duration: 60,
+            delay: 0,
+            // x: 0.75,
+            // y: 0.75,
+            z: "+=1000"
+        })
+    }
+})
 
 
 

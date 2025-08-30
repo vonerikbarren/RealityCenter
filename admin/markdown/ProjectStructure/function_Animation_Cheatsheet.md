@@ -58,3 +58,27 @@
 //....CCCCCCCC...hhh...hhh..eeeeeeee.eaaaaaaaaa.ttttt.ssssssss..hhh...hhh..eeeeeeee..eeeeeeee..ttttt..
 //.....CCCCC..................eeee.....aaa........ttt..ssssss................eeee......eeee......ttt..
 //....................................................................................................
+
+
+
+/- # Time in Seconds.
+
+
+1 = 1 second
+30 = 30 seconds
+60 = 1min
+90 = 1min30sec
+120 = 2min
+300 = 5min
+600 = 10min
+900 = 15min
+1800 = 30min
+
+min / sec
+01min = 60
+1.5min = 90
+02min = 120
+05min = 300
+10min = 600
+15min = 900
+30min = 1800
