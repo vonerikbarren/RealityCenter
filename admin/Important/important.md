@@ -144,3 +144,11 @@ F.Test_Action_to_Sound_on_All_Devices
 
 
 ```
+
+
+
+
+
+
+# Point of Choice
+# Path of Choice

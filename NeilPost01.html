@@ -76810,7 +76810,7 @@ Skin_CyberSkin_MovementPadImg_root.scale.set(0.005, 0.005, 0.005)
                 orbitControls.minAzimuthAngle = Infinity
                 orbitControls.maxAzimuthAngle = Infinity
             
-                orbitControls.target.set( 0, 5, 0 );
+                // orbitControls.target.set( 0, 805, 0 );
                 orbitControls.minDistance = 1;
                 orbitControls.maxDistance = 700000000;
 
@@ -83512,6 +83512,52 @@ document.addEventListener("keydown", function(event) {
 
 
 
+document.addEventListener("keydown", function(event) {
+    if (event.key === "k" ) {
+        orbitControls.target.set(0, 1000, 0)
+
+        gsap.to(camera.position, {
+            repeat: 0,
+            duration: 10,
+            ease: "none",
+            delay: 0.15,
+            x: 0,
+            y: 800,
+            z: 25,
+            // onComplete: () => {
+            //     orbitControls.target.set(0, 500, -200)
+            // },
+        })
+
+        gsap.to(camera.position, {
+            repeat: 0,
+            duration: 0.5,
+            ease: "none",
+            delay: 5,
+            x: 0,
+            y: 700,
+            z: 20,
+            onComplete: () => {
+                orbitControls.target.set(0, 500, -2000)
+            },
+        })
+
+    }
+})
+
+
+
+document.addEventListener("keydown", function(event) {
+    if (event.key === "K" ) {
+        orbitControls.target.set(0, 100, 0)
+    }
+})
+
+
+
+
+
+
 
 
 
@@ -83860,14 +83906,14 @@ document.addEventListener("keydown", function(event) {
 
                 // Orbit Controls Bug Fix past 180deg
 
-                if ( camera.position.z > 0 ) {
-                    camera.rotation.z = 0
-                    camera.lookAt(0, 5, 0)
-                } else if ( camera.position.z < 0 ) {
-                    orbitControls.update()
-                } else {
-                    orbitControls.update()
-                }
+                // if ( camera.position.z > 0 ) {
+                //     camera.rotation.z = 0
+                //     camera.lookAt(0, 5, 0)
+                // } else if ( camera.position.z < 0 ) {
+                //     orbitControls.update()
+                // } else {
+                //     orbitControls.update()
+                // }
 
 
 
