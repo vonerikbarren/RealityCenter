@@ -83462,6 +83462,32 @@ document.addEventListener("keydown", function(event) {
 })
 
 
+document.addEventListener("keydown", function(event) {
+    if (event.key === "4" ) {
+        play_sfx_click_gen()
+        gsap.to(camera.position, {
+            repeat: 0,
+            duration: 2,
+            ease: "none",
+            delay: 0.15,
+            x: 0,
+            y: 0,
+            z: -100,
+        })
+
+        gsap.to(UserContainer_root.position, {
+            repeat: 0,
+            duration: 2,
+            ease: "none",
+            delay: 0.15,
+            x: 0,
+            y: 0,
+            z: -75,
+        })
+    } 
+})
+
+
 
 // Summon Summon_User3rdPerson_Space
 document.addEventListener("keydown", function(event) {
