@@ -78853,13 +78853,13 @@ Skin_CyberSkin_MovementPadImg_root.scale.set(0.005, 0.005, 0.005)
     TimeCycleTunnelX.position.set(0, 0, 0);
     TimeCycleTunnelX.rotation.set(0, 0, 0);
     TimeCycleTunnelX.scale.set(5, 5, 5);
-    // TimeCore.add(TimeCycleTunnelX);
+    TimeCore.add(TimeCycleTunnelX);
 
     const TimeCycleTunnelY = new THREE.Group();
     TimeCycleTunnelY.position.set(0, 0, 0);
     TimeCycleTunnelY.rotation.set(0, 0, 0);
     TimeCycleTunnelY.scale.set(5, 5, 5);
-    // TimeCore.add(TimeCycleTunnelY);
+    TimeCore.add(TimeCycleTunnelY);
 
     const TimeCycleTunnelZ = new THREE.Group();
     TimeCycleTunnelZ.position.set(0, 0, 0);
@@ -83492,6 +83492,7 @@ document.addEventListener("keydown", function(event) {
 // Summon Summon_User3rdPerson_Space
 document.addEventListener("keydown", function(event) {
     if (event.key === "]" ) {
+        play_sfx_click_gen()
         gsap.to(imgSphere_root.scale, {
             repeat: 0,
             duration: 0.5,
@@ -83507,6 +83508,7 @@ document.addEventListener("keydown", function(event) {
 // unSummon Summon_User3rdPerson_Space
 document.addEventListener("keydown", function(event) {
     if (event.ctrlKey && event.key === "}" ) {
+        play_sfx_click_gen()
         gsap.to(imgSphere_root.scale, {
             repeat: 0,
             duration: 0.5,
@@ -83578,6 +83580,12 @@ document.addEventListener("keydown", function(event) {
         orbitControls.target.set(0, 100, 0)
     }
 })
+
+
+
+
+
+
 
 
 

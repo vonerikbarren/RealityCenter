@@ -28,3 +28,13 @@ I say create an example, and write the function at the same time, that way the m
 summon_Object(object, location, additionalSettings...)
 summon_Objects(objectArr, locationMapperCoordinates, additionalSettings...)
 
+
+
+# EmotionsForHUD
+\- Happy
+\- Sad
+\- Willful
+\- Hopeless
+\- Scared
+\- Courageous
+
