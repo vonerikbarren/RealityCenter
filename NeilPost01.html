@@ -78864,7 +78864,7 @@ Skin_CyberSkin_MovementPadImg_root.scale.set(0.005, 0.005, 0.005)
     const TimeCycleTunnelZ = new THREE.Group();
     TimeCycleTunnelZ.position.set(0, 0, 0);
     TimeCycleTunnelZ.rotation.set(0, 0, 0);
-    TimeCycleTunnelZ.scale.set(2.5, 2.5, 2.5);
+    TimeCycleTunnelZ.scale.set(5, 5, 5);
     TimeCore.add(TimeCycleTunnelZ);
 
     //.........................................................
@@ -78970,62 +78970,62 @@ Skin_CyberSkin_MovementPadImg_root.scale.set(0.005, 0.005, 0.005)
     
 
 
-    document.addEventListener("keydown", function(event) {
-        if (event.key === "+") {
-            gsap.to(TimeCycleTunnelX.position, {
-                duration: 60,
-                delay: 0,
-                ease: "none",
-                x: "+= 100",
+    // document.addEventListener("keydown", function(event) {
+    //     if (event.key === "+") {
+    //         gsap.to(TimeCycleTunnelX.position, {
+    //             duration: 60,
+    //             delay: 0,
+    //             ease: "none",
+    //             x: "+= 100",
 
-            })
+    //         })
 
-            gsap.to(TimeCycleTunnelY.position, {
-                duration: 60,
-                delay: 0,
-                ease: "none",
-                y: "-= 100",
+    //         gsap.to(TimeCycleTunnelY.position, {
+    //             duration: 60,
+    //             delay: 0,
+    //             ease: "none",
+    //             y: "-= 100",
 
-            })
+    //         })
 
-            gsap.to(TimeCycleTunnelZ.position, {
-                duration: 60,
-                delay: 0,
-                ease: "none",
-                z: "+= 100",
+    //         gsap.to(TimeCycleTunnelZ.position, {
+    //             duration: 60,
+    //             delay: 0,
+    //             ease: "none",
+    //             z: "+= 100",
 
-            })
-        }
-    })
+    //         })
+    //     }
+    // })
 
 
-    document.addEventListener("keydown", function(event) {
-        if (event.key === "-") {
-            gsap.to(TimeCycleTunnelX.position, {
-                duration: 60,
-                delay: 0,
-                ease: "none",
-                x: "-= 100",
+    // document.addEventListener("keydown", function(event) {
+    //     if (event.key === "-") {
+    //         gsap.to(TimeCycleTunnelX.position, {
+    //             duration: 60,
+    //             delay: 0,
+    //             ease: "none",
+    //             x: "-= 100",
 
-            })
+    //         })
 
-            gsap.to(TimeCycleTunnelY.position, {
-                duration: 60,
-                delay: 0,
-                ease: "none",
-                y: "+= 100",
+    //         gsap.to(TimeCycleTunnelY.position, {
+    //             duration: 60,
+    //             delay: 0,
+    //             ease: "none",
+    //             y: "+= 100",
 
-            })
+    //         })
 
-            gsap.to(TimeCycleTunnelZ.position, {
-                duration: 60,
-                delay: 0,
-                ease: "none",
-                z: "-= 100",
+    //         gsap.to(TimeCycleTunnelZ.position, {
+    //             duration: 60,
+    //             delay: 0,
+    //             ease: "none",
+    //             z: "-= 100",
 
-            })
-        }
-    })
+    //         })
+    //     }
+    // })
 
 
     // Audio element and event listeners
