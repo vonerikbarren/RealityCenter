@@ -69385,6 +69385,8 @@ let HUD_Dock_default
 
 
                 };
+
+				
                                 
 
 				const objectTestingGroupParams = {
@@ -69881,6 +69883,111 @@ let HUD_Dock_default
 				objT_CylinderOpenedA0.add(mesh_objT_CylinderOpenedA0)
 				objectTestingGroup.add(objT_CylinderOpenedA0)
 
+
+
+            // Function to create a cube made of individual planes with image textures
+				function createPlaneCube(size = 1, images = null, position = {x: 0, y: 0, z: 0}) {
+					// Create a group to hold all planes
+					const cubeGroup = new THREE.Group();
+					
+					// Create 6 planes for each face of the cube
+					const planeGeometry = new THREE.PlaneGeometry(size, size);
+					
+					// Face order: front, back, right, left, top, bottom
+					const faceNames = ['front', 'back', 'right', 'left', 'top', 'bottom'];
+					const planes = [];
+					
+					// Create materials for each face
+					const materials = [];
+					
+					if (images && Array.isArray(images) && images.length > 0) {
+						// Create materials with provided images
+						for (let i = 0; i < 6; i++) {
+							let texture;
+							if (i < images.length && images[i]) {
+								// Load texture from image path or use existing texture
+								if (typeof images[i] === 'string') {
+									texture = new THREE.TextureLoader().load(images[i]);
+								} else {
+									texture = images[i]; // Assume it's already a texture
+								}
+							} else {
+								// Fallback to default color if not enough images provided
+								texture = null;
+							}
+							
+							materials[i] = new THREE.MeshBasicMaterial({
+								map: texture,
+								color: texture ? 0xffffff : 0x00ff00,
+								side: THREE.DoubleSide,
+								transparent: true,
+								opacity: 0.8
+							});
+						}
+					} else {
+						// Default material if no images provided
+						const defaultMaterial = new THREE.MeshBasicMaterial({ 
+							color: 0x00ff00, 
+							side: THREE.DoubleSide,
+							transparent: true,
+							opacity: 0.8
+						});
+						for (let i = 0; i < 6; i++) {
+							materials[i] = defaultMaterial.clone();
+						}
+					}
+					
+					// Front face (positive Z) - images[0]
+					const frontPlane = new THREE.Mesh(planeGeometry, materials[0]);
+					frontPlane.position.z = size / 2;
+					frontPlane.name = 'front';
+					cubeGroup.add(frontPlane);
+					
+					// Back face (negative Z) - images[1]
+					const backPlane = new THREE.Mesh(planeGeometry, materials[1]);
+					backPlane.position.z = -size / 2;
+					backPlane.rotation.y = Math.PI; // Rotate 180 degrees
+					backPlane.name = 'back';
+					cubeGroup.add(backPlane);
+					
+					// Right face (positive X) - images[2]
+					const rightPlane = new THREE.Mesh(planeGeometry, materials[2]);
+					rightPlane.position.x = size / 2;
+					rightPlane.rotation.y = Math.PI / 2; // Rotate 90 degrees
+					rightPlane.name = 'right';
+					cubeGroup.add(rightPlane);
+					
+					// Left face (negative X) - images[3]
+					const leftPlane = new THREE.Mesh(planeGeometry, materials[3]);
+					leftPlane.position.x = -size / 2;
+					leftPlane.rotation.y = -Math.PI / 2; // Rotate -90 degrees
+					leftPlane.name = 'left';
+					cubeGroup.add(leftPlane);
+					
+					// Top face (positive Y) - images[4]
+					const topPlane = new THREE.Mesh(planeGeometry, materials[4]);
+					topPlane.position.y = size / 2;
+					topPlane.rotation.x = -Math.PI / 2; // Rotate -90 degrees
+					topPlane.name = 'top';
+					cubeGroup.add(topPlane);
+					
+					// Bottom face (negative Y) - images[5]
+					const bottomPlane = new THREE.Mesh(planeGeometry, materials[5]);
+					bottomPlane.position.y = -size / 2;
+					bottomPlane.rotation.x = Math.PI / 2; // Rotate 90 degrees
+					bottomPlane.name = 'bottom';
+					cubeGroup.add(bottomPlane);
+					
+					// Set the position of the entire cube
+					cubeGroup.position.set(position.x, position.y, position.z);
+					
+					return cubeGroup;
+				}
+
+
+              const partialImages = ['front.jpg', 'back.jpg'];
+                const cube3 = createPlaneCube(2, partialImages);
+                scene.add(cube3);  
 
             
             // ----------------------------------------------------------------------------------------------------
