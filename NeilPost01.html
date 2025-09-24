@@ -79197,29 +79197,16 @@ document.addEventListener("keydown", function(event) {
 })
 
 
-// Summon OrbitsOfUser3rdPerson - Sequential Key Press (z then j)
-let lastKey = null;
-let keyTimeout = null;
-
+// Summon OrbitsOfUser3rdPerson
 document.addEventListener("keydown", function(event) {
-    if (event.key === "z") {
-        lastKey = "z";
-        // Clear any existing timeout
-        if (keyTimeout) clearTimeout(keyTimeout);
-        // Reset after 1 second if j isn't pressed
-        keyTimeout = setTimeout(() => { lastKey = null; }, 1000);
-    } 
-    else if (event.key === "j" && lastKey === "z") {
-        // Both keys pressed in sequence (z then j)!
+    if (event.key === "z" && event.key === "j" ) {
         gsap.to(TimeCycleTunnelZ.position, {
             duration: 10,
             delay: 0,
             // x: 0.75,
             // y: 0.75,
             z: "+=10"
-        });
-        lastKey = null;
-        if (keyTimeout) clearTimeout(keyTimeout);
+        })
     }
 })
 
