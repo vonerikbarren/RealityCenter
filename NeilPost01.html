@@ -69884,6 +69884,15 @@ let HUD_Dock_default
 				objectTestingGroup.add(objT_CylinderOpenedA0)
 
 
+            // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+            // Create Cube from Planes with Image Textures
+            // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+            let defaultManualCube01 = new THREE.Group()
+            defaultManualCube01.position.set(-25, 0, 0)
+            defaultManualCube01.rotation.set(0, 0, 0)
+            defaultManualCube01.scale.set(1, 1, 1)
+            scene.add(defaultManualCube01)
 
             // Function to create a cube made of individual planes with image textures
 				function createPlaneCube(size = 1, images = null, position = {x: 0, y: 0, z: 0}) {
@@ -69981,12 +69990,21 @@ let HUD_Dock_default
 					// Set the position of the entire cube
 					cubeGroup.position.set(position.x, position.y, position.z);
 					
+
+                    defaultManualCube01.add(cubeGroup);
 					return cubeGroup;
 				}
 
 
-              const partialImages = ['front.jpg', 'back.jpg'];
-                const cube3 = createPlaneCube(2, partialImages);
+              const partialImages = [
+                'assets/designs/TechTiles/CyberPunkDesign_01/1x/TechTile_GearEngine_Active_01.png', 
+                'assets/designs/TechTiles/CyberPunkDesign_01/1x/TechTile_GearEngine_Active_01.png',
+                'assets/designs/TechTiles/CyberPunkDesign_01/1x/TechTile_GearEngine_Active_01.png',
+                'assets/designs/TechTiles/CyberPunkDesign_01/1x/TechTile_GearEngine_Active_01.png',
+                'assets/designs/TechTiles/CyberPunkDesign_01/1x/TechTile_GearEngine_Active_01.png',
+                'assets/designs/TechTiles/CyberPunkDesign_01/1x/TechTile_GearEngine_Active_01.png',
+            ];
+                const cube3 = createPlaneCube(6, partialImages);
                 scene.add(cube3);  
 
             
