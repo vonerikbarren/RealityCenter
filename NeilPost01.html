@@ -69894,6 +69894,31 @@ let HUD_Dock_default
             defaultManualCube01.scale.set(1, 1, 1)
             scene.add(defaultManualCube01)
 
+
+            document.addEventListener("keydown", function(event) {
+            if (event.key === "m" ) {
+                    gsap.to(defaultManualCube01.rotation, {
+                        duration: 5,
+                        repeat: true,
+                        delay: 0,
+                        x: 6.28,
+                        y: 6.28,
+                        z: 6.28
+                    })
+
+                    
+                } else if (event,key === "M") {
+                    gsap.to(defaultManualCube01.rotation, {
+                        duration: 5,
+                        delay: 0,
+                        x: 0,
+                        y: 0,
+                        z: 0
+                    })
+                }
+            })
+
+
             // Function to create a cube made of individual planes with image textures
 				function createPlaneCube(size = 1, images = null, position = {x: 0, y: 0, z: 0}) {
 					// Create a group to hold all planes
@@ -69997,15 +70022,17 @@ let HUD_Dock_default
 
 
               const partialImages = [
-                'assets/designs/TechTiles/CyberPunkDesign_01/1x/TechTile_GearEngine_Active_01.png', 
-                'assets/designs/TechTiles/CyberPunkDesign_01/1x/TechTile_GearEngine_Active_01.png',
-                'assets/designs/TechTiles/CyberPunkDesign_01/1x/TechTile_GearEngine_Active_01.png',
-                'assets/designs/TechTiles/CyberPunkDesign_01/1x/TechTile_GearEngine_Active_01.png',
-                'assets/designs/TechTiles/CyberPunkDesign_01/1x/TechTile_GearEngine_Active_01.png',
-                'assets/designs/TechTiles/CyberPunkDesign_01/1x/TechTile_GearEngine_Active_01.png',
+                './assets/img/02-UserUI/07-MySon/MySon01.png', 
+                './assets/img/02-UserUI/07-MySon/MySon02.png',
+                './assets/img/02-UserUI/07-MySon/MySon03.png',
+                './assets/img/02-UserUI/07-MySon/MySon04.png',
+                './assets/img/02-UserUI/07-MySon/MySon01.png',
+                './assets/img/02-UserUI/07-MySon/MySon02.png',
             ];
                 const cube3 = createPlaneCube(6, partialImages);
-                scene.add(cube3);  
+                // scene.add(cube3);  
+
+                defaultManualCube01.add(cube3);
 
             
             // ----------------------------------------------------------------------------------------------------
