@@ -38,3 +38,20 @@ summon_Objects(objectArr, locationMapperCoordinates, additionalSettings...)
 \- Scared
 \- Courageous
 
+
+
+
+
+# StraightLine
+
+UpdateDesignTree. 
+=> Build UI/UX. 
+=> Build Alphabet. 
+=> Build Templates. 
+=> Build Examples. 
+=> Deploy Prototype.
+
+
+
+
+
