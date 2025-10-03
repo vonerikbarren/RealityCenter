@@ -43,13 +43,13 @@ summon_Objects(objectArr, locationMapperCoordinates, additionalSettings...)
 
 
 # StraightLine
-
 UpdateDesignTree. 
 => Build UI/UX. 
 => Build Alphabet. 
 => Build Templates. 
 => Build Examples. 
 => Deploy Prototype.
+
 
 
 
