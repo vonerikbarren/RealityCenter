@@ -16,6 +16,8 @@ false = ExpressionΔ = OmniExpress
 false = FunctionΔ = OmniAction
 false = ExperienncesΔ = OmniEXP
 false = SystemΔ = OmniSys
+false = EndΔ = OmniEnd
+false = StartΔ = OmniStart
 
 
 Additionally, I will need to create functions instead of hard coding things so my plans can run more smoothly.
