@@ -52,6 +52,14 @@ UpdateDesignTree.
 
 
 
+# Translator:
+
+## Logic
+\- I need a way to sequentially communicate logic in a way where linear thinkers can understand system thinkers and other types of thinkers. 
+
+
+
+
 
 
 
