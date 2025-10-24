@@ -7,6 +7,8 @@ We are currrently building the TimeΔ
 
 I need to also build before prototype Luanch:
 
+false = ExperienncesΔ = OmniEXP
+
 false = TimeΔ = OmniTime
 false = PerspectiveΔ = OmniSight
 false = ComplexityΔ = OmniComplexity
@@ -14,10 +16,10 @@ false = SpaceΔ = OmniSpace
 false = ContainmentΔ = OmniContainment
 false = ExpressionΔ = OmniExpress
 false = FunctionΔ = OmniAction
-false = ExperienncesΔ = OmniEXP
 false = SystemΔ = OmniSys
 false = EndΔ = OmniEnd
 false = StartΔ = OmniStart
+
 
 
 Additionally, I will need to create functions instead of hard coding things so my plans can run more smoothly.
