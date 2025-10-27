@@ -33,3 +33,6 @@
 # Footer
 
 this is specifically at the build stage where we build the necessary things that are needed for growth and development. 
+
+The time reality should be able to bend in terms of the time aspects that the user is looking at. So it should be able to swiich very easily with Month, Day, and Year. 
+
