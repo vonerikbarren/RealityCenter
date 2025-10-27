@@ -22,3 +22,14 @@
     },
 \   
 }
+
+
+
+
+
+
+
+
+# Footer
+
+this is specifically at the build stage where we build the necessary things that are needed for growth and development. 
