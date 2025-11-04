@@ -1,6 +1,91 @@
 # Function Cheatsheet
 
 
+
+# Map
+```json
+
+{
+  "Doc": {
+    "Head": {
+      "title": "Function Cheat Sheet",
+      "meta": {
+        "charset": "UTF-8",
+        "viewport": "width=device-width, initial-scale=1.0"
+      },
+      "links": [
+        {
+          "rel": "stylesheet",
+          "href": "styles.css"
+        }
+      ]
+    },
+    "Body": {
+      "header": "Function Cheat Sheet Tree",
+      "content": {
+        "type": "ul",
+        "functions": [
+          {
+            "name": "initOmniPlayer",
+            "path": "src/core/initOmniPlayer.js",
+            "tags": ["startup", "transmission", "core"],
+            "shortcut": "F1"
+          },
+          {
+            "name": "encodeScroll",
+            "path": "src/rituals/encodeScroll.js",
+            "tags": ["poetic", "ritual", "overlay"],
+            "shortcut": "F2"
+          },
+          {
+            "name": "mapSurvivalProtocol",
+            "path": "src/survival/mapSurvivalProtocol.js",
+            "tags": ["survival", "modular", "weekly"],
+            "shortcut": "F3"
+          },
+          {
+            "name": "invokeLegalShield",
+            "path": "src/legal/invokeLegalShield.js",
+            "tags": ["legal", "advocacy", "family"],
+            "shortcut": "F4"
+          }
+        ]
+      }
+    },
+    "Footer": {
+      "text": "© 2025 Von’Erik Transmission Systems",
+      "links": [
+        {
+          "label": "GitHub",
+          "href": "https://github.com/vonerik"
+        },
+        {
+          "label": "Contact",
+          "href": "mailto:von@transmission.scroll"
+        }
+      ]
+    },
+    "Scripts": [
+      {
+        "src": "scripts/treeToggle.js",
+        "defer": true
+      },
+      {
+        "src": "scripts/shortcuts.js",
+        "defer": true
+      }
+    ]
+  }
+}
+
+
+
+```
+
+
+
+
+
 # Reminder for tool / reality code transfer
 - Remember to get all variables
 - Remember to get all structures
