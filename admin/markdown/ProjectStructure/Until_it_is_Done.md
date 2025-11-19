@@ -38,6 +38,8 @@ summon_Objects(objectArr, locationMapperCoordinates, additionalSettings...)
 
 commitTest01_JustForCommits__
 commitTest02_JustForCommits__
+commitTest03_JustForCommits__
+
 
 
 
