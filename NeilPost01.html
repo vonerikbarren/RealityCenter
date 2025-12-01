@@ -69888,6 +69888,20 @@ let HUD_Dock_default
 				objectTestingGroup.add(objT_CylinderOpenedA0)
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
             // Create Cube from Planes with Image Textures
             // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
@@ -69906,11 +69920,49 @@ let HUD_Dock_default
             scene.add(defaultManualCube02)
 
 
+            let defaultManualCube03 = new THREE.Group()
+            defaultManualCube03.position.set(-10, 0, 10)
+            defaultManualCube03.rotation.set(0, 0, 0)
+            defaultManualCube03.scale.set(1.5, 1.5, 1.5)
+            scene.add(defaultManualCube03)
+
+
+            let defaultManualCube04 = new THREE.Group()
+            defaultManualCube04.position.set(10, 0, 10)
+            defaultManualCube04.rotation.set(0, 0, 0)
+            defaultManualCube04.scale.set(1.5, 1.5, 1.5)
+            scene.add(defaultManualCube04)
+
+
+
+
+            // document.addEventListener("keydown", function(event) {
+            // if (event.key === "m" ) {
+            //         gsap.to(defaultManualCube01.rotation, {
+            //             duration: 5,
+            //             repeat: true,
+            //             delay: 0,
+            //             x: 6.28,
+            //             y: 6.28,
+            //             z: 6.28
+            //         })
+
+                    
+            //     } else if (event,key === "M") {
+            //         gsap.to(defaultManualCube01.rotation, {
+            //             duration: 5,
+            //             delay: 0,
+            //             x: 0,
+            //             y: 0,
+            //             z: 0
+            //         })
+            //     }
+            // })
 
 
             document.addEventListener("keydown", function(event) {
-            if (event.key === "m" ) {
-                    gsap.to(defaultManualCube01.rotation, {
+            if (event.key === "n" ) {
+                    gsap.to(defaultManualCube01.scale, {
                         duration: 5,
                         repeat: true,
                         delay: 0,
@@ -69920,8 +69972,8 @@ let HUD_Dock_default
                     })
 
                     
-                } else if (event,key === "M") {
-                    gsap.to(defaultManualCube01.rotation, {
+                } else if (event,key === "N") {
+                    gsap.to(defaultManualCube01.scale, {
                         duration: 5,
                         delay: 0,
                         x: 0,
@@ -69931,6 +69983,71 @@ let HUD_Dock_default
                 }
             })
 
+
+
+            // Function to animate an array of group variables
+            function AnimateMe(arrOfGroupVariables) {
+                document.addEventListener("keydown", function(event) {
+                    if (event.key === "m") {
+                        arrOfGroupVariables.forEach(groupVar => {
+                            gsap.to(groupVar.rotation, {
+                                duration: 5,
+                                repeat: true,
+                                delay: 0,
+                                x: 6.28,
+                                y: 6.28,
+                                z: 6.28
+                            });
+                        });
+                    } else if (event.key === "M") {
+                        arrOfGroupVariables.forEach(groupVar => {
+                            gsap.to(groupVar.rotation, {
+                                duration: 5,
+                                delay: 0,
+                                x: 0,
+                                y: 0,
+                                z: 0
+                            });
+                        });
+                    }
+                });
+            }
+
+            // Example usage:
+            AnimateMe([defaultManualCube01, defaultManualCube02, defaultManualCube03]);
+
+
+
+            // Function to animate an array of group variables
+            function AnimateMe(arrOfGroupVariables) {
+                document.addEventListener("keydown", function(event) {
+                    if (event.key === "m") {
+                        arrOfGroupVariables.forEach(groupVar => {
+                            gsap.to(groupVar.rotation, {
+                                duration: 5,
+                                repeat: true,
+                                delay: 0,
+                                x: 6.28,
+                                y: 6.28,
+                                z: 6.28
+                            });
+                        });
+                    } else if (event.key === "M") {
+                        arrOfGroupVariables.forEach(groupVar => {
+                            gsap.to(groupVar.rotation, {
+                                duration: 5,
+                                delay: 0,
+                                x: 0,
+                                y: 0,
+                                z: 0
+                            });
+                        });
+                    }
+                });
+            }
+
+            // Example usage:
+            AnimateMe([defaultManualCube01, defaultManualCube02, defaultManualCube03]);
 
             // Function to create a cube made of individual planes with image textures
 				function createPlaneCube(size = 1, images = null, position = {x: 0, y: 0, z: 0}) {
@@ -70044,10 +70161,12 @@ let HUD_Dock_default
             ];
                 const cube3 = createPlaneCube(6, partialImages);
                 const cube4 = createPlaneCube(6, partialImages);
+                const cube5 = createPlaneCube(6, partialImages);
                 // scene.add(cube3);  
 
                 defaultManualCube01.add(cube3);
                 defaultManualCube02.add(cube4);
+                defaultManualCube03.add(cube5);
 
             
             // ----------------------------------------------------------------------------------------------------
