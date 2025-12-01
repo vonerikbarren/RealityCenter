@@ -639,7 +639,7 @@ RealityCenter/assets/img/10-ObjectUI/01-MusicPlayer/RealityDisc.png
 
 
 /- # whiteBeam
-\- 'RealityCenter/assets/img/08-ObjUI/beams/Png/beam_white.png',
+\- 'RealityCenter/assets/img/08-ObjUI/beams/Png/beam_white.png',xzxzx
 
 
 
