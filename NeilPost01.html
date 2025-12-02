@@ -69963,12 +69963,12 @@ let HUD_Dock_default
             document.addEventListener("keydown", function(event) {
             if (event.key === "n" ) {
                     gsap.to(defaultManualCube01.scale, {
-                        duration: 5,
-                        repeat: true,
+                        duration: 10,
+                        repeat: false,
                         delay: 0,
-                        x: 6.28,
-                        y: 6.28,
-                        z: 6.28
+                        x: 200,
+                        y: 200,
+                        z: 200
                     })
 
                     
@@ -70084,7 +70084,7 @@ let HUD_Dock_default
 								map: texture,
 								color: texture ? 0xffffff : 0x00ff00,
 								side: THREE.DoubleSide,
-								transparent: true,
+								transparent: false,
 								opacity: 0.8
 							});
 						}
@@ -70596,7 +70596,7 @@ let HUD_Dock_default
 
                 // document.addEventListener("keydown", function(event) {
 				// 	if (event.key === "o") {
-				// 		// camera.position.y += 10000
+				// 		// camera.position.y += 20000
 
 				// 		gsap.to(camera.position, {
 				// 			duration: 1.5,
