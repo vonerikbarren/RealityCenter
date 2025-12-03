@@ -69972,13 +69972,13 @@ let HUD_Dock_default
                     })
 
                     
-                } else if (event,key === "N") {
+                } else if (event.key === "N") {
                     gsap.to(defaultManualCube01.scale, {
                         duration: 5,
                         delay: 0,
-                        x: 0,
-                        y: 0,
-                        z: 0
+                        x: 1,
+                        y: 1,
+                        z: 1
                     })
                 }
             })
@@ -70048,6 +70048,34 @@ let HUD_Dock_default
 
             // Example usage:
             AnimateMe([defaultManualCube01, defaultManualCube02, defaultManualCube03]);
+
+
+
+
+            function AnimatrixLocations() {
+                if (event.key === "m") {
+                        arrOfGroupVariables.forEach(groupVar => {
+                            gsap.to(groupVar.rotation, {
+                                duration: 5,
+                                repeat: true,
+                                delay: 0,
+                                x: 6.28,
+                                y: 6.28,
+                                z: 6.28
+                            });
+                        });
+                    } else if (event.key === "M") {
+                        arrOfGroupVariables.forEach(groupVar => {
+                            gsap.to(groupVar.rotation, {
+                                duration: 5,
+                                delay: 0,
+                                x: 0,
+                                y: 0,
+                                z: 0
+                            });
+                        });
+                    }
+            }
 
             // Function to create a cube made of individual planes with image textures
 				function createPlaneCube(size = 1, images = null, position = {x: 0, y: 0, z: 0}) {
