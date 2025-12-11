@@ -154,3 +154,4 @@ F.Test_Action_to_Sound_on_All_Devices
 # Path of Choice
 # Path of Which
 # Path of None
+# Path of All
