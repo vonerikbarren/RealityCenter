@@ -160,3 +160,5 @@ This is a test.
 # The Path of the Anger: 
 # The Path of the Bitten:
 # The Path of the Joyful:
+# The Path of the Yearnest:
+
