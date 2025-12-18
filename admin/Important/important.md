@@ -158,3 +158,5 @@ This is a test.
 # Path of Some? 
 # Path of The echo:
 # The Path of the Anger: 
+# The Path of the Bitten:
+# The Path of the Joyful:
