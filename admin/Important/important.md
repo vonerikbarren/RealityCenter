@@ -162,3 +162,6 @@ This is a test.
 # The Path of the Joyful:
 # The Path of the Yearnest:
 
+# The Path of Firmness
+# The Path of Risk 
+# The Path of Reward
