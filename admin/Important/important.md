@@ -165,3 +165,7 @@ This is a test.
 # The Path of Firmness
 # The Path of Risk 
 # The Path of Reward
+
+# The Path of Assessment
+# The Path of Virtue
+# The Path of Vice
