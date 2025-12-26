@@ -5,7 +5,7 @@
 ⟐t = subjectiveReality -> Objective
 ⟐n = subjectiveReality -> Neutral
 ⟐f = subjectiveReality -> false
-⟐t+ = objectiveReality
+⟐t+ = objectiveReality -> false 
 ⟐8 = AxiomaticReality
 
 
@@ -63,6 +63,8 @@ F.Test_Action_to_Sound_on_All_Devices
 ## ShortcutsManager
 \- 1 = dat.gui.open()
 \- 2 = dat.gui.hide()
+\- 3 = dat.gui.hide() 
+\- 
 
 
 
