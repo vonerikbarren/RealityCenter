@@ -171,3 +171,7 @@ This is a test.
 # The Path of Assessment
 # The Path of Virtue
 # The Path of Vice
+
+
+# The Path of Strength
+# The Path of Righteousness? 
