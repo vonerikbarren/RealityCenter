@@ -198,4 +198,16 @@ This is a test.
 # The Path of Imitation
 # The Path of Creation
 
-yellow
+
+# The Path of the Anger: 
+# The Path of the Bitten:
+# The Path of the Joyful:
+# The Path of the Yearnest:
+
+# The Path of Firmness
+# The Path of Risk 
+# The Path of Reward
+
+# The Path of Assessment
+# The Path of Virtue
+# The Path of Vice
