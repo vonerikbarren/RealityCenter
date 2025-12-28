@@ -227,3 +227,11 @@ This is a test.
 # Path of Remembering
 # Path of Focus
 # Path of Drive
+
+
+---
+
+# Path of Purpose
+# Path of Learning
+# Path of Kindness
+# Path of Building
