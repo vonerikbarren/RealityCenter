@@ -177,3 +177,6 @@ This is a test.
 # The Path of Righteousness? 
 # The Path of Change!
 # The Path of Growth!
+# The Path of Impossibilities
+# The Path of Omnipotentialities
+
