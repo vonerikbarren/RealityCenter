@@ -211,3 +211,11 @@ This is a test.
 # The Path of Assessment
 # The Path of Virtue
 # The Path of Vice
+
+
+---
+
+
+# Path of Hope
+# Path of Repair
+# Path of Yonder
