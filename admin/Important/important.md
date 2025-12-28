@@ -180,3 +180,6 @@ This is a test.
 # The Path of Impossibilities
 # The Path of Omnipotentialities
 
+# The Path of Building
+# The Path of Imitation
+# The Path of Creation
