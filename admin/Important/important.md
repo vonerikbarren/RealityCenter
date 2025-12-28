@@ -219,3 +219,11 @@ This is a test.
 # Path of Hope
 # Path of Repair
 # Path of Yonder
+
+
+---
+
+# Path of Forgetting
+# Path of Remembering
+# Path of Focus
+# Path of Drive
