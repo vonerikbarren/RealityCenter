@@ -175,3 +175,5 @@ This is a test.
 
 # The Path of Strength
 # The Path of Righteousness? 
+# The Path of Change!
+# The Path of Growth!
