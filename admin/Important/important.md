@@ -235,3 +235,13 @@ This is a test.
 # Path of Learning
 # Path of Kindness
 # Path of Building
+# Path of Understanding
+
+
+---
+
+# Path of strength. 
+# The Path of whats new
+# The Path of whats to come
+# The Path of whats to be
+# The 
